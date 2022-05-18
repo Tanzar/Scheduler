@@ -1,0 +1,78 @@
+[2022-05-17  10:33:06] [type: Access] [user: ] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  10:33:33] [type: Access] [user: ] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  10:35:30] [type: Access] [user: ] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  10:36:20] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  10:36:57] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  10:37:15] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  10:37:55] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  10:38:20] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  10:39:46] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  10:40:15] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  10:40:18] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  10:56:34] [type: Access] [user: user] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  11:53:09] [type: Access] [user: user] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:01:18] [type: Access] [user: user] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:01:18] [type: Security] [user: user] [ip: 192.168.1.170] [proxy: undefined] Access Denied for url: http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:32:07] [type: Access] [user: user] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:32:07] [type: Security] [user: user] [ip: 192.168.1.170] [proxy: undefined] Access Denied for url: http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:32:54] [type: Access] [user: user] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:32:54] [type: Security] [user: user] [ip: 192.168.1.170] [proxy: undefined] Access Denied for url: http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:32:59] [type: Access] [user: user] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:32:59] [type: Security] [user: user] [ip: 192.168.1.170] [proxy: undefined] Access Denied for url: http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:35:35] [type: Access] [user: user] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-17  12:36:29] [type: Access] [user: user] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-17  12:53:43] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:54:35] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:55:38] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  12:56:37] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:05:08] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:40:10] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:41:41] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:42:30] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:42:49] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:43:21] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:44:51] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:53:29] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:53:52] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:55:34] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:55:36] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:57:51] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:59:05] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:59:08] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  13:59:49] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:16:12] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:19:58] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:20:03] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:20:36] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:21:57] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:22:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Data: {"controller":"AdminPanel","task":"getAllUsers"}
+[2022-05-17  14:22:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SELECT * FROM user
+[2022-05-17  14:27:12] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:27:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Data: {"controller":"AdminPanel","task":"getAllUsers"}
+[2022-05-17  14:27:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SELECT * FROM user
+[2022-05-17  14:37:09] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:37:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Data: {"controller":"AdminPanel","task":"getAllUsers"}
+[2022-05-17  14:37:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SELECT * FROM user
+[2022-05-17  14:37:39] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:37:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Data: {"controller":"AdminPanel","task":"getAllUsers"}
+[2022-05-17  14:37:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SELECT * FROM user
+[2022-05-17  14:38:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Data: {"controller":"AdminPanel","task":"getAllUsers"}
+[2022-05-17  14:38:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SELECT * FROM user
+[2022-05-17  14:41:26] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:41:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Data: {"controller":"AdminPanel","task":"getAllUsers"}
+[2022-05-17  14:41:28] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SELECT * FROM user
+[2022-05-17  14:44:14] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:44:15] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Data: {"controller":"AdminPanel","task":"getAllUsers"}
+[2022-05-17  14:44:15] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SELECT * FROM user
+[2022-05-17  14:44:16] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:44:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Data: {"controller":"AdminPanel","task":"getAllUsers"}
+[2022-05-17  14:44:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SELECT * FROM user
+[2022-05-17  14:45:38] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:45:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Data: {"controller":"AdminPanel","task":"getAllUsers"}
+[2022-05-17  14:45:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SELECT * FROM user
+[2022-05-17  14:46:11] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:46:12] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Data: {"controller":"AdminPanel","task":"getAllUsers"}
+[2022-05-17  14:46:12] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SELECT * FROM user
+[2022-05-17  14:48:19] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-17  14:48:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Data: {"controller":"AdminPanel","task":"getAllUsers"}
+[2022-05-17  14:48:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SELECT * FROM user

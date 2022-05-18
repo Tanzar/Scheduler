@@ -1,0 +1,23 @@
+/*
+This code is free to use, just remember to give credit.
+*/
+/* 
+    Created on : 2022-05-17, 11:08:39
+    Author     : Grzegorz Spakowski, Tanzar
+*/
+
+.side-menu {
+    min-width: 80px;
+    min-height: 200px;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    border: 3px solid #0066ff;
+    background-color: #ffffff;
+    padding: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}

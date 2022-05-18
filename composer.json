@@ -1,0 +1,14 @@
+{
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.22",
+        "phpmailer/phpmailer": "^6.6"
+    },
+    "autoload": {
+        "classmap" : [
+            "sys/classes/Tanweb",
+            "sys/classes/Controllers",
+            "sys/classes/Services",
+            "sys/libs"
+        ]
+    }
+}

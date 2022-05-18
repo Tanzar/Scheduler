@@ -1,0 +1,5 @@
+cd <project dir>
+
+composer require phpmailer/phpmailer    - only once
+
+composer dump-autoload  -- each time new class is created to add it to autoload

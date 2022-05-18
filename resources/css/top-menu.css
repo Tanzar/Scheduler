@@ -1,0 +1,49 @@
+/*
+This code is free to use, just remember to give credit.
+*/
+/* 
+    Created on : 2022-05-17, 09:12:15
+    Author     : Grzegorz Spakowski, Tanzar
+*/
+
+.top-menu {
+    min-height:  80px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    border: 3px solid #0066ff;
+    background-color: #ffffff;
+    padding: 5px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.top-menu input[type=submit], button {
+    background-color: inherit;
+    border: 2px solid #0066ff;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 2px;
+}
+
+.top-menu input[type=submit]:hover, button:hover {
+    background-color: #0066ff;
+    color: #ffffff;
+}
+
+.top-menu-left {
+    display: flex;
+    align-items: center;
+}
+
+.top-menu-left img {
+    max-height: 80px;
+}
+
+.top-menu-right {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}

@@ -1,0 +1,111 @@
+.datatable {
+    border-spacing: 0;
+    background-color: white;
+    color: black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 0px;
+    width: fit-content;
+}
+
+.datatable thead {
+    border: 2px solid #0099ff !important;
+    position: sticky;
+    top: 0;
+}
+
+.datatable-table-container {
+    overflow-y: scroll;
+    max-height: 70vh;
+    border: 3px solid #0099ff;
+}
+
+.datatable-table-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.datatable-table-container::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+.datatable-table-container::-webkit-scrollbar-thumb {
+    background-color: #0099ff;
+    border-radius: 5px;
+}
+
+.datatable th {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    background-color: #0099ff;
+    color: white;
+}
+
+.datatable tr ,.datatable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.datatable tr:nth-child(odd){
+    background-color: #f2f2f2;
+}
+
+.datatable tr:hover {background-color: #ddd;}
+
+.selected {
+    background-color: #b9b9b9 !important;
+}
+
+.datatable-buttons-container {
+    border: solid 3px #0099ff;
+    background-color: #ffffff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 0px;
+}
+
+.datatable-button {
+    border: solid 3px #0066ff !important;
+    background-color: inherit !important;
+    padding: 5px !important;
+    color: #000000 !important;
+    border-radius: 5px !important;
+    margin: 5px !important;
+}
+
+.datatable-button:hover {
+    background-color: #0066ff !important;
+    color: #ffffff !important;
+}
+
+.datatable-loading {
+    width: 100%;
+    height: 150px;
+    align-content: center;
+    align-items: center;
+}
+
+.datatable-loading-icon {
+    width: 0px;
+    height: 0px;
+    border-right: 40px solid transparent;
+    border-top: 40px solid #0099ff;
+    border-left: 40px solid transparent;
+    border-bottom: 40px solid #0099ff;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin: 0 auto;
+    -webkit-animation: load 0.5s linear infinite;
+}
+
+@-webkit-keyframes load {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}

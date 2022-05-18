@@ -1,0 +1,34 @@
+/*
+This code is free to use, just remember to give credit.
+*/
+/* 
+    Created on : 2022-05-17, 13:27:43
+    Author     : Grzegorz Spakowski, Tanzar
+*/
+
+.tab-menu {
+    border: 1px solid #ddd;
+}
+
+.tab-menu-buttons {
+    background-color: #ddd;
+}
+
+.tab-menu button {
+    color: #000000;
+    background-color: #ddd;
+    border: none;
+    margin: 0;
+    padding: 5px;
+    min-height: 25px;
+    min-width: 25px;
+    border-radius: 0;
+}
+
+.tab-menu button:hover {
+    background-color: #ccc;
+}
+
+.tab-menu-tab {
+    padding: 5px;
+}
