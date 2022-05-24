@@ -7,14 +7,12 @@ class RestApi {
     static get(controller, task, data, onSuccess, onError, onComplete){
         var address = RestApi.getAddress();
         var response = '';
+        data.controller = controller;
+        data.task = task;
         $.ajax({
                 url: address,
                 type: 'GET',
-                data: {
-                    data: data,
-                    task: task,
-                    controller: controller
-                },
+                data: data,
                 success: function (data) {
                     if(onSuccess === undefined){
                         try{
@@ -49,14 +47,12 @@ class RestApi {
     static post(controller, task, data, onSuccess, onError, onComplete){
         var address = RestApi.getAddress();
         var response = '';
+        data.controller = controller;
+        data.task = task;
         $.ajax({
                 url: address,
                 type: 'POST',
-                data: {
-                    data: data,
-                    task: task,
-                    controller: controller
-                },
+                data: data,
                 success: function (data) {
                     if(onSuccess === undefined){
                         try{

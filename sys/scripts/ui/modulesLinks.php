@@ -13,7 +13,7 @@ use Tanweb\Config\INI\AppConfig as AppConfig;
 use Tanweb\Security\Security as Security;
 
 try{
-    $appconfig = new AppConfig();
+    $appconfig = AppConfig::getInstance();
     $config = $appconfig->getAppConfig();
     $modules = new Container($config->getValue('modules'));
     $security = new Security();

@@ -13,6 +13,7 @@ use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Tanweb\Security\SecurityException as SecurityException;
 use Tanweb\Security\Encrypter as Encrypter;
+use Tanweb\Logger\Logger as Logger;
 
 /**
  * Class responsible for managing access to application.
@@ -22,7 +23,7 @@ use Tanweb\Security\Encrypter as Encrypter;
  */
 class Security {
     private bool $isEnabled;
-    private Database $database;
+    private string $dbIndex;
     private string $usersTable;
     private string $usersIndex;
     private string $usernameColumn;
@@ -36,7 +37,7 @@ class Security {
     private Container $privilagesNames;
     
     public function __construct() {
-        $appconfig = new AppConfig();
+        $appconfig = AppConfig::getInstance();
         $config = $appconfig->getSecurity();
         $this->isEnabled = $config->getValue('enable');
         $this->usePassword = $config->getValue('usePasswords');
@@ -44,8 +45,7 @@ class Security {
     }
     
     private function initializeDatabase(Container $config){
-        $dbIndex = $config->getValue('database_index');
-        $this->database = new Database($dbIndex);
+        $this->dbIndex = $config->getValue('database_index');
         $this->usersTable = $config->getValue('users_table');
         $this->usersIndex = $config->getValue('index_column');
         $this->usernameColumn = $config->getValue('username_column');
@@ -58,7 +58,7 @@ class Security {
     }
     
     /*
-     * Checking if user have al least one privilage required to access
+     * Checking if user have at least one privilage required to access
      * 
      * @param Container $privilages - container of strings, contains required privilages to pass checks, if empty allows everyone
      * @return bool - true if successful, false if user don't have these privilages
@@ -99,6 +99,20 @@ class Security {
         }
         else{
             return true;
+        }
+    }
+    
+    /**
+     * Check if user have privilages to access if not throws SecurityException
+     * 
+     * @param Container $privilages - required privilages to pass this check
+     * @return void
+     */
+    public function checkPrivilages(Container $privilages) : void {
+        if(!$this->userHaveAnyPrivilage($privilages)){
+            $logger = Logger::getInstance();
+            $logger->logSecurity("Access Denied: user don't have required privilages.");
+            $this->throwException("Access Denied: You don't have required privilages.");
         }
     }
     
@@ -164,7 +178,8 @@ class Security {
         $userIndex = $user->getValue($this->usersIndex);
         $sql = new MysqlBuilder();
         $sql->select($this->privilageTable)->where($this->privilageUserIndex, $userIndex);
-        $privilages = $this->database->select($sql);
+        $database = Database::getInstance($this->dbIndex);
+        $privilages = $database->select($sql);
         $result = new Container();
         foreach ($privilages->toArray() as $privilage){
             if(isset($privilage[$this->privilageColumn])){
@@ -183,7 +198,8 @@ class Security {
         }
         $sql = new MysqlBuilder();
         $sql->select($this->usersTable)->where($this->usernameColumn, $username);
-        $users = $this->database->select($sql);
+        $database = Database::getInstance($this->dbIndex);
+        $users = $database->select($sql);
         if($users->getLength() > 1){
             $this->throwException('usernames are not unique, make sure table '
                     . ''. $this->usersTable . ' column ' . 

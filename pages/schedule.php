@@ -21,7 +21,7 @@ This code is free to use, just remember to give credit.
         <meta charset="UTF-8">
         <title>
             <?php
-                $appconfig = new AppConfig();
+                $appconfig = AppConfig::getInstance();
                 $cfg = $appconfig->getAppConfig();
                 echo $cfg->getValue('name');
                 $modules = new Container($cfg->getValue('modules'));
@@ -30,7 +30,12 @@ This code is free to use, just remember to give credit.
         </title>
         <?php
             Resources::linkCSS('main.css');
+            Resources::linkCSS('timetable.css');
             Resources::linkJS('RestApi.js');
+            Resources::linkJS('Timetable.js');
+            Resources::linkJS('schedule.js');
+            Resources::linkJS('scheduleMy.js');
+            Resources::linkJS('scheduleAll.js');
             Resources::linkExternal('jquery');
         ?>
     </head>
@@ -43,12 +48,17 @@ This code is free to use, just remember to give credit.
             <button id="my_entries">Moje Wpisy</button>
         </div>
         <div class="page-contents">
-            
+            <div>
+                <input type="date" value="<?php echo date('Y-m-d'); ?>" >
+                <button id="selectDate">Wybierz</button>
+            </div>
+            <div id="timetable" class="timetable"></div>
         </div>
         <?php
             Scripts::run('createFooter.php');
         ?>
     </body>
     <script>
+        init();
     </script>
 </html>

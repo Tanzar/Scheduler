@@ -8,7 +8,6 @@ namespace Tanweb\Mailing;
 
 use Tanweb\Mailing\EmailConfig as EmailConfig;
 use Tanweb\Mailing\Email as Email;
-use Tanweb\Config\INI\AppConfig as AppConfig;
 use Tanweb\Mailing\PostmanException as PostmanException;
 
 /**
@@ -22,9 +21,7 @@ class Postman {
     private PHPMailer $mailer;
     
     public function __construct() {
-        $appConfig = new AppConfig();
-        $config = $appConfig->getMailer();
-        $this->config = new EmailConfig($config);
+        $this->config = new EmailConfig();
         $this->emails = array();
         $this->initMailer();
     }

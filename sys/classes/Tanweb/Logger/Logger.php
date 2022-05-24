@@ -38,6 +38,8 @@ use Tanweb\Logger\LoggerException as LoggerException;
  * @author Grzegorz Spakowski, Tanzar
  */
 class Logger {
+    private static Logger $instance;
+    
     private bool $isEnabled;
     private array $activeTypes;
     
@@ -49,8 +51,8 @@ class Logger {
     private string $table;
     
     
-    public function __construct(){
-        $appconfig = new AppConfig();
+    protected function __construct(){
+        $appconfig = AppConfig::getInstance();
         $config = $appconfig->getLogger();
         $this->isEnabled = $config->getValue('enable');
         if($this->isEnabled){
@@ -180,6 +182,16 @@ class Logger {
     public function __destruct() {
         if(isset($this->database)){
             $this->database->finalize();
+        }
+    }
+    
+    public static function getInstance() : Logger{
+        if(isset(self::$instance)){
+            return self::$instance;
+        }
+        else{
+            self::$instance = new Logger();
+            return self::$instance;
         }
     }
     

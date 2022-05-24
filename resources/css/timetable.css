@@ -1,0 +1,48 @@
+/*
+This code is free to use, just remember to give credit.
+*/
+/* 
+    Created on : 2022-05-23, 11:03:05
+    Author     : Tanzar
+*/
+
+.timetable {
+    border: 3px solid #0066ff;
+    width: 100%;
+    min-width: 300px;
+    margin: 5px;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.timetable-head {
+    position: absolute;
+    text-align: center;
+    background-color: #ddd;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.timetable-data {
+    background-color: #a0dfff;
+    position: absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: fit-content;
+    text-align: center;
+}
+
+.timetable-line {
+    background-color: #ddd;
+    position: absolute;
+    width: 1px;
+}
+
+.timetable-line-day {
+    background-color: #000000;
+    position: absolute;
+    width: 1px;
+}

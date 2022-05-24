@@ -15,6 +15,7 @@ use Tanweb\Config\ConfigException as ConfigException;
  * @author Grzegorz Spakowski, Tanzar
  */
 class AppConfig {
+    private static AppConfig $instance;
     private $path;
     private Container $app;
     private Container $databases;
@@ -23,7 +24,7 @@ class AppConfig {
     private Container $logger;
     private Container $externalResources;
     
-    public function __construct() {
+    protected function __construct() {
         $projectName = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'))[1];
         $path =  filter_input(INPUT_SERVER, 'DOCUMENT_ROOT') . '/' . $projectName . '/';
         $this->path = $path . 'config/config.ini';
@@ -45,6 +46,16 @@ class AppConfig {
         }
         if(isset($ini['external_resources'])){
             $this->externalResources = new Container($ini['external_resources']);
+        }
+    }
+    
+    public static function getInstance() : AppConfig {
+        if(isset(self::$instance)){
+            return self::$instance;
+        }
+        else{
+            self::$instance = new AppConfig();
+            return self::$instance;
         }
     }
     

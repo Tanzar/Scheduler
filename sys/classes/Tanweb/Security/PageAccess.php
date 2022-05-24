@@ -30,7 +30,7 @@ class PageAccess {
     public static function allowFor(array $privilages){
         try{
             $address = Server::getRequestUrl();
-            $logger = new Logger();
+            $logger = Logger::getInstance();
             $logger->logAccess($address);
             $security = new Security();
             $container = new Container($privilages);

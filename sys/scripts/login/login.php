@@ -31,7 +31,7 @@ try{
 catch (Throwable $ex){
     $msg = $ex->getMessage();
     $trace = $ex->getTraceAsString();
-    echo 'console.log("' . $msg . ' ' . $trace . '");';
+    echo 'console.log("' . $msg . '");';
     echo 'alert("' . $msg . '");';
 }
 

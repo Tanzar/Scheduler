@@ -131,7 +131,7 @@ class Resources {
      * @param string $index index from config.ini file, section external_resources
      */
     public static function linkExternal(string $index){
-        $appconfig = new AppConfig();
+        $appconfig = AppConfig::getInstance();
         $config = $appconfig->getExternalResources();
         $ext = new Container($config->getValue($index));
         $link = $ext->getValue('link');

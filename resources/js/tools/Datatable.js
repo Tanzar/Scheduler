@@ -318,6 +318,9 @@ function Datatable(div, config){
     }
     
     this.getSelected = function(){
+        if(this.data === undefined || this.data.length === 0 ){
+            return undefined;
+        }
         if(this.selectMultiple){
             var result = [];
             for(var i = 0; i < this.selectedIndex.length; i++){

@@ -7,10 +7,7 @@
 namespace Controllers;
 
 use Controllers\Base\Controller as Controller;
-use Tanweb\Container as Container;
 use Tanweb\File\ExcelEditor as ExcelEditor;
-use Tanweb\Config\Template as Template;
-use Exception;
 
 /**
  * Description of TestFile
@@ -20,13 +17,10 @@ use Exception;
 class TestFile extends Controller{
     
     public function __construct() {
-        $indexes = new Container();
-        $indexes->add('tanweb');
-        parent::__construct($indexes);
+        parent::__construct();
     }
     
     public function test(){
-        $path = Template::getLocalPath('example.xlsx');
         $xlsx = new ExcelEditor();
         $xlsx->newFile('test', 'pjerwszy');
         $xlsx->writeToCell('pjerwszy', 'A1', 'Hello World');

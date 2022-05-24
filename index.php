@@ -6,6 +6,7 @@
     use Tanweb\Config\Resources as Resources;
     use Tanweb\Config\Scripts as Scripts;
     use Tanweb\Config\INI\AppConfig as AppConfig;
+    use Tanweb\Session as Session;
 ?>
 <!DOCTYPE html>
 <!--
@@ -16,7 +17,7 @@ This code is free to use, just remember to give credit.
         <meta charset="UTF-8">
         <title>
             <?php
-                $appconfig = new AppConfig();
+                $appconfig = AppConfig::getInstance();
                 $cfg = $appconfig->getAppConfig();
                 echo $cfg->getValue('name');
             ?>
@@ -35,7 +36,15 @@ This code is free to use, just remember to give credit.
             <button id="my_data">Moje Dane</button>
         </div>
         <div class="page-contents">
-            Zaloguj się by zacząć.
+            <?php 
+                $username = Session::getUsername();
+                if($username === ''){
+                    Scripts::run('loginForm.php');
+                }
+                else{
+                    echo 'Witaj ' . $username;
+                }
+            ?>
         </div>
         <?php
             Scripts::run('createFooter.php');

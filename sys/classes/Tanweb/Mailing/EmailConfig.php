@@ -6,7 +6,7 @@
 
 namespace Tanweb\Mailing;
 
-use Tanweb\Container as Container;
+use Tanweb\Config\INI\AppConfig as AppConfig;
 
 /**
  * Config for Postman
@@ -22,7 +22,9 @@ class EmailConfig {
     private string $address;
     
     
-    public function __construct(Container $config) {
+    public function __construct() {
+        $appConfig = AppConfig::getInstance();
+        $config = $appConfig->getMailer();
         $this->port = $config->getValue('port');
         $this->host = $config->getValue('host');
         $this->user = $config->getValue('user');

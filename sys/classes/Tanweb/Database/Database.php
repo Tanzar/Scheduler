@@ -15,7 +15,7 @@ use Tanweb\Database\ConnectionString as ConnectionString;
 use Tanweb\Database\DatabaseException as DatabaseException;
 
 /**
- * Class responsible for managing (one) database connection.
+ * Class responsible for managing database connection.
  * Upon creation it starts transaction, 
  * than methods select, insert, update allow to use SQLBuilder to create Queries
  * Methods finalize and rollback are (should be) calld at end of transaction
@@ -25,11 +25,13 @@ use Tanweb\Database\DatabaseException as DatabaseException;
  * @author Grzegorz Spakowski, Tanzar
  */
 class Database {
+    private static Container $instances;
+    
     private Container $config;
     private PDO $pdo;
     
     public function __construct(string $index) {
-        $config = new AppConfig();
+        $config = AppConfig::getInstance();
         $this->config = $config->getDatabase($index);
         try{
             $this->connect();
@@ -50,6 +52,39 @@ class Database {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         $this->pdo = $pdo;
+    }
+    
+    public static function getInstance(string $dbIndex) : Database{
+        if(isset(self::$instances)){
+            if(self::$instances->isValueSet($dbIndex)){
+                return self::$instances->getValue($dbIndex);
+            }
+            else{
+                $instance = new Database($dbIndex);
+                self::$instances->add($instance, $dbIndex);
+                return $instance;
+            }
+        }
+        else{
+            self::$instances = new Container();
+            $instance = new Database($dbIndex);
+            self::$instances->add($instance, $dbIndex);
+            return $instance;
+        }
+    }
+    
+    public static function rollbackAll() : void{
+        $instances = self::$instances->toArray();
+        foreach($instances as $database){
+            $database->rollback();
+        }
+    }
+    
+    public static function finalizeAll() : void{
+        $instances = self::$instances->toArray();
+        foreach($instances as $database){
+            $database->finalize();
+        }
     }
     
     public function rollback(){

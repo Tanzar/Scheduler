@@ -274,8 +274,14 @@ class MysqlBuilder extends SqlBuilder{
     
     private function formWhereParseItem($item){
         if(Utility::isNotString($item)){
-            return ' ' . $item['column'] . ' ' . 
-                    $item['operator'] . " '" . $item['value'] . "'";
+            if($item['operator'] === 'like'){
+                return ' ' . $item['column'] . ' ' . 
+                        $item['operator'] . " '%" . $item['value'] . "%'";
+            }
+            else{
+                return ' ' . $item['column'] . ' ' . 
+                        $item['operator'] . " '" . $item['value'] . "'";
+            }
         }
         else{
             return ' ' . $item;
@@ -284,8 +290,14 @@ class MysqlBuilder extends SqlBuilder{
     
     private function formWhereLastItem($item){
         if(Utility::isNotString($item)){
-            return ' ' . $item['column'] . ' ' . 
-                    $item['operator'] . " '" . $item['value'] . "'";
+            if($item['operator'] === 'like'){
+                return ' ' . $item['column'] . ' ' . 
+                        $item['operator'] . " '%" . $item['value'] . "%'";
+            }
+            else{
+                return ' ' . $item['column'] . ' ' . 
+                        $item['operator'] . " '" . $item['value'] . "'";
+            }
         }
         else{
             return '';

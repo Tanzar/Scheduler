@@ -75,4 +75,12 @@ class Utility {
     public static function toNumber($val){
         return intval($val);
     }
+    
+    public static function getKeys(array $array) : array{
+        return array_keys($array);
+    }
+    
+    public static function isInstance($instance, $className) : bool {
+        return is_a($instance, $className);
+    }
 }

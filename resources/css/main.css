@@ -22,7 +22,8 @@ input:invalid {
 }
 
 footer {
-    position: absolute;
+    min-width: fit-content;
+    position: fixed;
     bottom: 0;
     border: 3px solid #0066ff;
     background-color: #ffffff;
@@ -37,8 +38,42 @@ footer {
     font-size: 11px;
 }
 
+.login-form {
+    border: 3px solid #0066ff;
+    border-radius: 10px;
+    padding: 10px;
+    color: #0066ff;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form-input {
+    border: none;
+    border-bottom: 3px solid #0066ff;
+    outline: none;
+    color: inherit;
+    margin: 5px;
+    text-align: center;
+}
+
+.login-form-submit {
+    border: 3px solid #0066ff;
+    border-radius: 5px;
+    background-color: inherit;
+    color: inherit;
+    padding: 5px;
+    margin: 2px;
+}
+
+.login-form-submit:hover {
+    background-color: #0066ff;
+    color: #ffffff;
+}
 
 .top-menu {
+    min-width: fit-content;
     min-height:  80px;
     display: flex;
     align-content: center;
@@ -81,6 +116,7 @@ footer {
 }
 
 .side-menu {
+    min-width: fit-content;
     width: 100px;
     min-height: 200px;
     position: fixed;
@@ -112,13 +148,17 @@ footer {
 
 
 .page-contents {
+    min-width: fit-content;
     margin-top: 20px;
     margin-left: 141px;
     border: 3px solid #0066ff;
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: #ffffff;
     margin-bottom: 10px;
     margin-right: 10px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 

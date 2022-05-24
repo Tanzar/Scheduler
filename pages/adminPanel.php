@@ -21,7 +21,7 @@ This code is free to use, just remember to give credit.
         <meta charset="UTF-8">
         <title>
             <?php
-                $appconfig = new AppConfig();
+                $appconfig = AppConfig::getInstance();
                 $cfg = $appconfig->getAppConfig();
                 echo $cfg->getValue('name') . ': ';
                 $modules = new Container($cfg->getValue('modules'));
@@ -32,10 +32,13 @@ This code is free to use, just remember to give credit.
             Resources::linkCSS('main.css');
             Resources::linkCSS('tab-menu.css');
             Resources::linkCSS('datatable.css');
+            Resources::linkCSS('modal-box.css');
             Resources::linkJS('Datatable.js');
+            Resources::linkJS('modalBox.js');
             Resources::linkJS('RestApi.js');
             Resources::linkJS('TabMenu.js');
             Resources::linkJS('adminPanel.js');
+            Resources::linkJS('adminPanelUsersTabs.js');
             Resources::linkExternal('jquery');
         ?>
     </head>
@@ -46,6 +49,7 @@ This code is free to use, just remember to give credit.
         <div class="side-menu">
             <button id="users">Użytkownicy</button>
             <button id="schedule"><?php echo $modules->getValue('schedule'); ?></button>
+            <button id="test">TEST</button>
         </div>
         <div class="page-contents" id="display"></div>
         <?php

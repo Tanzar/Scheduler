@@ -1,0 +1,97 @@
+/*
+This code is free to use, just remember to give credit.
+*/
+/* 
+    Created on : 2022-05-17, 14:49:59
+    Author     : Grzegorz Spakowski, Tanzar
+*/
+
+/* Blocker for page in background */
+.modal-box-blocker {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-box {
+    min-width: 20%;
+    max-width: 80%;
+    width: fit-content;
+    background-color: #ffffff;
+    margin: auto;
+    border: 3px solid #0066ff;
+    border-radius: 20px;
+}
+
+.modal-box-close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-box-close:hover,
+.modal-box-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-box-header {
+    padding-top: 2px;
+    padding-left: 16px;
+    padding-bottom: 2px;
+    padding-right: 16px;
+    background-color: #ffffff;
+    min-height: 20px;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-box-footer {
+    padding: 2px 16px;
+    background-color: #ffffff;
+    min-height: 20px;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-box-button {
+    background-color: inherit;
+    border: 2px solid;
+    border-color: #0066ff;
+    border-radius: 5px;
+    padding: 3px;
+    float: right;
+}
+
+.modal-box-button:hover {
+    background-color: #0066ff;
+    color: #ffffff;
+}
+
+.modal-box-field {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.modal-box-input {
+    min-width: 120px;
+    max-width: 250px;
+    outline: none;
+    background-color: inherit;
+    border: none;
+    border-bottom: 2px solid #0066ff;
+}

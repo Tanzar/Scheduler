@@ -33,7 +33,7 @@ class Server {
      * @return string path to project root in filesystem
      */
     public static function getLocalRoot(): string{
-        $appConfig = new AppConfig();
+        $appConfig = AppConfig::getInstance();
         $config = $appConfig->getAppConfig();
         if($config->isValueSet('name')){
             $projectName = $config->getValue('name');
@@ -52,7 +52,7 @@ class Server {
      * @return type
      */
     public static function getRootURL() : string{
-        $appConfig = new AppConfig();
+        $appConfig = AppConfig::getInstance();
         $config = $appConfig->getAppConfig();
         if($config->isValueSet('name')){
             $appName = $config->getValue('name');
