@@ -6,6 +6,8 @@
 
 namespace Tanweb;
 
+use Tanweb\Config\INI\AppConfig as AppConfig;
+
 /**
  * Class to manage session, get some informations from requests
  *
@@ -44,9 +46,25 @@ class Session {
     
     public static function setUser(string $username) : void {
         $_SESSION['username'] = $username;
+        
     }
     
     public static function unsetUser() : void {
         unset($_SESSION['username']);
+    }
+    
+    public static function setLanguage(string $language = 'english') : void {
+        setcookie('language', $language, strtotime("+1 year"), '/');
+    }
+    
+    public static function getLanguageSettings() : string {
+        if(isset($_COOKIE['language'])){
+            return $_COOKIE['language'];
+        }
+        else{
+            $appconfig = AppConfig::getInstance();
+            $cfg = $appconfig->getAppConfig();
+            return $cfg->getValue('defaultLanguage');
+        }
     }
 }

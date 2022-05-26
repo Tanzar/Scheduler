@@ -12,6 +12,7 @@ use Tanweb\Security\Security as Security;
 use Tanweb\TanwebException as TanwebException;
 use Tanweb\Container as Container;
 use Tanweb\Logger\Logger as Logger;
+use Tanweb\Config\INI\Languages as Languages;
 
 /**
  * Security for pages, should be used on EVERY page that needs protection
@@ -37,7 +38,8 @@ class PageAccess {
             $granted = $security->userHaveAnyPrivilage($container);
             if(!$granted){
                 $logger->logSecurity('Access Denied for url: ' . $address);
-                throw new SecurityException('Access Denied.');
+                $languages = Languages::getInstance();
+                throw new SecurityException($languages->get('access_denied'));
             }
         } catch (TanwebException $ex) {
             $msg = '[url: ' . Server::getRequestUrl(). '] ' . $ex->errorMessage();
@@ -52,7 +54,8 @@ class PageAccess {
     private static function redirectToIndex($msg){
         echo '<script>';
         echo 'console.log("' . $msg . '");';
-        echo 'alert("Redirecting to index. Check console for errors.");';
+        $languages = Languages::getInstance();
+        echo 'alert(' . $languages->get('redirect_index') . '");';
         $path = Server::getIndexPath();
         echo 'window.location.replace("' . $path . '")';
         echo '</script>';

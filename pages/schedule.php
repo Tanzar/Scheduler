@@ -44,16 +44,10 @@ This code is free to use, just remember to give credit.
             <?php Scripts::run('topMenu.php'); ?>
         </header>
         <div class="side-menu">
-            <button id="all">Wszyscy</button>
-            <button id="my_entries">Moje Wpisy</button>
+            <button id="allEntries">Wszyscy</button>
+            <button id="myEntries">Moje Wpisy</button>
         </div>
-        <div class="page-contents">
-            <div>
-                <input type="date" value="<?php echo date('Y-m-d'); ?>" >
-                <button id="selectDate">Wybierz</button>
-            </div>
-            <div id="timetable" class="timetable"></div>
-        </div>
+        <div class="page-contents" id="pageContents"></div>
         <?php
             Scripts::run('createFooter.php');
         ?>

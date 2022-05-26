@@ -57,6 +57,10 @@ This code is free to use, just remember to give credit.
         ?>
     </body>
     <script>
-        AdminPanel();
+        RestApi.getInterfaceNamesPackage(
+            function(names){
+                AdminPanel(names);
+            }    
+        );
     </script>
 </html>

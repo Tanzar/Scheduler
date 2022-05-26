@@ -9,6 +9,7 @@ namespace Tanweb\Mailing;
 use Tanweb\Mailing\EmailConfig as EmailConfig;
 use Tanweb\Mailing\Email as Email;
 use Tanweb\Mailing\PostmanException as PostmanException;
+use Tanweb\Config\INI\Languages as Languages;
 
 /**
  * Adapter of PHPMailer and class that allows easly send emails, configure in config.ini
@@ -60,7 +61,8 @@ class Postman {
         if(!$this->mailer->Send()) {
             $this->throwException('Error in sending mail to: ' . $mail->getAddress());
         } else {
-            return "Email sent successfully";
+            $language = Languages::getInstance();
+            return $language->get('email_sent');
         }
     }
     

@@ -10,7 +10,7 @@ use Controllers\Base\Controller as Controller;
 use Tanweb\Container as Container;
 use Services\UserService as UserService;
 use Services\PrivilagesService as PrivilagesService;
-
+use Tanweb\Config\INI\Languages as Languages;
 
 /**
  * Description of AdminController
@@ -55,7 +55,8 @@ class AdminPanelUsers extends Controller{
         $data = $this->getRequestData();
         $this->privilagesService->addPrivilage($data);
         $response = new Container();
-        $response->add('Privilage added.', 'message');
+        $languages = Languages::getInstance();
+        $response->add($languages->get('privilage_added'), 'message');
         $this->setResponse($response);
     }
     
@@ -73,7 +74,8 @@ class AdminPanelUsers extends Controller{
         $data = $this->getRequestData();
         $this->userService->changePassword($data);
         $response = new Container();
-        $response->add('Password changed.', 'message');
+        $languages = Languages::getInstance();
+        $response->add($languages->get('password_change'), 'message');
         $this->setResponse($response);
     }
     
@@ -81,7 +83,8 @@ class AdminPanelUsers extends Controller{
         $data = $this->getRequestData();
         $this->userService->changeStatus($data);
         $response = new Container();
-        $response->add('Status changed.', 'message');
+        $languages = Languages::getInstance();
+        $response->add($languages->get('status_change'), 'message');
         $this->setResponse($response);
     }
     
@@ -90,7 +93,8 @@ class AdminPanelUsers extends Controller{
         $id = $data->getValue('id');
         $this->privilagesService->changeStatus($id);
         $response = new Container();
-        $response->add('Status changed.', 'message');
+        $languages = Languages::getInstance();
+        $response->add($languages->get('status_change'), 'message');
         $this->setResponse($response);
     }
 }

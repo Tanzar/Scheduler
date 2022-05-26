@@ -2,16 +2,16 @@
  * This code is free to use, just remember to give credit.
  */
 
-function AdminPanel(){
+function AdminPanel(language){
     var display = new Display();
     
     $('#users').click(function(){
         display.clear();
-        display.addTab('Użytkownicy', function(){
-            return usersTab();
+        display.addTab(language.users, function(){
+            return usersTab(language);
         });
-        display.addTab('Uprawnienia', function(){
-            return privilagesTab();
+        display.addTab(language.privilages, function(){
+            return privilagesTab(language);
         });
     });
     $('#users').click();
@@ -20,11 +20,6 @@ function AdminPanel(){
         display.show(['ja', 'ty']);
     });
     
-    $('#test').click(function(){
-        RestApi.post('AdminPanelUsers', 'getPrivilagesList', {}, function(response){
-            console.log(response);
-        })
-    });
 }
 
 function Display(){

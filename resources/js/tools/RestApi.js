@@ -93,4 +93,25 @@ class RestApi {
         return address;
     }
     
+    static getLanguagePackage(onSuccess){
+        RestApi.get('LanguageSelection', 'getPackage', {}, 
+        function(response){
+            var data = JSON.parse(response);
+            onSuccess(data);
+        },
+        function(response){
+            console.log(response.responseText);
+        });
+    }
+    
+    static getInterfaceNamesPackage(onSuccess){
+        RestApi.get('LanguageSelection', 'getInterfaceNames', {}, 
+        function(response){
+            var data = JSON.parse(response);
+            onSuccess(data);
+        },
+        function(response){
+            console.log(response.responseText);
+        });
+    }
 }

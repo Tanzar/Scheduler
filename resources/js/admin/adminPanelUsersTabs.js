@@ -2,29 +2,29 @@
  * This code is free to use, just remember to give credit.
  */
 
-function usersTab(){
+function usersTab(language){
     var div = document.createElement('div');
     div.style.width = 'fit-content';
     
     var config = {
         columns : [
             { title: 'ID', variable: 'id'},
-            { title: 'Aktywny', variable: 'active'},
-            { title: 'Nazwa Użytkonika', variable: 'username'},
-            { title: 'Imie', variable: 'name'},
-            { title: 'Nazwisko', variable: 'surname'}
+            { title: language.active, variable: 'active'},
+            { title: language.username, variable: 'username'},
+            { title: language.name_person, variable: 'name'},
+            { title: language.surname, variable: 'surname'}
         ],
         dataSource : { method: 'post', address: getRestAddress(), data: { controller: 'AdminPanelUsers', task: 'getAllUsers' } }
     };
     var datatable = new Datatable(div, config);
-    datatable.addActionButton('Szukaj', function(){
+    datatable.addActionButton(language.search, function(){
         var fields = [
-            {type: 'checkbox', title: 'Aktywny', variable: 'active'},
-            {type: 'text', title: 'Nazwa Użytkonika', variable: 'username'},
-            {type: 'text', title: 'Imie', variable: 'name'},
-            {type: 'text', title: 'Nazwisko', variable: 'surname'}
+            {type: 'checkbox', title: language.active, variable: 'active'},
+            {type: 'text', title: language.username, variable: 'username'},
+            {type: 'text', title: language.name_person, variable: 'name'},
+            {type: 'text', title: language.surname, variable: 'surname'}
         ];
-        openModalBox('Dane do wyszukania', fields, 'Szukaj', function(item){
+        openModalBox(language.search_data, fields, language.search, function(item){
             item.controller = 'AdminPanelUsers';
             item.task = 'findUsers';
             datatable.setDatasource({
@@ -34,14 +34,14 @@ function usersTab(){
             });
         });
     });
-    datatable.addActionButton('Dodaj', function(){
+    datatable.addActionButton(language.add, function(){
         var fields = [
-            {type: 'text', title: 'Nazwa Użytkonika', variable: 'username'},
-            {type: 'text', title: 'Imie', variable: 'name'},
-            {type: 'text', title: 'Nazwisko', variable: 'surname'},
-            {type: 'text', title: 'Hasło', variable: 'password'}
+            {type: 'text', title: language.username, variable: 'username'},
+            {type: 'text', title: language.name_person, variable: 'name'},
+            {type: 'text', title: language.surname, variable: 'surname'},
+            {type: 'text', title: language.password, variable: 'password'}
         ];
-        openModalBox('Nowy użytkownik', fields, 'Zapisz', function(data){
+        openModalBox(language.new_user, fields, language.save, function(data){
             RestApi.post('AdminPanelUsers', 'saveUser', data,
             function(response){
                 console.log(response);
@@ -53,14 +53,14 @@ function usersTab(){
             });
         });
     });
-    datatable.addActionButton('Edytuj', function(selected){
+    datatable.addActionButton(language.edit, function(selected){
         if(selected !== undefined){
             var fields = [
-                {type: 'text', title: 'Nazwa Użytkonika', variable: 'username'},
-                {type: 'text', title: 'Imie', variable: 'name'},
-                {type: 'text', title: 'Nazwisko', variable: 'surname'}
+                {type: 'text', title: language.username, variable: 'username'},
+                {type: 'text', title: language.name_person, variable: 'name'},
+                {type: 'text', title: language.surname, variable: 'surname'}
             ];
-            openModalBox('Edytuj użytkownika', fields, 'Zapisz', function(data){
+            openModalBox(language.edit_user, fields, language.save, function(data){
                 RestApi.post('AdminPanelUsers', 'saveUser', data,
                 function(response){
                     console.log(response);
@@ -73,19 +73,19 @@ function usersTab(){
             }, selected);
         }
         else{
-            alert('Wybierz użytkownika.')
+            alert(language.select_user)
         }
     });
-    datatable.addActionButton('Zmień hasło', function(selected){
+    datatable.addActionButton(language.change_password, function(selected){
         if(selected !== undefined){
             var item = {
                 id: selected.id,
                 username: selected.username
             }
             var fields = [
-                {type: 'text', title: 'Nowe Hasło', variable: 'password'}
+                {type: 'text', title: language.new_password, variable: 'password'}
             ];
-            openModalBox('Zmień Hasło', fields, 'Zapisz', function(data){
+            openModalBox(language.change_password, fields, language.save, function(data){
                 RestApi.post('AdminPanelUsers', 'changeUserPassword', data,
                 function(response){
                     var data = JSON.parse(response);
@@ -99,10 +99,10 @@ function usersTab(){
             }, item);
         }
         else{
-            alert('Wybierz użytkownika.')
+            alert(language.select_user)
         }
     });
-    datatable.addActionButton('Zmień Status', function(selected){
+    datatable.addActionButton(language.change_status, function(selected){
         if(selected !== undefined){
             RestApi.post('AdminPanelUsers', 'changeUserStatus', selected,
                 function(response){
@@ -117,14 +117,14 @@ function usersTab(){
                 });
         }
         else{
-            alert('Wybierz użytkownika.')
+            alert(language.select_user)
         }
     });
     
     return div;
 }
 
-function privilagesTab(){
+function privilagesTab(language){
     var user = {id: 0};
     var container = document.createElement('div');
     
@@ -135,7 +135,7 @@ function privilagesTab(){
             var option = document.createElement('option');
             option.selected = true;
             option.disabled = true;
-            option.textContent = 'Wybierz użytkownika';
+            option.textContent = language.select_user;
             selectUser.appendChild(option);
             for(var i = 0; data.length > i; i++){
                 var item = data[i];
@@ -155,8 +155,8 @@ function privilagesTab(){
     var config = {
         columns : [
             { title: 'ID', variable: 'id'},
-            { title: 'Active', variable: 'active'},
-            { title: 'Nazwa', variable: 'privilage'}
+            { title: language.active, variable: 'active'},
+            { title: language.name, variable: 'privilage'}
         ],
         dataSource : { 
             method: 'post', 
@@ -169,7 +169,7 @@ function privilagesTab(){
         }
     };
     var datatable = new Datatable(tableDiv, config);
-    datatable.addActionButton('Dodaj', function(){
+    datatable.addActionButton(language.add, function(){
         RestApi.get('AdminPanelUsers', 'getPrivilagesList', {}, 
         function(response){
             var data = JSON.parse(response);
@@ -182,9 +182,9 @@ function privilagesTab(){
                 options.push(option);
             });
             var fields = [
-                {type: 'select', title: 'Uprawnienie', variable: 'privilage', options: options}
+                {type: 'select', title: language.privilage, variable: 'privilage', options: options}
             ];
-            openModalBox('Dodaj uprawnienie', fields, 'Zapisz', function(data){
+            openModalBox(language.add_privilage, fields, language.save, function(data){
                 if(data.privilage !== undefined){
                     data.id_user = user.id;
                     RestApi.post('AdminPanelUsers', 'addPrivilage', data, function(response){
@@ -194,14 +194,14 @@ function privilagesTab(){
                     });
                 }
                 else{
-                    console.log('Wybierz Użytkownika')
+                    console.log(language.select_user)
                 }
 
             });
         })
         
     });
-    datatable.addActionButton('Zmień Status', function(selected){
+    datatable.addActionButton(language.change_status, function(selected){
         if(selected !== undefined){
             var item = {
                 id: selected.id
@@ -215,7 +215,7 @@ function privilagesTab(){
             });
         }
         else{
-            alert('Wybierz uprawnienie.')
+            alert(language.select_privilage)
         }
     });
     

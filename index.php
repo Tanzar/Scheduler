@@ -7,6 +7,12 @@
     use Tanweb\Config\Scripts as Scripts;
     use Tanweb\Config\INI\AppConfig as AppConfig;
     use Tanweb\Session as Session;
+    use Tanweb\Config\INI\Languages as Languages;
+    use Tanweb\Container as Container;
+    
+    $languages = Languages::getInstance();
+    $names = $languages->get('interface');
+    $interface = new Container($names);
 ?>
 <!DOCTYPE html>
 <!--
@@ -33,7 +39,7 @@ This code is free to use, just remember to give credit.
             <?php Scripts::run('topMenu.php'); ?>
         </header>
         <div class="side-menu">
-            <button id="my_data">Moje Dane</button>
+            <button id="my_data"><?php echo $interface->getValue('my_data'); ?></button>
         </div>
         <div class="page-contents">
             <?php 
@@ -51,5 +57,9 @@ This code is free to use, just remember to give credit.
         ?>
     </body>
     <script>
+        RestApi.getInterfaceNamesPackage(function(package){
+            console.log(package);
+        });
+        
     </script>
 </html>

@@ -74,25 +74,33 @@ class Database {
     }
     
     public static function rollbackAll() : void{
-        $instances = self::$instances->toArray();
-        foreach($instances as $database){
-            $database->rollback();
+        if(isset(self::$instances)){
+            $instances = self::$instances->toArray();
+            foreach($instances as $database){
+                $database->rollback();
+            }
         }
     }
     
     public static function finalizeAll() : void{
-        $instances = self::$instances->toArray();
-        foreach($instances as $database){
-            $database->finalize();
+        if(isset(self::$instances)){
+            $instances = self::$instances->toArray();
+            foreach($instances as $database){
+                $database->finalize();
+            }
         }
     }
     
     public function rollback(){
-        $this->pdo->rollBack();
+        if(isset($this->pdo)){
+            $this->pdo->rollBack();
+        }
     }
     
     public function finalize(){
-        $this->pdo->commit();
+        if(isset($this->pdo)){
+            $this->pdo->commit();
+        }
     }
     
     /**

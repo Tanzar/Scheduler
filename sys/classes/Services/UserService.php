@@ -24,24 +24,24 @@ class UserService{
     }
     
     public function getAll() : Container {
-        $users = $this->userDataAccess->getAllUsers();
-        return $this->parseUsers($users);
+        return $this->userDataAccess->getAllUsers();
+    }
+    
+    public function getByUsername(string $username) : Container {
+        return $this->userDataAccess->getUserByUsername($username);
     }
     
     public function findUsers(Container $conditions) : Container{
-        $users = $this->userDataAccess->findUsers($conditions);
-        return $this->parseUsers($users);
+        return $this->userDataAccess->findUsers($conditions);
     }
     
     public function addUser(Container $data) : int{
-        $user = new User($data->toArray());
-        $id = $this->userDataAccess->create($user);
+        $id = $this->userDataAccess->create($data);
         return $id;
     }
     
     public function updateUser(Container $data){
-        $user = new User($data->toArray());
-        $this->userDataAccess->updateUser($user);
+        $this->userDataAccess->updateUser($data);
     }
     
     public function changePassword(Container $data){
@@ -60,21 +60,12 @@ class UserService{
             $username = $data->getValue('username');
             $user = $this->userDataAccess->getUserByUsername($username);
         }
-        $active = $user->getActive();
+        $active = $user->getValue('active');
         if($active){
-            $this->userDataAccess->deactivate($user->getId());
+            $this->userDataAccess->deactivate($user->getValue('id'));
         }
         else{
-            $this->userDataAccess->activate($user->getId());
+            $this->userDataAccess->activate($user->getValue('id'));
         }
-    }
-    
-    private function parseUsers(Users $users) : Container {
-        $result = new Container();
-        foreach ($users->toArray() as $user){
-            $item  = $user->toArray();
-            $result->add($item);
-        }
-        return $result;
     }
 }

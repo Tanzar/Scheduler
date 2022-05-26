@@ -10,8 +10,7 @@ use Services\Exceptions\PrivilageException as PrivilageException;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\AppConfig as AppConfig;
 use Data\Access\PrivilageDataAccess as PrivilageDataAccess;
-use Data\Containers\Privilages as Privilages;
-use Data\Entities\Privilage as Privilage;
+use Tanweb\Config\INI\Languages as Languages;
 
 /**
  * Description of PrivilagesService
@@ -33,24 +32,20 @@ class PrivilagesService{
     }
     
     public function getUserPrivilages(int $id) : Container{
-        $privilages = $this->privilageDataAccess->getPrivilagesByUserID($id);
-        return $this->parseData($privilages);
+        return $this->privilageDataAccess->getPrivilagesByUserID($id);
     }
     
     public function getPrivilageByID(int $id) : Container {
-        $privilage = $this->privilageDataAccess->getPrivilageByID($id);
-        return new Container($privilage);
+        return $this->privilageDataAccess->getPrivilageByID($id);
     }
     
     public function addPrivilage(Container $data) : int {
-        $arr = $data->toArray();
-        $privilage = new Privilage($arr);
-        return $this->privilageDataAccess->add($privilage);
+        return $this->privilageDataAccess->add($data);
     }
     
     public function changeStatus(int $id){
         $privilage = $this->privilageDataAccess->getPrivilageByID($id);
-        $active = $privilage->getActive();
+        $active = $privilage->getValue('active');
         if($active){
             $this->deactivate($privilage);
         }
@@ -59,11 +54,12 @@ class PrivilagesService{
         }
     }
     
-    private function deactivate(Privilage $privilage){
-        $id = $privilage->getId();
-        if($privilage->is('admin')){
+    private function deactivate(Container $privilage){
+        $id = $privilage->getValue('id');
+        if($privilage->getValue('privilage') === 'admin'){
             if($this->isLastAdmin()){
-                throw new PrivilageException('Cannot disable last admin.');
+                $languages = Languages::getInstance();
+                throw new PrivilageException($languages->get('last_admin'));
             }
             else{
                 $this->privilageDataAccess->deactivate($id);
@@ -84,15 +80,4 @@ class PrivilagesService{
         }
     }
     
-    private function parseData(Privilages $data) : Container{
-        $container = new Container();
-        foreach($data->toArray() as $item){
-            $container->add($this->parsePrivilage($item));
-        }
-        return $container;
-    }
-    
-    private function parsePrivilage(Privilage $item) : array {
-        return $item->toArray();
-    }
 }

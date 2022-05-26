@@ -143,6 +143,10 @@ abstract class Controller {
         return $config->getValue($index);
     }
     
+    protected function currentUserHavePrivilage(string $privilage) : bool {
+        return $this->security->userHavePrivilage($privilage);
+    }
+    
     protected function throwException($msg){
         throw new ControllerException($msg);
     }

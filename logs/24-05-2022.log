@@ -135,3 +135,62 @@
 [2022-05-24  11:03:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
 [2022-05-24  11:03:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
 [2022-05-24  11:04:24] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  13:07:45] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-24  13:07:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-05-24  13:07:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-05-24  13:07:53] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-05-24  13:07:53] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-05-24  13:07:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-05-24  13:07:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-05-24  13:08:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-05-24  13:08:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-05-24  13:08:05] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-05-24  13:08:05] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '0'
+[2022-05-24  13:08:16] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-05-24  13:08:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username like '%ko%'
+[2022-05-24  13:08:22] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-05-24  13:08:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-05-24  13:08:24] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: changeUserStatusData: {}
+[2022-05-24  13:08:24] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  id = '4'
+[2022-05-24  13:08:24] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE user SET active='1' WHERE id = '4'
+[2022-05-24  13:08:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-05-24  13:08:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-05-24  13:08:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: changeUserStatusData: {}
+[2022-05-24  13:08:28] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  id = '4'
+[2022-05-24  13:08:28] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE user SET active='0' WHERE id = '4'
+[2022-05-24  13:08:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-05-24  13:08:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-05-24  13:08:36] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel.php?
+[2022-05-24  13:08:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-05-24  13:08:37] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-05-24  13:08:38] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-05-24  13:08:38] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-05-24  13:08:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-05-24  13:08:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '1'
+[2022-05-24  13:08:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: changePrivilageStatusData: {}
+[2022-05-24  13:08:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id = '4'
+[2022-05-24  13:08:43] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE privilages SET active='1' WHERE id = '4'
+[2022-05-24  13:08:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-05-24  13:08:44] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '1'
+[2022-05-24  13:08:46] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: changePrivilageStatusData: {}
+[2022-05-24  13:08:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id = '4'
+[2022-05-24  13:08:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  privilage = 'admin'
+[2022-05-24  13:08:46] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE privilages SET active='0' WHERE id = '4'
+[2022-05-24  13:08:47] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-05-24  13:08:47] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '1'
+[2022-05-24  13:08:53] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:15:27] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:16:10] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:16:39] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:17:15] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:17:29] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:18:15] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:21:24] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:21:27] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:21:57] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:22:25] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:22:52] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:23:47] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:26:41] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:26:48] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-05-24  14:30:16] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?

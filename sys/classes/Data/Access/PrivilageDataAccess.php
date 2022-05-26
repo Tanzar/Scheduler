@@ -7,8 +7,6 @@
 namespace Data\Access;
 
 use Data\Access\DataAccess as DataAccess;
-use Data\Containers\Privilages as Privilages;
-use Data\Entities\Privilage as Privilage;
 use Tanweb\Container as Container;
 use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
 use Data\Exceptions\PrivilageException as PrivilageException;
@@ -24,14 +22,14 @@ class PrivilageDataAccess extends DataAccess{
         return 'scheduler';
     }
     
-    public function getPrivilagesByUserID(int $idUser) : Privilages {
+    public function getPrivilagesByUserID(int $idUser) : Container {
         $sql = new MysqlBuilder();
         $sql->select('privilages')->where('id_user', $idUser);
         $data = $this->select($sql);
-        return $this->parsePrivilages($data);
+        return $data;
     }
     
-    public function getPrivilageByID(int $id) : Privilage {
+    public function getPrivilageByID(int $id) : Container {
         $sql = new MysqlBuilder();
         $sql->select('privilages')->where('id', $id);
         $data = $this->select($sql);
@@ -41,25 +39,24 @@ class PrivilageDataAccess extends DataAccess{
         if($data->getLength() > 1){
             throw new PrivilageException('privilage id column values are not unique.');
         }
-        $item = $data->getValue(0);
-        return new Privilage($item);
+        return new Container($data->getValue(0));
     }
     
-    public function add(Privilage $privilage) : int{
-        $idUser = $privilage->getIdUser();
-        $name = $privilage->getPrivilage();
+    public function add(Container $privilage) : int{
+        $idUser = $privilage->getValue('id_user');
+        $name = $privilage->getValue('privilage');
         $old = $this->getUserPrivilage($idUser, $name);
         if($old === false){
             return $this->insertNew($privilage);
         }
         else{
-            $id = $old->getId();
+            $id = $old->getValue('id');
             $this->activate($id);
             return $id;
         }
     }
     
-    private function getUserPrivilage(int $idUser, string $privilage){
+    private function getUserPrivilage(int $idUser, string $privilage) : Container{
         $sql = new MysqlBuilder();
         $sql->select('privilages')->where('id_user', $idUser)->and()
                 ->where('privilage', $privilage);
@@ -68,16 +65,15 @@ class PrivilageDataAccess extends DataAccess{
             return false;
         }
         else{
-            $item = $data->getValue(0);
-            return new Privilage($item);
+            return new Container($data->getValue(0));
         }
     }
     
-    private function insertNew(Privilage $privilage) : int{
+    private function insertNew(Container $privilage) : int{
         $sql = new MysqlBuilder();
         $sql->insert('privilages')
-                ->into('privilage', $privilage->getPrivilage())
-                ->into('id_user', $privilage->getIdUser());
+                ->into('privilage', $privilage->getValue('privilage'))
+                ->into('id_user', $privilage->getValue('id_user'));
         return $this->insert($sql);
         
     }
@@ -102,14 +98,4 @@ class PrivilageDataAccess extends DataAccess{
         $data = $this->select($sql);
         return $data->getLength();
     }
-    
-    private function parsePrivilages(Container $data) : Privilages{
-        $privilages = new Privilages();
-        foreach($data->toArray() as $item){
-            $privilage = new Privilage($item);
-            $privilages->add($privilage);
-        }
-        return $privilages;
-    }
-
 }

@@ -14,6 +14,7 @@ use Tanweb\Session as Session;
 use Tanweb\Security\SecurityException as SecurityException;
 use Tanweb\Security\Encrypter as Encrypter;
 use Tanweb\Logger\Logger as Logger;
+use Tanweb\Config\INI\Languages as Languages;
 
 /**
  * Class responsible for managing access to application.
@@ -112,7 +113,8 @@ class Security {
         if(!$this->userHaveAnyPrivilage($privilages)){
             $logger = Logger::getInstance();
             $logger->logSecurity("Access Denied: user don't have required privilages.");
-            $this->throwException("Access Denied: You don't have required privilages.");
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('access_denied'));
         }
     }
     
@@ -148,7 +150,8 @@ class Security {
                 Session::setUser($username);
             }
             else{
-                $this->throwException('wrong username or password.');
+                $languages = Languages::getInstance();
+                $this->throwException($languages->get('wrong_cridentials'));
             }
         }
         else{
@@ -206,7 +209,8 @@ class Security {
                     $this->usernameColumn . ' have only unique names.');
         }
         if($users->getLength() === 0){
-            $this->throwException('user ' . $username . ' not found.');
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('wrong_cridentials'));
         }
         $user = $users->getValue(0);
         return new Container($user);
