@@ -16,7 +16,7 @@ try{
     $language = $request->get('language');
     Session::setLanguage($language);
     echo '<script>';
-    $path = Server::getIndexPath();
+    $path = Server::getRefferUrl();
     echo 'window.location.replace("' . $path . '")';
     echo '</script>';
 }

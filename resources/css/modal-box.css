@@ -9,7 +9,7 @@ This code is free to use, just remember to give credit.
 /* Blocker for page in background */
 .modal-box-blocker {
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 100; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -57,7 +57,7 @@ This code is free to use, just remember to give credit.
 }
 
 .modal-box-footer {
-    padding: 2px 16px;
+    padding: 10px 16px;
     background-color: #ffffff;
     min-height: 20px;
     border-bottom-left-radius: inherit;

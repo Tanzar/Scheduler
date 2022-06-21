@@ -9,7 +9,7 @@ namespace Controllers;
 use Controllers\Base\Controller as Controller;
 use Tanweb\Container as Container;
 use Services\UserService as UserService;
-use Services\PrivilagesService as PrivilagesService;
+use Tanweb\Config\INI\AppConfig as AppConfig;
 use Tanweb\Config\INI\Languages as Languages;
 
 /**
@@ -19,29 +19,37 @@ use Tanweb\Config\INI\Languages as Languages;
  */
 class AdminPanelUsers extends Controller{
     private UserService $userService;
-    private PrivilagesService $privilagesService;
     
     public function __construct() {
         $this->userService = new UserService();
-        $this->privilagesService = new PrivilagesService();
         $privilages = new Container(['admin']);
         parent::__construct($privilages);
     }
     
     public function getAllUsers() {
-        $result = $this->userService->getAll();
+        $result = $this->userService->getAllUsers();
         $this->setResponse($result);
     }
     
     public function getPrivilagesList(){
-        $result = $this->privilagesService->getConfigPrivilages();
+        $appconfig = AppConfig::getInstance();
+        $privilages = $appconfig->getSecurity();
+        $arr = $privilages->get('privilages');
+        $result = new Container($arr);
         $this->setResponse($result);
     }
     
     public function getUserPrivilages(){
         $data = $this->getRequestData();
-        $id = $data->getValue('id_user');
-        $result = $this->privilagesService->getUserPrivilages($id);
+        $id = $data->get('id_user');
+        $result = $this->userService->getUserPrivilages($id);
+        $this->setResponse($result);
+    }
+    
+    public function getUserEmploymentPeriods(){
+        $data = $this->getRequestData();
+        $id = $data->get('id_user');
+        $result = $this->userService->getUserEmploymentPeriods($id);
         $this->setResponse($result);
     }
     
@@ -51,23 +59,34 @@ class AdminPanelUsers extends Controller{
         $this->setResponse($data);
     }
     
-    public function addPrivilage(){
+    public function savePrivilage(){
         $data = $this->getRequestData();
-        $this->privilagesService->addPrivilage($data);
+        $id = $this->userService->savePrivilage($data);
         $response = new Container();
+        $response->add($id, 'id');
         $languages = Languages::getInstance();
-        $response->add($languages->get('privilage_added'), 'message');
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
+    public function saveEmploymentPeriod(){
+        $data = $this->getRequestData();
+        $id = $this->userService->saveEmploymentPeriod($data);
+        $response = new Container();
+        $response->add($id, 'id');
+        $languages = Languages::getInstance();
+        $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
     
     public function saveUser(){
         $data = $this->getRequestData();
-        if($data->isValueSet('id')){
-            $this->userService->updateUser($data);
-        }
-        else{
-            $this->userService->addUser($data);
-        }
+        $languages = Languages::getInstance();
+        $id = $this->userService->saveUser($data);
+        $response = new Container();
+        $response->add($id, 'id');
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
     }
     
     public function changeUserPassword(){
@@ -81,20 +100,30 @@ class AdminPanelUsers extends Controller{
     
     public function changeUserStatus(){
         $data = $this->getRequestData();
-        $this->userService->changeStatus($data);
+        $this->userService->changeUserStatus($data);
         $response = new Container();
         $languages = Languages::getInstance();
-        $response->add($languages->get('status_change'), 'message');
+        $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
     
     public function changePrivilageStatus(){
         $data = $this->getRequestData();
-        $id = $data->getValue('id');
-        $this->privilagesService->changeStatus($id);
+        $id = $data->get('id');
+        $this->userService->changePrivilageStatus($id);
         $response = new Container();
         $languages = Languages::getInstance();
-        $response->add($languages->get('status_change'), 'message');
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
+    public function changeEmploymentPeriodStatus(){
+        $data = $this->getRequestData();
+        $id = $data->get('id');
+        $this->userService->changeEmploymentStatus($id);
+        $response = new Container();
+        $languages = Languages::getInstance();
+        $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
 }

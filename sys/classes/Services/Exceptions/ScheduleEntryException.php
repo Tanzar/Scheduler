@@ -4,19 +4,19 @@
  * This code is free to use, just remember to give credit.
  */
 
-namespace Data\Exceptions;
+namespace Services\Exceptions;
 
 use Tanweb\TanwebException as TanwebException;
 
 /**
- * Description of PrivilageException
+ * Description of ScheduleEntryException
  *
  * @author Tanzar
  */
-class PrivilageException extends TanwebException{
-    //put your code here
+class ScheduleEntryException extends TanwebException{
+    
     public function errorMessage(): string {
-        return 'Privilages error: ' . $this->getMessage();
+        return $this->getMessage();
     }
 
 }

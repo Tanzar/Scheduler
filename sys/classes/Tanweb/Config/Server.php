@@ -36,7 +36,7 @@ class Server {
         $appConfig = AppConfig::getInstance();
         $config = $appConfig->getAppConfig();
         if($config->isValueSet('name')){
-            $projectName = $config->getValue('name');
+            $projectName = $config->get('name');
             $path = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT') . '/' . $projectName . '/';
         }
         else{
@@ -55,7 +55,7 @@ class Server {
         $appConfig = AppConfig::getInstance();
         $config = $appConfig->getAppConfig();
         if($config->isValueSet('name')){
-            $appName = $config->getValue('name');
+            $appName = $config->get('name');
             return self::createServerURL($appName);
         }
         else{
@@ -130,5 +130,9 @@ class Server {
         $url .= filter_input(INPUT_SERVER, 'HTTP_HOST');
         $url .= filter_input(INPUT_SERVER, 'REQUEST_URI');
         return $url;
+    }
+    
+    public static function getRefferUrl(){
+        return filter_input(INPUT_SERVER, 'HTTP_REFERER');
     }
 }

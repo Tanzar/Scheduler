@@ -25,12 +25,12 @@ class EmailConfig {
     public function __construct() {
         $appConfig = AppConfig::getInstance();
         $config = $appConfig->getMailer();
-        $this->port = $config->getValue('port');
-        $this->host = $config->getValue('host');
-        $this->user = $config->getValue('user');
-        $this->pass = $config->getValue('pass');
-        $this->displayUser = $config->getValue('displayUser');
-        $this->address = $config->getValue('email');
+        $this->port = $config->get('port');
+        $this->host = $config->get('host');
+        $this->user = $config->get('user');
+        $this->pass = $config->get('pass');
+        $this->displayUser = $config->get('displayUser');
+        $this->address = $config->get('email');
     }
     
     public function getPort(): int {

@@ -44,6 +44,12 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 if(item[field.variable] !== undefined){
                     input.value = item[field.variable];
                 }
+                else{
+                    item[input.variable] = input.value;
+                }
+                if(field.limit !== undefined){
+                    input.setAttribute('maxLength', field.limit);
+                }
                 break;
             case 'number':
                 var input = document.createElement('input');
@@ -55,8 +61,20 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 input.onchange = function(){
                     item[this.variable] = this.value;
                 }
+                if(field.max !== undefined){
+                    input.setAttribute('max', field.max);
+                }
+                if(field.min !== undefined){
+                    input.setAttribute('min', field.min);
+                }
+                if(field.value !== undefined){
+                    input.value = field.value;
+                }
                 if(item[field.variable] !== undefined){
                     input.value = item[field.variable];
+                }
+                else{
+                    item[input.variable] = input.value;
                 }
                 break;
             case 'select':
@@ -83,6 +101,9 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 if(item[field.variable] !== undefined){
                     select.value = item[field.variable];
                 }
+                else{
+                    item[select.variable] = select.value;
+                }
                 break;
             case 'checkbox':
                 var check = document.createElement('input');
@@ -103,10 +124,96 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 if(item[field.variable] !== undefined){
                     check.checked = item[field.variable];
                 }
+                else{
+                    if(check.checked){
+                        item[check.variable] = 1;
+                    }
+                    else{
+                        item[check.variable] = 0;
+                    }
+                }
                 break;
             case 'display':
                 var text = document.createTextNode(field.title);
                 container.appendChild(text);
+                break;
+            case 'color':
+                var input = document.createElement('input');
+                input.setAttribute('type', 'color');
+                var label = document.createElement('label');
+                label.textContent = field.title + ' ';
+                container.appendChild(label);
+                container.appendChild(input);
+                input.variable = field.variable;
+                input.onchange = function(){
+                    item[this.variable] = this.value;
+                }
+                if(item[field.variable] !== undefined){
+                    input.value = item[field.variable];
+                }
+                else{
+                    item[input.variable] = input.value;
+                }
+                break;
+            case 'date':
+                var input = document.createElement('input');
+                input.setAttribute('type', 'date');
+                var label = document.createElement('label');
+                label.textContent = field.title + ' ';
+                container.appendChild(label);
+                container.appendChild(input);
+                input.variable = field.variable;
+                input.onchange = function(){
+                    item[this.variable] = this.value;
+                }
+                if(item[field.variable] !== undefined){
+                    input.value = item[field.variable];
+                }
+                else{
+                    var date = new Date();
+                    date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+                    input.value = date.toJSON().slice(0,10);
+                    item[input.variable] = input.value;
+                }
+                break;
+            case 'dateTime':
+                var input = document.createElement('input');
+                input.setAttribute('type', 'datetime-local');
+                var label = document.createElement('label');
+                label.textContent = field.title + ' ';
+                container.appendChild(label);
+                container.appendChild(input);
+                input.variable = field.variable;
+                input.onchange = function(){
+                    item[this.variable] = this.value.replace('T', ' ');
+                }
+                if(item[field.variable] !== undefined){
+                    var datetime = new Date(item[field.variable]);
+                    datetime.setMinutes(datetime.getMinutes() - datetime.getTimezoneOffset());
+                    input.value = datetime.toISOString().slice(0,16);
+                }
+                else{
+                    item[input.variable] = input.value;
+                }
+                break;
+            case 'time':
+                var input = document.createElement('input');
+                input.setAttribute('type', 'time');
+                var label = document.createElement('label');
+                label.textContent = field.title + ' ';
+                container.appendChild(label);
+                container.appendChild(input);
+                input.variable = field.variable;
+                input.onchange = function(){
+                    item[this.variable] = this.value;
+                }
+                if(item[field.variable] !== undefined){
+                    input.value = item[field.variable];
+                }
+                else{
+                    input.value = '08:00';
+                    item[input.variable] = input.value;
+                }
                 break;
         }
         modalBody.appendChild(container);

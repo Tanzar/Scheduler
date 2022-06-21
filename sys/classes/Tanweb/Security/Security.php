@@ -40,21 +40,21 @@ class Security {
     public function __construct() {
         $appconfig = AppConfig::getInstance();
         $config = $appconfig->getSecurity();
-        $this->isEnabled = $config->getValue('enable');
-        $this->usePassword = $config->getValue('usePasswords');
+        $this->isEnabled = $config->get('enable');
+        $this->usePassword = $config->get('usePasswords');
         $this->initializeDatabase($config);
     }
     
     private function initializeDatabase(Container $config){
-        $this->dbIndex = $config->getValue('database_index');
-        $this->usersTable = $config->getValue('users_table');
-        $this->usersIndex = $config->getValue('index_column');
-        $this->usernameColumn = $config->getValue('username_column');
-        $this->passwordColumn = $config->getValue('password_column');
-        $this->privilageTable = $config->getValue('privilige_table');
-        $this->privilageUserIndex = $config->getValue('privilage_user_index');
-        $this->privilageColumn = $config->getValue('privilage_column');
-        $privilages = $config->getValue('privilages');
+        $this->dbIndex = $config->get('database_index');
+        $this->usersTable = $config->get('users_table');
+        $this->usersIndex = $config->get('index_column');
+        $this->usernameColumn = $config->get('username_column');
+        $this->passwordColumn = $config->get('password_column');
+        $this->privilageTable = $config->get('privilige_table');
+        $this->privilageUserIndex = $config->get('privilage_user_index');
+        $this->privilageColumn = $config->get('privilage_column');
+        $privilages = $config->get('privilages');
         $this->privilagesNames = new Container($privilages);
     }
     
@@ -143,9 +143,9 @@ class Security {
     
     private function verifyPassword(Container $user, string $password){
         if(isset($password)){
-            $storedPassword = $user->getValue($this->passwordColumn);
+            $storedPassword = $user->get($this->passwordColumn);
             if(Encrypter::areSame($storedPassword, $password)){
-                $username = $user->getValue($this->usernameColumn);
+                $username = $user->get($this->usernameColumn);
                 $this->logout();
                 Session::setUser($username);
             }
@@ -178,7 +178,7 @@ class Security {
     
     public function getUserPrivilages() : Container {
         $user = $this->getUserDetails();
-        $userIndex = $user->getValue($this->usersIndex);
+        $userIndex = $user->get($this->usersIndex);
         $sql = new MysqlBuilder();
         $sql->select($this->privilageTable)->where($this->privilageUserIndex, $userIndex);
         $database = Database::getInstance($this->dbIndex);
@@ -203,16 +203,16 @@ class Security {
         $sql->select($this->usersTable)->where($this->usernameColumn, $username);
         $database = Database::getInstance($this->dbIndex);
         $users = $database->select($sql);
-        if($users->getLength() > 1){
+        if($users->length() > 1){
             $this->throwException('usernames are not unique, make sure table '
                     . ''. $this->usersTable . ' column ' . 
                     $this->usernameColumn . ' have only unique names.');
         }
-        if($users->getLength() === 0){
+        if($users->length() === 0){
             $languages = Languages::getInstance();
             $this->throwException($languages->get('wrong_cridentials'));
         }
-        $user = $users->getValue(0);
+        $user = $users->get(0);
         return new Container($user);
     }
     

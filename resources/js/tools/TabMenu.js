@@ -24,7 +24,9 @@ function TabMenu(div){
             while(tab.firstChild){
                 tab.removeChild(tab.firstChild);
             }
-            tab.appendChild(contents);
+            contents.forEach(item => {
+                tab.appendChild(item);
+            });
         }
         this.buttonsDiv.appendChild(button);
         

@@ -25,7 +25,7 @@ class Pages{
      */
     public static function getURL(string $pageFile) : string{
         $files = Server::getFilesPaths(self::$dir);
-        $path = $files->getValue($pageFile);
+        $path = $files->get($pageFile);
         $url = Server::getRootURL();
         $url .= $path;
         return $url;

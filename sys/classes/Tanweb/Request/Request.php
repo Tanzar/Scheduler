@@ -72,7 +72,7 @@ class Request {
     
     public function get(string $index = null){
         if(isset($index)){
-            return $this->data->getValue($index);
+            return $this->data->get($index);
         }
         else{
             return $this->data;

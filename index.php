@@ -25,7 +25,7 @@ This code is free to use, just remember to give credit.
             <?php
                 $appconfig = AppConfig::getInstance();
                 $cfg = $appconfig->getAppConfig();
-                echo $cfg->getValue('name');
+                echo $cfg->get('name');
             ?>
         </title>
         <?php
@@ -39,9 +39,9 @@ This code is free to use, just remember to give credit.
             <?php Scripts::run('topMenu.php'); ?>
         </header>
         <div class="side-menu">
-            <button id="my_data"><?php echo $interface->getValue('my_data'); ?></button>
+            <button id="my_data" class="standard-button"><?php echo $interface->get('my_data'); ?></button>
         </div>
-        <div class="page-contents">
+        <div class="page-contents-centered">
             <?php 
                 $username = Session::getUsername();
                 if($username === ''){

@@ -7,9 +7,9 @@
 namespace Controllers;
 
 use Controllers\Base\Controller as Controller;
-use Services\ActivityService as ActivityService;
 use Services\ScheduleService as ScheduleService;
 use Tanweb\Container as Container;
+use Tanweb\Config\INI\Languages as Languages;
 
 
 /**
@@ -18,17 +18,33 @@ use Tanweb\Container as Container;
  * @author Tanzar
  */
 class AdminPanelSchedule extends Controller{
-    private ActivityService $activity;
     private ScheduleService $schedule;
     
     
     public function __construct() {
-        $this->activity = new ActivityService();
         $this->schedule = new ScheduleService();
         $privilages = new Container();
         $privilages->add('admin');
         parent::__construct($privilages);
     }
     
+    public function getUserEntries(){
+        $data = $this->getRequestData();
+        $username = $data->get('username');
+        $start = $data->get('startDate');
+        $end = $data->get('endDate');
+        $response = $this->schedule->getAllUserEntries($username, $start, $end);
+        $this->setResponse($response);
+    }
+    
+    public function changeEntryStatus(){
+        $data = $this->getRequestData();
+        $id = $data->get('id');
+        $this->schedule->changeEntryStatus($id);
+        $response = new Container();
+        $languages = Languages::getInstance();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
     
 }

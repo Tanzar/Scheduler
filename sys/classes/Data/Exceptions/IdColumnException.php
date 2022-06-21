@@ -9,14 +9,13 @@ namespace Data\Exceptions;
 use Tanweb\TanwebException as TanwebException;
 
 /**
- * Description of UserDataException
+ * Description of IdColumnException
  *
  * @author Tanzar
  */
-class UserDataException extends TanwebException {
+class IdColumnException extends TanwebException{
     
     public function errorMessage(): string {
-        return 'UserData error: ' . $this->getMessage();
+        return 'Id column for ' . $this->getMessage() . ' is not properly set.';
     }
-
 }

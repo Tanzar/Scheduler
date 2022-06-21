@@ -14,7 +14,7 @@ This code is free to use, just remember to give credit.
     background-color: #ddd;
 }
 
-.tab-menu button {
+.tab-menu-button {
     color: #000000;
     background-color: #ddd;
     border: none;
@@ -25,10 +25,17 @@ This code is free to use, just remember to give credit.
     border-radius: 0;
 }
 
-.tab-menu button:hover {
+.tab-menu-button:hover {
     background-color: #ccc;
 }
 
 .tab-menu-tab {
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tab-menu-tab-item {
+    margin: 5px;
 }

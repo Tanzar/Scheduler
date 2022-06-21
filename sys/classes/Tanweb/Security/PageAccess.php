@@ -55,7 +55,7 @@ class PageAccess {
         echo '<script>';
         echo 'console.log("' . $msg . '");';
         $languages = Languages::getInstance();
-        echo 'alert(' . $languages->get('redirect_index') . '");';
+        echo 'alert("' . $languages->get('redirect_index') . '");';
         $path = Server::getIndexPath();
         echo 'window.location.replace("' . $path . '")';
         echo '</script>';

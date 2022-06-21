@@ -34,7 +34,7 @@ class Container {
         }
     }
     
-    public function getValue(string $key){
+    public function get(string $key){
         if(isset($this->data[$key])){
             return $this->data[$key];
         }
@@ -70,16 +70,22 @@ class Container {
         }
     }
     
+    public function remove($key){
+        if(isset($this->data[$key])){
+            unset($this->data[$key]);
+        }
+    }
+    
     public function contains($value) : bool {
         return in_array($value, $this->data);
     }
     
-    public function getLength() : int{
+    public function length() : int{
         return Utility::count($this->data);
     }
     
     public function isEmpty() : bool {
-        $length = $this->getLength();
+        $length = $this->length();
         if($length === 0){
             return true;
         }

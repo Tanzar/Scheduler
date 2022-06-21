@@ -9,31 +9,30 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/' . $projectName . '/vendor/autoload.
 use Tanweb\Container as Container;
 use Tanweb\Config\Server as Server;
 use Tanweb\Config\Pages as Pages;
-use Tanweb\Config\INI\AppConfig as AppConfig;
 use Tanweb\Security\Security as Security;
+use Tanweb\Config\INI\Languages as Languages;
 
 try{
-    $appconfig = AppConfig::getInstance();
-    $config = $appconfig->getAppConfig();
-    $modules = new Container($config->getValue('modules'));
+    $languages = Languages::getInstance();
+    $modules = new Container($languages->get('modules'));
     $security = new Security();
     
     //--- INDEX ---//
     echo '<form action="' . Server::getIndexPath() . '">';
-    echo '<input type="submit" value="Index">';
+    echo '<input type="submit" class="standard-button" value="Index">';
     echo '</form>';
     
     //--- ADMIN PANEL ---//
     if($security->userHaveAnyPrivilage(new Container(['admin']))){
-        echo '<form action="' . Pages::getURL('adminPanel.php') . '">';
-        echo '<input type="submit" value="' . $modules->getValue('admin') . '">';
+        echo '<form action="' . Pages::getURL('adminPanelUsers.php') . '">';
+        echo '<input type="submit" class="standard-button" value="' . $modules->get('admin') . '">';
         echo '</form>';
     }
     
     //--- SCHEDULE ---//
     if($security->userHaveAnyPrivilage(new Container(['admin', 'schedule_user', 'schedule_admin']))){
-        echo '<form action="' . Pages::getURL('schedule.php') . '">';
-        echo '<input type="submit" value="' . $modules->getValue('schedule') . '">';
+        echo '<form action="' . Pages::getURL('scheduleAll.php') . '">';
+        echo '<input type="submit" class="standard-button" value="' . $modules->get('schedule') . '">';
         echo '</form>';
     }
     

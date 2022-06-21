@@ -69,7 +69,7 @@ class AppConfig {
     
     public function getDatabase(string $index) : Container{
         if(isset($this->databases)){
-            $database = $this->databases->getValue($index);
+            $database = $this->databases->get($index);
             return new Container($database);
         }
         else{

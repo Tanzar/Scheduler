@@ -2,17 +2,19 @@
  * This code is free to use, just remember to give credit.
  */
 
-function Timetable(data, dayStart, dayEnd, groupBy, cellOnClick){
+function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, cellOnClick){
     
     dayStart.setHours(0,0,0,0);
     dayEnd.setHours(23,59,59,0);
     
     this.minutesPerPixel = 5;
-    this.separation = 5;
+    this.separation = 3;
     this.rangeStart = dayStart;
     this.rangeEnd = dayEnd;
     this.data = data;
     this.cellOnClick = cellOnClick;
+    this.div = div;
+    this.weekdayNames = weekdayNames;
     
     this.groupData = function(data){
         var rows = {};
@@ -52,7 +54,15 @@ function Timetable(data, dayStart, dayEnd, groupBy, cellOnClick){
             date.setDate(date.getDate() + i);
             var head = document.createElement('div');
             head.setAttribute('class', 'timetable-head');
-            head.textContent = date.getDate() + ' - ' + date.getMonth() + ' - ' + date.getFullYear();
+            var weekday = '';
+            if(date.getDay() === 0){
+                weekday = this.weekdayNames[7];
+            }
+            else{
+                weekday = this.weekdayNames[date.getDay()];
+            }
+            head.textContent = weekday + '  -  ' + date.getDate() + '.' + 
+                    (date.getMonth() + 1) + '.' + date.getFullYear();
             head.style.width = dayWidth + 'px';
             head.style.left = i * dayWidth + 'px';
             headers.push(head);
@@ -106,15 +116,13 @@ function Timetable(data, dayStart, dayEnd, groupBy, cellOnClick){
     }
     
     this.construct = function(){
-        var div = document.getElementById('timetable');
-        div.setAttribute('class', 'timetable');
+        this.div.setAttribute('class', 'timetable');
 
-        while(div.firstChild){
-            div.removedNode(div.firstChild);
+        while(this.div.firstChild){
+            this.div.removeChild(this.div.firstChild);
         }
 
-        div.style.maxWidth = this.countTotalWidth() + 'px';
-        return div;
+        this.div.style.maxWidth = this.countTotalWidth() + 'px';
     }
     
     this.createLines = function(Y, height){
@@ -145,12 +153,12 @@ function Timetable(data, dayStart, dayEnd, groupBy, cellOnClick){
     }
     
     this.load = function(){
-        var div = this.construct();
+        this.construct();
         
         var headers = this.createHeaders();
         
         headers.forEach(header => {
-            div.appendChild(header);
+            this.div.appendChild(header);
         });
         
         var groupedData = this.groupData(this.data);
@@ -168,14 +176,15 @@ function Timetable(data, dayStart, dayEnd, groupBy, cellOnClick){
             group.forEach(item => {
                 var start = new Date(item.start);
                 var end = new Date(item.end);
-                if(timetable.isInRange(start) && timetable.isInRange(end)){
+                if(timetable.isInRange(start) || timetable.isInRange(end)){
                     var cell = timetable.createEntryCell(item, Y);
-                    div.appendChild(cell);
+                    this.div.appendChild(cell);
                     if(cell.offsetHeight > height){
                         height = cell.offsetHeight;
                     }
                     cells.push(cell);
                 }
+                
             });
             Y += height + timetable.separation;
             cells.forEach(cell => {
@@ -187,10 +196,10 @@ function Timetable(data, dayStart, dayEnd, groupBy, cellOnClick){
         var lines = this.createLines(startY, Y);
         
         lines.forEach(line => {
-            div.insertBefore(line, div.firstChild);
+            this.div.insertBefore(line, this.div.firstChild);
         });
         
-        div.style.height = startY + Y + 'px';
+        this.div.style.height = startY + Y + 'px';
     }
     
     this.load();

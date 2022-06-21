@@ -28,25 +28,24 @@
         <?php
             echo Session::getUsername() . '<br>';
         ?>
-        <div>
-            <form action="<?php echo Scripts::get('changeLanguage.php'); ?>">
-                <?php echo $interface->getValue('language') . ': '; ?>
-                <select name="language">
-                    <?php
-                        $options = Languages::getLanguageOptions();
-                        foreach ($options as $option){
-                            echo '<option value="' . $option . '">' ;
-                            echo $option;
-                            echo '</option>';
-                        }
-                    ?>
-                </select>
-                <input type="submit" value="<?php echo $interface->getValue('save'); ?>">
-                
-            </form>
-            <form action="<?php echo Scripts::get('logout.php'); ?>">
-                <input type="submit" value="<?php echo $interface->getValue('logout'); ?>">
-            </form>
-        </div>
+        <form action="<?php echo Scripts::get('changeLanguage.php'); ?>">
+            <?php echo $interface->get('language') . ': '; ?>
+            <select name="language" class="standard-input">
+                <?php
+                    $options = Languages::getLanguageOptions();
+                    foreach ($options as $option){
+                        echo '<option value="' . $option . '" '
+                                . 'class="standard-button">' ;
+                        echo $option;
+                        echo '</option>';
+                    }
+                ?>
+            </select>
+            <input type="submit" class="standard-button" value="<?php echo $interface->get('save'); ?>">
+            
+        </form>
+        <form action="<?php echo Scripts::get('logout.php'); ?>">
+            <input type="submit" class="standard-button" value="<?php echo $interface->get('logout'); ?>">
+        </form>
     </div>
 </div>

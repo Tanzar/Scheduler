@@ -140,7 +140,7 @@ abstract class Controller {
     protected function getConfigValue(string $index){
         $appConfig = AppConfig::getInstance();
         $config = $appConfig->getAppConfig();
-        return $config->getValue($index);
+        return $config->get($index);
     }
     
     protected function currentUserHavePrivilage(string $privilage) : bool {

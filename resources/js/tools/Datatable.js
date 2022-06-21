@@ -34,6 +34,7 @@ function Datatable(div, config){
     this.data = config.data;
     this.columns = config.columns;
     this.div = div;
+    this.div.setAttribute('class', 'datatable-main');
     this.waitMode = false;
     this.buttonsContainer = document.createElement('div');
     this.buttonsContainer.setAttribute('class', 'datatable-buttons-container');

@@ -25,7 +25,7 @@ class Template{
      */
     public static function getLocalPath(string $templateName) : string{
         $files = Server::getFilesPaths(self::$dir);
-        $path = $files->getValue($templateName);
+        $path = $files->get($templateName);
         $localPath = Server::getLocalRoot();
         $localPath .= $path;
         return $localPath;

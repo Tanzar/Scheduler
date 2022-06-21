@@ -9,8 +9,16 @@
     use Tanweb\Config\Scripts as Scripts;
     use Tanweb\Config\INI\AppConfig as AppConfig;
     use Tanweb\Container as Container;
+    use Tanweb\Config\INI\Languages as Languages;
+    use Tanweb\Security\Security as Security;
     
-    PageAccess::allowFor(['admin', 'schedule_user', 'schedule_admin']);   //locks access if failed to pass redirects to index page
+    PageAccess::allowFor(['admin', 'schedule_user', 'schedule_user_inspector', 'schedule_admin']);   //locks access if failed to pass redirects to index page
+    
+    $languages = Languages::getInstance();
+    $names = $languages->get('interface');
+    $interface = new Container($names);
+    $security = new Security();
+    
 ?>
 <!DOCTYPE html>
 <!--
@@ -23,9 +31,9 @@ This code is free to use, just remember to give credit.
             <?php
                 $appconfig = AppConfig::getInstance();
                 $cfg = $appconfig->getAppConfig();
-                echo $cfg->getValue('name');
-                $modules = new Container($cfg->getValue('modules'));
-                echo ' : ' . $modules->getValue('schedule');
+                echo $cfg->get('name');
+                $modules = new Container($languages->get('modules'));
+                echo ' : ' . $modules->get('schedule');
             ?>
         </title>
         <?php
@@ -33,8 +41,7 @@ This code is free to use, just remember to give credit.
             Resources::linkCSS('timetable.css');
             Resources::linkJS('RestApi.js');
             Resources::linkJS('Timetable.js');
-            Resources::linkJS('schedule.js');
-            Resources::linkJS('scheduleMy.js');
+            Resources::linkJS('getRestAddress.js');
             Resources::linkJS('scheduleAll.js');
             Resources::linkExternal('jquery');
         ?>
@@ -43,16 +50,27 @@ This code is free to use, just remember to give credit.
         <header>
             <?php Scripts::run('topMenu.php'); ?>
         </header>
-        <div class="side-menu">
-            <button id="allEntries">Wszyscy</button>
-            <button id="myEntries">Moje Wpisy</button>
+        <?php Scripts::run('scheduleSideMenu.php') ?>
+        <div class="page-contents" id="pageContents">
+            <div class="centered-contents">
+                <div>
+                    <label class="standard-text">
+                        <?php echo $interface->get('select_date'); ?>
+                    </label>
+                    <input id="displayDate" type="date" class="standard-input"
+                           value="<?php echo date('Y-m-d'); ?>">
+                    <button id="goTo" class="standard-button">
+                        <?php echo $interface->get('go_to'); ?>
+                    </button>
+                </div>
+                <div id="timetable"></div>
+            </div>
         </div>
-        <div class="page-contents" id="pageContents"></div>
         <?php
             Scripts::run('createFooter.php');
         ?>
     </body>
     <script>
-        init();
+        scheduleAll();
     </script>
 </html>

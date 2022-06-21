@@ -1,0 +1,546 @@
+[2022-06-03  11:05:45] [type: Request] [user: ] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:05:49] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:05:51] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:05:51] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:05:53] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  11:05:53] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  11:05:53] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  11:05:53] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  11:10:26] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:10:26] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:10:28] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  11:10:28] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  11:10:28] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  11:10:28] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  11:10:30] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:10:30] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:10:31] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:10:31] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:10:32] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  11:10:33] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  11:10:33] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  11:10:33] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  11:14:18] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:14:18] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:14:20] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  11:14:20] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  11:14:20] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  11:14:20] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  11:15:48] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:15:48] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:15:50] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  11:15:50] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  11:15:50] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  11:15:50] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  11:15:58] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  11:15:58] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  11:40:42] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:40:43] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:40:44] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  11:40:44] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  11:40:44] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  11:40:44] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  11:40:46] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  11:40:46] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  11:41:20] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:41:21] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:41:22] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  11:41:22] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  11:41:22] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  11:41:22] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  11:41:23] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  11:41:23] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  11:46:14] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:46:15] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:46:16] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  11:46:17] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  11:46:17] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  11:46:17] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  11:46:19] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  11:46:19] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  11:46:21] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  11:46:21] [type: Error] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Services\ActivityService::getLocationsByActivity(): Argument #1 ($idActivity) must be of type int, null given, called in C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php on line 57 ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(57): Services\ActivityService->getLocationsByActivity(NULL)
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(111): Controllers\ScheduleUser->getLocationsForActivity()
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(88): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2022-06-03  11:47:47] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  11:47:47] [type: Error] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Typed property Services\ActivityService::$activityLocation must not be accessed before initialization ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(59): Services\ActivityService->getLocationsByActivity(2)
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(111): Controllers\ScheduleUser->getLocationsForActivity()
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(88): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2022-06-03  11:48:11] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  11:48:32] [type: Error] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Typed property Services\ActivityService::$activityLocation must not be accessed before initialization ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(59): Services\ActivityService->getLocationsByActivity(1)
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(111): Controllers\ScheduleUser->getLocationsForActivity()
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(88): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2022-06-03  11:49:15] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  11:49:21] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '2'
+[2022-06-03  11:49:31] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/adminPanel.php?
+[2022-06-03  11:49:31] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:49:34] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  11:49:34] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  11:49:45] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  11:49:45] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  11:49:45] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  11:49:45] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  11:49:50] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: assignActivityLocationData: {}
+[2022-06-03  11:49:50] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  id_activity = '2' and id_location_type = '1'
+[2022-06-03  11:49:50] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity_location_type (id_activity, id_location_type, active) VALUES ('2', '1', '1')
+[2022-06-03  11:49:50] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  11:49:50] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  11:49:55] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:49:55] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:50:06] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  11:50:06] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  11:50:06] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  11:50:06] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  11:50:08] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  11:50:08] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  11:50:10] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  11:50:10] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-06-03  11:50:10] [type: Error] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Call to a member function getValue() on null ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(59): Services\ActivityService->getLocationsByActivity(1)
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(111): Controllers\ScheduleUser->getLocationsForActivity()
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(88): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2022-06-03  11:50:40] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  11:50:40] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '2'
+[2022-06-03  11:50:40] [type: Error] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Container error: value not defined for key: location_type ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ActivityService.php(68): Tanweb\Container->getValue('location_type')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(59): Services\ActivityService->getLocationsByActivity(2)
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(111): Controllers\ScheduleUser->getLocationsForActivity()
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(88): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-06-03  11:50:55] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  11:50:55] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-06-03  11:51:19] [type: Error] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Container error: value not defined for key: location_type ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ActivityService.php(68): Tanweb\Container->getValue('location_type')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(59): Services\ActivityService->getLocationsByActivity(1)
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(111): Controllers\ScheduleUser->getLocationsForActivity()
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(88): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-06-03  11:51:24] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:51:24] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:51:26] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  11:51:26] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  11:51:26] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  11:51:26] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  11:51:27] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  11:51:27] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  11:51:29] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  11:51:29] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-06-03  11:51:34] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  11:52:04] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  11:52:05] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  11:52:06] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  11:52:06] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  11:52:06] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  11:52:06] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  11:52:08] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  11:52:08] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  11:52:09] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  11:52:09] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '2'
+[2022-06-03  11:52:09] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:01:51] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  12:01:52] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:01:53] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  12:01:53] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  12:01:53] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  12:01:53] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  12:02:02] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:02:02] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  12:02:11] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:02:11] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '2'
+[2022-06-03  12:02:11] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:02:14] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:02:14] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-06-03  12:02:14] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:02:24] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:02:24] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Wypadki%' and active = '1'
+[2022-06-03  12:03:44] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  12:03:44] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:03:46] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  12:03:46] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  12:03:46] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  12:03:46] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  12:03:49] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:03:49] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  12:03:51] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:03:51] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-06-03  12:03:51] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:03:55] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:03:55] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '2'
+[2022-06-03  12:03:55] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:03:58] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:03:58] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Wypadki%' and active = '1'
+[2022-06-03  12:05:09] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  12:05:09] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:05:11] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  12:05:11] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  12:05:11] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  12:05:11] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  12:05:13] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:05:13] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Wypadki%' and active = '1'
+[2022-06-03  12:05:16] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:05:16] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  12:05:26] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:05:26] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-06-03  12:05:26] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:11:04] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  12:11:05] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:11:06] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  12:11:06] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  12:11:06] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  12:11:06] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  12:11:08] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:11:08] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  12:11:11] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:11:11] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-06-03  12:11:11] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:11:20] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/adminPanel.php?
+[2022-06-03  12:11:20] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:11:25] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-06-03  12:11:25] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-06-03  12:11:26] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getUserEntriesData: {}
+[2022-06-03  12:11:26] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = ' ' and active = '1'
+[2022-06-03  12:11:27] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  12:11:27] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  12:11:51] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:11:51] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:11:53] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityGroupsData: {}
+[2022-06-03  12:12:35] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: addActivityData: {}
+[2022-06-03  12:12:35] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity (name, short, symbol, color, activity_group, worktime_record_row, workcard_display) VALUES ('Oględziny', 'Ogl', 'O', '#ff8585', 'Wypadki', '-1', '0')
+[2022-06-03  12:12:36] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:12:36] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:12:38] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityGroupsData: {}
+[2022-06-03  12:12:57] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: addActivityData: {}
+[2022-06-03  12:12:57] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity (name, short, symbol, color, activity_group, worktime_record_row, workcard_display) VALUES ('Dochodzenia', 'Docho.', 'D', '#000000', 'Wypadki', '-1', '0')
+[2022-06-03  12:12:57] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:12:57] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:13:10] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityGroupsData: {}
+[2022-06-03  12:13:22] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: addActivityData: {}
+[2022-06-03  12:13:22] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity (name, short, symbol, color, activity_group, worktime_record_row, workcard_display) VALUES ('Delegacja', 'Dele', 'D', '#000000', 'Delegacja', '-1', '0')
+[2022-06-03  12:13:22] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:13:22] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:13:23] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityGroupsData: {}
+[2022-06-03  12:13:41] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: addActivityData: {}
+[2022-06-03  12:13:41] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity (name, short, symbol, color, activity_group, worktime_record_row, workcard_display) VALUES ('Nielegalna Eksploatacja', 'NE', 'NE', '#000000', 'Nielegalna eksploatacja', '-1', '0')
+[2022-06-03  12:13:41] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:13:41] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:13:44] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityGroupsData: {}
+[2022-06-03  12:13:56] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: addActivityData: {}
+[2022-06-03  12:13:56] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity (name, short, symbol, color, activity_group, worktime_record_row, workcard_display) VALUES ('Seminarium', 'Sem', 'S', '#000000', 'Delegacja', '-1', '0')
+[2022-06-03  12:13:57] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:13:57] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:13:58] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityGroupsData: {}
+[2022-06-03  12:14:43] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: addActivityData: {}
+[2022-06-03  12:14:43] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity (name, short, symbol, color, activity_group, worktime_record_row, workcard_display) VALUES ('Praca Zdalna', 'PZ', 'PZ', '#000000', 'Delegacja', '-1', '0')
+[2022-06-03  12:14:43] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:14:43] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:14:45] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityGroupsData: {}
+[2022-06-03  12:15:09] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: addActivityData: {}
+[2022-06-03  12:15:09] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity (name, short, symbol, color, activity_group, worktime_record_row, workcard_display) VALUES ('Praca Biurowa', 'PB', 'PB', '#000000', 'Praca biurowa', '-1', '0')
+[2022-06-03  12:15:10] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:15:10] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:15:14] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityGroupsData: {}
+[2022-06-03  12:15:48] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: addActivityData: {}
+[2022-06-03  12:15:48] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity (name, short, symbol, color, activity_group, worktime_record_row, workcard_display) VALUES ('Urlop Wypoczynkowy', 'UW', 'UW', '#000000', 'Nieobecność', '-1', '0')
+[2022-06-03  12:15:49] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:15:49] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:15:51] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityGroupsData: {}
+[2022-06-03  12:16:27] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: addActivityData: {}
+[2022-06-03  12:16:27] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity (name, short, symbol, color, activity_group, worktime_record_row, workcard_display) VALUES ('Chorobowe', 'Chorob', 'CH', '#000000', 'Nieobecność', '-1', '0')
+[2022-06-03  12:16:27] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:16:27] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:16:30] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  12:16:30] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  12:16:31] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:16:31] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:16:32] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:16:32] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:16:36] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:16:36] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:17:28] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: addLocationTypeData: {}
+[2022-06-03  12:17:28] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location_type (name, short, inspection) VALUES ('Delegacja', 'D', '0')
+[2022-06-03  12:17:29] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:17:29] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:17:47] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsData: {}
+[2022-06-03  12:17:47] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2022-06-03  12:17:51] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:17:51] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:17:51] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:17:51] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:17:58] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:17:58] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:18:10] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: addLocationGroupData: {}
+[2022-06-03  12:18:10] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location_group (name) VALUES ('Urzędy')
+[2022-06-03  12:18:10] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:18:10] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:18:23] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: addLocationGroupData: {}
+[2022-06-03  12:18:23] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location_group (name) VALUES ('Miejsce Zamieszkania')
+[2022-06-03  12:18:23] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:18:23] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:18:35] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: updateLocationGroupData: {}
+[2022-06-03  12:18:35] [type: update] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: UPDATE location_group SET name='Miejsca Zamieszkania' WHERE id = '4'
+[2022-06-03  12:18:35] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:18:35] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:18:59] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: addLocationGroupData: {}
+[2022-06-03  12:18:59] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location_group (name) VALUES ('Wyjazdy')
+[2022-06-03  12:18:59] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:18:59] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:19:12] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: updateLocationGroupData: {}
+[2022-06-03  12:19:12] [type: update] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: UPDATE location_group SET name='Delegacja' WHERE id = '5'
+[2022-06-03  12:19:12] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:19:12] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:19:18] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: addLocationGroupData: {}
+[2022-06-03  12:19:18] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location_group (name) VALUES ('Odkrywki')
+[2022-06-03  12:19:18] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:19:18] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:19:27] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: addLocationGroupData: {}
+[2022-06-03  12:19:27] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location_group (name) VALUES ('Otworowe')
+[2022-06-03  12:19:27] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:19:27] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:19:29] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:19:29] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:19:31] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsData: {}
+[2022-06-03  12:19:31] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2022-06-03  12:19:32] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:19:32] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:19:32] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:19:32] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:19:42] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: addLocationData: {}
+[2022-06-03  12:19:42] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location (name, id_location_group, id_location_type) VALUES ('OUG', '3', '3')
+[2022-06-03  12:19:42] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsData: {}
+[2022-06-03  12:19:42] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2022-06-03  12:19:43] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:19:43] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:19:44] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:19:44] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:19:55] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: addLocationData: {}
+[2022-06-03  12:19:55] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location (name, id_location_group, id_location_type) VALUES ('WUG', '3', '5')
+[2022-06-03  12:19:55] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsData: {}
+[2022-06-03  12:19:55] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2022-06-03  12:19:58] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:19:58] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:19:58] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:19:58] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:20:19] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: addLocationData: {}
+[2022-06-03  12:20:19] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location (name, id_location_group, id_location_type) VALUES ('Rydułtowy', '4', '4')
+[2022-06-03  12:20:19] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsData: {}
+[2022-06-03  12:20:19] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2022-06-03  12:20:29] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:20:29] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:20:29] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:20:29] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:20:53] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: addLocationData: {}
+[2022-06-03  12:20:53] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location (name, id_location_group, id_location_type) VALUES ('Żory', '4', '4')
+[2022-06-03  12:20:53] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsData: {}
+[2022-06-03  12:20:53] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2022-06-03  12:20:57] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsData: {}
+[2022-06-03  12:20:57] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2022-06-03  12:20:58] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:20:58] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:20:59] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  12:20:59] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  12:21:01] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:21:01] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:21:01] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:21:01] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:21:20] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: assignActivityLocationData: {}
+[2022-06-03  12:21:20] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  id_activity = '3' and id_location_type = '1'
+[2022-06-03  12:21:20] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity_location_type (id_activity, id_location_type, active) VALUES ('3', '1', '1')
+[2022-06-03  12:21:21] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  12:21:21] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  12:21:23] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:21:23] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:21:23] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:21:23] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:21:30] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: assignActivityLocationData: {}
+[2022-06-03  12:21:30] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  id_activity = '4' and id_location_type = '2'
+[2022-06-03  12:21:30] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity_location_type (id_activity, id_location_type, active) VALUES ('4', '2', '1')
+[2022-06-03  12:21:30] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  12:21:30] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  12:21:31] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:21:31] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:21:32] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:21:32] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:21:40] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: assignActivityLocationData: {}
+[2022-06-03  12:21:40] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  id_activity = '5' and id_location_type = '5'
+[2022-06-03  12:21:40] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity_location_type (id_activity, id_location_type, active) VALUES ('5', '5', '1')
+[2022-06-03  12:21:40] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  12:21:40] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  12:21:47] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:21:47] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:21:47] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:21:47] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:21:53] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: assignActivityLocationData: {}
+[2022-06-03  12:21:53] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  id_activity = '5' and id_location_type = '4'
+[2022-06-03  12:21:53] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity_location_type (id_activity, id_location_type, active) VALUES ('5', '4', '1')
+[2022-06-03  12:21:54] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  12:21:54] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  12:21:56] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  12:21:57] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:21:58] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  12:21:58] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  12:21:58] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  12:21:58] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  12:22:01] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:22:01] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Delegacja%' and active = '1'
+[2022-06-03  12:22:03] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:22:03] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '8'
+[2022-06-03  12:22:06] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:22:06] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '5'
+[2022-06-03  12:22:06] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '5'
+[2022-06-03  12:22:06] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '4'
+[2022-06-03  12:22:20] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/adminPanel.php?
+[2022-06-03  12:22:20] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:22:23] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:22:23] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:22:25] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  12:22:25] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  12:22:26] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:22:26] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:22:26] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:22:26] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:23:11] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  12:23:11] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  12:23:12] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-06-03  12:23:12] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-06-03  12:23:13] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getUserEntriesData: {}
+[2022-06-03  12:23:13] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = ' ' and active = '1'
+[2022-06-03  12:23:13] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:23:13] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:23:17] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:23:17] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:23:25] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsData: {}
+[2022-06-03  12:23:25] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2022-06-03  12:23:29] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:23:29] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:23:30] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:23:30] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:23:44] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:23:44] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:24:06] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: addLocationTypeData: {}
+[2022-06-03  12:24:06] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location_type (name, short, inspection) VALUES ('Miejsce Zamieszkania', 'MZ', '0')
+[2022-06-03  12:24:07] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:24:07] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:24:33] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: updateLocationTypeData: {}
+[2022-06-03  12:24:33] [type: update] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: UPDATE location_type SET name='Miejsce Zamieszkania', short='MZ', inspection='0' WHERE id = '4'
+[2022-06-03  12:24:34] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:24:34] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:25:23] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: updateLocationTypeData: {}
+[2022-06-03  12:25:23] [type: update] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: UPDATE location_type SET name='Nielegalna Eksploatacja', short='NE', inspection='1' WHERE id = '6'
+[2022-06-03  12:25:23] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:25:23] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:25:27] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsData: {}
+[2022-06-03  12:25:27] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2022-06-03  12:25:29] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-06-03  12:25:29] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-06-03  12:25:30] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:25:30] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:25:41] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  12:25:41] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  12:25:49] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivitiesData: {}
+[2022-06-03  12:25:49] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-06-03  12:25:49] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-06-03  12:25:49] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-06-03  12:25:56] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: assignActivityLocationData: {}
+[2022-06-03  12:25:56] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  id_activity = '6' and id_location_type = '6'
+[2022-06-03  12:25:56] [type: insert] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity_location_type (id_activity, id_location_type, active) VALUES ('6', '6', '1')
+[2022-06-03  12:25:56] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelSchedule Task: getActivityLocationAssignmentData: {}
+[2022-06-03  12:25:56] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details
+[2022-06-03  12:26:01] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  12:26:01] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:26:03] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  12:26:03] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  12:26:03] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  12:26:03] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  12:26:05] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:26:05] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  12:26:07] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:26:07] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-06-03  12:26:07] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:26:10] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:26:10] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '2'
+[2022-06-03  12:26:10] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:26:14] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:26:14] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Delegacja%' and active = '1'
+[2022-06-03  12:26:37] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  12:26:38] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:26:39] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  12:26:39] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  12:26:39] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  12:26:39] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  12:26:43] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:26:43] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Nielegalna eksploatacja%' and active = '1'
+[2022-06-03  12:26:46] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:26:46] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '6'
+[2022-06-03  12:26:46] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '6'
+[2022-06-03  12:26:53] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/adminPanel.php?
+[2022-06-03  12:26:53] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:26:55] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsData: {}
+[2022-06-03  12:26:55] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2022-06-03  12:27:03] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  12:27:03] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:27:04] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  12:27:05] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  12:27:05] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  12:27:05] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  12:27:11] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:27:11] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  12:27:13] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:27:13] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-06-03  12:27:13] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:27:16] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:27:16] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Nielegalna eksploatacja%' and active = '1'
+[2022-06-03  12:27:18] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:27:18] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '6'
+[2022-06-03  12:27:18] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '6'
+[2022-06-03  12:27:23] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/adminPanel.php?
+[2022-06-03  12:27:23] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:27:33] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-06-03  12:27:33] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-06-03  12:27:35] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelUsers Task: findUsersData: {}
+[2022-06-03  12:27:35] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-06-03  12:27:35] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-06-03  12:27:35] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-06-03  12:27:49] [type: Access] [user: admin] [ip: 192.168.1.60] [proxy: undefined] http://192.168.1.60/Scheduler/pages/schedule.php?
+[2022-06-03  12:27:50] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-03  12:28:02] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-03  12:28:02] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-03  12:28:02] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-03  12:28:02] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-06 00:00:00' and end >= '2022-05-31 00:00:00' and id_user = '2' and active = '1'
+[2022-06-03  12:28:14] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:28:14] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-06-03  12:28:16] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:28:16] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-06-03  12:28:16] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:28:20] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:28:20] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Wypadki%' and active = '1'
+[2022-06-03  12:28:26] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:28:26] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '3'
+[2022-06-03  12:28:26] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-06-03  12:28:28] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:28:28] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '4'
+[2022-06-03  12:28:28] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '2'
+[2022-06-03  12:28:35] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesData: {}
+[2022-06-03  12:28:35] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Delegacja%' and active = '1'
+[2022-06-03  12:28:37] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:28:37] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '7'
+[2022-06-03  12:28:41] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:28:41] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '8'
+[2022-06-03  12:28:44] [type: Request] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForActivityData: {}
+[2022-06-03  12:28:44] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '5'
+[2022-06-03  12:28:44] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '5'
+[2022-06-03  12:28:44] [type: Select] [user: admin] [ip: 192.168.1.60] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '4'

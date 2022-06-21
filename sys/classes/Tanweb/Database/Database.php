@@ -43,8 +43,8 @@ class Database {
     
     private function connect(){
         $connectionString = ConnectionString::create($this->config);
-        $user = $this->config->getValue('user');
-        $pass = $this->config->getValue('pass');
+        $user = $this->config->get('user');
+        $pass = $this->config->get('pass');
         $pdo = new PDO($connectionString, $user, $pass,
                 [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
         );
@@ -57,7 +57,7 @@ class Database {
     public static function getInstance(string $dbIndex) : Database{
         if(isset(self::$instances)){
             if(self::$instances->isValueSet($dbIndex)){
-                return self::$instances->getValue($dbIndex);
+                return self::$instances->get($dbIndex);
             }
             else{
                 $instance = new Database($dbIndex);
@@ -159,7 +159,7 @@ class Database {
      * 
      * @param SqlBuilder $builder
      */
-    public function update(SqlBuilder $builder) {
+    public function update(SqlBuilder $builder) : void {
         if($builder->isUpdate()){
             $sql = $builder->formSQL();
             $statement = $this->pdo->prepare($sql);
@@ -175,6 +175,25 @@ class Database {
         }
         else{
             $this->throwException('wrong builder, must be update, was: ' . $builder->getType());
+        }
+    }
+    
+    /**
+     * Method for using delete Queries
+     * 
+     * @param SqlBuilder $builder - delete Query
+     */
+    public function delete(SqlBuilder $builder) : void {
+        if($builder->isDelete()){
+            $sql = $builder->formSQL();
+            $statement = $this->pdo->prepare($sql);
+            $haveDeleted = $statement->execute();
+            if(!$haveDeleted){
+                $this->throwException('delete error for sql: ' . $sql);
+            }
+        }
+        else{
+            $this->throwException('wrong builder, must be delete, was: ' . $builder->getType());
         }
     }
     

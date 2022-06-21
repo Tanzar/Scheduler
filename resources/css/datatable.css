@@ -1,3 +1,7 @@
+.datatable-main {
+    width: fit-content;
+}
+
 .datatable {
     border-spacing: 0;
     background-color: white;

@@ -24,6 +24,7 @@ class MysqlBuilder extends SqlBuilder{
     private $insertColumns;
     private $updateColumns;
     private $updateCondition;
+    private $deleteCondition;
     
     public function __construct() {
         $this->orderByColumnss = array();
@@ -31,53 +32,6 @@ class MysqlBuilder extends SqlBuilder{
         $this->selectColumns = array();
         $this->insertColumns = array();
         $this->updateColumns = array();
-    }
-    
-    /**
-     * Set builder build insert query
-     * 
-     * @param string $table -  table name for query
-     * @return SqlBuilder
-     */
-    public function insert(string $table): SqlBuilder {
-        $this->setInsert();
-        $this->table = $table;
-        return $this;
-    }
-
-    /**
-     * Adds values and columns to insert query
-     * ! CALL insert() FIRST !
-     * 
-     * @param string $column name of column where value will be inserted
-     * @param string $value value to insert
-     * @return SqlBuilder
-     */
-    public function into(string $column, string $value): SqlBuilder {
-        if($this->isNotInsert()){
-            $this->throwException('method into only works for insert sql.');
-        }
-        $item = array(
-            'column' => $column,
-            'value' => $value
-        );
-        $this->insertColumns[] = $item;
-        return $this;
-    }
-
-    /**
-     * Adds order by to sql
-     * ! CALL select() FIRST !
-     * 
-     * @param string $column
-     * @return SqlBuilder
-     */
-    public function orderBy(string $column): SqlBuilder {
-        if($this->isSelect()){
-            $this->throwException('method orderBy only works for select sql.');
-        }
-        $this->orderByColumnss[] = $column;
-        return $this;
     }
     
     /**
@@ -93,42 +47,7 @@ class MysqlBuilder extends SqlBuilder{
         $this->selectColumns = $columns;
         return $this;
     }
-
-    /**
-     * Used to add columns for update query
-     * ! CALL update() FIRST !
-     * 
-     * @param string $column
-     * @param string $value
-     * @return SqlBuilder
-     */
-    public function set(string $column, string $value): SqlBuilder {
-        if($this->isNotUpdate()){
-            $this->throwException('method set only works for update sql.');
-        }
-        $item = array(
-            'column' => $column,
-            'value' => $value
-        );
-        $this->updateColumns[] = $item;
-        return $this;
-    }
-
-    /**
-     * Sets builder to build update query
-     * 
-     * @param string $table table to update
-     * @param string $column column for where condition
-     * @param string $value value for where condition
-     * @return SqlBuilder
-     */
-    public function update(string $table, string $column, string $value): SqlBuilder {
-        $this->setUpdate();
-        $this->table = $table;
-        $this->updateCondition = $column . " = '" . $value . "'";
-        return $this;
-    }
-
+    
     /**
      * Adds condition to sql query
      * ! WORKS ONLY FOR SELECT, FOR UPDATE USE METHOD update() PARAMETERS !
@@ -206,6 +125,104 @@ class MysqlBuilder extends SqlBuilder{
     }
 
     /**
+     * Adds order by to sql
+     * ! CALL select() FIRST !
+     * 
+     * @param string $column
+     * @return SqlBuilder
+     */
+    public function orderBy(string $column, bool $asc = true): SqlBuilder {
+        if($this->isNotSelect()){
+            $this->throwException('method orderBy only works for select sql.');
+        }
+        $item = array(
+            'column' => $column
+        );
+        if($asc){
+            $item['order'] = 'ASC';
+        }
+        else{
+            $item['order'] = 'DESC';
+        }
+        $this->orderByColumnss[] = $item;
+        return $this;
+    }
+    
+    /**
+     * Set builder build insert query
+     * 
+     * @param string $table -  table name for query
+     * @return SqlBuilder
+     */
+    public function insert(string $table): SqlBuilder {
+        $this->setInsert();
+        $this->table = $table;
+        return $this;
+    }
+
+    /**
+     * Adds values and columns to insert query
+     * ! CALL insert() FIRST !
+     * 
+     * @param string $column name of column where value will be inserted
+     * @param string $value value to insert
+     * @return SqlBuilder
+     */
+    public function into(string $column, string $value): SqlBuilder {
+        if($this->isNotInsert()){
+            $this->throwException('method into only works for insert sql.');
+        }
+        $item = array(
+            'column' => $column,
+            'value' => $value
+        );
+        $this->insertColumns[] = $item;
+        return $this;
+    }
+    
+    /**
+     * Sets builder to build update query
+     * 
+     * @param string $table table to update
+     * @param string $column column for where condition
+     * @param string $value value for where condition
+     * @return SqlBuilder
+     */
+    public function update(string $table, string $column, string $value): SqlBuilder {
+        $this->setUpdate();
+        $this->table = $table;
+        $this->updateCondition = $column . " = '" . $value . "'";
+        return $this;
+    }
+    
+    /**
+     * Used to add columns for update query
+     * ! CALL update() FIRST !
+     * 
+     * @param string $column
+     * @param string $value
+     * @return SqlBuilder
+     */
+    public function set(string $column, string $value): SqlBuilder {
+        if($this->isNotUpdate()){
+            $this->throwException('method set only works for update sql.');
+        }
+        $item = array(
+            'column' => $column,
+            'value' => $value
+        );
+        $this->updateColumns[] = $item;
+        return $this;
+    }
+
+    public function delete(string $table, string $column, string $value) : SqlBuilder {
+        $this->setDelete();
+        $this->table = $table;
+        $this->deleteCondition = $column . " = '" . $value . "'";
+        return $this;
+    }
+    
+    /**
      * use to turn Builder into string
      * 
      * @return string combines settings into sql query
@@ -218,6 +235,8 @@ class MysqlBuilder extends SqlBuilder{
                 return $this->formInsert();
             case 'update':
                 return $this->formUpdate();
+            case 'delete':
+                return $this->formDelete();
             default:
                 $this->throwException('wrong call, call select, insert or update first');
                 break;
@@ -308,12 +327,14 @@ class MysqlBuilder extends SqlBuilder{
         $result = '';
         if(Utility::count($this->orderByColumnss) > 0){
             $result = ' ORDER BY ';
-            foreach ($this->orderByColumnss as $i => $column){
+            foreach ($this->orderByColumnss as $i => $item){
+                $column = $item['column'];
+                $order = $item['order'];
                 if($i === 0){
-                    $result .= $column;
+                    $result .= $column . ' ' . $order;
                 }
                 else{
-                    $result .= ', ' . $column;
+                    $result .= ', ' . $column . ' ' . $order;
                 }
             }
         }
@@ -357,5 +378,10 @@ class MysqlBuilder extends SqlBuilder{
         $sql .= ' WHERE ' . $this->updateCondition;
         return $sql;
     }
-
+    
+    private function formDelete() : string {
+        $sql = 'DELETE FROM ' . $this->table . 
+                ' WHERE ' . $this->deleteCondition;
+        return $sql;
+    }
 }

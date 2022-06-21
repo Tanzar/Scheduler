@@ -24,7 +24,7 @@ abstract class SqlBuilder {
     
     abstract public function or() : SqlBuilder;
     
-    abstract public function orderBy(string $column) : SqlBuilder;
+    abstract public function orderBy(string $column, bool $asc = true) : SqlBuilder;
     
     abstract public function insert(string $table) : SqlBuilder;
     
@@ -33,6 +33,8 @@ abstract class SqlBuilder {
     abstract public function update(string $table, string $column, string $value) : SqlBuilder;
     
     abstract public function set(string $column, string $value) : SqlBuilder;
+    
+    abstract public function delete(string $table, string $column, string $value) : SqlBuilder;
     
     abstract public function formSQL() : string;
     
@@ -64,6 +66,14 @@ abstract class SqlBuilder {
         return $this->isNotType('update');
     }
     
+    public function isDelete(){
+        return $this->isType('delete');
+    }
+    
+    public function isNotDelete(){
+        return $this->isNotType('delete');
+    }
+    
     protected function setSelect(){
         if(isset($this->type)){
             $this->throwException('cannot set another type, use new SqlBuilder');
@@ -85,15 +95,22 @@ abstract class SqlBuilder {
         $this->type = 'insert';
     }
     
+    protected function setDelete(){
+        if(isset($this->type)){
+            $this->throwException('cannot set another type, use new SqlBuilder');
+        }
+        $this->type = 'delete';
+    }
+    
     private function isType(string $type){
-        if($this->type === $type){
+        if(isset($this->type) && $this->type === $type){
             return true;
         }
         return false;
     }
     
     private function isNotType(string $type){
-        if($this->type !== $type){
+        if(isset($this->type) && $this->type !== $type){
             return true;
         }
         return false;

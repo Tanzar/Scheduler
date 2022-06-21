@@ -26,7 +26,7 @@ class Scripts{
      */
     public static function get(string $filename) : string{
         $files = Server::getFilesPaths(self::$dir);
-        $path = $files->getValue($filename);
+        $path = $files->get($filename);
         $url = Server::getRootURL();
         $url .= $path;
         return $url;
@@ -56,7 +56,7 @@ class Scripts{
      */
     public static function run(string $filename) : void{
         $files = Server::getFilesPaths(self::$dir);
-        $file = $files->getValue($filename);
+        $file = $files->get($filename);
         $path = Server::getLocalRoot() . $file;
         require $path;
     }

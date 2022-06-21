@@ -1,0 +1,30 @@
+[2022-06-01  07:22:29] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-01  07:22:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-01  07:22:39] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-06-01  07:22:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-01  07:22:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-01  07:22:42] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-01  07:22:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-01  07:22:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-04 00:00:00' and end >= '2022-05-29 00:00:00' and id_user = '2' and active = '1'
+[2022-06-01  07:42:09] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-01  07:42:14] [type: Request] [user: user] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-01  07:42:15] [type: Access] [user: user] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-06-01  07:42:15] [type: Request] [user: user] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-01  07:42:16] [type: Request] [user: user] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-01  07:42:16] [type: Request] [user: user] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-01  07:42:16] [type: Select] [user: user] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'user' and active = '1'
+[2022-06-01  07:42:16] [type: Select] [user: user] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-04 00:00:00' and end >= '2022-05-29 00:00:00' and id_user = '1' and active = '1'
+[2022-06-01  07:42:23] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-01  07:42:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-01  07:42:29] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-06-01  07:42:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-01  07:42:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-01  07:42:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-01  07:42:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-01  07:42:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-04 00:00:00' and end >= '2022-05-29 00:00:00' and id_user = '2' and active = '1'
+[2022-06-01  07:59:17] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule.php?
+[2022-06-01  07:59:17] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-06-01  07:59:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivityGroupsData: {}
+[2022-06-01  07:59:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-06-01  07:59:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-06-01  07:59:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-06-04 00:00:00' and end >= '2022-05-29 00:00:00' and id_user = '2' and active = '1'

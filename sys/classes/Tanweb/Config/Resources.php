@@ -133,12 +133,12 @@ class Resources {
     public static function linkExternal(string $index){
         $appconfig = AppConfig::getInstance();
         $config = $appconfig->getExternalResources();
-        $ext = new Container($config->getValue($index));
-        $link = $ext->getValue('link');
+        $ext = new Container($config->get($index));
+        $link = $ext->get('link');
         if(self::isNotInternetAccess() && $ext->isValueSet('local')){
-            $link = $ext->getValue('local');
+            $link = $ext->get('local');
         }
-        switch ($ext->getValue('type')){
+        switch ($ext->get('type')){
             case 'js':
                 echo '<script src="' . $link .'" type="text/javascript"></script>';
                 break;
@@ -174,7 +174,7 @@ class Resources {
      */
     private static function getFileURL(string $dir, string $filename) : string{
         $files = Server::getFilesPaths($dir);
-        $path = $files->getValue($filename);
+        $path = $files->get($filename);
         $url = Server::getRootURL();
         $url .= $path;
         return $url;

@@ -64,7 +64,7 @@ class Session {
         else{
             $appconfig = AppConfig::getInstance();
             $cfg = $appconfig->getAppConfig();
-            return $cfg->getValue('defaultLanguage');
+            return $cfg->get('defaultLanguage');
         }
     }
 }

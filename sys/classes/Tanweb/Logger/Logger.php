@@ -54,7 +54,7 @@ class Logger {
     protected function __construct(){
         $appconfig = AppConfig::getInstance();
         $config = $appconfig->getLogger();
-        $this->isEnabled = $config->getValue('enable');
+        $this->isEnabled = $config->get('enable');
         if($this->isEnabled){
             $this->loadConfig($config, $appconfig);
         }
@@ -67,7 +67,7 @@ class Logger {
     }
     
     private function loadTypes(Container $config) : void {
-        $types = $config->getValue('log');
+        $types = $config->get('log');
         $this->activeTypes = array();
         foreach ($types as $name => $isActive){
             if($isActive){
@@ -77,7 +77,7 @@ class Logger {
     }
     
     private function loadLocalConfig(Container $config, AppConfig $appConfig) : void {
-        $this->saveLocal = $config->getValue('local');
+        $this->saveLocal = $config->get('local');
         if($this->saveLocal === true){
             $this->checkLogFile($appConfig);
         }
@@ -97,11 +97,11 @@ class Logger {
     }
     
     private function loadDatabaseConfig(Container $config) : void {
-        $this->saveDatabase = $config->getValue('database');
+        $this->saveDatabase = $config->get('database');
         if($this->saveDatabase === true){
-            $dbIndex = $config->getValue('database_index');
+            $dbIndex = $config->get('database_index');
             $this->database = new Database($dbIndex);
-            $this->table = $config->getValue('database_table');
+            $this->table = $config->get('database_table');
             $this->verifyDatabase();
         }
         else{

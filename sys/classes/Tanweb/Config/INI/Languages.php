@@ -55,7 +55,7 @@ class Languages {
     
     public function get(string $index){
         if($this->messages->isValueSet($index)){
-            return $this->messages->getValue($index);
+            return $this->messages->get($index);
         }
         else{
             throw new ConfigException('message ' . $index . ' not defined in languages.ini file.');

@@ -7,16 +7,18 @@
 namespace Data\Exceptions;
 
 use Tanweb\TanwebException as TanwebException;
+use Tanweb\Config\INI\Languages as Languages;
 
 /**
- * Description of ScheduleException
+ * Description of UsernameTakenException
  *
  * @author Tanzar
  */
-class ScheduleException extends TanwebException {
+class UsernameTakenException extends TanwebException{
     
     public function errorMessage(): string {
-        return 'Schedule error: ' . $this->getMessage();
+        $languages = Languages::getInstance();
+        return $languages->get('username_taken');
     }
 
 }

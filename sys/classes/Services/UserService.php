@@ -7,9 +7,13 @@
 namespace Services;
 
 use Tanweb\Container as Container;
-use Data\Access\UserDataAccess as UserDataAccess;
-use Data\Containers\Users as Users;
-use Data\Entities\User as User;
+use Tanweb\Security\Encrypter as Encrypter;
+use Data\Access\Tables\UserDAO as UserDAO;
+use Data\Access\Tables\PrivilageDAO as PrivilageDAO;
+use Data\Access\Tables\EmploymentDAO as EmploymentDAO;
+use Data\Access\Views\UsersEmploymentPeriodsDAO as UsersEmploymentPeriodsDAO;
+use Data\Access\Views\UsersWithoutPasswordsDAO as UsersWithoutPasswordsDAO;
+use Services\Exceptions\OverlapingPeriodsException as OverlapingPeriodsException;
 
 /**
  * Description of UserService
@@ -17,55 +21,164 @@ use Data\Entities\User as User;
  * @author Tanzar
  */
 class UserService{
-    private UserDataAccess $userDataAccess;
+    private UserDAO $users;
+    private PrivilageDAO $privilages;
+    private EmploymentDAO $employment;
+    private UsersEmploymentPeriodsDAO $usersEmploymentPeriods;
+    private UsersWithoutPasswordsDAO $usersWithoutPasswords;
     
     public function __construct() {
-        $this->userDataAccess = new UserDataAccess();
+        $this->users = new UserDAO();
+        $this->privilages = new PrivilageDAO();
+        $this->employment = new EmploymentDAO();
+        $this->usersEmploymentPeriods = new UsersEmploymentPeriodsDAO();
+        $this->usersWithoutPasswords = new UsersWithoutPasswordsDAO();
     }
     
-    public function getAll() : Container {
-        return $this->userDataAccess->getAllUsers();
+    public function getAllUsers() : Container {
+        return $this->usersWithoutPasswords->getAll();
     }
     
-    public function getByUsername(string $username) : Container {
-        return $this->userDataAccess->getUserByUsername($username);
+    public function getEmployedUsersListOrdered(string $date) : Container {
+        return $this->usersEmploymentPeriods->getOrderedActiveByDate($date);
+    }
+    
+    public function getUserByUsername(string $username) : Container {
+        return $this->users->getByUsername($username);
+    }
+    
+    public function getUserPrivilages(int $id) : Container {
+        return $this->privilages->getByUserID($id);
+    }
+    
+    public function getUserEmploymentPeriods(int $idUser) : Container {
+        return $this->employment->getByUserId($idUser);
+    } 
+    
+    public function getUserCurrentEmploymentPeriod(string $username) : Container {
+        $today = date("Y-m-d");
+        $periods = $this->usersEmploymentPeriods->getByUserAndDate($username, $today);
+        if($periods->length() >= 1){
+            return new Container($periods->get(0));
+        }
+        else{
+            return new Container();
+        }
     }
     
     public function findUsers(Container $conditions) : Container{
-        return $this->userDataAccess->findUsers($conditions);
+        return $this->usersWithoutPasswords->findUsers($conditions);
     }
     
-    public function addUser(Container $data) : int{
-        $id = $this->userDataAccess->create($data);
+    public function savePrivilage(Container $privilage) : int {
+        $idUser = $privilage->get('id_user');
+        $privilageName = $privilage->get('privilage');
+        $privilages = $this->privilages->getByUserID($idUser);
+        foreach ($privilages->toArray() as $data){
+            $item = new Container($data);
+            if($item->get('privilage') === $privilageName){
+                $id = $item->get('id');
+                $this->privilages->enable($id);
+                return $id;
+            }
+        }
+        return $this->privilages->save($privilage);
+    }
+    
+    public function saveUser(Container $data) : int{
+        if($data->isValueSet('password')){
+            $password = $data->get('password');
+            $encoded = Encrypter::encode($password);
+            $data->add($encoded, 'password', true);
+        }
+        $id = $this->users->save($data);
         return $id;
     }
     
-    public function updateUser(Container $data){
-        $this->userDataAccess->updateUser($data);
+    public function saveEmploymentPeriod(Container $data) : int {
+        $idUser = $data->get('id_user');
+        $periods = $this->employment->getByUserId($idUser);
+        foreach ($periods->toArray() as $item){
+            $period = new Container($item);
+            if($this->periodsAreOverlaping($data, $period)){
+                throw new OverlapingPeriodsException();
+            }
+        }
+        return $this->employment->save($data);
+    }
+    
+    private function periodsAreOverlaping(Container $first, Container $second) : bool {
+        if($first->isValueSet('id') && $second->isValueSet('id')){
+            $firstId = (int) $first->get('id');
+            $secondId = (int) $second->get('id');
+            if($firstId === $secondId){
+                return false;
+            }
+        }
+        $firstStart = strtotime($first->get('start'));
+        $firstEnd = strtotime($first->get('end'));
+        $secondStart = strtotime($first->get('start'));
+        $secondEnd = strtotime($first->get('end'));
+        if(($firstStart >= $secondStart && $firstStart <= $secondEnd) ||
+                ($firstEnd >= $secondStart && $firstEnd <= $secondStart)){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     
     public function changePassword(Container $data){
-        $username = $data->getValue('username');
-        $password = $data->getValue('password');
-        $this->userDataAccess->changePassword($username, $password);
+        $username = $data->get('username');
+        $password = $data->get('password');
+        $this->users->changePassword($username, $password);
     }
     
-    public function changeStatus(Container $data){
+    public function changeUserStatus(Container $data){
+        $user = $this->getUser($data);
+        $active = $user->get('active');
+        if($active){
+            $this->users->disable($user->get('id'));
+            
+        }
+        else{
+            $this->users->enable($user->get('id'));
+        }
+    }
+    
+    public function changePrivilageStatus(int $id){
+        $privilage = $this->privilages->getByID($id);
+        $active = $privilage->get('active');
+        if($active){
+            $this->privilages->disable($privilage->get('id'));
+            
+        }
+        else{
+            $this->privilages->enable($privilage->get('id'));
+        }
+    }
+    
+    public function changeEmploymentStatus(int $id){
+        $employmentPeriod = $this->employment->getById($id);
+        $active = $employmentPeriod->get('active');
+        if($active){
+            $this->employment->disable($id);
+        }
+        else{
+            $this->employment->enable($id);
+        }
+    }
+    
+    private function getUser(Container $data) : Container {
         if($data->isValueSet('id')){
-            $id = $data->getValue('id');
-            $user = $this->userDataAccess->getUserByID($id);
+            $id = $data->get('id');
+            $user = $this->users->getById($id);
             
         }
         elseif($data->isValueSet('username')) {
-            $username = $data->getValue('username');
-            $user = $this->userDataAccess->getUserByUsername($username);
+            $username = $data->get('username');
+            $user = $this->users->getByUsername($username);
         }
-        $active = $user->getValue('active');
-        if($active){
-            $this->userDataAccess->deactivate($user->getValue('id'));
-        }
-        else{
-            $this->userDataAccess->activate($user->getValue('id'));
-        }
+        return $user;
     }
 }

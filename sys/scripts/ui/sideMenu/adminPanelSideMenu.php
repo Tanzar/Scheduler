@@ -1,0 +1,26 @@
+<?php
+    $projectName = explode('/', $_SERVER['REQUEST_URI'])[1];
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/' . $projectName . '/vendor/autoload.php';
+    
+    
+    use Tanweb\Config\Pages as Pages;
+    use Tanweb\Container as Container;
+    use Tanweb\Config\INI\Languages as Languages;
+    
+    $language = Languages::getInstance();
+    $adminOptions = new Container($language->get('admin'));
+?>
+<div class="side-menu">
+    <form action="<?php echo Pages::getURL('adminPanelUsers.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('users'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('adminPanelSchedule.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('schedule'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('adminPanelActivity.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('activities'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('adminPanelLocation.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('locations'); ?>">
+    </form>
+</div>

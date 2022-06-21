@@ -18,7 +18,7 @@ use Error;
 class ConnectionString {
     
     public static function create(Container $config) : string{
-        $type = $config->getValue('type');
+        $type = $config->get('type');
         switch($type){
             case 'mysql':
                 return self::mysql($config);
@@ -31,16 +31,16 @@ class ConnectionString {
     }
     
     private static function mysql(Container $config) : string {
-        $host = $config->getValue('host');
-        $name = $config->getValue('name');
-        $charset = $config->getValue('charset');
+        $host = $config->get('host');
+        $name = $config->get('name');
+        $charset = $config->get('charset');
         return 'mysql:host=' . $host . ';dbname=' . $name . ';charset=' . $charset;
     }
     
     private static function postgres(Container $config) : string {
-        $host = $config->getValue('host');
-        $port = $config->getValue('port');
-        $name = $config->getValue('name');
+        $host = $config->get('host');
+        $port = $config->get('port');
+        $name = $config->get('name');
         return 'pgsql:host=' . $host . ';port=' . $port . ';dbname=' . $name . ';';
     }
 }

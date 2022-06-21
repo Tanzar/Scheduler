@@ -16,7 +16,7 @@
 ?>
 
 <form class="login-form" action="<?php echo Scripts::get('login.php'); ?>">
-    <input class="login-form-input" name="username" type="text" placeholder="<?php echo $interfaceNames->getValue('username'); ?>">
-    <input class="login-form-input" name="password" type="password" placeholder="<?php echo $interfaceNames->getValue('password'); ?>">
-    <input class="login-form-submit" type="submit" value="<?php echo $interfaceNames->getValue('login'); ?>">
+    <input class="login-form-input" name="username" type="text" placeholder="<?php echo $interfaceNames->get('username'); ?>">
+    <input class="login-form-input" name="password" type="password" placeholder="<?php echo $interfaceNames->get('password'); ?>">
+    <input class="standard-button" type="submit" value="<?php echo $interfaceNames->get('login'); ?>">
 </form>

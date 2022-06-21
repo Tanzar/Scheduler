@@ -9,8 +9,12 @@
     use Tanweb\Config\Scripts as Scripts;
     use Tanweb\Config\INI\AppConfig as AppConfig;
     use Tanweb\Container as Container;
+    use Tanweb\Config\INI\Languages as Languages;
     
     PageAccess::allowFor(['admin']);   //locks access if failed to pass redirects to index page
+    $languages = Languages::getInstance();
+    $adminOptions = new Container($languages->get('admin'));
+    $interfaceText = new Container($languages->get('interface'));
 ?>
 <!DOCTYPE html>
 <!--
@@ -23,9 +27,9 @@ This code is free to use, just remember to give credit.
             <?php
                 $appconfig = AppConfig::getInstance();
                 $cfg = $appconfig->getAppConfig();
-                echo $cfg->getValue('name') . ': ';
-                $modules = new Container($cfg->getValue('modules'));
-                echo ' : ' . $modules->getValue('admin');
+                echo $cfg->get('name') . ': ';
+                $modules = new Container($languages->get('modules'));
+                echo ' : ' . $modules->get('admin');
             ?>
         </title>
         <?php
@@ -37,8 +41,8 @@ This code is free to use, just remember to give credit.
             Resources::linkJS('modalBox.js');
             Resources::linkJS('RestApi.js');
             Resources::linkJS('TabMenu.js');
-            Resources::linkJS('adminPanel.js');
-            Resources::linkJS('adminPanelUsersTabs.js');
+            Resources::linkJS('getRestAddress.js');
+            Resources::linkJS('adminPanelUsers.js');
             Resources::linkExternal('jquery');
         ?>
     </head>
@@ -46,21 +50,32 @@ This code is free to use, just remember to give credit.
         <header>
             <?php Scripts::run('topMenu.php'); ?>
         </header>
-        <div class="side-menu">
-            <button id="users">Użytkownicy</button>
-            <button id="schedule"><?php echo $modules->getValue('schedule'); ?></button>
-            <button id="test">TEST</button>
+        <?php Scripts::run('adminPanelSideMenu.php'); ?>
+        <div class="page-contents" id="display">
+            <div class="horizontal-container">
+                <div>
+                    <div class="standard-text-title">
+                        <?php echo $interfaceText->get('users'); ?>
+                    </div>
+                    <div id="users"></div>
+                </div>
+                <div>
+                    <div class="standard-text-title">
+                        <?php echo $interfaceText->get('privilages'); ?>
+                    </div>
+                    <div id="privilages"></div>
+                </div>
+            </div>
+            <div class="standard-text-title">
+                <?php echo $interfaceText->get('employment'); ?>
+            </div>
+            <div id="employment"></div>
         </div>
-        <div class="page-contents" id="display"></div>
         <?php
             Scripts::run('createFooter.php');
         ?>
     </body>
     <script>
-        RestApi.getInterfaceNamesPackage(
-            function(names){
-                AdminPanel(names);
-            }    
-        );
+        AdminPanelUsers();
     </script>
 </html>
