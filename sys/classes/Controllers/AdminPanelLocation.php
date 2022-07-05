@@ -33,6 +33,13 @@ class AdminPanelLocation extends Controller{
         $this->setResponse($data);
     }
     
+    public function getLocationsByGroupId() {
+        $data = $this->getRequestData();
+        $id = (int) $data->get('id_location_group');
+        $response = $this->location->getLocationsByGroupId($id);
+        $this->setResponse($response);
+    }
+    
     public function getLocationGroups(){
         $data = $this->location->getAllLocationGroups();
         $this->setResponse($data);

@@ -10,8 +10,11 @@ use Data\Access\Tables\ScheduleDAO as ScheduleDAO;
 use Data\Access\Tables\ActivityDAO as ActivityDAO;
 use Data\Access\Tables\ActivityLocationTypeDAO as ActivityLocationTypeDAO;
 use Data\Access\Tables\UserDAO as UserDAO;
+use Data\Access\Tables\DocumentScheduleDAO as DocumentScheduleDAO;
 use Data\Access\Views\ActivityLocationTypeDetailsDAO as ActivityLocationTypeDetailsDAO;
 use Data\Access\Views\ScheduleEntriesDAO as ScheduleEntriesDAO;
+use Data\Access\Tables\LocationDAO as LocationDAO;
+use Data\Access\Tables\LocationGroupDAO as LocationGroupDAO;
 use Tanweb\Config\INI\AppConfig as AppConfig;
 use Data\Exceptions\NotFoundException as NotFoundException;
 use Services\Exceptions\ScheduleEntryException as ScheduleEntryException;
@@ -32,6 +35,9 @@ class ScheduleService {
     private UserDAO $user;
     private ActivityLocationTypeDetailsDAO $activityLocationDetails;
     private ScheduleEntriesDAO $scheduleEntries;
+    private DocumentScheduleDAO $documentSchedule;
+    private LocationDAO $location;
+    private LocationGroupDAO $locationGroup;
     
     public function __construct() {
         $this->schedule = new ScheduleDAO();
@@ -40,6 +46,9 @@ class ScheduleService {
         $this->user = new UserDAO();
         $this->activityLocationDetails = new ActivityLocationTypeDetailsDAO();
         $this->scheduleEntries = new ScheduleEntriesDAO();
+        $this->documentSchedule = new DocumentScheduleDAO();
+        $this->location = new LocationDAO();
+        $this->locationGroup = new LocationGroupDAO();
     }
     
     public function getEntries(string $start, string $end) : Container{
@@ -151,8 +160,45 @@ class ScheduleService {
             $data->add($userId, 'id_user');
             $data->remove('username');
         }
+        $document = new Container();
+        if($data->isValueSet('id_document')){
+            $document->add($data->get('id_document'), 'id_document');
+            $document->add($data->get('underground'), 'underground');
+            $data->remove('id_document');
+            $data->remove('underground');
+        }
         $this->checkEntryDates($data);
-        return $this->schedule->save($data);
+        $idEntry = $this->schedule->save($data);
+        if(!$document->isEmpty()){
+            $document->add($idEntry, 'id_schedule');
+            $this->documentSchedule->save($document);
+        }
+        return $idEntry;
+    }
+    
+    public function saveLocation(string $name, int $locationTypeId) : int {
+        $item = new Container();
+        $item->add($name, 'name');
+        $item->add($locationTypeId, 'id_location_type');
+        $groupId = $this->getTemporaryGroupId();
+        $item->add($groupId, 'id_location_group');
+        return $this->location->save($item);
+    }
+    
+    private function getTemporaryGroupId() : int {
+        $groups = $this->locationGroup->getByName('tmp');
+        if($groups->isEmpty()){
+            $item = new Container();
+            $item->add('tmp', 'name');
+            $item->add(0, 'active');
+            return $this->locationGroup->save($item);
+        }
+        else{
+            $item = $groups->get(0);
+            $group = new Container($item);
+            $id = (int) $group->get('id');
+            return $id;
+        }
     }
     
     //i'm not sure how to reduce it, maybe later will make something
@@ -228,10 +274,30 @@ class ScheduleService {
         $active = $entry->get('active');
         if($active){
             $this->schedule->disable($id);
+            $this->disableDocumentEntryRelation($id);
         }
         else{
             $this->checkEntryDates($entry);
             $this->schedule->enable($id);
+            $this->enableDocumentEntryRelation($id);
+        }
+    }
+    
+    private function disableDocumentEntryRelation(int $scheduleId) {
+        $relations = $this->documentSchedule->getByScheduleId($scheduleId);
+        foreach ($relations->toArray() as $item){
+            $relation = new Container($item);
+            $id = (int) $relation->get('id');
+            $this->documentSchedule->disable($id);
+        }
+    }
+    
+    private function enableDocumentEntryRelation(int $scheduleId) {
+        $relations = $this->documentSchedule->getByScheduleId($scheduleId);
+        foreach ($relations->toArray() as $item){
+            $relation = new Container($item);
+            $id = (int) $relation->get('id');
+            $this->documentSchedule->enable($id);
         }
     }
     

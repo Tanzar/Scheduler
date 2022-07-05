@@ -105,9 +105,9 @@ footer {
 
 .side-menu {
     min-width: fit-content;
-    width: 100px;
+    width: 110px;
     min-height: 200px;
-    max-width: 100px;
+    max-width: 110px;
     position: fixed;
     z-index: 10;
     top: 116px;
@@ -125,11 +125,14 @@ footer {
 
 .side-menu-button {
     width: 100%;
+    max-width: 110px;
     background-color: transparent;
     border: 2px solid var(--border-color);
     border-radius: 5px;
     padding: 5px;
     margin: 2px;
+    margin-bottom: 5px;
+    white-space: break-spaces;
 }
 
 .side-menu-button:hover {
@@ -140,7 +143,7 @@ footer {
 .page-contents {
     min-width: fit-content;
     margin-top: 20px;
-    margin-left: 141px;
+    margin-left: 151px;
     border: 3px solid var(--border-color);
     border-radius: 20px;
     background-color: var(--menu-background);

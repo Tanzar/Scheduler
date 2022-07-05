@@ -23,4 +23,10 @@
     <form action="<?php echo Pages::getURL('adminPanelLocation.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('locations'); ?>">
     </form>
+    <form action="<?php echo Pages::getURL('adminPanelLocationSettings.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('locations_settings'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('adminPanelDocuments.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('documents'); ?>">
+    </form>
 </div>

@@ -93,7 +93,12 @@ class MysqlBuilder extends SqlBuilder{
             $this->throwException('call where() before and().');
         }
         if(Utility::isString($last)){
-            $this->throwException('cannot use method after and() or or() methods.');
+            if($last === 'and' || $last === 'or' || $last === '('){
+                $this->throwException('cannot use method after and(), or(), openBracket() methods');
+            }
+            else{
+                $this->whereConditions[] = 'and';
+            }
         }
         else{
             $this->whereConditions[] = 'and';
@@ -116,7 +121,12 @@ class MysqlBuilder extends SqlBuilder{
             $this->throwException('call where() before or()');
         }
         if(Utility::isString($last)){
-            $this->throwException('cannot use method after and() or or() methods');
+            if($last === 'and' || $last === 'or' || $last === '('){
+                $this->throwException('cannot use method after and(), or(), openBracket() methods');
+            }
+            else{
+                $this->whereConditions[] = 'or';
+            }
         }
         else{
             $this->whereConditions[] = 'or';
@@ -124,6 +134,46 @@ class MysqlBuilder extends SqlBuilder{
         return $this;
     }
 
+    /**
+     * Adds opening bracket '(' character for select query conditions
+     * @return SqlBuilder
+     */
+    public function openBracket() : SqlBuilder {
+        if($this->isNotSelect()){
+            $this->throwException('method only works for select');
+        }
+        $this->whereConditions[] = '(';
+        return $this;
+    }
+    
+    /**
+     * Adds closing bracket ')' character for select query conditions
+     * !it won't check if there were opening brackets before!
+     * @return SqlBuilder
+     */
+    public function closeBracket() : SqlBuilder {
+        if($this->isNotSelect()){
+            $this->throwException('method only works for select');
+        }
+        $last = end($this->whereConditions);
+        if($last === false){
+            $this->throwException('call where() before closeBracket()');
+        }
+        if(Utility::isString($last)){
+            if($last === 'and' || $last === 'or' || $last === '('){
+                $this->throwException('cannot use method after and(), or(), openBracket() methods');
+            }
+            else{
+                $this->whereConditions[] = ')';
+            }
+        }
+        else{
+            $this->whereConditions[] = ')';
+        }
+        return $this;
+    }
+    
+    
     /**
      * Adds order by to sql
      * ! CALL select() FIRST !
@@ -319,7 +369,12 @@ class MysqlBuilder extends SqlBuilder{
             }
         }
         else{
-            return '';
+            if($item === ')'){
+                return ')';
+            }
+            else{
+                return '';
+            }
         }
     }
     

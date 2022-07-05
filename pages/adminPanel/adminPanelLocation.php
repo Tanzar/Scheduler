@@ -10,6 +10,7 @@
     use Tanweb\Config\INI\AppConfig as AppConfig;
     use Tanweb\Container as Container;
     use Tanweb\Config\INI\Languages as Languages;
+    use Services\LocationService as LocationService;
     
     PageAccess::allowFor(['admin']);   //locks access if failed to pass redirects to index page
     $languages = Languages::getInstance();
@@ -57,19 +58,24 @@ This code is free to use, just remember to give credit.
                     <div class="standard-text-title">
                         <?php echo $interfaceText->get('location'); ?>
                     </div>
+                    <div class="horizontal-container">
+                        <div class="standard-text">
+                            <?php echo $interfaceText->get('select_location_group') ?>
+                        </div>
+                        <select class="standard-input" id="selectLocationType">
+                            <?php
+                                $service = new LocationService();
+                                $types = $service->getAllLocationGroups();
+                                foreach ($types->toArray() as $item){
+                                    $type = new Container($item);
+                                    echo '<option value="' . $type->get('id') . '">';
+                                    echo $type->get('name');
+                                    echo '</option>';
+                                }
+                            ?>
+                        </select>
+                    </div>
                     <div id="location"></div>
-                </div>
-                <div>
-                    <div class="standard-text-title">
-                        <?php echo $interfaceText->get('location_type'); ?>
-                    </div>
-                    <div id="locationType"></div>
-                </div>
-                <div>
-                    <div class="standard-text-title">
-                        <?php echo $interfaceText->get('location_group'); ?>
-                    </div>
-                    <div id="locationGroup"></div>
                 </div>
             </div>
             

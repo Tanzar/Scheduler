@@ -16,6 +16,7 @@ use Tanweb\Security\Security as Security;
 use Tanweb\TanwebException as TanwebException;
 use Controllers\Base\ControllerException as ControllerException;
 use Throwable;
+use Exception;
 
 /**
  * Class must be extended by ALL controllers to be properly managed.
@@ -91,7 +92,7 @@ abstract class Controller {
             $msg = $ex->errorMessage();
             $logger = Logger::getInstance();
             $logger->logError($msg);
-            throw $ex;
+            throw new Exception($msg);
         } catch (Throwable $ex) {
             $this->rollbackAll();
             $msg = $ex->getMessage() . " ;\n " .$ex->getTraceAsString();

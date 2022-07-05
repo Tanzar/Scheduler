@@ -35,7 +35,8 @@ function ActivityTable(language, div){
             { title: language.activity_group, variable: 'activity_group', width: 30},
             { title: language.worktime_record_row, variable: 'worktime_record_row', width: 30},
             { title: language.workcard_display, variable: 'workcard_display', width: 30},
-            { title: language.allow_location_input, variable: 'allow_location_input', width: 30}
+            { title: language.allow_location_input, variable: 'allow_location_input', width: 30},
+            { title: language.require_document, variable: 'require_document', width: 30}
         ],
         dataSource : { method: 'post', address: getRestAddress(), data: { controller: 'AdminPanelActivity', task: 'getActivities' } }
     };
@@ -60,7 +61,8 @@ function ActivityTable(language, div){
                 {type: 'select', title: language.activity_group, variable: 'activity_group', options: options},
                 {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1},
                 {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
-                {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'}
+                {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
+                {type: 'checkbox', title: language.require_document, variable: 'require_document'}
             ];
             openModalBox(language.new_activity, fields, language.save, function(data){
                 RestApi.post('AdminPanelActivity', 'saveActivity', data,
@@ -98,7 +100,8 @@ function ActivityTable(language, div){
                     {type: 'select', title: language.activity_group, variable: 'activity_group', options: options},
                     {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1},
                     {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
-                    {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'}
+                    {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
+                    {type: 'checkbox', title: language.require_document, variable: 'require_document'}
                 ];
                 openModalBox(language.edit_activity, fields, language.save, function(data){
                     RestApi.post('AdminPanelActivity', 'saveActivity', data,

@@ -9,7 +9,6 @@ namespace Controllers;
 use Controllers\Base\Controller as Controller;
 use Services\ScheduleService as ScheduleService;
 use Services\LocationService as LocationService;
-use Services\ActivityLocationAssignment as ActivityLocationAssignment;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 

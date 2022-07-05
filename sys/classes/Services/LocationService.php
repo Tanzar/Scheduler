@@ -9,6 +9,7 @@ namespace Services;
 use Data\Access\Tables\LocationDAO as LocationDAO;
 use Data\Access\Tables\LocationTypeDAO as LocationTypeDAO;
 use Data\Access\Tables\LocationGroupDAO as LocationGroupDAO;
+use Data\Access\Views\LocationDetailsDAO as LocationDetailsDAO;
 use Tanweb\Container as Container;
 
 /**
@@ -20,11 +21,13 @@ class LocationService {
     private LocationDAO $location;
     private LocationTypeDAO $type;
     private LocationGroupDAO $group;
+    private LocationDetailsDAO $locationDetails;
     
     public function __construct() {
         $this->location = new LocationDAO();
         $this->type = new LocationTypeDAO();
         $this->group = new LocationGroupDAO();
+        $this->locationDetails = new LocationDetailsDAO();
     }
     
     public function getAllLocations() : Container {
@@ -33,6 +36,10 @@ class LocationService {
     
     public function getActiveLocations() : Container {
         return $this->location->getActive();
+    }
+    
+    public function getLocationsByGroupId(int $id) : Container {
+        return $this->locationDetails->getByIdLocationGroup($id);
     }
     
     public function getLocationsByTypeID(int $idType) : Container {

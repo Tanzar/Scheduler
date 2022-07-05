@@ -35,6 +35,12 @@ class LocationGroupDAO extends DAO{
         return $this->select($sql);
     }
     
+    public function getByName(string $name) : Container {
+        $sql = new  MysqlBuilder();
+        $sql->select('location_group')->where('name', $name);
+        return $this->select($sql);
+    }
+    
     public function disable(int $id){
         $sql = new MysqlBuilder();
         $sql->update('location_group', 'id', $id)

@@ -11,6 +11,7 @@ use Tanweb\Config\Server as Server;
 use Tanweb\Config\Pages as Pages;
 use Tanweb\Security\Security as Security;
 use Tanweb\Config\INI\Languages as Languages;
+use Tanweb\Session as Session;
 
 try{
     $languages = Languages::getInstance();
@@ -30,14 +31,18 @@ try{
     }
     
     //--- SCHEDULE ---//
-    if($security->userHaveAnyPrivilage(new Container(['admin', 'schedule_user', 'schedule_admin']))){
+    if($security->userHaveAnyPrivilage(new Container(['admin', 'schedule_user', 'schedule_user_inspector', 'schedule_admin']))){
         echo '<form action="' . Pages::getURL('scheduleAll.php') . '">';
         echo '<input type="submit" class="standard-button" value="' . $modules->get('schedule') . '">';
         echo '</form>';
     }
     
     //--- INSPECTOR ---//
-    //TODO
+    if($security->userHaveAnyPrivilage(new Container(['admin', 'schedule_user_inspector']))){
+        echo '<form action="' . Pages::getURL('inspectorReports.php') . '">';
+        echo '<input type="submit" class="standard-button" value="' . $modules->get('inspector') . '">';
+        echo '</form>';
+    }
     
     //--- ARCHIVIST ---//
     //TODO
@@ -45,7 +50,7 @@ try{
     //--- STATISTICS ---//
     //TODO
     
-    //--- HELPDESK ---//
+    //--- FILES ---//
     //TODO
     
 }

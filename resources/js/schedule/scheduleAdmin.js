@@ -102,28 +102,13 @@ function ScheduleAdmin(){
         
         selectUser.onchange = function(){
             goto.onclick();
-            /*
-            var date = document.getElementById('displayDate');
-            var range = new DaysRange(new Date(date.value));
-            rangeDisplay.textContent = range.getStart() + '  :  ' + range.getEnd();
-            datatable.setDatasource({
-                method: 'get',
-                address: getRestAddress(),
-                data: {
-                    controller: 'ScheduleAdmin',
-                    task: 'getEntries',
-                    startDate: range.getStart(),
-                    endDate: range.getEnd(),
-                    username: $('#selectUser').val()
-                }
-            });*/
         }
         
         var selectActivityGroup = new Select('selectActivityGroup', language.select_activity_group);
         var selectActivity = new Select('selectActivity', language.select_activity);
         var selectLocationType = new Select('selectLocationType', language.select_location_type);
         var selectLocation = new Select('selectLocation', language.select_location);
-        var addLocationButton = new AddLocationButton(language, selectLocation);
+        var addLocationButton = new AddLocationButton(language);
         
         selectActivityGroup.setOnChange(function(group){
             addLocationButton.hide();
@@ -254,13 +239,13 @@ function Select(id, placeholder){
     }
 }
 
-function AddLocationButton(language, selectLocation){
+function AddLocationButton(language){
     var addLocationButton = document.getElementById('addLocation');
     addLocationButton.onclick = function(){
         var item = {id_location_type: $('#selectLocationType').val()};
         if(item.id_location_type !==''){
             var fields = [
-                {type: 'text', title: language.location, variable: 'name'}
+                {type: 'text', title: language.location, variable: 'name', limit: 100}
             ];
             openModalBox(language.new_location, fields, language.save, function(data){
                 console.log(data);

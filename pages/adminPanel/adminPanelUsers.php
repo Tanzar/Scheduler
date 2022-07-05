@@ -66,10 +66,14 @@ This code is free to use, just remember to give credit.
                     <div id="privilages"></div>
                 </div>
             </div>
-            <div class="standard-text-title">
-                <?php echo $interfaceText->get('employment'); ?>
+            <div class="horizontal-container">
+                <div>
+                    <div class="standard-text-title">
+                        <?php echo $interfaceText->get('employment'); ?>
+                    </div>
+                    <div id="employment"></div>
+                </div>
             </div>
-            <div id="employment"></div>
         </div>
         <?php
             Scripts::run('createFooter.php');

@@ -136,7 +136,7 @@ class Resources {
         $ext = new Container($config->get($index));
         $link = $ext->get('link');
         if(self::isNotInternetAccess() && $ext->isValueSet('local')){
-            $link = $ext->get('local');
+            $link  = self::localLinkToResources($ext);
         }
         switch ($ext->get('type')){
             case 'js':
@@ -149,7 +149,7 @@ class Resources {
                 echo '<a href="' . $link . '">' . $index . '</a>';
                 break;
             default :
-                echo 'Error: resource handling not defined for - ' . $ext['type'];
+                echo 'Error: resource handling not defined for - ' . $ext->get('type');
         }
     }
     
@@ -163,6 +163,18 @@ class Resources {
             $isConnected = true;
         }
         return $isConnected;
+    }
+    
+    private static function localLinkToResources(Container $ext) : string {
+        $type = $ext->get('type');
+        switch($type){
+            case 'js':
+                return self::getJS($ext->get('local'));
+            case 'css':
+                return self::getCSS($ext->get('local'));
+            default:
+                echo 'Error: resource handling not defined for - ' . $ext->get('type');
+        }
     }
     
     /**

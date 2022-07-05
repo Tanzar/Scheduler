@@ -1,0 +1,5 @@
+[2022-07-05  08:01:53] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-05  08:01:57] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-05  08:17:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-05  08:17:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-07-05  08:17:19] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')

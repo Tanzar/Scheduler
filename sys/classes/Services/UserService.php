@@ -13,7 +13,9 @@ use Data\Access\Tables\PrivilageDAO as PrivilageDAO;
 use Data\Access\Tables\EmploymentDAO as EmploymentDAO;
 use Data\Access\Views\UsersEmploymentPeriodsDAO as UsersEmploymentPeriodsDAO;
 use Data\Access\Views\UsersWithoutPasswordsDAO as UsersWithoutPasswordsDAO;
+use Data\Access\Views\UsersPrivilagesDAO as UsersPrivilagesDAO;
 use Services\Exceptions\OverlapingPeriodsException as OverlapingPeriodsException;
+use Services\Exceptions\LastAdminException as LastAdminException;
 
 /**
  * Description of UserService
@@ -26,6 +28,7 @@ class UserService{
     private EmploymentDAO $employment;
     private UsersEmploymentPeriodsDAO $usersEmploymentPeriods;
     private UsersWithoutPasswordsDAO $usersWithoutPasswords;
+    private UsersPrivilagesDAO $usersPrivilages;
     
     public function __construct() {
         $this->users = new UserDAO();
@@ -33,6 +36,7 @@ class UserService{
         $this->employment = new EmploymentDAO();
         $this->usersEmploymentPeriods = new UsersEmploymentPeriodsDAO();
         $this->usersWithoutPasswords = new UsersWithoutPasswordsDAO();
+        $this->usersPrivilages = new UsersPrivilagesDAO();
     }
     
     public function getAllUsers() : Container {
@@ -138,6 +142,9 @@ class UserService{
         $user = $this->getUser($data);
         $active = $user->get('active');
         if($active){
+            if($this->usersPrivilages->isLastAdmin()){
+                throw new LastAdminException();
+            }
             $this->users->disable($user->get('id'));
             
         }
@@ -150,6 +157,9 @@ class UserService{
         $privilage = $this->privilages->getByID($id);
         $active = $privilage->get('active');
         if($active){
+            if($privilage->get('privilage') === 'admin' && $this->usersPrivilages->isLastAdmin()){
+                throw new LastAdminException();
+            }
             $this->privilages->disable($privilage->get('id'));
             
         }

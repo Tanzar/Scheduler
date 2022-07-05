@@ -39,7 +39,9 @@ This code is free to use, just remember to give credit.
             <?php Scripts::run('topMenu.php'); ?>
         </header>
         <div class="side-menu">
-            <button id="my_data" class="standard-button"><?php echo $interface->get('my_data'); ?></button>
+            <?php
+                Scripts::run('indexSideMenu.php');
+            ?>
         </div>
         <div class="page-contents-centered">
             <?php 
@@ -48,7 +50,7 @@ This code is free to use, just remember to give credit.
                     Scripts::run('loginForm.php');
                 }
                 else{
-                    echo 'Witaj ' . $username;
+                    Scripts::run('indexContents.php');
                 }
             ?>
         </div>

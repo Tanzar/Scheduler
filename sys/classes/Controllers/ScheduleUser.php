@@ -9,6 +9,7 @@ namespace Controllers;
 use Controllers\Base\Controller as Controller;
 use Services\ScheduleService as ScheduleService;
 use Services\LocationService as LocationService;
+use Services\DocumentService as DocumentService;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 use DateTime;
@@ -21,11 +22,12 @@ use DateTime;
 class ScheduleUser extends Controller{
     private ScheduleService $schedule;
     private LocationService $location;
-    
+    private DocumentService $document;
     
     public function __construct() {
         $this->schedule = new ScheduleService();
         $this->location = new LocationService();
+        $this->document = new DocumentService();
         $privilages = new Container();
         $privilages->add('admin');
         $privilages->add('schedule_user');
@@ -71,6 +73,14 @@ class ScheduleUser extends Controller{
         $this->setResponse($result);
     }
     
+    public function getMyMatchingDocuments(){
+        $data = $this->getRequestData();
+        $start = $data->get('start');
+        $end = $data->get('end');
+        $result = $this->document->getDocumentsForUserEntryDates($start, $end);
+        $this->setResponse($result);
+    }
+    
     public function saveEntry(){
         $languages = Languages::getInstance();
         $data = $this->getRequestData();
@@ -87,6 +97,18 @@ class ScheduleUser extends Controller{
             $this->throwException($languages->get('cannot_change_older') . 
                     $limit . ' ' . $languages->get('days') . '.');
         }
+    }
+    
+    public function saveLocation(){
+        $languages = Languages::getInstance();
+        $data = $this->getRequestData();
+        $name = $data->get('name');
+        $locationTypeId = (int) $data->get('id_location_type');
+        $id = $this->schedule->saveLocation($name, $locationTypeId);
+        $response = new Container();
+        $response->add($languages->get('changes_saved'), 'message');
+        $response->add($id, 'id');
+        $this->setResponse($response);
     }
     
     public function removeEntry(){

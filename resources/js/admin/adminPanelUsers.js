@@ -224,11 +224,16 @@ function PrivilagesTable(language, div){
                     if(data.privilage !== undefined){
                         data.id_user = table.idUser;
                         RestApi.post('AdminPanelUsers', 'savePrivilage', data, function(response){
-                            var data = JSON.parse(response);
-                            console.log(data);
-                            alert(data.message);
-                            datatab.refresh();
-                        });
+                                var data = JSON.parse(response);
+                                console.log(data);
+                                alert(data.message);
+                                datatab.refresh();
+                            },
+                            function(response){
+                                console.log(response.responseText);
+                                alert(response.responseText);
+                            }
+                        );
                     }
                     else{
                         alert(language.select_privilage);
@@ -252,7 +257,11 @@ function PrivilagesTable(language, div){
                     console.log(data);
                     alert(data.message);
                     datatab.refresh();
-            });
+                },
+                    function(response){
+                        console.log(response.responseText);
+                        alert(response.responseText);
+                });
         }
         else{
             alert(language.select_privilage)
@@ -280,6 +289,7 @@ function EmploymentsTable(language, div){
         columns : [
             { title: language.active, variable: 'active', width: 50},
             { title: language.position, variable: 'position', width: 150},
+            { title: language.user_type, variable: 'user_type', width: 100},
             { title: language.start_date, variable: 'start', width: 100},
             { title: language.end_date, variable: 'end', width: 100},
             { title: language.sort_priority, variable: 'sort_priority', width: 50},
@@ -305,6 +315,7 @@ function EmploymentsTable(language, div){
         if(table.idUser !== 0){
             var fields = [
                 {type: 'text', title: language.position, variable: 'position', limit: 255},
+                {type: 'text', title: language.user_type, variable: 'user_type', limit: 6},
                 {type: 'date', title: language.start_date, variable: 'start'},
                 {type: 'date', title: language.end_date, variable: 'end'},
                 {type: 'number', title: language.sort_priority, variable: 'sort_priority', value: 10, min: 1},
@@ -332,6 +343,7 @@ function EmploymentsTable(language, div){
         if(selected !== undefined){
             var fields = [
                 {type: 'text', title: language.position, variable: 'position', limit: 255},
+                {type: 'text', title: language.user_type, variable: 'user_type', limit: 6},
                 {type: 'date', title: language.start_date, variable: 'start'},
                 {type: 'date', title: language.end_date, variable: 'end'},
                 {type: 'number', title: language.sort_priority, variable: 'sort_priority', value: 10, min: 1},

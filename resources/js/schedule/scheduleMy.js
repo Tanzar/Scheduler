@@ -6,6 +6,7 @@ function ScheduleMy(){
     var entries = document.getElementById('entries');
     
     RestApi.getInterfaceNamesPackage(function(language){
+        var requireDocument = false;
         var dateRange = new DaysRange(new Date());
         
         var rangeDisplay = document.getElementById('rangeDisplay');
@@ -105,17 +106,21 @@ function ScheduleMy(){
             RestApi.get('ScheduleUser', 'getActivitiesForGroup', {activities_group: group}, function(response){
                 var data = JSON.parse(response);
                 data.forEach(item => {
-                    selectActivity.addOption(item.id, item.name, item.allow_location_input);
+                    selectActivity.addOption(item.id, item.name, {
+                        allowLocationInput: item.allow_location_input,
+                        requireDocument: item.require_document
+                    });
                 });
             });
         });
-        selectActivity.setOnChange(function(activity, allow_location_input){
-            if(allow_location_input === 0){
+        selectActivity.setOnChange(function(activity, hidden){
+            if(hidden.allowLocationInput === 0){
                 addLocationButton.hide();
             }
             else{
                 addLocationButton.show();
             }
+            requireDocument = hidden.requireDocument;
             selectLocationType.clear();
             selectLocation.clear();
             RestApi.get('ScheduleUser', 'getLocationTypesForActivity', {id_activity: activity}, function(response){
@@ -145,14 +150,47 @@ function ScheduleMy(){
                         start: $('#startDate').val().replace('T', ' '),
                         end: $('#endDate').val().replace('T', ' ')
                     };
-                    RestApi.post('ScheduleUser', 'saveEntry', dataToSend, function(response){
-                        var data = JSON.parse(response);
-                        console.log(data);
-                        alert(data.message);
-                        datatable.refresh();
-                    }, function(response){
-                        alert(response.responseText);
-                    });
+                    if(requireDocument === 1){
+                        var item = {
+                            start: dataToSend.start,
+                            end: dataToSend.end
+                        }
+                        RestApi.post('ScheduleUser', 'getMyMatchingDocuments', item, function(response){
+                            var data = JSON.parse(response);
+                            var options = [];
+                            data.forEach(item => {
+                                var option = {
+                                    value: item.id_document,
+                                    title: item.document_number
+                                }
+                                options.push(option);
+                            });
+                            var fields = [
+                                {type: 'select', title: language.select_document, variable: 'id_document', options: options},
+                                {type: 'checkbox', title: (language.underground + '?'), variable: 'underground'}
+                            ];
+                            openModalBox(language.select_document, fields, language.save, function(data){
+                                RestApi.post('ScheduleUser', 'saveEntry', dataToSend, function(response){
+                                    var data = JSON.parse(response);
+                                    console.log(data);
+                                    alert(data.message);
+                                    datatable.refresh();
+                                }, function(response){
+                                    alert(response.responseText);
+                                });
+                            }, dataToSend);
+                        });
+                    }
+                    else{
+                        RestApi.post('ScheduleUser', 'saveEntry', dataToSend, function(response){
+                            var data = JSON.parse(response);
+                            console.log(data);
+                            alert(data.message);
+                            datatable.refresh();
+                        }, function(response){
+                            alert(response.responseText);
+                        });
+                    }
                 }
             }
         };
@@ -179,6 +217,9 @@ function DaysRange(date){
 function Select(id, placeholder){
     var select = document.getElementById(id);
     var hiddenValues = {};
+    var controllerName = '';
+    var taskName = '';
+    var dataToSend = {};
     
     this.clear = function(){
         while(select.firstChild){
@@ -213,11 +254,21 @@ function Select(id, placeholder){
     var me = this;
     this.loadOptions = function(controller, task, inputData){
         RestApi.get(controller, task, inputData, function(response){
+            controllerName = controller;
+            taskName = task;
+            dataToSend = inputData;
             var data = JSON.parse(response);
             data.forEach(item => {
                 me.addOption(item.id, item.name);
             });
         });
+    }
+    
+    this.refresh = function(){
+        if(controllerName !== '', taskName !== '', dataToSend !== {}){
+            this.clear();
+            this.loadOptions(controllerName, taskName, dataToSend);
+        }
     }
 }
 
@@ -230,7 +281,14 @@ function AddLocationButton(language, selectLocation){
                 {type: 'text', title: language.location, variable: 'name'}
             ];
             openModalBox(language.new_location, fields, language.save, function(data){
-                console.log(data);
+                RestApi.post('ScheduleUser', 'saveLocation', data, function(response){
+                    var data = JSON.parse(response);
+                    console.log(data);
+                    alert(data.message);
+                    selectLocation.refresh();
+                }, function(response){
+                    alert(response.responseText);
+                });
             }, item);
         }
         else{

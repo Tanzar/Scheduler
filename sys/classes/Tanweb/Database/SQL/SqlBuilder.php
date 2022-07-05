@@ -24,6 +24,10 @@ abstract class SqlBuilder {
     
     abstract public function or() : SqlBuilder;
     
+    abstract public function openBracket() : SqlBuilder;
+    
+    abstract public function closeBracket() : SqlBuilder;
+    
     abstract public function orderBy(string $column, bool $asc = true) : SqlBuilder;
     
     abstract public function insert(string $table) : SqlBuilder;
