@@ -7,7 +7,7 @@
 namespace Data\Access\Views;
 
 use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
-use Data\Access\DataAccessObject as DAO;
+use Data\Access\View as View;
 use Tanweb\Container as Container;
 
 /**
@@ -15,17 +15,17 @@ use Tanweb\Container as Container;
  *
  * @author Tanzar
  */
-class LocationDetailsDAO extends DAO{
+class LocationDetailsView extends View{
     
     public function __construct() {
-        parent::__construct(true);
+        parent::__construct();
     }
     
     protected function setDatabaseIndex(): string {
         return 'scheduler';
     }
 
-    protected function setDefaultTable(): string {
+    protected function setDefaultName(): string {
         return 'location_details';
     }
     

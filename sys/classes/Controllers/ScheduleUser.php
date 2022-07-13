@@ -75,9 +75,7 @@ class ScheduleUser extends Controller{
     
     public function getMyMatchingDocuments(){
         $data = $this->getRequestData();
-        $start = $data->get('start');
-        $end = $data->get('end');
-        $result = $this->document->getDocumentsForUserEntryDates($start, $end);
+        $result = $this->document->getDocumentsByUserEntryDetails($data);
         $this->setResponse($result);
     }
     

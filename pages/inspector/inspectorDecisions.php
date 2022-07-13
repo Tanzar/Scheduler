@@ -8,6 +8,9 @@
     use Tanweb\Config\INI\AppConfig as AppConfig;
     use Tanweb\Config\INI\Languages as Languages;
     use Tanweb\Container as Container;
+    use Tanweb\Security\PageAccess as PageAccess;
+    
+    PageAccess::allowFor(['admin', 'schedule_user_inspector']);   //locks access if failed to pass redirects to index page
     
     $languages = Languages::getInstance();
     $names = $languages->get('interface');

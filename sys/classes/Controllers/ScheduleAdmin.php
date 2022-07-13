@@ -9,6 +9,7 @@ namespace Controllers;
 use Controllers\Base\Controller as Controller;
 use Services\ScheduleService as ScheduleService;
 use Services\LocationService as LocationService;
+use Services\DocumentService as DocumentService;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 use DateTime;
@@ -21,11 +22,13 @@ use DateTime;
 class ScheduleAdmin extends Controller{
     private ScheduleService $schedule;
     private LocationService $location;
+    private DocumentService $document;
     
     
     public function __construct() {
         $this->schedule = new ScheduleService();
         $this->location = new LocationService();
+        $this->document = new DocumentService();
         $privilages = new Container();
         $privilages->add('admin');
         $privilages->add('schedule_admin');
@@ -59,6 +62,12 @@ class ScheduleAdmin extends Controller{
         $end = $data->get('endDate');
         $username = $data->get('username');
         $result = $this->schedule->getUserEntries($username, $start, $end);
+        $this->setResponse($result);
+    }
+    
+    public function getMatchingDocuments(){
+        $data = $this->getRequestData();
+        $result = $this->document->getDocumentsByUserEntryDetails($data);
         $this->setResponse($result);
     }
     

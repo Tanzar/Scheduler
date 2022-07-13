@@ -9,8 +9,9 @@ namespace Services;
 use Data\Access\Tables\DocumentDAO as DocumentDAO;
 use Data\Access\Tables\DocumentUserDAO as DocumentUserDAO;
 use Data\Access\Tables\DocumentScheduleDAO as DocumentScheduleDAO;
-use Data\Access\Views\DocumentUserDetailsDAO as DocumentUserDetailsDAO;
-use Data\Access\Views\DocumentEntriesDetailsDAO as DocumentEntriesDetailsDAO;
+use Data\Access\Views\DocumentUserDetailsView as DocumentUserDetailsView;
+use Data\Access\Views\DocumentEntriesDetailsView as DocumentEntriesDetailsView;
+use Data\Access\Views\DocumentDetailsView as DocumentDetailsView;
 use Data\Access\Tables\UserDAO as UserDAO;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
@@ -25,21 +26,23 @@ class DocumentService {
     private DocumentDAO $document;
     private DocumentUserDAO $documentUser;
     private DocumentScheduleDAO $documentSchedule;
-    private DocumentUserDetailsDAO $documentUserDetails;
-    private DocumentEntriesDetailsDAO $documentEntriesDetails;
+    private DocumentUserDetailsView $documentUserDetails;
+    private DocumentEntriesDetailsView $documentEntriesDetails;
+    private DocumentDetailsView $documentDetails;
     private UserDAO $user;
     
     public function __construct() {
         $this->document = new DocumentDAO();
         $this->documentUser = new DocumentUserDAO();
         $this->documentSchedule = new DocumentScheduleDAO();
-        $this->documentUserDetails = new DocumentUserDetailsDAO();
-        $this->documentEntriesDetails = new DocumentEntriesDetailsDAO();
+        $this->documentUserDetails = new DocumentUserDetailsView();
+        $this->documentEntriesDetails = new DocumentEntriesDetailsView();
+        $this->documentDetails = new DocumentDetailsView();
         $this->user = new UserDAO();
     }
     
     public function getDocumentsByMonthYear(int $month, int $year) : Container{
-        return $this->document->getActiveByMonthAndYear($month, $year);
+        return $this->documentDetails->getActiveByMonthAndYear($month, $year);
     }
     
     public function getAllDocumentsByMonthYear(int $month, int $year) : Container{
@@ -60,11 +63,19 @@ class DocumentService {
         return $this->documentUserDetails->getActiveDocumentByYearUsername($year, $username);
     }
     
-    public function getDocumentsForUserEntryDates(string $start, string $end) : Container{
-        $username = Session::getUsername();
+    public function getDocumentsByUserEntryDetails(Container $entryDetails) : Container{
+        if($entryDetails->isValueSet('username')){
+            $username = $entryDetails->get('username');
+        }
+        else{
+            $username = Session::getUsername();
+        }
+        $start = $entryDetails->get('start');
+        $end = $entryDetails->get('end');
+        $locationId = (int) $entryDetails->get('id_location');
         $startDate = date('Y-m-d', strtotime($start));
         $endDate = date('Y-m-d', strtotime($end));
-        return $this->documentUserDetails->getActiveByUsernameAndEntryDates($username, $startDate, $endDate);
+        return $this->documentUserDetails->getActiveByUsernameLocationIdEntryDates($username, $locationId, $startDate, $endDate);
     }
     
     public function getUsersByDocumentId(int $documentId) : Container {

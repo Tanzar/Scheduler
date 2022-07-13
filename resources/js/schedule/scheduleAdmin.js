@@ -6,6 +6,7 @@ function ScheduleAdmin(){
     var entries = document.getElementById('entries');
     
     RestApi.getInterfaceNamesPackage(function(language){
+        var requireDocument = false;
         var dateRange = new DaysRange(new Date());
         
         var rangeDisplay = document.getElementById('rangeDisplay');
@@ -39,12 +40,16 @@ function ScheduleAdmin(){
                     {type: 'dateTime', title: language.start, variable: 'start'},
                     {type: 'dateTime', title: language.end, variable: 'end'}
                 ];
+                if(selected.can_be_inspection === 1){
+                    fields.push({type: 'checkbox', title: (language.underground + '?'), variable: 'underground'});
+                }
                 openModalBox(language.edit_entry, fields, language.save, function(data){
                     var dataToSend = {
                         id: data.id,
                         id_user: data.id_user,
                         start: data.start,
-                        end: data.end
+                        end: data.end,
+                        underground: data.underground
                     }
                     RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, function(response){
                         var data = JSON.parse(response);
@@ -118,17 +123,21 @@ function ScheduleAdmin(){
             RestApi.get('ScheduleAdmin', 'getActivitiesForGroup', {activities_group: group}, function(response){
                 var data = JSON.parse(response);
                 data.forEach(item => {
-                    selectActivity.addOption(item.id, item.name, item.allow_location_input);
+                    selectActivity.addOption(item.id, item.name, {
+                        allowLocationInput: item.allow_location_input,
+                        requireDocument: item.require_document
+                    });
                 });
             });
         });
-        selectActivity.setOnChange(function(activity, allow_location_input){
-            if(allow_location_input === 0){
+        selectActivity.setOnChange(function(activity, hidden){
+            if(hidden.allowLocationInput === 0){
                 addLocationButton.hide();
             }
             else{
                 addLocationButton.show();
             }
+            requireDocument = hidden.requireDocument;
             selectLocationType.clear();
             selectLocation.clear();
             RestApi.get('ScheduleAdmin', 'getLocationTypesForActivity', {id_activity: activity}, function(response){
@@ -163,14 +172,49 @@ function ScheduleAdmin(){
                             end: $('#endDate').val().replace('T', ' '),
                             username: $('#selectUser').val()
                         };
-                        RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, function(response){
-                            var data = JSON.parse(response);
-                            console.log(data);
-                            alert(data.message);
-                            datatable.refresh();
-                        }, function(response){
-                            alert(response.responseText);
-                        });
+                        if(requireDocument === 1){
+                            var item = {
+                                start: dataToSend.start,
+                                end: dataToSend.end,
+                                id_location: dataToSend.id_location,
+                                username: dataToSend.username
+                            }
+                            RestApi.post('ScheduleAdmin', 'getMatchingDocuments', item, function(response){
+                                var data = JSON.parse(response);
+                                var options = [];
+                                data.forEach(item => {
+                                    var option = {
+                                        value: item.id_document,
+                                        title: item.document_number
+                                    }
+                                    options.push(option);
+                                });
+                                var fields = [
+                                    {type: 'select', title: language.select_document, variable: 'id_document', options: options},
+                                    {type: 'checkbox', title: (language.underground + '?'), variable: 'underground'}
+                                ];
+                                openModalBox(language.select_document, fields, language.save, function(data){
+                                    RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, function(response){
+                                        var data = JSON.parse(response);
+                                        console.log(data);
+                                        alert(data.message);
+                                        datatable.refresh();
+                                    }, function(response){
+                                        alert(response.responseText);
+                                    });
+                                }, dataToSend);
+                            });
+                        }
+                        else{
+                            RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, function(response){
+                                var data = JSON.parse(response);
+                                console.log(data);
+                                alert(data.message);
+                                datatable.refresh();
+                            }, function(response){
+                                alert(response.responseText);
+                            });
+                        }
                     }
                 }
             }

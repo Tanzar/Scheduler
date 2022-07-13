@@ -66,7 +66,7 @@ function Select(id, placeholder){
             me.clear();
             var data = JSON.parse(response);
             data.forEach(item => {
-                me.addOption(item.id, item.number);
+                me.addOption(item.id, item.document_number);
             });
         });
     }

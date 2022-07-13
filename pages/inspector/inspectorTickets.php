@@ -8,7 +8,10 @@
     use Tanweb\Config\INI\AppConfig as AppConfig;
     use Tanweb\Config\INI\Languages as Languages;
     use Tanweb\Container as Container;
+    use Tanweb\Security\PageAccess as PageAccess;
+    use Services\DocumentService as DocumentService;
     
+    PageAccess::allowFor(['admin', 'schedule_user_inspector']);   //locks access if failed to pass redirects to index page
     $languages = Languages::getInstance();
     $names = $languages->get('interface');
     $interface = new Container($names);
@@ -30,8 +33,15 @@ This code is free to use, just remember to give credit.
             ?>
         </title>
         <?php
+            
             Resources::linkCSS('main.css');
+            Resources::linkCSS('datatable.css');
+            Resources::linkCSS('modal-box.css');
+            Resources::linkJS('Datatable.js');
+            Resources::linkJS('modalBox.js');
             Resources::linkJS('RestApi.js');
+            Resources::linkJS('getRestAddress.js');
+            Resources::linkJS('inspectorTickets.js');
             Resources::linkExternal('jquery');
         ?>
     </head>
@@ -45,16 +55,38 @@ This code is free to use, just remember to give credit.
             ?>
         </div>
         <div class="page-contents-centered">
-            
+            <div class="page-contents-element">
+                <?php Scripts::run('selectMonthYear.php'); ?>
+            </div>
+            <div class="page-contents-element">
+                <label>
+                    <?php echo $interface->get('select_document') . ':'; ?>
+                </label>
+                <select class="standard-input" id="documents">
+                    <?php 
+                        echo '<option selected placeholder disabled>'
+                             . $interface->get('select_document') . '</option>';
+                        $documentService = new DocumentService();
+                        $month = (int) date('m');
+                        $year = (int) date('Y');
+                        $documents = $documentService->getCurrentUserDocumentsByMonthYear($month, $year);
+                        foreach ($documents->toArray() as $item){
+                            $document = new Container($item);
+                            echo '<option value="' . $document->get('id') . '">';
+                            echo $document->get('document_number') . '</option>';
+                        }
+                    ?>
+                </select>
+            </div>
+            <div class="page-contents-element">
+                <div id="tickets"></div>
+            </div>
         </div>
         <?php
             Scripts::run('createFooter.php');
         ?>
     </body>
     <script>
-        RestApi.getInterfaceNamesPackage(function(package){
-            console.log(package);
-        });
-        
+        init();
     </script>
 </html>

@@ -18,7 +18,7 @@ use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
 class LocationDAO extends DAO{
     
     public function __construct() {
-        parent::__construct(false);
+        parent::__construct();
     }
     
     protected function setDatabaseIndex(): string {
@@ -57,7 +57,7 @@ class LocationDAO extends DAO{
         return $this->select($sql);
     }
     
-    public function getByTypeId(int $idType) : Container {
+    public function getActiveByTypeId(int $idType) : Container {
         $sql = new MysqlBuilder();
         $sql->select('location')
                 ->where('active', 1)->and()

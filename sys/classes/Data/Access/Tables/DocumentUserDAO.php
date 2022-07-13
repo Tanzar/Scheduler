@@ -18,7 +18,7 @@ use Tanweb\Container as Container;
 class DocumentUserDAO extends DAO{
     
     public function __construct() {
-        parent::__construct(false);
+        parent::__construct();
     }
     
     protected function setDatabaseIndex(): string {

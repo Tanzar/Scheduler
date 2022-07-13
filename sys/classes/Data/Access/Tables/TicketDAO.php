@@ -11,11 +11,11 @@ use Tanweb\Container as Container;
 use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
 
 /**
- * Description of ActivityLocationType
+ * Description of Ticket
  *
  * @author Tanzar
  */
-class ActivityLocationTypeDAO extends DAO{
+class TicketDAO extends DAO{
     
     public function __construct() {
         parent::__construct();
@@ -26,21 +26,18 @@ class ActivityLocationTypeDAO extends DAO{
     }
     
     protected function setDefaultTable(): string {
-        return 'activity_location_type';
+        return 'ticket';
     }
-
-    public function enable(int $id) : void{
+    
+    public function enable(int $id){
         $sql = new MysqlBuilder();
-        $sql->update('activity_location_type', 'id', $id)
-                ->set('active', 1);
+        $sql->update('ticket', 'id', $id)->set('active', 1);
         $this->update($sql);
     }
     
-    public function disable(int $id) : void {
+    public function  disable(int $id) {
         $sql = new MysqlBuilder();
-        $sql->update('activity_location_type', 'id', $id)
-                ->set('active', 0);
+        $sql->update('ticket', 'id', $id)->set('active', 0);
         $this->update($sql);
     }
-
 }

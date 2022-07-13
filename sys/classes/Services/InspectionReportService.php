@@ -7,8 +7,8 @@
 namespace Services;
 
 use Data\Access\Tables\DocumentDAO as DocumentDAO;
-use Data\Access\Views\DocumentUserDetailsDAO as DocumentUserDetailsDAO;
-use Data\Access\Views\DocumentEntriesDetailsDAO as DocumentEntriesDetailsDAO;
+use Data\Access\Views\DocumentUserDetailsView as DocumentUserDetailsView;
+use Data\Access\Views\DocumentEntriesDetailsView as DocumentEntriesDetailsView;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 
@@ -19,13 +19,13 @@ use Tanweb\Config\INI\Languages as Languages;
  */
 class InspectionReportService {
     private DocumentDAO $document;
-    private DocumentUserDetailsDAO $documentUserDetails;
-    private DocumentEntriesDetailsDAO $documentEntriesDetails;
+    private DocumentUserDetailsView $documentUserDetails;
+    private DocumentEntriesDetailsView $documentEntriesDetails;
     
     public function __construct() {
         $this->document = new DocumentDAO();
-        $this->documentUserDetails = new DocumentUserDetailsDAO();
-        $this->documentEntriesDetails = new DocumentEntriesDetailsDAO();
+        $this->documentUserDetails = new DocumentUserDetailsView();
+        $this->documentEntriesDetails = new DocumentEntriesDetailsView();
     }
     
     public function generateReport(int $documentId, string $username) : Container {

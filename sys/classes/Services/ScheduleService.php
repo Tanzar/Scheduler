@@ -11,8 +11,8 @@ use Data\Access\Tables\ActivityDAO as ActivityDAO;
 use Data\Access\Tables\ActivityLocationTypeDAO as ActivityLocationTypeDAO;
 use Data\Access\Tables\UserDAO as UserDAO;
 use Data\Access\Tables\DocumentScheduleDAO as DocumentScheduleDAO;
-use Data\Access\Views\ActivityLocationTypeDetailsDAO as ActivityLocationTypeDetailsDAO;
-use Data\Access\Views\ScheduleEntriesDAO as ScheduleEntriesDAO;
+use Data\Access\Views\ActivityLocationTypeDetailsView as ActivityLocationTypeDetailsView;
+use Data\Access\Views\ScheduleEntriesView as ScheduleEntriesView;
 use Data\Access\Tables\LocationDAO as LocationDAO;
 use Data\Access\Tables\LocationGroupDAO as LocationGroupDAO;
 use Tanweb\Config\INI\AppConfig as AppConfig;
@@ -33,8 +33,8 @@ class ScheduleService {
     private ActivityDAO $activity;
     private ActivityLocationTypeDAO $activityLocation;
     private UserDAO $user;
-    private ActivityLocationTypeDetailsDAO $activityLocationDetails;
-    private ScheduleEntriesDAO $scheduleEntries;
+    private ActivityLocationTypeDetailsView $activityLocationDetails;
+    private ScheduleEntriesView $scheduleEntries;
     private DocumentScheduleDAO $documentSchedule;
     private LocationDAO $location;
     private LocationGroupDAO $locationGroup;
@@ -44,8 +44,8 @@ class ScheduleService {
         $this->activity = new ActivityDAO();
         $this->activityLocation = new ActivityLocationTypeDAO();
         $this->user = new UserDAO();
-        $this->activityLocationDetails = new ActivityLocationTypeDetailsDAO();
-        $this->scheduleEntries = new ScheduleEntriesDAO();
+        $this->activityLocationDetails = new ActivityLocationTypeDetailsView();
+        $this->scheduleEntries = new ScheduleEntriesView();
         $this->documentSchedule = new DocumentScheduleDAO();
         $this->location = new LocationDAO();
         $this->locationGroup = new LocationGroupDAO();
@@ -136,44 +136,70 @@ class ScheduleService {
     }
     
     public function saveEntryForUser(Container $data) : int {
-        if(!$data->isValueSet('id_user')){
-            if($data->isValueSet('username')){
-                $username = $data->get('username');
-                $user = $this->user->getByUsername($username);
-                $userId = $user->get('id');
-                $data->add($userId, 'id_user');
-                $data->remove('username');
-            }
-            else{
-                throw new ScheduleEntryException('username and/or id_user not set');
-            }
+        $entry = $this->formEntry($data);
+        $idSchedule = $this->schedule->save($entry);
+        if($data->isValueSet('id_document')){
+            $idDocument = (int) $data->get('id_document');
+            $this->saveDocumentSchedule($idSchedule, $idDocument);
         }
-        $this->checkEntryDates($data);
-        return $this->schedule->save($data);
+        return $idSchedule;
+    }
+    
+    private function formEntry(Container $data) : Container {
+        $entry = new Container();
+        if($data->isValueSet('id')){
+            $entry->add($data->get('id'), 'id');
+        }
+        $idUser = $this->getIdUser($data);
+        $entry->add($idUser, 'id_user');
+        if($data->isValueSet('id_location')){
+            $idLocation = $data->get('id_location');
+            $entry->add($idLocation, 'id_location');
+        }
+        if($data->isValueSet('id_activity')){
+            $idActivity = $data->get('id_activity');
+            $entry->add($idActivity, 'id_activity');
+        }
+        if($data->isValueSet('underground')){
+            $idUnderground = $data->get('underground');
+            $entry->add($idUnderground, 'underground');
+        }
+        $entry->add($data->get('start'), 'start');
+        $entry->add($data->get('end'), 'end');
+        $this->checkEntryDates($entry);
+        return $entry;
+    }
+    
+    private function getIdUser(Container $data) : int {
+        if($data->isValueSet('username')){
+            $user = $this->user->getByUsername($data->get('username'));
+            return (int) $user->get('id');
+        }
+        if($data->isValueSet('id_user')){
+            return (int) $data->get('id_user');
+        }
+        else{
+            throw new ScheduleEntryException('username and/or id_user not set');
+        }
+    }
+    
+    private function saveDocumentSchedule(int $idSchedule, int $idDocument) : void {
+        $documentSchedule = new Container();
+        $documentSchedule->add($idSchedule, 'id_schedule');
+        $documentSchedule->add($idDocument, 'id_document');
+        $this->documentSchedule->save($documentSchedule);
     }
     
     public function saveEntryForCurrentUser(Container $data) : int {
-        if(!$data->isValueSet('id_user')){
-            $username = Session::getUsername();
-            $user = $this->user->getByUsername($username);
-            $userId = $user->get('id');
-            $data->add($userId, 'id_user');
-            $data->remove('username');
-        }
-        $document = new Container();
+        $username = Session::getUsername();
+        $data->add($username, 'username');
+        $entry = $this->formEntry($data);
+        $idSchedule = $this->schedule->save($entry);
         if($data->isValueSet('id_document')){
-            $document->add($data->get('id_document'), 'id_document');
-            $document->add($data->get('underground'), 'underground');
-            $data->remove('id_document');
-            $data->remove('underground');
+            $idDocument = (int) $data->get('id_document');
+            $this->saveDocumentSchedule($idSchedule, $idDocument);
         }
-        $this->checkEntryDates($data);
-        $idEntry = $this->schedule->save($data);
-        if(!$document->isEmpty()){
-            $document->add($idEntry, 'id_schedule');
-            $this->documentSchedule->save($document);
-        }
-        return $idEntry;
+        return $idSchedule;
     }
     
     public function saveLocation(string $name, int $locationTypeId) : int {

@@ -4,18 +4,18 @@
  * This code is free to use, just remember to give credit.
  */
 
-namespace Data\Access\Tables;
+namespace Data\Access\Views;
 
-use Data\Access\DataAccessObject as DAO;
 use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
+use Data\Access\View as View;
 use Tanweb\Container as Container;
 
 /**
- * Description of DocumentDAO
+ * Description of DocumentDetailsDAO
  *
  * @author Tanzar
  */
-class DocumentDAO extends DAO{
+class DocumentDetailsView extends View{
     
     public function __construct() {
         parent::__construct();
@@ -25,13 +25,13 @@ class DocumentDAO extends DAO{
         return 'scheduler';
     }
 
-    protected function setDefaultTable(): string {
-        return 'document';
+    protected function setDefaultName(): string {
+        return 'document_details';
     }
     
     public function getActiveByMonthAndYear(int $month, int $year) : Container {
         $sql = new MysqlBuilder();
-        $sql->select('document')->where('active', 1)
+        $sql->select('document_details')->where('active', 1)
                 ->and()->openBracket()->openBracket()
                 ->where('month(start)', $month)->and()
                 ->where('year(start)', $year)->closeBracket()
@@ -44,7 +44,7 @@ class DocumentDAO extends DAO{
     
     public function getAllByMonthAndYear(int $month, int $year) : Container {
         $sql = new MysqlBuilder();
-        $sql->select('document')->openBracket()->openBracket()
+        $sql->select('document_details')->openBracket()->openBracket()
                 ->where('month(start)', $month)->and()
                 ->where('year(start)', $year)->closeBracket()
                 ->or()->openBracket()
@@ -54,15 +54,4 @@ class DocumentDAO extends DAO{
         return $this->select($sql);
     }
     
-    public function disable(int $id) : void {
-        $sql = new MysqlBuilder();
-        $sql->update('document', 'id', $id)->set('active', 0);
-        $this->update($sql);
-    }
-    
-    public function enable(int $id) : void {
-        $sql = new MysqlBuilder();
-        $sql->update('document', 'id', $id)->set('active', 1);
-        $this->update($sql);
-    }
 }

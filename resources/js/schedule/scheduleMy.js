@@ -37,12 +37,16 @@ function ScheduleMy(){
                     {type: 'dateTime', title: language.start, variable: 'start'},
                     {type: 'dateTime', title: language.end, variable: 'end'}
                 ];
+                if(selected.can_be_inspection === 1){
+                    fields.push({type: 'checkbox', title: (language.underground + '?'), variable: 'underground'});
+                }
                 openModalBox(language.edit_entry, fields, language.save, function(data){
                     var dataToSend = {
                         id: data.id,
                         id_user: data.id_user,
                         start: data.start,
-                        end: data.end
+                        end: data.end,
+                        underground: data.underground
                     }
                     RestApi.post('ScheduleUser', 'saveEntry', dataToSend, function(response){
                         var data = JSON.parse(response);
@@ -153,7 +157,8 @@ function ScheduleMy(){
                     if(requireDocument === 1){
                         var item = {
                             start: dataToSend.start,
-                            end: dataToSend.end
+                            end: dataToSend.end,
+                            id_location: dataToSend.id_location
                         }
                         RestApi.post('ScheduleUser', 'getMyMatchingDocuments', item, function(response){
                             var data = JSON.parse(response);

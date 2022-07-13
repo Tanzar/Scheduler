@@ -6,7 +6,7 @@
 
 namespace Data\Access\Views;
 
-use Data\Access\DataAccessObject as DAO;
+use Data\Access\View as View;
 use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
 use Tanweb\Container as Container;
 
@@ -15,17 +15,17 @@ use Tanweb\Container as Container;
  *
  * @author Tanzar
  */
-class UsersWithoutPasswordsDAO extends DAO{
+class UsersWithoutPasswordsView extends View{
     
     public function __construct() {
-        parent::__construct(false);
+        parent::__construct();
     }
     
     protected function setDatabaseIndex(): string {
         return 'scheduler';
     }
     
-    protected function setDefaultTable(): string {
+    protected function setDefaultName(): string {
         return 'users_without_passwords';
     }
     

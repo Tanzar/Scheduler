@@ -1,0 +1,861 @@
+[2022-07-06  07:45:42] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  07:45:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  07:45:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  07:45:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-07-06  07:45:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-07-06  07:45:55] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  07:45:55] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  07:45:55] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  07:46:04] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentUsersData: {}
+[2022-07-06  07:46:04] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id_document = '4'
+[2022-07-06  07:46:07] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  07:46:07] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  07:46:07] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  07:46:08] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  07:46:09] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorMyDocuments Task: getMyDocumentsData: {}
+[2022-07-06  07:46:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' ))
+[2022-07-06  07:46:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  08:15:39] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  08:15:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  08:16:07] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  08:16:07] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-07-06  08:16:07] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-07-06  08:57:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  09:37:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  09:37:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  09:37:37] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  09:58:13] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  09:58:13] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  09:58:13] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  09:58:17] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getInspectionLocationTypesData: {}
+[2022-07-06  09:58:17] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1' and inspection = '1'
+[2022-07-06  10:03:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:03:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  10:03:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  10:03:58] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getInspectionLocationTypesData: {}
+[2022-07-06  10:03:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1' and inspection = '1'
+[2022-07-06  10:04:08] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getInspectionLocationTypesData: {}
+[2022-07-06  10:04:08] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1' and inspection = '1'
+[2022-07-06  10:09:58] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:09:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  10:09:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  10:10:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getInspectionLocationTypesData: {}
+[2022-07-06  10:10:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1' and inspection = '1'
+[2022-07-06  10:10:03] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getLocationsByTypeIdData: {}
+[2022-07-06  10:10:03] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-07-06  10:12:16] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:12:16] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  10:12:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  10:13:15] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:13:15] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  10:13:15] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  10:13:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getInspectionLocationTypesData: {}
+[2022-07-06  10:13:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1' and inspection = '1'
+[2022-07-06  10:13:22] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getLocationsByTypeIdData: {}
+[2022-07-06  10:13:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-07-06  10:15:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: saveAndAssignDocumentData: {}
+[2022-07-06  10:15:00] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document (id_location, number, start, end, description) VALUES ('1', '11352', '2022-07-06', '2022-07-08', '')
+[2022-07-06  10:15:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  10:15:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user WHERE  id_document = '1' and id_user = '2'
+[2022-07-06  10:15:00] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document_user (id_document, id_user) VALUES ('1', '2')
+[2022-07-06  10:15:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  10:15:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  10:24:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:25:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  10:25:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  10:25:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentUsersData: {}
+[2022-07-06  10:25:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id_document = '1'
+[2022-07-06  10:26:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:26:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  10:26:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  10:27:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:27:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  10:27:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  10:28:03] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:28:03] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  10:28:03] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  10:28:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentUsersData: {}
+[2022-07-06  10:28:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id_document = '1'
+[2022-07-06  10:28:28] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-07-06  10:28:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:28:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-07-06  10:28:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and active = '1' ORDER BY start ASC
+[2022-07-06  10:28:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-07-06  10:28:31] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  10:28:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  10:28:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:28:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  10:28:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  10:28:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  10:28:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-07-06  10:28:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-07-06  10:28:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-07-06  10:28:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-07-06  10:28:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-07-06  10:28:37] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-07-06  10:28:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  10:28:44] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06'
+[2022-07-06  10:37:45] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  10:37:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  10:37:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:37:46] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  10:37:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  10:37:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  10:37:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-07-06  10:37:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-07-06  10:37:50] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-07-06  10:37:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-07-06  10:37:52] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-07-06  10:37:52] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-07-06  10:37:55] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  10:37:55] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Services\DocumentService::getDocumentsForUserEntryDates(): Argument #1 ($entryDetails) must be of type Tanweb\Container, string given, called in C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php on line 81 ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(81): Services\DocumentService->getDocumentsForUserEntryDates('2022-07-06 12:3...', '2022-07-06 15:3...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->getMyMatchingDocuments()
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2022-07-06  10:39:08] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  10:39:08] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06'
+[2022-07-06  10:39:15] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  10:39:15] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06'
+[2022-07-06  10:39:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  10:39:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06'
+[2022-07-06  10:40:14] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  10:40:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06' and id_location = '2'
+[2022-07-06  10:40:18] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_location' in 'where clause' ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Database\Database.php(115): PDO->prepare('SELECT * FROM d...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Data\Access\DataAccessObject.php(129): Tanweb\Database\Database->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Data\Access\Views\DocumentUserDetailsDAO.php(88): Data\Access\DataAccessObject->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Services\DocumentService.php(73): Data\Access\Views\DocumentUserDetailsDAO->getActiveByUsernameLocationIdEntryDates('admin', 2, '2022-07-06', '2022-07-06')
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(78): Services\DocumentService->getDocumentsForUserEntryDetails(Object(Tanweb\Container))
+#5 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->getMyMatchingDocuments()
+#6 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2022-07-06  10:41:22] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  10:41:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06' and id_location = '2'
+[2022-07-06  10:41:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  10:41:27] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06' and id_location = '1'
+[2022-07-06  10:56:33] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAdmin.php?
+[2022-07-06  10:56:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start < '2022-07-06' and end > '2022-07-06' ORDER BY sort_priority DESC
+[2022-07-06  10:56:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  10:56:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  10:56:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  10:56:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = '' and active = '1'
+[2022-07-06  11:07:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  11:07:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  11:07:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  11:07:31] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  11:07:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  11:07:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:07:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  11:07:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  11:07:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  11:07:33] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAdmin.php?
+[2022-07-06  11:07:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start < '2022-07-06' and end > '2022-07-06' ORDER BY sort_priority DESC
+[2022-07-06  11:07:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  11:07:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:07:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  11:07:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = '' and active = '1'
+[2022-07-06  11:07:36] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAdmin.php?
+[2022-07-06  11:07:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start < '2022-07-06' and end > '2022-07-06' ORDER BY sort_priority DESC
+[2022-07-06  11:07:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  11:07:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:07:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  11:07:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = '' and active = '1'
+[2022-07-06  11:07:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  11:07:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  11:07:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  11:07:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getActivitiesForGroupData: {}
+[2022-07-06  11:07:40] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-07-06  11:09:30] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAdmin.php?
+[2022-07-06  11:09:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start < '2022-07-06' and end > '2022-07-06' ORDER BY sort_priority DESC
+[2022-07-06  11:09:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  11:09:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:09:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  11:09:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = '' and active = '1'
+[2022-07-06  11:09:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getActivitiesForGroupData: {}
+[2022-07-06  11:09:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-07-06  11:09:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getLocationTypesForActivityData: {}
+[2022-07-06  11:09:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-07-06  11:09:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getLocationsForTypeData: {}
+[2022-07-06  11:09:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-07-06  11:09:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  11:09:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  11:09:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  11:09:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getMatchingDocumentsData: {}
+[2022-07-06  11:09:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06' and id_location = '1'
+[2022-07-06  11:09:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getMatchingDocumentsData: {}
+[2022-07-06  11:09:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06' and id_location = '2'
+[2022-07-06  11:10:15] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getMatchingDocumentsData: {}
+[2022-07-06  11:10:15] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06' and id_location = '1'
+[2022-07-06  11:10:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-07-06  11:10:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  11:10:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 12:30:00' and id_user = '2' and active = '1'
+[2022-07-06  11:10:21] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (id_location, id_activity, start, end, id_document, underground, id_user) VALUES ('1', '1', '2022-07-06 12:30', '2022-07-06 15:30', '1', '0', '2')
+[2022-07-06  11:10:21] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_document' in 'field list' ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Database\Database.php(139): PDO->prepare('INSERT INTO sch...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Data\Access\DataAccessObject.php(139): Tanweb\Database\Database->insert(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Data\Access\DataAccessObject.php(109): Data\Access\DataAccessObject->insert(Object(Tanweb\Database\SQL\MysqlBuilder))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Data\Access\DataAccessObject.php(62): Data\Access\DataAccessObject->add(Object(Tanweb\Container))
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(152): Data\Access\DataAccessObject->save(Object(Tanweb\Container))
+#5 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleAdmin.php(77): Services\ScheduleService->saveEntryForUser(Object(Tanweb\Container))
+#6 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleAdmin->saveEntry()
+#7 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-07-06  11:10:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getMatchingDocumentsData: {}
+[2022-07-06  11:10:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06' and id_location = '1'
+[2022-07-06  11:10:53] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-07-06  11:11:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  11:11:55] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 12:30:00' and id_user = '2' and active = '1'
+[2022-07-06  11:12:14] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (id_location, id_activity, start, end, id_document, underground, id_user) VALUES ('1', '1', '2022-07-06 12:30', '2022-07-06 15:30', '1', '0', '2')
+[2022-07-06  11:12:14] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id_document' in 'field list' ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Database\Database.php(139): PDO->prepare('INSERT INTO sch...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Data\Access\DataAccessObject.php(139): Tanweb\Database\Database->insert(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Data\Access\DataAccessObject.php(109): Data\Access\DataAccessObject->insert(Object(Tanweb\Database\SQL\MysqlBuilder))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Data\Access\DataAccessObject.php(62): Data\Access\DataAccessObject->add(Object(Tanweb\Container))
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(152): Data\Access\DataAccessObject->save(Object(Tanweb\Container))
+#5 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleAdmin.php(77): Services\ScheduleService->saveEntryForUser(Object(Tanweb\Container))
+#6 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleAdmin->saveEntry()
+#7 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-07-06  11:13:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getMatchingDocumentsData: {}
+[2022-07-06  11:13:40] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06' and id_location = '1'
+[2022-07-06  11:13:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-07-06  11:13:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  11:13:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 12:30:00' and id_user = '2' and active = '1'
+[2022-07-06  11:13:43] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (id_location, id_activity, start, end, id_user) VALUES ('1', '1', '2022-07-06 12:30', '2022-07-06 15:30', '2')
+[2022-07-06  11:13:43] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document_schedule (id_document, underground, id_schedule) VALUES ('1', '0', '31')
+[2022-07-06  11:13:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  11:13:44] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  11:13:44] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  11:13:49] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  11:13:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  11:13:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:13:50] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  11:13:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  11:13:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  11:13:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:13:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-07-06  11:13:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-07-06  11:16:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:16:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-07-06  11:16:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-07-06  11:17:03] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:17:05] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-07-06  11:17:05] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-07-06  11:17:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: generateReportData: {}
+[2022-07-06  11:17:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '1'
+[2022-07-06  11:17:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id_document = '1'
+[2022-07-06  11:17:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and username = 'admin' and id_document = '1'
+[2022-07-06  11:17:30] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-07-06  11:17:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:17:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-07-06  11:17:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and active = '1' ORDER BY start ASC
+[2022-07-06  11:17:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-07-06  11:17:38] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-07-06  11:17:38] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:17:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-06  11:17:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-06  11:17:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-06  11:17:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-06  11:17:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-06  11:17:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-06  11:17:40] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-07-06  11:17:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:17:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-06  11:17:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-06  11:17:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-06  11:17:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-06  11:17:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-06  11:17:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-06  11:17:42] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-06  11:17:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '2'
+[2022-07-06  11:17:42] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-06  11:17:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '2'
+[2022-07-06  11:17:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-07-06  11:17:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '2'
+[2022-07-06  11:17:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id = '1'
+[2022-07-06  11:17:51] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE employment SET active='1', sort_priority='10', standard_day_start='07:30', leadership='0', inspector='1', id_user='2' WHERE id = '1'
+[2022-07-06  11:17:53] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-06  11:17:53] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '2'
+[2022-07-06  11:17:59] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-07-06  11:18:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:18:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-07-06  11:18:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and active = '1' ORDER BY start ASC
+[2022-07-06  11:18:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-07-06  11:18:01] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  11:18:01] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  11:18:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  11:18:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  11:18:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  11:18:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:01:45] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  12:01:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  12:01:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:01:46] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:01:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:01:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:01:50] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-07-06  12:01:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-07-06  12:01:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-07-06  12:01:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-07-06  12:01:52] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-07-06  12:01:52] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-07-06  12:01:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  12:01:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06' and id_location = '1'
+[2022-07-06  12:02:13] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  12:02:13] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-07' and end >= '2022-07-07' and id_location = '1'
+[2022-07-06  12:02:16] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:02:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:02:41] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: id_user ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(357): Tanweb\Container->get('id_user')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(163): Services\ScheduleService->checkEntryDates(Object(Tanweb\Container))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(200): Services\ScheduleService->formEntry(Object(Tanweb\Container))
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(87): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#5 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#6 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2022-07-06  12:02:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  12:02:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-07' and end >= '2022-07-07' and id_location = '1'
+[2022-07-06  12:02:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:03:27] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:03:54] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: id_user ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(357): Tanweb\Container->get('id_user')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(163): Services\ScheduleService->checkEntryDates(Object(Tanweb\Container))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(200): Services\ScheduleService->formEntry(Object(Tanweb\Container))
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(87): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#5 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#6 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2022-07-06  12:03:58] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  12:03:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-07' and end >= '2022-07-07' and id_location = '1'
+[2022-07-06  12:04:04] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:04:07] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:04:07] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: id_user ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(357): Tanweb\Container->get('id_user')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(163): Services\ScheduleService->checkEntryDates(Object(Tanweb\Container))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(200): Services\ScheduleService->formEntry(Object(Tanweb\Container))
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(87): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#5 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#6 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2022-07-06  12:04:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  12:04:19] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-07' and end >= '2022-07-07' and id_location = '1'
+[2022-07-06  12:04:22] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:04:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:04:50] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: id_user ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(357): Tanweb\Container->get('id_user')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(163): Services\ScheduleService->checkEntryDates(Object(Tanweb\Container))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(200): Services\ScheduleService->formEntry(Object(Tanweb\Container))
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(87): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#5 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#6 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2022-07-06  12:11:42] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  12:11:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-07' and end >= '2022-07-07' and id_location = '1'
+[2022-07-06  12:11:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:11:48] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:11:48] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-07 15:30:00' and end > '2022-07-07 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  12:11:51] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (id_user, id_location, id_activity, start, end) VALUES ('2', '1', '1', '2022-07-07 07:30', '2022-07-07 15:30')
+[2022-07-06  12:12:05] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document_schedule (underground, id_schedule, id_document) VALUES ('', '32', '1')
+[2022-07-06  12:12:09] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:12:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:12:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:13:26] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  12:13:26] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  12:13:26] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:13:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:13:27] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:13:27] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:13:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:13:53] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:13:57] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: id_location ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(159): Tanweb\Container->get('id_location')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(200): Services\ScheduleService->formEntry(Object(Tanweb\Container))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(87): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#5 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-07-06  12:14:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:15:48] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:15:48] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: id_location ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(159): Tanweb\Container->get('id_location')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(200): Services\ScheduleService->formEntry(Object(Tanweb\Container))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(87): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#5 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-07-06  12:15:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:15:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:15:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  12:15:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '31'
+[2022-07-06  12:15:58] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET start='2022-07-06 07:30' WHERE id = '31'
+[2022-07-06  12:15:58] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: underground ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(206): Tanweb\Container->get('underground')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(87): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-07-06  12:16:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:16:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:16:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  12:16:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '31'
+[2022-07-06  12:16:16] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET start='2022-07-06 07:30' WHERE id = '31'
+[2022-07-06  12:16:16] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: underground ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(206): Tanweb\Container->get('underground')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(87): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-07-06  12:17:14] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  12:17:14] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  12:17:14] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:17:15] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:17:15] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:17:15] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:17:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:17:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:17:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  12:17:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '31'
+[2022-07-06  12:17:30] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET start='2022-07-06 07:30' WHERE id = '31'
+[2022-07-06  12:17:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_schedule WHERE  id_schedule = '31'
+[2022-07-06  12:17:35] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: id ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(195): Tanweb\Container->get('id')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(212): Services\ScheduleService->saveDocumentSchedule(true, 31)
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(87): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#5 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-07-06  12:17:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:18:03] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:18:03] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  12:18:03] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '31'
+[2022-07-06  12:18:03] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET start='2022-07-06 07:30' WHERE id = '31'
+[2022-07-06  12:18:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_schedule WHERE  id_schedule = '31'
+[2022-07-06  12:18:36] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: id ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(195): Tanweb\Container->get('id')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(212): Services\ScheduleService->saveDocumentSchedule(true, 31)
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(87): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#5 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-07-06  12:19:14] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:19:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:19:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  12:19:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '31'
+[2022-07-06  12:19:16] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET start='2022-07-06 07:30' WHERE id = '31'
+[2022-07-06  12:19:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_schedule WHERE  id_schedule = '31'
+[2022-07-06  12:19:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_schedule WHERE  id = '1'
+[2022-07-06  12:19:16] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE document_schedule SET underground='1' WHERE id = '1'
+[2022-07-06  12:19:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:19:19] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:19:19] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:19:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:19:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:19:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-07 15:30:00' and end > '2022-07-07 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  12:19:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '32'
+[2022-07-06  12:19:39] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database error: Brak danych do zmiany.
+[2022-07-06  12:26:54] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-07-06  12:26:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Praca biurowa%' and active = '1'
+[2022-07-06  12:26:55] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-07-06  12:26:55] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '17'
+[2022-07-06  12:27:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-07-06  12:27:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Nieobecność%' and active = '1'
+[2022-07-06  12:27:04] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-07-06  12:27:04] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '18'
+[2022-07-06  12:27:27] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-07-06  12:27:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:27:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-06  12:27:27] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-06  12:27:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-06  12:27:28] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-06  12:27:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-06  12:27:28] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-06  12:27:29] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelLocation.php?
+[2022-07-06  12:27:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:27:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:27:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsByGroupIdData: {}
+[2022-07-06  12:27:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_details WHERE  id_location_group = '1'
+[2022-07-06  12:27:45] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelLocationSettings.php?
+[2022-07-06  12:27:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:27:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-07-06  12:27:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-07-06  12:27:46] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-07-06  12:27:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:27:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: changeLocationGroupStatusData: {}
+[2022-07-06  12:27:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  id = '14'
+[2022-07-06  12:27:51] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE location_group SET active='1' WHERE id = '14'
+[2022-07-06  12:27:52] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-07-06  12:27:52] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:28:07] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: saveLocationGroupData: {}
+[2022-07-06  12:28:07] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  id = '14'
+[2022-07-06  12:28:07] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE location_group SET active='1', name='Nieobecność' WHERE id = '14'
+[2022-07-06  12:28:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-07-06  12:28:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:28:20] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelLocation.php?
+[2022-07-06  12:28:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:28:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:28:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsByGroupIdData: {}
+[2022-07-06  12:28:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_details WHERE  id_location_group = '1'
+[2022-07-06  12:28:29] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelLocationSettings.php?
+[2022-07-06  12:28:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:28:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-07-06  12:28:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-07-06  12:28:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-07-06  12:28:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:28:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: saveLocationGroupData: {}
+[2022-07-06  12:28:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  id = '14'
+[2022-07-06  12:28:41] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE location_group SET active='1', name='Inne' WHERE id = '14'
+[2022-07-06  12:28:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-07-06  12:28:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:28:47] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelLocationSettings.php?
+[2022-07-06  12:28:47] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:28:48] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-07-06  12:28:48] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-07-06  12:28:48] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-07-06  12:28:48] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:28:50] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelLocation.php?
+[2022-07-06  12:28:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:28:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:28:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsByGroupIdData: {}
+[2022-07-06  12:28:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_details WHERE  id_location_group = '1'
+[2022-07-06  12:28:53] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsByGroupIdData: {}
+[2022-07-06  12:28:53] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_details WHERE  id_location_group = '14'
+[2022-07-06  12:29:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getActiveLocationGroupsData: {}
+[2022-07-06  12:29:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-07-06  12:29:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getActiveLocationTypesData: {}
+[2022-07-06  12:29:19] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-07-06  12:29:55] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelLocationSettings.php?
+[2022-07-06  12:29:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:29:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-07-06  12:29:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-07-06  12:29:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-07-06  12:29:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:30:17] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: saveLocationTypeData: {}
+[2022-07-06  12:30:17] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location_type (name, short, inspection) VALUES ('Nieobecność', 'NOB', '0')
+[2022-07-06  12:30:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationTypesData: {}
+[2022-07-06  12:30:19] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-07-06  12:30:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: saveLocationGroupData: {}
+[2022-07-06  12:30:37] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  id = '15'
+[2022-07-06  12:30:37] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE location_group SET active='0', name='Nieobecność' WHERE id = '15'
+[2022-07-06  12:30:38] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-07-06  12:30:38] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:30:42] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: changeLocationGroupStatusData: {}
+[2022-07-06  12:30:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  id = '15'
+[2022-07-06  12:30:42] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE location_group SET active='1' WHERE id = '15'
+[2022-07-06  12:30:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationGroupsData: {}
+[2022-07-06  12:30:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:30:48] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelActivity.php?
+[2022-07-06  12:30:48] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:30:48] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getActivitiesData: {}
+[2022-07-06  12:30:48] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-07-06  12:30:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesData: {}
+[2022-07-06  12:30:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-07-06  12:31:12] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesForActivityData: {}
+[2022-07-06  12:31:12] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '20'
+[2022-07-06  12:31:17] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: saveActivityLocationTypesData: {}
+[2022-07-06  12:31:17] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '20'
+[2022-07-06  12:31:17] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity_location_type (id_activity, id_location_type) VALUES ('20', '13')
+[2022-07-06  12:31:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesData: {}
+[2022-07-06  12:31:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-07-06  12:31:21] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelLocation.php?
+[2022-07-06  12:31:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  12:31:22] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:31:22] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsByGroupIdData: {}
+[2022-07-06  12:31:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_details WHERE  id_location_group = '1'
+[2022-07-06  12:31:24] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsByGroupIdData: {}
+[2022-07-06  12:31:24] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_details WHERE  id_location_group = '15'
+[2022-07-06  12:31:26] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getActiveLocationGroupsData: {}
+[2022-07-06  12:31:26] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group WHERE  active = '1'
+[2022-07-06  12:31:26] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getActiveLocationTypesData: {}
+[2022-07-06  12:31:26] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1'
+[2022-07-06  12:31:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: saveLocationData: {}
+[2022-07-06  12:31:37] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO location (name, id_location_group, id_location_type) VALUES ('Nieobecność', '15', '13')
+[2022-07-06  12:31:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsByGroupIdData: {}
+[2022-07-06  12:31:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_details WHERE  id_location_group = '15'
+[2022-07-06  12:31:44] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-07-06  12:31:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:31:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-07-06  12:31:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and active = '1' ORDER BY start ASC
+[2022-07-06  12:31:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-07-06  12:31:45] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  12:31:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  12:31:46] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:31:46] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:31:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:31:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:31:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-07-06  12:31:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Nieobecność%' and active = '1'
+[2022-07-06  12:31:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-07-06  12:31:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '18'
+[2022-07-06  12:31:58] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-07-06  12:31:58] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:31:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-07-06  12:31:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and active = '1' ORDER BY start ASC
+[2022-07-06  12:31:59] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-07-06  12:31:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-07-06  12:32:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:32:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-06  12:32:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-06  12:32:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-06  12:32:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-06  12:32:01] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-06  12:32:01] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-06  12:32:01] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelActivity.php?
+[2022-07-06  12:32:01] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:32:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getActivitiesData: {}
+[2022-07-06  12:32:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-07-06  12:32:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesData: {}
+[2022-07-06  12:32:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-07-06  12:32:07] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesForActivityData: {}
+[2022-07-06  12:32:07] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '18'
+[2022-07-06  12:32:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesForActivityData: {}
+[2022-07-06  12:32:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '20'
+[2022-07-06  12:32:13] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-07-06  12:32:14] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:32:14] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-06  12:32:14] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-06  12:32:14] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-06  12:32:14] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-06  12:32:15] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-06  12:32:15] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-06  12:32:16] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-07-06  12:32:16] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:32:17] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-07-06  12:32:17] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and active = '1' ORDER BY start ASC
+[2022-07-06  12:32:17] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-07-06  12:32:18] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  12:32:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  12:32:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:32:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:32:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:32:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:32:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-07-06  12:32:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Nieobecność%' and active = '1'
+[2022-07-06  12:32:23] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-07-06  12:32:23] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '20'
+[2022-07-06  12:32:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-07-06  12:32:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '13'
+[2022-07-06  12:32:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:32:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:32:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-05 15:30:00' and end > '2022-07-05 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  12:32:35] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (id_user, id_location, id_activity, start, end) VALUES ('2', '17', '20', '2022-07-05 07:30', '2022-07-05 15:30')
+[2022-07-06  12:32:35] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: underground ;
+ #0 C:\xampp\htdocs\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\xampp\htdocs\Scheduler\sys\classes\Services\ScheduleService.php(206): Tanweb\Container->get('underground')
+#2 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\ScheduleUser.php(87): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#3 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#4 C:\xampp\htdocs\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\xampp\htdocs\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-07-06  12:39:35] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  12:39:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  12:39:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:39:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:39:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:39:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:40:31] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  12:40:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  12:40:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:40:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:40:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:40:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:40:34] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-07-06  12:40:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:40:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-07-06  12:40:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and active = '1' ORDER BY start ASC
+[2022-07-06  12:40:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-07-06  12:42:17] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:42:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-07-06  12:42:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-07-06  12:42:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:42:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  12:42:19] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  12:42:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getInspectionLocationTypesData: {}
+[2022-07-06  12:42:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1' and inspection = '1'
+[2022-07-06  12:42:26] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getLocationsByTypeIdData: {}
+[2022-07-06  12:42:26] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-07-06  12:42:42] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: saveAndAssignDocumentData: {}
+[2022-07-06  12:42:42] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document (id_location, number, start, end, description) VALUES ('1', '001-Rydy', '2022-07-06', '2022-07-11', '')
+[2022-07-06  12:42:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:42:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user WHERE  id_document = '1' and id_user = '2'
+[2022-07-06  12:42:42] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document_user (id_document, id_user) VALUES ('1', '2')
+[2022-07-06  12:42:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-07-06  12:42:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' )) ORDER BY start ASC
+[2022-07-06  12:42:46] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-07-06  12:42:46] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:42:46] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-07-06  12:42:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and active = '1' ORDER BY start ASC
+[2022-07-06  12:42:47] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-07-06  12:42:47] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  12:42:47] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  12:42:48] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  12:42:48] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:42:48] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:42:48] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:42:50] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-07-06  12:42:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-07-06  12:42:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-07-06  12:42:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-07-06  12:42:52] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-07-06  12:42:52] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-07-06  12:42:57] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  12:42:57] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-06' and end >= '2022-07-06' and id_location = '1'
+[2022-07-06  12:43:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:43:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:43:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  12:43:02] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (id_user, id_location, id_activity, underground, start, end) VALUES ('2', '1', '1', '0', '2022-07-06 07:30', '2022-07-06 15:30')
+[2022-07-06  12:43:02] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document_schedule (id_schedule, id_document) VALUES ('1', '1')
+[2022-07-06  12:43:04] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:43:04] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:43:04] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  12:43:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  12:43:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:43:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  12:43:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '1'
+[2022-07-06  12:43:35] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET underground='1' WHERE id = '1'
+[2022-07-06  12:43:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  12:43:37] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  12:43:37] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  13:00:11] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  13:00:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  13:00:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  13:00:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  13:00:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:00:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  13:00:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-07-06  13:00:40] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Kontrola%' and active = '1'
+[2022-07-06  13:00:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-07-06  13:00:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-07-06  13:00:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-07-06  13:00:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-07-06  13:00:48] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-07-06  13:00:48] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-07-07' and end >= '2022-07-07' and id_location = '1'
+[2022-07-06  13:00:52] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  13:00:52] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:00:52] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-07 15:30:00' and end > '2022-07-07 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  13:00:52] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (id_user, id_location, id_activity, underground, start, end) VALUES ('2', '1', '1', '0', '2022-07-07 07:30', '2022-07-07 15:30')
+[2022-07-06  13:00:52] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document_schedule (id_schedule, id_document) VALUES ('2', '1')
+[2022-07-06  13:00:53] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  13:00:53] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:00:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  13:01:09] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-07-06  13:01:09] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  13:01:10] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-06  13:01:10] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-06  13:01:10] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-06  13:01:10] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-06  13:01:10] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-06  13:01:10] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-06  13:01:11] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelLocation.php?
+[2022-07-06  13:01:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2022-07-06  13:01:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  13:01:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsByGroupIdData: {}
+[2022-07-06  13:01:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_details WHERE  id_location_group = '1'
+[2022-07-06  13:01:17] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelLocation Task: getLocationsByGroupIdData: {}
+[2022-07-06  13:01:17] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_details WHERE  id_location_group = '3'
+[2022-07-06  13:01:21] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelActivity.php?
+[2022-07-06  13:01:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  13:01:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getActivitiesData: {}
+[2022-07-06  13:01:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-07-06  13:01:22] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesData: {}
+[2022-07-06  13:01:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-07-06  13:01:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesForActivityData: {}
+[2022-07-06  13:01:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '17'
+[2022-07-06  13:01:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: saveActivityLocationTypesData: {}
+[2022-07-06  13:01:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '17'
+[2022-07-06  13:01:30] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO activity_location_type (id_activity, id_location_type) VALUES ('17', '10')
+[2022-07-06  13:01:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesData: {}
+[2022-07-06  13:01:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-07-06  13:01:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesForActivityData: {}
+[2022-07-06  13:01:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '17'
+[2022-07-06  13:01:42] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-07-06  13:01:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  13:01:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-07-06  13:01:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and active = '1' ORDER BY start ASC
+[2022-07-06  13:01:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-07-06  13:01:45] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  13:01:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  13:01:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  13:01:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  13:01:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:01:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  13:01:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-07-06  13:01:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Praca biurowa%' and active = '1'
+[2022-07-06  13:01:52] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-07-06  13:01:52] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '17'
+[2022-07-06  13:01:53] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-07-06  13:01:53] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '10'
+[2022-07-06  13:01:58] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  13:01:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:01:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-05 15:30:00' and end > '2022-07-05 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  13:01:58] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (id_user, id_location, id_activity, start, end) VALUES ('2', '8', '17', '2022-07-05 07:30', '2022-07-05 15:30')
+[2022-07-06  13:01:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  13:01:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:01:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  13:04:34] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  13:04:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  13:04:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  13:04:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  13:04:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:04:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  13:04:49] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAdmin.php?
+[2022-07-06  13:04:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start < '2022-07-06' and end > '2022-07-06' ORDER BY sort_priority DESC
+[2022-07-06  13:04:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  13:04:50] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  13:04:50] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  13:04:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = '' and active = '1'
+[2022-07-06  13:04:52] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  13:04:52] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:04:52] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  13:05:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-07-06  13:05:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 08:30:00' and id_user = '2' and active = '1'
+[2022-07-06  13:05:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '1'
+[2022-07-06  13:05:35] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET start='2022-07-06 08:30', underground='1' WHERE id = '1'
+[2022-07-06  13:05:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  13:05:37] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:05:37] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  13:05:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-07-06  13:05:44] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  13:05:44] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '1'
+[2022-07-06  13:05:44] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET start='2022-07-06 07:30', underground='0' WHERE id = '1'
+[2022-07-06  13:05:46] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-07-06  13:05:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:05:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  13:05:56] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-07-06  13:05:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-07-06' and end > '2022-07-06'
+[2022-07-06  13:05:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-06  13:05:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  13:05:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:05:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-07-06  13:06:01] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-07-06  13:06:01] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:06:01] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-06 15:30:00' and end > '2022-07-06 07:30:00' and id_user = '2' and active = '1'
+[2022-07-06  13:06:01] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '1'
+[2022-07-06  13:06:01] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET underground='1' WHERE id = '1'
+[2022-07-06  13:06:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-07-06  13:06:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-07-06  13:06:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-07-09 00:00:00' and end > '2022-07-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC

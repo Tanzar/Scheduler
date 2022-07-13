@@ -7,7 +7,7 @@
 namespace Data\Access\Views;
 
 use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
-use Data\Access\DataAccessObject as DAO;
+use Data\Access\View as View;
 use Tanweb\Container as Container;
 use DateTime;
 
@@ -16,17 +16,17 @@ use DateTime;
  *
  * @author Tanzar
  */
-class ScheduleEntriesDAO extends DAO{
+class ScheduleEntriesView extends View{
     
     public function __construct() {
-        parent::__construct(true);
+        parent::__construct();
     }
     
     protected function setDatabaseIndex(): string {
         return 'scheduler';
     }
 
-    protected function setDefaultTable(): string {
+    protected function setDefaultName(): string {
         return 'schedule_entries';
     }
     

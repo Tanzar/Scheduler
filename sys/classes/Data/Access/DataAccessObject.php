@@ -22,14 +22,16 @@ use Tanweb\Database\DatabaseException as DataAccessException;
 abstract class DataAccessObject {
     private string $dbIndex;
     private string $table;
-    private bool $isView;
     
-    protected function __construct(bool $isView = false) {
+    protected function __construct() {
         $dbIndex = $this->setDatabaseIndex();
         $this->dbIndex = $dbIndex;
         $this->table = $this->setDefaultTable();
-        $this->isView = $isView;
     }
+    
+    protected abstract function setDatabaseIndex() : string;
+    
+    protected abstract function setDefaultTable() : string;
     
     public function getAll() : Container {
         $sql = new MysqlBuilder();
@@ -48,30 +50,28 @@ abstract class DataAccessObject {
             $this->throwNotFoundException($this->table);
         }
         $result = new Container($resultset->get(0));
-        return $result;$this->select($sql);
+        return $result;
     }
     
     public function save(Container $item) : int {
-        if(!$this->isView){
-            if($item->isValueSet('id')){
+        if($item->isValueSet('id')){
             $this->change($item);
             $id = $item->get('id');
             return (int) $id;
-            }
-            else{
-                return $this->add($item);
-            }
         }
         else{
-            $this->throwDataAccessException('cannot insert or update view.');
+            return $this->add($item);
         }
     }
     
     public function change(Container $item) : void {
         $id = (int) $item->get('id');
         $old = $this->getById($id);
-        $sql = $this->buildUpdateSQL($old, $item);
-        $this->update($sql);
+        try{
+            $sql = $this->buildUpdateSQL($old, $item);
+            $this->update($sql);
+        } catch (DataAccessException $ex) {
+        }
     }
     
     private function buildUpdateSQL(Container $old, Container $new) : MysqlBuilder{
@@ -110,16 +110,10 @@ abstract class DataAccessObject {
     }
     
     public function remove(int $id){
-        if(!$this->isView){
-            $sql = new MysqlBuilder();
-            $sql->delete($this->table, 'id', $id);
-            $this->delete($sql);
-        }
+        $sql = new MysqlBuilder();
+        $sql->delete($this->table, 'id', $id);
+        $this->delete($sql);
     }
-    
-    protected abstract function setDatabaseIndex() : string;
-    
-    protected abstract function setDefaultTable() : string;
     
     protected function select(SqlBuilder $sql) : Container {
         $logger = Logger::getInstance();
@@ -131,43 +125,28 @@ abstract class DataAccessObject {
     }
     
     protected function insert(SqlBuilder $sql) : int {
-        if(!$this->isView){
-            $logger = Logger::getInstance();
-            $msg = 'Database: '  . $this->dbIndex . '; SQL: ' . $sql->formSQL();
-            $logger->logInsert($msg);
-            $database = Database::getInstance($this->dbIndex);
-            $id = $database->insert($sql);
-            return $id;
-        }
-        else{
-            $this->throwDataAccessException('cannot insert into view.');
-        }
+        $logger = Logger::getInstance();
+        $msg = 'Database: '  . $this->dbIndex . '; SQL: ' . $sql->formSQL();
+        $logger->logInsert($msg);
+        $database = Database::getInstance($this->dbIndex);
+        $id = $database->insert($sql);
+        return $id;
     }
     
     protected function update(SqlBuilder $sql) : void {
-        if(!$this->isView){
-            $logger = Logger::getInstance();
-            $msg = 'Database: '  . $this->dbIndex . '; SQL: ' . $sql->formSQL();
-            $logger->logUpdate($msg);
-            $database = Database::getInstance($this->dbIndex);
-            $database->update($sql);
-        }
-        else{
-            $this->throwDataAccessException('cannot update view.');
-        }
+        $logger = Logger::getInstance();
+        $msg = 'Database: '  . $this->dbIndex . '; SQL: ' . $sql->formSQL();
+        $logger->logUpdate($msg);
+        $database = Database::getInstance($this->dbIndex);
+        $database->update($sql);
     }
     
     protected function delete(SqlBuilder $sql) : void {
-        if(!$this->isView){
-            $logger = Logger::getInstance();
-            $msg = 'Database: '  . $this->dbIndex . '; SQL: ' . $sql->formSQL();
-            $logger->logInsert($msg);
-            $database = Database::getInstance($this->dbIndex);
-            $database->delete($sql);
-        }
-        else{
-            $this->throwDataAccessException('cannot delete from view.');
-        }
+        $logger = Logger::getInstance();
+        $msg = 'Database: '  . $this->dbIndex . '; SQL: ' . $sql->formSQL();
+        $logger->logInsert($msg);
+        $database = Database::getInstance($this->dbIndex);
+        $database->delete($sql);
     }
     
     protected function throwDataAccessException(string $msg){

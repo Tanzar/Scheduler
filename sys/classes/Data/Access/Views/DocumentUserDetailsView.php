@@ -7,26 +7,25 @@
 namespace Data\Access\Views;
 
 use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
-use Data\Access\DataAccessObject as DAO;
+use Data\Access\View as View;
 use Tanweb\Container as Container;
-use DateTime;
 
 /**
  * Description of DocumentUserDetails
  *
  * @author Tanzar
  */
-class DocumentUserDetailsDAO extends DAO{
+class DocumentUserDetailsView extends View{
     
     public function __construct() {
-        parent::__construct(true);
+        parent::__construct();
     }
     
     protected function setDatabaseIndex(): string {
         return 'scheduler';
     }
 
-    protected function setDefaultTable(): string {
+    protected function setDefaultName(): string {
         return 'document_user_details';
     }
     
@@ -78,12 +77,13 @@ class DocumentUserDetailsDAO extends DAO{
         return $this->select($sql);
     }
     
-    public function getActiveByUsernameAndEntryDates(string $username, string $start, string $end) : Container {
+    public function getActiveByUsernameLocationIdEntryDates(string $username, int $locationId, string $start, string $end) : Container {
         $sql = new MysqlBuilder();
         $sql->select('document_user_details')->where('active', 1)
                 ->and()->where('username', $username)
                 ->and()->where('start', $start, '<=')
-                ->and()->where('end', $end, '>=');
+                ->and()->where('end', $end, '>=')
+                ->and()->where('id_location', $locationId);
         return $this->select($sql);
     }
     

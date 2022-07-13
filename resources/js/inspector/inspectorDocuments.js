@@ -20,31 +20,69 @@ function init(){
         };
         var config = {
             columns: [
-                {title: language.document_number, variable: 'number', width: 150},
-                {title: language.start, variable: 'start', width: 150},
-                {title: language.end, variable: 'end', width: 150},
-                {title: language.description, variable: 'description', width: 250}
+                {title: language.document_number, variable: 'number', width: 150, minWidth: 150},
+                {title: language.location, variable: 'location', width: 150, minWidth: 150},
+                {title: language.start, variable: 'start', width: 100, minWidth: 100},
+                {title: language.end, variable: 'end', width: 100, minWidth: 100},
+                {title: language.description, variable: 'description', width: 250, minWidth: 250}
             ],
             dataSource: datasource
         }
         var datatable = new Datatable(documents, config);
         datatable.addActionButton(language.add, function(){
-            var fields = [
-                {type: 'text', title: language.document_number, variable: 'number', limit: 255},
-                {type: 'date', title: language.start, variable: 'start'},
-                {type: 'date', title: language.end, variable: 'end'},
-                {type: 'text', title: language.description, variable: 'description', limit: 255}
-            ];
-            openModalBox(language.new_document, fields, language.save, function(data){
-                RestApi.post('InspectorDocuments', 'saveAndAssignDocument', data, function(response){
-                    var data = JSON.parse(response);
-                    console.log(data);
-                    alert(data.message);
-                    datatable.refresh();
-                }, function(response){
-                    alert(response.responseText);
+            RestApi.get('InspectorDocuments', 'getInspectionLocationTypes', {}, function(response){
+                var data = JSON.parse(response);
+                var options = [];
+                data.forEach(item => {
+                    var option = {
+                        title: item.name,
+                        value: item.id
+                    }
+                    options.push(option);
+                });
+                var fields = [{type: 'select', title: language.select_location_type, variable: 'id_location_type', options: options}];
+                openModalBox(language.select_location_type, fields, language.next, function(data){
+                    if(data.id_location_type === ''){
+                        alert(language.select_location_type);
+                    }
+                    else{
+                        RestApi.get('InspectorDocuments', 'getLocationsByTypeId', data, function(response){
+                            var locations = JSON.parse(response);
+                            console.log(locations);
+                            var options = [];
+                            locations.forEach(item => {
+                                var option = {
+                                    title: item.name,
+                                    value: item.id
+                                }
+                                options.push(option);
+                            });
+                            var fields = [
+                                {type: 'select', title: language.select_location, variable: 'id_location', options: options},
+                                {type: 'text', title: language.document_number, variable: 'number', limit: 255},
+                                {type: 'date', title: language.start, variable: 'start'},
+                                {type: 'date', title: language.end, variable: 'end'},
+                                {type: 'text', title: language.description, variable: 'description', limit: 255}
+                            ];
+                            openModalBox(language.new_document, fields, language.save, function(data){
+                                RestApi.post('InspectorDocuments', 'saveAndAssignDocument', data, function(response){
+                                    var data = JSON.parse(response);
+                                    console.log(data);
+                                    alert(data.message);
+                                    datatable.refresh();
+                                }, function(response){
+                                    alert(response.responseText);
+                                });
+                            });
+                            
+                            
+                        });
+                    }
                 });
             });
+            
+            /*
+            */
         });
         datatable.addActionButton(language.assign, function(selected){
             if(selected !== undefined){

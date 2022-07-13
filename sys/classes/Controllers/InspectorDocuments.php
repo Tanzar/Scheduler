@@ -9,6 +9,7 @@ namespace Controllers;
 use Controllers\Base\Controller as Controller;
 use Tanweb\Container as Container;
 use Services\DocumentService as DocumentService;
+use Services\LocationService as LocationService;
 use Tanweb\Config\INI\Languages as Languages;
 
 /**
@@ -18,11 +19,25 @@ use Tanweb\Config\INI\Languages as Languages;
  */
 class InspectorDocuments extends Controller{
     private DocumentService $documentService;
+    private LocationService $locationService;
     
     public function __construct() {
         $this->documentService = new DocumentService();
+        $this->locationService = new LocationService();
         $privilages = new Container(['admin', 'schedule_user_inspector']);
         parent::__construct($privilages);
+    }
+    
+    public function getInspectionLocationTypes() {
+        $response = $this->locationService->getActiveInspectableLocationTypes();
+        $this->setResponse($response);
+    }
+    
+    public function getLocationsByTypeId(){
+        $data = $this->getRequestData();
+        $id = $data->get('id_location_type');
+        $response = $this->locationService->getLocationsByTypeID($id);
+        $this->setResponse($response);
     }
     
     public function getDocumentsForMonthYear(){

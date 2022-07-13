@@ -45,9 +45,11 @@ function DocumentDatatable(language){
     };
     var config = {
         columns: [
-            {title: language.document_number, variable: 'document_number', width: 150},
-            {title: language.start, variable: 'start', width: 150},
-            {title: language.end, variable: 'end', width: 150}
+            {title: language.document_number, variable: 'document_number', width: 150, minWidth: 150},
+            {title: language.location, variable: 'location', width: 150, minWidth: 150},
+            {title: language.start, variable: 'start', width: 100, minWidth: 100},
+            {title: language.end, variable: 'end', width: 100, minWidth: 100},
+            {title: language.description, variable: 'description', width: 250, minWidth: 250}
         ],
         dataSource: datasource
     }

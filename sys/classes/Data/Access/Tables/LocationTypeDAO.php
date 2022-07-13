@@ -18,7 +18,7 @@ use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
 class LocationTypeDAO extends DAO{
     
     public function __construct() {
-        parent::__construct(false);
+        parent::__construct();
     }
     
     protected function setDatabaseIndex(): string {
@@ -33,6 +33,13 @@ class LocationTypeDAO extends DAO{
         $sql = new MysqlBuilder();
         $sql->select('location_type')
                 ->where('active', 1);
+        return $this->select($sql);
+    }
+    
+    public function getActiveByInspection(bool $isInspection) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('location_type')
+                ->where('active', 1)->and()->where('inspection', $isInspection);
         return $this->select($sql);
     }
     

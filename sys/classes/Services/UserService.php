@@ -11,9 +11,9 @@ use Tanweb\Security\Encrypter as Encrypter;
 use Data\Access\Tables\UserDAO as UserDAO;
 use Data\Access\Tables\PrivilageDAO as PrivilageDAO;
 use Data\Access\Tables\EmploymentDAO as EmploymentDAO;
-use Data\Access\Views\UsersEmploymentPeriodsDAO as UsersEmploymentPeriodsDAO;
-use Data\Access\Views\UsersWithoutPasswordsDAO as UsersWithoutPasswordsDAO;
-use Data\Access\Views\UsersPrivilagesDAO as UsersPrivilagesDAO;
+use Data\Access\Views\UsersEmploymentPeriodsView as UsersEmploymentPeriodsView;
+use Data\Access\Views\UsersWithoutPasswordsView as UsersWithoutPasswordsView;
+use Data\Access\Views\UsersPrivilagesView as UsersPrivilagesView;
 use Services\Exceptions\OverlapingPeriodsException as OverlapingPeriodsException;
 use Services\Exceptions\LastAdminException as LastAdminException;
 
@@ -26,17 +26,17 @@ class UserService{
     private UserDAO $users;
     private PrivilageDAO $privilages;
     private EmploymentDAO $employment;
-    private UsersEmploymentPeriodsDAO $usersEmploymentPeriods;
-    private UsersWithoutPasswordsDAO $usersWithoutPasswords;
-    private UsersPrivilagesDAO $usersPrivilages;
+    private UsersEmploymentPeriodsView $usersEmploymentPeriods;
+    private UsersWithoutPasswordsView $usersWithoutPasswords;
+    private UsersPrivilagesView $usersPrivilages;
     
     public function __construct() {
         $this->users = new UserDAO();
         $this->privilages = new PrivilageDAO();
         $this->employment = new EmploymentDAO();
-        $this->usersEmploymentPeriods = new UsersEmploymentPeriodsDAO();
-        $this->usersWithoutPasswords = new UsersWithoutPasswordsDAO();
-        $this->usersPrivilages = new UsersPrivilagesDAO();
+        $this->usersEmploymentPeriods = new UsersEmploymentPeriodsView();
+        $this->usersWithoutPasswords = new UsersWithoutPasswordsView();
+        $this->usersPrivilages = new UsersPrivilagesView();
     }
     
     public function getAllUsers() : Container {

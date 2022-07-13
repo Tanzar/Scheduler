@@ -9,7 +9,7 @@ namespace Services;
 use Data\Access\Tables\LocationDAO as LocationDAO;
 use Data\Access\Tables\LocationTypeDAO as LocationTypeDAO;
 use Data\Access\Tables\LocationGroupDAO as LocationGroupDAO;
-use Data\Access\Views\LocationDetailsDAO as LocationDetailsDAO;
+use Data\Access\Views\LocationDetailsView as LocationDetailsView;
 use Tanweb\Container as Container;
 
 /**
@@ -19,15 +19,15 @@ use Tanweb\Container as Container;
  */
 class LocationService {
     private LocationDAO $location;
-    private LocationTypeDAO $type;
-    private LocationGroupDAO $group;
-    private LocationDetailsDAO $locationDetails;
+    private LocationTypeDAO $locationType;
+    private LocationGroupDAO $locationGroup;
+    private LocationDetailsView $locationDetails;
     
     public function __construct() {
         $this->location = new LocationDAO();
-        $this->type = new LocationTypeDAO();
-        $this->group = new LocationGroupDAO();
-        $this->locationDetails = new LocationDetailsDAO();
+        $this->locationType = new LocationTypeDAO();
+        $this->locationGroup = new LocationGroupDAO();
+        $this->locationDetails = new LocationDetailsView();
     }
     
     public function getAllLocations() : Container {
@@ -43,23 +43,27 @@ class LocationService {
     }
     
     public function getLocationsByTypeID(int $idType) : Container {
-        return $this->location->getByTypeId($idType);
+        return $this->location->getActiveByTypeId($idType);
     }
     
     public function getAllLocationTypes() : Container {
-        return $this->type->getAll();
+        return $this->locationType->getAll();
     }
     
     public function getActiveLocationTypes() : Container {
-        return $this->type->getActive();
+        return $this->locationType->getActive();
+    }
+    
+    public function getActiveInspectableLocationTypes() : Container {
+        return $this->locationType->getActiveByInspection(true);
     }
     
     public function getAllLocationGroups() : Container {
-        return $this->group->getAll();
+        return $this->locationGroup->getAll();
     }
     
     public function getActiveLocationGroups() : Container {
-        return $this->group->getActive();
+        return $this->locationGroup->getActive();
     }
     
     public function saveLocation(Container $data) : int {
@@ -67,11 +71,11 @@ class LocationService {
     }
     
     public function saveLocationType(Container $data) : int {
-        return $this->type->save($data);
+        return $this->locationType->save($data);
     }
     
     public function saveLocationGroup(Container $data) : int {
-        return $this->group->save($data);
+        return $this->locationGroup->save($data);
     }
     
     public function changeLocationStatus(int $id) : void {
@@ -86,24 +90,24 @@ class LocationService {
     }
     
     public function changeLocationTypeStatus(int $id) : void {
-        $type = $this->type->getByID($id);
+        $type = $this->locationType->getByID($id);
         $active = $type->get('active');
         if($active){
-            $this->type->disable($id);
+            $this->locationType->disable($id);
         }
         else{
-            $this->type->enable($id);
+            $this->locationType->enable($id);
         }
     }
     
     public function changeLocationGroupStatus(int $id) : void {
-        $group = $this->group->getByID($id);
+        $group = $this->locationGroup->getByID($id);
         $active = $group->get('active');
         if($active){
-            $this->group->disable($id);
+            $this->locationGroup->disable($id);
         }
         else{
-            $this->group->enable($id);
+            $this->locationGroup->enable($id);
         }
     }
 }

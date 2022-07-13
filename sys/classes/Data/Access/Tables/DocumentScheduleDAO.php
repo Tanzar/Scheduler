@@ -18,7 +18,7 @@ use Tanweb\Container as Container;
 class DocumentScheduleDAO extends DAO{
     
     public function __construct() {
-        parent::__construct(false);
+        parent::__construct();
     }
     
     protected function setDatabaseIndex(): string {
@@ -34,10 +34,10 @@ class DocumentScheduleDAO extends DAO{
         $sql->select('document_schedule')->where('id_schedule', $id);
         $result = $this->select($sql);
         if($result->length() > 1){
-            $this->throwDataAccessException('column id_document must contain '
-                    . 'unique values, cannot assign multiple documents to single entry');
+            $this->throwDataAccessException('column id_schedule must contain '
+                    . 'unique values, cannot assign single entry multiple times');
         }
-        return $result;
+        return new Container($result->get(0));
     }
     
     public function disable(int $id) : void {

@@ -8,7 +8,9 @@
     use Tanweb\Config\INI\AppConfig as AppConfig;
     use Tanweb\Config\INI\Languages as Languages;
     use Tanweb\Container as Container;
+    use Tanweb\Security\PageAccess as PageAccess;
     
+    PageAccess::allowFor(['admin', 'schedule_user_inspector']);   //locks access if failed to pass redirects to index page
     $languages = Languages::getInstance();
     $names = $languages->get('interface');
     $interface = new Container($names);
@@ -95,7 +97,7 @@ This code is free to use, just remember to give credit.
                     </div>
                     <div id="documents"></div>
                 </div>
-                <div>
+                <div style="min-width: 300px">
                     <div class="standard-text-title">
                         <?php echo $interface->get('users_list'); ?>
                     </div>

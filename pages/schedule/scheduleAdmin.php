@@ -16,7 +16,7 @@
     use Services\ScheduleService as ScheduleService;
     use Tanweb\Utility as Utility;
     
-    PageAccess::allowFor(['admin', 'schedule_user', 'schedule_user_inspector', 'schedule_admin']);   //locks access if failed to pass redirects to index page
+    PageAccess::allowFor(['admin', 'schedule_admin']);   //locks access if failed to pass redirects to index page
     
     $languages = Languages::getInstance();
     $names = $languages->get('interface');
