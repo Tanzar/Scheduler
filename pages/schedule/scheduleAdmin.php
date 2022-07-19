@@ -133,24 +133,26 @@ This code is free to use, just remember to give credit.
                             $username = Session::getUsername();
                             $period = $userservice->getUserCurrentEmploymentPeriod($username);
                             if($period->isEmpty()){
-                                echo date('Y-m-d') . '\T07:00';
+                                $date = date('Y-m-d');
+                                $hour = 'T07:00';
+                                echo date('Y-m-d') . 'T07:00';
                             }
                             else{
                                 $time = Utility::getSubString($period->get('standard_day_start'), 0, 5);
-                                $tim = date('Y-m-d') . ' ' . $time;
-                                echo date('Y-m-d\TH:i', strtotime($tim));
+                                $tim = date('Y-m-d') . 'T' . $time;
+                                echo $tim;
                             }
                         ?>">
                     <br>
                     <label class="standard-text"><?php echo $interface->get('end'); ?></label>
                     <input id="endDate" type="datetime-local" class="standard-input" value="<?php 
                             if($period->isEmpty()){
-                                echo date('Y-m-d') . '\T15:00';
+                                echo date('Y-m-d') . 'T15:00';
                             }
                             else{
                                 $time = Utility::getSubString($period->get('standard_day_end'), 0, 5);
-                                $tim = date('Y-m-d') . ' ' . $time;
-                                echo date('Y-m-d\TH:i', strtotime($tim));
+                                $tim = date('Y-m-d') . 'T' . $time;
+                                echo $tim;
                             }
                         ?>">
                     <br>

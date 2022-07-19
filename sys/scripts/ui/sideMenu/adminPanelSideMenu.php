@@ -29,4 +29,13 @@
     <form action="<?php echo Pages::getURL('adminPanelDocuments.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('documents'); ?>">
     </form>
+    <form action="<?php echo Pages::getURL('adminPanelTicketSettings.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('ticket_settings'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('adminPanelTicket.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('ticket'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('adminPanelArticle.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('art_41'); ?>">
+    </form>
 </div>

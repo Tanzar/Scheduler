@@ -33,7 +33,11 @@ class InspectorMyDocuments extends Controller{
         $this->setResponse($documents);
     }
     
-    public function getDocumentDaysForUser(){
-        
+    public function editDocument(){
+        $data = $this->getRequestData();
+        $message = $this->documentService->editDocument($data);
+        $responsse = new Container();
+        $responsse->add($message, 'message');
+        $this->setResponse($responsse);
     }
 }

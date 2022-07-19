@@ -11,11 +11,11 @@ use Data\Access\View as View;
 use Tanweb\Container as Container;
 
 /**
- * Description of TicketDetailsView
+ * Description of ArticleDetailsView
  *
  * @author Tanzar
  */
-class TicketDetailsView extends View{
+class ArticleDetailsView extends View{
     
     public function __construct() {
         parent::__construct();
@@ -26,31 +26,29 @@ class TicketDetailsView extends View{
     }
 
     protected function setDefaultName(): string {
-        return 'ticket_details';
+        return 'article_details';
     }
     
-    public function getAllUserTicketsByDocumentId(string $username, int $documentId) : Container{
+    public function getAllUserArticlesByDocumentId(string $username, int $documentId) : Container{
         $sql = new MysqlBuilder();
-        $sql->select('ticket_details')->where('id_document', $documentId)
+        $sql->select('article_details')->where('id_document', $documentId)
                 ->and()->where('username', $username);
         return $this->select($sql);
     }
     
-    public function getAllUserTicketsByYear(string $username, int $year) : Container{
+    public function getAllUserArticlesByYear(string $username, int $year) : Container{
         $sql = new MysqlBuilder();
-        $sql->select('ticket_details')->where('year(date)', $year)
+        $sql->select('article_details')->where('year(date)', $year)
                 ->and()->where('username', $username)->orderBy('date', false);
         return $this->select($sql);
     }
     
-    public function getUserActiveTicketsByDocumentId(string $username, int $documentId) : Container{
+    public function getUserActiveArticlesByDocumentId(string $username, int $documentId) : Container{
         $sql = new MysqlBuilder();
-        $sql->select('ticket_details')->where('active', 1)
+        $sql->select('article_details')->where('active', 1)
                 ->and()->where('document_user_active', 1)
                 ->and()->where('id_document', $documentId)
                 ->and()->where('username', $username);
         return $this->select($sql);
     }
-    
-    
 }

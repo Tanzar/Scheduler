@@ -4,33 +4,32 @@
 
 function init(){
     RestApi.getInterfaceNamesPackage(function(language){
-        
         var selectDocument = new Select('documents', language.select_document);
         initDateSelection(selectDocument);
         
-        var datatable = new TicketsTable(language, selectDocument);
+        initArticlesTable(language, selectDocument);
     });
-}     
+}
 
-function TicketsTable(language, selectDocument){
-    var div = document.getElementById('tickets');
+function initArticlesTable(language, selectDocument){
+    var div = document.getElementById('articles');
     
     var datasource = {
         method: 'get',
         address: getRestAddress(),
         data: {
-            controller: 'InspectorTickets',
-            task: 'getTickets',
+            controller: 'InspectorArticle',
+            task: 'getArticles',
             id: 0
         }
     };
     var config = {
         columns: [
-            {title: language.ticket_number, variable: 'number', width: 150, minWidth: 150},
-            {title: language.ticket_date, variable: 'date', width: 100, minWidth: 100},
-            {title: language.position, variable: 'position', width: 150, minWidth: 150},
-            {title: language.violated_rules, variable: 'violated_rules', width: 200, minWidth: 200},
-            {title: language.outside_company, variable: 'outside_company_text', width: 100, minWidth: 100},
+            {title: language.date, variable: 'date', width: 70, minWidth: 70},
+            {title: language.art_41_form, variable: 'art_41_form_short', width: 100, minWidth: 100},
+            {title: language.position_groups, variable: 'position_group', width: 100, minWidth: 100},
+            {title: language.position, variable: 'position', width: 100, minWidth: 100},
+            {title: language.outside_company, variable: 'outside_company_text', width: 70, minWidth: 70},
             {title: language.company_name, variable: 'company_name', width: 100, minWidth: 100}
         ],
         dataSource: datasource
@@ -45,28 +44,27 @@ function TicketsTable(language, selectDocument){
             method: 'get',
             address: getRestAddress(),
             data: {
-                controller: 'InspectorTickets',
-                task: 'getTickets',
+                controller: 'InspectorArticle',
+                task: 'getArticles',
                 id: id
             }
         });
     });
-    
     datatable.addActionButton(language.add, function(){
         var documentId = selectDocument.value();
         if(documentId !== '0'){
-            RestApi.get('InspectorTickets', 'getNewTicketDetails', {id: documentId}, function(response){
-                var data = JSON.parse(response);
-                var laws = [];
-                data.ticket_laws.forEach(item => {
+            RestApi.get('InspectorArticle', 'getNewArticleDetails', {id: documentId}, function(response){
+                var details = JSON.parse(response);
+                var forms = [];
+                details.forms.forEach(item => {
                     var option = {
                         value: item.id,
-                        title: item.name
+                        title: item.short
                     }
-                    laws.push(option);
+                    forms.push(option);
                 });
                 var positions = [];
-                data.position_groups.forEach(item => {
+                details.position_groups.forEach(item => {
                     var option = {
                         value: item.id,
                         title: item.name
@@ -74,8 +72,8 @@ function TicketsTable(language, selectDocument){
                     positions.push(option);
                 });
                 var date = new Date();
-                var start = new Date(data.start);
-                var end = new Date(data.end);
+                var start = new Date(details.start);
+                var end = new Date(details.end);
                 if(date < start){
                     date = start;
                 }
@@ -83,22 +81,51 @@ function TicketsTable(language, selectDocument){
                     date = end;
                 }
                 var fields = [
-                    {type: 'text', title: language.ticket_number, variable: 'number', limit: 10},
-                    {type: 'date', title: language.ticket_date, variable: 'date', min: data.start, max: data.end, value: date.toDateString()},
+                    {type: 'select', title: language.select_art_41_form, variable: 'id_art_41_form', options: forms},
+                    {type: 'date', title: language.date, variable: 'date', min: details.start, max: details.end, value: date.toISOString().split('T')[0]},
                     {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions},
                     {type: 'text', title: language.position, variable: 'position', limit: 255},
-                    {type: 'number', title: language.ticket_value, variable: 'value', min: 0},
-                    {type: 'select', title: language.select_ticket_law, variable: 'id_ticket_law', options: laws},
-                    {type: 'textarea', title: language.violated_rules, variable: 'violated_rules', limit: 255, width: 30, height: 3},
                     {type: 'checkbox', title: language.outside_company, variable: 'outside_company'},
                     {type: 'text', title: language.company_name, variable: 'company_name', limit: 255},
                     {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5}
                 ];
                 var item = {
-                    id_document: documentId
+                    id_document: documentId,
+                    applicant: '',
+                    application_number: '',
+                    application_date: date.toISOString().split('T')[0]
                 }
-                openModalBox(language.new_ticket, fields, language.save, function(data){
-                    RestApi.post('InspectorTickets', 'saveNewTicket', data,
+                openModalBox(language.new_art_41, fields, language.save, function(data){
+                    var require_application = false;
+                    var idArtForm = parseInt(data.id_art_41_form);
+                    details.forms.forEach(item => {
+                        if(item.id === idArtForm && item.require_application_info){
+                            require_application = true;
+                        }
+                    });
+                    if(require_application){
+                        var fields = [
+                            {type: 'text', title: language.applicant, variable: 'applicant', limit: 255},
+                            {type: 'text', title: language.application_number, variable: 'application_number', limit: 255},
+                            {type: 'date', title: language.application_date, variable: 'application_date', min: details.start, max: details.end, value: date.toDateString()}
+                        ];
+                        openModalBox(language.new_art_41, fields, language.save, function(data){
+                            console.log(data);
+                            RestApi.post('InspectorArticle', 'saveNewArticle', data,
+                            function(response){
+                                var data = JSON.parse(response);
+                                console.log(data);
+                                alert(data.message);
+                                datatable.refresh();
+                            },
+                            function(response){
+                                console.log(response.responseText);
+                                alert(response.responseText);
+                            });
+                        }, data);
+                    }
+                    else{
+                        RestApi.post('InspectorArticle', 'saveNewArticle', data,
                         function(response){
                             var data = JSON.parse(response);
                             console.log(data);
@@ -109,6 +136,9 @@ function TicketsTable(language, selectDocument){
                             console.log(response.responseText);
                             alert(response.responseText);
                         });
+                    }
+                    /*
+                    */
                 }, item);
             });
         }
@@ -116,21 +146,22 @@ function TicketsTable(language, selectDocument){
             alert(language.select_document);
         }
     });
+    
     datatable.addActionButton(language.edit, function(selected){
         var documentId = selectDocument.value();
         if(documentId !== '0' && selected !== undefined){
-            RestApi.get('InspectorTickets', 'getNewTicketDetails', {id: documentId}, function(response){
-                var data = JSON.parse(response);
-                var laws = [];
-                data.ticket_laws.forEach(item => {
+            RestApi.get('InspectorArticle', 'getNewArticleDetails', {id: documentId}, function(response){
+                var details = JSON.parse(response);
+                var forms = [];
+                details.forms.forEach(item => {
                     var option = {
                         value: item.id,
-                        title: item.name
+                        title: item.short
                     }
-                    laws.push(option);
+                    forms.push(option);
                 });
                 var positions = [];
-                data.position_groups.forEach(item => {
+                details.position_groups.forEach(item => {
                     var option = {
                         value: item.id,
                         title: item.name
@@ -138,8 +169,8 @@ function TicketsTable(language, selectDocument){
                     positions.push(option);
                 });
                 var date = new Date();
-                var start = new Date(data.start);
-                var end = new Date(data.end);
+                var start = new Date(details.start);
+                var end = new Date(details.end);
                 if(date < start){
                     date = start;
                 }
@@ -147,19 +178,45 @@ function TicketsTable(language, selectDocument){
                     date = end;
                 }
                 var fields = [
-                    {type: 'text', title: language.ticket_number, variable: 'number', limit: 10},
-                    {type: 'date', title: language.ticket_date, variable: 'date', min: data.start, max: data.end, value: date.toDateString()},
+                    {type: 'select', title: language.select_art_41_form, variable: 'id_art_41_form', options: forms},
+                    {type: 'date', title: language.date, variable: 'date', min: details.start, max: details.end, value: date.toISOString().split('T')[0]},
                     {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions},
                     {type: 'text', title: language.position, variable: 'position', limit: 255},
-                    {type: 'number', title: language.ticket_value, variable: 'value', min: 0},
-                    {type: 'select', title: language.select_ticket_law, variable: 'id_ticket_law', options: laws},
-                    {type: 'textarea', title: language.violated_rules, variable: 'violated_rules', limit: 255, width: 30, height: 3},
                     {type: 'checkbox', title: language.outside_company, variable: 'outside_company'},
                     {type: 'text', title: language.company_name, variable: 'company_name', limit: 255},
                     {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5}
                 ];
-                openModalBox(language.edit_ticket, fields, language.save, function(data){
-                    RestApi.post('InspectorTickets', 'updateTicket', data,
+                openModalBox(language.new_art_41, fields, language.save, function(data){
+                    var require_application = false;
+                    var idArtForm = parseInt(data.id_art_41_form);
+                    details.forms.forEach(item => {
+                        if(item.id === idArtForm && item.require_application_info){
+                            require_application = true;
+                        }
+                    });
+                    if(require_application){
+                        var fields = [
+                            {type: 'text', title: language.applicant, variable: 'applicant', limit: 255},
+                            {type: 'text', title: language.application_number, variable: 'application_number', limit: 255},
+                            {type: 'date', title: language.application_date, variable: 'application_date', min: details.start, max: details.end, value: date.toDateString()}
+                        ];
+                        openModalBox(language.new_art_41, fields, language.save, function(data){
+                            console.log(data);
+                            RestApi.post('InspectorArticle', 'updateArticle', data,
+                            function(response){
+                                var data = JSON.parse(response);
+                                console.log(data);
+                                alert(data.message);
+                                datatable.refresh();
+                            },
+                            function(response){
+                                console.log(response.responseText);
+                                alert(response.responseText);
+                            });
+                        }, data);
+                    }
+                    else{
+                        RestApi.post('InspectorArticle', 'updateArticle', data,
                         function(response){
                             var data = JSON.parse(response);
                             console.log(data);
@@ -170,6 +227,9 @@ function TicketsTable(language, selectDocument){
                             console.log(response.responseText);
                             alert(response.responseText);
                         });
+                    }
+                    /*
+                    */
                 }, selected);
             });
         }
@@ -178,14 +238,14 @@ function TicketsTable(language, selectDocument){
                 alert(language.select_document);
             }
             else{
-                alert(language.select_ticket);
+                alert(language.select_art_41);
             }
         }
     });
     datatable.addActionButton(language.remove, function(selected){
         var documentId = selectDocument.value();
         if(documentId !== '0' && selected !== undefined){
-            RestApi.post('InspectorTickets', 'removeTicket', {id: selected.id},
+            RestApi.post('InspectorArticle', 'removeArticle', {id: selected.id},
                 function(response){
                     var data = JSON.parse(response);
                     console.log(data);
@@ -202,7 +262,7 @@ function TicketsTable(language, selectDocument){
                 alert(language.select_document);
             }
             else{
-                alert(language.select_ticket);
+                alert(language.select_art_41);
             }
         }
     });
@@ -269,6 +329,6 @@ function initDateSelection(selectDocument) {
             month: selectMonth.value,
             year: selectYear.value
         }
-        selectDocument.loadOptions('InspectorTickets', 'getDocuments', data);
+        selectDocument.loadOptions('InspectorArticle', 'getDocuments', data);
     }
 }

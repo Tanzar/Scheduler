@@ -33,7 +33,16 @@ class DocumentUserDAO extends DAO{
         $sql = new MysqlBuilder();
         $sql->select('document_user')->where('id_document', $documentId)
                 ->and()->where('id_user', $userId);
-        return $this->select($sql);
+        $relations = $this->select($sql);
+        if($relations->length() > 1){
+            $this->throwDataAccessException('combinations of id_document and id_user must be unique in document_user');
+        }
+        if($relations->length() == 1){
+            return new Container($relations->get(0));
+        }
+        else{
+            return new Container();
+        }
     }
     
     public function enable(int $id) : void {

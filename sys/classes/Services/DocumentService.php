@@ -13,6 +13,7 @@ use Data\Access\Views\DocumentUserDetailsView as DocumentUserDetailsView;
 use Data\Access\Views\DocumentEntriesDetailsView as DocumentEntriesDetailsView;
 use Data\Access\Views\DocumentDetailsView as DocumentDetailsView;
 use Data\Access\Tables\UserDAO as UserDAO;
+use Tanweb\Config\INI\Languages as Languages;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 
@@ -99,6 +100,36 @@ class DocumentService {
     
     public function saveDocument(Container $data) : int {
         return $this->document->save($data);
+    }
+    
+    public function editDocument(Container $data) : string {
+        $language = Languages::getInstance();
+        $id = (int) $data->get('id');
+        $entries = $this->documentEntriesDetails->getActiveByDocumentId($id);
+        foreach ($entries->toArray() as $item){
+            $entry = new Container($item);
+            if($this->isNotInDocumentDaysRange($data, $entry)){
+                return $language->get('edit_document_entries_exist_period');
+            }
+        }
+        if($data->isValueSet('document_number')){
+            $data->add($data->get('document_number'), 'number', true);
+        }
+        $this->document->save($data);
+        return $language->get('changes_saved');
+    }
+    
+    private function isNotInDocumentDaysRange(Container $document, Container $entry) : bool {
+        $documentStart = $document->get('start');
+        $documentEnd = $document->get('end');
+        $entryStart = date('Y-m-d', strtotime($entry->get('start')));
+        $entryEnd = date('Y-m-d', strtotime($entry->get('end')));
+        if($entryEnd >= $documentStart && $entryEnd <= $documentEnd && $entryStart >= $documentStart && $entryStart <= $documentEnd){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
     
     public function assignCurrentUserToDocument(int $documentId) : int {

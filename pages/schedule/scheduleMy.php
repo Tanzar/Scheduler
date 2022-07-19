@@ -22,7 +22,9 @@
     $names = $languages->get('interface');
     $interface = new Container($names);
     $security = new Security();
-    
+    $username = Session::getUsername();
+    $userservice = new UserService();
+    $period = $userservice->getUserCurrentEmploymentPeriod($username);
 ?>
 <!DOCTYPE html>
 <!--
@@ -77,7 +79,7 @@ This code is free to use, just remember to give credit.
                     <div class="standard-text-title">
                         <?php echo $interface->get('new_entry'); ?>
                     </div>
-                    <select id="selectActivityGroup" class="standard-input">
+                    <select id="selectActivityGroup" class="standard-input" <?php if($period->isEmpty()) { echo 'disabled'; } ?>>
                         <?php
                             echo '<option placeholder, disabled selected>' . $interface->get('select_activity_group') . '</option>';
                             $scheduleService = new ScheduleService();
@@ -93,52 +95,53 @@ This code is free to use, just remember to give credit.
                         ?>
                     </select>
                     <br>
-                    <select id="selectActivity" class="standard-input">
+                    <select id="selectActivity" class="standard-input" <?php if($period->isEmpty()) { echo 'disabled'; } ?>>
                         <option value="" selected disabled placeholder>
                             <?php echo $interface->get('select_activity'); ?>
                         </option>
                     </select>
                     <br>
-                    <select id="selectLocationType" class="standard-input">
+                    <select id="selectLocationType" class="standard-input" <?php if($period->isEmpty()) { echo 'disabled'; } ?>>
                         <option value="" selected disabled placeholder>
                             <?php echo $interface->get('select_location_type'); ?>
                         </option>
                     </select>
                     <br>
-                    <select id="selectLocation" class="standard-input">
+                    <select id="selectLocation" class="standard-input" <?php if($period->isEmpty()) { echo 'disabled'; } ?>>
                         <option value="" selected disabled placeholder>
                             <?php echo $interface->get('select_location'); ?>
                         </option>
                     </select>
                     <br>
                     <label class="standard-text"><?php echo $interface->get('start'); ?></label>
-                    <input id="startDate" type="datetime-local" class="standard-input" value="<?php 
-                            $username = Session::getUsername();
-                            $userservice = new UserService();
-                            $period = $userservice->getUserCurrentEmploymentPeriod($username);
+                    <input id="startDate" type="datetime-local" class="standard-input" <?php 
                             if($period->isEmpty()){
-                                echo date('Y-m-d') . '\T07:00';
+                                echo 'disabled';
                             }
                             else{
                                 $time = Utility::getSubString($period->get('standard_day_start'), 0, 5);
-                                $tim = date('Y-m-d') . ' ' . $time;
-                                echo date('Y-m-d\TH:i', strtotime($tim));
+                                $tim = date('Y-m-d') . 'T' . $time;
+                                echo 'value="' . $tim . '"';
+                                echo 'min="' . $period->get('start') . 'T00:00"';
+                                echo 'max="' . $period->get('end') . 'T23:59"';
                             }
-                        ?>">
+                        ?>>
                     <br>
                     <label class="standard-text"><?php echo $interface->get('end'); ?></label>
-                    <input id="endDate" type="datetime-local" class="standard-input" value="<?php 
+                    <input id="endDate" type="datetime-local" class="standard-input" <?php 
                             if($period->isEmpty()){
-                                echo date('Y-m-d') . '\T15:00';
+                                echo 'disabled';
                             }
                             else{
                                 $time = Utility::getSubString($period->get('standard_day_end'), 0, 5);
-                                $tim = date('Y-m-d') . ' ' . $time;
-                                echo date('Y-m-d\TH:i', strtotime($tim));
+                                $tim = date('Y-m-d') . 'T' . $time;
+                                echo 'value="' . $tim . '"';
+                                echo 'min="' . $period->get('start') . 'T00:00"';
+                                echo 'max="' . $period->get('end') . 'T23:59"';
                             }
-                        ?>">
+                        ?>>
                     <br>
-                    <button id="newEntry" class="standard-button">
+                    <button id="newEntry" class="standard-button" <?php if($period->isEmpty()) { echo 'disabled'; } ?>>
                         <?php echo $interface->get('save'); ?>
                     </button>
                     <button id="addLocation" class="standard-button" style="display: none">

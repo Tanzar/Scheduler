@@ -59,12 +59,9 @@ This code is free to use, just remember to give credit.
                 <?php Scripts::run('selectMonthYear.php'); ?>
             </div>
             <div class="page-contents-element">
-                <label>
-                    <?php echo $interface->get('select_document') . ':'; ?>
-                </label>
                 <select class="standard-input" id="documents">
                     <?php 
-                        echo '<option selected placeholder disabled>'
+                        echo '<option selected placeholder disabled value="0">'
                              . $interface->get('select_document') . '</option>';
                         $documentService = new DocumentService();
                         $month = (int) date('m');
@@ -72,7 +69,7 @@ This code is free to use, just remember to give credit.
                         $documents = $documentService->getCurrentUserDocumentsByMonthYear($month, $year);
                         foreach ($documents->toArray() as $item){
                             $document = new Container($item);
-                            echo '<option value="' . $document->get('id') . '">';
+                            echo '<option value="' . $document->get('id_document') . '">';
                             echo $document->get('document_number') . '</option>';
                         }
                     ?>

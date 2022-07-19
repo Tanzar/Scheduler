@@ -133,6 +133,36 @@ This code is free to use, just remember to give credit.
                             </div>
                         </td>
                     </tr>
+                    <tr class="report-tr">
+                        <td colspan="4" class="report-td">
+                            <div class="horizontal-container">
+                                <button class="standard-button" id="showHideTickets">
+                                    <?php echo $interface->get('show'); ?>
+                                </button>
+                                <div class="standard-text">
+                                    <?php echo $interface->get('tickets'); ?>
+                                </div>
+                            </div>
+                            <div id="ticketsRow" style="display: none">
+                                <div class="standard-text" id="tickets"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="report-tr">
+                        <td colspan="4" class="report-td">
+                            <div class="horizontal-container">
+                                <button class="standard-button" id="showHideArt41">
+                                    <?php echo $interface->get('show'); ?>
+                                </button>
+                                <div class="standard-text">
+                                    <?php echo $interface->get('art_41'); ?>
+                                </div>
+                            </div>
+                            <div id="art41Row" style="display: none">
+                                <div class="standard-text" id="art41"></div>
+                            </div>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>

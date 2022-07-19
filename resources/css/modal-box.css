@@ -84,7 +84,7 @@ This code is free to use, just remember to give credit.
 .modal-box-field {
     display: flex;
     justify-content: center;
-    margin: 5px;
+    margin: 10px;
 }
 
 .modal-box-input {
@@ -92,6 +92,23 @@ This code is free to use, just remember to give credit.
     max-width: 250px;
     outline: none;
     background-color: inherit;
-    border: none;
-    border-bottom: 2px solid #0066ff;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    border-bottom-color: #0066ff;
 }
+
+.modal-box-input:hover {
+    border-color: #0066ff;
+}
+
+.modal-box-textarea {
+    min-width: 120px;
+    max-width: 400px;
+    outline: none;
+    background-color: inherit;
+    border: 2px solid #0066ff;
+    resize: none;
+    border-radius: 5px;
+    padding: 4px;
+}
+

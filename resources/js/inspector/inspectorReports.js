@@ -66,7 +66,7 @@ function Select(id, placeholder){
             me.clear();
             var data = JSON.parse(response);
             data.forEach(item => {
-                me.addOption(item.id, item.document_number);
+                me.addOption(item.id_document, item.document_number);
             });
         });
     }
@@ -80,6 +80,9 @@ function showHideButton(buttonId, rowId, language) {
     var hidden = true;
     var button = document.getElementById(buttonId);
     var row = document.getElementById(rowId);
+    
+    row.style.display = 'none';
+    button.textContent = language.show;
     
     button.onclick = function(){
         if(hidden){
@@ -114,4 +117,17 @@ function formatReport(data, language){
     document.getElementById('assignedEntries').innerHTML = contents;
     showHideButton('showHideEntries', 'assignedEntriesRow', language);
     
+    contents = '';
+    data.tickets.forEach(item => {
+        contents += item + '<br>';
+    });
+    document.getElementById('tickets').innerHTML = contents;
+    showHideButton('showHideTickets', 'ticketsRow', language);
+    
+    contents = '';
+    data.art_41.forEach(item => {
+        contents += item + '<br>';
+    });
+    document.getElementById('art41').innerHTML = contents;
+    showHideButton('showHideArt41', 'art41Row', language);
 }

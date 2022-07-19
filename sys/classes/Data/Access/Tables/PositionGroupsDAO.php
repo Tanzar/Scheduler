@@ -7,15 +7,15 @@
 namespace Data\Access\Tables;
 
 use Data\Access\DataAccessObject as DAO;
-use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
 use Tanweb\Container as Container;
+use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
 
 /**
- * Description of TicketLawDAO
+ * Description of PositionGroupsDAO
  *
  * @author Tanzar
  */
-class TicketLawDAO extends DAO{
+class PositionGroupsDAO extends DAO{
     
     public function __construct() {
         parent::__construct();
@@ -26,25 +26,24 @@ class TicketLawDAO extends DAO{
     }
     
     protected function setDefaultTable(): string {
-        return 'ticket_law';
+        return 'position_groups';
     }
-    
-    public function getActive() : Container{
+
+    public function getActive() : Container {
         $sql = new MysqlBuilder();
-        $sql->select('ticket_law')->where('active', 1);
+        $sql->select('position_groups')->where('active', 1);
         return $this->select($sql);
     }
     
     public function enable(int $id){
         $sql = new MysqlBuilder();
-        $sql->update('ticket_law', 'id', $id)->set('active', 1);
+        $sql->update('position_groups', 'id', $id)->set('active', 1);
         $this->update($sql);
     }
     
     public function  disable(int $id) {
         $sql = new MysqlBuilder();
-        $sql->update('ticket_law', 'id', $id)->set('active', 0);
+        $sql->update('position_groups', 'id', $id)->set('active', 0);
         $this->update($sql);
     }
-
 }

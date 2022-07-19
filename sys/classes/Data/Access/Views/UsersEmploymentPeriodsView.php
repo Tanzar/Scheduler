@@ -40,8 +40,8 @@ class UsersEmploymentPeriodsView extends View{
     public function getOrderedActiveByDate(string $date) : Container{
         $sql = new MysqlBuilder();
         $sql->select('users_employment_periods')->where('active', 1)
-                ->and()->where('start', $date, '<')
-                ->and()->where('end', $date, '>')
+                ->and()->where('start', $date, '<=')
+                ->and()->where('end', $date, '>=')
                 ->orderBy('sort_priority', false);
         return $this->select($sql);
     }

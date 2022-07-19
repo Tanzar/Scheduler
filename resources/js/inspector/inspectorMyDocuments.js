@@ -54,6 +54,31 @@ function DocumentDatatable(language){
         dataSource: datasource
     }
     var documentsTable = new Datatable(documents, config);
+    documentsTable.addActionButton(language.edit, function(selected){
+        if(selected === undefined){
+            alert(language.select_document);
+        }
+        else{
+            var fields = [
+                {type: 'text', title: language.document_number, variable: 'document_number', limit: 255},
+                {type: 'date', title: language.start, variable: 'start'},
+                {type: 'date', title: language.end, variable: 'end'},
+                {type: 'text', title: language.description, variable: 'description', limit: 255}
+            ];
+            openModalBox(language.new_document, fields, language.save, function(data){
+                RestApi.post('InspectorMyDocuments', 'editDocument', data, function(response){
+                    var data = JSON.parse(response);
+                    console.log(data);
+                    alert(data.message);
+                    documentsTable.refresh();
+                    }, function(response){
+                        alert(response.responseText);
+                    });
+                }, selected);
+        }
+    });
+    
+    
     return documentsTable;
 }
 

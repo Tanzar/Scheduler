@@ -51,6 +51,52 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                     input.setAttribute('maxLength', field.limit);
                 }
                 break;
+            case 'textarea':
+                var maxWidth = 50;
+                var defWidth = 50;
+                var maxHeight = 10;
+                var defHeight = 5;
+                var input = document.createElement('textarea');
+                input.setAttribute('class', 'modal-box-textarea');
+                input.setAttribute('placeholder', field.title);
+                input.setAttribute('resize', 'disable');
+                container.appendChild(input);
+                input.variable = field.variable;
+                input.onchange = function(){
+                    item[this.variable] = this.value;
+                }
+                if(item[field.variable] !== undefined){
+                    input.value = item[field.variable];
+                }
+                else{
+                    item[input.variable] = input.value;
+                }
+                if(field.limit !== undefined){
+                    input.setAttribute('maxLength', field.limit);
+                }
+                if(field.width !== undefined){
+                    if(field.width > maxWidth || field.width < 1){
+                        input.setAttribute('cols', defWidth);
+                    }
+                    else{
+                        input.setAttribute('cols', field.width);
+                    }
+                }
+                else{
+                    input.setAttribute('cols', defWidth);
+                }
+                if(field.height !== undefined){
+                    if(field.height > maxHeight || field.height < 1){
+                        input.setAttribute('rows', defHeight);
+                    }
+                    else{
+                        input.setAttribute('rows', field.height);
+                    }
+                }
+                else{
+                    input.setAttribute('rows', defHeight);
+                }
+                break;
             case 'number':
                 var input = document.createElement('input');
                 input.setAttribute('type', 'number');
@@ -158,6 +204,7 @@ function openModalBox(title, fields, buttonText, onAccept, item){
             case 'date':
                 var input = document.createElement('input');
                 input.setAttribute('type', 'date');
+                input.setAttribute('class', 'modal-box-input');
                 var label = document.createElement('label');
                 label.textContent = field.title + ' ';
                 container.appendChild(label);
@@ -166,11 +213,22 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 input.onchange = function(){
                     item[this.variable] = this.value;
                 }
+                if(field.max !== undefined){
+                    input.setAttribute('max', field.max);
+                }
+                if(field.min !== undefined){
+                    input.setAttribute('min', field.min);
+                }
                 if(item[field.variable] !== undefined){
                     input.value = item[field.variable];
                 }
                 else{
-                    var date = new Date();
+                    if(field.value === undefined){
+                        var date = new Date();
+                    }
+                    else{
+                        var date = new Date(field.value);
+                    }
                     date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
                     input.value = date.toJSON().slice(0,10);
                     item[input.variable] = input.value;
@@ -179,6 +237,7 @@ function openModalBox(title, fields, buttonText, onAccept, item){
             case 'dateTime':
                 var input = document.createElement('input');
                 input.setAttribute('type', 'datetime-local');
+                input.setAttribute('class', 'modal-box-input');
                 var label = document.createElement('label');
                 label.textContent = field.title + ' ';
                 container.appendChild(label);
@@ -186,6 +245,12 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 input.variable = field.variable;
                 input.onchange = function(){
                     item[this.variable] = this.value.replace('T', ' ');
+                }
+                if(field.max !== undefined){
+                    input.setAttribute('max', field.max);
+                }
+                if(field.min !== undefined){
+                    input.setAttribute('min', field.min);
                 }
                 if(item[field.variable] !== undefined){
                     var datetime = new Date(item[field.variable]);
@@ -199,6 +264,7 @@ function openModalBox(title, fields, buttonText, onAccept, item){
             case 'time':
                 var input = document.createElement('input');
                 input.setAttribute('type', 'time');
+                input.setAttribute('class', 'modal-box-input');
                 var label = document.createElement('label');
                 label.textContent = field.title + ' ';
                 container.appendChild(label);
@@ -206,6 +272,12 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 input.variable = field.variable;
                 input.onchange = function(){
                     item[this.variable] = this.value;
+                }
+                if(field.max !== undefined){
+                    input.setAttribute('max', field.max);
+                }
+                if(field.min !== undefined){
+                    input.setAttribute('min', field.min);
                 }
                 if(item[field.variable] !== undefined){
                     input.value = item[field.variable];

@@ -24,6 +24,7 @@ This code is free to use, just remember to give credit.
 body {
     background-color: var(--page-background);
     margin: 0px;
+    min-width: fit-content;
     width: 100%;
     height: 100%;
 }

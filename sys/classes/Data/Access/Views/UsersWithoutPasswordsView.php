@@ -29,10 +29,25 @@ class UsersWithoutPasswordsView extends View{
         return 'users_without_passwords';
     }
     
-    public function getActive(){
+    public function getActive() : Container{
         $sql = new MysqlBuilder();
         $sql->select('users_without_passwords')->where('active', 1);
         return $this->select($sql);
+    }
+    
+    public function getByUsername(string $username) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('users_without_passwords')->where('username', $username);
+        $users = $this->select($sql);
+        if($users->length() > 1){
+            $this->throwDataAccessException('username column is nor unique');
+        }
+        if($users->length() === 1){
+            return new Container($users->get(0));
+        }
+        else{
+            return new Container();
+        }
     }
     
     public function findUsers(Container $conditions) : Container{
