@@ -22,7 +22,14 @@ function LocationTypesTable(language, div){
             { title: language.short, variable: 'short', width: 50},
             { title: language.inspection, variable: 'inspection', width: 50}
         ],
-        dataSource : { method: 'post', address: getRestAddress(), data: { controller: 'AdminPanelLocation', task: 'getLocationTypes' } }
+        dataSource : { 
+            method: 'post', 
+            address: getRestAddress(), 
+            data: { 
+                controller: 'AdminPanelLocation', 
+                task: 'getLocationTypes' 
+            } 
+        }
     };
     var datatable = new Datatable(div, config);
     datatable.addActionButton(language.add, function(){
@@ -42,9 +49,8 @@ function LocationTypesTable(language, div){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
-            }
-        );
+            });
+        });
     });
     datatable.addActionButton(language.edit, function(selected){
         if(selected !== undefined){
@@ -65,8 +71,7 @@ function LocationTypesTable(language, div){
                         console.log(response.responseText);
                         alert(response.responseText);
                     });
-                }, selected
-            );
+            }, selected);
         }
         else{
             alert(language.select_location_type);
@@ -84,7 +89,7 @@ function LocationTypesTable(language, div){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
+            });
         }
         else{
             alert(language.select_location_type)
@@ -99,7 +104,14 @@ function LocationGroupsTable(language, div){
             { title: language.active, variable: 'active', width: 50},
             { title: language.name, variable: 'name', width: 150, minWidth: 150}
         ],
-        dataSource : { method: 'post', address: getRestAddress(), data: { controller: 'AdminPanelLocation', task: 'getLocationGroups' } }
+        dataSource : { 
+            method: 'post', 
+            address: getRestAddress(), 
+            data: { 
+                controller: 'AdminPanelLocation', 
+                task: 'getLocationGroups' 
+            } 
+        }
     };
     var datatable = new Datatable(div, config);
     datatable.addActionButton(language.add, function(){
@@ -117,9 +129,8 @@ function LocationGroupsTable(language, div){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
-            }
-        );
+            });
+        });
     });
     datatable.addActionButton(language.edit, function(selected){
         if(selected !== undefined){
@@ -137,9 +148,8 @@ function LocationGroupsTable(language, div){
                     function(response){
                         console.log(response.responseText);
                         alert(response.responseText);
-                    });
-                }, selected
-            );
+                });
+            }, selected);
         }
         else{
             alert(language.select_location_group);
@@ -157,7 +167,7 @@ function LocationGroupsTable(language, div){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
+            });
         }
         else{
             alert(language.select_location_group)

@@ -54,7 +54,7 @@ function ArticlesTable(language){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
+            });
         }
         else{
             alert(language.select_ticket);
@@ -115,7 +115,7 @@ function articleFormsTable(language){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
+            });
         });
     });
     datatable.addActionButton(language.edit, function(selected){
@@ -140,7 +140,7 @@ function articleFormsTable(language){
                     function(response){
                         console.log(response.responseText);
                         alert(response.responseText);
-                    });
+                });
             }, selected);
         }
     });
@@ -159,7 +159,7 @@ function articleFormsTable(language){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
+            });
         }
     });
 }

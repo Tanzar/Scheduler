@@ -16,11 +16,16 @@ function init(){
         generateRaportButton.onclick = function(){
             var documentId = selectDocument.getValue();
             if(documentId !== ''){
-                RestApi.post('InspectorReport', 'generateReport', {documentId: documentId}, function(response){
-                    var data = JSON.parse(response);
-                    console.log(data);
-                    var div = document.getElementById('report');
-                    formatReport(data, language);
+                RestApi.post('InspectorReport', 'generateReport', {documentId: documentId}, 
+                    function(response){
+                        var data = JSON.parse(response);
+                        console.log(data);
+                        var div = document.getElementById('report');
+                        formatReport(data, language);
+                    }, 
+                    function(response){
+                        console.log(response.responseText);
+                        alert(response.responseText);
                 });
             }
             else{
@@ -62,12 +67,17 @@ function Select(id, placeholder){
     
     var me = this;
     this.loadOptions = function(controller, task, inputData){
-        RestApi.get(controller, task, inputData, function(response){
-            me.clear();
-            var data = JSON.parse(response);
-            data.forEach(item => {
-                me.addOption(item.id_document, item.document_number);
-            });
+        RestApi.get(controller, task, inputData, 
+            function(response){
+                me.clear();
+                var data = JSON.parse(response);
+                data.forEach(item => {
+                    me.addOption(item.id_document, item.document_number);
+                });
+            }, 
+            function(response){
+                console.log(response.responseText);
+                alert(response.responseText);
         });
     }
     

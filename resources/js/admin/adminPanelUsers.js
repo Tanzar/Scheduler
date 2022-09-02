@@ -27,7 +27,7 @@ function AdminPanelUsers(){
                 {type: 'text', title: language.username, variable: 'username', limit: 10},
                 {type: 'text', title: language.name_person, variable: 'name', limit: 25},
                 {type: 'text', title: language.surname, variable: 'surname', limit: 25},
-                {type: 'text', title: language.short, variable: 'short', limit: 25}
+                {type: 'text', title: language.short, variable: 'short', limit: 5}
             ];
             openModalBox(language.search_data, fields, language.search, function(item){
                 item.controller = 'AdminPanelUsers';
@@ -103,15 +103,15 @@ function AdminPanelUsers(){
                 ];
                 openModalBox(language.change_password, fields, language.save, function(data){
                     RestApi.post('AdminPanelUsers', 'changeUserPassword', data,
-                    function(response){
-                        var data = JSON.parse(response);
-                        console.log(data);
-                        alert(data.message);
-                    },
-                    function(response){
-                        console.log(response.responseText);
-                        alert(response.responseText);
-                    });
+                        function(response){
+                            var data = JSON.parse(response);
+                            console.log(data);
+                            alert(data.message);
+                        },
+                        function(response){
+                            console.log(response.responseText);
+                            alert(response.responseText);
+                        });
                 }, item);
             }
             else{
@@ -151,14 +151,21 @@ function UsersTable(language, div){
     
     var config = {
         columns : [
-            { title: 'ID', variable: 'id', width: 30},
-            { title: language.active, variable: 'active', width: 50},
-            { title: language.username, variable: 'username', width: 150},
-            { title: language.name_person, variable: 'name', width: 150},
-            { title: language.surname, variable: 'surname', width: 150},
-            { title: language.short, variable: 'short', width: 50}
+            { title: 'ID', variable: 'id', width: 30, minWidth: 30},
+            { title: language.active, variable: 'active', width: 50, minWidth: 30},
+            { title: language.username, variable: 'username', width: 150, minWidth: 150},
+            { title: language.name_person, variable: 'name', width: 150, minWidth: 150},
+            { title: language.surname, variable: 'surname', width: 150, minWidth: 150},
+            { title: language.short, variable: 'short', width: 50, minWidth: 50}
         ],
-        dataSource : { method: 'post', address: getRestAddress(), data: { controller: 'AdminPanelUsers', task: 'getAllUsers' } }
+        dataSource : { 
+            method: 'post', 
+            address: getRestAddress(), 
+            data: { 
+                controller: 'AdminPanelUsers', 
+                task: 'getAllUsers' 
+            } 
+        }
     };
     var datatable = new Datatable(div, config);
     
@@ -188,8 +195,8 @@ function PrivilagesTable(language, div){
     
     var config = {
         columns : [
-            { title: language.active, variable: 'active', width: 50},
-            { title: language.name, variable: 'privilage', width: 150}
+            { title: language.active, variable: 'active', width: 50, minWidth: 50},
+            { title: language.name, variable: 'privilage', width: 150, minWidth: 150}
         ],
         dataSource : { 
             method: 'post', 
@@ -258,10 +265,10 @@ function PrivilagesTable(language, div){
                     alert(data.message);
                     datatab.refresh();
                 },
-                    function(response){
-                        console.log(response.responseText);
-                        alert(response.responseText);
-                });
+                function(response){
+                    console.log(response.responseText);
+                    alert(response.responseText);
+            });
         }
         else{
             alert(language.select_privilage)
@@ -287,16 +294,16 @@ function EmploymentsTable(language, div){
     
     var config = {
         columns : [
-            { title: language.active, variable: 'active', width: 50},
-            { title: language.position, variable: 'position', width: 150},
-            { title: language.user_type, variable: 'user_type', width: 100},
-            { title: language.start_date, variable: 'start', width: 100},
-            { title: language.end_date, variable: 'end', width: 100},
-            { title: language.sort_priority, variable: 'sort_priority', width: 50},
-            { title: language.standard_day_start, variable: 'standard_day_start', width: 100},
-            { title: language.standard_day_end, variable: 'standard_day_end', width: 100},
-            { title: language.leadership, variable: 'leadership', width: 50},
-            { title: language.inspector, variable: 'inspector', width: 50}
+            { title: language.active, variable: 'active', width: 50, minWidth: 50},
+            { title: language.position, variable: 'position', width: 150, minWidth: 150},
+            { title: language.user_type, variable: 'user_type', width: 100, minWidth: 100},
+            { title: language.start_date, variable: 'start', width: 100, minWidth: 100},
+            { title: language.end_date, variable: 'end', width: 100, minWidth: 100},
+            { title: language.sort_priority, variable: 'sort_priority', width: 50, minWidth: 50},
+            { title: language.standard_day_start, variable: 'standard_day_start', width: 100, minWidth: 100},
+            { title: language.standard_day_end, variable: 'standard_day_end', width: 100, minWidth: 100},
+            { title: language.leadership, variable: 'leadership', width: 50, minWidth: 50},
+            { title: language.inspector, variable: 'inspector', width: 50, minWidth: 50}
         ],
         dataSource : { 
             method: 'post', 
@@ -325,14 +332,18 @@ function EmploymentsTable(language, div){
                 {type: 'checkbox', title: language.inspector, variable: 'inspector'}
             ];
             openModalBox(language.new_employment_period, fields, language.save, function(data){
-                    data.id_user = table.idUser;
-                    console.log(data);
-                    RestApi.post('AdminPanelUsers', 'saveEmploymentPeriod', data, function(response){
+                data.id_user = table.idUser;
+                RestApi.post('AdminPanelUsers', 'saveEmploymentPeriod', data, 
+                    function(response){
                         var data = JSON.parse(response);
                         console.log(data);
                         alert(data.message);
                         datatab.refresh();
-                    });
+                    },
+                    function(response){
+                        console.log(response.responseText);
+                        alert(response.responseText);
+                });
             });
         }
         else{
@@ -353,14 +364,18 @@ function EmploymentsTable(language, div){
                 {type: 'checkbox', title: language.inspector, variable: 'inspector'}
             ];
             openModalBox(language.new_employment_period, fields, language.save, function(data){
-                    data.id_user = table.idUser;
-                    console.log(data);
-                    RestApi.post('AdminPanelUsers', 'saveEmploymentPeriod', data, function(response){
+                data.id_user = table.idUser;
+                RestApi.post('AdminPanelUsers', 'saveEmploymentPeriod', data, 
+                    function(response){
                         var data = JSON.parse(response);
                         console.log(data);
                         alert(data.message);
                         datatab.refresh();
-                    });
+                    },
+                    function(response){
+                        console.log(response.responseText);
+                        alert(response.responseText);
+                });
             }, selected);
         }
         else{
@@ -378,6 +393,10 @@ function EmploymentsTable(language, div){
                     console.log(data);
                     alert(data.message);
                     datatab.refresh();
+                },
+                function(response){
+                    console.log(response.responseText);
+                    alert(response.responseText);
             });
         }
         else{

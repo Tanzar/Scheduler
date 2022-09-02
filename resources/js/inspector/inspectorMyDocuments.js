@@ -7,10 +7,7 @@ function init(){
         var selectMonth = document.getElementById('selectMonth');
         var selectYear = document.getElementById('selectYear');
         
-        
         var documentsTable = DocumentDatatable(language);
-        
-        
         
         var selectDate = document.getElementById('selectDate');
         selectDate.onclick = function(){
@@ -66,60 +63,21 @@ function DocumentDatatable(language){
                 {type: 'text', title: language.description, variable: 'description', limit: 255}
             ];
             openModalBox(language.new_document, fields, language.save, function(data){
-                RestApi.post('InspectorMyDocuments', 'editDocument', data, function(response){
-                    var data = JSON.parse(response);
-                    console.log(data);
-                    alert(data.message);
-                    documentsTable.refresh();
-                    }, function(response){
+                RestApi.post('InspectorMyDocuments', 'editDocument', data, 
+                    function(response){
+                        var data = JSON.parse(response);
+                        console.log(data);
+                        alert(data.message);
+                        documentsTable.refresh();
+                    }, 
+                    function(response){
+                        console.log(response.responseText);
                         alert(response.responseText);
-                    });
-                }, selected);
+                });
+            }, selected);
         }
     });
     
     
     return documentsTable;
-}
-
-function EntriesTable(language){
-    var documentId = 0;
-    
-    
-    
-    var datasource = {
-        method: 'get',
-        address: getRestAddress(),
-        data: {
-            controller: 'InspectorMyDocuments',
-            task: 'getDocumentDaysForUser',
-            id_document: documentId
-        }
-    };
-    var config = {
-        columns: [
-            {title: language.start, variable: 'start', width: 150},
-            {title: language.end, variable: 'end', width: 150},
-            {title: language.underground, variable: 'underground', width: 150}
-        ],
-        dataSource: datasource
-    }
-    var datatable = new Datatable(documents, config);
-    
-    this.refresh = function(id){
-        if(id === undefined){
-            this.refresh(0);
-        }
-        else{
-            datatable.setDatasource({
-                method: 'get',
-                address: getRestAddress(),
-                data: {
-                    controller: 'InspectorMyDocuments',
-                    task: 'getDocumentDaysForUser',
-                    id_document: documentId
-                }
-            })
-        }
-    }
 }

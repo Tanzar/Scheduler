@@ -42,7 +42,7 @@ function AdminPanelSchedule(){
                     function(response){
                         console.log(response.responseText);
                         alert(response.responseText);
-                    });
+                });
             }
             else{
                 alert(language.select_user)

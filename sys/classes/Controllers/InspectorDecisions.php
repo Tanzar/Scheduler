@@ -1,0 +1,74 @@
+<?php
+
+/*
+ * This code is free to use, just remember to give credit.
+ */
+
+namespace Controllers;
+
+use Controllers\Base\Controller as Controller;
+use Services\DecisionService as DecisionService;
+use Services\DocumentService as DocumentService;
+use Tanweb\Container as Container;
+use Tanweb\Config\INI\Languages as Languages;
+
+/**
+ * Description of InspectorDecisions
+ *
+ * @author Tanzar
+ */
+class InspectorDecisions extends Controller{
+    private DocumentService $documentService;
+    private DecisionService $decisionService;
+    
+    public function __construct() {
+        $this->documentService = new DocumentService();
+        $this->decisionService = new DecisionService();
+        $privilages = new Container();
+        $privilages->add('admin');
+        $privilages->add('schedule_user_inspector');
+        parent::__construct($privilages);
+    }
+    
+    public function getDocuments() {
+        $data = $this->getRequestData();
+        $month = (int) $data->get('month');
+        $year = (int) $data->get('year');
+        $response = $this->documentService->getCurrentUserDocumentsByMonthYear($month, $year);
+        $this->setResponse($response);
+    }
+    
+    public function getDecisions() : void {
+        $data = $this->getRequestData();
+        $documentId = (int) $data->get('id_document');
+        $response = $this->decisionService->getCurrentUserDecisions($documentId);
+        $this->setResponse($response);
+    }
+    
+    public function getNewDecisionDetails() : void {
+        $data = $this->getRequestData();
+        $documentId = $data->get('id_document');
+        $response = $this->decisionService->getNewDecisionData($documentId);
+        $this->setResponse($response);
+    }
+    
+    public function saveDecision() : void {
+        $data = $this->getRequestData();
+        $id = $this->decisionService->saveDecisionForCurrentUser($data);
+        $response = new Container();
+        $response->add($id, 'id');
+        $languages = Languages::getInstance();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
+    public function removeDecision() : void {
+        $data = $this->getRequestData();
+        $id = (int) $data->get('id');
+        $this->decisionService->removeDecision($id);
+        $response = new Container();
+        $languages = Languages::getInstance();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+}

@@ -48,13 +48,15 @@ function ScheduleMy(){
                         end: data.end,
                         underground: data.underground
                     }
-                    RestApi.post('ScheduleUser', 'saveEntry', dataToSend, function(response){
-                        var data = JSON.parse(response);
-                        console.log(data);
-                        alert(data.message);
-                        datatable.refresh();
-                    }, function(response){
-                        alert(response.responseText);
+                    RestApi.post('ScheduleUser', 'saveEntry', dataToSend, 
+                        function(response){
+                            var data = JSON.parse(response);
+                            console.log(data);
+                            alert(data.message);
+                            datatable.refresh();
+                        }, function(response){
+                            console.log(response.responseText);
+                            alert(response.responseText);
                     });
                 }, selected);
             }
@@ -64,13 +66,15 @@ function ScheduleMy(){
         });
         datatable.addActionButton(language.remove, function(selected){
             if(selected !== undefined){
-                RestApi.post('ScheduleUser', 'removeEntry', {id: selected.id}, function(response){
-                    var data = JSON.parse(response);
-                    console.log(data);
-                    alert(data.message);
-                    datatable.refresh();
-                }, function(response){
-                    alert(response.responseText);
+                RestApi.post('ScheduleUser', 'removeEntry', {id: selected.id}, 
+                    function(response){
+                        var data = JSON.parse(response);
+                        console.log(data);
+                        alert(data.message);
+                        datatable.refresh();
+                    }, function(response){
+                        console.log(response.responseText);
+                        alert(response.responseText);
                 });
             }
             else{
@@ -107,14 +111,16 @@ function ScheduleMy(){
             selectActivity.clear();
             selectLocationType.clear();
             selectLocation.clear();
-            RestApi.get('ScheduleUser', 'getActivitiesForGroup', {activities_group: group}, function(response){
-                var data = JSON.parse(response);
-                data.forEach(item => {
-                    selectActivity.addOption(item.id, item.name, {
-                        allowLocationInput: item.allow_location_input,
-                        requireDocument: item.require_document
+            RestApi.get('ScheduleUser', 'getActivitiesForGroup', 
+                {activities_group: group}, 
+                function(response){
+                    var data = JSON.parse(response);
+                    data.forEach(item => {
+                        selectActivity.addOption(item.id, item.name, {
+                            allowLocationInput: item.allow_location_input,
+                            requireDocument: item.require_document
+                        });
                     });
-                });
             });
         });
         selectActivity.setOnChange(function(activity, hidden){
@@ -127,11 +133,13 @@ function ScheduleMy(){
             requireDocument = hidden.requireDocument;
             selectLocationType.clear();
             selectLocation.clear();
-            RestApi.get('ScheduleUser', 'getLocationTypesForActivity', {id_activity: activity}, function(response){
-                var data = JSON.parse(response);
-                data.forEach(item => {
-                    selectLocationType.addOption(item.id_location_type, item.location_type_name);
-                });
+            RestApi.get('ScheduleUser', 'getLocationTypesForActivity', 
+                {id_activity: activity}, 
+                function(response){
+                    var data = JSON.parse(response);
+                    data.forEach(item => {
+                        selectLocationType.addOption(item.id_location_type, item.location_type_name);
+                    });
             });
         });
         selectLocationType.setOnChange(function(type){
@@ -160,40 +168,45 @@ function ScheduleMy(){
                             end: dataToSend.end,
                             id_location: dataToSend.id_location
                         }
-                        RestApi.post('ScheduleUser', 'getMyMatchingDocuments', item, function(response){
-                            var data = JSON.parse(response);
-                            var options = [];
-                            data.forEach(item => {
-                                var option = {
-                                    value: item.id_document,
-                                    title: item.document_number
-                                }
-                                options.push(option);
-                            });
-                            var fields = [
-                                {type: 'select', title: language.select_document, variable: 'id_document', options: options},
-                                {type: 'checkbox', title: (language.underground + '?'), variable: 'underground'}
-                            ];
-                            openModalBox(language.select_document, fields, language.save, function(data){
-                                RestApi.post('ScheduleUser', 'saveEntry', dataToSend, function(response){
-                                    var data = JSON.parse(response);
-                                    console.log(data);
-                                    alert(data.message);
-                                    datatable.refresh();
-                                }, function(response){
-                                    alert(response.responseText);
+                        RestApi.post('ScheduleUser', 'getMyMatchingDocuments', item, 
+                            function(response){
+                                var data = JSON.parse(response);
+                                var options = [];
+                                data.forEach(item => {
+                                    var option = {
+                                        value: item.id_document,
+                                        title: item.document_number
+                                    }
+                                    options.push(option);
                                 });
-                            }, dataToSend);
+                                var fields = [
+                                    {type: 'select', title: language.select_document, variable: 'id_document', options: options},
+                                    {type: 'checkbox', title: (language.underground + '?'), variable: 'underground'}
+                                ];
+                                openModalBox(language.select_document, fields, language.save, function(data){
+                                    RestApi.post('ScheduleUser', 'saveEntry', dataToSend, 
+                                        function(response){
+                                            var data = JSON.parse(response);
+                                            console.log(data);
+                                            alert(data.message);
+                                            datatable.refresh();
+                                        }, 
+                                        function(response){
+                                            alert(response.responseText);
+                                    });
+                                }, dataToSend);
                         });
                     }
                     else{
-                        RestApi.post('ScheduleUser', 'saveEntry', dataToSend, function(response){
-                            var data = JSON.parse(response);
-                            console.log(data);
-                            alert(data.message);
-                            datatable.refresh();
-                        }, function(response){
-                            alert(response.responseText);
+                        RestApi.post('ScheduleUser', 'saveEntry', dataToSend, 
+                            function(response){
+                                var data = JSON.parse(response);
+                                console.log(data);
+                                alert(data.message);
+                                datatable.refresh();
+                            }, 
+                            function(response){
+                                alert(response.responseText);
                         });
                     }
                 }
@@ -286,13 +299,15 @@ function AddLocationButton(language, selectLocation){
                 {type: 'text', title: language.location, variable: 'name'}
             ];
             openModalBox(language.new_location, fields, language.save, function(data){
-                RestApi.post('ScheduleUser', 'saveLocation', data, function(response){
-                    var data = JSON.parse(response);
-                    console.log(data);
-                    alert(data.message);
-                    selectLocation.refresh();
-                }, function(response){
-                    alert(response.responseText);
+                RestApi.post('ScheduleUser', 'saveLocation', data, 
+                    function(response){
+                        var data = JSON.parse(response);
+                        console.log(data);
+                        alert(data.message);
+                        selectLocation.refresh();
+                    }, 
+                    function(response){
+                        alert(response.responseText);
                 });
             }, item);
         }

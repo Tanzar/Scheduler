@@ -23,7 +23,15 @@ function LocationsTable(language, div){
             { title: language.location_group, variable: 'location_group', width: 150, minWidth: 150},
             { title: language.location_type, variable: 'location_type', width: 150, minWidth: 150}
         ],
-        dataSource : { method: 'post', address: getRestAddress(), data: { controller: 'AdminPanelLocation', task: 'getLocationsByGroupId', id_location_group: idLocationType } }
+        dataSource : { 
+            method: 'post', 
+            address: getRestAddress(), 
+            data: { 
+                controller: 'AdminPanelLocation', 
+                task: 'getLocationsByGroupId', 
+                id_location_group: idLocationType 
+            } 
+        }
     };
     var datatable = new Datatable(div, config);
     datatable.addActionButton(language.add, function(){

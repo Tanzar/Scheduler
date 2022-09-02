@@ -43,6 +43,24 @@ class DocumentUserDetailsView extends View{
         return $this->select($sql);
     }
     
+    public function getByUsernameAndDocumentId(string $username, int $documentId) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('document_user_details')->where('username', $username)
+                ->and()->where('id_document', $documentId);
+        $results = $this->select($sql);
+        if($results->length() > 1){
+            $this->throwDataAccessException('multiple versions of same relation '
+                    . 'in document_user for document id: ' . $documentId . ' '
+                    . 'username: ' . $username);
+        }
+        if($results->length() === 1){
+            return new Container($results->get(0));
+        }
+        else{
+            return new Container();
+        }
+    }
+    
     public function getActiveByMonthYearUsername(int $month, int $year, string $username) : Container {
         $sql = new MysqlBuilder();
         $sql->select('document_user_details')->where('active', 1)

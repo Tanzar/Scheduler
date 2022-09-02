@@ -1,0 +1,490 @@
+[2022-07-25  07:35:19] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  07:35:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  07:35:26] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-07-25  07:35:26] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  07:35:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-25  07:35:27] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-25  07:35:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-25  07:35:27] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-25  07:35:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  07:35:27] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-25  07:36:07] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: saveUserData: {}
+[2022-07-25  07:36:07] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO user (username, name, surname, short, password) VALUES ('prawnik', 'Iman', 'Ibnachim', 'IBN', '$2y$10$tHtEeRnm4VOCOXlUwLbHjO3ERSBFx9gxrx9X0xRt4Lc5i0DU2sHMi')
+[2022-07-25  07:36:09] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-25  07:36:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-25  07:36:09] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-25  07:36:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-25  07:36:09] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  07:36:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-25  07:36:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-25  07:36:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '3'
+[2022-07-25  07:36:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  07:36:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '3'
+[2022-07-25  07:36:15] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-25  07:36:15] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '2'
+[2022-07-25  07:36:16] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  07:36:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '2'
+[2022-07-25  07:36:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-25  07:36:19] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '3'
+[2022-07-25  07:36:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  07:36:19] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '3'
+[2022-07-25  07:36:38] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-07-25  07:36:38] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '3'
+[2022-07-25  07:36:38] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id = '3'
+[2022-07-25  07:36:38] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE employment SET active='1', position='kancelraia', user_type='ADM', sort_priority='10', leadership='0', inspector='0', id_user='3' WHERE id = '3'
+[2022-07-25  07:36:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  07:36:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '3'
+[2022-07-25  07:36:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-25  07:36:40] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '4'
+[2022-07-25  07:36:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  07:36:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-07-25  07:36:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getPrivilagesListData: {}
+[2022-07-25  07:36:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: savePrivilageData: {}
+[2022-07-25  07:36:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '4'
+[2022-07-25  07:36:45] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO privilages (privilage, id_user) VALUES ('schedule_user', '4')
+[2022-07-25  07:36:47] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-25  07:36:47] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '4'
+[2022-07-25  07:37:24] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-07-25  07:37:24] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-07-25  07:37:24] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO employment (position, user_type, start, end, sort_priority, standard_day_start, standard_day_end, leadership, inspector, id_user) VALUES ('prawnik', 'ADM', '2022-07-14', '2122-07-25', '10', '07:00', '15:00', '0', '0', '4')
+[2022-07-25  07:37:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  07:37:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-07-25  07:37:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getPrivilagesListData: {}
+[2022-07-25  07:37:40] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorReports.php?
+[2022-07-25  07:37:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  07:37:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-07-25  07:37:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-07-25  07:37:42] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorDecisions.php?
+[2022-07-25  07:37:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' ))
+[2022-07-25  07:37:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  07:37:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDecisions Task: getDecisionsData: {}
+[2022-07-25  07:37:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-07-25  07:37:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDecisions Task: getDecisionsData: {}
+[2022-07-25  07:37:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_details WHERE  active = '1' and username = 'admin' and id_document = '2'
+[2022-07-25  07:37:50] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDecisions Task: getDecisionsData: {}
+[2022-07-25  07:37:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_details WHERE  active = '1' and username = 'admin' and id_document = '1'
+[2022-07-25  07:37:58] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorDecisions.php?
+[2022-07-25  07:37:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' ))
+[2022-07-25  07:37:58] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  07:37:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDecisions Task: getDecisionsData: {}
+[2022-07-25  07:37:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-07-25  07:38:12] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  07:38:13] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  07:44:14] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  07:44:15] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  07:44:20] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-07-25  07:44:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  07:44:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-25  07:44:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-25  07:44:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-25  07:44:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-25  07:44:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  07:44:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-25  07:46:35] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-07-25  07:46:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  07:46:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-25  07:46:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-25  07:46:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-25  07:46:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-25  07:46:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  07:46:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-25  07:46:36] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  07:47:38] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  08:25:18] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  08:25:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  08:25:56] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  08:25:57] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  08:25:57] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  08:25:57] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  08:25:57] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesData: {}
+[2022-07-25  08:25:57] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type
+[2022-07-25  08:25:58] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  08:25:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  08:26:31] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  08:26:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  08:26:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  08:26:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  08:26:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesData: {}
+[2022-07-25  08:26:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type
+[2022-07-25  08:26:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  08:26:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  08:29:48] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  08:29:48] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  08:29:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  08:29:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  08:29:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesData: {}
+[2022-07-25  08:29:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type
+[2022-07-25  08:29:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  08:29:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  08:32:07] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  08:32:08] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  08:32:08] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  08:32:08] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  08:32:08] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesData: {}
+[2022-07-25  08:32:08] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type
+[2022-07-25  08:32:09] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  08:32:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  08:32:16] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionGroupData: {}
+[2022-07-25  08:32:16] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suspension_suzug_group (name) VALUES ('grupa1')
+[2022-07-25  08:32:17] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  08:32:17] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  08:32:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionGroupStatusData: {}
+[2022-07-25  08:32:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  id = '1'
+[2022-07-25  08:32:21] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_group SET active='0' WHERE id = '1'
+[2022-07-25  08:32:21] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Services\SuspensionService::changeGroupStatus(): Return value must be of type int, none returned ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Controllers\AdminPanelSuspension.php(87): Services\SuspensionService->changeGroupStatus(1)
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\AdminPanelSuspension->changeSuspensionGroupStatus()
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2022-07-25  08:33:01] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionGroupStatusData: {}
+[2022-07-25  08:33:01] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  id = '1'
+[2022-07-25  08:33:01] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_group SET active='0' WHERE id = '1'
+[2022-07-25  08:33:03] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  08:33:03] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  08:33:05] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionGroupStatusData: {}
+[2022-07-25  08:33:05] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  id = '1'
+[2022-07-25  08:33:05] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_group SET active='1' WHERE id = '1'
+[2022-07-25  08:33:06] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  08:33:06] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  08:33:12] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionGroupData: {}
+[2022-07-25  08:33:12] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  id = '1'
+[2022-07-25  08:33:12] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_group SET active='1', name='grupa 1' WHERE id = '1'
+[2022-07-25  08:33:13] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  08:33:13] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  08:37:57] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  08:37:57] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  08:37:58] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  08:37:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  08:37:58] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesData: {}
+[2022-07-25  08:37:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type
+[2022-07-25  08:37:58] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  08:37:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  08:38:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionReasonData: {}
+[2022-07-25  08:38:11] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suspension_reason (name) VALUES ('nie')
+[2022-07-25  08:38:12] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  08:38:12] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  08:38:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionReasonData: {}
+[2022-07-25  08:38:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  id = '1'
+[2022-07-25  08:38:35] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_reason SET active='1', name='nie przestrzeganie regulaminu' WHERE id = '1'
+[2022-07-25  08:38:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  08:38:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  08:38:38] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionReasonStatusData: {}
+[2022-07-25  08:38:38] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  id = '1'
+[2022-07-25  08:38:38] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_reason SET active='0' WHERE id = '1'
+[2022-07-25  08:38:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  08:38:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  08:38:42] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionReasonStatusData: {}
+[2022-07-25  08:38:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  id = '1'
+[2022-07-25  08:38:42] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_reason SET active='1' WHERE id = '1'
+[2022-07-25  08:38:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  08:38:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  08:45:54] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  08:45:54] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  08:45:54] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  08:45:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  08:45:55] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  08:45:55] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type
+[2022-07-25  08:45:55] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  08:45:55] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  08:45:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  08:45:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type
+[2022-07-25  08:45:58] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  08:45:58] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type
+[2022-07-25  08:59:28] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  08:59:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  08:59:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  08:59:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  08:59:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  08:59:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  08:59:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  08:59:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type
+[2022-07-25  08:59:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionGroupsData: {}
+[2022-07-25  08:59:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  09:00:08] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionGroupsData: {}
+[2022-07-25  09:00:08] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  09:00:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionGroupData: {}
+[2022-07-25  09:00:19] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suspension_suzug_group (name) VALUES ('grupa 2')
+[2022-07-25  09:00:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  09:00:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  09:00:22] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionGroupsData: {}
+[2022-07-25  09:00:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  09:00:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionTypeData: {}
+[2022-07-25  09:00:29] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suspension_suzug_type (name, id_suspension_suzug_group) VALUES ('typ 1', '1')
+[2022-07-25  09:00:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:00:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type
+[2022-07-25  09:00:54] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  09:00:55] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:00:55] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  09:00:55] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  09:00:55] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:00:55] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type
+[2022-07-25  09:00:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  09:00:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  09:01:26] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  09:01:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:01:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  09:01:27] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  09:02:14] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:02:14] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '0'
+[2022-07-25  09:02:14] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  09:02:14] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  09:02:17] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:02:17] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '1'
+[2022-07-25  09:02:19] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:02:19] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '2'
+[2022-07-25  09:02:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:02:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '1'
+[2022-07-25  09:02:23] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionGroupsData: {}
+[2022-07-25  09:02:23] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  09:02:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionTypeData: {}
+[2022-07-25  09:02:27] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '1'
+[2022-07-25  09:02:27] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='1', name='typ 1a', id_suspension_suzug_group='1' WHERE id = '1'
+[2022-07-25  09:02:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:02:28] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '1'
+[2022-07-25  09:02:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionGroupsData: {}
+[2022-07-25  09:02:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  09:02:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionTypeData: {}
+[2022-07-25  09:02:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '1'
+[2022-07-25  09:02:33] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='1', id_suspension_suzug_group='2' WHERE id = '1'
+[2022-07-25  09:02:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:02:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '1'
+[2022-07-25  09:02:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:02:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '2'
+[2022-07-25  09:02:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionGroupsData: {}
+[2022-07-25  09:02:37] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  09:02:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionTypeData: {}
+[2022-07-25  09:02:40] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '1'
+[2022-07-25  09:02:40] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='1', id_suspension_suzug_group='1' WHERE id = '1'
+[2022-07-25  09:02:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:02:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '2'
+[2022-07-25  09:02:42] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:02:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '1'
+[2022-07-25  09:02:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionTypeStatusData: {}
+[2022-07-25  09:02:44] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '1'
+[2022-07-25  09:02:44] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='0' WHERE id = '1'
+[2022-07-25  09:02:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:02:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '1'
+[2022-07-25  09:02:53] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  09:02:54] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:02:54] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  09:02:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  09:02:54] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:02:57] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '0'
+[2022-07-25  09:02:57] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  09:02:57] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  09:02:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:03:18] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1' and id_suspension_suzug_group = '1'
+[2022-07-25  09:03:24] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  09:03:24] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:03:24] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  09:03:24] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  09:03:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:03:28] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '0'
+[2022-07-25  09:03:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  09:03:28] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  09:03:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:03:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  09:03:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionTypeStatusData: {}
+[2022-07-25  09:03:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '1'
+[2022-07-25  09:03:32] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='1' WHERE id = '1'
+[2022-07-25  09:03:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:03:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  09:04:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:04:33] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-07-25  09:04:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:04:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-25  09:04:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-25  09:04:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-25  09:04:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-25  09:04:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  09:04:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-25  09:04:35] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  09:04:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:04:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:04:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '0'
+[2022-07-25  09:04:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  09:04:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  09:04:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  09:04:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  09:04:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:04:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  09:04:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:04:40] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '2'
+[2022-07-25  09:04:42] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:04:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  09:04:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionGroupsData: {}
+[2022-07-25  09:04:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  09:04:53] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionTypeData: {}
+[2022-07-25  09:04:53] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suspension_suzug_type (name, id_suspension_suzug_group) VALUES ('typ 2a', '1')
+[2022-07-25  09:04:54] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:04:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  09:04:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:04:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '2'
+[2022-07-25  09:04:57] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionGroupsData: {}
+[2022-07-25  09:04:57] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  09:05:05] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionTypeData: {}
+[2022-07-25  09:05:05] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suspension_suzug_type (name, id_suspension_suzug_group) VALUES ('typ 1b', '1')
+[2022-07-25  09:05:06] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:05:06] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '2'
+[2022-07-25  09:05:09] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:05:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  09:05:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionGroupsData: {}
+[2022-07-25  09:05:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  09:05:13] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionTypeData: {}
+[2022-07-25  09:05:13] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '3'
+[2022-07-25  09:05:13] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='1', id_suspension_suzug_group='2' WHERE id = '3'
+[2022-07-25  09:05:14] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:05:14] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  09:05:15] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:05:15] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '2'
+[2022-07-25  09:05:16] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionGroupsData: {}
+[2022-07-25  09:05:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  09:05:24] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionTypeData: {}
+[2022-07-25  09:05:24] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suspension_suzug_type (name, id_suspension_suzug_group) VALUES ('typ 2b', '2')
+[2022-07-25  09:05:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  09:05:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '2'
+[2022-07-25  09:05:31] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorReports.php?
+[2022-07-25  09:05:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:05:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-07-25  09:05:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-07-25  09:05:33] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:05:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:07:33] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:08:49] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:09:14] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:09:45] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:52:22] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:52:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:52:27] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorReports.php?
+[2022-07-25  09:52:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  09:52:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-07-25  09:52:28] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-07-25  09:52:29] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:56:03] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:56:37] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:57:16] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:58:19] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:58:37] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:59:17] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  09:59:32] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  10:00:05] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  10:00:05] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' ))
+[2022-07-25  10:00:09] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  10:00:13] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getDocumentsData: {}
+[2022-07-25  10:00:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '2' and year(start) = '2022' ) or ( month(end) = '2' and year(end) = '2022' ))
+[2022-07-25  10:00:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getDocumentsData: {}
+[2022-07-25  10:00:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '2' and year(start) = '2022' ) or ( month(end) = '2' and year(end) = '2022' ))
+[2022-07-25  10:00:50] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getDocumentsData: {}
+[2022-07-25  10:00:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '2' and year(start) = '2022' ) or ( month(end) = '2' and year(end) = '2022' ))
+[2022-07-25  10:01:17] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-07-25  10:01:17] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' ))
+[2022-07-25  10:01:18] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  10:01:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getDocumentsData: {}
+[2022-07-25  10:01:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '2' and year(start) = '2022' ) or ( month(end) = '2' and year(end) = '2022' ))
+[2022-07-25  10:01:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getDocumentsData: {}
+[2022-07-25  10:01:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' ))
+[2022-07-25  10:08:39] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-07-25  10:08:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  10:08:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-07-25  10:08:40] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-07-25  10:08:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-07-25  10:08:40] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-07-25  10:08:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-07-25  10:08:40] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-07-25  10:08:43] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  10:08:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  10:08:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionGroupsData: {}
+[2022-07-25  10:08:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  10:08:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionTypesByGroupData: {}
+[2022-07-25  10:08:44] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '0'
+[2022-07-25  10:08:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  10:08:44] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  10:16:04] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelSuspensionSettings.php?
+[2022-07-25  10:16:05] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  10:16:05] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugGroupsData: {}
+[2022-07-25  10:16:05] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  10:16:05] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:16:05] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '0'
+[2022-07-25  10:16:06] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionReasonsData: {}
+[2022-07-25  10:16:06] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason
+[2022-07-25  10:16:10] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:16:10] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  10:16:12] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:16:12] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '2'
+[2022-07-25  10:16:22] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionSuzugGroupData: {}
+[2022-07-25  10:16:22] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suspension_suzug_group (name) VALUES ('grup 3')
+[2022-07-25  10:16:24] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugGroupsData: {}
+[2022-07-25  10:16:24] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  10:16:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:16:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '3'
+[2022-07-25  10:16:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionSuzugGroupData: {}
+[2022-07-25  10:16:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  id = '3'
+[2022-07-25  10:16:33] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_group SET active='1', name='grupa 3' WHERE id = '3'
+[2022-07-25  10:16:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugGroupsData: {}
+[2022-07-25  10:16:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  10:16:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:16:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '3'
+[2022-07-25  10:16:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionSuzugGroupsData: {}
+[2022-07-25  10:16:37] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  10:16:46] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionSuzugTypeData: {}
+[2022-07-25  10:16:46] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suspension_suzug_type (name, id_suspension_suzug_group) VALUES ('typ 3c', '3')
+[2022-07-25  10:16:47] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:16:47] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '3'
+[2022-07-25  10:16:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionSuzugGroupsData: {}
+[2022-07-25  10:16:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  10:16:56] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionSuzugTypeData: {}
+[2022-07-25  10:16:56] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suspension_suzug_type (name, id_suspension_suzug_group) VALUES ('typ 3z', '3')
+[2022-07-25  10:16:57] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:16:57] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '3'
+[2022-07-25  10:17:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionSuzugGroupsData: {}
+[2022-07-25  10:17:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  10:17:07] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionSuzugTypeData: {}
+[2022-07-25  10:17:07] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '6'
+[2022-07-25  10:17:07] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='1', name='typ 2c', id_suspension_suzug_group='3' WHERE id = '6'
+[2022-07-25  10:17:08] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:17:08] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '3'
+[2022-07-25  10:17:10] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getActiveSuspensionSuzugGroupsData: {}
+[2022-07-25  10:17:10] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-07-25  10:17:14] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: saveSuspensionSuzugTypeData: {}
+[2022-07-25  10:17:14] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '5'
+[2022-07-25  10:17:14] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='1', name='typ 1c', id_suspension_suzug_group='3' WHERE id = '5'
+[2022-07-25  10:17:16] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:17:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '3'
+[2022-07-25  10:17:26] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionSuzugTypeStatusData: {}
+[2022-07-25  10:17:26] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '5'
+[2022-07-25  10:17:26] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='0' WHERE id = '5'
+[2022-07-25  10:17:27] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:17:27] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '3'
+[2022-07-25  10:17:28] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionSuzugTypeStatusData: {}
+[2022-07-25  10:17:28] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '5'
+[2022-07-25  10:17:28] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='1' WHERE id = '5'
+[2022-07-25  10:17:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:17:29] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '3'
+[2022-07-25  10:17:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:17:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  10:17:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionSuzugGroupStatusData: {}
+[2022-07-25  10:17:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  id = '1'
+[2022-07-25  10:17:34] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_group SET active='0' WHERE id = '1'
+[2022-07-25  10:17:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugGroupsData: {}
+[2022-07-25  10:17:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  10:17:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:17:40] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  10:17:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionSuzugGroupStatusData: {}
+[2022-07-25  10:17:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  id = '1'
+[2022-07-25  10:17:41] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_group SET active='1' WHERE id = '1'
+[2022-07-25  10:17:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugGroupsData: {}
+[2022-07-25  10:17:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group
+[2022-07-25  10:17:46] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionSuzugTypeStatusData: {}
+[2022-07-25  10:17:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '1'
+[2022-07-25  10:17:46] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='0' WHERE id = '1'
+[2022-07-25  10:17:47] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:17:47] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  10:17:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: changeSuspensionSuzugTypeStatusData: {}
+[2022-07-25  10:17:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id = '1'
+[2022-07-25  10:17:49] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE suspension_suzug_type SET active='1' WHERE id = '1'
+[2022-07-25  10:17:50] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelSuspension Task: getAllSuspensionSuzugTypesByGroupData: {}
+[2022-07-25  10:17:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  id_suspension_suzug_group = '1'
+[2022-07-25  10:55:16] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  11:04:25] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-07-25  11:17:10] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}

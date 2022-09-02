@@ -119,58 +119,59 @@ function TicketsTable(language, selectDocument){
     datatable.addActionButton(language.edit, function(selected){
         var documentId = selectDocument.value();
         if(documentId !== '0' && selected !== undefined){
-            RestApi.get('InspectorTickets', 'getNewTicketDetails', {id: documentId}, function(response){
-                var data = JSON.parse(response);
-                var laws = [];
-                data.ticket_laws.forEach(item => {
-                    var option = {
-                        value: item.id,
-                        title: item.name
+            RestApi.get('InspectorTickets', 'getNewTicketDetails', {id: documentId}, 
+                function(response){
+                    var data = JSON.parse(response);
+                    var laws = [];
+                    data.ticket_laws.forEach(item => {
+                        var option = {
+                            value: item.id,
+                            title: item.name
+                        }
+                        laws.push(option);
+                    });
+                    var positions = [];
+                    data.position_groups.forEach(item => {
+                        var option = {
+                            value: item.id,
+                            title: item.name
+                        }
+                        positions.push(option);
+                    });
+                    var date = new Date();
+                    var start = new Date(data.start);
+                    var end = new Date(data.end);
+                    if(date < start){
+                        date = start;
                     }
-                    laws.push(option);
-                });
-                var positions = [];
-                data.position_groups.forEach(item => {
-                    var option = {
-                        value: item.id,
-                        title: item.name
+                    if(date > end){
+                        date = end;
                     }
-                    positions.push(option);
-                });
-                var date = new Date();
-                var start = new Date(data.start);
-                var end = new Date(data.end);
-                if(date < start){
-                    date = start;
-                }
-                if(date > end){
-                    date = end;
-                }
-                var fields = [
-                    {type: 'text', title: language.ticket_number, variable: 'number', limit: 10},
-                    {type: 'date', title: language.ticket_date, variable: 'date', min: data.start, max: data.end, value: date.toDateString()},
-                    {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions},
-                    {type: 'text', title: language.position, variable: 'position', limit: 255},
-                    {type: 'number', title: language.ticket_value, variable: 'value', min: 0},
-                    {type: 'select', title: language.select_ticket_law, variable: 'id_ticket_law', options: laws},
-                    {type: 'textarea', title: language.violated_rules, variable: 'violated_rules', limit: 255, width: 30, height: 3},
-                    {type: 'checkbox', title: language.outside_company, variable: 'outside_company'},
-                    {type: 'text', title: language.company_name, variable: 'company_name', limit: 255},
-                    {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5}
-                ];
-                openModalBox(language.edit_ticket, fields, language.save, function(data){
-                    RestApi.post('InspectorTickets', 'updateTicket', data,
-                        function(response){
-                            var data = JSON.parse(response);
-                            console.log(data);
-                            alert(data.message);
-                            datatable.refresh();
-                        },
-                        function(response){
-                            console.log(response.responseText);
-                            alert(response.responseText);
-                        });
-                }, selected);
+                    var fields = [
+                        {type: 'text', title: language.ticket_number, variable: 'number', limit: 10},
+                        {type: 'date', title: language.ticket_date, variable: 'date', min: data.start, max: data.end, value: date.toDateString()},
+                        {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions},
+                        {type: 'text', title: language.position, variable: 'position', limit: 255},
+                        {type: 'number', title: language.ticket_value, variable: 'value', min: 0},
+                        {type: 'select', title: language.select_ticket_law, variable: 'id_ticket_law', options: laws},
+                        {type: 'textarea', title: language.violated_rules, variable: 'violated_rules', limit: 255, width: 30, height: 3},
+                        {type: 'checkbox', title: language.outside_company, variable: 'outside_company'},
+                        {type: 'text', title: language.company_name, variable: 'company_name', limit: 255},
+                        {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5}
+                    ];
+                    openModalBox(language.edit_ticket, fields, language.save, function(data){
+                        RestApi.post('InspectorTickets', 'updateTicket', data,
+                            function(response){
+                                var data = JSON.parse(response);
+                                console.log(data);
+                                alert(data.message);
+                                datatable.refresh();
+                            },
+                            function(response){
+                                console.log(response.responseText);
+                                alert(response.responseText);
+                            });
+                    }, selected);
             });
         }
         else{

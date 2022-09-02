@@ -51,13 +51,15 @@ function ScheduleAdmin(){
                         end: data.end,
                         underground: data.underground
                     }
-                    RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, function(response){
-                        var data = JSON.parse(response);
-                        console.log(data);
-                        alert(data.message);
-                        datatable.refresh();
-                    }, function(response){
-                        alert(response.responseText);
+                    RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, 
+                        function(response){
+                            var data = JSON.parse(response);
+                            console.log(data);
+                            alert(data.message);
+                            datatable.refresh();
+                        }, 
+                        function(response){
+                            alert(response.responseText);
                     });
                 }, selected);
             }
@@ -67,20 +69,21 @@ function ScheduleAdmin(){
         });
         datatable.addActionButton(language.remove, function(selected){
             if(selected !== undefined){
-                RestApi.post('ScheduleAdmin', 'removeEntry', {id: selected.id}, function(response){
-                    var data = JSON.parse(response);
-                    console.log(data);
-                    alert(data.message);
-                    datatable.refresh();
-                }, function(response){
-                    alert(response.responseText);
+                RestApi.post('ScheduleAdmin', 'removeEntry', {id: selected.id}, 
+                    function(response){
+                        var data = JSON.parse(response);
+                        console.log(data);
+                        alert(data.message);
+                        datatable.refresh();
+                    }, 
+                    function(response){
+                        alert(response.responseText);
                 });
             }
             else{
                 alert(language.select_entry);
             }
         });
-        
         
         var goto = document.getElementById('goTo');
         goto.onclick = function(){
@@ -120,14 +123,15 @@ function ScheduleAdmin(){
             selectActivity.clear();
             selectLocationType.clear();
             selectLocation.clear();
-            RestApi.get('ScheduleAdmin', 'getActivitiesForGroup', {activities_group: group}, function(response){
-                var data = JSON.parse(response);
-                data.forEach(item => {
-                    selectActivity.addOption(item.id, item.name, {
-                        allowLocationInput: item.allow_location_input,
-                        requireDocument: item.require_document
+            RestApi.get('ScheduleAdmin', 'getActivitiesForGroup', {activities_group: group}, 
+                function(response){
+                    var data = JSON.parse(response);
+                    data.forEach(item => {
+                        selectActivity.addOption(item.id, item.name, {
+                            allowLocationInput: item.allow_location_input,
+                            requireDocument: item.require_document
+                        });
                     });
-                });
             });
         });
         selectActivity.setOnChange(function(activity, hidden){
@@ -140,11 +144,12 @@ function ScheduleAdmin(){
             requireDocument = hidden.requireDocument;
             selectLocationType.clear();
             selectLocation.clear();
-            RestApi.get('ScheduleAdmin', 'getLocationTypesForActivity', {id_activity: activity}, function(response){
-                var data = JSON.parse(response);
-                data.forEach(item => {
-                    selectLocationType.addOption(item.id_location_type, item.location_type_name);
-                });
+            RestApi.get('ScheduleAdmin', 'getLocationTypesForActivity', {id_activity: activity}, 
+                function(response){
+                    var data = JSON.parse(response);
+                    data.forEach(item => {
+                        selectLocationType.addOption(item.id_location_type, item.location_type_name);
+                    });
             });
         });
         selectLocationType.setOnChange(function(type){
@@ -179,47 +184,51 @@ function ScheduleAdmin(){
                                 id_location: dataToSend.id_location,
                                 username: dataToSend.username
                             }
-                            RestApi.post('ScheduleAdmin', 'getMatchingDocuments', item, function(response){
-                                var data = JSON.parse(response);
-                                var options = [];
-                                data.forEach(item => {
-                                    var option = {
-                                        value: item.id_document,
-                                        title: item.document_number
-                                    }
-                                    options.push(option);
-                                });
-                                var fields = [
-                                    {type: 'select', title: language.select_document, variable: 'id_document', options: options},
-                                    {type: 'checkbox', title: (language.underground + '?'), variable: 'underground'}
-                                ];
-                                openModalBox(language.select_document, fields, language.save, function(data){
-                                    RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, function(response){
-                                        var data = JSON.parse(response);
-                                        console.log(data);
-                                        alert(data.message);
-                                        datatable.refresh();
-                                    }, function(response){
-                                        alert(response.responseText);
+                            RestApi.post('ScheduleAdmin', 'getMatchingDocuments', item, 
+                                function(response){
+                                    var data = JSON.parse(response);
+                                    var options = [];
+                                    data.forEach(item => {
+                                        var option = {
+                                            value: item.id_document,
+                                            title: item.document_number
+                                        }
+                                        options.push(option);
                                     });
-                                }, dataToSend);
+                                    var fields = [
+                                        {type: 'select', title: language.select_document, variable: 'id_document', options: options},
+                                        {type: 'checkbox', title: (language.underground + '?'), variable: 'underground'}
+                                    ];
+                                    openModalBox(language.select_document, fields, language.save, function(data){
+                                        RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, 
+                                            function(response){
+                                                var data = JSON.parse(response);
+                                                console.log(data);
+                                                alert(data.message);
+                                                datatable.refresh();
+                                            }, 
+                                            function(response){
+                                                alert(response.responseText);
+                                        });
+                                    }, dataToSend);
                             });
                         }
                         else{
-                            RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, function(response){
-                                var data = JSON.parse(response);
-                                console.log(data);
-                                alert(data.message);
-                                datatable.refresh();
-                            }, function(response){
-                                alert(response.responseText);
+                            RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, 
+                                function(response){
+                                    var data = JSON.parse(response);
+                                    console.log(data);
+                                    alert(data.message);
+                                    datatable.refresh();
+                                }, 
+                                function(response){
+                                    alert(response.responseText);
                             });
                         }
                     }
                 }
             }
         }
-        
     });
 }
 

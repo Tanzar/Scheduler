@@ -47,7 +47,7 @@ function initTicketLawTable(language){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
+            });
         });
     });
     datatable.addActionButton(language.edit, function(selected){
@@ -70,7 +70,7 @@ function initTicketLawTable(language){
                     function(response){
                         console.log(response.responseText);
                         alert(response.responseText);
-                    });
+                });
             }, selected);
         }
     });
@@ -89,7 +89,7 @@ function initTicketLawTable(language){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
+            });
         }
     });
 }
@@ -132,7 +132,7 @@ function initPositionGroupTable(language){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
+            });
         });
     });
     datatable.addActionButton(language.edit, function(selected){
@@ -155,7 +155,7 @@ function initPositionGroupTable(language){
                     function(response){
                         console.log(response.responseText);
                         alert(response.responseText);
-                    });
+                });
             }, selected);
         }
     });
@@ -174,7 +174,7 @@ function initPositionGroupTable(language){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
+            });
         }
     });
 }

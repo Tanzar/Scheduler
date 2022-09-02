@@ -26,11 +26,11 @@
     <form action="<?php echo Pages::getURL('inspectorArticle41.php') ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $options->get('article_41'); ?>">
     </form>
-    <form action="<?php echo Pages::getURL('inspectorSuspensions.php') ?>">
-        <input type="submit" class="side-menu-button" value="<?php  echo $options->get('suspensions'); ?>">
-    </form>
     <form action="<?php echo Pages::getURL('inspectorDecisions.php') ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $options->get('decisions'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('inspectorSuspensions.php') ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $options->get('suspensions'); ?>">
     </form>
     <form action="<?php echo Pages::getURL('inspectorInstruments.php') ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $options->get('instruments'); ?>">

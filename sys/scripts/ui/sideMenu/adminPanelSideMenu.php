@@ -38,4 +38,10 @@
     <form action="<?php echo Pages::getURL('adminPanelArticle.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('art_41'); ?>">
     </form>
+    <form action="<?php echo Pages::getURL('adminPanelDecisions.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('decisions'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('adminPanelSuspensionSettings.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('suspension_settings'); ?>">
+    </form>
 </div>

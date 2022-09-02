@@ -66,45 +66,6 @@ function ActivityTable(language, div){
             ];
             openModalBox(language.new_activity, fields, language.save, function(data){
                 RestApi.post('AdminPanelActivity', 'saveActivity', data,
-                function(response){
-                    var data = JSON.parse(response);
-                    console.log(data);
-                    alert(data.message);
-                    datatable.refresh();
-                },
-                function(response){
-                    console.log(response.responseText);
-                    alert(response.responseText);
-                });
-            });
-        })
-    });
-    datatable.addActionButton(language.edit, function(selected){
-        if(selected !== undefined){
-            RestApi.get('AdminPanelActivity', 'getActivityGroups', {}, function(response){
-                var data = JSON.parse(response);
-                var options = [];
-                var keys = Object.keys(data);
-                keys.forEach(item => {
-                    var option = {
-                        value: data[item],
-                        title: data[item]
-                    }
-                    options.push(option);
-                });
-                var fields = [
-                    {type: 'text', title: language.name, variable: 'name', limit: 100},
-                    {type: 'text', title: language.short, variable: 'short', limit: 50},
-                    {type: 'text', title: language.symbol, variable: 'symbol', limit: 10},
-                    {type: 'color', title: language.color, variable: 'color'},
-                    {type: 'select', title: language.activity_group, variable: 'activity_group', options: options},
-                    {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1},
-                    {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
-                    {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
-                    {type: 'checkbox', title: language.require_document, variable: 'require_document'}
-                ];
-                openModalBox(language.edit_activity, fields, language.save, function(data){
-                    RestApi.post('AdminPanelActivity', 'saveActivity', data,
                     function(response){
                         var data = JSON.parse(response);
                         console.log(data);
@@ -114,9 +75,49 @@ function ActivityTable(language, div){
                     function(response){
                         console.log(response.responseText);
                         alert(response.responseText);
+                });
+            });
+        })
+    });
+    datatable.addActionButton(language.edit, function(selected){
+        if(selected !== undefined){
+            RestApi.get('AdminPanelActivity', 'getActivityGroups', {}, 
+                function(response){
+                    var data = JSON.parse(response);
+                    var options = [];
+                    var keys = Object.keys(data);
+                    keys.forEach(item => {
+                        var option = {
+                            value: data[item],
+                            title: data[item]
+                        }
+                        options.push(option);
                     });
-                }, selected);
-            })
+                    var fields = [
+                        {type: 'text', title: language.name, variable: 'name', limit: 100},
+                        {type: 'text', title: language.short, variable: 'short', limit: 50},
+                        {type: 'text', title: language.symbol, variable: 'symbol', limit: 10},
+                        {type: 'color', title: language.color, variable: 'color'},
+                        {type: 'select', title: language.activity_group, variable: 'activity_group', options: options},
+                        {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1},
+                        {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
+                        {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
+                        {type: 'checkbox', title: language.require_document, variable: 'require_document'}
+                    ];
+                    openModalBox(language.edit_activity, fields, language.save, function(data){
+                        RestApi.post('AdminPanelActivity', 'saveActivity', data,
+                        function(response){
+                            var data = JSON.parse(response);
+                            console.log(data);
+                            alert(data.message);
+                            datatable.refresh();
+                        },
+                        function(response){
+                            console.log(response.responseText);
+                            alert(response.responseText);
+                        });
+                    }, selected);
+            });
         }
         else{
             alert(language.select_activity);
@@ -134,7 +135,7 @@ function ActivityTable(language, div){
                 function(response){
                     console.log(response.responseText);
                     alert(response.responseText);
-                });
+            });
         }
         else{
             alert(language.select_activity)
@@ -164,15 +165,17 @@ function LocationsTable(language, div){
     datatable.enableSelectMultiple();
     datatable.addActionButton(language.save, function(selected){
         if(selectedActivityID !== 0){
-            RestApi.post('AdminPanelActivity', 'saveActivityLocationTypes', {id_activity: selectedActivityID, location_types: selected}, function(response){
-                var data = JSON.parse(response);
-                console.log(data);
-                alert(data.message);
-                datatable.refresh();
-            },
-            function(response){
-                console.log(response.responseText);
-                alert(response.responseText);
+            RestApi.post('AdminPanelActivity', 'saveActivityLocationTypes', 
+                {id_activity: selectedActivityID, location_types: selected}, 
+                function(response){
+                    var data = JSON.parse(response);
+                    console.log(data);
+                    alert(data.message);
+                    datatable.refresh();
+                },
+                function(response){
+                    console.log(response.responseText);
+                    alert(response.responseText);
             });
         }
         else{

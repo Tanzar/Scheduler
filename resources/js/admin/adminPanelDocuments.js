@@ -16,13 +16,15 @@ function AdminPanelDocuments(){
                     {type: 'text', title: language.description, variable: 'description', limit: 255}
                 ];
                 openModalBox(language.edit, fields, language.save, function(data){
-                    RestApi.post('AdminPanelDocuments', 'saveDocument', data, function(response){
-                        var data = JSON.parse(response);
-                        console.log(data);
-                        alert(data.message);
-                        documents.refresh();
-                    }, function(response){
-                        alert(response.responseText);
+                    RestApi.post('AdminPanelDocuments', 'saveDocument', data, 
+                        function(response){
+                            var data = JSON.parse(response);
+                            console.log(data);
+                            alert(data.message);
+                            documents.refresh();
+                        }, 
+                        function(response){
+                            alert(response.responseText);
                     });
                 }, selected);
             }
@@ -43,7 +45,7 @@ function AdminPanelDocuments(){
                     function(response){
                         console.log(response.responseText);
                         alert(response.responseText);
-                    });
+                });
             }
             else{
                 alert(language.select_activity)
@@ -130,16 +132,16 @@ function AssignedUsersTable(language){
                 id_document: selected.id_document
             }
             RestApi.post('AdminPanelDocuments', 'unassignUserFromDocument', dataToSend,
-                    function(response){
-                        var data = JSON.parse(response);
-                        console.log(data);
-                        alert(data.message);
-                        table.refresh();
-                    },
-                    function(response){
-                        console.log(response.responseText);
-                        alert(response.responseText);
-                    });
+                function(response){
+                    var data = JSON.parse(response);
+                    console.log(data);
+                    alert(data.message);
+                    table.refresh();
+                },
+                function(response){
+                    console.log(response.responseText);
+                    alert(response.responseText);
+            });
         }
         else{
             alert(language.select_user);
