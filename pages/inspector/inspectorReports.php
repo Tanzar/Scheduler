@@ -104,6 +104,16 @@ This code is free to use, just remember to give credit.
                         </td>
                     </tr>
                     <tr class="report-tr">
+                        <td colspan="2" class="report-td">
+                            <div class="standard-text">
+                                <?php echo $interface->get('location'); ?>
+                            </div>
+                        </td>
+                        <td colspan="2" class="report-td">
+                            <div class="standard-text" id="location"></div>
+                        </td>
+                    </tr>
+                    <tr class="report-tr">
                         <td colspan="4" class="report-td">
                             <div class="horizontal-container">
                                 <button class="standard-button" id="showHideUsers">
@@ -160,6 +170,36 @@ This code is free to use, just remember to give credit.
                             </div>
                             <div id="art41Row" style="display: none">
                                 <div class="standard-text" id="art41"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="report-tr">
+                        <td colspan="4" class="report-td">
+                            <div class="horizontal-container">
+                                <button class="standard-button" id="showHideDecisions">
+                                    <?php echo $interface->get('show'); ?>
+                                </button>
+                                <div class="standard-text">
+                                    <?php echo $interface->get('decisions'); ?>
+                                </div>
+                            </div>
+                            <div id="decisionsRow" style="display: none">
+                                <div class="standard-text" id="decisions"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="report-tr">
+                        <td colspan="4" class="report-td">
+                            <div class="horizontal-container">
+                                <button class="standard-button" id="showHideSuspensions">
+                                    <?php echo $interface->get('show'); ?>
+                                </button>
+                                <div class="standard-text">
+                                    <?php echo $interface->get('suspensions'); ?>
+                                </div>
+                            </div>
+                            <div id="suspensionsRow" style="display: none">
+                                <div class="standard-text" id="suspensions"></div>
                             </div>
                         </td>
                     </tr>

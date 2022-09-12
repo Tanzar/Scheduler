@@ -132,7 +132,7 @@ class ArticleService {
         $art->add($data->get('application_number'), 'application_number');
         $art->add($data->get('application_date'), 'application_date');
         $art->add($data->get('date'), 'date');
-        $art->add($data->get('outside_company'), 'outside_company');
+        $art->add($data->get('external_company'), 'external_company');
         $art->add($data->get('company_name'), 'company_name');
         $art->add($data->get('remarks'), 'remarks');
         $art->add($data->get('id_art_41_form'), 'id_art_41_form');

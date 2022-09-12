@@ -11,11 +11,11 @@ use Tanweb\Container as Container;
 use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
 
 /**
- * Description of SuspensionSuzugGroupDAO
+ * Description of SuspensionSuzugTypeDAO
  *
  * @author Tanzar
  */
-class SuspensionSuzugGroupDAO extends DAO{
+class SuspensionTypeDAO extends DAO{
     
     public function __construct() {
         parent::__construct();
@@ -26,24 +26,37 @@ class SuspensionSuzugGroupDAO extends DAO{
     }
     
     protected function setDefaultTable(): string {
-        return 'suspension_suzug_group';
+        return 'suspension_type';
+    }
+    
+    public function getActiveByGroupId(int $id) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('suspension_type')->where('active', 1)
+                ->and()->where('id_suspension_group', $id);
+        return $this->select($sql);
     }
     
     public function getActive() : Container {
         $sql = new MysqlBuilder();
-        $sql->select('suspension_suzug_group')->where('active', 1);
+        $sql->select('suspension_type')->where('active', 1);
+        return $this->select($sql);
+    }
+    
+    public function getByGroupId(int $id) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('suspension_type')->where('id_suspension_group', $id);
         return $this->select($sql);
     }
     
     public function enable(int $id){
         $sql = new MysqlBuilder();
-        $sql->update('suspension_suzug_group', 'id', $id)->set('active', 1);
+        $sql->update('suspension_type', 'id', $id)->set('active', 1);
         $this->update($sql);
     }
     
     public function  disable(int $id) {
         $sql = new MysqlBuilder();
-        $sql->update('suspension_suzug_group', 'id', $id)->set('active', 0);
+        $sql->update('suspension_type', 'id', $id)->set('active', 0);
         $this->update($sql);
     }
 }

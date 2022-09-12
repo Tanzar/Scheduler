@@ -35,7 +35,7 @@ function TicketTable(language) {
             {title: language.ticket_date, variable: 'date', width: 100, minWidth: 100},
             {title: language.position, variable: 'position', width: 150, minWidth: 150},
             {title: language.violated_rules, variable: 'violated_rules', width: 200, minWidth: 200},
-            {title: language.outside_company, variable: 'outside_company_text', width: 100, minWidth: 100},
+            {title: language.external_company, variable: 'external_company_text', width: 100, minWidth: 100},
             {title: language.company_name, variable: 'company_name', width: 100, minWidth: 100}
         ],
         dataSource: datasource

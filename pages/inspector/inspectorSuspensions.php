@@ -68,14 +68,31 @@ This code is free to use, just remember to give credit.
                         $documents = $documentService->getCurrentUserDocumentsByMonthYear($month, $year);
                         foreach ($documents->toArray() as $item){
                             $document = new Container($item);
-                            echo '<option value="' . $document->get('id_document') . '">';
-                            echo $document->get('document_number') . '</option>';
+                            echo '<option value="' . $document->get('id') . '">';
+                            echo $document->get('number') . '</option>';
                         }
                     ?>
                 </select>
             </div>
             <div class="page-contents-element">
                 <div id="suspensions"></div>
+            </div>
+            <div class="page-contents-element">
+                <div class="standard-text-title">
+                    <?php echo $interface->get('sanctions'); ?>
+                </div>
+                <div class="standard-text">
+                    <?php echo $interface->get('art_41'); ?>
+                </div>
+                <ul id="articlesList"></ul>
+                <div class="standard-text">
+                    <?php echo $interface->get('ticket'); ?>
+                </div>
+                <ul id="ticketsList"></ul>
+                <div class="standard-text">
+                    <?php echo $interface->get('decision'); ?>
+                </div>
+                <ul id="decisionsList"></ul>
             </div>
         </div>
         <?php

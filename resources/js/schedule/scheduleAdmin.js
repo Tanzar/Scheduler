@@ -190,8 +190,8 @@ function ScheduleAdmin(){
                                     var options = [];
                                     data.forEach(item => {
                                         var option = {
-                                            value: item.id_document,
-                                            title: item.document_number
+                                            value: item.id,
+                                            title: item.number
                                         }
                                         options.push(option);
                                     });

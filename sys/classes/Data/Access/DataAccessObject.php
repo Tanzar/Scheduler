@@ -13,6 +13,7 @@ use Tanweb\Logger\Logger as Logger;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 use Tanweb\Database\DatabaseException as DataAccessException;
+use Data\Exceptions\NotFoundException as NotFoundException;
 
 /**
  * Description of DataObject
@@ -109,7 +110,7 @@ abstract class DataAccessObject {
         return $this->insert($sql);
     }
     
-    public function remove(int $id){
+    public function remove(int $id) : void {
         $sql = new MysqlBuilder();
         $sql->delete($this->table, 'id', $id);
         $this->delete($sql);

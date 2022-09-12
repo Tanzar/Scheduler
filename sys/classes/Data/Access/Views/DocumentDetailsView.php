@@ -29,6 +29,21 @@ class DocumentDetailsView extends View{
         return 'document_details';
     }
     
+    public function getById(int $documentId) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('document_details')->where('id', $documentId);
+        $documents = $this->select($sql);
+        if($documents->length() > 1){
+            $this->throwIdColumnException('document');
+        }
+        if($documents->isEmpty()){
+            return new Container();
+        }
+        else{
+            return new Container($documents->get(0));
+        }
+    }
+    
     public function getActiveByMonthAndYear(int $month, int $year) : Container {
         $sql = new MysqlBuilder();
         $sql->select('document_details')->where('active', 1)

@@ -69,8 +69,8 @@ This code is free to use, just remember to give credit.
                         $documents = $documentService->getCurrentUserDocumentsByMonthYear($month, $year);
                         foreach ($documents->toArray() as $item){
                             $document = new Container($item);
-                            echo '<option value="' . $document->get('id_document') . '">';
-                            echo $document->get('document_number') . '</option>';
+                            echo '<option value="' . $document->get('id') . '">';
+                            echo $document->get('number') . '</option>';
                         }
                     ?>
                 </select>

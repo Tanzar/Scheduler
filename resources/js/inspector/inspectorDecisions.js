@@ -74,7 +74,7 @@ function initDecisionsTable(language, selectDocument){
                         date = end;
                     }
                     var fields = [
-                        {type: 'select', title: language.select_decision_law, variable: 'id_decision_law', options: laws},
+                        {type: 'select', title: language.select_decision_law, variable: 'id_decision_law', options: laws, required: true},
                         {type: 'date', title: language.date, variable: 'date', min: details.start, max: details.end, value: date.toISOString().split('T')[0]},
                         {type: 'textarea', title: language.description, variable: 'description', width: 40, height: 10},
                         {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 40, height: 5}
@@ -92,7 +92,41 @@ function initDecisionsTable(language, selectDocument){
                         });
                         console.log(data);
                         if(require_suspension){
-                            alert('TO DO');
+                            RestApi.get('InspectorDecisions', 'getSuspensions', {id_document: documentId}, function(response){
+                                var suspensions = JSON.parse(response);
+                                var options = [];
+                                suspensions.forEach(item => {
+                                    if(item.description.length > 20){
+                                        var suspension = {
+                                            title: item.date + ' : ' + item.description.slice(0, 20) + '...',
+                                            value: item.id
+                                        }
+                                    }
+                                    else{
+                                        var suspension = {
+                                            title: item.date + ' : ' + item.description,
+                                            value: item.id
+                                        }
+                                    }
+                                    options.push(suspension);
+                                });
+                                var fields = [
+                                    {type: 'select', title: language.select_suspension, variable: 'id_suspension', options: options, required: true}
+                                ]
+                                openModalBox(language.new_decision, fields, language.save, function(data){
+                                    RestApi.post('InspectorDecisions', 'saveDecision', data,
+                                        function(response){
+                                            var data = JSON.parse(response);
+                                            console.log(data);
+                                            alert(data.message);
+                                            datatable.refresh();
+                                        },
+                                        function(response){
+                                            console.log(response.responseText);
+                                            alert(response.responseText);
+                                    });
+                                }, data);
+                            });
                         }
                         else{
                             RestApi.post('InspectorDecisions', 'saveDecision', data,

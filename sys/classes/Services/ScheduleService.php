@@ -300,30 +300,10 @@ class ScheduleService {
         $active = $entry->get('active');
         if($active){
             $this->schedule->disable($id);
-            $this->disableDocumentEntryRelation($id);
         }
         else{
             $this->checkEntryDates($entry);
             $this->schedule->enable($id);
-            $this->enableDocumentEntryRelation($id);
-        }
-    }
-    
-    private function disableDocumentEntryRelation(int $scheduleId) {
-        $relations = $this->documentSchedule->getByScheduleId($scheduleId);
-        foreach ($relations->toArray() as $item){
-            $relation = new Container($item);
-            $id = (int) $relation->get('id');
-            $this->documentSchedule->disable($id);
-        }
-    }
-    
-    private function enableDocumentEntryRelation(int $scheduleId) {
-        $relations = $this->documentSchedule->getByScheduleId($scheduleId);
-        foreach ($relations->toArray() as $item){
-            $relation = new Container($item);
-            $id = (int) $relation->get('id');
-            $this->documentSchedule->enable($id);
         }
     }
     

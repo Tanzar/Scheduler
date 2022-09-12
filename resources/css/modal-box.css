@@ -97,6 +97,10 @@ This code is free to use, just remember to give credit.
     border-bottom-color: #0066ff;
 }
 
+.modal-box-input:invalid {
+    border-color: #ff0000;
+}
+
 .modal-box-input:hover {
     border-color: #0066ff;
 }
@@ -112,3 +116,6 @@ This code is free to use, just remember to give credit.
     padding: 4px;
 }
 
+.modal-box-textarea:invalid {
+    border-color: #ff0000;
+}

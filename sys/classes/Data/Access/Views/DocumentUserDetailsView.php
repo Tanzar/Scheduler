@@ -31,7 +31,7 @@ class DocumentUserDetailsView extends View{
     
     public function getAllByDocumentId(int $documentId) : Container{
         $sql = new MysqlBuilder();
-        $sql->select('document_user_details')->where('id_document', $documentId);
+        $sql->select('document_user_details')->where('id', $documentId);
         return $this->select($sql);
     }
     
@@ -39,14 +39,14 @@ class DocumentUserDetailsView extends View{
         $sql = new MysqlBuilder();
         $sql->select('document_user_details')
                 ->where('active', 1)->and()
-                ->where('id_document', $documentId);
+                ->where('id', $documentId);
         return $this->select($sql);
     }
     
     public function getByUsernameAndDocumentId(string $username, int $documentId) : Container {
         $sql = new MysqlBuilder();
         $sql->select('document_user_details')->where('username', $username)
-                ->and()->where('id_document', $documentId);
+                ->and()->where('id', $documentId);
         $results = $this->select($sql);
         if($results->length() > 1){
             $this->throwDataAccessException('multiple versions of same relation '
@@ -86,8 +86,7 @@ class DocumentUserDetailsView extends View{
     
     public function getActiveDocumentByYearUsername(int $year, string $username) : Container {
         $sql = new MysqlBuilder();
-        $sql->select('document_user_details')->where('active_document', 1)
-                ->and()->where('active', 1)
+        $sql->select('document_user_details')->where('active', 1)
                 ->and()->where('username', $username)
                 ->and()->openBracket()
                 ->where('year(start)', $year)->or()->where('year(end)', $year)

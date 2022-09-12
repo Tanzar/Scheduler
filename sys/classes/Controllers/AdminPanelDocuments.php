@@ -63,7 +63,7 @@ class AdminPanelDocuments extends Controller{
     
     public function unassignUserFromDocument(){
         $data = $this->getRequestData();
-        $documentId = (int) $data->get('id_document');
+        $documentId = (int) $data->get('id');
         $username = $data->get('username');
         $this->docuement->unassignUserFromDocument($username, $documentId);
         $response = new Container();

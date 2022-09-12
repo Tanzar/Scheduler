@@ -129,7 +129,7 @@ function AssignedUsersTable(language){
         if(selected !== undefined){
             var dataToSend = {
                 username: selected.username,
-                id_document: selected.id_document
+                id_document: selected.id
             }
             RestApi.post('AdminPanelDocuments', 'unassignUserFromDocument', dataToSend,
                 function(response){

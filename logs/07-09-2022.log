@@ -1,0 +1,280 @@
+[2022-09-07  07:09:41] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  07:09:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  07:09:46] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorReports.php?
+[2022-09-07  07:09:47] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  07:09:47] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-09-07  07:09:47] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-09-07  07:09:52] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-09-07  07:09:52] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  07:09:53] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  07:09:53] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  07:09:53] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  07:09:53] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  07:09:53] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  07:09:55] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  07:09:55] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  07:09:57] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionGroupsData: {}
+[2022-09-07  07:09:57] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  07:25:22] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  07:25:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  07:25:23] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  07:25:23] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  07:25:23] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  07:25:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  07:25:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  07:25:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  07:25:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  07:25:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  07:26:08] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  07:26:08] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  07:26:08] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  07:26:08] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  07:26:08] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  07:26:10] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  07:26:10] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  07:26:10] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  07:26:10] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  07:26:10] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  07:50:02] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  07:50:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  07:50:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  07:50:03] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  07:50:03] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  07:50:05] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  07:50:05] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  07:50:06] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  07:50:06] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Too few arguments to function Services\SuspensionService::getSuspensionDetails(), 0 passed in C:\laragon\www\Scheduler\sys\classes\Controllers\InspectorSuspensions.php on line 47 and exactly 1 expected ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Controllers\InspectorSuspensions.php(47): Services\SuspensionService->getSuspensionDetails()
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InspectorSuspensions->getNewSuspensionDetails()
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2022-09-07  07:51:09] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  07:51:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  07:51:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  07:51:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  07:51:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  07:51:09] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  07:54:19] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  07:54:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  07:54:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  07:54:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  07:54:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  07:54:22] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  07:54:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  07:54:22] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  07:54:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  07:54:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  07:54:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  07:54:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  07:54:22] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  07:57:13] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  07:57:13] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  07:57:13] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  07:57:13] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  07:57:13] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  07:57:13] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  07:57:20] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  07:57:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  07:57:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  07:57:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  07:57:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:12:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:12:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:12:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:12:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:12:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:12:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '0'
+[2022-09-07  08:12:30] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Class "Data\Access\NotFoundException" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(50): Data\Access\DataAccessObject->throwNotFoundException('document')
+#1 C:\laragon\www\Scheduler\sys\classes\Services\SuspensionService.php(88): Data\Access\DataAccessObject->getById(0)
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\InspectorSuspensions.php(49): Services\SuspensionService->getSuspensionDetails(0)
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InspectorSuspensions->getNewSuspensionDetails()
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-09-07  08:12:40] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:12:40] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  08:12:41] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:12:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:12:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:12:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:12:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:12:41] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  08:24:50] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  08:24:50] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  08:24:50] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  08:24:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:24:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:24:53] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:24:53] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  08:24:54] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:24:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:24:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:24:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:24:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:24:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  08:26:01] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  08:26:01] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  08:26:01] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  08:26:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:26:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:26:03] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:26:03] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  08:26:04] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:26:04] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:26:04] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:26:04] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:26:04] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:26:04] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  08:26:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:26:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:26:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:26:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:26:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:26:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  08:28:15] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  08:28:15] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  08:28:16] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  08:28:16] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:28:16] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:28:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:28:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  08:28:21] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:28:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:28:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:28:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:28:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:28:21] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  08:34:37] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  08:34:37] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  08:34:37] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  08:34:38] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:34:38] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:34:42] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:34:42] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  08:34:43] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:34:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:34:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:34:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:34:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:34:43] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  08:35:25] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:35:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:35:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:35:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:35:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:35:25] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  08:46:02] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  08:46:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  08:46:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  08:46:02] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:46:02] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:46:07] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  08:46:07] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  08:46:07] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  08:46:07] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:46:07] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:46:20] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  08:46:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  08:46:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  08:46:20] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:46:20] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:46:23] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  08:46:23] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  08:46:23] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  08:46:23] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:46:23] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:46:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:46:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  08:46:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:46:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:46:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:46:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:46:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:46:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  08:46:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: saveNewSuspensionData: {}
+[2022-09-07  08:46:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-09-07  08:46:49] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Call to undefined method Data\Access\Views\DocumentUserDetailsView::getAllByUserAndDocument() ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Services\SuspensionService.php(118): Services\SuspensionService->getUserDocumentId(4, 'admin')
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\InspectorSuspensions.php(55): Services\SuspensionService->saveSuspensionForCurrentUser(Object(Tanweb\Container))
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InspectorSuspensions->saveNewSuspension()
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2022-09-07  08:47:33] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  08:47:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  08:47:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  08:47:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:47:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:47:46] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  08:47:46] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  08:47:47] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  08:47:47] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:47:47] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:47:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:47:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  08:47:49] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:47:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:47:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:47:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:47:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:47:49] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  08:48:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: saveNewSuspensionData: {}
+[2022-09-07  08:48:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-09-07  08:48:17] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Call to undefined method Data\Access\Views\DocumentUserDetailsView::getAllByUserAndDocument() ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Services\SuspensionService.php(118): Services\SuspensionService->getUserDocumentId(4, 'admin')
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\InspectorSuspensions.php(55): Services\SuspensionService->saveSuspensionForCurrentUser(Object(Tanweb\Container))
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InspectorSuspensions->saveNewSuspension()
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2022-09-07  08:50:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:50:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:50:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:50:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:50:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:50:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  08:51:10] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: saveNewSuspensionData: {}
+[2022-09-07  08:51:17] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-09-07  08:51:17] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user WHERE  id_document = '4' and id_user = '1'
+[2022-09-07  08:51:17] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Container error: value not defined for key: active ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Services\SuspensionService.php(143): Tanweb\Container->get('active')
+#2 C:\laragon\www\Scheduler\sys\classes\Services\SuspensionService.php(120): Services\SuspensionService->pasreSuspension(Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\InspectorSuspensions.php(55): Services\SuspensionService->saveSuspensionForCurrentUser(Object(Tanweb\Container))
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InspectorSuspensions->saveNewSuspension()
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-09-07  08:52:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  08:52:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  08:52:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  08:52:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  08:52:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  08:52:00] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  08:52:10] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: saveNewSuspensionData: {}
+[2022-09-07  08:52:10] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-09-07  08:52:10] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user WHERE  id_document = '4' and id_user = '1'
+[2022-09-07  08:52:10] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suspension (date, shift, region, description, correction_date, correction_shift, remarks, external_company, company_name, id_suspension_suzug_type, id_suspension_types, id_suspension_reason, id_document_user) VALUES ('2022-09-07', 'a', 'a', '', '2022-09-07', 'a', '', '0', '', '3', '1', '1', '6')
+[2022-09-07  08:52:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:52:11] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  08:54:31] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorSuspensions.php?
+[2022-09-07  08:54:31] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-09-07  08:54:31] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-09-07  08:54:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:54:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-09-07  08:54:35] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-09-07  08:54:35] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '4'
+[2022-09-07  09:54:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  09:54:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  09:54:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  09:54:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  09:54:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  09:54:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'
+[2022-09-07  09:56:39] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getNewSuspensionDetailsData: {}
+[2022-09-07  09:56:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_group WHERE  active = '1'
+[2022-09-07  09:56:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_suzug_type WHERE  active = '1'
+[2022-09-07  09:56:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_types WHERE  active = '1'
+[2022-09-07  09:56:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_reason WHERE  active = '1'
+[2022-09-07  09:56:39] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '4'

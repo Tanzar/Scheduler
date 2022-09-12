@@ -6,11 +6,12 @@
 
 namespace Services;
 
-use Data\Access\Tables\DocumentDAO as DocumentDAO;
+use Data\Access\Views\DocumentDetailsView as DocumentDetailsView;
 use Data\Access\Views\DocumentUserDetailsView as DocumentUserDetailsView;
 use Data\Access\Views\DocumentEntriesDetailsView as DocumentEntriesDetailsView;
 use Data\Access\Views\TicketDetailsView as TicketDetailsView;
 use Data\Access\Views\ArticleDetailsView as ArticleDetalsView;
+use Data\Access\Views\DecisionDetailsView as DecisionDetailsView;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 use DateTime;
@@ -21,19 +22,21 @@ use DateTime;
  * @author Tanzar
  */
 class InspectionReportService {
-    private DocumentDAO $document;
+    private DocumentDetailsView $documentDetails;
     private DocumentUserDetailsView $documentUserDetails;
     private DocumentEntriesDetailsView $documentEntriesDetails;
     private TicketDetailsView $ticketDetails;
     private ArticleDetalsView $articleDetails;
+    private DecisionDetailsView $decisionDetails;
 
 
     public function __construct() {
-        $this->document = new DocumentDAO();
+        $this->documentDetails = new DocumentDetailsView();
         $this->documentUserDetails = new DocumentUserDetailsView();
         $this->documentEntriesDetails = new DocumentEntriesDetailsView();
         $this->ticketDetails = new TicketDetailsView();
         $this->articleDetails = new ArticleDetalsView();
+        $this->decisionDetails = new DecisionDetailsView();
     }
     
     public function generateReport(int $documentId, string $username) : Container {
@@ -43,11 +46,12 @@ class InspectionReportService {
         $report->add($this->getUserEntriesForDocument($documentId, $username), 'entries');
         $report->add($this->getUserTicketsForDocument($documentId, $username), 'tickets');
         $report->add($this->getUserArticlesForDocument($documentId, $username), 'art_41');
+        $report->add($this->getUserDecisionsForDocument($documentId, $username), 'decisions');
         return $report;
     }
     
     private function getDocumentDetails(int $documentId) : array {
-        $doc = $this->document->getById($documentId);
+        $doc = $this->documentDetails->getById($documentId);
         return $doc->toArray();
     }
     
@@ -79,8 +83,7 @@ class InspectionReportService {
         $start = DateTime::createFromFormat('Y-m-d H:i:s', $entry->get('start'));
         $end = DateTime::createFromFormat('Y-m-d H:i:s', $entry->get('end'));
         $value = $start->format('H:i d-m-Y') . ' - ' . 
-                $end->format('H:i d-m-Y') . ' :  ' . 
-                $entry->get('location') . ' : ' . $entry->get('activity') . ' ';
+                $end->format('H:i d-m-Y') . ' :  ' . $entry->get('activity') . ' ';
         $underground = (bool) $entry->get('underground');
         if($underground){
             $value .= $interface->get('underground');
@@ -110,6 +113,17 @@ class InspectionReportService {
             $ticket = new Container($item);
             $text = '' . $ticket->get('date') . ' : ' . $ticket->get('art_41_form_short')
                     . ': ' . $ticket->get('position');
+            $result[] = $text;
+        }
+        return $result;
+    }
+    
+    private function getUserDecisionsForDocument(int $documentId, string $username) : array {
+        $data = $this->decisionDetails->getActiveByUsernameAndDocumentId($username, $documentId);
+        $result = array();
+        foreach ($data->toArray() as $item){
+            $decision = new Container($item);
+            $text = '' . $decision->get('date') . ' : ' . $decision->get('law');
             $result[] = $text;
         }
         return $result;

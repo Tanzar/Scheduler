@@ -55,13 +55,13 @@ This code is free to use, just remember to give credit.
             <div class="horizontal-container">
                 <div>
                     <div class="standard-text-title">
-                        <?php echo $interfaceText->get('suspension_suzug_group'); ?>
+                        <?php echo $interfaceText->get('suspension_group'); ?>
                     </div>
                     <div id="suspensionGroup"></div>
                 </div>
                 <div>
                     <div class="standard-text-title">
-                        <?php echo $interfaceText->get('suspension_suzug_type'); ?>
+                        <?php echo $interfaceText->get('suspension_type'); ?>
                     </div>
                     <div id="suspensionType"></div>
                 </div>
@@ -70,6 +70,12 @@ This code is free to use, just remember to give credit.
                         <?php echo $interfaceText->get('suspension_reason'); ?>
                     </div>
                     <div id="suspensionReason"></div>
+                </div>
+                <div>
+                    <div class="standard-text-title">
+                        <?php echo $interfaceText->get('suspension_object'); ?>
+                    </div>
+                    <div id="suspensionObject"></div>
                 </div>
             </div>
             

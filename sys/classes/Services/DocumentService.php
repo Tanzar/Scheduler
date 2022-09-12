@@ -112,9 +112,6 @@ class DocumentService {
                 return $language->get('edit_document_entries_exist_period');
             }
         }
-        if($data->isValueSet('document_number')){
-            $data->add($data->get('document_number'), 'number', true);
-        }
         $this->document->save($data);
         return $language->get('changes_saved');
     }

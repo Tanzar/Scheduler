@@ -29,7 +29,7 @@ function initArticlesTable(language, selectDocument){
             {title: language.art_41_form, variable: 'art_41_form_short', width: 100, minWidth: 100},
             {title: language.position_groups, variable: 'position_group', width: 100, minWidth: 100},
             {title: language.position, variable: 'position', width: 100, minWidth: 100},
-            {title: language.outside_company, variable: 'outside_company_text', width: 70, minWidth: 70},
+            {title: language.external_company, variable: 'external_company_text', width: 70, minWidth: 70},
             {title: language.company_name, variable: 'company_name', width: 100, minWidth: 100}
         ],
         dataSource: datasource
@@ -82,11 +82,11 @@ function initArticlesTable(language, selectDocument){
                         date = end;
                     }
                     var fields = [
-                        {type: 'select', title: language.select_art_41_form, variable: 'id_art_41_form', options: forms},
+                        {type: 'select', title: language.select_art_41_form, variable: 'id_art_41_form', options: forms, required: true},
                         {type: 'date', title: language.date, variable: 'date', min: details.start, max: details.end, value: date.toISOString().split('T')[0]},
-                        {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions},
-                        {type: 'text', title: language.position, variable: 'position', limit: 255},
-                        {type: 'checkbox', title: language.outside_company, variable: 'outside_company'},
+                        {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions, required: true},
+                        {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
+                        {type: 'checkbox', title: language.external_company, variable: 'external_company'},
                         {type: 'text', title: language.company_name, variable: 'company_name', limit: 255},
                         {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5}
                     ];
@@ -106,8 +106,8 @@ function initArticlesTable(language, selectDocument){
                         });
                         if(require_application){
                             var fields = [
-                                {type: 'text', title: language.applicant, variable: 'applicant', limit: 255},
-                                {type: 'text', title: language.application_number, variable: 'application_number', limit: 255},
+                                {type: 'text', title: language.applicant, variable: 'applicant', limit: 255, required: true},
+                                {type: 'text', title: language.application_number, variable: 'application_number', limit: 255, required: true},
                                 {type: 'date', title: language.application_date, variable: 'application_date', min: details.start, max: details.end, value: date.toDateString()}
                             ];
                             openModalBox(language.new_art_41, fields, language.save, function(data){
@@ -178,11 +178,11 @@ function initArticlesTable(language, selectDocument){
                         date = end;
                     }
                     var fields = [
-                        {type: 'select', title: language.select_art_41_form, variable: 'id_art_41_form', options: forms},
+                        {type: 'select', title: language.select_art_41_form, variable: 'id_art_41_form', options: forms, required: true},
                         {type: 'date', title: language.date, variable: 'date', min: details.start, max: details.end, value: date.toISOString().split('T')[0]},
-                        {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions},
-                        {type: 'text', title: language.position, variable: 'position', limit: 255},
-                        {type: 'checkbox', title: language.outside_company, variable: 'outside_company'},
+                        {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions, required: true},
+                        {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
+                        {type: 'checkbox', title: language.external_company, variable: 'external_company'},
                         {type: 'text', title: language.company_name, variable: 'company_name', limit: 255},
                         {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5}
                     ];
@@ -197,8 +197,8 @@ function initArticlesTable(language, selectDocument){
                             });
                             if(require_application){
                                 var fields = [
-                                    {type: 'text', title: language.applicant, variable: 'applicant', limit: 255},
-                                    {type: 'text', title: language.application_number, variable: 'application_number', limit: 255},
+                                    {type: 'text', title: language.applicant, variable: 'applicant', limit: 255, required: true},
+                                    {type: 'text', title: language.application_number, variable: 'application_number', limit: 255, required: true},
                                     {type: 'date', title: language.application_date, variable: 'application_date', min: details.start, max: details.end, value: date.toDateString()}
                                 ];
                                 openModalBox(language.new_art_41, fields, language.save, function(data){

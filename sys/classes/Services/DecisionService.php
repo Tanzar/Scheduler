@@ -8,6 +8,7 @@ namespace Services;
 
 use Data\Access\Tables\DecisionDAO as DecisionDAO;
 use Data\Access\Tables\DecisionLawDAO as DecisionLawDAO;
+use Data\Access\Tables\SuspensionDecisionDAO as SuspensionDecisionDAO;
 use Data\Access\Views\DecisionDetailsView as DecisionDetailsView;
 use Data\Access\Views\DocumentUserDetailsView as DocumentUserDetailsView;
 use Tanweb\Container as Container;
@@ -21,12 +22,14 @@ use Tanweb\Session as Session;
 class DecisionService {
     private DecisionDAO $decision;
     private DecisionLawDAO $decisionLaw;
+    private SuspensionDecisionDAO $suspensionDecision;
     private DecisionDetailsView $decisionDetails;
     private DocumentUserDetailsView $documentUserDetails;
     
     public function __construct() {
         $this->decision = new DecisionDAO();
         $this->decisionLaw = new DecisionLawDAO();
+        $this->suspensionDecision = new SuspensionDecisionDAO();
         $this->decisionDetails = new DecisionDetailsView();
         $this->documentUserDetails = new DocumentUserDetailsView();
     }
@@ -42,6 +45,12 @@ class DecisionService {
     public function getCurrentUserDecisions(int $documentId) : Container {
         $username = Session::getUsername();
         return $this->decisionDetails->getActiveByUsernameAndDocumentId($username, $documentId);
+    }
+    
+    public function getCurrentUserDecisionsRequiringSuspensions(int $documentId) : Container {
+        $username = Session::getUsername();
+        return $this->decisionDetails
+                ->getActiveRequiringSuspensionByUsernameAndDocumentId($username, $documentId);
     }
     
     public function saveDecisionLaw(Container $data) : int {
@@ -69,12 +78,19 @@ class DecisionService {
             $data->add($documentUserId, 'id_document_user');
         }
         $decision = $this->formDecision($data);
-        return $this->decision->save($decision);
+        $id = $this->decision->save($decision);
+        if($data->isValueSet('id_suspension')){
+            $assign = new Container();
+            $assign->add($id, 'id_decision');
+            $assign->add($data->get('id_suspension'), 'id_suspension');
+            $this->suspensionDecision->save($assign);
+        }
+        return $id;
     }
     
     private function getDocumentUserId(string $username, int $documentId) : int {
         $relation = $this->documentUserDetails->getByUsernameAndDocumentId($username, $documentId);
-        $id = (int) $relation->get('id');
+        $id = (int) $relation->get('id_document_user');
         return $id;
     }
     

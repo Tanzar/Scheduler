@@ -72,7 +72,7 @@ function Select(id, placeholder){
                 me.clear();
                 var data = JSON.parse(response);
                 data.forEach(item => {
-                    me.addOption(item.id_document, item.document_number);
+                    me.addOption(item.id, item.number);
                 });
             }, 
             function(response){
@@ -112,6 +112,7 @@ function formatReport(data, language){
     document.getElementById('documentNumber').textContent = data.details.number;
     document.getElementById('documentStart').textContent = data.details.start;
     document.getElementById('documentEnd').textContent = data.details.end;
+    document.getElementById('location').textContent = data.details.location;
     
     var contents = '';
     data.users.forEach(item => {
@@ -140,4 +141,11 @@ function formatReport(data, language){
     });
     document.getElementById('art41').innerHTML = contents;
     showHideButton('showHideArt41', 'art41Row', language);
+    
+    contents = '';
+    data.decisions.forEach(item => {
+        contents += item + '<br>';
+    });
+    document.getElementById('decisions').innerHTML = contents;
+    showHideButton('showHideDecisions', 'decisionsRow', language);
 }

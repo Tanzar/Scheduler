@@ -101,7 +101,7 @@ class TicketService {
         $ticket->add($data->get('value'), 'value');
         $ticket->add($data->get('date'), 'date');
         $ticket->add($data->get('violated_rules'), 'violated_rules');
-        $ticket->add($data->get('outside_company'), 'outside_company');
+        $ticket->add($data->get('external_company'), 'external_company');
         $ticket->add($data->get('company_name'), 'company_name');
         $ticket->add($data->get('remarks'), 'remarks');
         return $ticket;

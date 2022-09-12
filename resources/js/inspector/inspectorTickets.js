@@ -30,7 +30,7 @@ function TicketsTable(language, selectDocument){
             {title: language.ticket_date, variable: 'date', width: 100, minWidth: 100},
             {title: language.position, variable: 'position', width: 150, minWidth: 150},
             {title: language.violated_rules, variable: 'violated_rules', width: 200, minWidth: 200},
-            {title: language.outside_company, variable: 'outside_company_text', width: 100, minWidth: 100},
+            {title: language.external_company, variable: 'external_company_text', width: 100, minWidth: 100},
             {title: language.company_name, variable: 'company_name', width: 100, minWidth: 100}
         ],
         dataSource: datasource
@@ -83,14 +83,14 @@ function TicketsTable(language, selectDocument){
                     date = end;
                 }
                 var fields = [
-                    {type: 'text', title: language.ticket_number, variable: 'number', limit: 10},
+                    {type: 'text', title: language.ticket_number, variable: 'number', limit: 10, required: true},
                     {type: 'date', title: language.ticket_date, variable: 'date', min: data.start, max: data.end, value: date.toDateString()},
-                    {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions},
-                    {type: 'text', title: language.position, variable: 'position', limit: 255},
-                    {type: 'number', title: language.ticket_value, variable: 'value', min: 0},
-                    {type: 'select', title: language.select_ticket_law, variable: 'id_ticket_law', options: laws},
-                    {type: 'textarea', title: language.violated_rules, variable: 'violated_rules', limit: 255, width: 30, height: 3},
-                    {type: 'checkbox', title: language.outside_company, variable: 'outside_company'},
+                    {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions, required: true},
+                    {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
+                    {type: 'number', title: language.ticket_value, variable: 'value', min: 0, required: true},
+                    {type: 'select', title: language.select_ticket_law, variable: 'id_ticket_law', options: laws, required: true},
+                    {type: 'textarea', title: language.violated_rules, variable: 'violated_rules', limit: 255, width: 30, height: 3, required: true},
+                    {type: 'checkbox', title: language.external_company, variable: 'external_company'},
                     {type: 'text', title: language.company_name, variable: 'company_name', limit: 255},
                     {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5}
                 ];
@@ -148,14 +148,14 @@ function TicketsTable(language, selectDocument){
                         date = end;
                     }
                     var fields = [
-                        {type: 'text', title: language.ticket_number, variable: 'number', limit: 10},
+                        {type: 'text', title: language.ticket_number, variable: 'number', limit: 10, required: true},
                         {type: 'date', title: language.ticket_date, variable: 'date', min: data.start, max: data.end, value: date.toDateString()},
-                        {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions},
-                        {type: 'text', title: language.position, variable: 'position', limit: 255},
-                        {type: 'number', title: language.ticket_value, variable: 'value', min: 0},
-                        {type: 'select', title: language.select_ticket_law, variable: 'id_ticket_law', options: laws},
-                        {type: 'textarea', title: language.violated_rules, variable: 'violated_rules', limit: 255, width: 30, height: 3},
-                        {type: 'checkbox', title: language.outside_company, variable: 'outside_company'},
+                        {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions, required: true},
+                        {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
+                        {type: 'number', title: language.ticket_value, variable: 'value', min: 0, required: true},
+                        {type: 'select', title: language.select_ticket_law, variable: 'id_ticket_law', options: laws, required: true},
+                        {type: 'textarea', title: language.violated_rules, variable: 'violated_rules', limit: 255, width: 30, height: 3, required: true},
+                        {type: 'checkbox', title: language.external_company, variable: 'external_company'},
                         {type: 'text', title: language.company_name, variable: 'company_name', limit: 255},
                         {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5}
                     ];

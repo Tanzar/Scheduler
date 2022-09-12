@@ -50,6 +50,9 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 if(field.limit !== undefined){
                     input.setAttribute('maxLength', field.limit);
                 }
+                if(field.required !== undefined && field.required === true){
+                    input.required = true;
+                }
                 break;
             case 'textarea':
                 var maxWidth = 50;
@@ -96,6 +99,9 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 else{
                     input.setAttribute('rows', defHeight);
                 }
+                if(field.required !== undefined && field.required === true){
+                    input.required = true;
+                }
                 break;
             case 'number':
                 var input = document.createElement('input');
@@ -122,10 +128,16 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 else{
                     item[input.variable] = input.value;
                 }
+                if(field.required !== undefined && field.required === true){
+                    input.required = true;
+                }
                 break;
             case 'select':
                 var select = document.createElement('select');
                 select.setAttribute('class', 'modal-box-input');
+                if(field.required !== undefined && field.required === true){
+                    select.required = true;
+                }
                 var placeholder = document.createElement('option');
                 placeholder.setAttribute('value', '');
                 placeholder.disabled = true;
@@ -323,8 +335,11 @@ function openModalBox(title, fields, buttonText, onAccept, item){
         button.setAttribute('class', 'modal-box-button');
         footer.appendChild(button);
         button.onclick = function(){
-            body.removeChild(blocker);
-            onAccept(item);
+            var list = body.querySelectorAll(':invalid');
+            if(list.length === 0){
+                body.removeChild(blocker);
+                onAccept(item);
+            }
         }
     }
 }

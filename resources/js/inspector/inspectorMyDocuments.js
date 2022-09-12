@@ -42,7 +42,7 @@ function DocumentDatatable(language){
     };
     var config = {
         columns: [
-            {title: language.document_number, variable: 'document_number', width: 150, minWidth: 150},
+            {title: language.document_number, variable: 'number', width: 150, minWidth: 150},
             {title: language.location, variable: 'location', width: 150, minWidth: 150},
             {title: language.start, variable: 'start', width: 100, minWidth: 100},
             {title: language.end, variable: 'end', width: 100, minWidth: 100},
@@ -57,7 +57,7 @@ function DocumentDatatable(language){
         }
         else{
             var fields = [
-                {type: 'text', title: language.document_number, variable: 'document_number', limit: 255},
+                {type: 'text', title: language.document_number, variable: 'number', limit: 255, required: true},
                 {type: 'date', title: language.start, variable: 'start'},
                 {type: 'date', title: language.end, variable: 'end'},
                 {type: 'text', title: language.description, variable: 'description', limit: 255}

@@ -41,7 +41,7 @@ function init(){
                         }
                         options.push(option);
                     });
-                    var fields = [{type: 'select', title: language.select_location_type, variable: 'id_location_type', options: options}];
+                    var fields = [{type: 'select', title: language.select_location_type, variable: 'id_location_type', options: options, required: true}];
                     openModalBox(language.select_location_type, fields, language.next, 
                         function(data){
                             if(data.id_location_type === ''){
@@ -61,8 +61,8 @@ function init(){
                                             options.push(option);
                                         });
                                         var fields = [
-                                            {type: 'select', title: language.select_location, variable: 'id_location', options: options},
-                                            {type: 'text', title: language.document_number, variable: 'number', limit: 255},
+                                            {type: 'select', title: language.select_location, variable: 'id_location', options: options, required: true},
+                                            {type: 'text', title: language.document_number, variable: 'number', limit: 255, required: true},
                                             {type: 'date', title: language.start, variable: 'start'},
                                             {type: 'date', title: language.end, variable: 'end'},
                                             {type: 'text', title: language.description, variable: 'description', limit: 255}

@@ -9,6 +9,7 @@ namespace Controllers;
 use Controllers\Base\Controller as Controller;
 use Services\DecisionService as DecisionService;
 use Services\DocumentService as DocumentService;
+use Services\SuspensionService as SuspensionService;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 
@@ -20,10 +21,12 @@ use Tanweb\Config\INI\Languages as Languages;
 class InspectorDecisions extends Controller{
     private DocumentService $documentService;
     private DecisionService $decisionService;
+    private SuspensionService $suspensionService;
     
     public function __construct() {
         $this->documentService = new DocumentService();
         $this->decisionService = new DecisionService();
+        $this->suspensionService = new SuspensionService();
         $privilages = new Container();
         $privilages->add('admin');
         $privilages->add('schedule_user_inspector');
@@ -50,6 +53,13 @@ class InspectorDecisions extends Controller{
         $documentId = $data->get('id_document');
         $response = $this->decisionService->getNewDecisionData($documentId);
         $this->setResponse($response);
+    }
+    
+    public function getSuspensions() : void {
+        $data = $this->getRequestData();
+        $idDocument = (int) $data->get('id_document');
+        $suspensions = $this->suspensionService->getCurrentUserSuspensions($idDocument);
+        $this->setResponse($suspensions);
     }
     
     public function saveDecision() : void {

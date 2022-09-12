@@ -26,20 +26,20 @@ class AdminPanelSuspension extends Controller{
         parent::__construct($privilages);
     }
     
-    public function getAllSuspensionSuzugTypesByGroup() {
+    public function getAllSuspensionTypesByGroup() {
         $data = $this->getRequestData();
         $groupId = (int) $data->get('id_suspension_suzug_group');
-        $response = $this->suspension->getAlSuzuglTypesByGroupId($groupId);
+        $response = $this->suspension->getAllTypesByGroupId($groupId);
         $this->setResponse($response);
     }
     
-    public function getAllSuspensionSuzugGroups() {
-        $response = $this->suspension->getAllSuzugGroups();
+    public function getAllSuspensionGroups() {
+        $response = $this->suspension->getAllGroups();
         $this->setResponse($response);
     }
     
-    public function getActiveSuspensionSuzugGroups() {
-        $response = $this->suspension->getActiveSuzugGroups();
+    public function getActiveSuspensionGroups() {
+        $response = $this->suspension->getActiveGroups();
         $this->setResponse($response);
     }
     
@@ -48,9 +48,14 @@ class AdminPanelSuspension extends Controller{
         $this->setResponse($response);
     }
     
-    public function saveSuspensionSuzugType() {
+    public function getAllSuspensionObjects() {
+        $response = $this->suspension->getAllObjects();
+        $this->setResponse($response);
+    }
+    
+    public function saveSuspensionType() {
         $data = $this->getRequestData();
-        $id = $this->suspension->saveSuzugType($data);
+        $id = $this->suspension->saveType($data);
         $response = new Container();
         $response->add($id, 'id');
         $languages = Languages::getInstance();
@@ -58,9 +63,9 @@ class AdminPanelSuspension extends Controller{
         $this->setResponse($response);
     }
     
-    public function saveSuspensionSuzugGroup() {
+    public function saveSuspensionGroup() {
         $data = $this->getRequestData();
-        $id = $this->suspension->saveSuzugGroup($data);
+        $id = $this->suspension->saveGroup($data);
         $response = new Container();
         $response->add($id, 'id');
         $languages = Languages::getInstance();
@@ -78,20 +83,30 @@ class AdminPanelSuspension extends Controller{
         $this->setResponse($response);
     }
     
-    public function changeSuspensionSuzugTypeStatus() {
+    public function saveSuspensionObject() {
+        $data = $this->getRequestData();
+        $id = $this->suspension->saveObject($data);
+        $response = new Container();
+        $response->add($id, 'id');
+        $languages = Languages::getInstance();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
+    public function changeSuspensionTypeStatus() {
         $data = $this->getRequestData();
         $id = $data->get('id');
-        $this->suspension->changeSuzugTypeStatus($id);
+        $this->suspension->changeTypeStatus($id);
         $response = new Container();
         $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
     
-    public function changeSuspensionSuzugGroupStatus() {
+    public function changeSuspensionGroupStatus() {
         $data = $this->getRequestData();
         $id = $data->get('id');
-        $this->suspension->changeSuzugGroupStatus($id);
+        $this->suspension->changeGroupStatus($id);
         $response = new Container();
         $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
@@ -102,6 +117,16 @@ class AdminPanelSuspension extends Controller{
         $data = $this->getRequestData();
         $id = $data->get('id');
         $this->suspension->changeReasonStatus($id);
+        $response = new Container();
+        $languages = Languages::getInstance();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
+    public function changeSuspensionObjectStatus() {
+        $data = $this->getRequestData();
+        $id = $data->get('id');
+        $this->suspension->changeObjectStatus($id);
         $response = new Container();
         $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
