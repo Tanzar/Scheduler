@@ -233,3 +233,14 @@ footer {
     font-size: 20px;
     text-align: center;
 }
+
+.standard-list {
+}
+
+.standard-list-item {
+    margin-top: 5px;
+}
+
+.standard-list-item::marker {
+    color: var(--border-color);
+}

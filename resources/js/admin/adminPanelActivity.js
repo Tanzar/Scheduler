@@ -54,12 +54,12 @@ function ActivityTable(language, div){
                 options.push(option);
             });
             var fields = [
-                {type: 'text', title: language.name, variable: 'name', limit: 100},
-                {type: 'text', title: language.short, variable: 'short', limit: 50},
-                {type: 'text', title: language.symbol, variable: 'symbol', limit: 10},
+                {type: 'text', title: language.name, variable: 'name', limit: 100, required: true},
+                {type: 'text', title: language.short, variable: 'short', limit: 50, required: true},
+                {type: 'text', title: language.symbol, variable: 'symbol', limit: 10, required: true},
                 {type: 'color', title: language.color, variable: 'color'},
-                {type: 'select', title: language.activity_group, variable: 'activity_group', options: options},
-                {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1},
+                {type: 'select', title: language.activity_group, variable: 'activity_group', options: options, required: true},
+                {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1, required: true},
                 {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
                 {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
                 {type: 'checkbox', title: language.require_document, variable: 'require_document'}
@@ -94,12 +94,12 @@ function ActivityTable(language, div){
                         options.push(option);
                     });
                     var fields = [
-                        {type: 'text', title: language.name, variable: 'name', limit: 100},
-                        {type: 'text', title: language.short, variable: 'short', limit: 50},
-                        {type: 'text', title: language.symbol, variable: 'symbol', limit: 10},
+                        {type: 'text', title: language.name, variable: 'name', limit: 100, required: true},
+                        {type: 'text', title: language.short, variable: 'short', limit: 50, required: true},
+                        {type: 'text', title: language.symbol, variable: 'symbol', limit: 10, required: true},
                         {type: 'color', title: language.color, variable: 'color'},
-                        {type: 'select', title: language.activity_group, variable: 'activity_group', options: options},
-                        {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1},
+                        {type: 'select', title: language.activity_group, variable: 'activity_group', options: options, required: true},
+                        {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1, required: true},
                         {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
                         {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
                         {type: 'checkbox', title: language.require_document, variable: 'require_document'}

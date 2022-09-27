@@ -341,5 +341,20 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 onAccept(item);
             }
         }
+        
+        function handleModal(event){
+            if (event.key === "Enter") {
+                event.preventDefault();
+                button.click();
+                body.removeEventListener('keydown', handleModal);
+            }
+            if (event.key === "Escape") {
+                event.preventDefault();
+                close.click();
+                body.removeEventListener('keydown', handleModal);
+            }
+        }
+        
+        body.addEventListener("keydown", handleModal);
     }
 }

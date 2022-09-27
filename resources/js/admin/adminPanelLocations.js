@@ -56,9 +56,9 @@ function LocationsTable(language, div){
                     typesOptions.push(option);
                 });
                 var fields = [
-                    {type: 'text', title: language.name, variable: 'name', limit: 100},
-                    {type: 'select', title: language.location_group, variable: 'id_location_group', options: groupsOptions},
-                    {type: 'select', title: language.location_type, variable: 'id_location_type', options: typesOptions}
+                    {type: 'text', title: language.name, variable: 'name', limit: 100, required: true},
+                    {type: 'select', title: language.location_group, variable: 'id_location_group', options: groupsOptions, required: true},
+                    {type: 'select', title: language.location_type, variable: 'id_location_type', options: typesOptions, required: true}
                 ];
                 openModalBox(language.new_location, fields, language.save, function(data){
                     RestApi.post('AdminPanelLocation', 'saveLocation', data,
@@ -99,9 +99,9 @@ function LocationsTable(language, div){
                         typesOptions.push(option);
                     });
                     var fields = [
-                        {type: 'text', title: language.name, variable: 'name', limit: 100},
-                        {type: 'select', title: language.location_group, variable: 'id_location_group', options: groupsOptions},
-                        {type: 'select', title: language.location_type, variable: 'id_location_type', options: typesOptions}
+                        {type: 'text', title: language.name, variable: 'name', limit: 100, required: true},
+                        {type: 'select', title: language.location_group, variable: 'id_location_group', options: groupsOptions, required: true},
+                        {type: 'select', title: language.location_type, variable: 'id_location_type', options: typesOptions, required: true}
                     ];
                     openModalBox(language.edit_location, fields, language.save, function(data){
                         RestApi.post('AdminPanelLocation', 'saveLocation', data,

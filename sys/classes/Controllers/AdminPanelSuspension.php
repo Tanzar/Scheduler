@@ -53,6 +53,21 @@ class AdminPanelSuspension extends Controller{
         $this->setResponse($response);
     }
     
+    public function getUserSuspensions() {
+        $data = $this->getRequestData();
+        $username = $data->get('username');
+        $year = (int) $data->get('year');
+        $response = $this->suspension->getAllUserSuspensions($username, $year);
+        $this->setResponse($response);
+    }
+    
+    public function getRelatedObjects(){
+        $data = $this->getRequestData();
+        $id = (int) $data->get('id_suspension_type');
+        $response = $this->suspension->getObjectsByType($id);
+        $this->setResponse($response);
+    }
+    
     public function saveSuspensionType() {
         $data = $this->getRequestData();
         $id = $this->suspension->saveType($data);
@@ -93,6 +108,17 @@ class AdminPanelSuspension extends Controller{
         $this->setResponse($response);
     }
     
+    public function saveTypeObjectsRelations() {
+        $data = $this->getRequestData();
+        $idType = $data->get('id_suspension_type');
+        $objectsIds = new Container($data->get('objects_ids'));
+        $this->suspension->saveTypeObjects($idType, $objectsIds);
+        $response = new Container();
+        $languages = Languages::getInstance();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
     public function changeSuspensionTypeStatus() {
         $data = $this->getRequestData();
         $id = $data->get('id');
@@ -127,6 +153,16 @@ class AdminPanelSuspension extends Controller{
         $data = $this->getRequestData();
         $id = $data->get('id');
         $this->suspension->changeObjectStatus($id);
+        $response = new Container();
+        $languages = Languages::getInstance();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
+    public function changeSuspensionStatus() {
+        $data = $this->getRequestData();
+        $id = $data->get('id');
+        $this->suspension->changeSuspensionStatus($id);
         $response = new Container();
         $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');

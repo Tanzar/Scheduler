@@ -32,8 +32,8 @@ function initDecisionLawTable(language) {
     var datatable = new Datatable(div, config);
     datatable.addActionButton(language.add, function(){
         var fields = [
-            {type: 'text', title: language.decision_law, variable: 'law', limit: 100},
-            {type: 'text', title: language.description, variable: 'description', limit: 255},
+            {type: 'text', title: language.decision_law, variable: 'law', limit: 100, required: true},
+            {type: 'text', title: language.description, variable: 'description', limit: 255, required: true},
             {type: 'checkbox', title: language.requires_suspension, variable: 'requires_suspension'}
         ];
         openModalBox(language.new_decision_law, fields, language.save, function(data){
@@ -53,8 +53,8 @@ function initDecisionLawTable(language) {
     datatable.addActionButton(language.edit, function(selected){
         if(selected !== undefined){
             var fields = [
-                {type: 'text', title: language.decision_law, variable: 'law', limit: 100},
-                {type: 'text', title: language.description, variable: 'description', limit: 255},
+                {type: 'text', title: language.decision_law, variable: 'law', limit: 100, required: true},
+                {type: 'text', title: language.description, variable: 'description', limit: 255, required: true},
                 {type: 'checkbox', title: language.requires_suspension, variable: 'requires_suspension'}
             ];
             openModalBox(language.new_decision_law, fields, language.save, function(data){

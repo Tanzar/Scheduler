@@ -36,4 +36,12 @@ class SuspensionDetailsView extends View{
                 ->where('id_document', $idDocument);
         return $this->select($sql);
     }
+    
+    public function getAllByUsernameAndYear(string $username, int $year) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('suspension_details')
+                ->where('username', $username)->and()
+                ->where('year(date)', $year);
+        return $this->select($sql);
+    }
 }

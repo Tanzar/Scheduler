@@ -12,6 +12,10 @@ use Data\Access\Views\DocumentEntriesDetailsView as DocumentEntriesDetailsView;
 use Data\Access\Views\TicketDetailsView as TicketDetailsView;
 use Data\Access\Views\ArticleDetailsView as ArticleDetalsView;
 use Data\Access\Views\DecisionDetailsView as DecisionDetailsView;
+use Data\Access\Views\SuspensionDetailsView as SuspensionDetailsView;
+use Data\Access\Views\SuspensionArticleDetailsView as SuspensionArticleDetailsView;
+use Data\Access\Views\SuspensionDecisionDetailsView as SuspensionDecisionDetailsView;
+use Data\Access\Views\SuspensionTicketDetailsView as SuspensionTicketDetailsView;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 use DateTime;
@@ -28,6 +32,10 @@ class InspectionReportService {
     private TicketDetailsView $ticketDetails;
     private ArticleDetalsView $articleDetails;
     private DecisionDetailsView $decisionDetails;
+    private SuspensionDetailsView $suspensionDetails;
+    private SuspensionArticleDetailsView $suspensionArticleDetails;
+    private SuspensionDecisionDetailsView $suspensionDecisionDetails;
+    private SuspensionTicketDetailsView $suspensionTicketDetails;
 
 
     public function __construct() {
@@ -37,6 +45,10 @@ class InspectionReportService {
         $this->ticketDetails = new TicketDetailsView();
         $this->articleDetails = new ArticleDetalsView();
         $this->decisionDetails = new DecisionDetailsView();
+        $this->suspensionDetails = new SuspensionDetailsView();
+        $this->suspensionArticleDetails = new SuspensionArticleDetailsView();
+        $this->suspensionDecisionDetails = new SuspensionDecisionDetailsView();
+        $this->suspensionTicketDetails = new SuspensionTicketDetailsView();
     }
     
     public function generateReport(int $documentId, string $username) : Container {
@@ -47,6 +59,7 @@ class InspectionReportService {
         $report->add($this->getUserTicketsForDocument($documentId, $username), 'tickets');
         $report->add($this->getUserArticlesForDocument($documentId, $username), 'art_41');
         $report->add($this->getUserDecisionsForDocument($documentId, $username), 'decisions');
+        $report->add($this->getUserSuspensionsForDocument($documentId, $username), 'suspensions');
         return $report;
     }
     
@@ -110,9 +123,9 @@ class InspectionReportService {
         $data = $this->articleDetails->getUserActiveArticlesByDocumentId($username, $documentId);
         $result = array();
         foreach ($data->toArray() as $item){
-            $ticket = new Container($item);
-            $text = '' . $ticket->get('date') . ' : ' . $ticket->get('art_41_form_short')
-                    . ': ' . $ticket->get('position');
+            $article = new Container($item);
+            $text = '' . $article->get('date') . ' : ' . $article->get('art_41_form_short')
+                    . ': ' . $article->get('position');
             $result[] = $text;
         }
         return $result;
@@ -124,6 +137,56 @@ class InspectionReportService {
         foreach ($data->toArray() as $item){
             $decision = new Container($item);
             $text = '' . $decision->get('date') . ' : ' . $decision->get('law');
+            $result[] = $text;
+        }
+        return $result;
+    }
+    
+    private function getUserSuspensionsForDocument(int $documentId, string $username) : array {
+        $suspensions = $this->suspensionDetails->getActiveByUsernameAndIdDocument($username, $documentId);
+        $result = array();
+        foreach ($suspensions->toArray() as $item){
+            $suspension = new Container($item);
+            $form = array();
+            $form['text'] = '' . $suspension->get('date') . ' : ' . $suspension->get('object_name');
+            $suspensionId = (int) $suspension->get('id');
+            $form['articles'] = $this->getUserSuspensionArticles($username, $suspensionId);
+            $form['decisions'] = $this->getUserSuspensionDecisions($username, $suspensionId);
+            $form['tickets'] = $this->getUserSuspensionTickets($username, $suspensionId);
+            $result[] = $form;
+        }
+        return $result;
+    }
+    
+    private function getUserSuspensionArticles(string $username, int $suspensionId) : array {
+        $articles = $this->suspensionArticleDetails->getActiveByUsernameAndIdSuspension($username, $suspensionId);
+        $result = array();
+        foreach ($articles->toArray() as $item) {
+            $article = new Container($item);
+            $text = '' . $article->get('art_41_date') . ' : ' . $article->get('art_41_form_short')
+                    . ': ' . $article->get('art_41_position');
+            $result[] = $text;
+        }
+        return $result;
+    }
+    
+    private function getUserSuspensionDecisions(string $username, int $suspensionId) : array {
+        $decisions = $this->suspensionDecisionDetails->getActiveByUsernameAndIdSuspension($username, $suspensionId);
+        $result = array();
+        foreach ($decisions->toArray() as $item) {
+            $decision = new Container($item);
+            $text = '' . $decision->get('decision_date') . ' : ' . $decision->get('decision_law');
+            $result[] = $text;
+        }
+        return $result;
+    }
+    
+    private function getUserSuspensionTickets(string $username, int $suspensionId) : array {
+        $tickets = $this->suspensionTicketDetails->getActiveByUsernameAndIdSuspension($username, $suspensionId);
+        $result = array();
+        foreach ($tickets->toArray() as $item) {
+            $ticket = new Container($item);
+            $text = '' . $ticket->get('ticket_date') . ' : ' . $ticket->get('ticket_number');
             $result[] = $text;
         }
         return $result;

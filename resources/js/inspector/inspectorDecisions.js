@@ -28,7 +28,7 @@ function initDecisionsTable(language, selectDocument){
         columns: [
             {title: language.date, variable: 'date', width: 70, minWidth: 70},
             {title: language.decision_law, variable: 'law', width: 100, minWidth: 100},
-            {title: language.description, variable: 'description', width: 200, minWidth: 200},
+            {title: language.description, variable: 'description', width: 600, minWidth: 600},
             {title: language.remarks, variable: 'remarks', width: 150, minWidth: 150}
         ],
         dataSource: datasource

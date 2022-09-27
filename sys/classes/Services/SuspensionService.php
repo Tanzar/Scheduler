@@ -16,11 +16,13 @@ use Data\Access\Tables\DocumentUserDAO as DocumentUserDAO;
 use Data\Access\Tables\SuspensionArticleDAO as SuspensionArticleDAO;
 use Data\Access\Tables\SuspensionDecisionDAO as SuspensionDecisionDAO;
 use Data\Access\Tables\SuspensionTicketDAO as SuspensionTicketDAO;
+use Data\Access\Tables\SuspensionTypeObjectDAO as SuspensionTypeObjectDAO;
 use Data\Access\Views\SuspensionDetailsView as SuspensionDetailsView;
 use Data\Access\Views\UsersWithoutPasswordsView as UsersWithoutPasswordsView;
 use Data\Access\Views\SuspensionArticleDetailsView as SuspensionArticleDetailsView;
 use Data\Access\Views\SuspensionDecisionDetailsView as SuspensionDecisionDetailsView;
 use Data\Access\Views\SuspensionTicketDetailsView as SuspensionTicketDetailsView;
+use Data\Access\Views\SuspensionTypeObjectDetailsView as SuspensionTypeObjectDetailsView;
 use Data\Exceptions\NotFoundException as NotFoundException;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
@@ -42,11 +44,13 @@ class SuspensionService {
     private SuspensionArticleDAO $suspensionArticle;
     private SuspensionDecisionDAO $suspensionDecision;
     private SuspensionTicketDAO $suspensionTicket;
+    private SuspensionTypeObjectDAO $suspensionTypeObject;
     private SuspensionDetailsView $suspensionDetails;
     private UsersWithoutPasswordsView $users;
     private SuspensionArticleDetailsView $suspensionArticleDetails;
     private SuspensionDecisionDetailsView $suspensionDecisionDetails;
     private SuspensionTicketDetailsView $suspensionTicketDetails;
+    private SuspensionTypeObjectDetailsView $suspensionTypeObjectDetails;
     
     public function __construct() {
         $this->suspensionGroup = new SuspensionGroupDAO();
@@ -59,11 +63,13 @@ class SuspensionService {
         $this->suspensionArticle = new SuspensionArticleDAO();
         $this->suspensionDecision = new SuspensionDecisionDAO();
         $this->suspensionTicket = new SuspensionTicketDAO();
+        $this->suspensionTypeObject = new SuspensionTypeObjectDAO();
         $this->suspensionDetails = new SuspensionDetailsView();
         $this->users = new UsersWithoutPasswordsView();
         $this->suspensionArticleDetails = new SuspensionArticleDetailsView();
         $this->suspensionDecisionDetails = new SuspensionDecisionDetailsView();
         $this->suspensionTicketDetails = new SuspensionTicketDetailsView();
+        $this->suspensionTypeObjectDetails = new SuspensionTypeObjectDetailsView();
     }
     
     public function getAllTypes() : Container {
@@ -94,6 +100,10 @@ class SuspensionService {
         return $this->suspensionObject->getAll();
     }
     
+    public function getObjectsByType(int $idType) : Container {
+        return $this->suspensionTypeObjectDetails->getActiveObjectsByType($idType);
+    }
+    
     public function getCurrentUserSuspensions(int $idDocument) : Container {
         $username = Session::getUsername();
         return $this->suspensionDetails->getActiveByUsernameAndIdDocument($username, $idDocument);
@@ -104,12 +114,14 @@ class SuspensionService {
         $types = $this->suspensionType->getActive();
         $objects = $this->suspensionObject->getActive();
         $reasons = $this->suspensionReason->getActive();
+        $typeObjectsRelations = $this->suspensionTypeObjectDetails->getActive();
         $document = $this->document->getById($idDocument);
         $result = new Container();
         $result->add($groups->toArray(), 'groups');
         $result->add($types->toArray(), 'types');
         $result->add($objects->toArray(), 'objects');
         $result->add($reasons->toArray(), 'reasons');
+        $result->add($typeObjectsRelations->toArray(), 'typeObjectRelations');
         $result->add($document->get('start'), 'start');
         $result->add($document->get('end'), 'end');
         return $result;
@@ -142,6 +154,10 @@ class SuspensionService {
         return $this->suspensionDecisionDetails->getActiveByUsernameAndIdSuspension($username, $idSuspension);
     }
     
+    public function getAllUserSuspensions(string $username, int $year) : Container {
+        return $this->suspensionDetails->getAllByUsernameAndYear($username, $year);
+    }
+    
     public function saveType(Container $data) : int{
         return $this->suspensionType->save($data);
     }
@@ -166,7 +182,6 @@ class SuspensionService {
         $suspension = $this->parseSuspension($data);
         return $this->suspension->save($suspension);
     }
-    
     
     private function getUserDocumentId(int $documentId, string $username) : int {
         $user = $this->users->getByUsername($username);
@@ -204,6 +219,42 @@ class SuspensionService {
         $suspension->add($data->get('id_document_user'), 'id_document_user');
         return $suspension;
     }
+    
+    public function saveTypeObjects(int $idType, Container $objectIds) : void {
+        $relations = $this->suspensionTypeObject->getByType($idType);
+        foreach ($objectIds->toArray() as $idObject){
+            foreach ($relations->toArray() as $index => $item){
+                $relation = new Container($item);
+                if((int) $relation->get('id_suspension_object') === (int) $idObject){
+                    $relations->remove($index);
+                }
+            }
+        }
+        foreach ($objectIds->toArray() as $idObject){
+            $this->saveTypeObject($idType, $idObject);
+        }
+        foreach ($relations->toArray() as $item){
+            $relation = new Container($item);
+            $id = (int) $relation->get('id');
+            $this->suspensionTypeObject->remove($id);
+        }
+        $k = 0;
+    }
+    
+    private function saveTypeObject(int $idType, int $idObject) : int {
+        $relation = $this->suspensionTypeObject->getByTypeAndObject($idType, $idObject);
+        if($relation->isEmpty()){
+            $data = new Container();
+            $data->add($idType, 'id_suspension_type');
+            $data->add($idObject, 'id_suspension_object');
+            $id = (int) $this->suspensionTypeObject->save($data);
+        }
+        else{
+            $id = (int) $relation->get('id');
+        }
+        return $id;
+    }
+    
     
     public function assignArticle(int $idSuspension, int $idArticle) : int {
         try{

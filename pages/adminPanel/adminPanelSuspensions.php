@@ -5,6 +5,7 @@
     require_once $_SERVER['DOCUMENT_ROOT'] . '/' . $projectName . '/vendor/autoload.php';
     
     use Tanweb\Security\PageAccess as PageAccess;
+    use Services\UserService as UserService;
     use Tanweb\Config\Resources as Resources;
     use Tanweb\Config\Scripts as Scripts;
     use Tanweb\Config\INI\AppConfig as AppConfig;
@@ -42,7 +43,7 @@ This code is free to use, just remember to give credit.
             Resources::linkJS('RestApi.js');
             Resources::linkJS('TabMenu.js');
             Resources::linkJS('getRestAddress.js');
-            Resources::linkJS('adminPanelSuspensionSettings.js');
+            Resources::linkJS('adminPanelSuspensions.js');
             Resources::linkExternal('jquery');
         ?>
     </head>
@@ -51,34 +52,29 @@ This code is free to use, just remember to give credit.
             <?php Scripts::run('topMenu.php'); ?>
         </header>
         <?php Scripts::run('adminPanelSideMenu.php'); ?>
-        <div class="page-contents" id="display">
-            <div class="horizontal-container">
-                <div style="padding-right: 5px">
-                    <div class="standard-text-title">
-                        <?php echo $interfaceText->get('suspension_group'); ?>
-                    </div>
-                    <div id="suspensionGroup"></div>
-                </div>
-                <div style="padding-right: 5px">
-                    <div class="standard-text-title">
-                        <?php echo $interfaceText->get('suspension_type'); ?>
-                    </div>
-                    <div id="suspensionType"></div>
-                </div>
-                <div style="padding-right: 5px">
-                    <div class="standard-text-title">
-                        <?php echo $interfaceText->get('suspension_object'); ?>
-                    </div>
-                    <div id="suspensionObject"></div>
-                </div>
-                <div style="padding-right: 5px">
-                    <div class="standard-text-title">
-                        <?php echo $interfaceText->get('suspension_reason'); ?>
-                    </div>
-                    <div id="suspensionReason"></div>
-                </div>
+        <div class="page-contents-centered" id="display">
+            <div class="standard-text-title">
+                <?php echo $interfaceText->get('suspensions'); ?>
             </div>
-            
+            <div class="horizontal-container">
+                <select id="selectUser" class="standard-input">
+                    <option disabled placeholder selected><?php echo $interfaceText->get('select_user'); ?></option>
+                    <?php 
+                        $userservice = new UserService();
+                        $users = $userservice->getAllUsers();
+                        foreach ($users->toArray() as $item){
+                            $user = new Container($item);
+                            echo '<option value="' . $user->get('username') . '">' .
+                                    $user->get('username') . ' : ' . $user->get('name') .
+                                    ' ' . $user->get('surname') . "</option>";
+                        }
+                    ?>
+                </select>
+                <?php 
+                    Scripts::run('selectYear.php');
+                ?>
+            </div>
+            <div id="suspensions"></div>
         </div>
         <?php
             Scripts::run('createFooter.php');

@@ -5,9 +5,9 @@
 function init(){
     RestApi.getInterfaceNamesPackage(function(language){
         var groupTable = initGroupTable(language);
-        initTypeTable(language, groupTable);
+        var objectTable = initObjectTable(language);
+        initTypeTable(language, groupTable, objectTable);
         initReasonTable(language);
-        initObjectTable(language);
     });
 }
 
@@ -32,7 +32,7 @@ function initGroupTable(language){
     var datatable = new Datatable(div, config);
     datatable.addActionButton(language.add, function(){
         var fields = [
-            {type: 'text', title: language.name, variable: 'name', limit: 255}
+            {type: 'text', title: language.name, variable: 'name', limit: 255, required: true}
         ];
         openModalBox(language.new_suspension_group, fields, language.save, function(data){
             RestApi.post('AdminPanelSuspension', 'saveSuspensionGroup', data,
@@ -51,7 +51,7 @@ function initGroupTable(language){
     datatable.addActionButton(language.edit, function(selected){
         if(selected !== undefined){
             var fields = [
-                {type: 'text', title: language.name, variable: 'name', limit: 255}
+                {type: 'text', title: language.name, variable: 'name', limit: 255, required: true}
             ];
             openModalBox(language.edit_suspension_group, fields, language.save, function(data){
                 RestApi.post('AdminPanelSuspension', 'saveSuspensionGroup', data,
@@ -92,7 +92,7 @@ function initGroupTable(language){
     return datatable;
 }
 
-function initTypeTable(language, groupTable){
+function initTypeTable(language, groupTable, objectTable){
     var div = document.getElementById('suspensionType');
     
     var config = {
@@ -136,6 +136,23 @@ function initTypeTable(language, groupTable){
             } 
         });
     });
+    datatable.setOnSelect(function(selected){
+        RestApi.post('AdminPanelSuspension', 'getRelatedObjects', { id_suspension_type: selected.id },
+            function(response){
+                var objects = JSON.parse(response);
+                var ids = [];
+                objects.forEach(item => {
+                    ids.push(item.id_suspension_object);
+                });
+                objectTable.selectRowsWhere('id', ids);
+            },
+            function(response){
+                console.log(response.responseText);
+        });
+    });
+    datatable.setOnUnselect(function(){
+        objectTable.clearSelection();
+    });
     datatable.addActionButton(language.add, function(){
         RestApi.post('AdminPanelSuspension', 'getActiveSuspensionGroups', {},
             function(response){
@@ -149,8 +166,8 @@ function initTypeTable(language, groupTable){
                     options.push(option);
                 });
                 var fields = [
-                    {type: 'text', title: language.name, variable: 'name', limit: 255},
-                    {type: 'select', title: language.select_suspension_group, variable: 'id_suspension_group', options: options}
+                    {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
+                    {type: 'select', title: language.select_suspension_group, variable: 'id_suspension_group', options: options, required: true}
                     
                 ];
                 openModalBox(language.new_suspension_type, fields, language.save, function(data){
@@ -182,8 +199,8 @@ function initTypeTable(language, groupTable){
                         options.push(option);
                     });
                     var fields = [
-                        {type: 'text', title: language.name, variable: 'name', limit: 255},
-                        {type: 'select', title: language.select_suspension_group, variable: 'id_suspension_group', options: options}
+                        {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
+                        {type: 'select', title: language.select_suspension_group, variable: 'id_suspension_group', options: options, required: true}
 
                     ];
                     openModalBox(language.new_suspension_type, fields, language.save, function(data){
@@ -223,6 +240,33 @@ function initTypeTable(language, groupTable){
             alert(language.select_suspension_type)
         }
     });
+    datatable.addActionButton(language.save_relations, function(selected){
+        if(selected !== undefined){
+            var data = {
+                id_suspension_type: selected.id,
+                objects_ids: []
+            }
+            var objects = objectTable.getSelected();
+            objects.forEach(item => {
+                data.objects_ids.push(item.id);
+            });
+            RestApi.post('AdminPanelSuspension', 'saveTypeObjectsRelations', data,
+                function(response){
+                    var data = JSON.parse(response);
+                    console.log(data);
+                    alert(data.message);
+                    datatable.refresh();
+                    objectTable.clearSelection();
+                },
+                function(response){
+                    console.log(response.responseText);
+                    alert(response.responseText);
+            });
+        }
+        else{
+            alert(language.select_suspension_type)
+        }
+    });
 }
 
 function initReasonTable(language){
@@ -247,7 +291,7 @@ function initReasonTable(language){
     var datatable = new Datatable(div, config);
     datatable.addActionButton(language.add, function(){
         var fields = [
-            {type: 'text', title: language.name, variable: 'name', limit: 255}
+            {type: 'text', title: language.name, variable: 'name', limit: 255, required: true}
         ];
         openModalBox(language.new_suspension_reason, fields, language.save, function(data){
             RestApi.post('AdminPanelSuspension', 'saveSuspensionReason', data,
@@ -266,7 +310,7 @@ function initReasonTable(language){
     datatable.addActionButton(language.edit, function(selected){
         if(selected !== undefined){
             var fields = [
-                {type: 'text', title: language.name, variable: 'name', limit: 255}
+                {type: 'text', title: language.name, variable: 'name', limit: 255, required: true}
             ];
             openModalBox(language.edit_suspension_reason, fields, language.save, function(data){
                 RestApi.post('AdminPanelSuspension', 'saveSuspensionReason', data,
@@ -326,9 +370,10 @@ function initObjectTable(language){
         }
     };
     var datatable = new Datatable(div, config);
+    datatable.enableSelectMultiple();
     datatable.addActionButton(language.add, function(){
         var fields = [
-            {type: 'text', title: language.name, variable: 'name', limit: 255}
+            {type: 'text', title: language.name, variable: 'name', limit: 255, required: true}
         ];
         openModalBox(language.new_suspension_object, fields, language.save, function(data){
             RestApi.post('AdminPanelSuspension', 'saveSuspensionObject', data,
@@ -345,9 +390,10 @@ function initObjectTable(language){
         });
     });
     datatable.addActionButton(language.edit, function(selected){
-        if(selected !== undefined){
+        if(selected !== undefined && selected.length === 1){
+            var item = selected[0];
             var fields = [
-                {type: 'text', title: language.name, variable: 'name', limit: 255}
+                {type: 'text', title: language.name, variable: 'name', limit: 255, required: true}
             ];
             openModalBox(language.edit_suspension_object, fields, language.save, function(data){
                 RestApi.post('AdminPanelSuspension', 'saveSuspensionObject', data,
@@ -361,15 +407,16 @@ function initObjectTable(language){
                         console.log(response.responseText);
                         alert(response.responseText);
                     });
-            }, selected);
+            }, item);
         }
         else{
             alert(language.select_suspension_object);
         }
     });
     datatable.addActionButton(language.change_status, function(selected){
-        if(selected !== undefined){
-            RestApi.post('AdminPanelSuspension', 'changeSuspensionObjectStatus', selected,
+        if(selected !== undefined && selected.length === 1){
+            var item = selected[0];
+            RestApi.post('AdminPanelSuspension', 'changeSuspensionObjectStatus', item,
                 function(response){
                     var data = JSON.parse(response);
                     console.log(data);
@@ -385,4 +432,5 @@ function initObjectTable(language){
             alert(language.select_suspension_object);
         }
     });
+    return datatable;
 }

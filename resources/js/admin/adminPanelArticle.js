@@ -99,9 +99,9 @@ function articleFormsTable(language){
     var datatable = new Datatable(div, config);
     datatable.addActionButton(language.add, function(){
         var fields = [
-            {type: 'text', title: language.name, variable: 'name', limit: 255},
-            {type: 'text', title: language.short, variable: 'short', limit: 100},
-            {type: 'text', title: language.symbol, variable: 'symbol', limit: 5},
+            {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
+            {type: 'text', title: language.short, variable: 'short', limit: 100, required: true},
+            {type: 'text', title: language.symbol, variable: 'symbol', limit: 5, required: true},
             {type: 'checkbox', title: language.require_application_info, variable: 'require_application_info'}
         ];
         openModalBox(language.new_art_41_form, fields, language.save, function(data){
@@ -124,9 +124,9 @@ function articleFormsTable(language){
         }
         else{
             var fields = [
-                {type: 'text', title: language.name, variable: 'name', limit: 255},
-                {type: 'text', title: language.short, variable: 'short', limit: 100},
-                {type: 'text', title: language.symbol, variable: 'symbol', limit: 5},
+                {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
+                {type: 'text', title: language.short, variable: 'short', limit: 100, required: true},
+                {type: 'text', title: language.symbol, variable: 'symbol', limit: 5, required: true},
                 {type: 'checkbox', title: language.require_application_info, variable: 'require_application_info'}
             ];
             openModalBox(language.edit_art_41_form, fields, language.save, function(data){

@@ -42,11 +42,11 @@ function AdminPanelUsers(){
         });
         usersTable.addActionButton(language.add, function(){
             var fields = [
-                {type: 'text', title: language.username, variable: 'username', limit: 10},
-                {type: 'text', title: language.name_person, variable: 'name', limit: 25},
-                {type: 'text', title: language.surname, variable: 'surname', limit: 25},
-                {type: 'text', title: language.short, variable: 'short', limit: 5},
-                {type: 'text', title: language.password, variable: 'password', limit: 40}
+                {type: 'text', title: language.username, variable: 'username', limit: 10, required: true},
+                {type: 'text', title: language.name_person, variable: 'name', limit: 25, required: true},
+                {type: 'text', title: language.surname, variable: 'surname', limit: 25, required: true},
+                {type: 'text', title: language.short, variable: 'short', limit: 5, required: true},
+                {type: 'text', title: language.password, variable: 'password', limit: 40, required: true}
             ];
             openModalBox(language.new_user, fields, language.save, function(data){
                 RestApi.post('AdminPanelUsers', 'saveUser', data,
@@ -67,10 +67,10 @@ function AdminPanelUsers(){
         usersTable.addActionButton(language.edit, function(selected){
             if(selected !== undefined){
                 var fields = [
-                    {type: 'text', title: language.username, variable: 'username', limit: 10},
-                    {type: 'text', title: language.name_person, variable: 'name', limit: 25},
-                    {type: 'text', title: language.surname, variable: 'surname', limit: 25},
-                    {type: 'text', title: language.short, variable: 'short', limit: 5}
+                    {type: 'text', title: language.username, variable: 'username', limit: 10, required: true},
+                    {type: 'text', title: language.name_person, variable: 'name', limit: 25, required: true},
+                    {type: 'text', title: language.surname, variable: 'surname', limit: 25, required: true},
+                    {type: 'text', title: language.short, variable: 'short', limit: 5, required: true}
                 ];
                 openModalBox(language.edit_user, fields, language.save, function(data){
                     RestApi.post('AdminPanelUsers', 'saveUser', data,
@@ -225,7 +225,7 @@ function PrivilagesTable(language, div){
                     options.push(option);
                 });
                 var fields = [
-                    {type: 'select', title: language.privilage, variable: 'privilage', options: options}
+                    {type: 'select', title: language.privilage, variable: 'privilage', options: options, required: true}
                 ];
                 openModalBox(language.add_privilage, fields, language.save, function(data){
                     if(data.privilage !== undefined){
@@ -321,11 +321,11 @@ function EmploymentsTable(language, div){
     this.datatable.addActionButton(language.add, function(){
         if(table.idUser !== 0){
             var fields = [
-                {type: 'text', title: language.position, variable: 'position', limit: 255},
-                {type: 'text', title: language.user_type, variable: 'user_type', limit: 6},
+                {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
+                {type: 'text', title: language.user_type, variable: 'user_type', limit: 6, required: true},
                 {type: 'date', title: language.start_date, variable: 'start'},
                 {type: 'date', title: language.end_date, variable: 'end'},
-                {type: 'number', title: language.sort_priority, variable: 'sort_priority', value: 10, min: 1},
+                {type: 'number', title: language.sort_priority, variable: 'sort_priority', value: 10, min: 1, required: true},
                 {type: 'time', title: language.standard_day_start, variable: 'standard_day_start'},
                 {type: 'time', title: language.standard_day_end, variable: 'standard_day_end'},
                 {type: 'checkbox', title: language.leadership, variable: 'leadership'},
@@ -353,11 +353,11 @@ function EmploymentsTable(language, div){
     this.datatable.addActionButton(language.edit, function(selected){
         if(selected !== undefined){
             var fields = [
-                {type: 'text', title: language.position, variable: 'position', limit: 255},
-                {type: 'text', title: language.user_type, variable: 'user_type', limit: 6},
+                {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
+                {type: 'text', title: language.user_type, variable: 'user_type', limit: 6, required: true},
                 {type: 'date', title: language.start_date, variable: 'start'},
                 {type: 'date', title: language.end_date, variable: 'end'},
-                {type: 'number', title: language.sort_priority, variable: 'sort_priority', value: 10, min: 1},
+                {type: 'number', title: language.sort_priority, variable: 'sort_priority', value: 10, min: 1, required: true},
                 {type: 'time', title: language.standard_day_start, variable: 'standard_day_start'},
                 {type: 'time', title: language.standard_day_end, variable: 'standard_day_end'},
                 {type: 'checkbox', title: language.leadership, variable: 'leadership'},

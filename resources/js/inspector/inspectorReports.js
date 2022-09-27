@@ -148,4 +148,27 @@ function formatReport(data, language){
     });
     document.getElementById('decisions').innerHTML = contents;
     showHideButton('showHideDecisions', 'decisionsRow', language);
+    
+    contents = '<ul class="standard-list">';
+    data.suspensions.forEach(item => {
+        contents += '<li class="standard-list-item">' + item.text + '<br>';
+        contents += language.art_41 + '<ul class="standard-list">';
+        item.articles.forEach(article => {
+            contents += '<li class="standard-list-item">' + article + '</li>';
+        })
+        contents += '</ul>';
+        contents += language.decision + '<ul class="standard-list">';
+        item.decisions.forEach(decision => {
+            contents += '<li class="standard-list-item">' + decision + '</li>';
+        })
+        contents += '</ul>';
+        contents += language.ticket + '<ul class="standard-list">';
+        item.tickets.forEach(ticket => {
+            contents += '<li class="standard-list-item">' + ticket + '</li>';
+        })
+        contents += '</ul>';
+    });
+    contents += '</ul>'
+    document.getElementById('suspensions').innerHTML = contents;
+    showHideButton('showHideSuspensions', 'suspensionsRow', language);
 }

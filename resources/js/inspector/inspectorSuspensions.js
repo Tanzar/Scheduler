@@ -135,16 +135,6 @@ function SuspensionsTable(language, selectDocument){
                     {type: 'select', title: language.select_suspension_group, variable: 'id_suspension_group', options: groups, required: true}
                 ];
                 openModalBox(language.new_suspension, fields, language.next, function(data){
-                    data.id_document = idDocument;
-                    var date = new Date();
-                    var start = new Date(details.start);
-                    var end = new Date(details.end);
-                    if(date < start){
-                        date = start;
-                    }
-                    if(date > end){
-                        date = end;
-                    }
                     var types = [];
                     details.types.forEach(item => {
                         if(parseInt(item.id_suspension_group) === parseInt(data.id_suspension_group)){
@@ -155,48 +145,64 @@ function SuspensionsTable(language, selectDocument){
                             types.push(type);
                         }
                     });
-                    var objects = [];
-                    details.objects.forEach(item => {
-                        var type = {
-                            value: item.id,
-                            title: item.name
-                        }
-                        objects.push(type);
-                    });
-                    var reasons = [];
-                    details.reasons.forEach(item => {
-                        var reason = {
-                            value: item.id,
-                            title: item.name
-                        }
-                        reasons.push(reason);
-                    });
                     var fields = [
-                        {type: 'date', title: language.suspension_date, variable: 'date', min: details.start, max: details.end, value: date.toDateString()},
-                        {type: 'select', title: language.select_suspension_type, variable: 'id_suspension_type', options: types, required: true},
-                        {type: 'select', title: language.select_suspension_object, variable: 'id_suspension_object', options: objects, required: true},
-                        {type: 'select', title: language.select_suspension_reason, variable: 'id_suspension_reason', options: reasons, required: true},
-                        {type: 'text', title: language.shift, variable: 'shift', limit: 5, required: true},
-                        {type: 'textarea', title: language.region, variable: 'region', limit: 255, width: 30, height: 3, required: true},
-                        {type: 'textarea', title: language.description, variable: 'description', width: 30, height: 3},
-                        {type: 'date', title: language.correction_date, variable: 'correction_date', min: details.start, value: date.toDateString()},
-                        {type: 'text', title: language.correction_shift, variable: 'correction_shift', limit: 5, required: true},
-                        {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 3},
-                        {type: 'checkbox', title: language.external_company, variable: 'external_company'},
-                        {type: 'text', title: language.company_name, variable: 'company_name', limit: 255}
+                        {type: 'select', title: language.select_suspension_type, variable: 'id_suspension_type', options: types, required: true}
                     ];
-                    openModalBox(language.new_suspension, fields, language.save, function(data){
-                        RestApi.post('InspectorSuspensions', 'saveSuspension', data,
-                            function(response){
-                                var data = JSON.parse(response);
-                                console.log(data);
-                                alert(data.message);
-                                datatable.refresh();
-                            },
-                            function(response){
-                                console.log(response.responseText);
-                                alert(response.responseText);
-                            });
+                    openModalBox(language.new_suspension, fields, language.next, function(data){
+                        data.id_document = idDocument;
+                        var date = new Date();
+                        var start = new Date(details.start);
+                        var end = new Date(details.end);
+                        if(date < start){
+                            date = start;
+                        }
+                        if(date > end){
+                            date = end;
+                        }
+                        var objects = [];
+                        details.typeObjectRelations.forEach(item => {
+                            var type = {
+                                value: item.id_suspension_object,
+                                title: item.suspension_object
+                            }
+                            if(parseInt(item.id_suspension_type) === parseInt(data.id_suspension_type)){
+                                objects.push(type);
+                            }
+                        });
+                        var reasons = [];
+                        details.reasons.forEach(item => {
+                            var reason = {
+                                value: item.id,
+                                title: item.name
+                            }
+                            reasons.push(reason);
+                        });
+                        var fields = [
+                            {type: 'date', title: language.suspension_date, variable: 'date', min: details.start, max: details.end, value: date.toDateString()},
+                            {type: 'select', title: language.select_suspension_object, variable: 'id_suspension_object', options: objects, required: true},
+                            {type: 'select', title: language.select_suspension_reason, variable: 'id_suspension_reason', options: reasons, required: true},
+                            {type: 'text', title: language.shift, variable: 'shift', limit: 5, required: true},
+                            {type: 'textarea', title: language.region, variable: 'region', limit: 255, width: 30, height: 3, required: true},
+                            {type: 'textarea', title: language.description, variable: 'description', width: 30, height: 3},
+                            {type: 'date', title: language.correction_date, variable: 'correction_date', min: details.start, value: date.toDateString()},
+                            {type: 'text', title: language.correction_shift, variable: 'correction_shift', limit: 5, required: true},
+                            {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 3},
+                            {type: 'checkbox', title: language.external_company, variable: 'external_company'},
+                            {type: 'text', title: language.company_name, variable: 'company_name', limit: 255}
+                        ];
+                        openModalBox(language.new_suspension, fields, language.save, function(data){
+                            RestApi.post('InspectorSuspensions', 'saveSuspension', data,
+                                function(response){
+                                    var data = JSON.parse(response);
+                                    console.log(data);
+                                    alert(data.message);
+                                    datatable.refresh();
+                                },
+                                function(response){
+                                    console.log(response.responseText);
+                                    alert(response.responseText);
+                                });
+                        }, data);
                     }, data);
                 });
             });
@@ -250,48 +256,64 @@ function SuspensionsTable(language, selectDocument){
                             types.push(type);
                         }
                     });
-                    var objects = [];
-                    details.objects.forEach(item => {
-                        var type = {
-                            value: item.id,
-                            title: item.name
-                        }
-                        objects.push(type);
-                    });
-                    var reasons = [];
-                    details.reasons.forEach(item => {
-                        var reason = {
-                            value: item.id,
-                            title: item.name
-                        }
-                        reasons.push(reason);
-                    });
                     var fields = [
-                        {type: 'date', title: language.suspension_date, variable: 'date', min: details.start, max: details.end, value: date.toDateString()},
-                        {type: 'select', title: language.select_suspension_type, variable: 'id_suspension_type', options: types, required: true},
-                        {type: 'select', title: language.select_suspension_object, variable: 'id_suspension_object', options: objects, required: true},
-                        {type: 'select', title: language.select_suspension_reason, variable: 'id_suspension_reason', options: reasons, required: true},
-                        {type: 'text', title: language.shift, variable: 'shift', limit: 5, required: true},
-                        {type: 'textarea', title: language.region, variable: 'region', limit: 255, width: 30, height: 3, required: true},
-                        {type: 'textarea', title: language.description, variable: 'description', width: 30, height: 3},
-                        {type: 'date', title: language.correction_date, variable: 'correction_date', min: details.start, value: date.toDateString()},
-                        {type: 'text', title: language.correction_shift, variable: 'correction_shift', limit: 5, required: true},
-                        {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 3},
-                        {type: 'checkbox', title: language.external_company, variable: 'external_company'},
-                        {type: 'text', title: language.company_name, variable: 'company_name', limit: 255}
+                        {type: 'select', title: language.select_suspension_type, variable: 'id_suspension_type', options: types, required: true}
                     ];
-                    openModalBox(language.new_suspension, fields, language.save, function(data){
-                        RestApi.post('InspectorSuspensions', 'saveSuspension', data,
-                            function(response){
-                                var data = JSON.parse(response);
-                                console.log(data);
-                                alert(data.message);
-                                datatable.refresh();
-                            },
-                            function(response){
-                                console.log(response.responseText);
-                                alert(response.responseText);
-                            });
+                    openModalBox(language.new_suspension, fields, language.next, function(data){
+                        data.id_document = idDocument;
+                        var date = new Date();
+                        var start = new Date(details.start);
+                        var end = new Date(details.end);
+                        if(date < start){
+                            date = start;
+                        }
+                        if(date > end){
+                            date = end;
+                        }
+                        var objects = [];
+                        details.typeObjectRelations.forEach(item => {
+                            var type = {
+                                value: item.id_suspension_object,
+                                title: item.suspension_object
+                            }
+                            if(parseInt(item.id_suspension_type) === parseInt(data.id_suspension_type)){
+                                objects.push(type);
+                            }
+                        });
+                        var reasons = [];
+                        details.reasons.forEach(item => {
+                            var reason = {
+                                value: item.id,
+                                title: item.name
+                            }
+                            reasons.push(reason);
+                        });
+                        var fields = [
+                            {type: 'date', title: language.suspension_date, variable: 'date', min: details.start, max: details.end, value: date.toDateString()},
+                            {type: 'select', title: language.select_suspension_object, variable: 'id_suspension_object', options: objects, required: true},
+                            {type: 'select', title: language.select_suspension_reason, variable: 'id_suspension_reason', options: reasons, required: true},
+                            {type: 'text', title: language.shift, variable: 'shift', limit: 5, required: true},
+                            {type: 'textarea', title: language.region, variable: 'region', limit: 255, width: 30, height: 3, required: true},
+                            {type: 'textarea', title: language.description, variable: 'description', width: 30, height: 3},
+                            {type: 'date', title: language.correction_date, variable: 'correction_date', min: details.start, value: date.toDateString()},
+                            {type: 'text', title: language.correction_shift, variable: 'correction_shift', limit: 5, required: true},
+                            {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 3},
+                            {type: 'checkbox', title: language.external_company, variable: 'external_company'},
+                            {type: 'text', title: language.company_name, variable: 'company_name', limit: 255}
+                        ];
+                        openModalBox(language.new_suspension, fields, language.save, function(data){
+                            RestApi.post('InspectorSuspensions', 'saveSuspension', data,
+                                function(response){
+                                    var data = JSON.parse(response);
+                                    console.log(data);
+                                    alert(data.message);
+                                    datatable.refresh();
+                                },
+                                function(response){
+                                    console.log(response.responseText);
+                                    alert(response.responseText);
+                                });
+                        }, data);
                     }, data);
                 }, selected);
             });
@@ -452,8 +474,12 @@ function openDecisionModal(language, suspension, documentId){
         var data = JSON.parse(response);
         var decisions = [];
         data.forEach(item => {
+            var description = item.description;
+            if(description.length > 25){
+                description = description.slice(0, 25) + '...';
+            }
             var decision = {
-                title: item.date + ' ' + item.description,
+                title: item.date + ' ' + description,
                 value: item.id
             }
             decisions.push(decision);

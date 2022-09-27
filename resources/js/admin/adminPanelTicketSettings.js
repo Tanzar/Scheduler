@@ -33,8 +33,8 @@ function initTicketLawTable(language){
     var datatable = new Datatable(div, config);
     datatable.addActionButton(language.add, function(){
         var fields = [
-            {type: 'text', title: language.name, variable: 'name', limit: 255},
-            {type: 'text', title: language.short, variable: 'short', limit: 10}
+            {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
+            {type: 'text', title: language.short, variable: 'short', limit: 10, required: true}
         ];
         openModalBox(language.new_ticket_law, fields, language.save, function(data){
             RestApi.post('AdminPanelTicket', 'saveTicketLaw', data,
@@ -56,8 +56,8 @@ function initTicketLawTable(language){
         }
         else{
             var fields = [
-                {type: 'text', title: language.name, variable: 'name', limit: 255},
-                {type: 'text', title: language.short, variable: 'short', limit: 10}
+                {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
+                {type: 'text', title: language.short, variable: 'short', limit: 10, required: true}
             ];
             openModalBox(language.edit_ticket_law, fields, language.save, function(data){
                 RestApi.post('AdminPanelTicket', 'saveTicketLaw', data,
@@ -118,8 +118,8 @@ function initPositionGroupTable(language){
     var datatable = new Datatable(div, config);
     datatable.addActionButton(language.add, function(){
         var fields = [
-            {type: 'text', title: language.name, variable: 'name', limit: 255},
-            {type: 'text', title: language.short, variable: 'short', limit: 5}
+            {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
+            {type: 'text', title: language.short, variable: 'short', limit: 5, required: true}
         ];
         openModalBox(language.new_ticket_law, fields, language.save, function(data){
             RestApi.post('AdminPanelTicket', 'savePositionGroup', data,
@@ -141,8 +141,8 @@ function initPositionGroupTable(language){
         }
         else{
             var fields = [
-                {type: 'text', title: language.name, variable: 'name', limit: 255},
-                {type: 'text', title: language.short, variable: 'short', limit: 5}
+                {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
+                {type: 'text', title: language.short, variable: 'short', limit: 5, required: true}
             ];
             openModalBox(language.edit_ticket_law, fields, language.save, function(data){
                 RestApi.post('AdminPanelTicket', 'savePositionGroup', data,

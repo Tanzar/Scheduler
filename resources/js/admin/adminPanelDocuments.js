@@ -10,7 +10,7 @@ function AdminPanelDocuments(){
         documents.addActionButton(language.edit, function(selected){
             if(selected !== undefined){
                 var fields = [
-                    {type: 'text', title: language.document_number, variable: 'number', limit: 255},
+                    {type: 'text', title: language.document_number, variable: 'number', limit: 255, required: true},
                     {type: 'date', title: language.start, variable: 'start'},
                     {type: 'date', title: language.end, variable: 'end'},
                     {type: 'text', title: language.description, variable: 'description', limit: 255}
