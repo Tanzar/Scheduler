@@ -29,6 +29,21 @@ class ArticleDetailsView extends View{
         return 'article_details';
     }
     
+    public function getById(int $id) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('article_details')->where('id', $id);
+        $articles = $this->select($sql);
+        if($articles->length() > 1){
+            $this->throwIdColumnException('document');
+        }
+        if($articles->isEmpty()){
+            return new Container();
+        }
+        else{
+            return new Container($articles->get(0));
+        }
+    }
+    
     public function getAllUserArticlesByDocumentId(string $username, int $documentId) : Container{
         $sql = new MysqlBuilder();
         $sql->select('article_details')->where('id_document', $documentId)

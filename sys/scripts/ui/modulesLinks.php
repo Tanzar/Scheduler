@@ -16,7 +16,7 @@ use Tanweb\Session as Session;
 try{
     $languages = Languages::getInstance();
     $modules = new Container($languages->get('modules'));
-    $security = new Security();
+    $security = Security::getInstance();
     
     //--- INDEX ---//
     echo '<form action="' . Server::getIndexPath() . '">';

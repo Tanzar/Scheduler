@@ -48,6 +48,10 @@ class ArticleService {
         return $this->articleForm->getActive();
     }
     
+    public function getById(int $id) : Container {
+        return $this->articleDetails->getById($id);
+    }
+    
     public function getCurrentUserActiveArticlesByDocument(int $documentId) : Container {
         $username = Session::getUsername();
         return $this->articleDetails->getUserActiveArticlesByDocumentId($username, $documentId);

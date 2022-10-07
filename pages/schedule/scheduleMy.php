@@ -21,7 +21,7 @@
     $languages = Languages::getInstance();
     $names = $languages->get('interface');
     $interface = new Container($names);
-    $security = new Security();
+    $security = Security::getInstance();
     $username = Session::getUsername();
     $userservice = new UserService();
     $period = $userservice->getUserCurrentEmploymentPeriod($username);

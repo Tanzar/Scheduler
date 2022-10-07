@@ -21,7 +21,7 @@
     $languages = Languages::getInstance();
     $names = $languages->get('interface');
     $interface = new Container($names);
-    $security = new Security();
+    $security = Security::getInstance();
     $userservice = new UserService();
     
 ?>

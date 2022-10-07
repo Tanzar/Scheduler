@@ -34,6 +34,10 @@ class DecisionService {
         $this->documentUserDetails = new DocumentUserDetailsView();
     }
     
+    public function getById(int $id) : Container {
+        return $this->decisionDetails->getById($id);
+    }
+    
     public function getAllDecisionLaws() : Container {
         return $this->decisionLaw->getAll();
     }

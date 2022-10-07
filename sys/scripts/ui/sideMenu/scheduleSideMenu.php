@@ -19,7 +19,7 @@
         <input type="submit" class="side-menu-button" value="<?php  echo $options->get('my'); ?>">
     </form>
     <?php
-        $security = new Security();
+        $security = Security::getInstance();
         $privilages = new Container(['admin', 'schedule_admin']);
         if($security->userHaveAnyPrivilage($privilages)){;
             echo '<form action="' . Pages::getURL('scheduleAdmin.php') . '">';

@@ -73,7 +73,7 @@ abstract class Controller {
     public function __construct(Container $privilages = null) {
         $this->databases = new Container();
         $this->response = new Response();
-        $this->security = new Security();
+        $this->security = Security::getInstance();;
         if(isset($privilages)){
             $this->requiredPrivilages = $privilages;
         }

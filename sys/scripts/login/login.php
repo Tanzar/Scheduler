@@ -18,7 +18,7 @@ echo '<script>';
 try{
     $request = new Request(false);
     $username = $request->get('username');
-    $security = new Security();
+    $security = Security::getInstance();
     
     if($security->isUsingPasswords()){
         $password = $request->get('password');

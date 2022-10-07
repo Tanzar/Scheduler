@@ -49,6 +49,10 @@ class TicketService {
         return $this->ticketDetails->getUserActiveTicketsByDocumentId($username, $documentId);
     }
     
+    public function getById(int $id) : Container {
+        return $this->ticketDetails->getById($id);
+    }
+    
     public function getAllTicketLaws() : Container {
         return $this->ticketLaw->getAll();
     }

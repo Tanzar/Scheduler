@@ -17,7 +17,7 @@ use Tanweb\Security\Security as Security;
 echo '<script>';
 
 try{
-    $security = new Security();
+    $security = Security::getInstance();
     $security->logout();
 }
 catch (Exception $ex){

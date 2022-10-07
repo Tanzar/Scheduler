@@ -10,9 +10,9 @@ use Controllers\Base\Controller as Controller;
 use Services\ScheduleService as ScheduleService;
 use Services\LocationService as LocationService;
 use Services\DocumentService as DocumentService;
+use Custom\Blockers\ScheduleBlocker as ScheduleBlocker;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
-use DateTime;
 
 /**
  * Description of ScheduleUser
@@ -82,18 +82,16 @@ class ScheduleUser extends Controller{
     public function saveEntry(){
         $languages = Languages::getInstance();
         $data = $this->getRequestData();
-        $startDate = $data->get('start');
-        if($this->isUserAllowedToChange($startDate)){
+        $blocker = new ScheduleBlocker();
+        if($blocker->isBLocked($data)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+        else{
             $id = $this->schedule->saveEntryForCurrentUser($data);
             $response = new Container();
             $response->add($languages->get('changes_saved'), 'message');
             $response->add($id, 'id');
             $this->setResponse($response);
-        }
-        else{
-            $limit = $this->getConfigValue('scheduleDaysLimit');
-            $this->throwException($languages->get('cannot_change_older') . 
-                    $limit . ' ' . $languages->get('days') . '.');
         }
     }
     
@@ -114,36 +112,16 @@ class ScheduleUser extends Controller{
         $data = $this->getRequestData();
         $id = $data->get('id');
         $entry = $this->schedule->getEntryByID($id);
-        if($this->isUserAllowedToChange($entry->get('start'))){
+        $blocker = new ScheduleBlocker();
+        if($blocker->isBLocked($entry)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+        else{
             $this->schedule->disableEntry($id);
             $response = new Container();
             $response->add($languages->get('data_removed'), 'message');
             $response->add($id, 'id');
             $this->setResponse($response);
-        }
-        else{
-            $limit = $this->getConfigValue('scheduleDaysLimit');
-            $this->throwException($languages->get('cannot_change_older') . 
-                    $limit . ' ' . $languages->get('days') . '.');
-        }
-    }
-    
-    private function isUserAllowedToChange(string $startDate) : bool {
-        $daysLimit = $this->getConfigValue('scheduleDaysLimit');
-        $start = new DateTime($startDate);
-        $limitDay = new DateTime();
-        $limitDay->modify('-' . $daysLimit . ' day');
-        if($limitDay >= $start){
-            if($this->currentUserHavePrivilage('admin') || 
-                    $this->currentUserHavePrivilage('schedule_admin')){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        else{
-            return true;
         }
     }
 }

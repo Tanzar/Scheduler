@@ -33,7 +33,7 @@ class PageAccess {
             $address = Server::getRequestUrl();
             $logger = Logger::getInstance();
             $logger->logAccess($address);
-            $security = new Security();
+            $security = Security::getInstance();
             $container = new Container($privilages);
             $granted = $security->userHaveAnyPrivilage($container);
             if(!$granted){

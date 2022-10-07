@@ -9,7 +9,6 @@ namespace Controllers;
 use Controllers\Base\Controller as Controller;
 use Tanweb\Container as Container;
 use Services\DocumentService as DocumentService;
-use Tanweb\Config\INI\Languages as Languages;
 
 /**
  * Description of InspectorMyDocuments

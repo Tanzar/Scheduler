@@ -14,6 +14,7 @@ use Services\ArticleService as ArticleService;
 use Services\TicketService as TicketService;
 use Services\DecisionService as DecisionService;
 use Tanweb\Config\INI\Languages as Languages;
+use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 
 /**
  * Description of InspectorSuspensions
@@ -105,10 +106,13 @@ class InspectorSuspensions extends Controller{
         $data = $this->getRequestData();
         $idSuspension = (int) $data->get('id_suspension');
         $idArticle = (int) $data->get('id_art_41');
+        $languages = Languages::getInstance();
+        if($this->isArticleBlocked($idArticle)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
         $id = $this->suspensionService->assignArticle($idSuspension, $idArticle);
         $response = new Container();
         $response->add($id, 'id');
-        $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
@@ -117,9 +121,12 @@ class InspectorSuspensions extends Controller{
         $data = $this->getRequestData();
         $idSuspension = (int) $data->get('id_suspension');
         $idArticle = (int) $data->get('id_art_41');
+        $languages = Languages::getInstance();
+        if($this->isArticleBlocked($idArticle)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
         $this->suspensionService->unassignArticle($idSuspension, $idArticle);
         $response = new Container();
-        $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
@@ -128,10 +135,13 @@ class InspectorSuspensions extends Controller{
         $data = $this->getRequestData();
         $idSuspension = (int) $data->get('id_suspension');
         $idTicket = (int) $data->get('id_ticket');
+        $languages = Languages::getInstance();
+        if($this->isTicketBlocked($idTicket)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
         $id = $this->suspensionService->assignTicket($idSuspension, $idTicket);
         $response = new Container();
         $response->add($id, 'id');
-        $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
@@ -140,9 +150,12 @@ class InspectorSuspensions extends Controller{
         $data = $this->getRequestData();
         $idSuspension = (int) $data->get('id_suspension');
         $idTicket = (int) $data->get('id_ticket');
+        $languages = Languages::getInstance();
+        if($this->isArticleBlocked($idTicket)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
         $this->suspensionService->unassignTicket($idSuspension, $idTicket);
         $response = new Container();
-        $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
@@ -151,10 +164,13 @@ class InspectorSuspensions extends Controller{
         $data = $this->getRequestData();
         $idSuspension = (int) $data->get('id_suspension');
         $idDecision = (int) $data->get('id_decision');
+        $languages = Languages::getInstance();
+        if($this->isDecisionBlocked($idDecision)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
         $id = $this->suspensionService->assignDecision($idSuspension, $idDecision);
         $response = new Container();
         $response->add($id, 'id');
-        $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
@@ -163,19 +179,28 @@ class InspectorSuspensions extends Controller{
         $data = $this->getRequestData();
         $idSuspension = (int) $data->get('id_suspension');
         $idDecision = (int) $data->get('id_decision');
+        $languages = Languages::getInstance();
+        if($this->isDecisionBlocked($idDecision)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
         $this->suspensionService->unassignDecision($idSuspension, $idDecision);
         $response = new Container();
-        $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
     
     public function saveSuspension() {
         $data = $this->getRequestData();
-        $id = $this->suspensionService->saveSuspensionForCurrentUser($data);
+        $languages = Languages::getInstance();
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+        else{
+            $id = $this->suspensionService->saveSuspensionForCurrentUser($data);
+        }
         $response = new Container();
         $response->add($id, 'id');
-        $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
@@ -183,10 +208,49 @@ class InspectorSuspensions extends Controller{
     public function removeSuspension() {
         $data = $this->getRequestData();
         $id = (int) $data->get('id');
-        $this->suspensionService->disableSuspesnion($id);
-        $response = new Container();
         $languages = Languages::getInstance();
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+        else{
+            $this->suspensionService->disableSuspesnion($id);
+        }
+        $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
+    }
+    
+    private function isArticleBlocked(int $id) : bool {
+        $blocker = new InspectorDateBlocker();
+        $art = $this->articleSerivce->getById($id);
+        if($blocker->isBLocked($art)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    private function isTicketBlocked(int $id) : bool {
+        $blocker = new InspectorDateBlocker();
+        $ticket = $this->ticketService->getById($id);
+        if($blocker->isBLocked($ticket)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    private function isDecisionBlocked(int $id) : bool {
+        $blocker = new InspectorDateBlocker();
+        $decision = $this->decisionService->getById($id);
+        if($blocker->isBLocked($decision)){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

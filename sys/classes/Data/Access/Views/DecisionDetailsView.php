@@ -29,6 +29,21 @@ class DecisionDetailsView extends View{
         return 'decision_details';
     }
     
+    public function getById(int $id) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('decision_details')->where('id', $id);
+        $decisions = $this->select($sql);
+        if($decisions->length() > 1){
+            $this->throwIdColumnException('document');
+        }
+        if($decisions->isEmpty()){
+            return new Container();
+        }
+        else{
+            return new Container($decisions->get(0));
+        }
+    }
+    
     public function getAllByUsernameAndYear(string $username, int $year) : Container {
         $sql = new MysqlBuilder();
         $sql->select('decision_details')->where('username', $username)

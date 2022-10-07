@@ -10,7 +10,6 @@ use Controllers\Base\Controller as Controller;
 use Services\LocationService as LocationService;
 use Tanweb\Config\INI\Languages as Languages;
 use Tanweb\Container as Container;
-use Tanweb\Utility as Utility;
 
 /**
  * Description of AdminPanelLocations

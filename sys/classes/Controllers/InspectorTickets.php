@@ -11,6 +11,7 @@ use Tanweb\Container as Container;
 use Services\TicketService as TicketService;
 use Services\DocumentService as DocumentService;
 use Tanweb\Config\INI\Languages as Languages;
+use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 
 /**
  * Description of InspectorTickets
@@ -52,20 +53,32 @@ class InspectorTickets extends Controller{
     
     public function saveNewTicket() {
         $data = $this->getRequestData();
-        $id = $this->ticketService->saveTicketForCurrentUser($data);
+        $languages = Languages::getInstance();
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+        else{
+            $id = $this->ticketService->saveTicketForCurrentUser($data);
+        }
         $response = new Container();
         $response->add($id, 'id');
-        $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
     
     public function updateTicket() {
         $data = $this->getRequestData();
-        $id = $this->ticketService->updateTicket($data);
+        $languages = Languages::getInstance();
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+        else{
+            $id = $this->ticketService->updateTicket($data);
+        }
         $response = new Container();
         $response->add($id, 'id');
-        $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
@@ -73,9 +86,15 @@ class InspectorTickets extends Controller{
     public function removeTicket() {
         $data = $this->getRequestData();
         $id = (int) $data->get('id');
-        $this->ticketService->disableTicket($id);
-        $response = new Container();
         $languages = Languages::getInstance();
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+        else{
+            $this->ticketService->disableTicket($id);
+        }
+        $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }

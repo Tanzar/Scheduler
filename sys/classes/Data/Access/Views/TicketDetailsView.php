@@ -29,6 +29,21 @@ class TicketDetailsView extends View{
         return 'ticket_details';
     }
     
+    public function getById(int $id) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('ticket_details')->where('id', $id);
+        $tickets = $this->select($sql);
+        if($tickets->length() > 1){
+            $this->throwIdColumnException('document');
+        }
+        if($tickets->isEmpty()){
+            return new Container();
+        }
+        else{
+            return new Container($tickets->get(0));
+        }
+    }
+    
     public function getAllUserTicketsByDocumentId(string $username, int $documentId) : Container{
         $sql = new MysqlBuilder();
         $sql->select('ticket_details')->where('id_document', $documentId)

@@ -30,6 +30,13 @@ class ScheduleEntriesView extends View{
         return 'schedule_entries';
     }
     
+    public function getById(int $id) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('schedule_entries')->where('id', $id);
+        $data = $this->select($sql);
+        return $data;
+    }
+    
     public function getActive(DateTime $start, DateTime $end) : Container{
         $sql = new MysqlBuilder();
         $sql->select('schedule_entries')->where('start', $end->format("Y-m-d H:i:s"), '<')

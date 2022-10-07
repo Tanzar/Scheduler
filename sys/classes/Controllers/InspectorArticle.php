@@ -11,6 +11,7 @@ use Tanweb\Container as Container;
 use Services\ArticleService as ArticleService;
 use Services\DocumentService as DocumentService;
 use Tanweb\Config\INI\Languages as Languages;
+use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 
 /**
  * Description of InspectorArticle
@@ -52,29 +53,47 @@ class InspectorArticle extends Controller{
     
     public function saveNewArticle(){
         $data = $this->getRequestData();
-        $id = $this->articleService->saveNewArticle($data);
+        $languages = Languages::getInstance();
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+        else{
+            $id = $this->articleService->saveNewArticle($data);
+        }
         $response = new Container();
         $response->add($id, 'id');
-        $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
     
     public function updateArticle(){
         $data = $this->getRequestData();
-        $this->articleService->updateArticle($data);
-        $response = new Container();
         $languages = Languages::getInstance();
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+        else{
+            $this->articleService->updateArticle($data);
+        }
+        $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
     
     public function removeArticle(){
         $data = $this->getRequestData();
-        $id = (int) $data->get('id');
-        $this->articleService->removeArticle($id);
-        $response = new Container();
         $languages = Languages::getInstance();
+        $id = (int) $data->get('id');
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+        else{
+            $this->articleService->removeArticle($id);
+        }
+        $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }

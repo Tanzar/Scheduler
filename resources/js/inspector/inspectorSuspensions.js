@@ -97,7 +97,7 @@ function SuspensionsTable(language, selectDocument){
             {title: language.region, variable: 'region', width: 150, minWidth: 150},
             {title: language.description, variable: 'description', width: 300, minWidth: 300},
             {title: language.correction_date, variable: 'correction_date', width: 100, minWidth: 100},
-            {title: language.shift, variable: 'shift', width: 50, minWidth: 50},
+            {title: language.correction_shift, variable: 'correction_shift', width: 50, minWidth: 50},
             {title: language.remarks, variable: 'remarks', width: 200, minWidth: 200}
         ],
         dataSource: datasource

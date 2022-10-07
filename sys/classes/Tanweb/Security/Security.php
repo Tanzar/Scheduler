@@ -23,6 +23,8 @@ use Tanweb\Config\INI\Languages as Languages;
  * @author Grzegorz Spakowski, Tanzar
  */
 class Security {
+    private static Security $instance;
+    
     private bool $isEnabled;
     private string $dbIndex;
     private string $usersTable;
@@ -37,7 +39,7 @@ class Security {
     private string $privilageColumn;
     private Container $privilagesNames;
     
-    public function __construct() {
+    protected function __construct() {
         $appconfig = AppConfig::getInstance();
         $config = $appconfig->getSecurity();
         $this->isEnabled = $config->get('enable');
@@ -56,6 +58,16 @@ class Security {
         $this->privilageColumn = $config->get('privilage_column');
         $privilages = $config->get('privilages');
         $this->privilagesNames = new Container($privilages);
+    }
+    
+    public static function getInstance(){
+        if(isset(self::$instance)){
+            return self::$instance;
+        }
+        else{
+            self::$instance = new Security();
+            return self::$instance;
+        }
     }
     
     /*

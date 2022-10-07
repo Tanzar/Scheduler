@@ -1,0 +1,287 @@
+[2022-10-06  09:14:28] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  09:14:36] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  09:15:13] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  09:15:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  09:16:50] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  09:17:35] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-10-06  09:18:59] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-10-06  09:18:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  09:18:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-10-06  09:18:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-09 00:00:00' and end > '2022-10-03 00:00:00' and active = '1' ORDER BY start ASC
+[2022-10-06  09:19:00] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-10-06  09:19:02] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-10-06  09:20:12] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-10-06  09:20:12] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-10-06' and end > '2022-10-06'
+[2022-10-06  09:20:12] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  09:20:12] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-10-06  09:20:12] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-06  09:20:12] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-09 00:00:00' and end > '2022-10-03 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-06  09:20:33] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-10-06  09:20:33] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Praca biurowa%' and active = '1'
+[2022-10-06  09:20:34] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-10-06  09:20:34] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '9'
+[2022-10-06  09:20:36] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-10-06  09:20:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '12'
+[2022-10-06  09:21:11] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  09:21:33] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Call to protected Custom\Blockers\Abstracts\OperationBlocker::__construct() from scope Controllers\ScheduleUser ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#2 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#3 {main}
+[2022-10-06  09:21:52] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  09:22:01] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Call to protected Custom\Blockers\Abstracts\OperationBlocker::__construct() from scope Controllers\ScheduleUser ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#2 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#3 {main}
+[2022-10-06  09:26:24] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  09:26:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-06  09:26:56] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-08-06 15:30:00' and end > '2022-08-06 07:30:00' and id_user = '1' and active = '1'
+[2022-10-06  09:26:56] [type: insert] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (id_user, id_location, id_activity, start, end) VALUES ('1', '12', '9', '2022-08-06 07:30', '2022-08-06 15:30')
+[2022-10-06  09:26:59] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-10-06  09:26:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-06  09:26:59] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-09 00:00:00' and end > '2022-10-03 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-06  09:27:04] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-10-06  09:27:04] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-06  09:27:04] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-08-09 00:00:00' and end > '2022-08-03 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-06  09:27:08] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: removeEntryData: {}
+[2022-10-06  09:27:21] [type: Error] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Call to undefined method Data\Access\Views\ScheduleEntriesView::getById() ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleUser.php(114): Services\ScheduleService->getEntryByID(6)
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->removeEntry()
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2022-10-06  09:28:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: removeEntryData: {}
+[2022-10-06  09:28:36] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  id = '6'
+[2022-10-06  09:29:48] [type: update] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET active='0' WHERE id = '6'
+[2022-10-06  09:29:54] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-10-06  09:29:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-06  09:29:54] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-08-09 00:00:00' and end > '2022-08-03 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-06  10:38:43] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-10-06  10:38:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  10:38:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-10-06  10:38:44] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-10-06  10:38:44] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-06  10:38:44] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-10-06  10:38:45] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-06  10:38:45] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-10-06  10:38:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-06  10:38:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '2'
+[2022-10-06  10:38:51] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-06  10:38:51] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '2'
+[2022-10-06  10:38:56] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  10:39:04] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  10:39:06] [type: Access] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorReports.php?
+[2022-10-06  10:39:06] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  10:39:06] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-10-06  10:39:06] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'inspector' and ( year(start) = '2022' or year(end) = '2022')
+[2022-10-06  10:39:07] [type: Access] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleAll.php?
+[2022-10-06  10:39:07] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  10:39:07] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-10-06  10:39:07] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-09 00:00:00' and end > '2022-10-03 00:00:00' and active = '1' ORDER BY start ASC
+[2022-10-06  10:39:08] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-10-06  10:39:08] [type: Access] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/schedule/scheduleMy.php?
+[2022-10-06  10:39:08] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'inspector' and start < '2022-10-06' and end > '2022-10-06'
+[2022-10-06  10:39:09] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  10:39:09] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-10-06  10:39:09] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'inspector' and active = '1'
+[2022-10-06  10:39:09] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-09 00:00:00' and end > '2022-10-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-10-06  10:39:13] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-10-06  10:39:13] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Praca biurowa%' and active = '1'
+[2022-10-06  10:39:14] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-10-06  10:39:14] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '9'
+[2022-10-06  10:39:15] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-10-06  10:39:15] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '12'
+[2022-10-06  10:39:38] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  10:39:55] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Custom\Blockers\Abstracts\Blockers::getLockSchedule(): Argument #1 ($cfg) must be of type Custom\Blockers\Abstracts\Container, Tanweb\Container given, called in C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\Blockers.php on line 37 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\Blockers.php(37): Custom\Blockers\Abstracts\Blockers->getLockSchedule(Object(Tanweb\Container))
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\OperationBlocker.php(33): Custom\Blockers\Abstracts\Blockers->getConfigValue()
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleUser.php(86): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-10-06  10:40:14] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  10:40:55] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Custom\Blockers\Abstracts\Blockers::getLockSchedule(): Argument #1 ($cfg) must be of type Custom\Blockers\Abstracts\Container, Tanweb\Container given, called in C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\Blockers.php on line 37 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\Blockers.php(37): Custom\Blockers\Abstracts\Blockers->getLockSchedule(Object(Tanweb\Container))
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\OperationBlocker.php(33): Custom\Blockers\Abstracts\Blockers->getConfigValue()
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleUser.php(86): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-10-06  10:41:22] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  10:43:07] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Custom\Blockers\ScheduleBlocker::findBlockerDay(): Return value must be of type int, DateTime returned ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(50): Custom\Blockers\ScheduleBlocker->findBlockerDay(1)
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(39): Custom\Blockers\ScheduleBlocker->getEarliestAllowedDate(1)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\OperationBlocker.php(34): Custom\Blockers\ScheduleBlocker->shouldBeBlocked(Object(Tanweb\Container), 1)
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleUser.php(86): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-10-06  10:43:07] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  10:44:36] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Nie możesz danych za poprzedni miesiąc
+[2022-10-06  10:46:25] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  10:46:29] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Nie możesz danych za wybrany miesiąc
+[2022-10-06  10:46:57] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  10:46:57] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Object of class DateTime could not be converted to string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(52): Custom\Blockers\ScheduleBlocker->getFirstDayOfPreviousMonth()
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(39): Custom\Blockers\ScheduleBlocker->getEarliestAllowedDate(10)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\OperationBlocker.php(34): Custom\Blockers\ScheduleBlocker->shouldBeBlocked(Object(Tanweb\Container), 10)
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleUser.php(86): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-10-06  10:47:26] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  10:47:31] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Object of class DateTime could not be converted to string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(52): Custom\Blockers\ScheduleBlocker->getFirstDayOfPreviousMonth()
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(39): Custom\Blockers\ScheduleBlocker->getEarliestAllowedDate(10)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\OperationBlocker.php(34): Custom\Blockers\ScheduleBlocker->shouldBeBlocked(Object(Tanweb\Container), 10)
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleUser.php(86): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-10-06  10:47:34] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  10:48:03] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Object of class DateTime could not be converted to string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(52): Custom\Blockers\ScheduleBlocker->getFirstDayOfPreviousMonth()
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(39): Custom\Blockers\ScheduleBlocker->getEarliestAllowedDate(10)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\OperationBlocker.php(34): Custom\Blockers\ScheduleBlocker->shouldBeBlocked(Object(Tanweb\Container), 10)
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleUser.php(86): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-10-06  10:48:30] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  10:48:51] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Object of class DateTime could not be converted to string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(52): Custom\Blockers\ScheduleBlocker->getFirstDayOfPreviousMonth()
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(39): Custom\Blockers\ScheduleBlocker->getEarliestAllowedDate(10)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\OperationBlocker.php(34): Custom\Blockers\ScheduleBlocker->shouldBeBlocked(Object(Tanweb\Container), 10)
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleUser.php(86): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-10-06  10:49:22] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  10:49:35] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Object of class DateTime could not be converted to string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(52): Custom\Blockers\ScheduleBlocker->getFirstDayOfPreviousMonth()
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\ScheduleBlocker.php(39): Custom\Blockers\ScheduleBlocker->getEarliestAllowedDate(10)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\Blockers\Abstracts\OperationBlocker.php(34): Custom\Blockers\ScheduleBlocker->shouldBeBlocked(Object(Tanweb\Container), 10)
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleUser.php(86): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-10-06  10:49:49] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-06  10:50:10] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'inspector' and active = '1'
+[2022-10-06  10:50:10] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-09-06 15:00:00' and end > '2022-09-06 07:00:00' and id_user = '2' and active = '1'
+[2022-10-06  10:50:10] [type: insert] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (id_user, id_location, id_activity, start, end) VALUES ('2', '12', '9', '2022-09-06 07:00', '2022-09-06 15:00')
+[2022-10-06  10:50:13] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-10-06  10:50:13] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'inspector' and active = '1'
+[2022-10-06  10:50:13] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-09 00:00:00' and end > '2022-10-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-10-06  10:50:17] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-10-06  10:50:17] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'inspector' and active = '1'
+[2022-10-06  10:50:17] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-09-09 00:00:00' and end > '2022-09-03 00:00:00' and id_user = '2' and active = '1' ORDER BY start ASC
+[2022-10-06  11:34:35] [type: Access] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorReports.php?
+[2022-10-06  11:34:35] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  11:34:35] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-10-06  11:34:35] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'inspector' and ( year(start) = '2022' or year(end) = '2022')
+[2022-10-06  11:34:38] [type: Access] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorDocuments.php?
+[2022-10-06  11:34:39] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  11:34:39] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-10-06  11:34:39] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' )) ORDER BY start ASC
+[2022-10-06  11:34:43] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getInspectionLocationTypesData: {}
+[2022-10-06  11:34:43] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1' and inspection = '1'
+[2022-10-06  11:34:46] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getLocationsByTypeIdData: {}
+[2022-10-06  11:34:46] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-10-06  11:46:03] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getInspectionLocationTypesData: {}
+[2022-10-06  11:46:03] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type WHERE  active = '1' and inspection = '1'
+[2022-10-06  11:46:06] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getLocationsByTypeIdData: {}
+[2022-10-06  11:46:06] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-10-06  11:46:34] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: saveAndAssignDocumentData: {}
+[2022-10-06  11:46:34] [type: insert] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document (id_location, number, start, end, description) VALUES ('4', '09/2022/Jankowice', '2022-10-01', '2022-10-07', '')
+[2022-10-06  11:46:34] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'inspector' and active = '1'
+[2022-10-06  11:46:34] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user WHERE  id_document = '5' and id_user = '2'
+[2022-10-06  11:46:34] [type: insert] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document_user (id_document, id_user) VALUES ('5', '2')
+[2022-10-06  11:46:35] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-10-06  11:46:35] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' )) ORDER BY start ASC
+[2022-10-06  11:46:37] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentUsersData: {}
+[2022-10-06  11:46:37] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-10-06  11:46:41] [type: Access] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorTickets.php?
+[2022-10-06  11:46:41] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'inspector' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-06  11:46:41] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  11:46:42] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: getTicketsData: {}
+[2022-10-06  11:46:42] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '0' and username = 'inspector'
+[2022-10-06  11:46:46] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: getTicketsData: {}
+[2022-10-06  11:46:46] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5' and username = 'inspector'
+[2022-10-06  11:47:57] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: getNewTicketDetailsData: {}
+[2022-10-06  11:47:57] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '5'
+[2022-10-06  11:47:57] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_law WHERE  active = '1'
+[2022-10-06  11:47:57] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM position_groups WHERE  active = '1'
+[2022-10-06  11:48:16] [type: Access] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorDocuments.php?
+[2022-10-06  11:48:16] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  11:48:17] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-10-06  11:48:17] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' )) ORDER BY start ASC
+[2022-10-06  11:48:17] [type: Access] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorMyDocuments.php?
+[2022-10-06  11:48:17] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  11:48:18] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorMyDocuments Task: getMyDocumentsData: {}
+[2022-10-06  11:48:18] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'inspector' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-06  11:48:26] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorMyDocuments Task: editDocumentData: {}
+[2022-10-06  11:48:26] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and id_document = '5'
+[2022-10-06  11:48:26] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '5'
+[2022-10-06  11:48:26] [type: update] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE document SET active='1', start='2022-09-14', id_location='4' WHERE id = '5'
+[2022-10-06  11:48:28] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorMyDocuments Task: getMyDocumentsData: {}
+[2022-10-06  11:48:28] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'inspector' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-06  11:48:36] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorMyDocuments Task: editDocumentData: {}
+[2022-10-06  11:48:36] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and id_document = '5'
+[2022-10-06  11:48:36] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '5'
+[2022-10-06  11:48:36] [type: update] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: UPDATE document SET active='1', end='2022-10-04', id_location='4' WHERE id = '5'
+[2022-10-06  11:48:38] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorMyDocuments Task: getMyDocumentsData: {}
+[2022-10-06  11:48:38] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'inspector' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-06  11:48:40] [type: Access] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorTickets.php?
+[2022-10-06  11:48:41] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'inspector' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-06  11:48:41] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  11:48:41] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: getTicketsData: {}
+[2022-10-06  11:48:41] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '0' and username = 'inspector'
+[2022-10-06  11:48:43] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: getTicketsData: {}
+[2022-10-06  11:48:43] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5' and username = 'inspector'
+[2022-10-06  11:48:44] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: getNewTicketDetailsData: {}
+[2022-10-06  11:48:44] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '5'
+[2022-10-06  11:48:44] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_law WHERE  active = '1'
+[2022-10-06  11:48:44] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM position_groups WHERE  active = '1'
+[2022-10-06  11:51:19] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: saveNewTicketData: {}
+[2022-10-06  11:51:39] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Call to protected Custom\Blockers\Abstracts\OperationBlocker::__construct() from scope Controllers\InspectorTickets ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InspectorTickets->saveNewTicket()
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#2 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#3 {main}
+[2022-10-06  11:51:58] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: getNewTicketDetailsData: {}
+[2022-10-06  11:51:58] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '5'
+[2022-10-06  11:51:58] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_law WHERE  active = '1'
+[2022-10-06  11:51:58] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM position_groups WHERE  active = '1'
+[2022-10-06  11:52:18] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: saveNewTicketData: {}
+[2022-10-06  11:53:03] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'inspector'
+[2022-10-06  11:53:03] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user WHERE  id_document = '5' and id_user = '2'
+[2022-10-06  11:53:03] [type: insert] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: INSERT INTO ticket (number, date, id_position_groups, position, value, id_ticket_law, violated_rules, external_company, company_name, remarks, id_document_user) VALUES ('5/7', '2022-09-29', '4', 'Górnik', '12', '1', '1 i 7', '0', '', '', '7')
+[2022-10-06  11:53:06] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: getTicketsData: {}
+[2022-10-06  11:53:06] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5' and username = 'inspector'
+[2022-10-06  11:53:41] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: getNewTicketDetailsData: {}
+[2022-10-06  11:53:41] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '5'
+[2022-10-06  11:53:41] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_law WHERE  active = '1'
+[2022-10-06  11:53:41] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM position_groups WHERE  active = '1'
+[2022-10-06  11:53:49] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorTickets Task: updateTicketData: {}
+[2022-10-06  11:54:20] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Nie możesz danych za wybrany miesiąc
+[2022-10-06  11:58:47] [type: Access] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorDecisions.php?
+[2022-10-06  11:58:48] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'inspector' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-06  11:58:48] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-06  11:58:48] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDecisions Task: getDecisionsData: {}
+[2022-10-06  11:58:48] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_details WHERE  active = '1' and username = 'inspector' and id_document = '0'
+[2022-10-06  11:58:50] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDecisions Task: getDecisionsData: {}
+[2022-10-06  11:58:50] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_details WHERE  active = '1' and username = 'inspector' and id_document = '5'
+[2022-10-06  11:58:51] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDecisions Task: getNewDecisionDetailsData: {}
+[2022-10-06  11:58:51] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  id = '5'
+[2022-10-06  11:58:51] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_law WHERE  active = '1'
+[2022-10-06  11:59:04] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorDecisions Task: saveDecisionData: {}
+[2022-10-06  11:59:04] [type: Error] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Nie możesz danych za wybrany miesiąc
