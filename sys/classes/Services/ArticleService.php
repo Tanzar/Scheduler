@@ -15,6 +15,8 @@ use Data\Access\Views\ArticleDetailsView as ArticleDetailsView;
 use Data\Access\Views\UsersWithoutPasswordsView as UsersWithoutPasswordsView;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
+use Tanweb\Config\INI\Languages as Languages;
+use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 
 /**
  * Description of ArticleService (art. 41)
@@ -102,6 +104,7 @@ class ArticleService {
     }
     
     public function saveNewArticle(Container $data) : int {
+        $this->checkBlocker($data);
         $username = Session::getUsername();
         $documentId = (int) $data->get('id_document');
         $documentUserId = $this->getDocumentUserId($username, $documentId);
@@ -118,11 +121,14 @@ class ArticleService {
     }
     
     public function updateArticle(Container $data) : void {
+        $this->checkBlocker($data);
         $article = $this->formArticle($data);
         $this->article->save($article);
     }
     
     public function removeArticle(int $id) : void {
+        $article = $this->article->getById($id);
+        $this->checkBlocker($article);
         $this->article->disable($id);
     }
     
@@ -143,5 +149,13 @@ class ArticleService {
         $art->add($data->get('id_position_groups'), 'id_position_groups');
         $art->add($data->get('id_document_user'), 'id_document_user');
         return $art;
+    }
+    
+    private function checkBlocker(Container $data) {
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
     }
 }

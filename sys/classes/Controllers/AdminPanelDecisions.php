@@ -39,6 +39,24 @@ class AdminPanelDecisions extends Controller{
         $this->setResponse($response);
     }
     
+    
+    public function getEditDecisionDetails() : void {
+        $data = $this->getRequestData();
+        $documentId = $data->get('id_document');
+        $response = $this->decisionService->getNewDecisionData($documentId);
+        $this->setResponse($response);
+    }
+    
+    public function saveDecision() : void {
+        $data = $this->getRequestData();
+        $languages = Languages::getInstance();
+        $id = $this->decisionService->saveDecision($data);
+        $response = new Container();
+        $response->add($id, 'id');
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
     public function saveDecisionLaw() : void {
         $data = $this->getRequestData();
         $id = $this->decisionService->saveDecisionLaw($data);

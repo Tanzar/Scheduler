@@ -8,6 +8,7 @@ namespace Controllers;
 
 use Controllers\Base\Controller as Controller;
 use Services\DocumentService as DocumentService;
+use Services\UserService as UserService;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 
@@ -18,9 +19,11 @@ use Tanweb\Config\INI\Languages as Languages;
  */
 class AdminPanelDocuments extends Controller{
     private DocumentService $docuement;
+    private UserService $user;
     
     public function __construct() {
         $this->docuement = new DocumentService();
+        $this->user = new UserService();
         $privilages = new Container();
         $privilages->add('admin');
         parent::__construct($privilages);
@@ -38,6 +41,11 @@ class AdminPanelDocuments extends Controller{
         $data = $this->getRequestData();
         $id = (int) $data->get('id');
         $response = $this->docuement->getUsersByDocumentId($id);
+        $this->setResponse($response);
+    }
+    
+    public function getUsers() {
+        $response = $this->user->getActiveInspectors();
         $this->setResponse($response);
     }
     
@@ -66,6 +74,17 @@ class AdminPanelDocuments extends Controller{
         $documentId = (int) $data->get('id');
         $username = $data->get('username');
         $this->docuement->unassignUserFromDocument($username, $documentId);
+        $response = new Container();
+        $languages = Languages::getInstance();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
+    public function assignUserToDocument() {
+        $data = $this->getRequestData();
+        $documentId = (int) $data->get('id');
+        $username = $data->get('username');
+        $this->docuement->assignUserToDocument($username, $documentId);
         $response = new Container();
         $languages = Languages::getInstance();
         $response->add($languages->get('changes_saved'), 'message');

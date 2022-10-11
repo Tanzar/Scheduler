@@ -11,7 +11,6 @@ use Tanweb\Container as Container;
 use Services\ArticleService as ArticleService;
 use Services\DocumentService as DocumentService;
 use Tanweb\Config\INI\Languages as Languages;
-use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 
 /**
  * Description of InspectorArticle
@@ -54,13 +53,7 @@ class InspectorArticle extends Controller{
     public function saveNewArticle(){
         $data = $this->getRequestData();
         $languages = Languages::getInstance();
-        $blocker = new InspectorDateBlocker();
-        if($blocker->isBLocked($data)){
-            $this->throwException($languages->get('cannot_change_selected_month'));
-        }
-        else{
-            $id = $this->articleService->saveNewArticle($data);
-        }
+        $id = $this->articleService->saveNewArticle($data);
         $response = new Container();
         $response->add($id, 'id');
         $response->add($languages->get('changes_saved'), 'message');
@@ -70,13 +63,7 @@ class InspectorArticle extends Controller{
     public function updateArticle(){
         $data = $this->getRequestData();
         $languages = Languages::getInstance();
-        $blocker = new InspectorDateBlocker();
-        if($blocker->isBLocked($data)){
-            $this->throwException($languages->get('cannot_change_selected_month'));
-        }
-        else{
-            $this->articleService->updateArticle($data);
-        }
+        $this->articleService->updateArticle($data);
         $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
@@ -86,13 +73,7 @@ class InspectorArticle extends Controller{
         $data = $this->getRequestData();
         $languages = Languages::getInstance();
         $id = (int) $data->get('id');
-        $blocker = new InspectorDateBlocker();
-        if($blocker->isBLocked($data)){
-            $this->throwException($languages->get('cannot_change_selected_month'));
-        }
-        else{
-            $this->articleService->removeArticle($id);
-        }
+        $this->articleService->removeArticle($id);
         $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);

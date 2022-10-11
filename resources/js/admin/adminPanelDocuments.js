@@ -5,7 +5,7 @@
 function AdminPanelDocuments(){
     RestApi.getInterfaceNamesPackage(function(language){
         var documents = documentsTable(language);
-        var users = new AssignedUsersTable(language);
+        var users = new AssignedUsersTable(language, documents);
         
         documents.addActionButton(language.edit, function(selected){
             if(selected !== undefined){
@@ -105,7 +105,7 @@ function documentsTable(language) {
     return documentsTable;
 }
 
-function AssignedUsersTable(language){
+function AssignedUsersTable(language, documentsTable){
     var div = document.getElementById('assignedUsers');
     
     var datasource = {
@@ -125,11 +125,56 @@ function AssignedUsersTable(language){
         dataSource: datasource
     }
     var table = new Datatable(div, config);
+    table.addActionButton(language.assign, function(){
+        var selected = documentsTable.getSelected();
+        if(selected !== undefined){
+            RestApi.get('AdminPanelDocuments', 'getUsers', {},
+                function(response){
+                    var users = JSON.parse(response);
+                    var options = [];
+                    users.forEach(user => {
+                        var option = {
+                            value: user.username,
+                            title: user.name + ' ' + user.surname
+                        };
+                        options.push(option);
+                    });
+                    var fields = [
+                        {type: 'select', title: language.select_user, variable: 'username', options: options, required: true}
+                    ];
+                    openModalBox(language.new_decision, fields, language.save, function(data){
+                        var dataToSend = {
+                            username: data.username,
+                            id: selected.id
+                        }
+                        RestApi.post('AdminPanelDocuments', 'assignUserToDocument', dataToSend,
+                            function(response){
+                                var data = JSON.parse(response);
+                                console.log(data);
+                                alert(data.message);
+                                table.refresh();
+                            },
+                            function(response){
+                                console.log(response.responseText);
+                                alert(response.responseText);
+                        });
+                    });
+                },
+                function(response){
+                    console.log(response.responseText);
+                    alert(response.responseText);
+            });
+        }
+        else{
+            alert(language.select_document);
+        }
+    });
+    
     table.addActionButton(language.unassign, function(selected){
         if(selected !== undefined){
             var dataToSend = {
                 username: selected.username,
-                id_document: selected.id
+                id: selected.id
             }
             RestApi.post('AdminPanelDocuments', 'unassignUserFromDocument', dataToSend,
                 function(response){

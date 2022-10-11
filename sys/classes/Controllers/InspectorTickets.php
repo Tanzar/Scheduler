@@ -11,7 +11,6 @@ use Tanweb\Container as Container;
 use Services\TicketService as TicketService;
 use Services\DocumentService as DocumentService;
 use Tanweb\Config\INI\Languages as Languages;
-use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 
 /**
  * Description of InspectorTickets
@@ -54,13 +53,7 @@ class InspectorTickets extends Controller{
     public function saveNewTicket() {
         $data = $this->getRequestData();
         $languages = Languages::getInstance();
-        $blocker = new InspectorDateBlocker();
-        if($blocker->isBLocked($data)){
-            $this->throwException($languages->get('cannot_change_selected_month'));
-        }
-        else{
-            $id = $this->ticketService->saveTicketForCurrentUser($data);
-        }
+        $id = $this->ticketService->saveTicketForCurrentUser($data);
         $response = new Container();
         $response->add($id, 'id');
         $response->add($languages->get('changes_saved'), 'message');
@@ -70,13 +63,7 @@ class InspectorTickets extends Controller{
     public function updateTicket() {
         $data = $this->getRequestData();
         $languages = Languages::getInstance();
-        $blocker = new InspectorDateBlocker();
-        if($blocker->isBLocked($data)){
-            $this->throwException($languages->get('cannot_change_selected_month'));
-        }
-        else{
-            $id = $this->ticketService->updateTicket($data);
-        }
+        $id = $this->ticketService->updateTicket($data);
         $response = new Container();
         $response->add($id, 'id');
         $response->add($languages->get('changes_saved'), 'message');
@@ -87,13 +74,7 @@ class InspectorTickets extends Controller{
         $data = $this->getRequestData();
         $id = (int) $data->get('id');
         $languages = Languages::getInstance();
-        $blocker = new InspectorDateBlocker();
-        if($blocker->isBLocked($data)){
-            $this->throwException($languages->get('cannot_change_selected_month'));
-        }
-        else{
-            $this->ticketService->disableTicket($id);
-        }
+        $this->ticketService->disableTicket($id);
         $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);

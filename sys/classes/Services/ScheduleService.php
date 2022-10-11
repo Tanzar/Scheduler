@@ -21,6 +21,7 @@ use Services\Exceptions\ScheduleEntryException as ScheduleEntryException;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
+use Custom\Blockers\ScheduleBlocker as ScheduleBlocker;
 use DateTime;
 
 /**
@@ -137,6 +138,7 @@ class ScheduleService {
     
     public function saveEntryForUser(Container $data) : int {
         $entry = $this->formEntry($data);
+        $this->checkBlocker($entry);
         $idSchedule = $this->schedule->save($entry);
         if($data->isValueSet('id_document')){
             $idDocument = (int) $data->get('id_document');
@@ -194,6 +196,7 @@ class ScheduleService {
         $username = Session::getUsername();
         $data->add($username, 'username');
         $entry = $this->formEntry($data);
+        $this->checkBlocker($entry);
         $idSchedule = $this->schedule->save($entry);
         if($data->isValueSet('id_document')){
             $idDocument = (int) $data->get('id_document');
@@ -277,6 +280,8 @@ class ScheduleService {
     }
     
     public function disableEntry(int $id) : void {
+        $entry = $this->schedule->getById($id);
+        $this->checkBlocker($entry);
         $this->schedule->disable($id);
     }
     
@@ -339,4 +344,11 @@ class ScheduleService {
         }
     }
     
+    private function checkBlocker(Container $entry) {
+        $blocker = new ScheduleBlocker();
+        if($blocker->isBLocked($entry)){
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+    }
 }

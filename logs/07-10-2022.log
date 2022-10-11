@@ -244,3 +244,4 @@
 [2022-10-07  10:41:09] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'inspector' and id_document = '0'
 [2022-10-07  10:41:14] [type: Request] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
 [2022-10-07  10:41:14] [type: Select] [user: inspector] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'inspector' and id_document = '5'
+[2022-10-07  11:09:00] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}

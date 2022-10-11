@@ -137,16 +137,14 @@ class DocumentService {
     public function assignUserToDocument(string $username, int $documentId) : int {
         $user = $this->user->getByUsername($username);
         $userId = (int) $user->get('id');
-        $assigns = $this->documentUser->getAllByUserAndDocument($userId, $documentId);
-        if($assigns->length() === 0){
+        $assign = $this->documentUser->getAllByUserAndDocument($userId, $documentId);
+        if($assign->length() === 0){
             $item = new Container();
             $item->add($documentId, 'id_document');
             $item->add($userId, 'id_user');
             return $this->documentUser->save($item);
         }
         else{
-            $item = $assigns->get(0);
-            $assign = new Container($item);
             $id = (int) $assign->get('id');
             $active = $assign->get('active');
             if(!$active){
@@ -170,10 +168,8 @@ class DocumentService {
     public function unassignUserFromDocument(string $username, int $documentId){
         $user = $this->user->getByUsername($username);
         $userId = (int) $user->get('id');
-        $assigns = $this->documentUser->getAllByUserAndDocument($userId, $documentId);
-        if($assigns->length() > 0){
-            $item = $assigns->get(0);
-            $assign = new Container($item);
+        $assign = $this->documentUser->getAllByUserAndDocument($userId, $documentId);
+        if($assign->length() > 0){
             $id = (int) $assign->get('id');
             $active = $assign->get('active');
             if($active){

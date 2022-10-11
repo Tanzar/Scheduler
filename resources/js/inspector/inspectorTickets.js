@@ -251,7 +251,7 @@ function Select(id, placeholder){
             dataToSend = inputData;
             var data = JSON.parse(response);
             data.forEach(item => {
-                me.addOption(item.id_document, item.document_number);
+                me.addOption(item.id, item.number);
             });
         });
     }

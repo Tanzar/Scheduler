@@ -12,7 +12,6 @@ use Services\DocumentService as DocumentService;
 use Services\SuspensionService as SuspensionService;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
-use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 
 /**
  * Description of InspectorDecisions
@@ -66,13 +65,7 @@ class InspectorDecisions extends Controller{
     public function saveDecision() : void {
         $data = $this->getRequestData();
         $languages = Languages::getInstance();
-        $blocker = new InspectorDateBlocker();
-        if($blocker->isBLocked($data)){
-            $this->throwException($languages->get('cannot_change_selected_month'));
-        }
-        else{
-            $id = $this->decisionService->saveDecisionForCurrentUser($data);
-        }
+        $id = $this->decisionService->saveDecisionForCurrentUser($data);
         $response = new Container();
         $response->add($id, 'id');
         $response->add($languages->get('changes_saved'), 'message');
@@ -83,13 +76,7 @@ class InspectorDecisions extends Controller{
         $data = $this->getRequestData();
         $id = (int) $data->get('id');
         $languages = Languages::getInstance();
-        $blocker = new InspectorDateBlocker();
-        if($blocker->isBLocked($data)){
-            $this->throwException($languages->get('cannot_change_selected_month'));
-        }
-        else{
-            $this->decisionService->removeDecision($id);
-        }
+        $this->decisionService->removeDecision($id);
         $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);

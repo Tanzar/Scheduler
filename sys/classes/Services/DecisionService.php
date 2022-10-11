@@ -13,6 +13,8 @@ use Data\Access\Views\DecisionDetailsView as DecisionDetailsView;
 use Data\Access\Views\DocumentUserDetailsView as DocumentUserDetailsView;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
+use Tanweb\Config\INI\Languages as Languages;
+use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 
 /**
  * Description of DecisionService
@@ -74,7 +76,21 @@ class DecisionService {
         return $result;
     }
     
+    public function saveDecision(Container $data) : int {
+        $this->checkBlocker($data);
+        $decision = $this->formDecision($data);
+        $id = $this->decision->save($decision);
+        if($data->isValueSet('id_suspension')){
+            $assign = new Container();
+            $assign->add($id, 'id_decision');
+            $assign->add($data->get('id_suspension'), 'id_suspension');
+            $this->suspensionDecision->save($assign);
+        }
+        return $id;
+    }
+    
     public function saveDecisionForCurrentUser(Container $data) : int {
+        $this->checkBlocker($data);
         if(!$data->isValueSet('id_document_user')){
             $username = Session::getUsername();
             $documentId = $data->get('id_document');
@@ -121,6 +137,8 @@ class DecisionService {
     }
     
     public function removeDecision(int $id) : void {
+        $decision = $this->decision->getById($id);
+        $this->checkBlocker($decision);
         $this->decision->disable($id);
     }
     
@@ -135,5 +153,13 @@ class DecisionService {
         $decision->add($data->get('id_decision_law'), 'id_decision_law');
         $decision->add($data->get('id_document_user'), 'id_document_user');
         return $decision;
+    }
+    
+    private function checkBlocker(Container $data) {
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
     }
 }

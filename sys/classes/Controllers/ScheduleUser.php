@@ -82,17 +82,11 @@ class ScheduleUser extends Controller{
     public function saveEntry(){
         $languages = Languages::getInstance();
         $data = $this->getRequestData();
-        $blocker = new ScheduleBlocker();
-        if($blocker->isBLocked($data)){
-            $this->throwException($languages->get('cannot_change_selected_month'));
-        }
-        else{
-            $id = $this->schedule->saveEntryForCurrentUser($data);
-            $response = new Container();
-            $response->add($languages->get('changes_saved'), 'message');
-            $response->add($id, 'id');
-            $this->setResponse($response);
-        }
+        $id = $this->schedule->saveEntryForCurrentUser($data);
+        $response = new Container();
+        $response->add($languages->get('changes_saved'), 'message');
+        $response->add($id, 'id');
+        $this->setResponse($response);
     }
     
     public function saveLocation(){
@@ -112,16 +106,10 @@ class ScheduleUser extends Controller{
         $data = $this->getRequestData();
         $id = $data->get('id');
         $entry = $this->schedule->getEntryByID($id);
-        $blocker = new ScheduleBlocker();
-        if($blocker->isBLocked($entry)){
-            $this->throwException($languages->get('cannot_change_selected_month'));
-        }
-        else{
-            $this->schedule->disableEntry($id);
-            $response = new Container();
-            $response->add($languages->get('data_removed'), 'message');
-            $response->add($id, 'id');
-            $this->setResponse($response);
-        }
+        $this->schedule->disableEntry($id);
+        $response = new Container();
+        $response->add($languages->get('data_removed'), 'message');
+        $response->add($id, 'id');
+        $this->setResponse($response);
     }
 }

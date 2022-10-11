@@ -15,6 +15,8 @@ use Data\Access\Views\TicketDetailsView as TicketDetailsView;
 use Data\Access\Views\UsersWithoutPasswordsView as UsersWithoutPasswordsView;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
+use Tanweb\Config\INI\Languages as Languages;
+use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 
 /**
  * Description of TicketService
@@ -72,6 +74,7 @@ class TicketService {
     }
     
     public function saveTicketForCurrentUser(Container $data) : int {
+        $this->checkBlocker($data);
         $documentId = (int) $data->get('id_document');
         $data->remove('id_document');
         $username = Session::getUsername();
@@ -88,6 +91,7 @@ class TicketService {
     }
     
     public function updateTicket(Container $data) : void {
+        $this->checkBlocker($data);
         $ticket = $this->parseTicket($data);
         $this->ticket->save($ticket);
     }
@@ -138,10 +142,22 @@ class TicketService {
     }
     
     public function disableTicket(int $id) {
+        $data = $this->ticket->getById($id);
+        $this->checkBlocker($data);
         $this->ticket->disable($id);
     }
     
     public function enableTicket(int $id) {
+        $data = $this->ticket->getById($id);
+        $this->checkBlocker($data);
         $this->ticket->enable($id);
+    }
+    
+    private function checkBlocker(Container $data) {
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
     }
 }

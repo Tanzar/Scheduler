@@ -39,6 +39,22 @@ class AdminPanelArticle extends Controller{
         $this->setResponse($response);
     }
     
+    public function getEditArticleDetails() {
+        $data = $this->getRequestData();
+        $id = (int) $data->get('id_document');
+        $response = $this->articleService->getNewArticleDetails($id);
+        $this->setResponse($response);
+    }
+    
+    public function saveArticle(){
+        $data = $this->getRequestData();
+        $languages = Languages::getInstance();
+        $this->articleService->updateArticle($data);
+        $response = new Container();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
     public function saveArticleForm(){
         $data = $this->getRequestData();
         $id = $this->articleService->saveArticleForm($data);

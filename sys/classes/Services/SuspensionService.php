@@ -23,9 +23,14 @@ use Data\Access\Views\SuspensionArticleDetailsView as SuspensionArticleDetailsVi
 use Data\Access\Views\SuspensionDecisionDetailsView as SuspensionDecisionDetailsView;
 use Data\Access\Views\SuspensionTicketDetailsView as SuspensionTicketDetailsView;
 use Data\Access\Views\SuspensionTypeObjectDetailsView as SuspensionTypeObjectDetailsView;
+use Data\Access\Views\ArticleDetailsView as ArticleDetailsView;
+use Data\Access\Views\DecisionDetailsView as DecisionDetailsView;
+use Data\Access\Views\TicketDetailsView as TicketDetailsView;
 use Data\Exceptions\NotFoundException as NotFoundException;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
+use Tanweb\Config\INI\Languages as Languages;
+use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 
 
 /**
@@ -51,6 +56,9 @@ class SuspensionService {
     private SuspensionDecisionDetailsView $suspensionDecisionDetails;
     private SuspensionTicketDetailsView $suspensionTicketDetails;
     private SuspensionTypeObjectDetailsView $suspensionTypeObjectDetails;
+    private ArticleDetailsView $articleDetails;
+    private DecisionDetailsView $decisionDetails;
+    private TicketDetailsView $ticketDetails;
     
     public function __construct() {
         $this->suspensionGroup = new SuspensionGroupDAO();
@@ -70,6 +78,9 @@ class SuspensionService {
         $this->suspensionDecisionDetails = new SuspensionDecisionDetailsView();
         $this->suspensionTicketDetails = new SuspensionTicketDetailsView();
         $this->suspensionTypeObjectDetails = new SuspensionTypeObjectDetailsView();
+        $this->articleDetails = new ArticleDetailsView();
+        $this->decisionDetails = new DecisionDetailsView();
+        $this->ticketDetails = new TicketDetailsView();
     }
     
     public function getAllTypes() : Container {
@@ -175,6 +186,7 @@ class SuspensionService {
     }
     
     public function saveSuspensionForCurrentUser(Container $data) : int {
+        $this->checkBlocker($data);
         $documentId = $data->get('id_document');
         $username = Session::getUsername();
         $userDocumentId = (int) $this->getUserDocumentId($documentId, $username);
@@ -192,6 +204,7 @@ class SuspensionService {
     
     
     public function saveSuspension(Container $data) : int {
+        $this->checkBlocker($data);
         $suspension = $this->parseSuspension($data);
         return $this->suspension->save($suspension);
     }
@@ -258,6 +271,7 @@ class SuspensionService {
     
     public function assignArticle(int $idSuspension, int $idArticle) : int {
         try{
+            $this->checkArticleBlocker($idArticle);
             $relation = $this->suspensionArticle->getBySuspensionAndArticle($idSuspension, $idArticle);
             return (int) $relation->get('id');
         } catch (NotFoundException $ex) {
@@ -270,6 +284,7 @@ class SuspensionService {
     
     public function unassignArticle(int $idSuspension, int $idArticle) : void {
         try{
+            $this->checkArticleBlocker($idArticle);
             $relation = $this->suspensionArticle->getBySuspensionAndArticle($idSuspension, $idArticle);
             $id = (int) $relation->get('id');
             $this->suspensionArticle->remove($id);
@@ -279,6 +294,7 @@ class SuspensionService {
     
     public function assignTicket(int $idSuspension, int $idTicket) : int {
         try{
+            $this->checkTicketBlocker($idTicket);
             $relation = $this->suspensionTicket->getBySuspensionAndTicket($idSuspension, $idTicket);
             return (int) $relation->get('id');
         } catch (NotFoundException $ex) {
@@ -291,6 +307,7 @@ class SuspensionService {
     
     public function unassignTicket(int $idSuspension, int $idTicket) : void {
         try{
+            $this->checkTicketBlocker($idTicket);
             $relation = $this->suspensionTicket->getBySuspensionAndTicket($idSuspension, $idTicket);
             $id = (int) $relation->get('id');
             $this->suspensionTicket->remove($id);
@@ -300,6 +317,7 @@ class SuspensionService {
     
     public function assignDecision(int $idSuspension, int $idDecision) : int {
         try{
+            $this->checkDecisionBlocker($idDecision);
             $relation = $this->suspensionDecision->getBySuspensionAndDecision($idSuspension, $idDecision);
             return (int) $relation->get('id');
         } catch (NotFoundException $ex) {
@@ -312,6 +330,7 @@ class SuspensionService {
     
     public function unassignDecision(int $idSuspension, int $idDecision) : void {
         try{
+            $this->checkDecisionBlocker($idDecision);
             $relation = $this->suspensionDecision->getBySuspensionAndDecision($idSuspension, $idDecision);
             $id = (int) $relation->get('id');
             $this->suspensionDecision->remove($id);
@@ -375,6 +394,43 @@ class SuspensionService {
     }
     
     public function disableSuspesnion(int $id) : void {
+        $decision = $this->decisionDetails->getById($id);
+        $this->checkBlocker($decision);
         $this->suspension->disable($id);
+    }
+    
+    private function checkBlocker(Container $data) {
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+    }
+    
+    private function checkArticleBlocker(int $articleId) {
+        $data = $this->articleDetails->getById($articleId);
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+    }
+    
+    private function checkDecisionBlocker(int $decisionId) {
+        $data = $this->decisionDetails->getById($decisionId);
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+    }
+    
+    private function checkTicketBlocker(int $ticketId) {
+        $data = $this->ticketDetails->getById($ticketId);
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('cannot_change_selected_month'));
+        }
     }
 }

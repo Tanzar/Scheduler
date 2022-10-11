@@ -68,6 +68,24 @@ class AdminPanelSuspension extends Controller{
         $this->setResponse($response);
     }
     
+    
+    public function getEditSuspensionDetails(){
+        $data = $this->getRequestData();
+        $idDocument = (int) $data->get('id_document');
+        $response = $this->suspension->getSuspensionDetails($idDocument);
+        $this->setResponse($response);
+    }
+    
+    public function saveSuspension() {
+        $data = $this->getRequestData();
+        $languages = Languages::getInstance();
+        $id = $this->suspension->saveSuspension($data);
+        $response = new Container();
+        $response->add($id, 'id');
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
     public function saveSuspensionType() {
         $data = $this->getRequestData();
         $id = $this->suspension->saveType($data);

@@ -47,6 +47,23 @@ class AdminPanelTicket extends Controller{
         $this->setResponse($response);
     }
     
+    public function getEditTicketDetails() {
+        $data = $this->getRequestData();
+        $documentId = (int) $data->get('id_document');
+        $details = $this->ticketService->getNewTicketDetails($documentId);
+        $this->setResponse($details);
+    }
+    
+    public function saveTicket() {
+        $data = $this->getRequestData();
+        $languages = Languages::getInstance();
+        $id = $this->ticketService->updateTicket($data);
+        $response = new Container();
+        $response->add($id, 'id');
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
     public function saveTicketLaw() {
         $data = $this->getRequestData();
         $id = $this->ticketService->saveTicketLaw($data);
