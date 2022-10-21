@@ -1,0 +1,366 @@
+[2022-10-21  06:54:46] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  06:54:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  06:54:50] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-21  06:54:50] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  06:54:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-21  06:54:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-10-21  06:54:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-21  06:54:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-10-21  06:54:52] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryLog.php?
+[2022-10-21  06:54:52] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  06:54:52] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryLog Task: getTodayLogsData: {}
+[2022-10-21  06:54:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  save_time_date = '2022-10-21'
+[2022-10-21  06:55:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryLog Task: getFilteredLogsData: {}
+[2022-10-21  06:55:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  save_time_date = '2022-10-20'
+[2022-10-21  07:27:59] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAll.php?
+[2022-10-21  07:28:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  07:28:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-10-21  07:28:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and active = '1' ORDER BY start ASC
+[2022-10-21  07:28:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-10-21  07:28:03] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleMy.php?
+[2022-10-21  07:28:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-10-21' and end > '2022-10-21'
+[2022-10-21  07:28:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  07:28:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-10-21  07:28:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:28:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-21  07:28:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-10-21  07:28:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group like '%Praca biurowa%' and active = '1'
+[2022-10-21  07:28:12] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-10-21  07:28:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '9'
+[2022-10-21  07:28:13] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-10-21  07:28:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '12'
+[2022-10-21  07:28:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-21  07:28:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:28:16] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "Custom\Parsers\Database\Entry" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleUser.php(85): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2022-10-21  07:28:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-10-21  07:28:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:28:25] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (start, end, id_user, id_activity, id_location) VALUES ('2022-10-21 07:30', '2022-10-21 15:30', '1', '9', '12')
+[2022-10-21  07:28:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-10-21  07:28:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:28:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-21  07:28:53] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAdmin.php?
+[2022-10-21  07:28:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-21' and end >= '2022-10-21' ORDER BY sort_priority DESC
+[2022-10-21  07:28:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-10-21' and end > '2022-10-21'
+[2022-10-21  07:28:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  07:28:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:28:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = '' and active = '1'
+[2022-10-21  07:28:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:28:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:28:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-21  07:29:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-10-21  07:29:03] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: username ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Services\ScheduleService.php(141): Tanweb\Container->get('username')
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleAdmin.php(76): Services\ScheduleService->saveEntryForUser(Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleAdmin->saveEntry()
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-10-21  07:29:32] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-10-21  07:30:30] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: username ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Services\ScheduleService.php(141): Tanweb\Container->get('username')
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\ScheduleAdmin.php(76): Services\ScheduleService->saveEntryForUser(Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\ScheduleAdmin->saveEntry()
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-10-21  07:32:41] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAdmin.php?
+[2022-10-21  07:32:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-21' and end >= '2022-10-21' ORDER BY sort_priority DESC
+[2022-10-21  07:32:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-10-21' and end > '2022-10-21'
+[2022-10-21  07:32:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  07:32:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:32:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = '' and active = '1'
+[2022-10-21  07:32:45] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:32:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:32:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-21  07:32:48] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-10-21  07:32:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:32:48] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Parser error: value: id_activity not found
+[2022-10-21  07:34:37] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAdmin.php?
+[2022-10-21  07:34:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-21' and end >= '2022-10-21' ORDER BY sort_priority DESC
+[2022-10-21  07:34:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-10-21' and end > '2022-10-21'
+[2022-10-21  07:34:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  07:34:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:34:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = '' and active = '1'
+[2022-10-21  07:34:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:34:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:34:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-21  07:35:05] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAdmin.php?
+[2022-10-21  07:35:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-21' and end >= '2022-10-21' ORDER BY sort_priority DESC
+[2022-10-21  07:35:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-10-21' and end > '2022-10-21'
+[2022-10-21  07:35:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  07:35:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:35:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = '' and active = '1'
+[2022-10-21  07:35:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:35:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:35:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-21  07:35:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-10-21  07:35:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:35:16] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Parser error: value: id_activity not found
+[2022-10-21  07:35:33] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-10-21  07:35:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:35:40] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Parser error: value: id_activity not found
+[2022-10-21  07:36:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-10-21  07:36:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:36:39] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Parser error: value: id_activity not found
+[2022-10-21  07:38:33] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAdmin.php?
+[2022-10-21  07:38:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-21' and end >= '2022-10-21' ORDER BY sort_priority DESC
+[2022-10-21  07:38:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-10-21' and end > '2022-10-21'
+[2022-10-21  07:38:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  07:38:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:38:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = '' and active = '1'
+[2022-10-21  07:38:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:38:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:38:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-21  07:38:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-10-21  07:38:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:38:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '8'
+[2022-10-21  07:38:42] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET end='2022-10-21 14:30', underground='0', id_activity='9', id_location='12' WHERE id = '8'
+[2022-10-21  07:38:44] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:38:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:38:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-21  07:38:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: saveEntryData: {}
+[2022-10-21  07:38:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:38:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '8'
+[2022-10-21  07:38:49] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET end='2022-10-21 15:30', underground='0', id_activity='9', id_location='12' WHERE id = '8'
+[2022-10-21  07:38:50] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleAdmin Task: getEntriesData: {}
+[2022-10-21  07:38:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:38:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-21  07:38:53] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleMy.php?
+[2022-10-21  07:38:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-10-21' and end > '2022-10-21'
+[2022-10-21  07:38:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  07:38:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-10-21  07:38:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:38:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-21  07:38:55] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleMy.php?
+[2022-10-21  07:38:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-10-21' and end > '2022-10-21'
+[2022-10-21  07:38:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  07:38:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-10-21  07:38:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  07:38:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-10-21  07:47:15] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorReports.php?
+[2022-10-21  07:47:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  07:47:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-10-21  07:47:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-10-21  07:47:22] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  07:47:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  07:54:44] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:07:08] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:07:36] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:08:13] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:08:58] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:09:17] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:09:28] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:10:02] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:10:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:10:07] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorReports.php?
+[2022-10-21  10:10:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:10:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-10-21  10:10:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-10-21  10:10:09] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:10:35] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:11:15] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:11:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-21  10:11:18] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:11:34] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorDocuments.php?
+[2022-10-21  10:11:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:11:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-10-21  10:11:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' )) ORDER BY start ASC
+[2022-10-21  10:11:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentUsersData: {}
+[2022-10-21  10:11:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-10-21  10:11:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorDocuments Task: assignUserData: {}
+[2022-10-21  10:11:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin' and active = '1'
+[2022-10-21  10:11:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user WHERE  id_document = '5' and id_user = '1'
+[2022-10-21  10:11:41] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document_user (id_document, id_user) VALUES ('5', '1')
+[2022-10-21  10:11:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentsForMonthYearData: {}
+[2022-10-21  10:11:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' )) ORDER BY start ASC
+[2022-10-21  10:11:43] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorDocuments Task: getDocumentUsersData: {}
+[2022-10-21  10:11:43] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-10-21  10:11:46] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorReports.php?
+[2022-10-21  10:11:46] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:11:47] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-10-21  10:11:47] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-10-21  10:11:47] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:11:47] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-21  10:11:48] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:13:00] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:13:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-21  10:13:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:13:20] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:13:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-21  10:13:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:13:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:13:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '0' and document_assigned_username = 'admin'
+[2022-10-21  10:13:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:13:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-10-21  10:13:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getNewUsageDetailsData: {}
+[2022-10-21  10:13:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-10-21  10:13:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and measurement_instrument = '1'
+[2022-10-21  10:15:50] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:15:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-21  10:15:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:15:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:15:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '0' and document_assigned_username = 'admin'
+[2022-10-21  10:15:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:15:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-10-21  10:15:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getNewUsageDetailsData: {}
+[2022-10-21  10:15:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-10-21  10:15:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and measurement_instrument = '1'
+[2022-10-21  10:16:08] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-21  10:16:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:16:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-21  10:16:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-10-21  10:16:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-21  10:16:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-10-21  10:16:10] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-21  10:16:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:16:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-21  10:16:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-21  10:16:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-21  10:16:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-21  10:16:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-21  10:16:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: editEquipmentData: {}
+[2022-10-21  10:16:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment WHERE  id = '5'
+[2022-10-21  10:16:34] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE equipment SET active='1', name='Metanomierz TM-130', id_equipment_type='4', id_user='2' WHERE id = '5'
+[2022-10-21  10:16:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-21  10:16:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-21  10:16:39] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorReports.php?
+[2022-10-21  10:16:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:16:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-10-21  10:16:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-10-21  10:16:41] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:16:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-21  10:16:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:16:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:16:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '0' and document_assigned_username = 'admin'
+[2022-10-21  10:16:43] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:16:43] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-10-21  10:16:44] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getNewUsageDetailsData: {}
+[2022-10-21  10:16:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-10-21  10:16:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and measurement_instrument = '1'
+[2022-10-21  10:16:50] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: saveNewUsageData: {}
+[2022-10-21  10:16:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  username = 'admin' and id = '5'
+[2022-10-21  10:16:50] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO instrument_usage (date, remarks, recommendation_decision, id_document_user, id_equipment) VALUES ('2022-10-04', '', '1', '9', '5')
+[2022-10-21  10:16:52] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:16:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-10-21  10:17:34] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:17:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-21  10:17:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:17:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:17:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '0' and document_assigned_username = 'admin'
+[2022-10-21  10:17:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:17:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-10-21  10:17:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getNewUsageDetailsData: {}
+[2022-10-21  10:17:41] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: id_document ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\InspectorInstruments.php(48): Tanweb\Container->get('id_document')
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InspectorInstruments->getNewUsageDetails()
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2022-10-21  10:19:11] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:19:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-21  10:19:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:19:12] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:19:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '0' and document_assigned_username = 'admin'
+[2022-10-21  10:19:13] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:19:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-10-21  10:19:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getNewUsageDetailsData: {}
+[2022-10-21  10:19:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-10-21  10:19:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and measurement_instrument = '1'
+[2022-10-21  10:19:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: updateUsageData: {}
+[2022-10-21  10:19:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage WHERE  id = '1'
+[2022-10-21  10:19:35] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE instrument_usage SET active='1', date='2022-09-27', recommendation_decision='0', id_document_user='9', id_equipment='5' WHERE id = '1'
+[2022-10-21  10:19:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:19:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-10-21  10:20:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getNewUsageDetailsData: {}
+[2022-10-21  10:20:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-10-21  10:20:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and measurement_instrument = '1'
+[2022-10-21  10:21:58] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:21:58] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-21  10:21:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:21:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:21:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '0' and document_assigned_username = 'admin'
+[2022-10-21  10:22:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:22:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-10-21  10:22:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getNewUsageDetailsData: {}
+[2022-10-21  10:22:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-10-21  10:22:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and measurement_instrument = '1'
+[2022-10-21  10:22:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: updateUsageData: {}
+[2022-10-21  10:22:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage WHERE  id = '1'
+[2022-10-21  10:22:05] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE instrument_usage SET active='1', recommendation_decision='1', id_document_user='9', id_equipment='5' WHERE id = '1'
+[2022-10-21  10:22:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:22:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-10-21  10:22:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getNewUsageDetailsData: {}
+[2022-10-21  10:22:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-10-21  10:22:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and measurement_instrument = '1'
+[2022-10-21  10:22:42] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorInstruments.php?
+[2022-10-21  10:22:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-10-21  10:22:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:22:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:22:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '0' and document_assigned_username = 'admin'
+[2022-10-21  10:22:45] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:22:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-10-21  10:22:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: removeUsageData: {}
+[2022-10-21  10:22:49] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE instrument_usage SET active='0' WHERE id = '1'
+[2022-10-21  10:22:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorInstruments Task: getUsagesData: {}
+[2022-10-21  10:22:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-10-21  10:25:05] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:25:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:27:34] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-21  10:27:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:27:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-21  10:27:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-10-21  10:27:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-21  10:27:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-10-21  10:27:37] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-21  10:27:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:27:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-21  10:27:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-21  10:27:39] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-21  10:27:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:27:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-21  10:27:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-21  10:27:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-21  10:27:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-21  10:27:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-21  10:27:58] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-21  10:27:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:27:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-21  10:27:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-21  10:28:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-21  10:28:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-21  10:28:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-21  10:29:08] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-21  10:29:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  10:29:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-21  10:29:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-21  10:29:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-21  10:29:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-21  10:29:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-21  11:14:30] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-21  11:14:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  11:14:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-21  11:14:31] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-21  11:17:12] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryLog.php?
+[2022-10-21  11:17:13] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  11:17:13] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryLog Task: getTodayLogsData: {}
+[2022-10-21  11:17:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  save_time_date = '2022-10-21'
+[2022-10-21  11:18:03] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-10-21  11:18:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  11:18:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-10-21  11:18:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-10-21  11:18:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-21  11:18:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-10-21  11:18:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-21  11:18:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-10-21  11:18:04] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelInventory.php?
+[2022-10-21  11:18:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-21  11:18:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: getEquipmentTypesData: {}
+[2022-10-21  11:18:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type

@@ -47,4 +47,7 @@
     <form action="<?php echo Pages::getURL('adminPanelSuspensions.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('suspensions'); ?>">
     </form>
+    <form action="<?php echo Pages::getURL('adminPanelInventory.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('inventory'); ?>">
+    </form>
 </div>

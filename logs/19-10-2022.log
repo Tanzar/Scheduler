@@ -1,0 +1,519 @@
+[2022-10-19  08:18:35] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  08:18:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  08:18:41] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  08:18:42] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  08:18:43] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  08:18:43] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  08:18:43] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  08:39:58] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  08:39:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  08:39:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  08:39:58] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  08:40:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentStatesData: {}
+[2022-10-19  08:40:00] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Call to undefined method Services\InventoryService::getActiveEquipmentStates() ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InventoryAdmin->getEquipmentStates()
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#2 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#3 {main}
+[2022-10-19  08:40:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentStatesData: {}
+[2022-10-19  08:40:51] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: equipment_states ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Services\InventoryService.php(74): Tanweb\Container->get('equipment_state...')
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\InventoryAdmin.php(70): Services\InventoryService->getEquipmentStates()
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InventoryAdmin->getEquipmentStates()
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-10-19  08:41:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentStatesData: {}
+[2022-10-19  08:41:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentStatesData: {}
+[2022-10-19  08:41:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentStatesData: {}
+[2022-10-19  08:44:03] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  08:44:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  08:44:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  08:44:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  08:44:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentStatesData: {}
+[2022-10-19  08:45:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  08:45:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  08:45:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  08:48:51] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  08:48:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  08:48:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  08:48:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  08:48:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  08:48:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  08:48:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  08:49:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: saveNewEquipmentData: {}
+[2022-10-19  08:49:14] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO equipment (name, document, inventory_number, price, remarks, id_user, id_equipment_type, state) VALUES ('test', '3', '1', '13', 'niet', '1', '5', 'list')
+[2022-10-19  08:49:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-10-19  08:49:14] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO inventory_log (operation, id_equipment, id_user_source, id_user_target, remarks, confirmation) VALUES ('new', '1', '1', '1', '', '0')
+[2022-10-19  08:49:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  08:49:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  08:50:07] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  08:50:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  08:50:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  08:50:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  08:50:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentTypesData: {}
+[2022-10-19  08:50:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  08:50:13] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentStatesData: {}
+[2022-10-19  08:50:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentByStateData: {}
+[2022-10-19  08:50:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and state = 'repair'
+[2022-10-19  08:50:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentStatesData: {}
+[2022-10-19  08:50:18] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentByStateData: {}
+[2022-10-19  08:50:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and state = 'list'
+[2022-10-19  08:50:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentStatesData: {}
+[2022-10-19  08:51:22] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  08:51:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  08:51:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  08:51:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  08:53:45] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  08:53:46] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  08:53:46] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  08:53:46] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  08:53:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  08:53:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  08:53:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  08:54:12] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  08:54:12] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  08:54:13] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  08:54:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  08:54:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  08:54:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  08:54:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  09:07:00] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-10-19  09:07:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  09:07:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-10-19  09:07:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-10-19  09:07:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-19  09:07:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-10-19  09:07:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-19  09:07:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-10-19  09:07:02] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelInventory.php?
+[2022-10-19  09:07:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  09:07:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: getEquipmentTypesData: {}
+[2022-10-19  09:07:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type
+[2022-10-19  09:07:05] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelInventory.php?
+[2022-10-19  09:07:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  09:07:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: getEquipmentTypesData: {}
+[2022-10-19  09:07:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type
+[2022-10-19  09:07:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: saveEquipmentTypeData: {}
+[2022-10-19  09:07:23] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO equipment_type (name, measurement_instrument) VALUES ('Komputer', '0')
+[2022-10-19  09:07:24] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: getEquipmentTypesData: {}
+[2022-10-19  09:07:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type
+[2022-10-19  09:07:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: saveEquipmentTypeData: {}
+[2022-10-19  09:07:34] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO equipment_type (name, measurement_instrument) VALUES ('Biurko', '0')
+[2022-10-19  09:07:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: getEquipmentTypesData: {}
+[2022-10-19  09:07:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type
+[2022-10-19  09:07:46] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: saveEquipmentTypeData: {}
+[2022-10-19  09:07:46] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO equipment_type (name, measurement_instrument) VALUES ('Krzesło', '0')
+[2022-10-19  09:07:47] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: getEquipmentTypesData: {}
+[2022-10-19  09:07:47] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type
+[2022-10-19  09:07:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: saveEquipmentTypeData: {}
+[2022-10-19  09:07:59] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO equipment_type (name, measurement_instrument) VALUES ('Metanomierz', '0')
+[2022-10-19  09:08:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: getEquipmentTypesData: {}
+[2022-10-19  09:08:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type
+[2022-10-19  09:08:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: saveEquipmentTypeData: {}
+[2022-10-19  09:08:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  id = '4'
+[2022-10-19  09:08:06] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE equipment_type SET active='1', measurement_instrument='1' WHERE id = '4'
+[2022-10-19  09:08:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelInventory Task: getEquipmentTypesData: {}
+[2022-10-19  09:08:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type
+[2022-10-19  09:08:13] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  09:08:14] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  09:08:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  09:08:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  09:08:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  09:09:46] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  09:09:46] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  09:09:46] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  09:10:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: saveNewEquipmentData: {}
+[2022-10-19  09:10:04] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO equipment (name, document, inventory_number, price, remarks, id_user, id_equipment_type, state) VALUES ('Meta', '4', '12', '34', '', '1', '4', 'list')
+[2022-10-19  09:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-10-19  09:10:04] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO inventory_log (operation, id_equipment, id_user_source, id_user_target, remarks, confirmation) VALUES ('new', '1', '1', '1', '', '0')
+[2022-10-19  09:10:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  09:10:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  09:11:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  09:11:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  09:11:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  09:13:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  09:13:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  09:13:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  09:14:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: editEquipmentData: {}
+[2022-10-19  09:14:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment WHERE  id = '1'
+[2022-10-19  09:14:05] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: calibration ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(100): Tanweb\Container->get('calibration')
+#2 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(85): Data\Access\DataAccessObject->valuesAreDifferent('calibration', Object(Tanweb\Container), Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(72): Data\Access\DataAccessObject->buildUpdateSQL(Object(Tanweb\Container), Object(Tanweb\Container))
+#4 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(59): Data\Access\DataAccessObject->change(Object(Tanweb\Container))
+#5 C:\laragon\www\Scheduler\sys\classes\Services\InventoryService.php(107): Data\Access\DataAccessObject->save(Object(Tanweb\Container))
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\InventoryAdmin.php(92): Services\InventoryService->editEquipment(Object(Tanweb\Container))
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InventoryAdmin->editEquipment()
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#9 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#10 {main}
+[2022-10-19  09:14:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  09:14:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  09:14:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  09:14:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: editEquipmentData: {}
+[2022-10-19  09:15:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment WHERE  id = '1'
+[2022-10-19  09:15:04] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: calibration ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(100): Tanweb\Container->get('calibration')
+#2 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(85): Data\Access\DataAccessObject->valuesAreDifferent('calibration', Object(Tanweb\Container), Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(72): Data\Access\DataAccessObject->buildUpdateSQL(Object(Tanweb\Container), Object(Tanweb\Container))
+#4 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(59): Data\Access\DataAccessObject->change(Object(Tanweb\Container))
+#5 C:\laragon\www\Scheduler\sys\classes\Services\InventoryService.php(107): Data\Access\DataAccessObject->save(Object(Tanweb\Container))
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\InventoryAdmin.php(92): Services\InventoryService->editEquipment(Object(Tanweb\Container))
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InventoryAdmin->editEquipment()
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#9 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#10 {main}
+[2022-10-19  09:18:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  09:18:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  09:18:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  09:18:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: editEquipmentData: {}
+[2022-10-19  09:18:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment WHERE  id = '1'
+[2022-10-19  09:18:26] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE equipment SET active='1', name='Meta v2', calibration='null', id_equipment_type='4', id_user='1' WHERE id = '1'
+[2022-10-19  09:18:26] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: 'null' for column 'calibration' at row 1 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Database\Database.php(166): PDOStatement->execute()
+#1 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(142): Tanweb\Database\Database->update(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(73): Data\Access\DataAccessObject->update(Object(Tanweb\Database\SQL\MysqlBuilder))
+#3 C:\laragon\www\Scheduler\sys\classes\Data\Access\DataAccessObject.php(59): Data\Access\DataAccessObject->change(Object(Tanweb\Container))
+#4 C:\laragon\www\Scheduler\sys\classes\Services\InventoryService.php(108): Data\Access\DataAccessObject->save(Object(Tanweb\Container))
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\InventoryAdmin.php(92): Services\InventoryService->editEquipment(Object(Tanweb\Container))
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InventoryAdmin->editEquipment()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-19  09:19:03] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  09:19:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  09:19:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  09:19:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  09:19:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  09:19:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  09:19:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  09:19:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: editEquipmentData: {}
+[2022-10-19  09:19:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment WHERE  id = '1'
+[2022-10-19  09:19:14] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE equipment SET active='1', name='Meta v2', id_equipment_type='4', id_user='1' WHERE id = '1'
+[2022-10-19  09:19:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  09:19:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  09:20:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  09:20:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  09:20:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  09:20:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: editEquipmentData: {}
+[2022-10-19  09:20:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment WHERE  id = '1'
+[2022-10-19  09:20:22] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE equipment SET active='1', inventory_number='128', id_equipment_type='4', id_user='1' WHERE id = '1'
+[2022-10-19  09:20:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  09:20:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  09:32:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  09:32:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  09:32:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  09:33:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: saveNewEquipmentData: {}
+[2022-10-19  09:33:15] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO equipment (name, document, inventory_number, price, remarks, id_user, id_equipment_type, state, calibration) VALUES ('Lenek', 'f', '13', '136', '', '2', '1', 'list', '2022-10-19')
+[2022-10-19  09:33:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-10-19  09:33:15] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO inventory_log (operation, id_equipment, id_user_source, id_user_target, remarks, confirmation) VALUES ('new', '2', '1', '2', '', '0')
+[2022-10-19  09:33:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  09:33:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  09:34:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  09:34:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  09:34:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  09:34:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: saveNewEquipmentData: {}
+[2022-10-19  09:34:46] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO equipment (name, document, inventory_number, price, remarks, id_user, id_equipment_type, state, calibration) VALUES ('Kses', 'k', '5', '7', '', '2', '3', 'list', '2022-10-19')
+[2022-10-19  09:35:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-10-19  09:35:15] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO inventory_log (operation, id_equipment, id_user_source, id_user_target, remarks, confirmation) VALUES ('new', '3', '1', '2', '', '0')
+[2022-10-19  09:35:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  09:35:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  09:35:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  09:35:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  09:35:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  09:35:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: saveNewEquipmentData: {}
+[2022-10-19  09:35:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-10-19  09:35:47] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO equipment (name, document, inventory_number, price, remarks, id_user, id_equipment_type, state, calibration) VALUES ('k', 'k', 'k', '9', '', '1', '1', 'list', '2022-10-19')
+[2022-10-19  09:35:47] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO inventory_log (operation, id_equipment, id_user_source, id_user_target, remarks, confirmation) VALUES ('new', '4', '1', '2', '', '0')
+[2022-10-19  09:35:50] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  09:35:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  10:32:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentTypesData: {}
+[2022-10-19  10:32:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  10:32:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentByTypeData: {}
+[2022-10-19  10:32:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and id_equipment_type = '1'
+[2022-10-19  10:32:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentTypesData: {}
+[2022-10-19  10:32:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  10:32:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentByTypeData: {}
+[2022-10-19  10:32:29] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and id_equipment_type = '2'
+[2022-10-19  10:32:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentTypesData: {}
+[2022-10-19  10:32:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  10:32:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentByTypeData: {}
+[2022-10-19  10:32:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and id_equipment_type = '3'
+[2022-10-19  10:32:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentTypesData: {}
+[2022-10-19  10:32:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  10:32:42] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  10:32:43] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  10:32:43] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  10:32:43] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  10:34:20] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  10:35:26] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  10:35:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  10:35:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  10:35:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  10:35:37] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  10:35:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  10:35:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  10:35:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  10:35:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  10:35:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  10:35:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentTypesData: {}
+[2022-10-19  10:35:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  10:35:44] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentByTypeData: {}
+[2022-10-19  10:35:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and id_equipment_type = '4'
+[2022-10-19  10:35:45] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  10:35:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  11:48:09] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  11:48:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  11:48:11] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  11:48:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  11:48:57] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  11:48:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  11:48:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  11:48:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  11:49:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getUsersExceptData: {}
+[2022-10-19  11:49:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1' and username != 'inspector'
+[2022-10-19  11:49:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getUsersExceptData: {}
+[2022-10-19  11:49:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1' and username != 'inspector'
+[2022-10-19  11:50:12] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getUsersExceptData: {}
+[2022-10-19  11:50:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1' and username != 'inspector'
+[2022-10-19  11:51:44] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  11:51:44] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  11:51:45] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  11:51:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  11:53:28] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  11:53:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  11:53:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  11:53:29] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  11:54:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getUsersExceptData: {}
+[2022-10-19  11:54:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1' and username != 'inspector'
+[2022-10-19  11:54:12] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: assignToUserData: {}
+[2022-10-19  11:54:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmed = '0' and id_equipment = '2'
+[2022-10-19  11:54:12] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'confirmed' in 'where clause' ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Database\Database.php(115): PDO->prepare('SELECT * FROM i...')
+#1 C:\laragon\www\Scheduler\sys\classes\Data\Access\View.php(47): Tanweb\Database\Database->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 C:\laragon\www\Scheduler\sys\classes\Data\Access\Views\InventoryLogDetailsView.php(36): Data\Access\View->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#3 C:\laragon\www\Scheduler\sys\classes\Services\InventoryService.php(118): Data\Access\Views\InventoryLogDetailsView->getUnconfirmedForEquipment(2)
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\InventoryAdmin.php(107): Services\InventoryService->assignEquipment(Object(Tanweb\Container))
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InventoryAdmin->assignToUser()
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2022-10-19  11:55:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getUsersExceptData: {}
+[2022-10-19  11:55:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1' and username != 'inspector'
+[2022-10-19  11:55:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: assignToUserData: {}
+[2022-10-19  11:55:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and id_equipment = '2'
+[2022-10-19  11:55:11] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Przedmiot posiada niepotwierdzony przydział.
+[2022-10-19  11:56:58] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  11:56:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  11:56:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  11:56:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  11:57:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-10-19  11:57:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-10-19  11:57:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-10-19  11:57:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: saveNewEquipmentData: {}
+[2022-10-19  11:57:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-10-19  11:57:25] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO equipment (name, document, inventory_number, price, remarks, id_user, id_equipment_type, state, calibration) VALUES ('test', '6', '6', '5', 'testowy', '1', '4', 'list', '2022-10-19')
+[2022-10-19  11:57:25] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO inventory_log (operation, id_equipment, id_user_source, id_user_target, remarks, confirmation) VALUES ('new', '5', '1', '1', '', '0')
+[2022-10-19  11:57:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  11:57:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  11:57:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getUsersExceptData: {}
+[2022-10-19  11:57:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1' and username != 'admin'
+[2022-10-19  11:57:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: assignToUserData: {}
+[2022-10-19  11:57:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and id_equipment = '5'
+[2022-10-19  11:57:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'inspector'
+[2022-10-19  11:57:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-10-19  11:57:57] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO inventory_log (operation, id_equipment, id_user_source, id_user_target, remarks, confirmation) VALUES ('assign', '5', '1', '2', '', '0')
+[2022-10-19  11:57:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  11:57:58] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  12:26:24] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:27:18] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:27:46] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:28:19] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:28:22] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:28:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:29:03] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:29:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:29:11] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:29:15] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:29:16] [type: Access] [user: inspector] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:29:17] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:29:29] [type: Access] [user: inspector] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:29:30] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:29:30] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:29:30] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:29:30] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:29:30] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and username = 'inspector'
+[2022-10-19  12:29:30] [type: Error] [user: inspector] [ip: ::1] [proxy: undefined] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'username' in 'where clause' ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Database\Database.php(115): PDO->prepare('SELECT * FROM i...')
+#1 C:\laragon\www\Scheduler\sys\classes\Data\Access\View.php(47): Tanweb\Database\Database->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 C:\laragon\www\Scheduler\sys\classes\Data\Access\Views\InventoryLogDetailsView.php(43): Data\Access\View->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#3 C:\laragon\www\Scheduler\sys\classes\Services\InventoryService.php(93): Data\Access\Views\InventoryLogDetailsView->getUnconfirmedForUser('inspector')
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\InventoryMy.php(41): Services\InventoryService->getCurrentUserUnconfirmed()
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\InventoryMy->getMyUnconfirmedEquipment()
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2022-10-19  12:30:22] [type: Access] [user: inspector] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:30:23] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:30:23] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:30:23] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:30:23] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:30:23] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:31:15] [type: Access] [user: inspector] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:31:16] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:31:16] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:31:16] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:31:16] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:31:16] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:31:20] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: confirmAssignData: {}
+[2022-10-19  12:31:20] [type: update] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE inventory_log SET confirmation='1' WHERE id = '8'
+[2022-10-19  12:31:21] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:31:21] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:31:27] [type: Access] [user: inspector] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:31:28] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:31:28] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:31:28] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:31:28] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:31:28] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:39:58] [type: Access] [user: inspector] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:39:58] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:39:59] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:39:59] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:39:59] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:39:59] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:40:02] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: confirmAssignData: {}
+[2022-10-19  12:40:02] [type: update] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE inventory_log SET confirmation='1' WHERE id = '8'
+[2022-10-19  12:40:02] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  id = '8'
+[2022-10-19  12:40:03] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:40:03] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:40:03] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:40:03] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:40:52] [type: Access] [user: inspector] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:40:52] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:40:53] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:40:53] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:40:53] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:40:53] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:40:55] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: confirmAssignData: {}
+[2022-10-19  12:41:03] [type: update] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE inventory_log SET confirmation='1' WHERE id = '8'
+[2022-10-19  12:41:08] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  id = '8'
+[2022-10-19  12:41:34] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:41:34] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:41:34] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:41:34] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:42:03] [type: Access] [user: inspector] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:42:03] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:42:03] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:42:03] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:42:04] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:42:04] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:42:06] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: confirmAssignData: {}
+[2022-10-19  12:42:10] [type: update] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE inventory_log SET confirmation='1' WHERE id = '8'
+[2022-10-19  12:42:10] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  id = '8'
+[2022-10-19  12:42:10] [type: update] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE equipment SET id_user='2' WHERE id = '5'
+[2022-10-19  12:42:12] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:42:12] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:42:12] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:42:12] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:42:16] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getUsersData: {}
+[2022-10-19  12:42:16] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1' and username != 'inspector'
+[2022-10-19  12:42:20] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: assignToUserData: {}
+[2022-10-19  12:42:20] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and id_equipment = '5'
+[2022-10-19  12:42:20] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-10-19  12:42:20] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'inspector'
+[2022-10-19  12:42:20] [type: insert] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO inventory_log (operation, id_equipment, id_user_source, id_user_target, remarks, confirmation) VALUES ('assign', '5', '2', '1', '', '0')
+[2022-10-19  12:42:22] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:42:22] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:42:26] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:42:28] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:42:29] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:42:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:42:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:42:29] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-10-19  12:42:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:42:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-10-19  12:42:32] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: confirmAssignData: {}
+[2022-10-19  12:42:32] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE inventory_log SET confirmation='1' WHERE id = '9'
+[2022-10-19  12:42:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  id = '9'
+[2022-10-19  12:42:32] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE equipment SET id_user='1' WHERE id = '5'
+[2022-10-19  12:42:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:42:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-10-19  12:42:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:42:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-10-19  12:42:37] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:42:40] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:42:42] [type: Access] [user: inspector] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:42:42] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:42:42] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:42:42] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:42:43] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:42:43] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:42:49] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:42:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:42:58] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/index/indexMyData.php?
+[2022-10-19  12:42:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:42:59] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:42:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:43:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:43:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-10-19  12:43:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:43:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-10-19  12:43:05] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  12:43:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:43:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  12:43:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  12:43:28] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:43:28] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:43:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:43:29] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-10-19  12:43:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:43:29] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-10-19  12:43:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getUsersData: {}
+[2022-10-19  12:43:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1' and username != 'admin'
+[2022-10-19  12:43:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: assignToUserData: {}
+[2022-10-19  12:43:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and id_equipment = '5'
+[2022-10-19  12:43:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'inspector'
+[2022-10-19  12:43:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-10-19  12:43:41] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO inventory_log (operation, id_equipment, id_user_source, id_user_target, remarks, confirmation) VALUES ('assign', '5', '1', '2', '', '0')
+[2022-10-19  12:43:43] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:43:43] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-10-19  12:43:46] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:43:49] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:43:50] [type: Access] [user: inspector] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:43:50] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:43:50] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:43:50] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:43:51] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:43:51] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:43:54] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: confirmAssignData: {}
+[2022-10-19  12:43:54] [type: update] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE inventory_log SET confirmation='1' WHERE id = '10'
+[2022-10-19  12:43:54] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  id = '10'
+[2022-10-19  12:43:54] [type: update] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE equipment SET id_user='2' WHERE id = '5'
+[2022-10-19  12:43:56] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:43:56] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'inspector'
+[2022-10-19  12:43:56] [type: Request] [user: inspector] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:43:56] [type: Select] [user: inspector] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'inspector'
+[2022-10-19  12:44:00] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:44:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:44:03] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:44:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:44:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:44:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-10-19  12:44:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:44:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-10-19  12:50:34] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-10-19  12:50:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:50:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-10-19  12:50:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-10-19  12:50:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getUsersListData: {}
+[2022-10-19  12:50:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-19' and end >= '2022-10-19' ORDER BY sort_priority DESC
+[2022-10-19  12:51:21] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-10-19  12:51:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-19  12:51:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-10-19  12:51:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-10-19  12:51:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-10-19  12:51:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'

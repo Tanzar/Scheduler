@@ -193,6 +193,7 @@ footer {
     border-radius: 5px;
     padding: 5px;
     margin: 2px;
+    height: fit-content;
 }
 
 .standard-button:hover {

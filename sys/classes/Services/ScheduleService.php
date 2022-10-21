@@ -22,6 +22,7 @@ use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
 use Custom\Blockers\ScheduleBlocker as ScheduleBlocker;
+use Custom\Parsers\Database\Entry as Entry;
 use DateTime;
 
 /**
@@ -137,7 +138,11 @@ class ScheduleService {
     }
     
     public function saveEntryForUser(Container $data) : int {
-        $entry = $this->formEntry($data);
+        $username = $data->get('username');
+        $user = $this->user->getByUsername($username);
+        $data->add($user->get('id'), 'id_user');
+        $parser = new Entry();
+        $entry = $parser->parse($data);
         $this->checkBlocker($entry);
         $idSchedule = $this->schedule->save($entry);
         if($data->isValueSet('id_document')){
@@ -145,44 +150,6 @@ class ScheduleService {
             $this->saveDocumentSchedule($idSchedule, $idDocument);
         }
         return $idSchedule;
-    }
-    
-    private function formEntry(Container $data) : Container {
-        $entry = new Container();
-        if($data->isValueSet('id')){
-            $entry->add($data->get('id'), 'id');
-        }
-        $idUser = $this->getIdUser($data);
-        $entry->add($idUser, 'id_user');
-        if($data->isValueSet('id_location')){
-            $idLocation = $data->get('id_location');
-            $entry->add($idLocation, 'id_location');
-        }
-        if($data->isValueSet('id_activity')){
-            $idActivity = $data->get('id_activity');
-            $entry->add($idActivity, 'id_activity');
-        }
-        if($data->isValueSet('underground')){
-            $idUnderground = $data->get('underground');
-            $entry->add($idUnderground, 'underground');
-        }
-        $entry->add($data->get('start'), 'start');
-        $entry->add($data->get('end'), 'end');
-        $this->checkEntryDates($entry);
-        return $entry;
-    }
-    
-    private function getIdUser(Container $data) : int {
-        if($data->isValueSet('username')){
-            $user = $this->user->getByUsername($data->get('username'));
-            return (int) $user->get('id');
-        }
-        if($data->isValueSet('id_user')){
-            return (int) $data->get('id_user');
-        }
-        else{
-            throw new ScheduleEntryException('username and/or id_user not set');
-        }
     }
     
     private function saveDocumentSchedule(int $idSchedule, int $idDocument) : void {
@@ -194,8 +161,10 @@ class ScheduleService {
     
     public function saveEntryForCurrentUser(Container $data) : int {
         $username = Session::getUsername();
-        $data->add($username, 'username');
-        $entry = $this->formEntry($data);
+        $user = $this->user->getByUsername($username);
+        $data->add($user->get('id'), 'id_user');
+        $parser = new Entry();
+        $entry = $parser->parse($data);
         $this->checkBlocker($entry);
         $idSchedule = $this->schedule->save($entry);
         if($data->isValueSet('id_document')){

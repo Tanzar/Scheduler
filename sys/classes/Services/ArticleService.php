@@ -17,6 +17,7 @@ use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
 use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
+use Custom\Parsers\Database\Article as Article;
 
 /**
  * Description of ArticleService (art. 41)
@@ -109,7 +110,8 @@ class ArticleService {
         $documentId = (int) $data->get('id_document');
         $documentUserId = $this->getDocumentUserId($username, $documentId);
         $data->add($documentUserId, 'id_document_user');
-        $article = $this->formArticle($data);
+        $parser = new Article();
+        $article = $parser->parse($data);
         return $this->article->save($article);
     }
     
@@ -122,7 +124,8 @@ class ArticleService {
     
     public function updateArticle(Container $data) : void {
         $this->checkBlocker($data);
-        $article = $this->formArticle($data);
+        $parser = new Article();
+        $article = $parser->parse($data);
         $this->article->save($article);
     }
     
@@ -130,25 +133,6 @@ class ArticleService {
         $article = $this->article->getById($id);
         $this->checkBlocker($article);
         $this->article->disable($id);
-    }
-    
-    private function formArticle(Container $data) : Container {
-        $art = new Container();
-        if($data->isValueSet('id')){
-            $art->add($data->get('id'), 'id');
-        }
-        $art->add($data->get('position'), 'position');
-        $art->add($data->get('applicant'), 'applicant');
-        $art->add($data->get('application_number'), 'application_number');
-        $art->add($data->get('application_date'), 'application_date');
-        $art->add($data->get('date'), 'date');
-        $art->add($data->get('external_company'), 'external_company');
-        $art->add($data->get('company_name'), 'company_name');
-        $art->add($data->get('remarks'), 'remarks');
-        $art->add($data->get('id_art_41_form'), 'id_art_41_form');
-        $art->add($data->get('id_position_groups'), 'id_position_groups');
-        $art->add($data->get('id_document_user'), 'id_document_user');
-        return $art;
     }
     
     private function checkBlocker(Container $data) {

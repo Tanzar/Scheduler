@@ -389,4 +389,9 @@ function Datatable(div, config){
             }
         }
     }
+    
+    this.getData = function(){
+        var copy = JSON.parse(JSON.stringify(this.data));
+        return copy;
+    }
 }

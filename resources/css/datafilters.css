@@ -1,0 +1,48 @@
+/*
+This code is free to use, just remember to give credit.
+*/
+/* 
+    Created on : 2022-10-20, 11:55:14
+    Author     : Tanzar
+*/
+
+:root {
+    --border-color:  #0066ff;
+    --background-color: #ffffff;
+}
+
+.datafilters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 3px solid var(--border-color);
+    background-color: var(--background-color);
+    margin: 5px;
+    border-radius: 20px;
+    min-height: 50px;
+    max-width: 800px;
+    min-width: 100px;
+    width: fit-content;
+}
+
+.datafilters-element {
+    border: 3px solid var(--border-color);
+    background-color: var(--background-color);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    height: max-content;
+}
+
+.datafilters-close {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.datafilters-close:hover,
+.datafilters-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

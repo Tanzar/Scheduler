@@ -15,6 +15,7 @@ use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
 use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
+use Custom\Parsers\Database\Decision as Decision;
 
 /**
  * Description of DecisionService
@@ -78,7 +79,8 @@ class DecisionService {
     
     public function saveDecision(Container $data) : int {
         $this->checkBlocker($data);
-        $decision = $this->formDecision($data);
+        $parser = new Decision();
+        $decision = $parser->parse($data);
         $id = $this->decision->save($decision);
         if($data->isValueSet('id_suspension')){
             $assign = new Container();
@@ -97,7 +99,8 @@ class DecisionService {
             $documentUserId = $this->getDocumentUserId($username, $documentId);
             $data->add($documentUserId, 'id_document_user');
         }
-        $decision = $this->formDecision($data);
+        $parser = new Decision();
+        $decision = $parser->parse($data);
         $id = $this->decision->save($decision);
         if($data->isValueSet('id_suspension')){
             $assign = new Container();
@@ -140,19 +143,6 @@ class DecisionService {
         $decision = $this->decision->getById($id);
         $this->checkBlocker($decision);
         $this->decision->disable($id);
-    }
-    
-    private function formDecision(Container $data) : Container {
-        $decision = new Container();
-        if($data->isValueSet('id')){
-            $decision->add($data->get('id'), 'id');
-        }
-        $decision->add($data->get('date'), 'date');
-        $decision->add($data->get('description'), 'description');
-        $decision->add($data->get('remarks'), 'remarks');
-        $decision->add($data->get('id_decision_law'), 'id_decision_law');
-        $decision->add($data->get('id_document_user'), 'id_document_user');
-        return $decision;
     }
     
     private function checkBlocker(Container $data) {

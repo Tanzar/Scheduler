@@ -50,6 +50,13 @@ class UsersWithoutPasswordsView extends View{
         }
     }
     
+    public function getActiveExcept(string $username) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('users_without_passwords')->where('active', 1)
+                ->and()->where('username', $username, '!=');
+        return $this->select($sql);
+    }
+    
     public function findUsers(Container $conditions) : Container{
         $sql = new MysqlBuilder();
         $sql->select('users_without_passwords');

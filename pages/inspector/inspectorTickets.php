@@ -33,7 +33,6 @@ This code is free to use, just remember to give credit.
             ?>
         </title>
         <?php
-            
             Resources::linkCSS('main.css');
             Resources::linkCSS('datatable.css');
             Resources::linkCSS('modal-box.css');

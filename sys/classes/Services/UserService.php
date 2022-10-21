@@ -51,6 +51,14 @@ class UserService{
         return $this->usersEmploymentPeriods->getOrderedActiveByDate($date);
     }
     
+    public function getActiveUsersExcept(string $username) : Container {
+        return $this->usersWithoutPasswords->getActiveExcept($username);
+    }
+    
+    public function getActiveUsers() : Container {
+        return $this->usersWithoutPasswords->getActive();
+    }
+    
     public function getUserByUsername(string $username) : Container {
         return $this->users->getByUsername($username);
     }

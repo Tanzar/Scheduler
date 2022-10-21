@@ -31,6 +31,7 @@ use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
 use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
+use Custom\Parsers\Database\Suspension as Suspension;
 
 
 /**
@@ -191,7 +192,8 @@ class SuspensionService {
         $username = Session::getUsername();
         $userDocumentId = (int) $this->getUserDocumentId($documentId, $username);
         $data->add($userDocumentId, 'id_document_user');
-        $suspension = $this->parseSuspension($data);
+        $parser = new Suspension();
+        $suspension = $parser->parse($data);
         return $this->suspension->save($suspension);
     }
     
@@ -205,32 +207,9 @@ class SuspensionService {
     
     public function saveSuspension(Container $data) : int {
         $this->checkBlocker($data);
-        $suspension = $this->parseSuspension($data);
+        $parser = new Suspension();
+        $suspension = $parser->parse($data);
         return $this->suspension->save($suspension);
-    }
-    
-    private function parseSuspension(Container $data) : Container {
-        $suspension = new Container();
-        if($data->isValueSet('id')){
-            $suspension->add($data->get('id'), 'id');
-        }
-        if($data->isValueSet('active')){
-            $suspension->add($data->get('active'), 'active');
-        }
-        $suspension->add($data->get('date'), 'date');
-        $suspension->add($data->get('shift'), 'shift');
-        $suspension->add($data->get('region'), 'region');
-        $suspension->add($data->get('description'), 'description');
-        $suspension->add($data->get('correction_date'), 'correction_date');
-        $suspension->add($data->get('correction_shift'), 'correction_shift');
-        $suspension->add($data->get('remarks'), 'remarks');
-        $suspension->add($data->get('external_company'), 'external_company');
-        $suspension->add($data->get('company_name'), 'company_name');
-        $suspension->add($data->get('id_suspension_type'), 'id_suspension_type');
-        $suspension->add($data->get('id_suspension_object'), 'id_suspension_object');
-        $suspension->add($data->get('id_suspension_reason'), 'id_suspension_reason');
-        $suspension->add($data->get('id_document_user'), 'id_document_user');
-        return $suspension;
     }
     
     public function saveTypeObjects(int $idType, Container $objectIds) : void {

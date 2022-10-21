@@ -42,11 +42,13 @@ function ScheduleMy(){
                 }
                 openModalBox(language.edit_entry, fields, language.save, function(data){
                     var dataToSend = {
-                        id: data.id,
-                        id_user: data.id_user,
+                        id: selected.id,
+                        username: selected.username,
                         start: data.start,
                         end: data.end,
-                        underground: data.underground
+                        underground: selected.underground,
+                        id_activity: selected.id_activity,
+                        id_location: selected.id_location,
                     }
                     RestApi.post('ScheduleUser', 'saveEntry', dataToSend, 
                         function(response){

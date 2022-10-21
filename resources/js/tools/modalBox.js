@@ -35,7 +35,8 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 var input = document.createElement('input');
                 input.setAttribute('type', 'text');
                 input.setAttribute('class', 'modal-box-input');
-                input.setAttribute('placeholder', field.title)
+                input.setAttribute('placeholder', field.title);
+                input.setAttribute('title', field.title);
                 container.appendChild(input);
                 input.variable = field.variable;
                 input.onchange = function(){
@@ -62,6 +63,7 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 var input = document.createElement('textarea');
                 input.setAttribute('class', 'modal-box-textarea');
                 input.setAttribute('placeholder', field.title);
+                input.setAttribute('title', field.title);
                 input.setAttribute('resize', 'disable');
                 container.appendChild(input);
                 input.variable = field.variable;
@@ -107,7 +109,8 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 var input = document.createElement('input');
                 input.setAttribute('type', 'number');
                 input.setAttribute('class', 'modal-box-input');
-                input.setAttribute('placeholder', field.title)
+                input.setAttribute('placeholder', field.title);
+                input.setAttribute('title', field.title);
                 container.appendChild(input);
                 input.variable = field.variable;
                 input.onchange = function(){
@@ -118,6 +121,9 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 }
                 if(field.min !== undefined){
                     input.setAttribute('min', field.min);
+                }
+                if(field.step !== undefined){
+                    input.setAttribute('step', field.step);
                 }
                 if(field.value !== undefined){
                     input.value = field.value;

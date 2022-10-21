@@ -44,8 +44,12 @@ try{
         echo '</form>';
     }
     
-    //--- ARCHIVIST ---//
-    //TODO
+    //--- INVENTORY ---//
+     if($security->userHaveAnyPrivilage(new Container(['admin', 'inventory_user', 'inventory_admin']))){
+        echo '<form action="' . Pages::getURL('inventoryMy.php') . '">';
+        echo '<input type="submit" class="standard-button" value="' . $modules->get('inventory') . '">';
+        echo '</form>';
+    }
     
     //--- STATISTICS ---//
     //TODO

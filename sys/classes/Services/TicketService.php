@@ -17,6 +17,7 @@ use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
 use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
+use Custom\Parsers\Database\Ticket as Ticket;
 
 /**
  * Description of TicketService
@@ -92,27 +93,9 @@ class TicketService {
     
     public function updateTicket(Container $data) : void {
         $this->checkBlocker($data);
-        $ticket = $this->parseTicket($data);
+        $parser = new Ticket();
+        $ticket = $parser->parse($data);
         $this->ticket->save($ticket);
-    }
-    
-    private function parseTicket(Container $data) : Container {
-        $ticket = new Container();
-        if($data->isValueSet('id')){
-            $ticket->add($data->get('id'), 'id');
-        }
-        $ticket->add($data->get('id_position_groups'), 'id_position_groups');
-        $ticket->add($data->get('id_ticket_law'), 'id_ticket_law');
-        $ticket->add($data->get('id_document_user'), 'id_document_user');
-        $ticket->add($data->get('number'), 'number');
-        $ticket->add($data->get('position'), 'position');
-        $ticket->add($data->get('value'), 'value');
-        $ticket->add($data->get('date'), 'date');
-        $ticket->add($data->get('violated_rules'), 'violated_rules');
-        $ticket->add($data->get('external_company'), 'external_company');
-        $ticket->add($data->get('company_name'), 'company_name');
-        $ticket->add($data->get('remarks'), 'remarks');
-        return $ticket;
     }
     
     public function saveTicketLaw(Container $data) : int {
