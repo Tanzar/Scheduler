@@ -47,11 +47,9 @@ This code is free to use, just remember to give credit.
         <header>
             <?php Scripts::run('topMenu.php'); ?>
         </header>
-        <div class="side-menu">
-            <?php
-                Scripts::run('inspectorSideMenu.php');
-            ?>
-        </div>
+        <?php
+            Scripts::run('inspectorSideMenu.php');
+        ?>
         <div class="page-contents">
             <div class="horizontal-container">
                 <div>

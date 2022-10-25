@@ -46,11 +46,9 @@ This code is free to use, just remember to give credit.
         <header>
             <?php Scripts::run('topMenu.php'); ?>
         </header>
-        <div class="side-menu">
-            <?php
-                Scripts::run('inspectorSideMenu.php');
-            ?>
-        </div>
+        <?php
+            Scripts::run('inspectorSideMenu.php');
+        ?>
         <div class="page-contents">
             <div>
                 <select class="standard-input" id="selectYear">
@@ -200,6 +198,36 @@ This code is free to use, just remember to give credit.
                             </div>
                             <div id="suspensionsRow" style="display: none">
                                 <div class="standard-text" id="suspensions"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="report-tr">
+                        <td colspan="4" class="report-td">
+                            <div class="horizontal-container">
+                                <button class="standard-button" id="showHideUsages">
+                                    <?php echo $interface->get('show'); ?>
+                                </button>
+                                <div class="standard-text">
+                                    <?php echo $interface->get('instrument_usages'); ?>
+                                </div>
+                            </div>
+                            <div id="usagesRow" style="display: none">
+                                <div class="standard-text" id="usages"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="report-tr">
+                        <td colspan="4" class="report-td">
+                            <div class="horizontal-container">
+                                <button class="standard-button" id="showHideCourt">
+                                    <?php echo $interface->get('show'); ?>
+                                </button>
+                                <div class="standard-text">
+                                    <?php echo $interface->get('court_applications'); ?>
+                                </div>
+                            </div>
+                            <div id="courtRow" style="display: none">
+                                <div class="standard-text" id="court"></div>
                             </div>
                         </td>
                     </tr>

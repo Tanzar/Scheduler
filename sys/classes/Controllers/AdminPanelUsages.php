@@ -13,50 +13,33 @@ use Services\InstrumentUsageService as InstrumentUsageService;
 use Tanweb\Config\INI\Languages as Languages;
 
 /**
- * Description of InspectorInstruments
+ * Description of AdminPanelUsages
  *
  * @author Tanzar
  */
-class InspectorInstruments extends Controller{
+class AdminPanelUsages extends Controller{
     private DocumentService $documentService;
     private InstrumentUsageService $instrumentService;
     
     public function __construct() {
         $this->documentService = new DocumentService();
         $this->instrumentService = new InstrumentUsageService();
-        $privilages = new Container(['admin', 'schedule_user_inspector']);
+        $privilages = new Container(['admin']);
         parent::__construct($privilages);
-    }
-    
-    public function getDocuments() {
-        $data = $this->getRequestData();
-        $month = (int) $data->get('month');
-        $year = (int) $data->get('year');
-        $response = $this->documentService->getCurrentUserDocumentsByMonthYear($month, $year);
-        $this->setResponse($response);
     }
     
     public function getUsages() {
         $data = $this->getRequestData();
-        $documentId = (int) $data->get('id_document');
-        $response = $this->instrumentService->getUsagesForCurrentUser($documentId);
+        $year = (int) $data->get('year');
+        $username = $data->get('username');
+        $response = $this->instrumentService->getAllUserUsagesForYear($username, $year);
         $this->setResponse($response);
     }
     
-    public function getNewUsageDetails() {
+    public function getEditUsageDetails() {
         $data = $this->getRequestData();
         $documentId = (int) $data->get('id_document');
         $response = $this->instrumentService->getNewUsageDetails($documentId);
-        $this->setResponse($response);
-    }
-    
-    public function saveNewUsage() {
-        $data = $this->getRequestData();
-        $languages = Languages::getInstance();
-        $id = $this->instrumentService->saveUsageForCurrentUser($data);
-        $response = new Container();
-        $response->add($id, 'id');
-        $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
     
@@ -69,11 +52,11 @@ class InspectorInstruments extends Controller{
         $this->setResponse($response);
     }
     
-    public function removeUsage() {
+    public function changeUsageStatus() {
         $data = $this->getRequestData();
         $id = (int) $data->get('id');
         $languages = Languages::getInstance();
-        $this->instrumentService->disableUsage($id);
+        $this->instrumentService->changeUsageStatus($id);
         $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);

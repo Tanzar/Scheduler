@@ -171,4 +171,19 @@ function formatReport(data, language){
     contents += '</ul>'
     document.getElementById('suspensions').innerHTML = contents;
     showHideButton('showHideSuspensions', 'suspensionsRow', language);
+    
+    contents = '';
+    data.usages.forEach(item => {
+        contents += item + '<br>';
+    });
+    document.getElementById('usages').innerHTML = contents;
+    showHideButton('showHideUsages', 'usagesRow', language);
+    
+    contents = '';
+    data.applications.forEach(item => {
+        contents += item + '<br>';
+    });
+    document.getElementById('court').innerHTML = contents;
+    showHideButton('showHideCourt', 'courtRow', language);
+    
 }

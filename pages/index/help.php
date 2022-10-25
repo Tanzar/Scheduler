@@ -41,11 +41,9 @@ This code is free to use, just remember to give credit.
         <header>
             <?php Scripts::run('topMenu.php'); ?>
         </header>
-        <div class="side-menu">
-            <?php
-                Scripts::run('indexSideMenu.php');
-            ?>
-        </div>
+        <?php
+            Scripts::run('indexSideMenu.php');
+        ?>
         <div class="page-contents">
             <div class="standard-text">
                 <?php 

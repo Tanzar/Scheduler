@@ -16,6 +16,8 @@ use Data\Access\Views\SuspensionDetailsView as SuspensionDetailsView;
 use Data\Access\Views\SuspensionArticleDetailsView as SuspensionArticleDetailsView;
 use Data\Access\Views\SuspensionDecisionDetailsView as SuspensionDecisionDetailsView;
 use Data\Access\Views\SuspensionTicketDetailsView as SuspensionTicketDetailsView;
+use Data\Access\Views\InstrumentUsageDetailsView as InstrumentUsageDetailsView;
+use Data\Access\Views\CourtApplicationDetailsView as CourtApplicationDetailsView;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 use DateTime;
@@ -36,7 +38,8 @@ class InspectionReportService {
     private SuspensionArticleDetailsView $suspensionArticleDetails;
     private SuspensionDecisionDetailsView $suspensionDecisionDetails;
     private SuspensionTicketDetailsView $suspensionTicketDetails;
-
+    private InstrumentUsageDetailsView $instrumentUsageDetails;
+    private CourtApplicationDetailsView $courtApplicationDetails;
 
     public function __construct() {
         $this->documentDetails = new DocumentDetailsView();
@@ -49,6 +52,8 @@ class InspectionReportService {
         $this->suspensionArticleDetails = new SuspensionArticleDetailsView();
         $this->suspensionDecisionDetails = new SuspensionDecisionDetailsView();
         $this->suspensionTicketDetails = new SuspensionTicketDetailsView();
+        $this->instrumentUsageDetails = new InstrumentUsageDetailsView();
+        $this->courtApplicationDetails = new CourtApplicationDetailsView();
     }
     
     public function generateReport(int $documentId, string $username) : Container {
@@ -60,6 +65,8 @@ class InspectionReportService {
         $report->add($this->getUserArticlesForDocument($documentId, $username), 'art_41');
         $report->add($this->getUserDecisionsForDocument($documentId, $username), 'decisions');
         $report->add($this->getUserSuspensionsForDocument($documentId, $username), 'suspensions');
+        $report->add($this->getUserInstrumentUsages($documentId, $username), 'usages');
+        $report->add($this->getUserCourtApplications($documentId, $username), 'applications');
         return $report;
     }
     
@@ -187,6 +194,28 @@ class InspectionReportService {
         foreach ($tickets->toArray() as $item) {
             $ticket = new Container($item);
             $text = '' . $ticket->get('ticket_date') . ' : ' . $ticket->get('ticket_number');
+            $result[] = $text;
+        }
+        return $result;
+    }
+    
+    private function getUserInstrumentUsages(int $documentId, string $username) : array {
+        $data = $this->instrumentUsageDetails->getActiveByDocumentAndUsername($documentId, $username);
+        $result = array();
+        foreach ($data->toArray() as $item){
+            $usage = new Container($item);
+            $text = '' . $usage->get('date') . ' : ' . $usage->get('equipment_name');
+            $result[] = $text;
+        }
+        return $result;
+    }
+    
+    private function getUserCourtApplications(int $documentId, string $username) : array {
+        $data = $this->courtApplicationDetails->getActiveByUsernameAndDocument($username, $documentId);
+        $result = array();
+        foreach ($data->toArray() as $item){
+            $application = new Container($item);
+            $text = '' . $application->get('date') . ' : ' . $application->get('position');
             $result[] = $text;
         }
         return $result;

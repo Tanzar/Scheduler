@@ -7,24 +7,26 @@
 namespace Controllers;
 
 use Controllers\Base\Controller as Controller;
-use Tanweb\Container as Container;
+use Services\CourtApplicationService as CourtApplicationService;
 use Services\DocumentService as DocumentService;
-use Services\InstrumentUsageService as InstrumentUsageService;
+use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 
 /**
- * Description of InspectorInstruments
+ * Description of InspectorCourtApplication
  *
  * @author Tanzar
  */
-class InspectorInstruments extends Controller{
+class InspectorCourtApplication extends Controller{
     private DocumentService $documentService;
-    private InstrumentUsageService $instrumentService;
+    private CourtApplicationService $courtApplication;
     
     public function __construct() {
         $this->documentService = new DocumentService();
-        $this->instrumentService = new InstrumentUsageService();
-        $privilages = new Container(['admin', 'schedule_user_inspector']);
+        $this->courtApplication = new CourtApplicationService();
+        $privilages = new Container();
+        $privilages->add('admin');
+        $privilages->add('schedule_user_inspector');
         parent::__construct($privilages);
     }
     
@@ -36,44 +38,45 @@ class InspectorInstruments extends Controller{
         $this->setResponse($response);
     }
     
-    public function getUsages() {
+    public function getCourtApplications() {
         $data = $this->getRequestData();
         $documentId = (int) $data->get('id_document');
-        $response = $this->instrumentService->getUsagesForCurrentUser($documentId);
+        $response = $this->courtApplication->getApplicationsForCurrentUser($documentId);
         $this->setResponse($response);
     }
     
-    public function getNewUsageDetails() {
+    public function getNewApplicationDetails() {
         $data = $this->getRequestData();
         $documentId = (int) $data->get('id_document');
-        $response = $this->instrumentService->getNewUsageDetails($documentId);
+        $response = $this->courtApplication->getNewApplicationDetails($documentId);
         $this->setResponse($response);
     }
     
-    public function saveNewUsage() {
+    public function saveNewCourtApplication() {
         $data = $this->getRequestData();
         $languages = Languages::getInstance();
-        $id = $this->instrumentService->saveUsageForCurrentUser($data);
+        $id = $this->courtApplication->saveNewApplication($data);
         $response = new Container();
         $response->add($id, 'id');
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
     
-    public function updateUsage() {
+    public function saveCourtApplication() {
         $data = $this->getRequestData();
         $languages = Languages::getInstance();
-        $this->instrumentService->updateUsage($data);
+        $id = $this->courtApplication->saveApplication($data);
         $response = new Container();
+        $response->add($id, 'id');
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
     
-    public function removeUsage() {
+    public function removeApplication() {
         $data = $this->getRequestData();
         $id = (int) $data->get('id');
         $languages = Languages::getInstance();
-        $this->instrumentService->disableUsage($id);
+        $this->courtApplication->disable($id);
         $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);

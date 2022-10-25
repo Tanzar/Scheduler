@@ -11,6 +11,7 @@ use Data\Access\Views\InstrumentUsageDetailsView as InstrumentUsageDetailsView;
 use Data\Access\Views\EquipmentDetailsView as EquipmentDetailsView;
 use Data\Access\Views\DocumentDetailsView as DocumentDetailsView;
 use Data\Access\Views\DocumentUserDetailsView as DocumentUserDetailsView;
+use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Custom\Parsers\Database\InstrumentUsage as InstrumentUsage;
@@ -45,12 +46,17 @@ class InstrumentUsageService {
         return $details;
     }
     
-    public function getUsagedForCurrentUser(int $documentId) : Container {
+    public function getAllUserUsagesForYear(string $username, int $year) : Container {
+        return $this->instrumentUsageDetails->getAllByUsernameAndYear($username, $year);
+    }
+    
+    public function getUsagesForCurrentUser(int $documentId) : Container {
         $username = Session::getUsername();
         return $this->instrumentUsageDetails->getActiveByDocumentAndUsername($documentId, $username);
     }
     
     public function saveUsageForCurrentUser(Container $data) : int {
+        $this->checkBlocker($data);
         $username = Session::getUsername();
         $documentId = (int) $data->get('id_document');
         $details = $this->documentUserDetails->getByUsernameAndDocumentId($username, $documentId);
@@ -62,23 +68,35 @@ class InstrumentUsageService {
     }
     
     public function updateUsage(Container $data) : void {
+        $this->checkBlocker($data);
         $parser = new InstrumentUsage();
         $usage = $parser->parse($data);
         $this->instrumentUsage->save($usage);
     }
     
     public function disableUsage(int $id) : void {
+        $usage = $this->instrumentUsage->getById($id);
+        $this->checkBlocker($usage);
         $this->instrumentUsage->disable($id);
     }
     
     public function changeUsageStatus(int $id) : void {
         $usage = $this->instrumentUsage->getById($id);
+        $this->checkBlocker($usage);
         $active = $usage->get('active');
         if($active){
             $this->instrumentUsage->disable($id);
         }
         else{
             $this->instrumentUsage->enable($id);
+        }
+    }
+    
+    private function checkBlocker(Container $data) {
+        $blocker = new InspectorDateBlocker();
+        if($blocker->isBLocked($data)){
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('cannot_change_selected_month'));
         }
     }
 }

@@ -9,11 +9,19 @@
     
     $language = Languages::getInstance();
     $adminOptions = new Container($language->get('admin'));
+    $moduleNames = new Container($language->get('modules'));
+    $interface = new Container($language->get('interface'));
 ?>
 <div class="side-menu">
+    <div class="standard-text">
+        <?php echo $interface->get('main'); ?>
+    </div>
     <form action="<?php echo Pages::getURL('adminPanelUsers.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('users'); ?>">
     </form>
+    <div class="standard-text">
+        <?php echo $moduleNames->get('schedule'); ?>
+    </div>
     <form action="<?php echo Pages::getURL('adminPanelSchedule.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('schedule'); ?>">
     </form>
@@ -26,6 +34,9 @@
     <form action="<?php echo Pages::getURL('adminPanelLocationSettings.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('locations_settings'); ?>">
     </form>
+    <div class="standard-text">
+        <?php echo $moduleNames->get('inspector'); ?>
+    </div>
     <form action="<?php echo Pages::getURL('adminPanelDocuments.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('documents'); ?>">
     </form>
@@ -47,7 +58,25 @@
     <form action="<?php echo Pages::getURL('adminPanelSuspensions.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('suspensions'); ?>">
     </form>
+    <form action="<?php echo Pages::getURL('adminPanelUsages.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('usages'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('adminPanelCourt.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('court'); ?>">
+    </form>
+    <div class="standard-text">
+        <?php echo $moduleNames->get('inventory'); ?>
+    </div>
     <form action="<?php echo Pages::getURL('adminPanelInventory.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('inventory'); ?>">
     </form>
+    <div class="standard-text">
+        <?php echo $moduleNames->get('stats'); ?>
+    </div>
+    <div class="standard-text">
+        <?php echo $moduleNames->get('qualifications'); ?>
+    </div>
+    <div class="standard-text">
+        <?php echo $moduleNames->get('files'); ?>
+    </div>
 </div>
