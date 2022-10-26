@@ -51,11 +51,15 @@ try{
         echo '</form>';
     }
     
-    //--- STATISTICS ---//
+    //--- STATS ---//
     //TODO
     
     //--- FILES ---//
-    //TODO
+    if($security->userHaveAnyPrivilage(new Container(['admin', 'prints_schedule']))){
+        echo '<form action="' . Pages::getURL('printsSchedule.php') . '">';
+        echo '<input type="submit" class="standard-button" value="' . $modules->get('prints') . '">';
+        echo '</form>';
+    }
     
 }
 catch (Throwable $ex){

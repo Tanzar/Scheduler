@@ -77,6 +77,6 @@
         <?php echo $moduleNames->get('qualifications'); ?>
     </div>
     <div class="standard-text">
-        <?php echo $moduleNames->get('files'); ?>
+        <?php echo $moduleNames->get('prints'); ?>
     </div>
 </div>

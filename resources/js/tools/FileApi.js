@@ -28,7 +28,7 @@ class FileApi{
     }
     
     static getAddress(){
-        var myScript = document.getElementById('RestApi.js');
+        var myScript = document.getElementById('FileApi.js');
         var path = myScript.getAttribute('src');
         var index = path.search('resources/js');
         path = path.substring(0, index);

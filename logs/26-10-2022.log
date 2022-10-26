@@ -1,0 +1,575 @@
+[2022-10-26  05:55:46] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-26  05:55:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-26  05:55:50] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-10-26  05:55:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  05:56:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  06:00:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  06:00:09] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] FPDF error: Undefined font: arialpl  ;
+ #0 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(514): libs\fpdf\FPDF->Error('Undefined font:...')
+#1 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(28): libs\fpdf\FPDF->SetFont('arialpl', '', 9)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(37): Tanweb\File\PDFMaker\PDFMaker->__construct('L', 'A3')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(117): Custom\File\AttendanceList->__construct(10, 2022)
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  06:00:50] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:01:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:01:53] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] FPDF error: Some data has already been output, can't send PDF file ;
+ #0 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(1064): libs\fpdf\FPDF->Error('Some data has a...')
+#1 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(1003): libs\fpdf\FPDF->_checkoutput()
+#2 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(116): libs\fpdf\FPDF->Output('I', 'lista_test.pdf....')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(121): Tanweb\File\PDFMaker\PDFMaker->send('lista_test.pdf')
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  07:06:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:13:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:13:49] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "libs\tfpdf\Exception" not found ;
+ #0 C:\laragon\www\Scheduler\sys\libs\tfpdf\tfpdf.php(1350): libs\tfpdf\tFPDF->Error('Could not inclu...')
+#1 C:\laragon\www\Scheduler\sys\libs\tfpdf\tfpdf.php(547): libs\tfpdf\tFPDF->_loadfont('arialpl.php')
+#2 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(26): libs\tfpdf\tFPDF->AddFont('arialpl', '', 'arialpl.php')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(37): Tanweb\File\PDFMaker\PDFMaker->__construct('L', 'A3')
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(117): Custom\File\AttendanceList->__construct(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#9 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#10 {main}
+[2022-10-26  07:15:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:15:11] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "libs\tfpdf\Exception" not found ;
+ #0 C:\laragon\www\Scheduler\sys\libs\tfpdf\tfpdf.php(1790): libs\tfpdf\tFPDF->Error('Font file not f...')
+#1 C:\laragon\www\Scheduler\sys\libs\tfpdf\tfpdf.php(2251): libs\tfpdf\tFPDF->_putfonts()
+#2 C:\laragon\www\Scheduler\sys\libs\tfpdf\tfpdf.php(2306): libs\tfpdf\tFPDF->_putresources()
+#3 C:\laragon\www\Scheduler\sys\libs\tfpdf\tfpdf.php(291): libs\tfpdf\tFPDF->_enddoc()
+#4 C:\laragon\www\Scheduler\sys\libs\tfpdf\tfpdf.php(1188): libs\tfpdf\tFPDF->Close()
+#5 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(116): libs\tfpdf\tFPDF->Output('I', 'lista_test.pdf....')
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(121): Tanweb\File\PDFMaker\PDFMaker->send('lista_test.pdf')
+#7 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#11 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#12 {main}
+[2022-10-26  07:15:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:15:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:20:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:20:06] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "libs\tfpdf\TTFontFile" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(26): libs\tfpdf\tFPDF->AddFont('arial', '', 'arial.ttf', true)
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(37): Tanweb\File\PDFMaker\PDFMaker->__construct('L', 'A3')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(117): Custom\File\AttendanceList->__construct(10, 2022)
+#3 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2022-10-26  07:21:50] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:21:50] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "libs\tfpdf\TTFontFile" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(26): libs\tfpdf\tFPDF->AddFont('arial', '', 'arial.ttf', true)
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(37): Tanweb\File\PDFMaker\PDFMaker->__construct('L', 'A3')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(117): Custom\File\AttendanceList->__construct(10, 2022)
+#3 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2022-10-26  07:23:33] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:23:33] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Cannot access offset of type string on string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\FPDFExtended.php(59): Tanweb\File\PDFMaker\FPDFExtended->NbLines(10, 'Lp')
+#1 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(138): Tanweb\File\PDFMaker\FPDFExtended->Row(Array)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(57): Tanweb\File\PDFMaker\PDFMaker->makeTable(Object(Tanweb\File\PDFMaker\Columns), Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(118): Custom\File\AttendanceList->printFirstHeadersSet()
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  07:24:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:25:35] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Cannot access offset of type string on string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\FPDFExtended.php(59): Tanweb\File\PDFMaker\FPDFExtended->NbLines(10, 'Lp')
+#1 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(138): Tanweb\File\PDFMaker\FPDFExtended->Row(Array)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(57): Tanweb\File\PDFMaker\PDFMaker->makeTable(Object(Tanweb\File\PDFMaker\Columns), Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(118): Custom\File\AttendanceList->printFirstHeadersSet()
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  07:25:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:26:22] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Cannot access offset of type string on string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\FPDFExtended.php(59): Tanweb\File\PDFMaker\FPDFExtended->NbLines(10, 'Lp')
+#1 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(138): Tanweb\File\PDFMaker\FPDFExtended->Row(Array)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(57): Tanweb\File\PDFMaker\PDFMaker->makeTable(Object(Tanweb\File\PDFMaker\Columns), Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(118): Custom\File\AttendanceList->printFirstHeadersSet()
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  07:28:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:29:48] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:29:49] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "libs\tfpdf\Exception" not found ;
+ #0 C:\laragon\www\Scheduler\sys\libs\tfpdf\tfpdf.php(1260): libs\tfpdf\tFPDF->Error('Some data has a...')
+#1 C:\laragon\www\Scheduler\sys\libs\tfpdf\tfpdf.php(1207): libs\tfpdf\tFPDF->_checkoutput()
+#2 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(116): libs\tfpdf\tFPDF->Output('I', 'lista_test.pdf....')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(121): Tanweb\File\PDFMaker\PDFMaker->send('lista_test.pdf')
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  07:30:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:30:22] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Cannot access offset of type string on string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\FPDFExtended.php(59): Tanweb\File\PDFMaker\FPDFExtended->NbLines(10, 'Lp')
+#1 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(138): Tanweb\File\PDFMaker\FPDFExtended->Row(Array)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(57): Tanweb\File\PDFMaker\PDFMaker->makeTable(Object(Tanweb\File\PDFMaker\Columns), Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(118): Custom\File\AttendanceList->printFirstHeadersSet()
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  07:31:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:31:16] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] FPDF error: Some data has already been output, can't send PDF file (output started at C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php:421) ;
+ #0 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(1053): libs\fpdf\FPDF->Error('Some data has a...')
+#1 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(1003): libs\fpdf\FPDF->_checkoutput()
+#2 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(116): libs\fpdf\FPDF->Output('I', 'lista_test.pdf....')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(121): Tanweb\File\PDFMaker\PDFMaker->send('lista_test.pdf')
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  07:32:32] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:32:32] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Cannot access offset of type string on string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\FPDFExtended.php(59): Tanweb\File\PDFMaker\FPDFExtended->NbLines(10, 'Lp')
+#1 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(138): Tanweb\File\PDFMaker\FPDFExtended->Row(Array)
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(57): Tanweb\File\PDFMaker\PDFMaker->makeTable(Object(Tanweb\File\PDFMaker\Columns), Object(Tanweb\Container))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(118): Custom\File\AttendanceList->printFirstHeadersSet()
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  07:36:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:37:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:38:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:39:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:41:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:41:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:42:12] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:42:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:44:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:47:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:50:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:50:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:50:53] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] FPDF error: Some data has already been output, can't send PDF file ;
+ #0 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(1070): libs\fpdf\FPDF->Error('Some data has a...')
+#1 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(1004): libs\fpdf\FPDF->_checkoutput()
+#2 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(116): libs\fpdf\FPDF->Output('I', 'lista_test.pdf....')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(121): Tanweb\File\PDFMaker\PDFMaker->send('lista_test.pdf')
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  07:52:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:52:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:58:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:58:14] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Typed property Custom\File\AttendanceList::$month must not be accessed before initialization ;
+ #0 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(337): Custom\File\AttendanceList->Header()
+#1 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(27): libs\fpdf\FPDF->AddPage('L')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(30): Tanweb\File\PDFMaker\PDFMaker->__construct('L', 'A3')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(124): Custom\File\AttendanceList->__construct(10, 2022)
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  07:58:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  07:58:59] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Typed property Custom\File\AttendanceList::$month must not be accessed before initialization ;
+ #0 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(337): Custom\File\AttendanceList->Header()
+#1 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(27): libs\fpdf\FPDF->AddPage('L')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(30): Tanweb\File\PDFMaker\PDFMaker->__construct('L', 'A3')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(124): Custom\File\AttendanceList->__construct(10, 2022)
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  07:59:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:22:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:23:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:29:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:32:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:32:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:32:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:34:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:35:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:35:33] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:56:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:57:24] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:57:50] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  08:58:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:02:33] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:02:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:04:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:04:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:05:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:07:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:07:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:11:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:12:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:12:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:14:44] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:15:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:19:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:20:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:23:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:23:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:23:50] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:31:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:32:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:32:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:32:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:34:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:35:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:35:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:38:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:39:33] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:42:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:42:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:42:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:43:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:43:27] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:43:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:46:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:46:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:48:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:48:21] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Object of class Custom\File\AttendanceList could not be converted to string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(185): Custom\File\AttendanceList->__construct(10, 2022)
+#1 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-10-26  09:48:45] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:48:45] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Using $this when not in object context ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2022-10-26  09:48:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:49:21] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Using $this when not in object context ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2022-10-26  09:50:32] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:51:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:51:46] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:52:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  09:54:12] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  10:33:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  10:46:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  10:46:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  10:46:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  10:47:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  10:48:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:04:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:05:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:05:45] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-10-26  11:05:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:08:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:09:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:11:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:11:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:15:38] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-10-26  11:16:24] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-10-26  11:16:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-26  11:16:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-10-26  11:16:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-10-26  11:16:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:16:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-10-26  11:16:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:16:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-10-26  11:17:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveUserData: {}
+[2022-10-26  11:17:14] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO user (username, name, surname, short, password) VALUES ('dyrektor', 'Janusz', 'Wonsacz', 'WON', '$2y$10$6l.57fY9CHuT74UsSfsgheg3SMY98IXETbRoz1q0AiiR8YRrtPGGu')
+[2022-10-26  11:17:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-10-26  11:17:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-10-26  11:17:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:17:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-10-26  11:17:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:17:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-10-26  11:17:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:17:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '5'
+[2022-10-26  11:17:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:17:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:18:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:18:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:18:00] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO employment (position, user_type, start, end, sort_priority, standard_day_start, standard_day_end, leadership, inspector, id_user) VALUES ('Dyrektor', 'dyr', '2022-08-01', '2022-10-12', '10', '07:00', '15:00', '1', '1', '5')
+[2022-10-26  11:18:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:18:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:18:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:18:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:18:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id = '5'
+[2022-10-26  11:18:17] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE employment SET active='1', sort_priority='1', leadership='1', inspector='1', id_user='5' WHERE id = '5'
+[2022-10-26  11:18:18] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:18:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:18:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:18:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:18:54] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:19:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:19:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:19:21] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:19:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:19:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:19:56] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:20:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:20:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:20:21] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:21:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:21:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:22:53] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:24:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:24:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:24:01] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:24:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:24:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:24:10] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:24:31] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-10-26  11:24:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-26  11:24:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-10-26  11:24:31] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-10-26  11:24:32] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:24:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-10-26  11:24:32] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:24:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-10-26  11:24:33] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:24:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '4'
+[2022-10-26  11:24:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:24:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-10-26  11:24:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:24:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:24:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:24:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '5'
+[2022-10-26  11:24:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:24:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:24:41] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:24:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:24:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:25:24] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:25:41] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-10-26  11:25:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-26  11:25:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-10-26  11:25:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-10-26  11:25:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:25:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-10-26  11:25:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:25:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-10-26  11:25:43] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:25:43] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '5'
+[2022-10-26  11:25:43] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:25:43] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:25:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:25:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:25:53] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO employment (position, user_type, start, end, sort_priority, standard_day_start, standard_day_end, leadership, inspector, id_user) VALUES ('k', 'k', '2022-10-13', '2022-10-26', '10', '08:00', '08:00', '0', '0', '5')
+[2022-10-26  11:25:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:25:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:26:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:26:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:26:02] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:26:27] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:26:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:26:27] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:26:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:26:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:27:52] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:31:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:31:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:31:19] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:31:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:31:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:32:31] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Zakresy czasów nakładają się.
+[2022-10-26  11:32:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:32:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:32:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id = '6'
+[2022-10-26  11:32:41] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE employment SET active='1', position='Dyrektor', user_type='dyr', end='2122-10-26', sort_priority='1', standard_day_start='07:00', standard_day_end='15:00', leadership='1', inspector='1', id_user='5' WHERE id = '6'
+[2022-10-26  11:32:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:32:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2022-10-26  11:32:50] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-10-26  11:33:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:33:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-01' and end >= '2022-10-01' ORDER BY sort_priority DESC
+[2022-10-26  11:34:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-01' and end >= '2022-10-01' ORDER BY sort_priority DESC
+[2022-10-26  11:36:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:36:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-01' and end >= '2022-10-01' ORDER BY sort_priority DESC
+[2022-10-26  11:36:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-01' and end >= '2022-10-01' ORDER BY sort_priority DESC
+[2022-10-26  11:45:13] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:45:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC
+[2022-10-26  11:46:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC
+[2022-10-26  11:52:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:52:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC
+[2022-10-26  11:52:42] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: username ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(83): Tanweb\Container->get('username')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(73): Custom\File\AttendanceList->loadUsers()
+#3 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(337): Custom\File\AttendanceList->Header()
+#4 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(28): libs\fpdf\FPDF->AddPage('L')
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(42): Tanweb\File\PDFMaker\PDFMaker->__construct('L', 'A3')
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(53): Custom\File\AttendanceList->__construct(10, 2022)
+#7 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#11 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#12 {main}
+[2022-10-26  11:52:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:52:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC
+[2022-10-26  11:52:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC
+[2022-10-26  11:52:56] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] FPDF error: Some data has already been output, can't send PDF file ;
+ #0 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(1070): libs\fpdf\FPDF->Error('Some data has a...')
+#1 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(1004): libs\fpdf\FPDF->_checkoutput()
+#2 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(117): libs\fpdf\FPDF->Output('I', 'Lista Obecno\xC5\x9Bc...', true)
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\AttendanceList.php(56): Tanweb\File\PDFMaker\PDFMaker->send('Lista Obecno\xC5\x9Bc...')
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(19): Custom\File\AttendanceList::generate(10, 2022)
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(34): Services\PrintsService->generateAttendanceList(10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateAttendanceList()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-10-26  11:53:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:53:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC
+[2022-10-26  11:53:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC
+[2022-10-26  11:53:33] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:53:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC
+[2022-10-26  11:53:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC
+[2022-10-26  11:54:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:54:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC
+[2022-10-26  11:54:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC
+[2022-10-26  11:55:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:55:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:55:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:55:52] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-10-26  11:55:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-26  11:55:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-10-26  11:55:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-10-26  11:55:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:55:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-10-26  11:55:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:55:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-10-26  11:56:13] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-10-26  11:56:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:56:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-4-1' and end >= '2022-4-1' ) or ( start <= '2022-04-30' and end >= '2022-04-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:56:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-4-1' and end >= '2022-4-1' ) or ( start <= '2022-04-30' and end >= '2022-04-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:56:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:56:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-7-1' and end >= '2022-7-1' ) or ( start <= '2022-07-31' and end >= '2022-07-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:56:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-7-1' and end >= '2022-7-1' ) or ( start <= '2022-07-31' and end >= '2022-07-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:56:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:56:31] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-6-1' and end >= '2022-6-1' ) or ( start <= '2022-06-30' and end >= '2022-06-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:56:31] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-6-1' and end >= '2022-6-1' ) or ( start <= '2022-06-30' and end >= '2022-06-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:56:34] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-10-26  11:56:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-26  11:56:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:56:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-10-26  11:56:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-10-26  11:56:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-10-26  11:56:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:56:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-10-26  11:56:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:56:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '1'
+[2022-10-26  11:56:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:56:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '1'
+[2022-10-26  11:56:52] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:56:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '1'
+[2022-10-26  11:56:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id = '1'
+[2022-10-26  11:56:52] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE employment SET active='1', start='2022-01-01', sort_priority='10', leadership='0', inspector='0', id_user='1' WHERE id = '1'
+[2022-10-26  11:56:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:56:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '1'
+[2022-10-26  11:57:00] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-10-26  11:57:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:57:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-2-1' and end >= '2022-2-1' ) or ( start <= '2022-02-28' and end >= '2022-02-28' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:57:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-2-1' and end >= '2022-2-1' ) or ( start <= '2022-02-28' and end >= '2022-02-28' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:57:12] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:57:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-12-1' and end >= '2022-12-1' ) or ( start <= '2022-12-31' and end >= '2022-12-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:57:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-12-1' and end >= '2022-12-1' ) or ( start <= '2022-12-31' and end >= '2022-12-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:58:29] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-10-26  11:58:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-10-26  11:58:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-10-26  11:58:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-10-26  11:58:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:58:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-10-26  11:58:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:58:31] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-10-26  11:58:33] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:58:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '2'
+[2022-10-26  11:58:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:58:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '2'
+[2022-10-26  11:58:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:58:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '3'
+[2022-10-26  11:58:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:58:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '3'
+[2022-10-26  11:58:46] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveUserData: {}
+[2022-10-26  11:58:46] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  id = '3'
+[2022-10-26  11:58:46] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE user SET active='1', surname='Januszewski' WHERE id = '3'
+[2022-10-26  11:58:47] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-10-26  11:58:47] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-10-26  11:58:48] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:58:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-10-26  11:58:48] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:58:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-10-26  11:58:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:58:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-12-1' and end >= '2022-12-1' ) or ( start <= '2022-12-31' and end >= '2022-12-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:58:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-12-1' and end >= '2022-12-1' ) or ( start <= '2022-12-31' and end >= '2022-12-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:59:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-10-26  11:59:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '4'
+[2022-10-26  11:59:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:59:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-10-26  11:59:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  11:59:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-10-26  11:59:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id = '4'
+[2022-10-26  11:59:38] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE employment SET active='1', end='2122-10-08', sort_priority='10', leadership='0', inspector='0', id_user='4' WHERE id = '4'
+[2022-10-26  11:59:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  11:59:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-10-26  11:59:48] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  11:59:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-12-1' and end >= '2022-12-1' ) or ( start <= '2022-12-31' and end >= '2022-12-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  11:59:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-12-1' and end >= '2022-12-1' ) or ( start <= '2022-12-31' and end >= '2022-12-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  12:00:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-10-26  12:00:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-10-26  12:00:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id = '4'
+[2022-10-26  12:00:04] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE employment SET active='1', end='2022-10-08', sort_priority='10', leadership='0', inspector='0', id_user='4' WHERE id = '4'
+[2022-10-26  12:00:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-10-26  12:00:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-10-26  12:00:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  12:00:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-12-1' and end >= '2022-12-1' ) or ( start <= '2022-12-31' and end >= '2022-12-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  12:00:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-12-1' and end >= '2022-12-1' ) or ( start <= '2022-12-31' and end >= '2022-12-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  12:00:21] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-10-26  12:00:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  12:00:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  12:00:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  12:00:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateAttendanceListData: {}
+[2022-10-26  12:00:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  12:00:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-10-26  12:04:43] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?

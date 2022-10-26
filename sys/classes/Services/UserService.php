@@ -116,31 +116,29 @@ class UserService{
         $periods = $this->employment->getByUserId($idUser);
         foreach ($periods->toArray() as $item){
             $period = new Container($item);
-            if($this->periodsAreOverlaping($data, $period)){
-                throw new OverlapingPeriodsException();
-            }
+            $this->periodsOverlapingCheck($data, $period);
         }
         return $this->employment->save($data);
     }
     
-    private function periodsAreOverlaping(Container $first, Container $second) : bool {
+    private function periodsOverlapingCheck(Container $first, Container $second) : bool{
         if($first->isValueSet('id') && $second->isValueSet('id')){
             $firstId = (int) $first->get('id');
             $secondId = (int) $second->get('id');
             if($firstId === $secondId){
-                return false;
+                return true;
             }
         }
-        $firstStart = strtotime($first->get('start'));
-        $firstEnd = strtotime($first->get('end'));
-        $secondStart = strtotime($first->get('start'));
-        $secondEnd = strtotime($first->get('end'));
+        $firstStart = $first->get('start');
+        $firstEnd = $first->get('end');
+        $secondStart = $second->get('start');
+        $secondEnd = $second->get('end');
         if(($firstStart >= $secondStart && $firstStart <= $secondEnd) ||
-                ($firstEnd >= $secondStart && $firstEnd <= $secondStart)){
-            return true;
+                ($firstEnd >= $secondStart && $firstEnd <= $secondEnd)){
+            throw new OverlapingPeriodsException();
         }
         else{
-            return false;
+            return true;
         }
     }
     
