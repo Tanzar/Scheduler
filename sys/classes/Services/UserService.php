@@ -48,7 +48,33 @@ class UserService{
     }
     
     public function getEmployedUsersListOrdered(string $date) : Container {
-        return $this->usersEmploymentPeriods->getOrderedActiveByDate($date);
+        $users = $this->usersEmploymentPeriods->getOrderedActiveByDate($date);
+        $addedUsernames = new Container();
+        $data = new Container();
+        foreach ($users->toArray() as $item) {
+            $user = new Container($item);
+            $username = $user->get('username');
+            if(!$addedUsernames->contains($username)){
+                $addedUsernames->add($username);
+                $data->add($item);
+            }
+        }
+        return $data;
+    }
+    
+    public function getEmployedUsersListByMonthOrdered(int $month, int $year) : Container {
+        $users = $this->usersEmploymentPeriods->getOrderedActiveByMonthAndYear($month, $year);
+        $addedUsernames = new Container();
+        $data = new Container();
+        foreach ($users->toArray() as $item) {
+            $user = new Container($item);
+            $username = $user->get('username');
+            if(!$addedUsernames->contains($username)){
+                $addedUsernames->add($username);
+                $data->add($item);
+            }
+        }
+        return $data;
     }
     
     public function getActiveUsersExcept(string $username) : Container {

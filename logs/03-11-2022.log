@@ -1,0 +1,810 @@
+[2022-11-03  06:25:39] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-03  06:25:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-03  06:25:43] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-11-03  06:25:43] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-03  06:25:44] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-03  06:37:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:37:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:37:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:37:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:37:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:37:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:37:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:37:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:37:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:37:10] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: 2022-12-01 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\TimesheetsConfig.php(319): Tanweb\Container->get('2022-12-01')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(147): Custom\File\Tools\TimesheetsConfig->getDaysData(Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(125): Custom\File\Timesheets->getFourthHeaderDaysTableConfig()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(106): Custom\File\Timesheets->printFourthRowDaysTable()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(67): Custom\File\Timesheets->printFourthRowsHeaders()
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(51): Custom\File\Timesheets->printTopHeaders()
+#7 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->print()
+#8 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#11 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#12 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#13 {main}
+[2022-11-03  06:37:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:37:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:37:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:37:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:38:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:38:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:38:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:38:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:38:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:38:17] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: 2022-12-01 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\TimesheetsConfig.php(319): Tanweb\Container->get('2022-12-01')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(147): Custom\File\Tools\TimesheetsConfig->getDaysData(Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(125): Custom\File\Timesheets->getFourthHeaderDaysTableConfig()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(106): Custom\File\Timesheets->printFourthRowDaysTable()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(67): Custom\File\Timesheets->printFourthRowsHeaders()
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(51): Custom\File\Timesheets->printTopHeaders()
+#7 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->print()
+#8 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#11 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#12 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#13 {main}
+[2022-11-03  06:39:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:39:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:39:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:39:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:39:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:39:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:39:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:39:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:39:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:39:03] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: 2022-12-01 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\TimesheetsConfig.php(319): Tanweb\Container->get('2022-12-01')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(147): Custom\File\Tools\TimesheetsConfig->getDaysData(Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(125): Custom\File\Timesheets->getFourthHeaderDaysTableConfig()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(106): Custom\File\Timesheets->printFourthRowDaysTable()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(67): Custom\File\Timesheets->printFourthRowsHeaders()
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(51): Custom\File\Timesheets->printTopHeaders()
+#7 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->print()
+#8 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#11 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#12 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#13 {main}
+[2022-11-03  06:39:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:39:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:39:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:39:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:39:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:39:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:39:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:39:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:39:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:39:36] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: 2022-12-01 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\TimesheetsConfig.php(319): Tanweb\Container->get('2022-12-01')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(147): Custom\File\Tools\TimesheetsConfig->getDaysData(Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(125): Custom\File\Timesheets->getFourthHeaderDaysTableConfig()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(106): Custom\File\Timesheets->printFourthRowDaysTable()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(67): Custom\File\Timesheets->printFourthRowsHeaders()
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(51): Custom\File\Timesheets->printTopHeaders()
+#7 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->print()
+#8 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#11 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#12 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#13 {main}
+[2022-11-03  06:40:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:40:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:40:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:40:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:40:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:40:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:40:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:40:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:40:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:40:40] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] FPDF error: Some data has already been output, can't send PDF file ;
+ #0 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(1070): libs\fpdf\FPDF->Error('Some data has a...')
+#1 C:\laragon\www\Scheduler\sys\libs\fpdf\fpdf.php(1004): libs\fpdf\FPDF->_checkoutput()
+#2 C:\laragon\www\Scheduler\sys\classes\Tanweb\File\PDFMaker\PDFMaker.php(117): libs\fpdf\FPDF->Output('I', 'admin.pdf', true)
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(43): Tanweb\File\PDFMaker\PDFMaker->send('admin')
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-11-03  06:41:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:41:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:41:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:41:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:41:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:41:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:41:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:41:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:41:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:41:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:41:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:41:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:41:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:41:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:41:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:41:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:41:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:41:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:42:48] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:42:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:42:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:42:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:42:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:42:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:42:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:42:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:42:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:43:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:43:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:43:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:43:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:43:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:43:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:43:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:43:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:43:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:45:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:45:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:45:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:45:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:45:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:45:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:45:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:45:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:45:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:46:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:46:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:46:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:46:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:46:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:46:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:46:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:46:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:46:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:46:33] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:46:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:46:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:46:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:46:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:46:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:46:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:46:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:46:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:48:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:48:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:48:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:48:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:48:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:48:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:48:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:48:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:48:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:48:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:48:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:48:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:48:32] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:48:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:48:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:48:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:48:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:48:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:48:48] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:48:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:48:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:48:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:48:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:48:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:48:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:49:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:49:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:49:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:49:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:49:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:49:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:49:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:49:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:49:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:50:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:50:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:50:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:50:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:50:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:50:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:50:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:50:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:50:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:50:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:50:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:50:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:50:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:50:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:50:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:50:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:50:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:50:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:51:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:51:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:51:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:51:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:51:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:51:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:51:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:51:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:51:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:51:27] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:51:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:51:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:51:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:51:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:51:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:51:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:51:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:51:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:51:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:51:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:51:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:51:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:51:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:51:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:51:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:51:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:51:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:53:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:53:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:53:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:53:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:53:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:53:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:53:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:53:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:53:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:54:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:54:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:54:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:54:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:54:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:54:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:54:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:54:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:54:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:54:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:54:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:54:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:54:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:54:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:54:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:54:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:54:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:54:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:56:24] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:56:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:56:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:56:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:56:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:56:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:56:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:56:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:56:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:56:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:57:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:57:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:57:28] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:57:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:57:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:57:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:57:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:57:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:57:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:57:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:57:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:57:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:57:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:57:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:57:50] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:57:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:57:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:57:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:57:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:57:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:57:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:59:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  06:59:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  06:59:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  06:59:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  06:59:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:59:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:59:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  06:59:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  06:59:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  07:01:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  07:01:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  07:01:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  07:01:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  07:01:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:01:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:01:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  07:01:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:01:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  07:03:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  07:03:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  07:03:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  07:03:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  07:03:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:03:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:03:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  07:03:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:03:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  07:04:45] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  07:04:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  07:04:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  07:04:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  07:04:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:04:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:04:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  07:04:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:04:45] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  07:05:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  07:05:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  07:05:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  07:05:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  07:05:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:05:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2019-01-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:05:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2019-01-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  07:05:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-29 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  07:05:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-29' and end >= '2022-11-01' and username = 'admin' ORDER BY start ASC
+[2022-11-03  10:00:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:00:07] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "Custom\File\Tools\Timesheets\TimesheetData" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->__construct(11, 2022, 'admin')
+#1 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-11-03  10:00:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:00:35] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "Custom\File\Tools\Timesheets\AppConfig" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(36): Custom\File\Tools\Timesheets\TimesheetData->__construct(11, 2022, 'admin')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->__construct(11, 2022, 'admin')
+#2 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-11-03  10:01:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:01:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:01:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:01:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:01:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start =< '2022-11-30 23:59:59' and end >= '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:01:06] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=< '2022-11-30 23:59:59' and end >= '2022-11-01 00:00:00' and username = 'admin'' at line 1 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Database\Database.php(115): PDO->prepare('SELECT * FROM s...')
+#1 C:\laragon\www\Scheduler\sys\classes\Data\Access\View.php(47): Tanweb\Database\Database->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 C:\laragon\www\Scheduler\sys\classes\Data\Access\Views\ScheduleEntriesView.php(87): Data\Access\View->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(69): Data\Access\Views\ScheduleEntriesView->getActiveByUsernameAndDates('admin', Object(DateTime), Object(DateTime))
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(53): Custom\File\Tools\Timesheets\TimesheetData->loadEntries()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(36): Custom\File\Tools\Timesheets\TimesheetData->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->__construct(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#11 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#12 {main}
+[2022-11-03  10:01:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:01:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:01:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:01:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:01:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start =< '2022-11-30 23:59:59' and end >= '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:01:45] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=< '2022-11-30 23:59:59' and end >= '2022-11-01 00:00:00' and username = 'admin'' at line 1 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Database\Database.php(115): PDO->prepare('SELECT * FROM s...')
+#1 C:\laragon\www\Scheduler\sys\classes\Data\Access\View.php(47): Tanweb\Database\Database->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 C:\laragon\www\Scheduler\sys\classes\Data\Access\Views\ScheduleEntriesView.php(87): Data\Access\View->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(69): Data\Access\Views\ScheduleEntriesView->getActiveByUsernameAndDates('admin', Object(DateTime), Object(DateTime))
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(53): Custom\File\Tools\Timesheets\TimesheetData->loadEntries()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(36): Custom\File\Tools\Timesheets\TimesheetData->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->__construct(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#11 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#12 {main}
+[2022-11-03  10:02:24] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:02:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:02:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:02:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:02:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start =< '2022-11-30 23:59:59' and end >= '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:02:34] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=< '2022-11-30 23:59:59' and end >= '2022-11-01 00:00:00' and username = 'admin'' at line 1 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Database\Database.php(115): PDO->prepare('SELECT * FROM s...')
+#1 C:\laragon\www\Scheduler\sys\classes\Data\Access\View.php(47): Tanweb\Database\Database->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 C:\laragon\www\Scheduler\sys\classes\Data\Access\Views\ScheduleEntriesView.php(87): Data\Access\View->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(69): Data\Access\Views\ScheduleEntriesView->getActiveByUsernameAndDates('admin', Object(DateTime), Object(DateTime))
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(53): Custom\File\Tools\Timesheets\TimesheetData->loadEntries()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(36): Custom\File\Tools\Timesheets\TimesheetData->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->__construct(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#11 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#12 {main}
+[2022-11-03  10:02:44] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:02:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:02:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:02:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:03:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start =< '2022-11-30 23:59:59' and end >= '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:03:50] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=< '2022-11-30 23:59:59' and end >= '2022-11-01 00:00:00' and username = 'admin'' at line 1 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Database\Database.php(115): PDO->prepare('SELECT * FROM s...')
+#1 C:\laragon\www\Scheduler\sys\classes\Data\Access\View.php(47): Tanweb\Database\Database->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 C:\laragon\www\Scheduler\sys\classes\Data\Access\Views\ScheduleEntriesView.php(87): Data\Access\View->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(69): Data\Access\Views\ScheduleEntriesView->getActiveByUsernameAndDates('admin', Object(DateTime), Object(DateTime))
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(53): Custom\File\Tools\Timesheets\TimesheetData->loadEntries()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(36): Custom\File\Tools\Timesheets\TimesheetData->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->__construct(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#11 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#12 {main}
+[2022-11-03  10:05:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:05:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:05:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:05:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:05:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:05:43] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  10:05:43] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: 2022-11-01 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(193): Tanweb\Container->get('2022-11-01')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(151): Custom\File\Tools\Timesheets\TimesheetData->getDayDetails(Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(126): Custom\File\Timesheets->getFourthHeaderDaysTableConfig()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(107): Custom\File\Timesheets->printFourthRowDaysTable()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(68): Custom\File\Timesheets->printFourthRowsHeaders()
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(52): Custom\File\Timesheets->printTopHeaders()
+#7 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(42): Custom\File\Timesheets->print()
+#8 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#11 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#12 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#13 {main}
+[2022-11-03  10:06:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:06:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:06:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:06:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:06:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:06:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  10:06:03] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: 2022-11-01 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(193): Tanweb\Container->get('2022-11-01')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(151): Custom\File\Tools\Timesheets\TimesheetData->getDayDetails(Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(126): Custom\File\Timesheets->getFourthHeaderDaysTableConfig()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(107): Custom\File\Timesheets->printFourthRowDaysTable()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(68): Custom\File\Timesheets->printFourthRowsHeaders()
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(52): Custom\File\Timesheets->printTopHeaders()
+#7 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(42): Custom\File\Timesheets->print()
+#8 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#11 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#12 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#13 {main}
+[2022-11-03  10:06:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:06:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:06:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:06:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:06:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:06:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  10:06:52] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: 2022-11-01 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(193): Tanweb\Container->get('2022-11-01')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(151): Custom\File\Tools\Timesheets\TimesheetData->getDayDetails(Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(126): Custom\File\Timesheets->getFourthHeaderDaysTableConfig()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(107): Custom\File\Timesheets->printFourthRowDaysTable()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(68): Custom\File\Timesheets->printFourthRowsHeaders()
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(52): Custom\File\Timesheets->printTopHeaders()
+#7 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(42): Custom\File\Timesheets->print()
+#8 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#11 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#12 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#13 {main}
+[2022-11-03  10:07:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:07:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:07:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:07:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:07:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:07:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  10:07:44] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: 2022-11-01 ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(193): Tanweb\Container->get('2022-11-01')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(151): Custom\File\Tools\Timesheets\TimesheetData->getDayDetails(Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(126): Custom\File\Timesheets->getFourthHeaderDaysTableConfig()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(107): Custom\File\Timesheets->printFourthRowDaysTable()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(68): Custom\File\Timesheets->printFourthRowsHeaders()
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(52): Custom\File\Timesheets->printTopHeaders()
+#7 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(42): Custom\File\Timesheets->print()
+#8 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 11, 2022)
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#11 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#12 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#13 {main}
+[2022-11-03  10:08:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:08:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:08:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:08:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:08:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:08:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  10:11:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:11:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:11:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:11:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:11:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:11:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  10:12:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:12:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:12:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:12:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:12:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:12:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  10:14:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:14:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  10:14:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  10:14:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  10:14:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  10:14:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  10:14:33] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: getUsersData: {}
+[2022-11-03  10:14:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-03  10:14:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:14:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  10:14:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'prawnik' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  10:14:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'prawnik'
+[2022-11-03  10:14:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-03  10:14:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'prawnik' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  10:15:00] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-11-03  10:15:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-03  10:15:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-11-03  10:15:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-11-03  10:15:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-03  10:15:01] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Call to undefined method Data\Access\Tables\PrivilageDAO::getByUserID() ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Controllers\AdminPanelUsers.php(45): Services\UserService->getUserPrivilages(0)
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\AdminPanelUsers->getUserPrivilages()
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2022-11-03  10:15:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-03  10:15:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-03  10:15:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-03  10:15:05] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Call to undefined method Data\Access\Tables\PrivilageDAO::getByUserID() ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Controllers\AdminPanelUsers.php(45): Services\UserService->getUserPrivilages(4)
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\AdminPanelUsers->getUserPrivilages()
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 C:\laragon\www\Scheduler\sys\scripts\requests\rest.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2022-11-03  10:15:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-03  10:15:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-11-03  10:15:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-11-03  10:15:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-11-03  10:15:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id = '4'
+[2022-11-03  10:15:15] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE employment SET active='1', sort_priority='10', standard_day_end='14:00', leadership='0', inspector='0', id_user='4' WHERE id = '4'
+[2022-11-03  10:15:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-03  10:15:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-11-03  10:15:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-11-03  10:15:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-11-03  10:15:59] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO employment (position, user_type, start, end, sort_priority, standard_day_start, standard_day_end, leadership, inspector, id_user) VALUES ('test', 'tes', '2022-10-17', '2022-10-21', '10', '07:00', '15:00', '0', '0', '4')
+[2022-11-03  10:16:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-03  10:16:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-11-03  10:16:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:16:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  10:16:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'prawnik' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  10:16:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'prawnik'
+[2022-11-03  10:16:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-03  10:16:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'prawnik' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  10:18:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:18:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  10:18:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'prawnik' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  10:18:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'prawnik'
+[2022-11-03  10:18:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-03  10:18:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'prawnik' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  10:19:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:19:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  10:19:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'prawnik' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  10:19:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'prawnik'
+[2022-11-03  10:19:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-03  10:19:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'prawnik' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  10:24:50] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:24:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  10:24:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'prawnik' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  10:24:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'prawnik'
+[2022-11-03  10:24:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-03  10:24:50] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'prawnik' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  10:26:50] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:26:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  10:26:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'prawnik' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  10:26:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'prawnik'
+[2022-11-03  10:26:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-03  10:26:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'prawnik' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  10:38:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  10:38:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  10:38:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'prawnik' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  10:38:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'prawnik'
+[2022-11-03  10:38:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-03  10:38:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'prawnik' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  12:56:24] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  12:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  12:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'prawnik' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  12:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'prawnik'
+[2022-11-03  12:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-03  12:56:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'prawnik' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  12:56:29] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-11-03  12:56:29] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-03  12:56:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-03  12:56:32] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  12:56:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-03  12:56:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-03  12:56:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  12:56:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-30 23:59:59' and end > '2022-11-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  12:56:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-11-30' and end >= '2022-11-1'
+[2022-11-03  12:56:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: getUsersData: {}
+[2022-11-03  12:56:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-03  12:56:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  12:56:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  12:56:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  12:56:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  12:56:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  12:56:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  12:56:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  12:56:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  12:56:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  12:56:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  12:56:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  12:56:53] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  12:57:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  12:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  12:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  12:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  12:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  12:57:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  12:58:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  12:58:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  12:58:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  12:58:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  12:58:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  12:58:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  12:58:29] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Custom\File\Tools\Timesheets\UniqueWorkHours::getRoman(): Return value must be of type string, none returned ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(156): Custom\File\Tools\Timesheets\UniqueWorkHours->getRoman(Object(Tanweb\Container))
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(122): Custom\File\Tools\Timesheets\TimesheetData->initDetailsFromEntries(Object(DateTime), Object(Custom\File\Tools\Timesheets\DayDetails))
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(105): Custom\File\Tools\Timesheets\TimesheetData->initDayDetails(Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(64): Custom\File\Tools\Timesheets\TimesheetData->initDaysDetails()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(36): Custom\File\Tools\Timesheets\TimesheetData->__construct(10, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->__construct(10, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(10, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 10, 2022)
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2022-11-03  12:59:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  12:59:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  12:59:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  12:59:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  12:59:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  12:59:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  12:59:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  12:59:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  12:59:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  12:59:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  12:59:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  12:59:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  12:59:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  12:59:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  12:59:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  12:59:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  12:59:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  12:59:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  13:01:13] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  13:01:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  13:01:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  13:01:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  13:01:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  13:01:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  13:01:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  13:01:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  13:01:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'prawnik' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  13:01:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'prawnik'
+[2022-11-03  13:01:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-03  13:01:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'prawnik' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  13:38:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  13:38:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  13:38:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  13:38:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  13:38:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  13:38:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  13:38:43] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "Custom\File\Tools\Timesheets\Orderer" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(155): Custom\File\Tools\Timesheets\DayDetails->analizeEntry(Object(DateTime), Object(Tanweb\Container))
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(122): Custom\File\Tools\Timesheets\TimesheetData->initDetailsFromEntries(Object(DateTime), Object(Custom\File\Tools\Timesheets\DayDetails))
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(105): Custom\File\Tools\Timesheets\TimesheetData->initDayDetails(Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\TimesheetData.php(64): Custom\File\Tools\Timesheets\TimesheetData->initDaysDetails()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(36): Custom\File\Tools\Timesheets\TimesheetData->__construct(10, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(41): Custom\File\Timesheets->__construct(10, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(30): Custom\File\Timesheets::generate(10, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 10, 2022)
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2022-11-03  13:38:52] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  13:38:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  13:38:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  13:38:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  13:38:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  13:38:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  13:40:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  13:40:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  13:40:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  13:40:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  13:40:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  13:40:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-03  13:40:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-03  13:40:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-03  13:40:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-03  13:40:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-03  13:40:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-03  13:40:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'

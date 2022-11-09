@@ -12,19 +12,19 @@ namespace Tanweb\File\PDFMaker;
  * @author Tanzar
  */
 class Column {
-    private int $width;
+    private float $width;
     private string $key;
     private bool $fill;
     private string $align;
     
-    public function __construct(int $width, string $key, bool $fill = false) {
+    public function __construct(float $width, string $key, bool $fill = false) {
         $this->width = $width;
         $this->key = $key;
         $this->fill = $fill;
         $this->align = 'C';
     }
     
-    public function getWidth() : int {
+    public function getWidth() : float {
         return $this->width;
     }
     

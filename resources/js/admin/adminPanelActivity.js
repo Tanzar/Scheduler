@@ -36,33 +36,44 @@ function ActivityTable(language, div){
             { title: language.worktime_record_row, variable: 'worktime_record_row', width: 30},
             { title: language.workcard_display, variable: 'workcard_display', width: 30},
             { title: language.allow_location_input, variable: 'allow_location_input', width: 30},
-            { title: language.require_document, variable: 'require_document', width: 30}
+            { title: language.require_document, variable: 'require_document', width: 30},
+            { title: language.overtime_action, variable: 'overtime_action', width: 30}
         ],
         dataSource : { method: 'post', address: getRestAddress(), data: { controller: 'AdminPanelActivity', task: 'getActivities' } }
     };
     var datatable = new Datatable(div, config);
     datatable.addActionButton(language.add, function(){
-        RestApi.get('AdminPanelActivity', 'getActivityGroups', {}, function(response){
+        RestApi.get('AdminPanelActivity', 'getActivityDetails', {}, function(response){
             var data = JSON.parse(response);
-            var options = [];
-            var keys = Object.keys(data);
+            var groups = [];
+            var keys = Object.keys(data.groups);
             keys.forEach(item => {
                 var option = {
-                    value: data[item],
-                    title: data[item]
+                    value: data.groups[item],
+                    title: data.groups[item]
                 }
-                options.push(option);
+                groups.push(option);
+            });
+            var overtimeActions = [];
+            keys = Object.keys(data.overtime);
+            keys.forEach(item => {
+                var option = {
+                    value: item,
+                    title: data.overtime[item]
+                }
+                overtimeActions.push(option);
             });
             var fields = [
                 {type: 'text', title: language.name, variable: 'name', limit: 100, required: true},
                 {type: 'text', title: language.short, variable: 'short', limit: 50, required: true},
                 {type: 'text', title: language.symbol, variable: 'symbol', limit: 10, required: true},
                 {type: 'color', title: language.color, variable: 'color'},
-                {type: 'select', title: language.activity_group, variable: 'activity_group', options: options, required: true},
+                {type: 'select', title: language.activity_group, variable: 'activity_group', options: groups, required: true},
                 {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1, required: true},
                 {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
                 {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
-                {type: 'checkbox', title: language.require_document, variable: 'require_document'}
+                {type: 'checkbox', title: language.require_document, variable: 'require_document'},
+                {type: 'select', title: language.select_overtime_action, variable: 'overtime_action', options: overtimeActions, required: true}
             ];
             openModalBox(language.new_activity, fields, language.save, function(data){
                 RestApi.post('AdminPanelActivity', 'saveActivity', data,
@@ -81,28 +92,38 @@ function ActivityTable(language, div){
     });
     datatable.addActionButton(language.edit, function(selected){
         if(selected !== undefined){
-            RestApi.get('AdminPanelActivity', 'getActivityGroups', {}, 
+            RestApi.get('AdminPanelActivity', 'getActivityDetails', {}, 
                 function(response){
                     var data = JSON.parse(response);
-                    var options = [];
-                    var keys = Object.keys(data);
+                    var groups = [];
+                    var keys = Object.keys(data.groups);
                     keys.forEach(item => {
                         var option = {
-                            value: data[item],
-                            title: data[item]
+                            value: data.groups[item],
+                            title: data.groups[item]
                         }
-                        options.push(option);
+                        groups.push(option);
+                    });
+                    var overtimeActions = [];
+                    keys = Object.keys(data.overtime);
+                    keys.forEach(item => {
+                        var option = {
+                            value: item,
+                            title: data.overtime[item]
+                        }
+                        overtimeActions.push(option);
                     });
                     var fields = [
                         {type: 'text', title: language.name, variable: 'name', limit: 100, required: true},
                         {type: 'text', title: language.short, variable: 'short', limit: 50, required: true},
                         {type: 'text', title: language.symbol, variable: 'symbol', limit: 10, required: true},
                         {type: 'color', title: language.color, variable: 'color'},
-                        {type: 'select', title: language.activity_group, variable: 'activity_group', options: options, required: true},
+                        {type: 'select', title: language.activity_group, variable: 'activity_group', options: groups, required: true},
                         {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1, required: true},
                         {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
                         {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
-                        {type: 'checkbox', title: language.require_document, variable: 'require_document'}
+                        {type: 'checkbox', title: language.require_document, variable: 'require_document'},
+                        {type: 'select', title: language.select_overtime_action, variable: 'overtime_action', options: overtimeActions, required: true}
                     ];
                     openModalBox(language.edit_activity, fields, language.save, function(data){
                         RestApi.post('AdminPanelActivity', 'saveActivity', data,

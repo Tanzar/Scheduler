@@ -101,6 +101,17 @@ class ScheduleService {
         return $this->activity->getByGroup($group);
     }
     
+    public function getNewActivityDetails() : Container {
+        $details = new Container();
+        $app = AppConfig::getInstance();
+        $cfg = $app->getAppConfig();
+        $activityGroups = $cfg->get('activity_group');
+        $overtime = $cfg->get('overtime');
+        $details->add($activityGroups, 'groups');
+        $details->add($overtime, 'overtime');
+        return $details;
+    }
+    
     public function getAllActivityGroups() : Container{
         $app = AppConfig::getInstance();
         $cfg = $app->getAppConfig();
@@ -144,6 +155,7 @@ class ScheduleService {
         $parser = new Entry();
         $entry = $parser->parse($data);
         $this->checkBlocker($entry);
+        $this->checkEntryDuration($entry);
         $idSchedule = $this->schedule->save($entry);
         if($data->isValueSet('id_document')){
             $idDocument = (int) $data->get('id_document');
@@ -166,6 +178,7 @@ class ScheduleService {
         $parser = new Entry();
         $entry = $parser->parse($data);
         $this->checkBlocker($entry);
+        $this->checkEntryDuration($entry);
         $idSchedule = $this->schedule->save($entry);
         if($data->isValueSet('id_document')){
             $idDocument = (int) $data->get('id_document');
@@ -320,4 +333,15 @@ class ScheduleService {
             $this->throwException($languages->get('cannot_change_selected_month'));
         }
     }
+    
+    private function checkEntryDuration(Container $entry) : void {
+        $start = new DateTime($entry->get('start'));
+        $end = new DateTime($entry->get('end'));
+        $duration = (int) $end->format('Uv') - (int) $start->format('Uv');
+        if($duration > 86400000){   //24 hours
+            $languages = Languages::getInstance();
+            throw new ScheduleEntryException($languages->get('entry_duration_over_limit'));
+        }
+    }
+    
 }

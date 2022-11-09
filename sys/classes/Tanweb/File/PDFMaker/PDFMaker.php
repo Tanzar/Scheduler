@@ -6,7 +6,7 @@
 
 namespace Tanweb\File\PDFMaker;
 
-use Tanweb\File\PDFMaker\FPDFExtended as FPDF;
+use Tanweb\File\PDFMaker\FPDFEdited as FPDF;
 use Tanweb\File\PDFMaker\Columns as Columns;
 use Tanweb\File\PDFMaker\Column as Column;
 use Tanweb\Utility as Utility;
@@ -95,18 +95,18 @@ class PDFMaker extends FPDF{
         }
     }
     
-    public function writeMulticell($width, $height, $text, $border = 0, $align = 'L'){
+    public function writeMulticell($width, $height, $text, $border = 0, $align = 'L', $fill = false){
         if($height === 0){
             $height = $this->size;
         }
-        $this->MultiCell($width, $height, $text, $border, $align);
+        $this->MultiCell($width, $height, $text, $border, $align, $fill);
     }
     
-    public function writeCell($width, $height, $text, $border = 0, $align = 'L'){
+    public function writeCell($width, $height, $text, $border = 0, $align = 'L', $fill = false){
         if($height === 0){
             $height = $this->size;
         }
-        $this->Cell($width, $height, $text, $border, 0, $align);
+        $this->Cell($width, $height, $text, $border, 0, $align, $fill);
     }
     
     public function newLine($height = 0){
@@ -121,7 +121,7 @@ class PDFMaker extends FPDF{
         $this->Output('D', $filename . '.pdf', true);
     }
     
-    public function makeTable(Columns $columns, Container $data, $headers = array(), float $cellMargin = 0){
+    public function makeTable(Columns $columns, Container $data, float $cellMargin = 0, int $rowHeight = 5, Container $rowsToFill = null){
         $oldCellMargin = $this->cMargin;
         $this->cMargin = $cellMargin;
         $aligns = array();
@@ -134,12 +134,16 @@ class PDFMaker extends FPDF{
         $this->SetAligns($aligns);
         $this->setColumns($columns);
         $this->SetLineWidth(0.2);
-        if(count($headers) !== 0){
-            $this->headerRow($headers);
+        if($rowsToFill === null){
+            $rowsToFill = new Container();
         }
-        $this->SetLineWidth(0.2);
-        foreach($data->toArray() as $row){
-            $this->Row($row);
+        foreach($data->toArray() as $index => $row){
+            if($rowsToFill->contains($index)){
+                $this->Row($row, $rowHeight, true);
+            }
+            else{
+                $this->Row($row, $rowHeight);
+            }
         }
         $this->cMargin = $oldCellMargin;
     }

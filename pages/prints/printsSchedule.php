@@ -10,12 +10,15 @@
     use Tanweb\Config\INI\Languages as Languages;
     use Tanweb\Container as Container;
     use Tanweb\Security\Security as Security;
+    use Services\UserService as UserService;
+    use Tanweb\Session as Session;
     
     PageAccess::allowFor(['admin', 'prints_schedule']);   //locks access if failed to pass redirects to index page
     $languages = Languages::getInstance();
     $names = $languages->get('interface');
     $interface = new Container($names);
     $security = Security::getInstance();
+    $userService = new UserService();
 ?>
 <!DOCTYPE html>
 <!--
@@ -33,6 +36,7 @@ This code is free to use, just remember to give credit.
         </title>
         <?php
             Resources::linkCSS('main.css');
+            Resources::linkJS('RestApi.js');
             Resources::linkJS('FileApi.js');
             Resources::linkJS('printsSchedule.js');
             Resources::linkExternal('jquery');
@@ -49,15 +53,54 @@ This code is free to use, just remember to give credit.
             <div class="page-contents-element">
                 <?php Scripts::run('selectMonthYearNoButton.php'); ?>
             </div>
-            <button class="standard-button" id="attendanceList">
-                <?php echo $interface->get('attendance_list'); ?>
-            </button>
+            <div class="standard-text">
+                <?php echo $interface->get('general'); ?>
+            </div>
+            <div class="horizontal-container">
+                <button class="standard-button" id="attendanceList">
+                    <?php echo $interface->get('attendance_list'); ?>
+                </button>
+                <button class="standard-button" id="notificationList">
+                    <?php echo $interface->get('notification_list'); ?>
+                </button>
+            </div>
+            <div class="standard-text">
+                <?php echo $interface->get('user_specific'); ?>
+            </div>
+            <div class="horizontal-container">
+                <?php 
+                    if($security->userHaveAnyPrivilage(new Container(['admin', 'schedule_admin']))){
+                        echo '<select class="standard-input" id="selectUser">';
+                        echo '<option placeholder disables selected value="' . 
+                                Session::getUsername() . '">' . 
+                                $interface->get('select_user') . '</option>';
+                        $today = new DateTime();
+                        $month = (int) $today->format('m');
+                        $year = (int) $today->format('Y');
+                        $users = $userService->getEmployedUsersListByMonthOrdered($month, $year);
+                        foreach ($users->toArray() as $item){
+                            $user = new Container($item);
+                            echo '<option value="' . $user->get('username') . '">';
+                            echo $user->get('name') . ' ' . $user->get('surname');
+                            echo '</option>';
+                        }
+                        echo '</select>';
+                    }
+                ?>
+                <button class="standard-button" id="timesheets">
+                    <?php echo $interface->get('timesheets'); ?>
+                </button>
+                <button class="standard-button" id="workCard">
+                    <?php echo $interface->get('work_card'); ?>
+                </button>
+            </div>
+            
         </div>
         <?php
             Scripts::run('createFooter.php');
         ?>
     </body>
     <script>
-        init();
+        init(<?php echo '"' . Session::getUsername() . '"'; ?>);
     </script>
 </html>

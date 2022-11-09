@@ -65,7 +65,7 @@ This code is free to use, just remember to give credit.
                         <?php echo $interface->get('select_user'); ?>
                     </option>
                     <?php 
-                        $users = $userservice->getEmployedUsersListOrdered(date('Y-m-d'));
+                        $users = $userservice->getActiveUsers();
                         foreach ($users->toArray() as $item){
                             $user = new Container($item);
                             echo '<option value="' . $user->get('username') . '">';

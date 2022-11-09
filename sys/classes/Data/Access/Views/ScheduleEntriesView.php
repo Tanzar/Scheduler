@@ -76,4 +76,25 @@ class ScheduleEntriesView extends View{
         $data = $this->select($sql);
         return $data;
     }
+    
+    public function getActiveByUsernameAndDates(string $username, DateTime $start, DateTime $end) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('schedule_entries')->where('start', $end->format("Y-m-d H:i:s"), '<')
+                ->and()->where('end', $start->format("Y-m-d H:i:s"), '>')
+                ->and()->where('username', $username)
+                ->and()->where('active', 1)
+                ->orderBy('start');
+        $data = $this->select($sql);
+        return $data;
+    }
+    
+    public function getActiveByUsernameToDate(string $username, DateTime $date) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('schedule_entries')->where('start', $date->format("Y-m-d H:i:s"), '<=')
+                ->and()->where('username', $username)
+                ->and()->where('active', 1)
+                ->orderBy('start');
+        $data = $this->select($sql);
+        return $data;
+    }
 }

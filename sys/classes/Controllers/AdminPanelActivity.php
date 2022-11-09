@@ -34,6 +34,11 @@ class AdminPanelActivity extends Controller{
         $this->setResponse($data);
     }
     
+    public function getActivityDetails() {
+        $response = $this->schedule->getNewActivityDetails();
+        $this->setResponse($response);
+    }
+    
     public function getActivityGroups(){
         $data = $this->schedule->getAllActivityGroups();
         $this->setResponse($data);

@@ -11,6 +11,7 @@ use Tanweb\File\PDFMaker\Column as Column;
 use Tanweb\Config\INI\Languages as Languages;
 use Custom\Dates\HolidayChecker as HolidayChecker;
 use Data\Access\Views\UsersEmploymentPeriodsView as UsersEmploymentPeriodsView;
+use Data\Access\Tables\DaysOffDAO as DaysOffDAO;
 use Tanweb\Container as Container;
 use DateTime;
 
@@ -29,6 +30,7 @@ class AttendanceList extends PDFMaker{
     private int $signatureColWidth;
     private Container $users;
     private string $title;
+    private Container $daysOff;
     
     private function __construct(int $month, int $year) {
         $this->month = $month;
@@ -40,13 +42,25 @@ class AttendanceList extends PDFMaker{
         $this->defaultBottomMargin = 15;
         $this->signatureColWidth = 22;
         parent::__construct('L', 'A3');
-        $this->SetFillColor(214, 214, 214);
+        $this->SetFillColor(200, 200, 200);
         $this->setCurrentSize(9);
         $this->setMargin('left', 3);
         $this->setMargin('bottom', 15);
         $this->SetAuthor('Scheduler web app');
         $this->title = 'Lista Obecności ' . $this->months[$month] . ' ' . $year;
         $this->SetTitle($this->title, true);
+        $this->loadDaysOff($month, $year);
+    }
+    
+    private function loadDaysOff(int $month, int $year) : void {
+        $dao = new DaysOffDAO();
+        $data = $dao->getActiveForAllByMonthAndYear($month, $year);
+        $this->daysOff = new Container();
+        foreach ($data->toArray() as $item) {
+            $day = new Container($item);
+            $date = $day->get('date');
+            $this->daysOff->add($date);
+        }
     }
     
     public static function generate(int $month, int $year) : void {
@@ -151,7 +165,7 @@ class AttendanceList extends PDFMaker{
     private function printDataUsersRows(int $startDay, int $endDay) : void {
         $data = $this->users;
         $columns = $this->generateTableDataConfig($startDay, $endDay);
-        $this->makeTable($columns, $data, array(), 1);
+        $this->makeTable($columns, $data, 1);
     }
     
     private function generateTableDataConfig(int $startDay, int $endDay) : Columns {
@@ -182,7 +196,7 @@ class AttendanceList extends PDFMaker{
         }
         $data = $this->generateSignatureRow();
         $columns = $this->generateSignaturesConfig($startDay, $endDay);
-        $this->makeTable($columns, $data, array(), 1);
+        $this->makeTable($columns, $data, 1);
     }
     
     private function generateSignaturesConfig(int $startDay, int $endDay) : Columns {
@@ -228,6 +242,10 @@ class AttendanceList extends PDFMaker{
         if(HolidayChecker::isHoliday($date)){
             return true;
         }
+        if($this->daysOff->contains($date->format('Y-m-d'))){
+            return true;
+        }
         return false;
     }
+    
 }

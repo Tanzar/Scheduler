@@ -19,6 +19,12 @@
     <form action="<?php echo Pages::getURL('adminPanelUsers.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('users'); ?>">
     </form>
+    <form action="<?php echo Pages::getURL('adminPanelDaysOff.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('free_days'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('adminPanelOvertime.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('overtime'); ?>">
+    </form>
     <div class="standard-text">
         <?php echo $moduleNames->get('schedule'); ?>
     </div>
