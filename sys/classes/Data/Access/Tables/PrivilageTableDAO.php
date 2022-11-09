@@ -4,24 +4,32 @@
  * This code is free to use, just remember to give credit.
  */
 
-namespace Data\Access;
+namespace Data\Access\Tables;
 
-use Data\Access\DataAccess as DataAccess;
+use Data\Access\DataAccessObject as DAO;
 use Tanweb\Container as Container;
 use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
 use Data\Exceptions\PrivilageException as PrivilageException;
 
 /**
- * Description of PrivilageDataAccess
+ * Description of PrivilageTableDAO
  *
  * @author Tanzar
  */
-class PrivilageDataAccess extends DataAccess{
+class PrivilageTableDAO extends DAO{
+    
+    public function __construct() {
+        parent::__construct();
+    }
     
     protected function setDatabaseIndex(): string {
         return 'scheduler';
     }
-    
+
+    protected function setDefaultTable(): string {
+        return 'privilages';
+    }
+
     public function getPrivilagesByUserID(int $idUser) : Container {
         $sql = new MysqlBuilder();
         $sql->select('privilages')->where('id_user', $idUser);
@@ -78,14 +86,14 @@ class PrivilageDataAccess extends DataAccess{
         
     }
     
-    public function activate(int $id){
+    public function enable(int $id){
         $sql = new MysqlBuilder();
         $sql->update('privilages', 'id', $id)
                 ->set('active', 1);
         $this->update($sql);
     }
     
-    public function deactivate(int $id){
+    public function disable(int $id){
         $sql = new MysqlBuilder();
         $sql->update('privilages', 'id', $id)
                 ->set('active', 0);

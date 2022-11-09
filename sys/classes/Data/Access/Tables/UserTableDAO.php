@@ -4,26 +4,35 @@
  * This code is free to use, just remember to give credit.
  */
 
-namespace Data\Access;
+namespace Data\Access\Tables;
 
-use Data\Access\DataAccess as DataAccess;
+use Data\Access\DataAccessObject as DAO;
 use Data\Exceptions\UserDataException as UserDataException;
+use Data\Exceptions\NotFoundException as NotFoundException;
 use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
 use Tanweb\Security\Encrypter as Encrypter;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 
 /**
- * Description of UserDataAccess
+ * Description of UserTableDAO
  *
  * @author Tanzar
  */
-class UserDataAccess extends DataAccess{
+class UserTableDAO extends DAO{
+    
+    public function __construct() {
+        parent::__construct();
+    }
     
     protected function setDatabaseIndex(): string {
         return 'scheduler';
     }
     
+    protected function setDefaultTable(): string {
+        return 'user';
+    }
+
     public function getAllUsers(bool $withPasswords = false) : Container{
         $sql = new MysqlBuilder();
         if($withPasswords){
@@ -82,33 +91,33 @@ class UserDataAccess extends DataAccess{
         return new Container($user);
     }
     
-    public function getUserByUsername(string $username) : Container {
+    public function getByUsername(string $username) : Container {
         $sql = new MysqlBuilder();
         $sql->select('user')->where('username', $username);
         $data = $this->select($sql);
-        if($data->getLength() > 1){
+        if($data->length() > 1){
             throw new UserDataException("username column don't hold unique values, "
                     . 'multiple usernamess found.');
         }
-        if($data->getLength() === 0){
+        if($data->length() === 0){
             $languages = Languages::getInstance();
-            throw new UserDataException($languages->get('not_found'));
+            throw new NotFoundException($languages->get('not_found'));
         }
-        $user = $data->getValue(0);
+        $user = $data->get(0);
         return new Container($user);
     }
     
     public function create(Container $user) : int {
-        if($this->isUsernameTaken($user->getValue('username'))){
+        if($this->isUsernameTaken($user->get('username'))){
             $languages = Languages::getInstance();
             throw new UserDataException($languages->get('username_taken'));
         }
         $sql = new MysqlBuilder();
         $sql->insert('user');
-        $sql->into('username', $user->getValue('username'));
-        $sql->into('name', $user->getValue('name'));
-        $sql->into('surname', $user->getValue('surname'));
-        $uncodedPassword = $user->getgetValue('password');
+        $sql->into('username', $user->get('username'));
+        $sql->into('name', $user->get('name'));
+        $sql->into('surname', $user->get('surname'));
+        $uncodedPassword = $user->get('password');
         $encodedPassword = Encrypter::encode($uncodedPassword);
         $sql->into('password', $encodedPassword);
         $id = $this->insert($sql);
@@ -116,40 +125,38 @@ class UserDataAccess extends DataAccess{
     }
     
     public function updateUser(Container $user) : void{
-        if($this->isUsernameTaken($user->getValue('username'))){
+        if($this->isUsernameTaken($user->get('username'))){
             $languages = Languages::getInstance();
             throw new UserDataException($languages->get('username_taken'));
         }
         $id = $user->getId();
         $sql = new MysqlBuilder();
         $sql->update('user', 'id', $id);
-        $sql->set('name', $user->getValue('name'));
-        $sql->set('surname', $user->getValue('surname'));
-        $sql->set('username', $user->getValue('username'));
+        $sql->set('name', $user->get('name'));
+        $sql->set('surname', $user->get('surname'));
+        $sql->set('username', $user->get('username'));
         $this->update($sql);
     }
     
     public function changePassword(string $username, string $password) : void{
-        $user = $this->getUserByUsername($username);
+        $user = $this->getByUsername($username);
         $encoded = Encrypter::encode($password);
-        $id = $user->getValue('id');
+        $id = $user->get('id');
         $sql = new MysqlBuilder();
         $sql->update('user', 'id', $id);
         $sql->set('password', $encoded);
         $this->update($sql);
     }
     
-    public function deactivate(int $id) : void {
+    public function enable(int $id) : void {
         $sql = new MysqlBuilder();
-        $sql->update('user', 'id', $id);
-        $sql->set('active', 0);
+        $sql->update('user', 'id', $id)->set('active', 1);
         $this->update($sql);
     }
     
-    public function activate(int $id) : void {
+    public function disable(int $id) : void {
         $sql = new MysqlBuilder();
-        $sql->update('user', 'id', $id);
-        $sql->set('active', 1);
+        $sql->update('user', 'id', $id)->set('active', 0);
         $this->update($sql);
     }
     
@@ -157,10 +164,9 @@ class UserDataAccess extends DataAccess{
         $sql = new MysqlBuilder();
         $sql->select('user')->where('username', $username);
         $result = $this->select($sql);
-        if($result->getLength() >= 1){
+        if($result->length() >= 1){
             return true;
         }
         return false;
     }
-    
 }

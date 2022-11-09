@@ -6,10 +6,10 @@
 
 namespace Services;
 
-use Data\Access\Tables\ScheduleDAO as ScheduleDAO;
-use Data\Access\Tables\ActivityDAO as ActivityDAO;
+use Data\Access\Tables\ScheduleTableDAO as ScheduleDAO;
+use Data\Access\Tables\ActivityTableDAO as ActivityDAO;
 use Data\Access\Tables\ActivityLocationTypeDAO as ActivityLocationTypeDAO;
-use Data\Access\Tables\UserDAO as UserDAO;
+use Data\Access\Tables\UserTableDAO as UserDAO;
 use Data\Access\Tables\DocumentScheduleDAO as DocumentScheduleDAO;
 use Data\Access\Views\ActivityLocationTypeDetailsView as ActivityLocationTypeDetailsView;
 use Data\Access\Views\ScheduleEntriesView as ScheduleEntriesView;

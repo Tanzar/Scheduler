@@ -12,7 +12,7 @@ use Data\Access\Tables\DocumentScheduleDAO as DocumentScheduleDAO;
 use Data\Access\Views\DocumentUserDetailsView as DocumentUserDetailsView;
 use Data\Access\Views\DocumentEntriesDetailsView as DocumentEntriesDetailsView;
 use Data\Access\Views\DocumentDetailsView as DocumentDetailsView;
-use Data\Access\Tables\UserDAO as UserDAO;
+use Data\Access\Tables\UserTableDAO as UserDAO;
 use Tanweb\Config\INI\Languages as Languages;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;

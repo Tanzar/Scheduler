@@ -8,8 +8,8 @@ namespace Services;
 
 use Tanweb\Container as Container;
 use Tanweb\Security\Encrypter as Encrypter;
-use Data\Access\Tables\UserDAO as UserDAO;
-use Data\Access\Tables\PrivilageDAO as PrivilageDAO;
+use Data\Access\Tables\UserTableDAO as UserDAO;
+use Data\Access\Tables\PrivilageTableDAO as PrivilageDAO;
 use Data\Access\Tables\EmploymentDAO as EmploymentDAO;
 use Data\Access\Views\UsersEmploymentPeriodsView as UsersEmploymentPeriodsView;
 use Data\Access\Views\UsersWithoutPasswordsView as UsersWithoutPasswordsView;
@@ -90,7 +90,7 @@ class UserService{
     }
     
     public function getUserPrivilages(int $id) : Container {
-        return $this->privilages->getByUserID($id);
+        return $this->privilages->getPrivilagesByUserID($id);
     }
     
     public function getUserEmploymentPeriods(int $idUser) : Container {
@@ -115,7 +115,7 @@ class UserService{
     public function savePrivilage(Container $privilage) : int {
         $idUser = $privilage->get('id_user');
         $privilageName = $privilage->get('privilage');
-        $privilages = $this->privilages->getByUserID($idUser);
+        $privilages = $this->privilages->getPrivilagesByUserID($idUser);
         foreach ($privilages->toArray() as $data){
             $item = new Container($data);
             if($item->get('privilage') === $privilageName){
@@ -178,7 +178,7 @@ class UserService{
         $user = $this->getUser($data);
         $active = $user->get('active');
         if($active){
-            if($this->usersPrivilages->isLastAdmin()){
+            if($this->usersPrivilages->isLastAdmin($user->get('username'))){
                 throw new LastAdminException();
             }
             $this->users->disable($user->get('id'));
