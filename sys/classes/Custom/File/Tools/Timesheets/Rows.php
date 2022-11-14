@@ -6,7 +6,6 @@
 
 namespace Custom\File\Tools\Timesheets;
 
-use Custom\Converters\Time as Time;
 use Custom\File\Tools\DaysOffTable as DaysOffTable;
 use Custom\File\Tools\Timesheets\UniqueWorkHours as UniqueWorkHours;
 use Custom\File\Tools\Timesheets\TimesCalculator as TimesCalculator;
@@ -47,7 +46,7 @@ class Rows {
     private function init() : void {
         $this->calculateTimes();
         $this->loadDaysOff();
-        $this->uniqueWorkHours = new UniqueWorkHours($this->entries);
+        $this->initUniqueWorkHours();
         $this->prepareRowsData();
     }
     
@@ -106,6 +105,15 @@ class Rows {
     
     private function loadDaysOff() {
         $this->daysOff = new DaysOffTable($this->username, $this->month, $this->year);
+    }
+    
+    private function initUniqueWorkHours() : void {
+        $view = new UsersEmploymentPeriodsView();
+        $lastDay = (int) date('t', strtotime($this->year . '-' . $this->month . '-1'));
+        $start = new DateTime($this->year . '-' . $this->month . '-01 00:00:00');
+        $end = new DateTime($this->year . '-' . $this->month . '-' . $lastDay . ' 23:59:59');
+        $periods = $view->getByUsernameAndDatesRange($this->username, $start, $end);
+        $this->uniqueWorkHours = new UniqueWorkHours($periods, $this->entries);
     }
     
     private function prepareRowsData() : void {
@@ -368,6 +376,4 @@ class Rows {
         }
         return $count;
     }
-    
-    
 }

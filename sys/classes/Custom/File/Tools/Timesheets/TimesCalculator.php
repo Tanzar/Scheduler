@@ -8,7 +8,6 @@ namespace Custom\File\Tools\Timesheets;
 
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\AppConfig as AppConfig;
-use Custom\SystemErrors\EntryException as EntryException;
 use DateTime;
 
 /**
@@ -131,7 +130,11 @@ class TimesCalculator {
         $overtimeReductionRow = $cfg->get('timesheets_overtime_reduction_row_index');
         $nightShiftRow = $cfg->get('timesheets_night_shift_row_index');
         $row = $entry->get('worktime_record_row');
-        if($row === 0 || $row === 1){
+        if($row === 0){
+            self::addValue($result, $partialResult, $row, 'worktime');
+            self::addValue($result, $partialResult, $row, 'overtime');
+        }
+        if($row === 1 || $row === 2){
             self::addValue($result, $partialResult, $row, 'worktime');
         }
         if($entry->get('overtime_action') === 'generates') {

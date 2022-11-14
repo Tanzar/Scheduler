@@ -8,7 +8,6 @@ namespace Custom\File\Tools\Timesheets;
 
 use Custom\Converters\Roman as Roman;
 use Tanweb\Container as Container;
-use Tanweb\Config\INI\AppConfig as AppConfig;
 use Custom\SystemErrors\EntryException as EntryException;
 use DateTime;
 /**
@@ -20,12 +19,23 @@ class UniqueWorkHours {
     private Container $entries;
     private Container $hoursSets;
     
-    public function __construct(Container $entries) {
+    public function __construct(Container $periods, Container $entries) {
         $this->hoursSets = new Container();
         $this->entries = $entries;
+        $this->initSets($periods);
         foreach ($entries->toArray() as $item) {
             $entry = new Container($item);
             $this->check($entry);
+        }
+    }
+    
+    private function initSets(Container $periods) : void {
+        foreach ($periods->toArray() as $item) {
+            $period = new Container($item);
+            $hours = new Container();
+            $hours->add('2000-01-01 ' . $period->get('standard_day_start'), 'start');
+            $hours->add('2000-01-01 ' . $period->get('standard_day_end'), 'end');
+            $this->addSet($hours);
         }
     }
     

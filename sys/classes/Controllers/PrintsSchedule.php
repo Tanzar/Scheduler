@@ -70,10 +70,11 @@ class PrintsSchedule extends Controller{
         $month = (int) $data->get('month');
         $year = (int) $data->get('year');
         if($data->isValueSet('username')){
-            
+            $username = $data->get('username');
+            $this->prints->generateWorkcardForUser($username, $month, $year);
         }
         else{
-            
+            $this->prints->generateWorkcardForCurrentUser($month, $year);
         }
     }
     

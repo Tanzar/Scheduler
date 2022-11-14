@@ -6,7 +6,7 @@
 
 namespace Custom\File\Tools\Timesheets;
 
-use Data\Access\Tables\UserDAO as UserDAO;
+use Data\Access\Tables\UserTableDAO as UserDAO;
 use Data\Access\Views\UsersEmploymentPeriodsView as UsersEmploymentPeriodsView; 
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\AppConfig as AppConfig;

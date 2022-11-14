@@ -9,6 +9,7 @@ namespace Services;
 use Custom\File\AttendanceList as AttendanceList;
 use Custom\File\NotificationList as NotificationList;
 use Custom\File\Timesheets as Timesheets;
+use Custom\File\Workcard as Workcard;
 use Tanweb\Session as Session;
 
 /**
@@ -34,5 +35,15 @@ class PrintsService {
         $username = Session::getUsername();
         Timesheets::generate($month, $year, $username);
     }
+    
+    public function generateWorkcardForUser(string $username, int $month, int $year) : void {
+        Workcard::generate($month, $year, $username);
+    }
+    
+    public function generateWorkcardForCurrentUser(int $month, int $year) : void {
+        $username = Session::getUsername();
+        Workcard::generate($month, $year, $username);
+    }
+    
     
 }

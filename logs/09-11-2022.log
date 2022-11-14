@@ -1216,3 +1216,935 @@
 [2022-11-09  10:36:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
 [2022-11-09  10:36:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
 [2022-11-09  10:36:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-09  10:38:51] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-11-09  10:38:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-09  10:38:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  10:51:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  10:59:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  10:59:17] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "Data\Access\Tables\UserDAO" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\General.php(34): Custom\File\Tools\Timesheets\General->loadUser()
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\Settings.php(24): Custom\File\Tools\Timesheets\General->__construct(11, 2022, 'admin')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(37): Custom\File\Tools\Timesheets\Settings->__construct(11, 2022, 'admin')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(46): Custom\File\Timesheets->__construct(11, 2022, 'admin')
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Timesheets::generate(11, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-11-09  10:59:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:00:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:00:14] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Call to private Custom\File\Timesheets::__construct() from scope Custom\File\Workcard ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2022-11-09  11:00:44] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:00:44] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Call to undefined method Custom\File\Workcard::print() ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2022-11-09  11:01:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:01:11] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Call to undefined method Custom\File\Workcard::getTitle() ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#1 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2022-11-09  11:01:48] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:02:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:08:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:09:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:10:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:17:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:17:29] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Object of class Custom\File\Workcard could not be converted to string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(46): Custom\File\Workcard->loadUser()
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(64): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#2 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-11-09  11:18:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:18:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:20:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:20:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:20:28] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:20:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:20:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:20:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:21:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:21:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:21:28] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:21:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:21:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:21:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:25:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:25:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:25:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:25:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:25:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:25:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:25:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:25:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:26:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:26:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:26:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:26:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:26:46] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:26:46] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:28:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:28:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:28:51] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:28:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:29:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:29:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:29:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:29:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  11:29:47] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  11:29:47] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:12:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:12:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:12:06] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "Custom\File\Tools\Workcard\Rows" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#1 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#2 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#3 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#4 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-11-09  12:12:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:12:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:12:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:12:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:12:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:12:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:12:17] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Object of class Custom\File\Tools\Workcard\Rows could not be converted to string ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(65): Custom\File\Tools\Workcard\Rows->selectEmploymentPeriod(Object(DateTime))
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(57): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#9 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#10 {main}
+[2022-11-09  12:12:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:12:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:12:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:12:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:12:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:12:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:12:35] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Typed property Custom\File\Tools\Workcard\Rows::$rows must not be accessed before initialization ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(91): Custom\File\Tools\Workcard\Rows->addEmptyRow(1)
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(70): Custom\File\Tools\Workcard\Rows->makeRowsForDay(1, Object(DateTime), Object(DateTime))
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(57): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2022-11-09  12:13:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:13:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:13:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:13:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:13:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:13:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:13:08] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Typed property Custom\File\Tools\Workcard\Rows::$rows must not be accessed before initialization ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(91): Custom\File\Tools\Workcard\Rows->addEmptyRow(1)
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(70): Custom\File\Tools\Workcard\Rows->makeRowsForDay(1, Object(DateTime), Object(DateTime))
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(49): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2022-11-09  12:13:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:13:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:13:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:13:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:13:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:13:33] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:13:38] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Typed property Custom\File\Tools\Workcard\Rows::$rows must not be accessed before initialization ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(91): Custom\File\Tools\Workcard\Rows->addEmptyRow(1)
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(70): Custom\File\Tools\Workcard\Rows->makeRowsForDay(1, Object(DateTime), Object(DateTime))
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(49): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2022-11-09  12:14:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:14:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:14:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:14:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:14:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:14:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:14:23] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Typed property Custom\File\Tools\Workcard\Rows::$rows must not be accessed before initialization ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(91): Custom\File\Tools\Workcard\Rows->addEmptyRow(1)
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(70): Custom\File\Tools\Workcard\Rows->makeRowsForDay(1, Object(DateTime), Object(DateTime))
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(49): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2022-11-09  12:15:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:15:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:15:47] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:15:47] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:15:47] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:15:47] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:15:47] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Typed property Custom\File\Tools\Workcard\Rows::$rows must not be accessed before initialization ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(91): Custom\File\Tools\Workcard\Rows->addEmptyRow(1)
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(70): Custom\File\Tools\Workcard\Rows->makeRowsForDay(1, Object(DateTime), Object(DateTime))
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(49): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2022-11-09  12:16:18] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:16:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:16:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:16:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:16:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:16:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:16:18] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Typed property Custom\File\Tools\Workcard\Rows::$rows must not be accessed before initialization ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(91): Custom\File\Tools\Workcard\Rows->addEmptyRow(1)
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(70): Custom\File\Tools\Workcard\Rows->makeRowsForDay(1, Object(DateTime), Object(DateTime))
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(49): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2022-11-09  12:16:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:16:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:16:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:16:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:16:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:16:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:16:52] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Typed property Custom\File\Tools\Workcard\Rows::$rows must not be accessed before initialization ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(91): Custom\File\Tools\Workcard\Rows->addEmptyRow(1)
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(70): Custom\File\Tools\Workcard\Rows->makeRowsForDay(1, Object(DateTime), Object(DateTime))
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(49): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2022-11-09  12:17:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:17:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:17:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:17:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:17:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:17:51] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:17:51] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: fill ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(113): Tanweb\Container->get('fill')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(80): Custom\File\Workcard->printTable()
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(68): Custom\File\Workcard->print()
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-11-09  12:18:27] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:18:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:18:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:18:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:18:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:18:27] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:18:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:18:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:18:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:18:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:18:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:18:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:19:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:19:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:19:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:19:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:19:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:19:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:43:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:43:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:43:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:43:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:43:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:43:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:43:39] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: start ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(90): Tanweb\Container->get('start')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(71): Custom\File\Tools\Workcard\Rows->makeRowsForDay(1, Object(DateTime), Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(49): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#11 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#12 {main}
+[2022-11-09  12:43:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:43:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:43:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:43:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:43:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:43:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:44:04] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: start ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(90): Tanweb\Container->get('start')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(71): Custom\File\Tools\Workcard\Rows->makeRowsForDay(1, Object(DateTime), Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(49): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#11 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#12 {main}
+[2022-11-09  12:44:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:44:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:44:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:44:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:44:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:44:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:44:35] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: start ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(90): Tanweb\Container->get('start')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(71): Custom\File\Tools\Workcard\Rows->makeRowsForDay(1, Object(DateTime), Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(49): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#11 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#12 {main}
+[2022-11-09  12:44:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:44:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:44:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:44:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:44:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:44:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:44:49] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Container error: value not defined for key: start ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Tanweb\Container.php(42): Tanweb\Container->throwException('value not defin...')
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(90): Tanweb\Container->get('start')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(71): Custom\File\Tools\Workcard\Rows->makeRowsForDay(1, Object(DateTime), Object(DateTime))
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(41): Custom\File\Tools\Workcard\Rows->prepareRows()
+#4 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Workcard\Rows.php(34): Custom\File\Tools\Workcard\Rows->init()
+#5 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(49): Custom\File\Tools\Workcard\Rows->__construct(11, 2022, 'admin')
+#6 C:\laragon\www\Scheduler\sys\classes\Custom\File\Workcard.php(67): Custom\File\Workcard->__construct(11, 2022, 'admin')
+#7 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(40): Custom\File\Workcard::generate(11, 2022, 'admin')
+#8 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(74): Services\PrintsService->generateWorkcardForUser('admin', 11, 2022)
+#9 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateWorkCard()
+#10 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#11 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#12 {main}
+[2022-11-09  12:44:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:44:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:44:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:44:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  12:44:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  12:44:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:45:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: getUsersData: {}
+[2022-11-09  12:45:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-09  12:45:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:45:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:45:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:45:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  12:45:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  12:45:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-01 23:59:59' and end > '2022-09-30 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:45:38] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAll.php?
+[2022-11-09  12:45:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  12:45:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-11-09  12:45:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-12 00:00:00' and end > '2022-11-06 00:00:00' and active = '1' ORDER BY start ASC
+[2022-11-09  12:45:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-11-09  12:45:41] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleMy.php?
+[2022-11-09  12:45:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-11-09' and end > '2022-11-09'
+[2022-11-09  12:45:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  12:45:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  12:45:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  12:45:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-12 00:00:00' and end > '2022-11-06 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  12:45:52] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  12:45:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  12:45:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-02 00:00:00' and end > '2022-10-27 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  12:46:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-11-09  12:46:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  12:46:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '20'
+[2022-11-09  12:46:16] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET start='2022-10-31 07:30', underground='0', id_activity='12', id_location='13' WHERE id = '20'
+[2022-11-09  12:46:18] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  12:46:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  12:46:18] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-02 00:00:00' and end > '2022-10-27 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  12:46:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:46:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:46:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:46:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  12:46:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  12:46:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-01 23:59:59' and end > '2022-09-30 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:54:27] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAll.php?
+[2022-11-09  12:54:27] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  12:54:28] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-11-09  12:54:28] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-12 00:00:00' and end > '2022-11-06 00:00:00' and active = '1' ORDER BY start ASC
+[2022-11-09  12:54:28] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-11-09  12:54:29] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleMy.php?
+[2022-11-09  12:54:29] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-11-09' and end > '2022-11-09'
+[2022-11-09  12:54:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  12:54:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  12:54:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  12:54:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-12 00:00:00' and end > '2022-11-06 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  12:54:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  12:54:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  12:54:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-20 00:00:00' and end > '2022-10-14 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  12:55:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-11-09  12:55:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group = 'Praca biurowa'
+[2022-11-09  12:55:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-11-09  12:55:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '9'
+[2022-11-09  12:55:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-11-09  12:55:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '12'
+[2022-11-09  12:55:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-11-09  12:55:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  12:55:08] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (start, end, id_user, id_activity, id_location) VALUES ('2022-10-17 10:00', '2022-10-17 18:00', '1', '9', '12')
+[2022-11-09  12:55:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  12:55:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  12:55:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-20 00:00:00' and end > '2022-10-14 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  12:55:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  12:55:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  12:55:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:55:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  12:55:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  12:55:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-01 23:59:59' and end > '2022-09-30 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:55:30] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-11-09  12:55:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-09  12:55:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  12:55:32] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: getUsersData: {}
+[2022-11-09  12:55:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-09  12:55:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  12:55:34] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "Data\Access\Tables\UserDAO" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\General.php(34): Custom\File\Tools\Timesheets\General->loadUser()
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\Settings.php(24): Custom\File\Tools\Timesheets\General->__construct(10, 2022, 'admin')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(37): Custom\File\Tools\Timesheets\Settings->__construct(10, 2022, 'admin')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(46): Custom\File\Timesheets->__construct(10, 2022, 'admin')
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(31): Custom\File\Timesheets::generate(10, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-11-09  12:55:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  12:56:09] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "Data\Access\Tables\UserDAO" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\General.php(34): Custom\File\Tools\Timesheets\General->loadUser()
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\Settings.php(24): Custom\File\Tools\Timesheets\General->__construct(10, 2022, 'admin')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(37): Custom\File\Tools\Timesheets\Settings->__construct(10, 2022, 'admin')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(46): Custom\File\Timesheets->__construct(10, 2022, 'admin')
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(31): Custom\File\Timesheets::generate(10, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-11-09  12:56:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  12:56:29] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "Data\Access\Tables\UserDAO" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\General.php(34): Custom\File\Tools\Timesheets\General->loadUser()
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\Settings.php(24): Custom\File\Tools\Timesheets\General->__construct(10, 2022, 'admin')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(37): Custom\File\Tools\Timesheets\Settings->__construct(10, 2022, 'admin')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(46): Custom\File\Timesheets->__construct(10, 2022, 'admin')
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(31): Custom\File\Timesheets::generate(10, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-11-09  12:56:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  12:57:04] [type: Error] [user: admin] [ip: ::1] [proxy: undefined] Class "Data\Access\Tables\UserDAO" not found ;
+ #0 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\General.php(34): Custom\File\Tools\Timesheets\General->loadUser()
+#1 C:\laragon\www\Scheduler\sys\classes\Custom\File\Tools\Timesheets\Settings.php(24): Custom\File\Tools\Timesheets\General->__construct(10, 2022, 'admin')
+#2 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(37): Custom\File\Tools\Timesheets\Settings->__construct(10, 2022, 'admin')
+#3 C:\laragon\www\Scheduler\sys\classes\Custom\File\Timesheets.php(46): Custom\File\Timesheets->__construct(10, 2022, 'admin')
+#4 C:\laragon\www\Scheduler\sys\classes\Services\PrintsService.php(31): Custom\File\Timesheets::generate(10, 2022, 'admin')
+#5 C:\laragon\www\Scheduler\sys\classes\Controllers\PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('admin', 10, 2022)
+#6 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#7 C:\laragon\www\Scheduler\sys\classes\Controllers\Base\Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 C:\laragon\www\Scheduler\sys\scripts\requests\file.php(29): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-11-09  12:57:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  12:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  12:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  12:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  12:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  12:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  12:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  12:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  12:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  12:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  12:57:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:09:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:09:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:10:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:10:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:10:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'prawnik'
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'prawnik' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'prawnik' ORDER BY start ASC
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'prawnik' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'prawnik' ORDER BY start ASC
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'prawnik' and date <= '2022-09-01'
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'prawnik' and date <= '2022-09-01'
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'prawnik' and date <= '2022-09-01'
+[2022-11-09  13:10:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'prawnik' and date = '2022-10-01'
+[2022-11-09  13:10:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:10:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:17:48] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:17:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:17:56] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-11-09  13:17:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:17:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-11-09  13:17:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-11-09  13:17:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-09  13:17:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-11-09  13:17:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-09  13:17:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-09  13:17:59] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelActivity.php?
+[2022-11-09  13:18:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:18:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getActivitiesData: {}
+[2022-11-09  13:18:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-11-09  13:18:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesData: {}
+[2022-11-09  13:18:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-11-09  13:18:03] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesForActivityData: {}
+[2022-11-09  13:18:03] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '9'
+[2022-11-09  13:18:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getActivityDetailsData: {}
+[2022-11-09  13:18:12] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: saveActivityData: {}
+[2022-11-09  13:18:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  id = '9'
+[2022-11-09  13:18:12] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE activity SET active='1', worktime_record_row='0', workcard_display='1', allow_location_input='0', require_document='0', overtime_action='none' WHERE id = '9'
+[2022-11-09  13:18:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getActivitiesData: {}
+[2022-11-09  13:18:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-11-09  13:18:22] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:18:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:18:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:18:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:18:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:18:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:18:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:18:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:18:22] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:18:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:18:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:18:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:18:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:18:34] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAll.php?
+[2022-11-09  13:18:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:18:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-11-09  13:18:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-12 00:00:00' and end > '2022-11-06 00:00:00' and active = '1' ORDER BY start ASC
+[2022-11-09  13:18:35] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-11-09  13:18:35] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleMy.php?
+[2022-11-09  13:18:35] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-11-09' and end > '2022-11-09'
+[2022-11-09  13:18:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:18:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  13:18:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:18:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-12 00:00:00' and end > '2022-11-06 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  13:18:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  13:18:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:18:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-29 00:00:00' and end > '2022-10-23 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  13:18:57] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-11-09  13:18:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:18:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-11-09  13:18:58] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-11-09  13:18:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-09  13:18:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-11-09  13:18:59] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-09  13:18:59] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-09  13:18:59] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelActivity.php?
+[2022-11-09  13:19:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:19:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getActivitiesData: {}
+[2022-11-09  13:19:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-11-09  13:19:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesData: {}
+[2022-11-09  13:19:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-11-09  13:19:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:19:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:19:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:19:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:19:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:19:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:20:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:20:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:20:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:20:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:20:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:20:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:20:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:21:03] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-11-09  13:21:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:21:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-11-09  13:21:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-11-09  13:21:04] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-09  13:21:04] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-11-09  13:21:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-09  13:21:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-09  13:21:06] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAll.php?
+[2022-11-09  13:21:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:21:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-11-09  13:21:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-12 00:00:00' and end > '2022-11-06 00:00:00' and active = '1' ORDER BY start ASC
+[2022-11-09  13:21:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-11-09  13:21:08] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleMy.php?
+[2022-11-09  13:21:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-11-09' and end > '2022-11-09'
+[2022-11-09  13:21:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:21:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  13:21:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:21:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-12 00:00:00' and end > '2022-11-06 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  13:21:13] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  13:21:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:21:13] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-29 00:00:00' and end > '2022-10-23 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  13:21:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-11-09  13:21:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:21:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule WHERE  id = '17'
+[2022-11-09  13:21:36] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE schedule SET start='2022-10-27 07:30', end='2022-10-27 15:30', underground='0', id_activity='1', id_location='1' WHERE id = '17'
+[2022-11-09  13:21:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  13:21:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:21:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-29 00:00:00' and end > '2022-10-23 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  13:21:44] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:21:44] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:22:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-11-09  13:22:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group = 'Wypadki'
+[2022-11-09  13:22:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-11-09  13:22:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '3'
+[2022-11-09  13:22:12] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-11-09  13:22:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-11-09  13:22:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-11-09  13:22:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and start <= '2022-10-21' and end >= '2022-10-21' and id_location = '1'
+[2022-11-09  13:22:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-11-09  13:22:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:22:39] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (start, end, id_user, id_activity, id_location, underground) VALUES ('2022-10-21 01:30', '2022-10-21 15:30', '1', '3', '1', '0')
+[2022-11-09  13:22:39] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document_schedule (id_schedule, id_document) VALUES ('24', '7')
+[2022-11-09  13:22:40] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  13:22:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:22:40] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-29 00:00:00' and end > '2022-10-23 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  13:22:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  13:22:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:22:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  13:23:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:23:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:24:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:24:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:25:33] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAll.php?
+[2022-11-09  13:25:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:25:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-11-09  13:25:34] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-12 00:00:00' and end > '2022-11-06 00:00:00' and active = '1' ORDER BY start ASC
+[2022-11-09  13:25:34] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-11-09  13:25:35] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-11-09  13:25:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:25:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-11-09  13:25:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-11-09  13:25:36] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-09  13:25:36] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-11-09  13:25:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-09  13:25:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-09  13:25:37] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelActivity.php?
+[2022-11-09  13:25:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:25:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesData: {}
+[2022-11-09  13:25:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-11-09  13:25:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getActivitiesData: {}
+[2022-11-09  13:25:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-11-09  13:25:42] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesForActivityData: {}
+[2022-11-09  13:25:42] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '3'
+[2022-11-09  13:25:43] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getActivityDetailsData: {}
+[2022-11-09  13:25:48] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: saveActivityData: {}
+[2022-11-09  13:25:48] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  id = '3'
+[2022-11-09  13:25:48] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE activity SET active='1', worktime_record_row='3', workcard_display='1', allow_location_input='0', require_document='1' WHERE id = '3'
+[2022-11-09  13:25:49] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getActivitiesData: {}
+[2022-11-09  13:25:49] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-11-09  13:25:52] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:26:41] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:26:41] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:26:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesForActivityData: {}
+[2022-11-09  13:26:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '3'
+[2022-11-09  13:26:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getActivityDetailsData: {}
+[2022-11-09  13:27:01] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: saveActivityData: {}
+[2022-11-09  13:27:01] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  id = '3'
+[2022-11-09  13:27:01] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE activity SET active='1', worktime_record_row='2', workcard_display='1', allow_location_input='0', require_document='1' WHERE id = '3'
+[2022-11-09  13:27:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getActivitiesData: {}
+[2022-11-09  13:27:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-11-09  13:27:06] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:27:06] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:27:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date <= '2022-09-01'
+[2022-11-09  13:27:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'admin' and date = '2022-10-01'
+[2022-11-09  13:28:06] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-11-09  13:28:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:28:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-11-09  13:28:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-11-09  13:28:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-09  13:28:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-11-09  13:28:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-09  13:28:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-09  13:28:08] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAll.php?
+[2022-11-09  13:28:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:28:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-11-09  13:28:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-12 00:00:00' and end > '2022-11-06 00:00:00' and active = '1' ORDER BY start ASC
+[2022-11-09  13:28:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-11-09  13:28:10] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleMy.php?
+[2022-11-09  13:28:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-11-09' and end > '2022-11-09'
+[2022-11-09  13:28:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:28:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  13:28:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:28:11] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-12 00:00:00' and end > '2022-11-06 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  13:28:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-09  13:28:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-09  13:28:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-24 00:00:00' and end > '2022-10-18 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-09  13:28:54] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-11-09  13:28:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:28:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-11-09  13:28:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-11-09  13:28:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-09  13:28:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-11-09  13:28:56] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-09  13:28:56] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-09  13:28:57] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelActivity.php?
+[2022-11-09  13:28:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:28:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getLocationTypesData: {}
+[2022-11-09  13:28:58] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_type
+[2022-11-09  13:28:58] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelActivity Task: getActivitiesData: {}
+[2022-11-09  13:28:58] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity
+[2022-11-09  13:31:09] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-11-09  13:31:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-09  13:31:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:31:14] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-11-09  13:31:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:31:14] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-11-09  13:31:14] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-11-09  13:31:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-09  13:31:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-11-09  13:31:15] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-09  13:31:15] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-09  13:31:15] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/adminPanel/adminPanelUsers.php?
+[2022-11-09  13:31:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:31:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-09  13:31:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-11-09  13:31:16] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-11-09  13:31:16] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-11-09  13:31:17] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-09  13:31:17] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-09  13:31:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-09  13:31:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '4'
+[2022-11-09  13:31:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-09  13:31:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '4'
+[2022-11-09  13:31:21] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-11-09  13:31:21] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-09  13:31:21] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:31:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: getUsersData: {}
+[2022-11-09  13:31:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-09  13:31:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateTimesheetsData: {}
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'prawnik'
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'prawnik' and start <= '2022-10-31' and end >= '2022-10-1'
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'prawnik' ORDER BY start ASC
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-10-01 23:59:59' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-31 23:59:59' and end > '2022-10-01 00:00:00' and username = 'prawnik' and active = '1' ORDER BY start ASC
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'prawnik' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and end >= '2022-10-01' and username = 'prawnik' ORDER BY start ASC
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'prawnik' and date <= '2022-09-01'
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'prawnik' and date <= '2022-09-01'
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'prawnik' and date <= '2022-09-01'
+[2022-11-09  13:31:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM overtime_reduction_details WHERE  username = 'prawnik' and date = '2022-10-01'
+[2022-11-09  13:33:19] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryMy.php?
+[2022-11-09  13:33:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:33:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-11-09  13:33:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-11-09  13:33:20] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-11-09  13:33:20] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-11-09  13:33:24] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryAdmin.php?
+[2022-11-09  13:33:24] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:33:24] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-11-09  13:33:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-11-09  13:33:29] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inventory/inventoryLog.php?
+[2022-11-09  13:33:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:33:30] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryLog Task: getTodayLogsData: {}
+[2022-11-09  13:33:30] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  save_time_date = '2022-11-09'
+[2022-11-09  13:33:46] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryLog Task: getFilteredLogsData: {}
+[2022-11-09  13:33:46] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  save_time_date < '2022-11-09'
+[2022-11-09  13:33:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryLog Task: getUsersData: {}
+[2022-11-09  13:33:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-11-09  13:34:00] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryLog Task: getFilteredLogsData: {}
+[2022-11-09  13:34:00] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  save_time_date < '2022-11-09' and target_username = 'inspector'
+[2022-11-09  13:34:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryLog Task: getFilteredLogsData: {}
+[2022-11-09  13:34:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  target_username = 'inspector'
+[2022-11-09  13:34:08] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InventoryLog Task: getTodayLogsData: {}
+[2022-11-09  13:34:08] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  save_time_date = '2022-11-09'
+[2022-11-09  13:34:10] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-11-09  13:34:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-09  13:34:11] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-09  13:34:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-09  13:34:31] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-09  13:34:31] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-11-30' and username = 'admin' ORDER BY start ASC
+[2022-11-09  13:34:31] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '11' and year(date) = '2022'
+[2022-11-09  13:34:31] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '11' and year(days_off_date) = '2022'
+[2022-11-09  13:34:31] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-01 23:59:59' and end > '2022-10-31 00:00:00' and username = 'admin' and active = '1' ORDER BY start ASC
