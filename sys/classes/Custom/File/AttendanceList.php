@@ -12,6 +12,7 @@ use Tanweb\Config\INI\Languages as Languages;
 use Custom\Dates\HolidayChecker as HolidayChecker;
 use Data\Access\Views\UsersEmploymentPeriodsView as UsersEmploymentPeriodsView;
 use Data\Access\Tables\DaysOffDAO as DaysOffDAO;
+use Tanweb\Config\INI\AppConfig as AppConfig;
 use Tanweb\Container as Container;
 use DateTime;
 
@@ -120,6 +121,7 @@ class AttendanceList extends PDFMaker{
         $this->printDataUsersRows(17, $daysLimit);
         $this->printSignaruresRow(17, $daysLimit);
         $this->generateTextUnderTable();
+        $this->printSystemMark();
     }
     
     private function printHeadersSet(int $startDay, int $endDay) : void {
@@ -248,4 +250,14 @@ class AttendanceList extends PDFMaker{
         return false;
     }
     
+    private function printSystemMark() {
+        $appconfig = AppConfig::getInstance();
+        $cfg = $appconfig->getAppConfig();
+        $appname = $cfg->get('name');
+        $y = $this->h - 5;
+        $this->setCurrentSize(8);
+        $this->SetY($y);
+        $this->SetAutoPageBreak(false);
+        $this->writeCell(0, 5, 'Plik wygenerowany przez system ' . $appname, 0, 'R');
+    }
 }

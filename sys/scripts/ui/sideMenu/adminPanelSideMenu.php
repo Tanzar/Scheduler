@@ -85,4 +85,7 @@
     <div class="standard-text">
         <?php echo $moduleNames->get('prints'); ?>
     </div>
+    <form action="<?php echo Pages::getURL('adminPanelPrints.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('prints'); ?>">
+    </form>
 </div>

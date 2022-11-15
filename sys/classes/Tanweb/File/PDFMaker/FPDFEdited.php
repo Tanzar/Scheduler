@@ -93,6 +93,10 @@ class FPDFEdited extends FPDF {
             if(isset($data[$key])){
                 $text = $data[$key];
             }
+            $textHeight = $this->NbLines($w, $text) * $height;
+            $leftSpace = $h - $textHeight;
+            $pushDown = round($leftSpace / 2);
+            $this->SetXY($x, $y + $pushDown);
             if($fill || $col->doFill()){
                 $this->MultiCell($w,$height,$text,0,$a, true);
             }

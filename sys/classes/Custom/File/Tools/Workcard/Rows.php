@@ -55,7 +55,7 @@ class Rows {
         $start->modify('-1 days');
         $end = new DateTime($this->year . '-' . $this->month . '-' . $lastDay . ' 23:59:59');
         $end->modify('+1 days');
-        return $view->getActiveByUsernameAndDates($this->username, $start, $end);
+        return $view->getActiveForWorkcardByUsernameAndDates($this->username, $start, $end);
     }
     
     private function prepareRows() : void {

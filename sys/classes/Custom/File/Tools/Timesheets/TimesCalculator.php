@@ -19,7 +19,7 @@ class TimesCalculator {
     
     public static function calculate(Container $periods, Container $entries, DateTime $start, DateTime $end) : Container {
         $result = new Container();
-        if($start < $end){
+        if($start <= $end){
             $date = new DateTime($start->format('Y-m-d'));
             while($date->format('Y-m-d') <= $end->format('Y-m-d')){
                 $dateTimes = self::calculateForDate($periods, $entries, $date);

@@ -79,5 +79,15 @@ function init(username){
             }
             FileApi.post('PrintsSchedule', 'generateWorkCard', dataToSend);
         });
+        
+        if(document.getElementById('nightShiftReport') !== null){
+            $('#nightShiftReport').click(function(){
+                FileApi.post('PrintsSchedule', 'generateNightShiftReport', {
+                    month: selectMonth.value,
+                    year: selectYear.value
+                });
+            });
+        }
+        
     });
 }

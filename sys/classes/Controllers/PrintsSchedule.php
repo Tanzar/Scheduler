@@ -10,7 +10,6 @@ use Controllers\Base\Controller as Controller;
 use Services\PrintsService as PrintsService;
 use Services\UserService as UserService;
 use Tanweb\Container as Container;
-use Tanweb\Config\INI\Languages as Languages;
 
 /**
  * Description of PrintsSchedule
@@ -27,6 +26,7 @@ class PrintsSchedule extends Controller{
         $privilages = new Container();
         $privilages->add('admin');
         $privilages->add('prints_schedule');
+        $privilages->add('prints_schedule_reports');
         parent::__construct($privilages);
     }
     
@@ -76,6 +76,13 @@ class PrintsSchedule extends Controller{
         else{
             $this->prints->generateWorkcardForCurrentUser($month, $year);
         }
+    }
+    
+    public function generateNightShiftReport() {
+        $data = $this->getRequestData();
+        $month = (int) $data->get('month');
+        $year = (int) $data->get('year');
+        $this->prints->generateNightShiftReport($month, $year);
     }
     
     

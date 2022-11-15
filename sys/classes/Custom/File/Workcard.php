@@ -14,8 +14,6 @@ use Tanweb\File\PDFMaker\Column as Column;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
 use Tanweb\Config\INI\AppConfig as AppConfig;
-use Custom\Converters\Time as Time;
-use DateTime;
 
 /**
  * Description of Workcard
@@ -83,6 +81,7 @@ class Workcard extends PDFMaker{
         $this->printTable();
         $this->printTableFoot();
         $this->printFoot();
+        $this->printSystemMark();
     }
     
     private function printTop() : void {
@@ -174,5 +173,16 @@ class Workcard extends PDFMaker{
         $this->Ln(10);
         $this->writeCell($halfWidth, 5, '................................................................', 0, 'C');
         $this->writeCell($halfWidth, 5, '................................................................', 0, 'C');
+    }
+    
+    private function printSystemMark() {
+        $appconfig = AppConfig::getInstance();
+        $cfg = $appconfig->getAppConfig();
+        $appname = $cfg->get('name');
+        $y = $this->h - 5;
+        $this->setCurrentSize(8);
+        $this->SetY($y);
+        $this->SetAutoPageBreak(false);
+        $this->writeCell(0, 5, 'Plik wygenerowany przez system ' . $appname, 0, 'R');
     }
 }

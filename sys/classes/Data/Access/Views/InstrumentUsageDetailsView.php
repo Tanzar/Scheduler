@@ -43,4 +43,11 @@ class InstrumentUsageDetailsView extends View{
                 ->and()->where('document_assigned_username', $username);
         return $this->select($sql);
     }
+    
+    public function getAllByEquipmentIdAndYear(int $id, int $year) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('instrument_usage_details')->where('year(date)', $year)
+                ->and()->where('id_equipment', $id);
+        return $this->select($sql);
+    }
 }

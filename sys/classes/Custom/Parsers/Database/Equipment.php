@@ -14,7 +14,7 @@ use Custom\Parsers\Parser as Parser;
  * @author Tanzar
  */
 class Equipment extends Parser{
-    //put your code here
+    
     protected function defineOptionalVariables(): array {
         return array(
             'id', 'active', 'calibration'
@@ -23,8 +23,8 @@ class Equipment extends Parser{
 
     protected function defineRequiredVariables(): array {
         return array(
-            'name', 'document', 'inventory_number', 'price', 'remarks',
-            'id_user', 'id_equipment_type', 'state'
+            'name', 'document', 'start_date', 'inventory_number', 'price', 
+            'remarks', 'id_user', 'id_equipment_type', 'state'
         );
     }
 

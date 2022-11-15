@@ -60,6 +60,7 @@ function initEquipmentTable(language) {
                 {type: 'text', title: language.inventory_number, variable: 'inventory_number', limit: 12, required: true},
                 {type: 'textarea', title: language.name, variable: 'name', limit: 255, width: 30, height: 5, required: true},
                 {type: 'text', title: language.document, variable: 'document', limit: 20, required: true},
+                {type: 'date', title: language.start_date, variable: 'start_date'},
                 {type: 'select', title: language.select_equipment_type, variable: 'id_equipment_type', options: types, required: true},
                 {type: 'number', title: language.price, variable: 'price', min: 0, step: 0.01, required: true},
                 {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5}
@@ -95,6 +96,7 @@ function initEquipmentTable(language) {
                     {type: 'text', title: language.inventory_number, variable: 'inventory_number', limit: 12, required: true},
                     {type: 'textarea', title: language.name, variable: 'name', limit: 255, width: 30, height: 5, required: true},
                     {type: 'text', title: language.document, variable: 'document', limit: 20, required: true},
+                    {type: 'date', title: language.start_date, variable: 'start_date'},
                     {type: 'select', title: language.select_equipment_type, variable: 'id_equipment_type', options: types, required: true},
                     {type: 'number', title: language.price, variable: 'price', min: 0, step: 0.01, required: true},
                     {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5}

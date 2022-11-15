@@ -13,6 +13,7 @@ use Tanweb\Config\INI\Languages as Languages;
 use Custom\Dates\HolidayChecker as HolidayChecker;
 use Services\UserService as UserService;
 use Data\Access\Tables\DaysOffDAO as DaysOffDAO;
+use Tanweb\Config\INI\AppConfig as AppConfig;
 use Tanweb\Container as Container;
 use DateTime;
 
@@ -88,6 +89,7 @@ class NotificationList extends PDFMaker{
             $set = $this->usersSets->get($i);
             $this->printPagesPerSet($set);
         }
+        $this->printSystemMark();
     }
     
     private function getUsers() : void {
@@ -217,5 +219,16 @@ class NotificationList extends PDFMaker{
             return true;
         }
         return false;
+    }
+    
+    private function printSystemMark() {
+        $appconfig = AppConfig::getInstance();
+        $cfg = $appconfig->getAppConfig();
+        $appname = $cfg->get('name');
+        $y = $this->h - 5;
+        $this->setCurrentSize(8);
+        $this->SetY($y);
+        $this->SetAutoPageBreak(false);
+        $this->writeCell(0, 5, 'Plik wygenerowany przez system ' . $appname, 0, 'R');
     }
 }

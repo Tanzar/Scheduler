@@ -12,6 +12,7 @@ use Tanweb\File\PDFMaker\Column as Column;
 use Custom\File\Tools\Timesheets\Settings as Settings;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\Languages as Languages;
+use Tanweb\Config\INI\AppConfig as AppConfig;
 use Custom\Converters\Time as Time;
 use DateTime;
 
@@ -60,6 +61,7 @@ class Timesheets extends PDFMaker{
         $this->printWatchtimeAndNightShift();
         $this->printSummary();
         $this->printFooter();
+        $this->printSystemMark();
     }
     
     private function printTopHeaders() : void {
@@ -505,4 +507,14 @@ class Timesheets extends PDFMaker{
         return $result;
     }
     
+    private function printSystemMark() {
+        $appconfig = AppConfig::getInstance();
+        $cfg = $appconfig->getAppConfig();
+        $appname = $cfg->get('name');
+        $y = $this->h - 5;
+        $this->setCurrentSize(8);
+        $this->SetY($y);
+        $this->SetAutoPageBreak(false);
+        $this->writeCell(0, 5, 'Plik wygenerowany przez system ' . $appname, 0, 'R');
+    }
 }

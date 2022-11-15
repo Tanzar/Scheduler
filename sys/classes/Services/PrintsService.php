@@ -10,6 +10,8 @@ use Custom\File\AttendanceList as AttendanceList;
 use Custom\File\NotificationList as NotificationList;
 use Custom\File\Timesheets as Timesheets;
 use Custom\File\Workcard as Workcard;
+use Custom\File\NightShiftsReport as NightShiftsReport;
+use Custom\File\InstrumentUsageCard as InstrumentUsageCard;
 use Tanweb\Session as Session;
 
 /**
@@ -45,5 +47,11 @@ class PrintsService {
         Workcard::generate($month, $year, $username);
     }
     
+    public function generateNightShiftReport(int $month, int $year) : void {
+        NightShiftsReport::generate($month, $year);
+    }
     
+    public function generateInstrumentUsageCard(int $instrumentId, int $year) : void {
+        InstrumentUsageCard::generate($instrumentId, $year);
+    }
 }

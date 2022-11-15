@@ -29,6 +29,21 @@ class EquipmentDetailsView extends View{
         return 'equipment_details';
     }
     
+    public function getById(int $id) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('equipment_details')->where('id', $id);
+        $equipment = $this->select($sql);
+        if($equipment->length() > 1){
+            $this->throwIdColumnException('equipment_details');
+        }
+        if($equipment->length() === 0) {
+            return new Container();
+        }
+        else{
+            return new Container($equipment->get(0));
+        }
+    }
+    
     public function getActive() : Container {
         $sql = new MysqlBuilder();
         $sql->select('equipment_details')->where('active', 1);
