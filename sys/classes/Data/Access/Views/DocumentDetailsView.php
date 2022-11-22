@@ -57,6 +57,17 @@ class DocumentDetailsView extends View{
         return $this->select($sql);
     }
     
+    public function getActiveByYear(int $year) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('document_details')->where('active', 1)
+                ->and()
+                ->openBracket()->where('year(start)', $year)
+                ->or()
+                ->where('year(end)', $year)->closeBracket()
+                ->orderBy('start');
+        return $this->select($sql);
+    }
+    
     public function getAllByMonthAndYear(int $month, int $year) : Container {
         $sql = new MysqlBuilder();
         $sql->select('document_details')->openBracket()->openBracket()

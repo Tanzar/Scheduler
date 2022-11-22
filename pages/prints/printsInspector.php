@@ -86,6 +86,30 @@ This code is free to use, just remember to give credit.
                     <?php echo $interface->get('instrument_usage_card'); ?>
                 </button>
             </div>
+            <div class="standard-text">
+                <?php echo $interface->get('document_raport'); ?>
+            </div>
+            <div class="horizontal-container">
+                <select class="standard-input" id="selectDocumentYear">
+                    <?php
+                        $startYear = (int) $cfg->get('yearStart');
+                        $endYear = ((int) date('Y')) + 1;
+                        for($year = $startYear; $year <= $endYear; $year++){
+                        echo '<option value="' . $year . '"';
+                            if($year === (int) date('Y')){
+                                echo ' selected';
+                            }
+                            echo '>';
+                            echo $year;
+                            echo '</option>';
+                        }
+                    ?>
+                </select>
+                <select id="selectDocumentIndex" class="standard-input"></select>
+                <button id="generateDocumentReport" class="standard-button">
+                    <?php echo $interface->get('generate_report'); ?>
+                </button>
+            </div>
         </div>
         <?php
             Scripts::run('createFooter.php');

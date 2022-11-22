@@ -172,21 +172,23 @@ function AssignedUsersTable(language, documentsTable){
     
     table.addActionButton(language.unassign, function(selected){
         if(selected !== undefined){
-            var dataToSend = {
-                username: selected.username,
-                id: selected.id
+            if(confirm(language.document_unassign_warning)){
+                var dataToSend = {
+                    username: selected.username,
+                    id: selected.id
+                }
+                RestApi.post('AdminPanelDocuments', 'unassignUserFromDocument', dataToSend,
+                    function(response){
+                        var data = JSON.parse(response);
+                        console.log(data);
+                        alert(data.message);
+                        table.refresh();
+                    },
+                    function(response){
+                        console.log(response.responseText);
+                        alert(response.responseText);
+                });
             }
-            RestApi.post('AdminPanelDocuments', 'unassignUserFromDocument', dataToSend,
-                function(response){
-                    var data = JSON.parse(response);
-                    console.log(data);
-                    alert(data.message);
-                    table.refresh();
-                },
-                function(response){
-                    console.log(response.responseText);
-                    alert(response.responseText);
-            });
         }
         else{
             alert(language.select_user);

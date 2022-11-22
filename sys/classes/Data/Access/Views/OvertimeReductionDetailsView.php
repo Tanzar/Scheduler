@@ -36,16 +36,18 @@ class OvertimeReductionDetailsView extends View{
         return $this->select($sql);
     }
     
-    public function getByUsernameBeforeOrAt(string $username, DateTime $date) : Container {
+    public function getActiveByUsernameBeforeOrAt(string $username, DateTime $date) : Container {
         $sql = new MysqlBuilder();
-        $sql->select('overtime_reduction_details')->where('username', $username)
+        $sql->select('overtime_reduction_details')->where('active', 1)
+                ->and()->where('username', $username)
                 ->and()->where('date', $date->format('Y-m-d'), '<=');
         return $this->select($sql);
     }
     
-    public function getByUsernameAt(string $username, DateTime $date) : Container {
+    public function getActiveByUsernameAt(string $username, DateTime $date) : Container {
         $sql = new MysqlBuilder();
-        $sql->select('overtime_reduction_details')->where('username', $username)
+        $sql->select('overtime_reduction_details')->where('active', 1)
+                ->and()->where('username', $username)
                 ->and()->where('date', $date->format('Y-m-d'), '=');
         return $this->select($sql);
     }

@@ -1,0 +1,119 @@
+[2022-11-18  14:09:49] [type: Request] [user: ] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-18  14:09:52] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-18  14:09:55] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-11-18  14:09:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-18  14:09:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-18  14:10:05] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsSchedule.php?
+[2022-11-18  14:10:05] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-18  14:10:05] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-18  14:10:07] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/prints/printsInspector.php?
+[2022-11-18  14:10:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and measurement_instrument = '1'
+[2022-11-18  14:10:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-18  14:10:07] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsInspector Task: getDocumentsData: {}
+[2022-11-18  14:10:07] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( year(start) = '2022' or year(end) = '2022') ORDER BY start ASC
+[2022-11-18  14:10:10] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsInspector Task: generateDocumentRaportData: {}
+[2022-11-18  14:10:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-18  14:10:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-11-18  14:10:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-11-18  14:10:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and id_document = '5'
+[2022-11-18  14:10:10] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:10:53] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/schedule/scheduleAll.php?
+[2022-11-18  14:10:53] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-18  14:10:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-11-18  14:10:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-21 00:00:00' and end > '2022-11-15 00:00:00' and active = '1' ORDER BY start ASC
+[2022-11-18  14:10:54] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorReports.php?
+[2022-11-18  14:10:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-11-18  14:10:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-18  14:10:55] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-11-18  14:10:55] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-11-18  14:11:02] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorReport Task: generateReportData: {}
+[2022-11-18  14:11:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-11-18  14:11:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-11-18  14:11:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and username = 'admin' and id_document = '5'
+[2022-11-18  14:11:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5' and username = 'admin'
+[2022-11-18  14:11:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '5' and username = 'admin'
+[2022-11-18  14:11:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_details WHERE  active = '1' and username = 'admin' and id_document = '5'
+[2022-11-18  14:11:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '5'
+[2022-11-18  14:11:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM instrument_usage_details WHERE  active = '1' and id_document = '5' and document_assigned_username = 'admin'
+[2022-11-18  14:11:02] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM court_application_details WHERE  active = '1' and username = 'admin' and id_document = '5'
+[2022-11-18  14:16:39] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsInspector Task: generateDocumentRaportData: {}
+[2022-11-18  14:16:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-18  14:16:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-11-18  14:16:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-11-18  14:16:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and id_document = '5'
+[2022-11-18  14:16:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:16:39] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:20:24] [type: Access] [user: admin] [ip: ::1] [proxy: undefined] http://localhost/Scheduler/pages/inspector/inspectorArticle41.php?
+[2022-11-18  14:20:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '11' and year(start) = '2022' ) or ( month(end) = '11' and year(end) = '2022' ))
+[2022-11-18  14:20:24] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-18  14:20:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorArticle Task: getArticlesData: {}
+[2022-11-18  14:20:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '0' and username = 'admin'
+[2022-11-18  14:20:29] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorArticle Task: getDocumentsData: {}
+[2022-11-18  14:20:29] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '9' and year(start) = '2022' ) or ( month(end) = '9' and year(end) = '2022' ))
+[2022-11-18  14:20:31] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorArticle Task: getArticlesData: {}
+[2022-11-18  14:20:31] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '5' and username = 'admin'
+[2022-11-18  14:20:32] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorArticle Task: getNewArticleDetailsData: {}
+[2022-11-18  14:20:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '5'
+[2022-11-18  14:20:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM art_41_form WHERE  active = '1'
+[2022-11-18  14:20:32] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM position_groups WHERE  active = '1'
+[2022-11-18  14:21:25] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorArticle Task: saveNewArticleData: {}
+[2022-11-18  14:21:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-18  14:21:25] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user WHERE  id_document = '5' and id_user = '1'
+[2022-11-18  14:21:25] [type: insert] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: INSERT INTO art_41 (position, applicant, application_number, application_date, date, external_company, company_name, remarks, id_art_41_form, id_position_groups, id_document_user) VALUES ('Mierniczy', '', '', '2022-10-04', '2022-09-21', '1', 'Americ EAG', 'picie w pracy', '2', '4', '9')
+[2022-11-18  14:21:26] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorArticle Task: getArticlesData: {}
+[2022-11-18  14:21:26] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '5' and username = 'admin'
+[2022-11-18  14:21:38] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsInspector Task: generateDocumentRaportData: {}
+[2022-11-18  14:21:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-18  14:21:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-11-18  14:21:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-11-18  14:21:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and id_document = '5'
+[2022-11-18  14:21:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:21:38] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:25:19] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorArticle Task: getNewArticleDetailsData: {}
+[2022-11-18  14:25:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '5'
+[2022-11-18  14:25:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM art_41_form WHERE  active = '1'
+[2022-11-18  14:25:19] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM position_groups WHERE  active = '1'
+[2022-11-18  14:25:24] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorArticle Task: getNewArticleDetailsData: {}
+[2022-11-18  14:25:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document WHERE  id = '5'
+[2022-11-18  14:25:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM art_41_form WHERE  active = '1'
+[2022-11-18  14:25:24] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM position_groups WHERE  active = '1'
+[2022-11-18  14:25:52] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorArticle Task: updateArticleData: {}
+[2022-11-18  14:25:52] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM art_41 WHERE  id = '5'
+[2022-11-18  14:25:52] [type: update] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: UPDATE art_41 SET applicant='Dyrektor', application_number='14.6/8', application_date='2022-09-22', external_company='1', id_document_user='9', id_position_groups='4', id_art_41_form='4' WHERE id = '5'
+[2022-11-18  14:25:54] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: InspectorArticle Task: getArticlesData: {}
+[2022-11-18  14:25:54] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '5' and username = 'admin'
+[2022-11-18  14:26:57] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsInspector Task: generateDocumentRaportData: {}
+[2022-11-18  14:26:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-18  14:26:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-11-18  14:26:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-11-18  14:26:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and id_document = '5'
+[2022-11-18  14:26:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:26:57] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:28:12] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsInspector Task: generateDocumentRaportData: {}
+[2022-11-18  14:28:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-18  14:28:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-11-18  14:28:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-11-18  14:28:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and id_document = '5'
+[2022-11-18  14:28:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:28:12] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:28:37] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsInspector Task: generateDocumentRaportData: {}
+[2022-11-18  14:28:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-18  14:28:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-11-18  14:28:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-11-18  14:28:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and id_document = '5'
+[2022-11-18  14:28:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:28:37] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:29:09] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsInspector Task: generateDocumentRaportData: {}
+[2022-11-18  14:29:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-18  14:29:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-11-18  14:29:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-11-18  14:29:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and id_document = '5'
+[2022-11-18  14:29:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:29:09] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:29:23] [type: Request] [user: admin] [ip: ::1] [proxy: undefined] Controller: PrintsInspector Task: generateDocumentRaportData: {}
+[2022-11-18  14:29:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-18  14:29:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  id = '5'
+[2022-11-18  14:29:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and id = '5'
+[2022-11-18  14:29:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_entries_details WHERE  active = '1' and id_document = '5'
+[2022-11-18  14:29:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM ticket_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'
+[2022-11-18  14:29:23] [type: Select] [user: admin] [ip: ::1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM article_details WHERE  active = '1' and document_user_active = '1' and id_document = '5'

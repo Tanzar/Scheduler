@@ -45,15 +45,4 @@ class DocumentUserDAO extends DAO{
         }
     }
     
-    public function enable(int $id) : void {
-        $sql = new MysqlBuilder();
-        $sql->update('document_user', 'id', $id)->set('active', 1);
-        $this->update($sql);
-    }
-    
-    public function disable(int $id) : void {
-        $sql = new MysqlBuilder();
-        $sql->update('document_user', 'id', $id)->set('active', 0);
-        $this->update($sql);
-    }
 }

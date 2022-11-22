@@ -344,7 +344,6 @@ class Timesheets extends PDFMaker{
     }
     
     private function parseTimesTableDataRow(int $index) : array {
-        $lastDay = (int) date('t', strtotime($this->data->getYear() . '-' . $this->data->getMonth() . '-1'));
         $row = $this->data->getRow($index);
         $parsed = $this->parseToDisplay($row);
         return $parsed;
@@ -428,23 +427,25 @@ class Timesheets extends PDFMaker{
     }
     
     private function printSummaryPartOne() : void {
+        $startY = $this->GetY();
         $this->writeCell(0, 5, 'Bilans czasu Pracy');
         $this->Ln(5);
         $this->writeCell(111, 5, 'Norma czasu pracy w bieżącym okresie rozliczeniowmym', 1);
         $standardWorkTime = $this->data->summarizeRow('standardWorkHours');
         $this->writeCell(32.5, 5, Time::msToClockNoSeconds($standardWorkTime), 1, 'C');
         $hoursSets = $this->data->getUniqueHoursSets();
+        $width = 133.5 / 3;
+        $height = ($hoursSets->length() > 12)? 3 : 5;
+        $x = $this->GetX();
         $count = 1;
-        $text = '';
         foreach ($hoursSets->toArray() as $roman => $set) {
-            $text .= '' . $roman . ' - od ' . $set['start'] . ' do ' . $set['end'] . '       ';
+            $this->writeCell($width, $height, $roman . ' - od ' . $set['start'] . ' do ' . $set['end'], 0, 'C');
             if($count % 3 === 0){
-                $text .= "\n";
+                $this->SetXY($x, $this->GetY() + $height);
             }
             $count++;
         }
-        $this->printAsMultiCell(133.5, 5, $text, 0, 'L');
-        $this->Ln(5);
+        $this->SetXY($this->leftMargin, $startY + 10);
     }
     
     private function printSummaryPartTwo() : void {

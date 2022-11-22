@@ -65,7 +65,7 @@ class DecisionService {
     }
     
     public function getNewDecisionData(int $documentId) : Container {
-        $relations = $this->documentUserDetails->getAllByDocumentId($documentId);
+        $relations = $this->documentUserDetails->getByDocumentId($documentId);
         $relation = new Container($relations->get(0));
         $start = $relation->get('start');
         $end = $relation->get('end');

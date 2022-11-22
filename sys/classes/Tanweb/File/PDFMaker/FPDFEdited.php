@@ -33,7 +33,7 @@ class FPDFEdited extends FPDF {
         }
         $h=5*$nb;
         //Issue a page break first if needed
-        $this->CheckPageBreak($h);
+        $this->checkPageBreak($h);
         //Draw the cells of the row
         for($i=0;$i<$this->cols->length();$i++)
         {
@@ -50,12 +50,14 @@ class FPDFEdited extends FPDF {
             }
             if($fill || $col->doFill()){
                 $this->MultiCell($w,$height,$data[$i],0,$a, true);
+                //Draw the border
+                $this->Rect($x,$y,$w,$h, 'F');
             }
             else{
                 $this->MultiCell($w,$height,$data[$i],0,$a, false);
+                //Draw the border
+                $this->Rect($x,$y,$w,$h);
             }
-            //Draw the border
-            $this->Rect($x,$y,$w,$h);
             //Put the position to the right of the cell
             $this->SetXY($x+$w,$y);
         }
@@ -77,7 +79,7 @@ class FPDFEdited extends FPDF {
         }
         $h=$height*$nb;
         //Issue a page break first if needed
-        $this->CheckPageBreak($h);
+        $this->checkPageBreak($h);
         //Draw the cells of the row
         for($i=0;$i< $this->cols->length() ; $i++)
         {
@@ -98,19 +100,22 @@ class FPDFEdited extends FPDF {
             $pushDown = round($leftSpace / 2);
             $this->SetXY($x, $y + $pushDown);
             if($fill || $col->doFill()){
+                $this->Rect($x,$y,$w,$h, 'F');
                 $this->MultiCell($w,$height,$text,0,$a, true);
+                //Draw the border
+                $this->Rect($x,$y,$w,$h);
             }
             else{
                 $this->MultiCell($w,$height,$text,0,$a, false);
+                //Draw the border
+                $this->Rect($x,$y,$w,$h);
             }
-            //Draw the border
-            $this->Rect($x,$y,$w,$h);
             //Put the position to the right of the cell
             $this->SetXY($x+$w,$y);
         }
         $this->Ln($h);
     }
-    function CheckPageBreak($h) {
+    function checkPageBreak($h) {
         //If the height h would cause an overflow, add a new page immediately
         if($this->GetY()+$h>$this->PageBreakTrigger)
             $this->AddPage($this->CurOrientation);

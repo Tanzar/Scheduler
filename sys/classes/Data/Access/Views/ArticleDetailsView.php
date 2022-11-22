@@ -61,9 +61,15 @@ class ArticleDetailsView extends View{
     public function getUserActiveArticlesByDocumentId(string $username, int $documentId) : Container{
         $sql = new MysqlBuilder();
         $sql->select('article_details')->where('active', 1)
-                ->and()->where('document_user_active', 1)
                 ->and()->where('id_document', $documentId)
                 ->and()->where('username', $username);
+        return $this->select($sql);
+    }
+    
+    public function getActiveByDocumentId(int $documentId) : Container{
+        $sql = new MysqlBuilder();
+        $sql->select('article_details')->where('active', 1)
+                ->and()->where('id_document', $documentId);
         return $this->select($sql);
     }
 }

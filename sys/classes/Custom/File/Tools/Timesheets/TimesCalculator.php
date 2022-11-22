@@ -71,7 +71,7 @@ class TimesCalculator {
         $orderer = new Orderer();
         self::addDayBreaks($orderer, $date, $period);
         self::addStandardDayTimes($orderer, $date, $period);
-        self::addEntryTimes($orderer, $entry);
+        $orderer->addEntry($entry);
         self::addNightShiftTimes($orderer, $date);
         $partialResult = $orderer->countTimes();
         return $partialResult;
@@ -104,12 +104,6 @@ class TimesCalculator {
         $orderer->addStandard($start, $end);
     }
     
-    private static function addEntryTimes(Orderer $orderer, Container $entry) : void {
-        $start = new DateTime($entry->get('start'));
-        $end = new DateTime($entry->get('end'));
-        $orderer->addEntry($start, $end);
-    }
-    
     private static function addNightShiftTimes(Orderer $orderer, DateTime $date) : void {
         $appconfig = AppConfig::getInstance();
         $cfg = $appconfig->getAppConfig();
@@ -130,16 +124,12 @@ class TimesCalculator {
         $overtimeReductionRow = $cfg->get('timesheets_overtime_reduction_row_index');
         $nightShiftRow = $cfg->get('timesheets_night_shift_row_index');
         $row = $entry->get('worktime_record_row');
-        if($row === 0){
-            self::addValue($result, $partialResult, $row, 'worktime');
-            self::addValue($result, $partialResult, $row, 'overtime');
-        }
-        if($row === 1 || $row === 2){
+        self::addValue($result, $partialResult, $nightShiftRow, 'nightShift');
+        if($row === 0 || $row === 1){
             self::addValue($result, $partialResult, $row, 'worktime');
         }
         if($entry->get('overtime_action') === 'generates') {
             self::addValue($result, $partialResult, $overtimeRow, 'overtime');
-            self::addValue($result, $partialResult, $nightShiftRow, 'nightShift');
         }
         if($entry->get('overtime_action') === 'consumes') {
             self::addValue($result, $partialResult, $overtimeReductionRow, 'worktime');
@@ -152,7 +142,7 @@ class TimesCalculator {
     
     private static function addValue(Container $result, Container $partialResult, int $row, string $key) : void {
         $value = $result->get($row);
-        $value += $partialResult->get($key);
+        $value += (int) $partialResult->get($key);
         $result->add($value, $row, true);
     }
     

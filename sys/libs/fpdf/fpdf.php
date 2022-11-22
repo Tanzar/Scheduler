@@ -11,7 +11,7 @@ namespace libs\fpdf;
 use Exception;
 
 define('FPDF_VERSION','1.81');
-
+error_reporting(E_ALL ^ E_NOTICE);
 class FPDF
 {
 protected $page;               // current page number

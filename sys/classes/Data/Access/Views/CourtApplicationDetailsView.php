@@ -58,4 +58,11 @@ class CourtApplicationDetailsView extends View{
                 ->and()->where('year(date)', $year);
         return $this->select($sql);
     }
+    
+    public function getActiveByDocumentId(int $documentId) : Container{
+        $sql = new MysqlBuilder();
+        $sql->select('court_application_details')->where('active', 1)
+                ->and()->where('id_document', $documentId);
+        return $this->select($sql);
+    }
 }

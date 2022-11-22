@@ -76,7 +76,7 @@ class InspectionReportService {
     }
     
     private function getAssignedUsers(int $documentId) : array {
-        $data = $this->documentUserDetails->getActiveByDocumentId($documentId);
+        $data = $this->documentUserDetails->getByDocumentId($documentId);
         $result = array();
         foreach($data->toArray() as $item){
             $user = new Container($item);

@@ -9,6 +9,7 @@ namespace Services;
 use Data\Access\Tables\DocumentDAO as DocumentDAO;
 use Data\Access\Tables\DocumentUserDAO as DocumentUserDAO;
 use Data\Access\Tables\DocumentScheduleDAO as DocumentScheduleDAO;
+use Data\Access\Tables\ScheduleTableDAO as ScheduleTableDAO;
 use Data\Access\Views\DocumentUserDetailsView as DocumentUserDetailsView;
 use Data\Access\Views\DocumentEntriesDetailsView as DocumentEntriesDetailsView;
 use Data\Access\Views\DocumentDetailsView as DocumentDetailsView;
@@ -27,6 +28,7 @@ class DocumentService {
     private DocumentDAO $document;
     private DocumentUserDAO $documentUser;
     private DocumentScheduleDAO $documentSchedule;
+    private ScheduleTableDAO $schedule;
     private DocumentUserDetailsView $documentUserDetails;
     private DocumentEntriesDetailsView $documentEntriesDetails;
     private DocumentDetailsView $documentDetails;
@@ -36,6 +38,7 @@ class DocumentService {
         $this->document = new DocumentDAO();
         $this->documentUser = new DocumentUserDAO();
         $this->documentSchedule = new DocumentScheduleDAO();
+        $this->schedule = new ScheduleTableDAO();
         $this->documentUserDetails = new DocumentUserDetailsView();
         $this->documentEntriesDetails = new DocumentEntriesDetailsView();
         $this->documentDetails = new DocumentDetailsView();
@@ -64,6 +67,10 @@ class DocumentService {
         return $this->documentUserDetails->getActiveDocumentByYearUsername($year, $username);
     }
     
+    public function getDocumentsByYear(int $year) : Container {
+        return $this->documentDetails->getActiveByYear($year);
+    }
+    
     public function getDocumentsByUserEntryDetails(Container $entryDetails) : Container{
         if($entryDetails->isValueSet('username')){
             $username = $entryDetails->get('username');
@@ -80,11 +87,11 @@ class DocumentService {
     }
     
     public function getUsersByDocumentId(int $documentId) : Container {
-        return $this->documentUserDetails->getActiveByDocumentId($documentId);
+        return $this->documentUserDetails->getByDocumentId($documentId);
     }
     
     public function getAllDocumentUsersAndEntries(int $documentId) : Container{
-        $users = $this->documentUserDetails->getActiveByDocumentId($documentId);
+        $users = $this->documentUserDetails->getByDocumentId($documentId);
         $entries = $this->documentEntriesDetails->getActiveByDocumentId($documentId);
         $result = new Container();
         $result->add($users->toArray(), 'users');
@@ -137,21 +144,10 @@ class DocumentService {
     public function assignUserToDocument(string $username, int $documentId) : int {
         $user = $this->user->getByUsername($username);
         $userId = (int) $user->get('id');
-        $assign = $this->documentUser->getAllByUserAndDocument($userId, $documentId);
-        if($assign->length() === 0){
-            $item = new Container();
-            $item->add($documentId, 'id_document');
-            $item->add($userId, 'id_user');
-            return $this->documentUser->save($item);
-        }
-        else{
-            $id = (int) $assign->get('id');
-            $active = $assign->get('active');
-            if(!$active){
-                $this->documentUser->enable($id);
-            }
-            return $id;
-        }
+        $item = new Container();
+        $item->add($documentId, 'id_document');
+        $item->add($userId, 'id_user');
+        return $this->documentUser->save($item);
     }
     
     public function changeDocumentStatus(int $id){
@@ -170,11 +166,14 @@ class DocumentService {
         $userId = (int) $user->get('id');
         $assign = $this->documentUser->getAllByUserAndDocument($userId, $documentId);
         if($assign->length() > 0){
-            $id = (int) $assign->get('id');
-            $active = $assign->get('active');
-            if($active){
-                $this->documentUser->disable($id);
+            $entries = $this->documentEntriesDetails->getActiveByUsernameAndDocumentId($username, $documentId);
+            foreach ($entries->toArray() as $item){
+                $entry = new Container($item);
+                $id = (int) $entry->get('id');
+                $this->schedule->remove($id);
             }
+            $id = (int) $assign->get('id');
+            $this->documentUser->remove($id);
         }
     }
 }

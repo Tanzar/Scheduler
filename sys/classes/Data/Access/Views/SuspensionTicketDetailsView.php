@@ -36,4 +36,11 @@ class SuspensionTicketDetailsView extends View{
                 ->and()->where('id_suspension', $idSuspension);
         return $this->select($sql);
     }
+    
+    public function getActiveByDocumentId(int $documentId) : Container{
+        $sql = new MysqlBuilder();
+        $sql->select('suspension_ticket_details')->where('active', 1)
+                ->and()->where('id_document', $documentId);
+        return $this->select($sql);
+    }
 }

@@ -50,4 +50,11 @@ class InstrumentUsageDetailsView extends View{
                 ->and()->where('id_equipment', $id);
         return $this->select($sql);
     }
+    
+    public function getActiveByDocumentId(int $documentId) : Container{
+        $sql = new MysqlBuilder();
+        $sql->select('instrument_usage_details')->where('active', 1)
+                ->and()->where('id_document', $documentId);
+        return $this->select($sql);
+    }
 }

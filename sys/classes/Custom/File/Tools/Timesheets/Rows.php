@@ -329,7 +329,7 @@ class Rows {
         $view = new OvertimeReductionDetailsView();
         $date = new DateTime($this->year . '-' . $this->month . '-1');
         $date->modify('-1 months');
-        $reductions = $view->getByUsernameBeforeOrAt($this->username, $date);
+        $reductions = $view->getActiveByUsernameBeforeOrAt($this->username, $date);
         $count = 0;
         foreach ($reductions->toArray() as $item) {
             $reduction = new Container($item);
@@ -368,7 +368,7 @@ class Rows {
     private function getCurrentOvertimeReduction() : int {
         $view = new OvertimeReductionDetailsView();
         $date = new DateTime($this->year . '-' . $this->month . '-1');
-        $reductions = $view->getByUsernameAt($this->username, $date);
+        $reductions = $view->getActiveByUsernameAt($this->username, $date);
         $count = 0;
         foreach ($reductions->toArray() as $item) {
             $reduction = new Container($item);

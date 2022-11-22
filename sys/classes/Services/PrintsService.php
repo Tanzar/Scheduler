@@ -12,6 +12,7 @@ use Custom\File\Timesheets as Timesheets;
 use Custom\File\Workcard as Workcard;
 use Custom\File\NightShiftsReport as NightShiftsReport;
 use Custom\File\InstrumentUsageCard as InstrumentUsageCard;
+use Custom\File\DocumentRaport as DocumentRaport;
 use Tanweb\Session as Session;
 
 /**
@@ -53,5 +54,9 @@ class PrintsService {
     
     public function generateInstrumentUsageCard(int $instrumentId, int $year) : void {
         InstrumentUsageCard::generate($instrumentId, $year);
+    }
+    
+    public function generateDocumentRaport(int $documentId) : void {
+        DocumentRaport::generate($documentId);
     }
 }

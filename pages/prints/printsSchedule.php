@@ -63,6 +63,13 @@ This code is free to use, just remember to give credit.
                 <button class="standard-button" id="notificationList">
                     <?php echo $interface->get('notification_list'); ?>
                 </button>
+                <?php 
+                    if($security->userHaveAnyPrivilage(new Container(['admin', 'prints_schedule_reports']))){
+                        echo '<button class="standard-button" id="nightShiftReport">';
+                        echo $interface->get('monthly_night_shift_report');
+                        echo '</button>';
+                        }
+                ?>
             </div>
             <div class="standard-text">
                 <?php echo $interface->get('user_specific'); ?>
@@ -94,13 +101,6 @@ This code is free to use, just remember to give credit.
                     <?php echo $interface->get('work_card'); ?>
                 </button>
             </div>
-            <?php 
-                if($security->userHaveAnyPrivilage(new Container(['admin', 'prints_schedule_reports']))){
-                    echo '<button class="standard-button" id="nightShiftReport">';
-                    echo $interface->get('monthly_night_shift_report');
-                    echo '</button>';
-                    }
-            ?>
         </div>
         <?php
             Scripts::run('createFooter.php');

@@ -7,6 +7,7 @@
 namespace Custom\File\Tools\Timesheets;
 
 use Tanweb\Container as Container;
+use Custom\Dates\HolidayChecker as HolidayChecker;
 use DateTime;
 
 /**
@@ -16,6 +17,10 @@ use DateTime;
  */
 class Orderer {
     private array $items;
+    private int $standardWorktime = 0;
+    private int $weekday = 1;
+    private DateTime $day;
+    private string $overtimeAction = '';
     
     public function __construct() {
         $this->items = array();
@@ -24,9 +29,14 @@ class Orderer {
     public function addDayBreak(DateTime $start, DateTime $end) : void {
         $this->addDate($start, 'dayBreakStart');
         $this->addDate($end, 'dayBreakEnd');
+        $this->weekday = (int) $start->format('N');
+        $this->day = $start;
     }
     
-    public function addEntry(DateTime $start, DateTime $end) : void {
+    public function addEntry(Container $entry) : void {
+        $start = new DateTime($entry->get('start'));
+        $end = new DateTime($entry->get('end'));
+        $this->overtimeAction = $entry->get('overtime_action');
         $this->addDate($start, 'entryStart');
         $this->addDate($end, 'entryEnd');
     }
@@ -34,6 +44,7 @@ class Orderer {
     public function addStandard(DateTime $start, DateTime $end) : void {
         $this->addDate($start, 'standardStart');
         $this->addDate($end, 'standardEnd');
+        $this->standardWorktime = (int) $end->format('Uv') - $start->format('Uv');
     }
     
     public function addNightShift(DateTime $start, DateTime $end) : void {
@@ -78,64 +89,51 @@ class Orderer {
     }
     
     private function countAll(Container $result) : void {
+        $inDay = false;
         $inEntry = false;
-        $stage = -1;
+        $inNightShift = false;
         for ($a = 0 , $b = 1 ; $b < count($this->items) ; $a++, $b++){
             $first = $this->items[$a];
             $second = $this->items[$b];
-            $time = (int) $second['date']->format('Uv') - $first['date']->format('Uv');
             if($first['type'] === 'entryStart'){
                 $inEntry = true;
             }
             if($first['type'] === 'entryEnd'){
                 $inEntry = false;
             }
-            if($first['type'] === 'dayBreakStart' && !$inEntry){
-                $stage++;
+            if($first['type'] === 'dayBreakStart'){
+                $inDay = true;
             }
-            if($inEntry){
-                $this->countToStage($result, $time, $stage);
+            if($first['type'] === 'dayBreakEnd'){
+                $inDay = false;
             }
-            if($this->moveStage($second)){
-                $stage++;
+            if($first['type'] === 'nightShiftStart'){
+                $inNightShift = true;
+            }
+            if($first['type'] === 'nightShiftEnd'){
+                $inNightShift = false;
+            }
+            if($inDay && $inEntry){
+                $time = (int) $second['date']->format('Uv') - $first['date']->format('Uv');
+                $worktime = $result->get('worktime');
+                $result->add($worktime + $time, 'worktime', true);
+            }
+            if($inDay && $inEntry && $inNightShift){
+                $time = (int) $second['date']->format('Uv') - $first['date']->format('Uv');
+                $worktime = $result->get('nightShift');
+                $result->add($worktime + $time, 'nightShift', true);
+            }
+        }
+        $worktime = $result->get('worktime');
+        if($this->overtimeAction === 'generates'){
+            if($worktime > $this->standardWorktime){
+                $result->add($this->standardWorktime, 'worktime', true);
+                $result->add($worktime - $this->standardWorktime, 'overtime', true);
+            }
+            if($this->weekday === 6 || $this->weekday === 7 || HolidayChecker::isHoliday($this->day)){
+                $result->add(0, 'worktime', true);
+                $result->add($worktime, 'overtime', true);
             }
         }
     }
-    
-    private function countToStage(Container $result, int $time, int $stage) {
-        switch ($stage){
-            case 0:
-                $this->addTime($result, $time, 'overtime');
-                break;
-            case 1:
-                $this->addTime($result, $time, 'worktime');
-                break;
-            case 2:
-                $this->addTime($result, $time, 'overtime');
-                break;
-            case 3:
-                $this->addTime($result, $time, 'overtime');
-                $this->addTime($result, $time, 'nightShift');
-                break;
-            case 4:
-                $this->addTime($result, $time, 'overtime');
-                break;
-        }
-    }
-    
-    private function addTime(Container $result, int $time, string $key) : void {
-        $value = $result->get($key);
-        $value += $time;
-        $result->add($value, $key, true);
-    }
-    
-    private function moveStage(array $second) : bool {
-        return $second['type'] === 'dayBreakStart' || 
-                $second['type'] === 'standardStart' || 
-                $second['type'] === 'standardEnd' || 
-                $second['type'] === 'nightShiftStart' || 
-                $second['type'] === 'nightShiftEnd' || 
-                $second['type'] === 'dayBreakEnd';
-    }
-    
 }

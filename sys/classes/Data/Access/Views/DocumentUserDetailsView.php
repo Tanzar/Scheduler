@@ -29,17 +29,9 @@ class DocumentUserDetailsView extends View{
         return 'document_user_details';
     }
     
-    public function getAllByDocumentId(int $documentId) : Container{
+    public function getByDocumentId(int $documentId) : Container{
         $sql = new MysqlBuilder();
         $sql->select('document_user_details')->where('id', $documentId);
-        return $this->select($sql);
-    }
-    
-    public function getActiveByDocumentId(int $documentId) : Container{
-        $sql = new MysqlBuilder();
-        $sql->select('document_user_details')
-                ->where('active', 1)->and()
-                ->where('id', $documentId);
         return $this->select($sql);
     }
     
@@ -63,7 +55,7 @@ class DocumentUserDetailsView extends View{
     
     public function getActiveByMonthYearUsername(int $month, int $year, string $username) : Container {
         $sql = new MysqlBuilder();
-        $sql->select('document_user_details')->where('active', 1)
+        $sql->select('document_user_details')->where('document_active', 1)
                 ->and()->where('username', $username)
                 ->and()->openBracket()->openBracket()
                 ->where('month(start)', $month)->and()
@@ -76,7 +68,7 @@ class DocumentUserDetailsView extends View{
     
     public function getActiveByYearUsername(int $year, string $username) : Container {
         $sql = new MysqlBuilder();
-        $sql->select('document_user_details')->where('active', 1)
+        $sql->select('document_user_details')->where('document_active', 1)
                 ->and()->where('username', $username)
                 ->and()->openBracket()
                 ->where('year(start)', $year)->or()->where('year(end)', $year)
@@ -86,7 +78,7 @@ class DocumentUserDetailsView extends View{
     
     public function getActiveDocumentByYearUsername(int $year, string $username) : Container {
         $sql = new MysqlBuilder();
-        $sql->select('document_user_details')->where('active', 1)
+        $sql->select('document_user_details')->where('document_active', 1)
                 ->and()->where('username', $username)
                 ->and()->openBracket()
                 ->where('year(start)', $year)->or()->where('year(end)', $year)
@@ -96,7 +88,7 @@ class DocumentUserDetailsView extends View{
     
     public function getActiveByUsernameLocationIdEntryDates(string $username, int $locationId, string $start, string $end) : Container {
         $sql = new MysqlBuilder();
-        $sql->select('document_user_details')->where('active', 1)
+        $sql->select('document_user_details')->where('document_active', 1)
                 ->and()->where('username', $username)
                 ->and()->where('start', $start, '<=')
                 ->and()->where('end', $end, '>=')
