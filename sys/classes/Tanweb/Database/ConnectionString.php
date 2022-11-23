@@ -34,7 +34,11 @@ class ConnectionString {
         $host = $config->get('host');
         $name = $config->get('name');
         $charset = $config->get('charset');
-        return 'mysql:host=' . $host . ';dbname=' . $name . ';charset=' . $charset;
+        $string = 'mysql:host=' . $host;
+        if($config->isValueSet('port')){
+            $string .= ';port=' . $config->get('port');
+        }
+        return $string . ';dbname=' . $name . ';charset=' . $charset;
     }
     
     private static function postgres(Container $config) : string {

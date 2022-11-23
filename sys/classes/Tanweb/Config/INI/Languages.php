@@ -21,8 +21,7 @@ class Languages {
     private Container $messages;
     
     protected function __construct(string $language) {
-        $projectName = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'))[1];
-        $path =  filter_input(INPUT_SERVER, 'DOCUMENT_ROOT') . '/' . $projectName . '/';
+        $path =  $_SERVER['DOCUMENT_ROOT'] . '/';
         $path = $path . 'config/languages.ini';
         $ini = parse_ini_file($path, true);
         if(isset($ini[$language])){
@@ -45,8 +44,7 @@ class Languages {
     }
     
     public static function getLanguageOptions() : array{
-        $projectName = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'))[1];
-        $path =  filter_input(INPUT_SERVER, 'DOCUMENT_ROOT') . '/' . $projectName . '/';
+        $path =  $_SERVER['DOCUMENT_ROOT'] . '/';
         $path = $path . 'config/languages.ini';
         $ini = parse_ini_file($path, true);
         $options = Utility::getKeys($ini);

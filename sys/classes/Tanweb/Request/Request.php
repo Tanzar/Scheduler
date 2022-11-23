@@ -27,7 +27,7 @@ class Request {
     private string $task;
     
     public function __construct(bool $check = true) {
-        $this->method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
+        $this->method = $_SERVER['REQUEST_METHOD'];
         switch($this->method){
             case 'POST':
                 $data = filter_input_array(INPUT_POST);

@@ -24,8 +24,7 @@ class AppConfig {
     private Container $externalResources;
     
     protected function __construct() {
-        $projectName = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'))[1];
-        $path =  filter_input(INPUT_SERVER, 'DOCUMENT_ROOT') . '/' . $projectName . '/';
+        $path =  $_SERVER['DOCUMENT_ROOT'] . '/';
         $path = $path . 'config/config.ini';
         $ini = parse_ini_file($path, true);
         if(isset($ini['app'])){

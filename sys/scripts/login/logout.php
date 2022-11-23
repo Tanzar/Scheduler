@@ -6,8 +6,7 @@
 
 
 session_start();
-$projectName = explode('/', $_SERVER['REQUEST_URI'])[1];
-require_once $_SERVER['DOCUMENT_ROOT'] . '/' . $projectName . '/vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 
 use Tanweb\Request\Request as Request;
 use Tanweb\Config\Server as Server;

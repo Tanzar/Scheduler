@@ -87,7 +87,7 @@ class Logger {
     }
     
     private function checkLogFile(){
-        $dir = Server::getLocalRoot() . 'logs';
+        $dir = Server::getLocalRoot() . '/logs';
         if(!file_exists($dir)){
             mkdir($dir);
         }

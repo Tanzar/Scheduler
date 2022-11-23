@@ -1,8 +1,7 @@
 <?php
     //--- use this atop every page for security if in PageAccess::allowFor() you pass empty array all will be allowed in
     session_start();
-    $projectName = explode('/', $_SERVER['REQUEST_URI'])[1];
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/' . $projectName . '/vendor/autoload.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
     
     use Tanweb\Security\PageAccess as PageAccess;
     use Tanweb\Config\Resources as Resources;

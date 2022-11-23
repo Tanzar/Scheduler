@@ -33,16 +33,7 @@ class Server {
      * @return string path to project root in filesystem
      */
     public static function getLocalRoot(): string{
-        $appConfig = AppConfig::getInstance();
-        $config = $appConfig->getAppConfig();
-        if($config->isValueSet('name')){
-            $projectName = $config->get('name');
-            $path = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT') . '/' . $projectName . '/';
-        }
-        else{
-            $path = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT') . '/';
-        }
-        return $path;
+        return $_SERVER['DOCUMENT_ROOT'];
     }
     
     /**
@@ -54,13 +45,7 @@ class Server {
     public static function getRootURL() : string{
         $appConfig = AppConfig::getInstance();
         $config = $appConfig->getAppConfig();
-        if($config->isValueSet('name')){
-            $appName = $config->get('name');
-            return self::createServerURL($appName);
-        }
-        else{
-            return self::createServerURL();
-        }
+        return self::createServerURL();
     }
     
     private static function createServerURL(string $appName = null) : string{
@@ -70,10 +55,7 @@ class Server {
         else{
             $url = "http://";
         }
-        $url .= $_SERVER['HTTP_HOST'] . '/';
-        if(isset($appName)){
-            $url .= $appName . '/';
-        }
+        $url .= $_SERVER['HTTP_HOST'];
         return $url;
     }
     
@@ -85,7 +67,7 @@ class Server {
      */
     public static function getFilesPaths(string $dir) : Container{
         $localRoot = self::getLocalRoot();
-        $path = $localRoot . $dir;
+        $path = $localRoot . '/' . $dir;
         $paths = self::listFiles($path);
         $results = new Container();
         foreach($paths as $item){
