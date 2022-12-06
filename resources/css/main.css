@@ -206,9 +206,14 @@ footer {
     background-color: transparent;
     border: 2px solid transparent;
     border-bottom: 2px solid var(--border-color);
+    border-radius: 5px;
     padding: 3px;
     margin: 3px;
     outline: none;
+}
+
+.standard-input:invalid {
+    border-color: #ff0000;
 }
 
 .standard-input:hover {
@@ -245,4 +250,31 @@ footer {
 
 .standard-list-item::marker {
     color: var(--border-color);
+}
+
+.standard-display {
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    min-width: 90%;
+    min-height: 100px;
+    margin: 5px;
+}
+
+.standard-table {
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    border-collapse: collapse;
+    width: fit-content;
+    margin: 5px;
+}
+
+.standard-table-tr {
+}
+
+.standard-table-td {
+    border: 2px solid var(--border-color);
+    min-width: fit-content;
+    text-align: center;
+    padding: 5px;
+    white-space: nowrap;
 }

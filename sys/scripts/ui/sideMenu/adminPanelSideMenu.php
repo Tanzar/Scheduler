@@ -76,9 +76,6 @@
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('inventory'); ?>">
     </form>
     <div class="standard-text">
-        <?php echo $moduleNames->get('stats'); ?>
-    </div>
-    <div class="standard-text">
         <?php echo $moduleNames->get('qualifications'); ?>
     </div>
     <div class="standard-text">

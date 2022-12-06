@@ -42,8 +42,16 @@ class Condition {
         return new Condition($column, '<', $value);
     }
     
+    public static function lessOrEqual(string $column, string $value) : Condition {
+        return new Condition($column, '<=', $value);
+    }
+    
     public static function more(string $column, string $value) : Condition {
         return new Condition($column, '>', $value);
+    }
+    
+    public static function moreOrEqual(string $column, string $value) : Condition {
+        return new Condition($column, '>=', $value);
     }
     
     public static function include(string $column, string $value) : Condition {

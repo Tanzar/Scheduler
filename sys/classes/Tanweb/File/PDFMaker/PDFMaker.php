@@ -27,6 +27,7 @@ class PDFMaker extends FPDF{
         $this->AddFont('arialpl','','arialpl.php', true); 
         $this->addPage($orientation);
         $this->setFont($this->font, $this->style, $this->size);
+        $this->AliasNbPages();
     }
     
     public function setCurrentFont($font){

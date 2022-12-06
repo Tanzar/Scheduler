@@ -51,7 +51,11 @@ try{
     }
     
     //--- STATS ---//
-    //TODO
+     if($security->userHaveAnyPrivilage(new Container(['admin', 'stats_user', 'stats_admin']))){
+        echo '<form action="' . Pages::getURL('statsDisplay.php') . '">';
+        echo '<input type="submit" class="standard-button" value="' . $modules->get('stats') . '">';
+        echo '</form>';
+    }
     
     //--- FILES ---//
     if($security->userHaveAnyPrivilage(new Container(['admin', 'prints_schedule', 'prints_schedule_reports']))){

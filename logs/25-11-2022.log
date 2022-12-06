@@ -1,0 +1,108 @@
+[2022-11-25  07:36:58] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  07:37:02] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  07:37:08] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  07:37:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-25  07:37:09] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  07:37:11] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  07:37:11] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and measurement_instrument = '1'
+[2022-11-25  07:37:12] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  07:37:12] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: PrintsInspector Task: getDocumentsData: {}
+[2022-11-25  07:37:12] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( year(start) = '2022' or year(end) = '2022') ORDER BY start ASC
+[2022-11-25  08:13:10] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  08:13:11] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and measurement_instrument = '1'
+[2022-11-25  08:13:11] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  08:13:12] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: PrintsInspector Task: getDocumentsData: {}
+[2022-11-25  08:13:12] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( year(start) = '2022' or year(end) = '2022') ORDER BY start ASC
+[2022-11-25  08:13:54] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  08:13:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and measurement_instrument = '1'
+[2022-11-25  08:13:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  08:13:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: PrintsInspector Task: getDocumentsData: {}
+[2022-11-25  08:13:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_details WHERE  active = '1' and ( year(start) = '2022' or year(end) = '2022') ORDER BY start ASC
+[2022-11-25  08:13:58] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  08:14:35] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  08:14:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  08:14:39] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  08:14:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  08:14:42] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  08:14:44] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  08:14:46] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  08:14:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  09:42:18] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  09:42:25] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  11:30:04] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:30:05] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  11:30:06] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:30:18] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:33:01] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:33:27] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:34:15] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:35:07] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:35:11] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:35:50] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:35:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  11:36:14] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:36:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  11:39:08] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:39:40] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:40:45] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:40:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  11:41:18] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:41:19] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  11:43:08] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:43:09] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  11:49:37] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:49:38] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  11:49:59] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:50:00] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  11:52:18] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:52:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  11:52:22] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  11:52:23] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  11:52:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getDataData: {}
+[2022-11-25  11:52:40] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getDataData: {}
+[2022-11-25  11:52:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getDataData: {}
+[2022-11-25  11:52:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getDataData: {}
+[2022-11-25  12:54:47] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  12:54:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:54:53] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  12:54:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-25  12:54:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:54:55] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  12:54:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:54:59] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  12:55:01] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:55:02] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  12:55:03] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:55:04] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  12:55:05] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:55:06] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  12:55:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:55:08] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  12:55:10] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:55:13] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  12:55:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:56:55] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:56:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:57:02] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-25  12:57:03] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-11-1' and end >= '2022-11-1' ) or ( start <= '2022-11-30' and end >= '2022-11-30' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-25  12:57:03] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-25  12:57:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: PrintsSchedule Task: getUsersData: {}
+[2022-11-25  12:57:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-10-1' and end >= '2022-10-1' ) or ( start <= '2022-10-31' and end >= '2022-10-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-25  12:57:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-25  12:57:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-25  12:57:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-25  12:57:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-25  12:57:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-25  12:57:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-01 23:59:59' and end > '2022-09-30 00:00:00' and username = 'admin' and active = '1' and workcard_display = '1' ORDER BY start ASC
+[2022-11-25  13:04:32] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-25  13:04:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-25  13:04:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-25  13:04:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-25  13:04:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-25  13:04:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-01 23:59:59' and end > '2022-09-30 00:00:00' and username = 'admin' and active = '1' and workcard_display = '1' ORDER BY start ASC
+[2022-11-25  13:10:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: PrintsSchedule Task: generateWorkCardData: {}
+[2022-11-25  13:10:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-11-25  13:10:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-10-31' and username = 'admin' ORDER BY start ASC
+[2022-11-25  13:10:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off WHERE  active = '1' and for_all = '1' and month(date) = '10' and year(date) = '2022'
+[2022-11-25  13:10:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and month(days_off_date) = '10' and year(days_off_date) = '2022'
+[2022-11-25  13:10:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-11-01 23:59:59' and end > '2022-09-30 00:00:00' and username = 'admin' and active = '1' and workcard_display = '1' ORDER BY start ASC

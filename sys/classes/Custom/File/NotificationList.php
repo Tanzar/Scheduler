@@ -89,7 +89,6 @@ class NotificationList extends PDFMaker{
             $set = $this->usersSets->get($i);
             $this->printPagesPerSet($set);
         }
-        $this->printSystemMark();
     }
     
     private function getUsers() : void {
@@ -221,14 +220,13 @@ class NotificationList extends PDFMaker{
         return false;
     }
     
-    private function printSystemMark() {
+    function footer() {
         $appconfig = AppConfig::getInstance();
         $cfg = $appconfig->getAppConfig();
         $appname = $cfg->get('name');
         $y = $this->h - 5;
         $this->setCurrentSize(8);
         $this->SetY($y);
-        $this->SetAutoPageBreak(false);
-        $this->writeCell(0, 5, 'Plik wygenerowany przez system ' . $appname, 0, 'R');
+        $this->writeCell(0, 5, "Plik wygenerowany przez system " . $appname . ", strona " . $this->PageNo() . "/{nb}", 0, 'R');
     }
 }

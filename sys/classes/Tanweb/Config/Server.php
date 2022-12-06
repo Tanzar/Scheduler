@@ -23,7 +23,7 @@ class Server {
      * @return string link to index page
      */
     public static function getIndexPath() {
-        $path = self::getRootURL() . 'index.php';
+        $path = self::getRootURL() . '/index.php';
         return $path;
     }
     

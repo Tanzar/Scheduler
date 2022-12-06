@@ -121,7 +121,6 @@ class AttendanceList extends PDFMaker{
         $this->printDataUsersRows(17, $daysLimit);
         $this->printSignaruresRow(17, $daysLimit);
         $this->generateTextUnderTable();
-        $this->printSystemMark();
     }
     
     private function printHeadersSet(int $startDay, int $endDay) : void {
@@ -250,14 +249,13 @@ class AttendanceList extends PDFMaker{
         return false;
     }
     
-    private function printSystemMark() {
+    function footer() {
         $appconfig = AppConfig::getInstance();
         $cfg = $appconfig->getAppConfig();
         $appname = $cfg->get('name');
         $y = $this->h - 5;
         $this->setCurrentSize(8);
         $this->SetY($y);
-        $this->SetAutoPageBreak(false);
-        $this->writeCell(0, 5, 'Plik wygenerowany przez system ' . $appname, 0, 'R');
+        $this->writeCell(0, 5, "Plik wygenerowany przez system " . $appname . ", strona " . $this->PageNo() . "/{nb}", 0, 'R');
     }
 }

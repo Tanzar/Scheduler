@@ -172,7 +172,6 @@ class DocumentRaport extends PDFMaker{
         $this->printGroup('5. Zatrzymania', 'suspension', $this->suspensions);
         $this->printGroup('6. Wykorzystanie przyrządu', 'usage', $this->usages);
         $this->printGroup('7. Wnioski do sądu', 'court', $this->courts);
-        $this->printSystemMark();
     }
     
     private function printRaportHead() : void {
@@ -257,6 +256,9 @@ class DocumentRaport extends PDFMaker{
     private function printGroup(string $title, string $code, Container $container) : void {
         $this->Ln(10);
         $this->setCurrentSize(10);
+        if($this->GetY() + 20 >= $this->h - $this->bMargin){
+            $this->AddPage();
+        }
         $this->writeCell(0, 12, $title, 1, 'C', true);
         $this->Ln(12);
         $this->setCurrentSize($this->font);
@@ -981,15 +983,14 @@ class DocumentRaport extends PDFMaker{
         return $result;
     }
     
-    private function printSystemMark() {
+    function footer() {
         $appconfig = AppConfig::getInstance();
         $cfg = $appconfig->getAppConfig();
         $appname = $cfg->get('name');
         $y = $this->h - 5;
         $this->setCurrentSize(8);
         $this->SetY($y);
-        $this->SetAutoPageBreak(false);
-        $this->writeCell(0, 5, 'Plik wygenerowany przez system ' . $appname, 0, 'R');
+        $this->writeCell(0, 5, "Plik wygenerowany przez system " . $appname . ", strona " . $this->PageNo() . "/{nb}", 0, 'R');
     }
     
     private function moveLeftMargin(float $value) : void {

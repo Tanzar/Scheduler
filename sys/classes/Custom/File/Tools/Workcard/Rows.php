@@ -88,13 +88,27 @@ class Rows {
         foreach ($this->entries->toArray() as $item) {
             $entry = new Container($item);
             $entryStart = new DateTime($entry->get('start'));
-            if($entryStart >= $start && $entryStart < $end){
+            $entryEnd = new DateTime($entry->get('end'));
+            if(($entryStart >= $start && $entryStart < $end) || 
+                    ($entryEnd > $start && $entryEnd <= $end)){
+                $this->adjustEntryTimes($start, $end, $entry);
                 $this->addRow($day, $entry);
                 $addedRows++;
             }
         }
         if($addedRows === 0){
             $this->addEmptyRow($day);
+        }
+    }
+    
+    private function adjustEntryTimes(DateTime $start, DateTime $end , Container $entry) : void {
+        $entryStart = new DateTime($entry->get('start'));
+        $entryEnd = new DateTime($entry->get('end'));
+        if($entryStart < $start){
+            $entry->add($start->format('Y-m-d H:i:s'), 'start', true);
+        }
+        if($entryEnd > $end){
+            $entry->add($end->format('Y-m-d H:i:s'), 'end', true);
         }
     }
     

@@ -30,6 +30,19 @@ class UsersEmploymentPeriodsView extends View{
         return 'users_employment_periods';
     }
     
+    public function getActive() : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('users_employment_periods')->where('active', 1);
+        return $this->select($sql);
+    }
+    
+    public function getActiveInspectors() : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('users_employment_periods')->where('active', 1)
+                ->and()->where('inspector', 1);
+        return $this->select($sql);
+    }
+    
     public function getByUserAndDate(string $username, string $date) : Container{
         $sql = new MysqlBuilder();
         $sql->select('users_employment_periods')->where('username', $username)
@@ -89,5 +102,20 @@ class UsersEmploymentPeriodsView extends View{
                 ->orderBy('start');
         $data = $this->select($sql);
         return $data;
+    }
+    
+    public function getOrderedInspectorsByYear(int $year) : Container {
+        $start = $year . '-01-01';
+        $end = $year . '-12-31';
+        $sql = new MysqlBuilder();
+        $sql->select('users_employment_periods')->where('active', 1)
+                ->and()->where('inspector', 1)
+                ->and()->openBracket()->openBracket()
+                ->where('start', $start, '<=')->and()->where('end', $start, '>=')
+                ->closeBracket()->or()->openBracket()
+                ->where('start', $end, '<=')->and()->where('end', $end, '>=')
+                ->closeBracket()->closeBracket()
+                ->orderBy('sort_priority', true)->orderBy('surname', true);
+        return $this->select($sql);
     }
 }

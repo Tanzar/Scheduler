@@ -307,12 +307,12 @@ class MysqlBuilder extends SqlBuilder{
         if(Utility::count($this->selectColumns) === 0){
             return '*';
         }
-        foreach($this->selectColumns as $i => $columns){
+        foreach($this->selectColumns as $i => $column){
             if($i === 0){
-                $columns .= $columns;
+                $columns .= $column;
             }
             else{
-                $columns .= ', ' . $columns;
+                $columns .= ', ' . $column;
             }
         }
         return $columns;

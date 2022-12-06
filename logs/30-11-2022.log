@@ -1,0 +1,355 @@
+[2022-11-30  07:18:11] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:18:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:18:18] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:18:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:18:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:18:20] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:18:24] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:18:24] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:26:59] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:27:00] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:27:01] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:27:01] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:27:02] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:27:02] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:38:43] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:38:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:38:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:38:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:38:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:38:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:39:11] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:39:12] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:39:13] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:39:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:39:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:39:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:39:55] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:39:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:39:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:39:57] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:39:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:39:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:40:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:40:15] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '5'
+[2022-11-30  07:40:17] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:40:18] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:40:32] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:40:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:40:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:40:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:41:13] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:41:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:41:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:41:15] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:41:18] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:41:18] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:41:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:41:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '5'
+[2022-11-30  07:41:49] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:41:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:41:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:41:51] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:41:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:41:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:41:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:41:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '5'
+[2022-11-30  07:44:32] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:44:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:44:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:44:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:44:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:44:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:44:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:44:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '5'
+[2022-11-30  07:44:42] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:44:42] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:46:09] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:46:10] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:46:11] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:46:11] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:46:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:46:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:47:04] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:47:05] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:47:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:47:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:47:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:47:15] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:49:16] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:49:17] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:49:18] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:49:18] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:49:19] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:49:19] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:49:35] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:49:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:49:37] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:49:37] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:49:38] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:49:38] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:49:58] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:49:59] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:50:00] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:50:00] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:50:01] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:50:01] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:50:30] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:50:32] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:50:32] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:50:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:50:33] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:50:33] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:51:34] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:51:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:51:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:51:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:51:39] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:51:39] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:53:04] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:53:05] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:53:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:53:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:53:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:53:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:53:52] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:53:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:53:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:53:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:53:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:53:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:54:52] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:54:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:54:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:54:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:54:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:54:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:55:44] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:55:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:55:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:55:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:55:46] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:55:46] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:56:18] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:56:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:56:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsWithoutFormData: {}
+[2022-11-30  07:56:20] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  type != 'Ze wzoru'
+[2022-11-30  07:56:21] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsStageOneData: {}
+[2022-11-30  07:56:52] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:56:53] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:56:53] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:56:53] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:56:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:56:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:57:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:57:15] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '5'
+[2022-11-30  07:59:17] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:59:19] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:59:19] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:59:19] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:59:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:59:20] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  07:59:25] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  07:59:27] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  07:59:27] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  07:59:27] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  07:59:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  07:59:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '5'
+[2022-11-30  08:00:40] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  08:00:42] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  08:00:42] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  08:00:42] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  08:00:43] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  08:00:43] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  08:05:58] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  08:05:59] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  08:06:00] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  08:06:00] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  08:06:01] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  08:06:01] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  08:13:07] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  08:13:09] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  08:13:09] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  08:13:09] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  08:13:10] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  08:13:10] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  08:13:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  08:15:00] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  09:38:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  09:38:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  09:40:51] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Call to private Tanweb\Database\DataFilter\Condition::__construct() from scope Custom\Statistics\Statistics ;
+ #0 /var/www/html/sys/classes/Custom/Statistics/Statistics.php(60): Custom\Statistics\Statistics->addDatafilterEqualCondition(Object(Custom\Statistics\Options\Input), Object(Tanweb\Database\DataFilter\DataFilter), Object(Tanweb\Container), 'month(date)')
+#1 /var/www/html/sys/classes/Custom/Statistics/Statistics.php(52): Custom\Statistics\Statistics->processInput(Object(Custom\Statistics\Options\Input), Object(Tanweb\Database\DataFilter\DataFilter), Object(Tanweb\Container))
+#2 /var/www/html/sys/classes/Custom/Statistics/Statistics.php(38): Custom\Statistics\Statistics->processDatafilter(Object(Custom\Statistics\Options\DataSet), Object(Tanweb\Container))
+#3 /var/www/html/sys/classes/Custom/Statistics/Statistics.php(31): Custom\Statistics\Statistics->recieveDataset(Object(Tanweb\Container))
+#4 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(22): Custom\Statistics\Statistics->__construct(Object(Tanweb\Container), Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Custom/Statistics/StatisticsFactory.php(31): Custom\Statistics\SingleStats->__construct(Object(Tanweb\Container), Object(Tanweb\Container))
+#6 /var/www/html/sys/classes/Services/StatsService.php(174): Custom\Statistics\StatisticsFactory::build(Object(Tanweb\Container))
+#7 /var/www/html/sys/classes/Controllers/StatsDisplay.php(45): Services\StatsService->generateStats(Object(Tanweb\Container))
+#8 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\StatsDisplay->generateStats()
+#9 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2022-11-30  10:05:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  10:05:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  10:06:34] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'scheduler.suzug_ticket' doesn't exist ;
+ #0 /var/www/html/sys/classes/Tanweb/Database/Database.php(115): PDO->prepare('SELECT * FROM s...')
+#1 /var/www/html/sys/classes/Custom/Statistics/Options/DataSet.php(39): Tanweb\Database\Database->select(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 /var/www/html/sys/classes/Custom/Statistics/Statistics.php(39): Custom\Statistics\Options\DataSet->getData(Object(Tanweb\Database\DataFilter\DataFilter))
+#3 /var/www/html/sys/classes/Custom/Statistics/Statistics.php(31): Custom\Statistics\Statistics->recieveDataset(Object(Tanweb\Container))
+#4 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(22): Custom\Statistics\Statistics->__construct(Object(Tanweb\Container), Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Custom/Statistics/StatisticsFactory.php(31): Custom\Statistics\SingleStats->__construct(Object(Tanweb\Container), Object(Tanweb\Container))
+#6 /var/www/html/sys/classes/Services/StatsService.php(174): Custom\Statistics\StatisticsFactory::build(Object(Tanweb\Container))
+#7 /var/www/html/sys/classes/Controllers/StatsDisplay.php(45): Services\StatsService->generateStats(Object(Tanweb\Container))
+#8 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\StatsDisplay->generateStats()
+#9 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2022-11-30  10:08:44] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  10:08:44] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  10:08:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  10:08:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  10:09:13] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  10:09:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  10:09:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  10:09:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  11:42:55] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  11:42:59] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  11:43:00] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  11:43:02] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  11:43:02] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  11:43:02] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  11:43:03] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  11:43:04] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  11:43:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  11:43:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  11:43:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  11:43:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  11:43:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  11:43:22] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  11:43:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  11:43:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  11:43:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  11:44:01] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  11:44:01] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  11:45:18] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  11:45:18] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  11:46:23] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  11:46:23] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  11:49:14] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  11:49:16] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  11:49:16] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  11:49:16] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  12:09:11] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  12:09:13] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  12:09:13] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-30  12:09:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-30  12:09:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-11-30  12:09:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-11-30  12:09:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-30  12:09:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-11-30  12:09:14] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  12:09:16] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  12:09:17] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-11-30  12:09:17] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-11-30  12:09:17] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-30  12:09:17] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-11-30  12:09:17] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-30  12:09:17] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-11-30  12:09:18] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-11-30  12:09:18] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '1'
+[2022-11-30  12:09:18] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-30  12:09:18] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '1'
+[2022-11-30  12:09:23] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2022-11-30  12:09:23] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '1'
+[2022-11-30  12:09:23] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id = '1'
+[2022-11-30  12:09:23] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE employment SET active='1', sort_priority='10', leadership='0', inspector='1', id_user='1' WHERE id = '1'
+[2022-11-30  12:09:25] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-11-30  12:09:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '1'
+[2022-11-30  12:09:39] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  12:09:40] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  12:09:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  12:09:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  12:09:42] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  12:09:43] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  12:09:43] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSuzug Task: getSuzugUsersData: {}
+[2022-11-30  12:09:43] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suzug_user_details WHERE  year = '2022' ORDER BY number ASC
+[2022-11-30  12:09:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSuzug Task: getAssignmentOptionsData: {}
+[2022-11-30  12:09:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suzug_user_details WHERE  active = '1' and year = '2022' ORDER BY number ASC
+[2022-11-30  12:09:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and inspector = '1' and ( ( start <= '2022-01-01' and end >= '2022-01-01' ) or ( start <= '2022-12-31' and end >= '2022-12-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-11-30  12:09:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSuzug Task: saveData: {}
+[2022-11-30  12:09:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suzug_user_details WHERE  active = '1' and year = '2022' and number = '7'
+[2022-11-30  12:09:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suzug_user_details WHERE  active = '1' and year = '2022' and id_user = '1'
+[2022-11-30  12:09:52] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO suzug_user (year, number, id_user) VALUES ('2022', '7', '1')
+[2022-11-30  12:09:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSuzug Task: getSuzugUsersData: {}
+[2022-11-30  12:09:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suzug_user_details WHERE  year = '2022' ORDER BY number ASC
+[2022-11-30  12:50:23] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  12:50:25] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  12:50:25] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: ScheduleUser Task: getAllEntriesData: {}
+[2022-11-30  12:50:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-03 00:00:00' and end > '2022-11-27 00:00:00' and active = '1' ORDER BY start ASC
+[2022-11-30  12:50:26] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getPackageData: {}
+[2022-11-30  12:50:27] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  12:50:27] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  username = 'admin' and start < '2022-11-30' and end > '2022-11-30'
+[2022-11-30  12:50:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  12:50:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-30  12:50:29] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-30  12:50:29] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-12-03 00:00:00' and end > '2022-11-27 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-30  12:50:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-30  12:50:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-30  12:50:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-28 00:00:00' and end > '2022-10-22 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-30  12:50:40] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: ScheduleUser Task: getActivitiesForGroupData: {}
+[2022-11-30  12:50:40] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity WHERE  activity_group = 'Kontrola'
+[2022-11-30  12:50:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: ScheduleUser Task: getLocationTypesForActivityData: {}
+[2022-11-30  12:50:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM activity_location_type_details WHERE  active = '1' and id_activity = '1'
+[2022-11-30  12:50:42] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: ScheduleUser Task: getLocationsForTypeData: {}
+[2022-11-30  12:50:42] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location WHERE  active = '1' and id_location_type = '1'
+[2022-11-30  12:51:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: ScheduleUser Task: getMyMatchingDocumentsData: {}
+[2022-11-30  12:51:15] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  document_active = '1' and username = 'admin' and start <= '2022-10-23' and end >= '2022-10-23' and id_location = '1'
+[2022-11-30  12:51:18] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: ScheduleUser Task: saveEntryData: {}
+[2022-11-30  12:51:18] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-30  12:51:18] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO schedule (start, end, id_user, id_activity, id_location, underground) VALUES ('2022-10-23 05:30', '2022-10-23 13:30', '1', '1', '1', '0')
+[2022-11-30  12:51:18] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO document_schedule (id_schedule, id_document) VALUES ('45', '7')
+[2022-11-30  12:51:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: ScheduleUser Task: getMyEntriesData: {}
+[2022-11-30  12:51:20] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM user WHERE  username = 'admin'
+[2022-11-30  12:51:20] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start < '2022-10-28 00:00:00' and end > '2022-10-22 00:00:00' and id_user = '1' and active = '1' ORDER BY start ASC
+[2022-11-30  12:54:01] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-11-30  12:54:03] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-11-30  12:54:03] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-11-30  12:54:03] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT id, name FROM statistics WHERE  active = '1'
+[2022-11-30  13:14:42] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-11-30  13:14:42] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  13:14:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  13:14:48] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  13:14:48] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Custom\Statistics\Calculation\Calculator::sum(): Argument #1 ($data) must be of type Custom\Statistics\Calculation\Container, Tanweb\Container given, called in /var/www/html/sys/classes/Custom/Statistics/SingleStats.php on line 36 ;
+ #0 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(36): Custom\Statistics\Calculation\Calculator::sum(Object(Tanweb\Container), Object(Tanweb\Container), 'value')
+#1 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(28): Custom\Statistics\SingleStats->calculateResultSet()
+#2 /var/www/html/sys/classes/Services/StatsService.php(176): Custom\Statistics\SingleStats->generate()
+#3 /var/www/html/sys/classes/Controllers/StatsDisplay.php(45): Services\StatsService->generateStats(Object(Tanweb\Container))
+#4 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\StatsDisplay->generateStats()
+#5 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#6 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#7 {main}
+[2022-11-30  13:15:21] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  13:15:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  13:15:38] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Custom\Statistics\SingleStats::calculateResultSet(): Return value must be of type Tanweb\Container, none returned ;
+ #0 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(28): Custom\Statistics\SingleStats->calculateResultSet()
+#1 /var/www/html/sys/classes/Services/StatsService.php(176): Custom\Statistics\SingleStats->generate()
+#2 /var/www/html/sys/classes/Controllers/StatsDisplay.php(45): Services\StatsService->generateStats(Object(Tanweb\Container))
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\StatsDisplay->generateStats()
+#4 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-11-30  13:15:46] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  13:15:46] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  13:15:46] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Custom\Statistics\SingleStats::calculateResultSet(): Return value must be of type Tanweb\Container, none returned ;
+ #0 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(28): Custom\Statistics\SingleStats->calculateResultSet()
+#1 /var/www/html/sys/classes/Services/StatsService.php(176): Custom\Statistics\SingleStats->generate()
+#2 /var/www/html/sys/classes/Controllers/StatsDisplay.php(45): Services\StatsService->generateStats(Object(Tanweb\Container))
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\StatsDisplay->generateStats()
+#4 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-11-30  13:16:22] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  13:16:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'
+[2022-11-30  13:16:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-11-30  13:16:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '4'

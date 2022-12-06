@@ -6,6 +6,7 @@
 
 namespace Tanweb;
 
+use Tanweb\Database\DataFilter\Condition as Condition;
 use Exception;
 
 /**
@@ -78,6 +79,41 @@ class Container {
     
     public function contains($value) : bool {
         return in_array($value, $this->data);
+    }
+    
+    public function filter(Condition $condition) : Container {
+        $result = new Container();
+        foreach ($this->data as $item) {
+            if(is_array($item) && $this->meetsCriteria($item, $condition)){
+                $result->add($item);
+            }
+        }
+        return $result;
+    }
+    
+    private function meetsCriteria(array $item, Condition $condition) : bool {
+        $key = $condition->getColumn();
+        $val = $condition->getValue();
+        $operation = $condition->getOperation();
+        if(isset($item[$key])){
+            switch ($operation) {
+                case '=':
+                    return $item[$key] === $val;
+                case '>':
+                    return $item[$key] > $val;
+                case '<':
+                    return $item[$key] < $val;
+                case '<=':
+                    return $item[$key] <= $val;
+                case '>=':
+                    return $item[$key] >= $val;
+                case 'like':
+                    return str_contains(trim($item[$key], '%'), $val);
+                default:
+                    return false;
+            }
+        }
+        return false;
     }
     
     public function length() : int{
