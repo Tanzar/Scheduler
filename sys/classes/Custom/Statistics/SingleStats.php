@@ -7,16 +7,12 @@
 namespace Custom\Statistics;
 
 use Tanweb\Container as Container;
-use Custom\Calculation\Counter\Counter as Counter;
 use Custom\Statistics\Calculation\Calculator as Calculator;
 use Custom\Statistics\Calculation\ResultSet as ResultSet;
 use Custom\Statistics\Options\Group as Group;
-use Custom\Statistics\Options\Type as Type;
 use Custom\Statistics\Options\ResultForm as ResultForm;
-use Custom\Statistics\Options\DataSet as DataSet;
-use Custom\Statistics\Options\Input as Input;
 use Custom\Statistics\Options\Method as Method;
-use Tanweb\Config\INI\Languages as Languages;
+use Custom\Statistics\Options\Shift as Shift;
 
 /**
  * Description of SingleStats
@@ -28,33 +24,7 @@ class SingleStats extends Statistics {
     
     public function __construct(Container $data, Container $inputsValues) {
         parent::__construct($data, $inputsValues);
-        $this->formTitle($data, $inputsValues);
-    }
-    
-    private function formTitle(Container $data, Container $inputsValues) : void {
         $this->title = $data->get('name');
-        $json = $this->getJson();
-        $inputs = $json->get('inputs');
-        foreach ($inputs as $inputName) {
-            $input = Input::from($inputName);
-            $text = $this->getTitlePart($input, $inputsValues);
-            $this->title .= ' ' . $text;
-        }
-    }
-    
-    private function getTitlePart(Input $input, Container $inputsValues) : string {
-        if($input === Input::Month) {
-            $index = $input->getVariableName();
-            $monthNumber = (int) $inputsValues->get($index);
-            $languages = Languages::getInstance('polski');
-            $months = new Container($languages->get('months'));
-            $text = $months->get($monthNumber);
-        }
-        else{
-            $index = $input->getVariableName();
-            $text = $inputsValues->get($index);
-        }
-        return $text;
     }
     
     public function generate(): Container {
@@ -86,6 +56,18 @@ class SingleStats extends Statistics {
                 return Calculator::sum($data, $groupingColumns, 'value');
             case Method::Count:
                 return Calculator::count($data, $groupingColumns);
+            case Method::CountWorkdays:
+                return Calculator::countWorkdays($data, $groupingColumns);
+            case Method::CountNightShifts:
+                return Calculator::countNightShifts($data, $groupingColumns);
+            case Method::CountShiftA:
+                return Calculator::countShift($data, $groupingColumns, Shift::A);
+            case Method::CountShiftB:
+                return Calculator::countShift($data, $groupingColumns, Shift::B);
+            case Method::CountShiftC:
+                return Calculator::countShift($data, $groupingColumns, Shift::C);
+            case Method::CountShiftD:
+                return Calculator::countShift($data, $groupingColumns, Shift::D);
             default:
                 return new ResultSet();
         }
@@ -236,28 +218,5 @@ class SingleStats extends Statistics {
         $keysValues = array();
         $keysValues[$key] = $option->get('value');
         return $resultset->getValue($keysValues);
-    }
-    
-    private function combineOptions(array $options, Container $rows, Container $values) : void {
-        $counts = new Counter();
-        foreach ($options as $key => $item) {
-            $counts->addCounter($key, count($item) - 1);
-        }
-        do {
-            $state = $counts->getState();
-            $row = array();
-            $rowValues = array();
-            foreach ($state as $key => $value) {
-                $item = $options[$key][$value];
-                $group = Group::from($key);
-                if($group === Group::Users){
-                    $row['suzug'] = $item['suzug_number'];
-                }
-                $row[$key] = $item['title'];
-                $rowValues[$group->getColumn()] = $item['value'];
-            }
-            $rows->add($row);
-            $values->add($rowValues);
-        } while(!$counts->increase());
     }
 }

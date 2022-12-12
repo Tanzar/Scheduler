@@ -61,6 +61,34 @@ enum Input : string {
         };
     }
     
+    public static function getColumn(Input $input) : string {
+        return match($input){
+            Input::Month => 'month(date)',
+            Input::MonthsRange => 'month(date)',
+            Input::Year => 'year(date)',
+            Input::YearsRange => 'year(date)',
+            Input::User => 'username',
+            Input::Inspector => 'username',
+            Input::Location => 'id_location',
+            Input::LocationGroup => 'id_location_group'
+        };
+    }
+    
+    public static function getColumnByVariableName(string $variable) : string {
+        return match($variable){
+            'month' => Input::getColumn(Input::Month),
+            'monthStart' => Input::getColumn(Input::MonthsRange),
+            'monthEnd' => Input::getColumn(Input::MonthsRange),
+            'year' => Input::getColumn(Input::Year),
+            'yearStart' => Input::getColumn(Input::YearsRange),
+            'yearEnd' => Input::getColumn(Input::YearsRange),
+            'user' => Input::getColumn(Input::User),
+            'location' => Input::getColumn(Input::Location),
+            'locationGroup' => Input::getColumn(Input::LocationGroup),
+            default => ''
+        };
+    }
+    
     private function getMonths() : array {
         $language = Languages::getInstance();
         $months = $language->get('months');

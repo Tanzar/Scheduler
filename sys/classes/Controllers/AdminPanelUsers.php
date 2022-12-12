@@ -26,6 +26,11 @@ class AdminPanelUsers extends Controller{
         parent::__construct($privilages);
     }
     
+    public function getUserTypes() : void {
+        $response = $this->userService->getUserTypes();
+        $this->setResponse($response);
+    }
+    
     public function getAllUsers() {
         $result = $this->userService->getAllUsers();
         $this->setResponse($result);

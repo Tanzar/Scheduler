@@ -192,6 +192,10 @@ class ScheduleService {
         $item->add($name, 'name');
         $item->add($locationTypeId, 'id_location_type');
         $groupId = $this->getTemporaryGroupId();
+        $date = new DateTime(date(('Y-m') . '-1'));
+        $item->add($date->format('Y-m-d'), 'active_from');
+        $date->modify('+100 years');
+        $item->add($date->format('Y-m-d'), 'active_from');
         $item->add($groupId, 'id_location_group');
         return $this->location->save($item);
     }
@@ -202,6 +206,10 @@ class ScheduleService {
             $item = new Container();
             $item->add('tmp', 'name');
             $item->add(0, 'active');
+            $date = new DateTime(date(('Y-m') . '-1'));
+            $item->add($date->format('Y-m-d'), 'active_from');
+            $date->modify('+100 years');
+            $item->add($date->format('Y-m-d'), 'active_from');
             return $this->locationGroup->save($item);
         }
         else{

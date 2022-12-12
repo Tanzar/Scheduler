@@ -6,6 +6,7 @@
 
 namespace Services;
 
+use Tanweb\Config\INI\AppConfig as AppConfig;
 use Tanweb\Container as Container;
 use Tanweb\Security\Encrypter as Encrypter;
 use Data\Access\Tables\UserTableDAO as UserDAO;
@@ -37,6 +38,18 @@ class UserService{
         $this->usersEmploymentPeriods = new UsersEmploymentPeriodsView();
         $this->usersWithoutPasswords = new UsersWithoutPasswordsView();
         $this->usersPrivilages = new UsersPrivilagesView();
+    }
+    
+    public function getUserTypes() : Container {
+        $appconfig = AppConfig::getInstance();
+        $cfg = $appconfig->getAppConfig();
+        $types = $cfg->get('user_type');
+        $typesInspectors = $cfg->get('user_type_inspector');
+        $result = new Container($types);
+        foreach ($typesInspectors as $type) {
+            $result->add($type);
+        }
+        return $result;
     }
     
     public function getAllUsers() : Container {

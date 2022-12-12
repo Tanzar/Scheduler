@@ -116,7 +116,9 @@ function LocationGroupsTable(language, div){
     var datatable = new Datatable(div, config);
     datatable.addActionButton(language.add, function(){
         var fields = [
-            {type: 'text', title: language.name, variable: 'name', limit: 255, required: true}
+            {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
+            {type: 'date', title: language.start, variable: 'active_from'},
+            {type: 'date', title: language.end, variable: 'active_to'}
         ];
         openModalBox(language.new_location_group, fields, language.save, function(data){
             RestApi.post('AdminPanelLocation', 'saveLocationGroup', data,
@@ -135,7 +137,9 @@ function LocationGroupsTable(language, div){
     datatable.addActionButton(language.edit, function(selected){
         if(selected !== undefined){
             var fields = [
-                {type: 'text', title: language.name, variable: 'name', limit: 255, required: true}
+                {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
+                {type: 'date', title: language.start, variable: 'active_from'},
+                {type: 'date', title: language.end, variable: 'active_to'}
             ];
             openModalBox(language.edit_location_group, fields, language.save, function(data){
                 RestApi.post('AdminPanelLocation', 'saveLocationGroup', data,

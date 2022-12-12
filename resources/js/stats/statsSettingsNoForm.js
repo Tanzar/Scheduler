@@ -20,7 +20,9 @@ function initStatsTable(language) {
     };
     var config = {
         columns: [
-            {title: language.name, variable: 'name', width: 250, minWidth: 250}
+            {title: language.name, variable: 'name', width: 150, minWidth: 150},
+            {title: language.stats_type, variable: 'type', width: 100, minWidth: 100},
+            {title: language.result_form, variable: 'form', width: 150, minWidth: 150}
         ],
         dataSource: datasource
     }

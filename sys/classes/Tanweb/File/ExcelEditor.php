@@ -15,42 +15,90 @@ namespace Tanweb\File;
 use PhpOffice\PhpSpreadsheet\Spreadsheet as Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx as Xlsx;
 use \PhpOffice\PhpSpreadsheet\IOFactory as IOFactory;
+use PhpOffice\PhpSpreadsheet\Style\Border as Border;
+use PhpOffice\PhpSpreadsheet\Style\Color as Color;
+use PhpOffice\PhpSpreadsheet\Style\Alignment as Alignment;
+use PhpOffice\PhpSpreadsheet\Style\Fill as Fill;
 
 class ExcelEditor {
     private $name;
     private Spreadsheet $spreadsheet;
     
-    public function openFile($path){
+    public function openFile(string $path) : void {
         $this->name = $path;
         $this->spreadsheet = IOFactory::load($path);
     }
     
-    public function newFile($name, string $sheetName = 'Worksheet'){
+    public function newFile(string $name, string $sheetName = 'Worksheet') : void {
         $this->name = $name;
         $this->spreadsheet = new Spreadsheet();
         $this->spreadsheet->getActiveSheet()->setTitle($sheetName);
     }
     
-    public function addSheet($name){
+    public function addSheet(string $name) : void {
         $this->spreadsheet->createSheet();
         $count = $this->spreadsheet->getSheetCount();
         $this->spreadsheet->setActiveSheetIndex($count - 1);
         $this->spreadsheet->getActiveSheet()->setTitle($name);
     }
     
-    public function writeToCell($sheetName, $cell, $value){
+    public function writeToCell(string $sheetName, string $cell, string $value) : void {
         $sheet = $this->spreadsheet->getSheetByName($sheetName);
         $sheet->setCellValue($cell, $value);
     }
     
-    public function saveLocally($path){
+    public function mergeCells(string $sheetName, string $start, string $end) : void {
+        $sheet = $this->spreadsheet->getSheetByName($sheetName);
+        $sheet->mergeCells($start . ':' . $end);
+    }
+    
+    public function setBorder(string $sheetName, string $cell) : void {
+        $sheet = $this->spreadsheet->getSheetByName($sheetName);
+        $sheet->getStyle($cell)->getBorders()->getOutline()
+                ->setBorderStyle(Border::BORDER_THIN)->setColor(new Color(Color::COLOR_BLACK));
+    }
+    
+    public function fillCell(string $sheetName, string $cell, string $colorCode) : void {
+        $sheet = $this->spreadsheet->getSheetByName($sheetName);
+        $sheet->getStyle($cell)->getFill()->setFillType(Fill::FILL_SOLID)
+                ->getStartColor()->setRGB($colorCode);
+    }
+    
+    public function centerCells(string $sheetName, string $cell) : void {
+        $sheet = $this->spreadsheet->getSheetByName($sheetName);
+        $sheet->getStyle($cell)->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+        $sheet->getStyle($cell)->getAlignment()->setHorizontal(Alignment::VERTICAL_CENTER);
+    }
+    
+    public function setColumnAutosize(string $sheetName, int $col) : void {
+        $letter = $this->getColFromNumber($col);
+        $sheet = $this->spreadsheet->getSheetByName($sheetName);
+        $sheet->getColumnDimension($letter)->setAutoSize(true);
+    }
+    
+    public function saveLocally(string $path) : void {
         $this->spreadsheet->save($path);
     }
     
-    public function sendToBrowser($filename){
+    public function sendToBrowser(string $filename) : void {
         $writer = new Xlsx($this->spreadsheet);
         header('Content-Type: application/vnd.ms-excel');
-        header('Content-Disposition: attachment; filename="' . $filename . '.xls"');
+        header('Content-Disposition: attachment; filename="' . $filename . '.xlsx"');
         $writer->save("php://output");
+    }
+    
+    public function getAddress(int $row, int $col) : string {
+        return $this->getColFromNumber($col) . $row;
+    }
+    
+    private function getColFromNumber(int $num) : string {
+        $numeric = ($num - 1) % 26;
+        $letter = chr(65 + $numeric);
+        $num2 = intval(($num - 1) / 26);
+        if ($num2 > 0) {
+            return $this->getColFromNumber($num2) . $letter;
+        } else {
+            return $letter;
+        }
     }
 }

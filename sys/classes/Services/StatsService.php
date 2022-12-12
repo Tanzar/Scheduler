@@ -14,6 +14,8 @@ use Custom\Statistics\Options\ResultForm as ResultForm;
 use Custom\Statistics\Options\Group as Group;
 use Custom\Statistics\Options\Method as Method;
 use Custom\Statistics\Statistics as Statistics;
+use Custom\Statistics\StatsPDF as StatsPDF;
+use Custom\Statistics\StatsExcel as StatsExcel;
 use Custom\Statistics\StatisticsFactory as StatisticsFactory;
 use Tanweb\Container as Container;
 /**
@@ -29,15 +31,57 @@ class StatsService {
     }
     
     public function getAllStatsWithoutForm() : Container {
-        return $this->statistics->getNamesAndIdsWhereTypeNot(Type::Form);
+        $stats = $this->statistics->getActiveWithoutForm();
+        $results = new Container();
+        foreach ($stats->toArray() as $item) {
+            $stat = new Container($item);
+            $parsed = array(
+                'id' => $stat->get('id'),
+                'name' => $stat->get('name'),
+                'type' => $stat->get('type')
+            );
+            $jsonArray = json_decode(json_encode($stat->get('json')), true);
+            $json = new Container($jsonArray);
+            $parsed['form'] = $json->get('resultForm');
+            $results->add($parsed);
+        }
+        return $results;
     }
     
     public function getAllFormStatistics() : Container {
-        return $this->statistics->getNamesAndIdsByType(Type::Form);
+        $stats = $this->statistics->getActiveForm();
+        $results = new Container();
+        foreach ($stats->toArray() as $item) {
+            $stat = new Container($item);
+            $parsed = array(
+                'id' => $stat->get('id'),
+                'name' => $stat->get('name'),
+                'type' => $stat->get('type')
+            );
+            $jsonArray = json_decode(json_encode($stat->get('json')), true);
+            $json = new Container($jsonArray);
+            $parsed['form'] = $json->get('resultForm');
+            $results->add($parsed);
+        }
+        return $results;
     }
     
     public function getActiveStats() : Container {
-        return $this->statistics->getActiveNamesAndIds();
+        $stats = $this->statistics->getActive();
+        $results = new Container();
+        foreach ($stats->toArray() as $item) {
+            $stat = new Container($item);
+            $parsed = array(
+                'id' => $stat->get('id'),
+                'name' => $stat->get('name'),
+                'type' => $stat->get('type')
+            );
+            $jsonArray = json_decode(json_encode($stat->get('json')), true);
+            $json = new Container($jsonArray);
+            $parsed['form'] = $json->get('resultForm');
+            $results->add($parsed);
+        }
+        return $results;
     }
     
     public function getStatsSettingsStageOne() : Container {
@@ -176,5 +220,17 @@ class StatsService {
         $result = $stats->generate();
         
         return $result;
+    }
+    
+    public function generatePDF(Container $data) : void {
+        $stats = StatisticsFactory::build($data);
+        $result = $stats->generate();
+        StatsPDF::formFile($result);
+    }
+    
+    public function generateXlsx(Container $data) : void {
+        $stats = StatisticsFactory::build($data);
+        $result = $stats->generate();
+        StatsExcel::formFile($result);
     }
 }

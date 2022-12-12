@@ -20,6 +20,8 @@ function LocationsTable(language, div){
             { title: 'ID', variable: 'id', width: 30},
             { title: language.active, variable: 'active', width: 50},
             { title: language.name, variable: 'name', width: 150, minWidth: 150},
+            { title: language.start, variable: 'active_from', width: 150, minWidth: 150},
+            { title: language.end, variable: 'active_to', width: 150, minWidth: 150},
             { title: language.location_group, variable: 'location_group', width: 150, minWidth: 150},
             { title: language.location_type, variable: 'location_type', width: 150, minWidth: 150}
         ],
@@ -57,6 +59,8 @@ function LocationsTable(language, div){
                 });
                 var fields = [
                     {type: 'text', title: language.name, variable: 'name', limit: 100, required: true},
+                    {type: 'date', title: language.start, variable: 'active_from'},
+                    {type: 'date', title: language.end, variable: 'active_to'},
                     {type: 'select', title: language.location_group, variable: 'id_location_group', options: groupsOptions, required: true},
                     {type: 'select', title: language.location_type, variable: 'id_location_type', options: typesOptions, required: true}
                 ];
@@ -100,6 +104,8 @@ function LocationsTable(language, div){
                     });
                     var fields = [
                         {type: 'text', title: language.name, variable: 'name', limit: 100, required: true},
+                        {type: 'date', title: language.start, variable: 'active_from'},
+                        {type: 'date', title: language.end, variable: 'active_to'},
                         {type: 'select', title: language.location_group, variable: 'id_location_group', options: groupsOptions, required: true},
                         {type: 'select', title: language.location_type, variable: 'id_location_type', options: typesOptions, required: true}
                     ];

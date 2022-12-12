@@ -44,6 +44,10 @@ class PDFMaker extends FPDF{
         $this->setFont($this->font, $this->style, $this->size);
     }
     
+    public function getCurrentFontSize() : int {
+        return $this->size;
+    }
+    
     //--- setCurrentStyle ---//
     public function setCurrentStyle($style){
         if($this->isAcceptableStyle($style)){

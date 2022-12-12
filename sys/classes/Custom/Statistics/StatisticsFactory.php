@@ -10,6 +10,8 @@ use Data\Access\Tables\StatisticsDAO as StatisticsDAO;
 use Custom\Statistics\Options\Type as Type;
 use Custom\Statistics\Statistics as Statistics;
 use Custom\Statistics\SingleStats as SingleStats;
+use Custom\Statistics\MonthlyStats as MonthlyStats;
+use Custom\Statistics\YearlyStats as YearlyStats;
 use Tanweb\Container as Container;
 use Custom\Statistics\Exceptions\UnsupportedStatisticsTypeException as UnsupportedStatisticsTypeException;
 
@@ -30,9 +32,9 @@ class StatisticsFactory {
             case Type::Single:
                 return new SingleStats($statistic, $data);
             case Type::Monthly:
-                break;
+                return new MonthlyStats($statistic, $data);
             case Type::Yearly:
-                break;
+                return new YearlyStats($statistic, $data);
             case Type::Form:
                 break;
         }

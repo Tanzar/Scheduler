@@ -67,6 +67,11 @@ class LocationService {
     }
     
     public function saveLocation(Container $data) : int {
+        $start = $data->get('active_from');
+        $end = $data->get('active_to');
+        if($start >= $end){
+            throw new LocationDatesException();
+        }
         return $this->location->save($data);
     }
     
@@ -75,6 +80,11 @@ class LocationService {
     }
     
     public function saveLocationGroup(Container $data) : int {
+        $start = $data->get('active_from');
+        $end = $data->get('active_to');
+        if($start >= $end){
+            throw new LocationDatesException();
+        }
         return $this->locationGroup->save($data);
     }
     

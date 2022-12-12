@@ -23,11 +23,13 @@ enum Group : string {
     case Months = 'Miesiące';
     case Years = 'Lata';
     case Users = 'Użytkownicy';
+    case UserTypes = 'Typy Użytkowników';
     case Activities = 'Czynności';
     case InspectionActivities = 'Czynności kontrolne';
     case Locations = 'Miejsca';
     case LocationGroups = 'Grupy miejsc';
     case LocationTypes = 'Typy miejsc';
+    case SuspensionType = 'Typy zatrzymań';
     
     public function getOptions(Container $inputValues) : Container {
         return match($this) {
@@ -35,11 +37,13 @@ enum Group : string {
             Group::Months => $this->getMonths($inputValues),
             Group::Years => $this->getYears($inputValues),
             Group::Users => $this->getUsers($inputValues),
+            Group::UserTypes => $this->getUserTypes(),
             Group::Activities => $this->getActivities(),
             Group::InspectionActivities => $this->getInspectionActivities(),
             Group::Locations => $this->getInspectionLocations($inputValues),
             Group::LocationGroups => $this->getLocationGroups($inputValues),
-            Group::LocationTypes => $this->getInspectionLocationTypes($inputValues)
+            Group::LocationTypes => $this->getInspectionLocationTypes($inputValues),
+            Group::SuspensionType => $this->getSuspensionTypes()
         };
     }
     
@@ -142,6 +146,20 @@ enum Group : string {
         return $result;
     }
     
+    private function getUserTypes() : Container {
+        $appconfig = AppConfig::getInstance();
+        $cfg = $appconfig->getAppConfig();
+        $types = $cfg->get('user_type_inspector');
+        $result = new Container();
+        foreach ($types as $type) {
+            $result->add(array(
+                'title' => $type,
+                'value' => $type
+            ));
+        }
+        return $result;
+    }
+    
     private function getActivities() : Container {
         $database = Database::getInstance('scheduler');
         $sql = new MysqlBuilder();
@@ -176,11 +194,7 @@ enum Group : string {
     
     private function getInspectionLocations(Container $inputValues) : Container {
         $database = Database::getInstance('scheduler');
-        $sql = new MysqlBuilder();
-        $sql->select('location_details')->where('inspection', 1);
-        if ($inputValues->isValueSet('id_location')) {
-            $sql->and()->where('id', $inputValues->get('id_location'));
-        }
+        $sql = $this->formLocationSQL($inputValues);
         $data = $database->select($sql);
         $result = new Container();
         foreach ($data->toArray() as $item) {
@@ -193,10 +207,33 @@ enum Group : string {
         return $result;
     }
     
+    private function formLocationSQL(Container $inputValues) : MysqlBuilder {
+        $sql = new MysqlBuilder();
+        $sql->select('location_details')->where('inspection', 1);
+        if ($inputValues->isValueSet('id_location')) {
+            $sql->and()->where('id', $inputValues->get('id_location'));
+        }
+        if ($inputValues->isValueSet('month') && $inputValues->isValueSet('year')) {
+            $start = new DateTime($inputValues->get('year') . '-' . $inputValues->get('month') . '-01');
+            $end = new DateTime($start->format('Y-m-t'));
+            $sql->and()->openBracket()->openBracket()
+                    ->where('active_from', $start->format('Y-m-d'), '<=')
+                    ->and()->where('active_to', $start->format('Y-m-d'), '>=')
+                    ->closeBracket()->or()->openBracket()
+                    ->where('active_from', $end->format('Y-m-d'), '<=')
+                    ->and()->where('active_to', $end->format('Y-m-d'), '>=')
+                    ->closeBracket()->closeBracket();
+        }
+        elseif ($inputValues->isValueSet('year')) {
+            $sql->and()->where('year(active_from)', $inputValues->get('year'), '<=')
+                    ->and()->where('year(active_to)', $inputValues->get('year'), '>=');
+        }
+        return $sql;
+    }
+    
     private function getLocationGroups(Container $inputValues) : Container {
         $database = Database::getInstance('scheduler');
-        $sql = new MysqlBuilder();
-        $sql->select('location_groups');
+        $sql = $this->formLocationGroupSQL($inputValues);
         $data = $database->select($sql);
         if ($inputValues->isValueSet('id_location_group')) {
             $sql->and()->where('id', $inputValues->get('id_location_group'));
@@ -210,6 +247,30 @@ enum Group : string {
             ));
         }
         return $result;
+    }
+    
+    private function formLocationGroupSQL(Container $inputValues) : MysqlBuilder {
+        $sql = new MysqlBuilder();
+        $sql->select('location_groups');
+        if ($inputValues->isValueSet('id_location_group')) {
+            $sql->and()->where('id', $inputValues->get('id_location_group'));
+        }
+        if ($inputValues->isValueSet('month') && $inputValues->isValueSet('year')) {
+            $start = new DateTime($inputValues->get('year') . '-' . $inputValues->get('month') . '-01');
+            $end = new DateTime($start->format('Y-m-t'));
+            $sql->and()->openBracket()->openBracket()
+                    ->where('active_from', $start->format('Y-m-d'), '<=')
+                    ->and()->where('active_to', $start->format('Y-m-d'), '>=')
+                    ->closeBracket()->or()->openBracket()
+                    ->where('active_from', $end->format('Y-m-d'), '<=')
+                    ->and()->where('active_to', $end->format('Y-m-d'), '>=')
+                    ->closeBracket()->closeBracket();
+        }
+        elseif ($inputValues->isValueSet('year')) {
+            $sql->and()->where('year(active_from)', $inputValues->get('year'), '<=')
+                    ->and()->where('year(active_to)', $inputValues->get('year'), '>=');
+        }
+        return $sql;
     }
     
     private function getInspectionLocationTypes(Container $inputValues) : Container {
@@ -231,27 +292,47 @@ enum Group : string {
         return $result;
     }
     
+    private function getSuspensionTypes() : Container {
+        $database = Database::getInstance('scheduler');
+        $sql = new MysqlBuilder();
+        $sql->select('suspension_type_details');
+        $data = $database->select($sql);
+        $result = new Container();
+        foreach ($data->toArray() as $item) {
+            $element = new Container($item);
+            $result->add(array(
+                'title' => $element->get('group_name') . ' - ' . $element->get('name'),
+                'value' => $element->get('id')
+            ));
+        }
+        return $result;
+    }
+    
     public static function getGroupsForDataSet(DataSet $dataset) : Container {
         return match ($dataset){
-            DataSet::Articles => self::formContainer(Group::Days),
-            DataSet::CourtApplications => self::formContainer(Group::Days),
-            DataSet::Decisions => self::formContainer(Group::Days),
+            DataSet::Articles => self::formContainer(),
+            DataSet::CourtApplications => self::formContainer(),
+            DataSet::Decisions => self::formContainer(),
             DataSet::Entries => self::formContainer(Group::Activities, Group::InspectionActivities),
             DataSet::Inspections => self::formContainer(Group::Activities, Group::InspectionActivities),
-            DataSet::InstrumentUsages => self::formContainer(Group::Days),
-            DataSet::Suspensions => self::formContainer(Group::Days),
-            DataSet::SuspensionsArticles => self::formContainer(Group::Days),
-            DataSet::SuspensionsDecisions => self::formContainer(Group::Days),
-            DataSet::SuspensionsTickets => self::formContainer(Group::Days),
-            DataSet::Tickets => self::formContainer(Group::Days)
+            DataSet::InstrumentUsages => self::formContainer(),
+            DataSet::Suspensions => self::formContainer(Group::SuspensionType),
+            Dataset::SuspensionsWithDecisions => self::formContainer(Group::SuspensionType),
+            Dataset::SuspensionsWithoutDecisions => self::formContainer(Group::SuspensionType),
+            DataSet::SuspensionsArticles => self::formContainer(),
+            DataSet::SuspensionsDecisions => self::formContainer(),
+            DataSet::SuspensionsTickets => self::formContainer(),
+            DataSet::Tickets => self::formContainer()
         };
     }
     
     private static function formContainer(Group ...$groups) : Container {
         $result = new Container();
+        $result->add(Group::Days->value);
         $result->add(Group::Months->value);
         $result->add(Group::Years->value);
         $result->add(Group::Users->value);
+        $result->add(Group::UserTypes->value);
         $result->add(Group::Locations->value);
         $result->add(Group::LocationGroups->value);
         $result->add(Group::LocationTypes->value);
@@ -267,11 +348,13 @@ enum Group : string {
             Group::Months => 'month',
             Group::Years => 'year',
             Group::Users => 'username',
+            Group::UserTypes => 'user_type',
             Group::Activities => 'is_activity',
             Group::InspectionActivities => 'id_activity',
             Group::Locations => 'id_location',
             Group::LocationGroups => 'id_location_group',
-            Group::LocationTypes => 'id_location_type'
+            Group::LocationTypes => 'id_location_type',
+            Group::SuspensionType => 'id_suspension_type'
         };
     }
     
@@ -281,11 +364,13 @@ enum Group : string {
             Group::Months => $this->getMonth($dataRow),
             Group::Years => $this->getYear($dataRow),
             Group::Users => $dataRow->get('username'),
+            Group::UserTypes => $dataRow->get('user_type'),
             Group::Activities => $dataRow->get('id_activity'),
             Group::InspectionActivities => $dataRow->get('id_activity'),
             Group::Locations => $dataRow->get('id_location'),
             Group::LocationGroups => $dataRow->get('id_location_group'),
-            Group::LocationTypes => $dataRow->get('id_location_type')
+            Group::LocationTypes => $dataRow->get('id_location_type'),
+            Group::SuspensionType => $dataRow->get('id_suspension_type')
         };
     }
     

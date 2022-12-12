@@ -320,30 +320,45 @@ function EmploymentsTable(language, div){
     var datatab = this.datatable;
     this.datatable.addActionButton(language.add, function(){
         if(table.idUser !== 0){
-            var fields = [
-                {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
-                {type: 'text', title: language.user_type, variable: 'user_type', limit: 6, required: true},
-                {type: 'date', title: language.start_date, variable: 'start'},
-                {type: 'date', title: language.end_date, variable: 'end'},
-                {type: 'number', title: language.sort_priority, variable: 'sort_priority', value: 10, min: 1, required: true},
-                {type: 'time', title: language.standard_day_start, variable: 'standard_day_start'},
-                {type: 'time', title: language.standard_day_end, variable: 'standard_day_end'},
-                {type: 'checkbox', title: language.leadership, variable: 'leadership'},
-                {type: 'checkbox', title: language.inspector, variable: 'inspector'}
-            ];
-            openModalBox(language.new_employment_period, fields, language.save, function(data){
-                data.id_user = table.idUser;
-                RestApi.post('AdminPanelUsers', 'saveEmploymentPeriod', data, 
-                    function(response){
-                        var data = JSON.parse(response);
-                        console.log(data);
-                        alert(data.message);
-                        datatab.refresh();
-                    },
-                    function(response){
-                        console.log(response.responseText);
-                        alert(response.responseText);
+            RestApi.get('AdminPanelUsers', 'getUserTypes', {}, function(response){
+                var data = JSON.parse(response);
+                var types = [];
+                data.forEach(type => {
+                    var option = {
+                        title: type,
+                        value: type
+                    }
+                    types.push(option);
                 });
+                var fields = [
+                    {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
+                    {type: 'select', title: language.user_type, variable: 'user_type', options: types, required: true},
+                    {type: 'date', title: language.start_date, variable: 'start'},
+                    {type: 'date', title: language.end_date, variable: 'end'},
+                    {type: 'number', title: language.sort_priority, variable: 'sort_priority', value: 10, min: 1, required: true},
+                    {type: 'time', title: language.standard_day_start, variable: 'standard_day_start'},
+                    {type: 'time', title: language.standard_day_end, variable: 'standard_day_end'},
+                    {type: 'checkbox', title: language.leadership, variable: 'leadership'},
+                    {type: 'checkbox', title: language.inspector, variable: 'inspector'}
+                ];
+                openModalBox(language.new_employment_period, fields, language.save, function(data){
+                    data.id_user = table.idUser;
+                    RestApi.post('AdminPanelUsers', 'saveEmploymentPeriod', data, 
+                        function(response){
+                            var data = JSON.parse(response);
+                            console.log(data);
+                            alert(data.message);
+                            datatab.refresh();
+                        },
+                        function(response){
+                            console.log(response.responseText);
+                            alert(response.responseText);
+                    });
+                });
+            },
+            function(response){
+                console.log(response.responseText);
+                alert(response.responseText);
             });
         }
         else{
@@ -352,31 +367,46 @@ function EmploymentsTable(language, div){
     });
     this.datatable.addActionButton(language.edit, function(selected){
         if(selected !== undefined){
-            var fields = [
-                {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
-                {type: 'text', title: language.user_type, variable: 'user_type', limit: 6, required: true},
-                {type: 'date', title: language.start_date, variable: 'start'},
-                {type: 'date', title: language.end_date, variable: 'end'},
-                {type: 'number', title: language.sort_priority, variable: 'sort_priority', value: 10, min: 1, required: true},
-                {type: 'time', title: language.standard_day_start, variable: 'standard_day_start'},
-                {type: 'time', title: language.standard_day_end, variable: 'standard_day_end'},
-                {type: 'checkbox', title: language.leadership, variable: 'leadership'},
-                {type: 'checkbox', title: language.inspector, variable: 'inspector'}
-            ];
-            openModalBox(language.new_employment_period, fields, language.save, function(data){
-                data.id_user = table.idUser;
-                RestApi.post('AdminPanelUsers', 'saveEmploymentPeriod', data, 
-                    function(response){
-                        var data = JSON.parse(response);
-                        console.log(data);
-                        alert(data.message);
-                        datatab.refresh();
-                    },
-                    function(response){
-                        console.log(response.responseText);
-                        alert(response.responseText);
+            RestApi.get('AdminPanelUsers', 'getUserTypes', {}, function(response){
+                var data = JSON.parse(response);
+                var types = [];
+                data.forEach(type => {
+                    var option = {
+                        title: type,
+                        value: type
+                    }
+                    types.push(option);
                 });
-            }, selected);
+                var fields = [
+                    {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
+                    {type: 'select', title: language.user_type, variable: 'user_type', options: types, required: true},
+                    {type: 'date', title: language.start_date, variable: 'start'},
+                    {type: 'date', title: language.end_date, variable: 'end'},
+                    {type: 'number', title: language.sort_priority, variable: 'sort_priority', value: 10, min: 1, required: true},
+                    {type: 'time', title: language.standard_day_start, variable: 'standard_day_start'},
+                    {type: 'time', title: language.standard_day_end, variable: 'standard_day_end'},
+                    {type: 'checkbox', title: language.leadership, variable: 'leadership'},
+                    {type: 'checkbox', title: language.inspector, variable: 'inspector'}
+                ];
+                openModalBox(language.new_employment_period, fields, language.save, function(data){
+                    data.id_user = table.idUser;
+                    RestApi.post('AdminPanelUsers', 'saveEmploymentPeriod', data, 
+                        function(response){
+                            var data = JSON.parse(response);
+                            console.log(data);
+                            alert(data.message);
+                            datatab.refresh();
+                        },
+                        function(response){
+                            console.log(response.responseText);
+                            alert(response.responseText);
+                    });
+                }, selected);
+            },
+            function(response){
+                console.log(response.responseText);
+                alert(response.responseText);
+            });
         }
         else{
             alert(language.select_employment)

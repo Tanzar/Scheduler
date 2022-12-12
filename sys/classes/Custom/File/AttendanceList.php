@@ -254,8 +254,10 @@ class AttendanceList extends PDFMaker{
         $cfg = $appconfig->getAppConfig();
         $appname = $cfg->get('name');
         $y = $this->h - 5;
+        $fontSize = $this->getCurrentFontSize();
         $this->setCurrentSize(8);
         $this->SetY($y);
         $this->writeCell(0, 5, "Plik wygenerowany przez system " . $appname . ", strona " . $this->PageNo() . "/{nb}", 0, 'R');
+        $this->setCurrentSize($fontSize);
     }
 }

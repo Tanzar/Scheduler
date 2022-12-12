@@ -16,23 +16,27 @@ enum Method : string {
     case Sum = 'Suma';
     case Count = 'Zliczanie';
     case CountWorkdays = 'Zliczanie roboczodniówek';
-    case CountShifts = 'Zliczanie zmian';
-    case AveragePerUserType = 'Średnia na typ użytkownika';
-    case CountAverageWorkdayPerUserType = 'Średnia ilość roboczodniówek na typ użytkownika';
+    case CountNightShifts = 'Zliczanie nocnej zmian';
+    case CountShiftA = 'Zliczanie zmiany A';
+    case CountShiftB = 'Zliczanie zmiany B';
+    case CountShiftC = 'Zliczanie zmiany C';
+    case CountShiftD = 'Zliczanie zmiany D';
     
     public static function getMethodsForDataSet(DataSet $dataset) : Container {
         return match ($dataset){
-            DataSet::Articles => self::formContainer(Method::AveragePerUserType),
-            DataSet::CourtApplications => self::formContainer(Method::Sum, Method::AveragePerUserType),
-            DataSet::Decisions => self::formContainer(Method::AveragePerUserType),
-            DataSet::Entries => self::formContainer(Method::CountWorkdays, Method::CountShifts, Method::CountAverageWorkdayPerUserType),
-            DataSet::Inspections => self::formContainer(Method::CountWorkdays, Method::CountShifts, Method::CountAverageWorkdayPerUserType),
-            DataSet::InstrumentUsages => self::formContainer(Method::AveragePerUserType),
-            DataSet::Suspensions => self::formContainer(Method::AveragePerUserType),
-            DataSet::SuspensionsArticles => self::formContainer(Method::AveragePerUserType),
-            DataSet::SuspensionsDecisions => self::formContainer(Method::AveragePerUserType),
-            DataSet::SuspensionsTickets => self::formContainer(Method::Sum, Method::AveragePerUserType),
-            DataSet::Tickets => self::formContainer(Method::Sum, Method::AveragePerUserType)
+            DataSet::Articles => self::formContainer(),
+            DataSet::CourtApplications => self::formContainer(Method::Sum),
+            DataSet::Decisions => self::formContainer(),
+            DataSet::Entries => self::formContainer(Method::CountWorkdays, Method::CountNightShifts, Method::CountShiftA, Method::CountShiftB, Method::CountShiftC, Method::CountShiftD),
+            DataSet::Inspections => self::formContainer(Method::CountWorkdays, Method::CountNightShifts, Method::CountShiftA, Method::CountShiftB, Method::CountShiftC, Method::CountShiftD),
+            DataSet::InstrumentUsages => self::formContainer(),
+            DataSet::Suspensions => self::formContainer(),
+            Dataset::SuspensionsWithDecisions => self::formContainer(),
+            Dataset::SuspensionsWithoutDecisions => self::formContainer(),
+            DataSet::SuspensionsArticles => self::formContainer(),
+            DataSet::SuspensionsDecisions => self::formContainer(),
+            DataSet::SuspensionsTickets => self::formContainer(Method::Sum),
+            DataSet::Tickets => self::formContainer(Method::Sum)
         };
     }
     

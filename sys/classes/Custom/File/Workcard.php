@@ -81,7 +81,6 @@ class Workcard extends PDFMaker{
         $this->printTable();
         $this->printTableFoot();
         $this->printFoot();
-        $this->printSystemMark();
     }
     
     private function printTop() : void {
@@ -175,14 +174,15 @@ class Workcard extends PDFMaker{
         $this->writeCell($halfWidth, 5, '................................................................', 0, 'C');
     }
     
-    private function printSystemMark() {
+    function footer() {
         $appconfig = AppConfig::getInstance();
         $cfg = $appconfig->getAppConfig();
         $appname = $cfg->get('name');
         $y = $this->h - 5;
+        $fontSize = $this->getCurrentFontSize();
         $this->setCurrentSize(8);
         $this->SetY($y);
-        $this->SetAutoPageBreak(false);
-        $this->writeCell(0, 5, 'Plik wygenerowany przez system ' . $appname, 0, 'R');
+        $this->writeCell(0, 5, "Plik wygenerowany przez system " . $appname . ", strona " . $this->PageNo() . "/{nb}", 0, 'R');
+        $this->setCurrentSize($fontSize);
     }
 }

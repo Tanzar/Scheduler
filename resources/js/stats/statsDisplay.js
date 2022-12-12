@@ -23,7 +23,9 @@ function initStatsTable(language) {
     };
     var config = {
         columns: [
-            {title: language.name, variable: 'name', width: 250, minWidth: 250}
+            {title: language.name, variable: 'name', width: 150, minWidth: 150},
+            {title: language.stats_type, variable: 'type', width: 100, minWidth: 100},
+            {title: language.result_form, variable: 'form', width: 150, minWidth: 150}
         ],
         dataSource: datasource
     }
@@ -33,14 +35,37 @@ function initStatsTable(language) {
             display.clear();
             inputs.load(selected.id);
             document.getElementById('generateStats').style.display = 'block';
+            document.getElementById('generatePDF').style.display = 'none';
+            document.getElementById('generateExcel').style.display = 'none';
         }
     });
     datatable.setOnUnselect(function(){
         inputs.clear();
         display.clear();
         document.getElementById('generateStats').style.display = 'none';
+        document.getElementById('generatePDF').style.display = 'none';
+        document.getElementById('generateExcel').style.display = 'none';
     });
     $('#generateStats').click(function(){
+        if(inputs.haveInvalid()){
+            alert(language.select_inputs_values);
+        }
+        else{
+            var json = inputs.getValues();
+            var inputsData = JSON.parse(JSON.stringify(json));
+            var selected = datatable.getSelected();
+            inputsData.id = selected.id;
+            RestApi.post('StatsDisplay', 'generateStats', inputsData, function(response){
+                var statsData = JSON.parse(response);
+                display.load(statsData, inputs.getTexts());
+                if(statsData.type === 'table' || statsData.type === 'multiple_tables'){
+                    document.getElementById('generatePDF').style.display = 'block';
+                    document.getElementById('generateExcel').style.display = 'block';
+                }
+            });
+        }
+    });
+    $('#generatePDF').click(function(){
         if(inputs.haveInvalid()){
             alert(language.select_inputs_values);
         }
@@ -49,10 +74,19 @@ function initStatsTable(language) {
             var data = JSON.parse(JSON.stringify(json));
             var selected = datatable.getSelected();
             data.id = selected.id;
-            RestApi.get('StatsDisplay', 'generateStats', data, function(response){
-                var data = JSON.parse(response);
-                display.load(data);
-            });
+            FileApi.post('StatsDisplay', 'generatePDF', data);
+        }
+    });
+    $('#generateExcel').click(function(){
+        if(inputs.haveInvalid()){
+            alert(language.select_inputs_values);
+        }
+        else{
+            var json = inputs.getValues();
+            var data = JSON.parse(JSON.stringify(json));
+            var selected = datatable.getSelected();
+            data.id = selected.id;
+            FileApi.post('StatsDisplay', 'generateXlsx', data);
         }
     });
 }
@@ -60,6 +94,7 @@ function initStatsTable(language) {
 function Inputs() {
     this.div = document.getElementById('inputs');
     var values = {};
+    var texts = {};
     
     
     var inputs = this;
@@ -109,6 +144,7 @@ function Inputs() {
         input.required = true;
         input.onchange = function(){
             values[variable] = input.value;
+            texts[variable] = input.options[input.selectedIndex].text;
         }
         var firstOption = document.createElement('option');
         firstOption.textContent = placeholder;
@@ -131,10 +167,15 @@ function Inputs() {
             this.div.removeChild(this.div.lastChild);
         }
         values = {};
+        texts = {};
     }
     
     this.getValues = function() {
         return values;
+    }
+    
+    this.getTexts = function() {
+        return texts;
     }
     
     this.haveInvalid = function() {
@@ -149,14 +190,47 @@ function Inputs() {
 function Display() {
     var div = document.getElementById('statsDisplay');
     
-    this.load = function(config){
+    this.load = function(config, inputsTexts){
         this.clear();
+        var title = '';
+        var keys = Object.keys(inputsTexts);
+        keys.forEach(key => {
+            if(key !== 'yearStart' && key !== 'yearEnd' && key !== 'monthStart' && key !== 'monthEnd'){
+                title += ' ' + inputsTexts[key];
+            }
+        })
+        if(inputsTexts.yearStart !== undefined && inputsTexts.yearEnd !== undefined){
+            title += ' ' + inputsTexts.yearStart + ' - ' + inputsTexts.yearEnd;
+        }
+        if(inputsTexts.monthStart !== undefined && inputsTexts.monthEnd !== undefined){
+            title += ' ' + inputsTexts.monthStart + ' - ' + inputsTexts.monthEnd;
+        }
+        config.title += title;
         console.log(config);
         if(config.type === 'table'){
             loadTable(config);
         }
-        else{
+        else if(config.type === 'plot'){
             loadPlot(config);
+        }
+        else if(config.type === 'multiple_tables'){
+            config.data.forEach(item => {
+                loadTable(item);
+                var br = document.createElement('br');
+                div.appendChild(br);
+            });
+        }
+        else if(config.type === 'multiple_plots'){
+            var cfg = {
+                title: config.title,
+                data: []
+            }
+            config.data.forEach(item => {
+                var trace = item.data;
+                trace.name = item.title;
+                cfg.data.push(trace);
+            });
+            loadPlot(cfg);
         }
     }
     
@@ -199,6 +273,32 @@ function Display() {
             }
         }
         if(Array.isArray(config.data)){
+            if(config.data[0].type === 'pie'){
+                var rows = Math.ceil(config.data.length / 2);
+                var cols = config.data.length > 1 ? 2 : 1;
+                layout.grid = {
+                    rows: rows,
+                    columns: cols
+                }
+                layout.annotations = [];
+                var counter = 1;
+                config.data.forEach(item => {
+                    var row = Math.floor(counter / 2);
+                    var col = counter % 2 + 1;
+                    item.domain = {
+                        row: row,
+                        column: col
+                    }/*
+                    layout.annotations.push({
+                        text: item.name,
+                        x: (col - 1) * 0.5,
+                        y: (row + 2) / config.data.length,
+                        showarrow: false
+                    });*/
+                    counter++;
+                })
+            }
+            
             Plotly.newPlot(plotDiv, config.data, layout);
         }
         else{

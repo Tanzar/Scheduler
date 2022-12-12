@@ -36,4 +36,12 @@ class Columns {
     public function length() : int {
         return (int) count($this->cols);
     }
+    
+    public function totalWidth() : float {
+        $sum = 0;
+        foreach ($this->cols as $col) {
+            $sum += $col->getWidth();
+        }
+        return $sum;
+    }
 }

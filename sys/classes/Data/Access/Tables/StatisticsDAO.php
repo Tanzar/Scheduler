@@ -30,28 +30,25 @@ class StatisticsDAO extends DAO{
         return 'statistics';
     }
     
-    public function getNamesAndIdsByType(Type $type) : Container {
+    public function geTActiveWithoutForm() : Container {
         $sql = new MysqlBuilder();
-        $sql->select('statistics', array('id', 'name'))
-                ->where('type', $type->value);
+        $sql->select('statistics')->where('type', Type::Form->value, '!=');
         $stats = $this->select($sql);
         $this->parseJsons($stats);
         return $stats;
     }
     
-    public function getNamesAndIdsWhereTypeNot(Type $type) : Container {
+    public function getActiveForm() : Container {
         $sql = new MysqlBuilder();
-        $sql->select('statistics')
-                ->where('type', $type->value, '!=');
+        $sql->select('statistics')->where('type', Type::Form->value);
         $stats = $this->select($sql);
         $this->parseJsons($stats);
         return $stats;
     }
     
-    public function getActiveNamesAndIds() : Container {
+    public function getActive() : Container {
         $sql = new MysqlBuilder();
-        $sql->select('statistics', array('id', 'name'))
-                ->where('active', 1);
+        $sql->select('statistics')->where('active', 1);
         $stats = $this->select($sql);
         $this->parseJsons($stats);
         return $stats;

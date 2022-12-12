@@ -75,7 +75,6 @@ class NightShiftsReport extends PDFMaker{
         $this->printTableHeaders();
         $this->printTable();
         $this->printFoot();
-        $this->printSystemMark();
     }
     
     private function printHeaders() : void {
@@ -169,14 +168,15 @@ class NightShiftsReport extends PDFMaker{
         $this->Ln(5);
     }
     
-    private function printSystemMark() {
+    function footer() {
         $appconfig = AppConfig::getInstance();
         $cfg = $appconfig->getAppConfig();
         $appname = $cfg->get('name');
         $y = $this->h - 5;
+        $fontSize = $this->getCurrentFontSize();
         $this->setCurrentSize(8);
         $this->SetY($y);
-        $this->SetAutoPageBreak(false);
-        $this->writeCell(0, 5, 'Plik wygenerowany przez system ' . $appname, 0, 'R');
+        $this->writeCell(0, 5, "Plik wygenerowany przez system " . $appname . ", strona " . $this->PageNo() . "/{nb}", 0, 'R');
+        $this->setCurrentSize($fontSize);
     }
 }

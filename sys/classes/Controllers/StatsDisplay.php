@@ -45,4 +45,14 @@ class StatsDisplay extends Controller{
         $response = $this->stats->generateStats($data);
         $this->setResponse($response);
     }
+    
+    public function generatePDF() : void {
+        $data = $this->getRequestData();
+        $this->stats->generatePDF($data);
+    }
+    
+    public function generateXlsx() : void {
+        $data = $this->getRequestData();
+        $this->stats->generateXlsx($data);
+    }
 }
