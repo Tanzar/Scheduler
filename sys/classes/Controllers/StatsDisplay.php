@@ -43,7 +43,9 @@ class StatsDisplay extends Controller{
     public function generateStats() : void {
         $data = $this->getRequestData();
         $response = $this->stats->generateStats($data);
-        $this->setResponse($response);
+        if(!$response->isValueSet('disabled')){
+            $this->setResponse($response);
+        }
     }
     
     public function generatePDF() : void {

@@ -22,6 +22,7 @@ use Tanweb\Container as Container;
  */
 class Request {
     private Container $data;
+    private Container $files;
     private string $method;
     private string $controller;
     private string $task;
@@ -39,6 +40,7 @@ class Request {
                 self::throwException('undefined request method, must be post or get.');
         }
         $this->filterData($data, $check);
+        $this->loadFiles();
     }
     
     private function filterData(array $data, bool $check){
@@ -66,6 +68,16 @@ class Request {
         }
     }
     
+    private function loadFiles() {
+        $files = filter_var_array($_FILES);
+        $this->files = new Container();
+        if(count($files) > 0){
+            foreach ($files as $file){
+                $this->files->add($file);
+            }
+        }
+    }
+    
     public function getMethod() : string {
         return $this->method;
     }
@@ -76,6 +88,15 @@ class Request {
         }
         else{
             return $this->data;
+        }
+    }
+    
+    public function getFile(string $index = null){
+        if(isset($index)){
+            return $this->files->get($index);
+        }
+        else{
+            return $this->files;
         }
     }
     

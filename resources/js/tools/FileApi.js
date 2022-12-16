@@ -4,25 +4,28 @@
 
 class FileApi{
     
-    static get(controller, task, data){
+    static get(controller, task, data, newPage){
         var address = FileApi.getAddress();
         var form = document.createElement('form');
         form.setAttribute('method', 'get');
         form.setAttribute('action', address);
         FileApi.addData(form, controller, task, data);
-        form.target = '_blank';
+        if(newPage === undefined || newPage === true){
+            form.target = '_blank';
+        }
         document.body.appendChild(form);
         form.submit();
-        
     }
     
-    static post(controller, task, data){
+    static post(controller, task, data, newPage){
         var address = FileApi.getAddress();
         var form = document.createElement('form');
         form.setAttribute('method', 'post');
         form.setAttribute('action', address);
         FileApi.addData(form, controller, task, data);
-        form.target = '_blank';
+        if(newPage === undefined || newPage === true){
+            form.target = '_blank';
+        }
         document.body.appendChild(form);
         form.submit();
     }

@@ -34,6 +34,10 @@ class StatsPDF extends PDFMaker{
         $this->SetFillColor(200, 200, 200);
         $this->setMargin('all', $this->margins);
         $this->SetY($this->margins);
+        $appconfig = AppConfig::getInstance();
+        $cfg = $appconfig->getAppConfig();
+        $this->SetAuthor($cfg->get('name') . ' web app');
+        $this->SetTitle($this->title, true);
     }
     
     private function typeCheck(Container $stats) : void {

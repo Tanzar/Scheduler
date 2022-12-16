@@ -44,12 +44,12 @@ class NightShiftsReport extends PDFMaker{
         $this->bottomMargin = 15;
         $this->setMargin('all', $this->margin);
         $this->setMargin('bottom', $this->bottomMargin);
-        $this->SetAuthor('Scheduler web app');
         $this->month = $month;
         $this->year = $year;
         $this->rows = new Rows($month, $year);
         $appconfig = AppConfig::getInstance();
         $this->config = $appconfig->getAppConfig();
+        $this->SetAuthor($this->config->get('name') . ' web app');
         $languages = Languages::getInstance();
         $this->months = $languages->get('months');
         $this->monthsWhen = $languages->get('months_when');

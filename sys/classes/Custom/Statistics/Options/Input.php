@@ -181,4 +181,15 @@ enum Input : string {
         }
         return $result;
     }
+    
+    public function getTitleByValue($value) : string {
+        $values = $this->getValues();
+        foreach ($values as $item) {
+            $option = new Container($item);
+            if($option->get('value') === $value){
+                return $option->get('title');
+            }
+        }
+        return '';
+    }
 }

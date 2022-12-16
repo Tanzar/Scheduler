@@ -102,7 +102,10 @@ function LocationGroupsTable(language, div){
         columns : [
             { title: 'ID', variable: 'id', width: 30},
             { title: language.active, variable: 'active', width: 50},
-            { title: language.name, variable: 'name', width: 150, minWidth: 150}
+            { title: language.name, variable: 'name', width: 150, minWidth: 150},
+            { title: language.start, variable: 'active_from', width: 150, minWidth: 150},
+            { title: language.end, variable: 'active_to', width: 150, minWidth: 150},
+            { title: language.inspection, variable: 'inspection', width: 50}
         ],
         dataSource : { 
             method: 'post', 
@@ -118,7 +121,8 @@ function LocationGroupsTable(language, div){
         var fields = [
             {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
             {type: 'date', title: language.start, variable: 'active_from'},
-            {type: 'date', title: language.end, variable: 'active_to'}
+            {type: 'date', title: language.end, variable: 'active_to'},
+            {type: 'checkbox', title: language.inspection, variable: 'inspection'}
         ];
         openModalBox(language.new_location_group, fields, language.save, function(data){
             RestApi.post('AdminPanelLocation', 'saveLocationGroup', data,
@@ -139,7 +143,8 @@ function LocationGroupsTable(language, div){
             var fields = [
                 {type: 'text', title: language.name, variable: 'name', limit: 255, required: true},
                 {type: 'date', title: language.start, variable: 'active_from'},
-                {type: 'date', title: language.end, variable: 'active_to'}
+                {type: 'date', title: language.end, variable: 'active_to'},
+                {type: 'checkbox', title: language.inspection, variable: 'inspection'}
             ];
             openModalBox(language.edit_location_group, fields, language.save, function(data){
                 RestApi.post('AdminPanelLocation', 'saveLocationGroup', data,

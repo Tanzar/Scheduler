@@ -48,7 +48,9 @@ class NotificationList extends PDFMaker{
         $this->SetFillColor(200, 200, 200);
         $this->setCurrentSize(8);
         $this->setMargin('all', $this->defaultMargins);
-        $this->SetAuthor('Scheduler web app');
+        $appconfig = AppConfig::getInstance();
+        $cfg = $appconfig->getAppConfig();
+        $this->SetAuthor($cfg->get('name') . ' web app');
         $this->title = 'Lista Zgłoszenia ' . $this->months[$month] . ' ' . $year;
         $this->SetTitle($this->title, true);
         $this->countDaysPerPageLimit();

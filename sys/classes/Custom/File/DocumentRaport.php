@@ -66,10 +66,10 @@ class DocumentRaport extends PDFMaker{
         $this->margin = 10;
         $this->currentLeftMargin = $this->margin;
         $this->setMargin('all', $this->margin);
-        $this->SetAuthor('Scheduler web app');
         $this->documentId = $documentId;
         $appconfig = AppConfig::getInstance();
         $this->config = $appconfig->getAppConfig();
+        $this->SetAuthor($this->config->get('name') . ' web app');
         $this->loadData();
         $this->title = 'Raport dla dokumentu: ' . $this->number;
         $this->SetTitle($this->title, true);

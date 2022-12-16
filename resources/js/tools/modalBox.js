@@ -341,7 +341,7 @@ function openModalBox(title, fields, buttonText, onAccept, item){
         button.setAttribute('class', 'modal-box-button');
         footer.appendChild(button);
         button.onclick = function(){
-            var list = body.querySelectorAll(':invalid');
+            var list = modal.querySelectorAll(':invalid');
             if(list.length === 0){
                 body.removeChild(blocker);
                 onAccept(item);

@@ -34,7 +34,9 @@ class Timesheets extends PDFMaker{
         $this->setCurrentSize($this->font);
         $this->leftMargin = 10;
         $this->setMargin('all', $this->leftMargin);
-        $this->SetAuthor('Scheduler web app');
+        $appconfig = AppConfig::getInstance();
+        $cfg = $appconfig->getAppConfig();
+        $this->SetAuthor($cfg->get('name') . ' web app');
         $this->data = new Settings($month, $year, $username);
         $languages = Languages::getInstance();
         $months = $languages->get('months');

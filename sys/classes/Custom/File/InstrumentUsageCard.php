@@ -37,11 +37,11 @@ class InstrumentUsageCard extends PDFMaker{
         $this->setCurrentSize($this->font);
         $this->margin = 10;
         $this->setMargin('all', $this->margin);
-        $this->SetAuthor('Scheduler web app');
         $this->instrumentId = $instrumentId;
         $this->year = $year;
         $appconfig = AppConfig::getInstance();
         $this->config = $appconfig->getAppConfig();
+        $this->SetAuthor($this->config->get('name') . ' web app');
         $this->title = 'Karta ewidencji wykorzystania przyrządu';
         $this->SetTitle($this->title, true);
         $this->loadInstrument();

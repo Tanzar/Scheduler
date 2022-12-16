@@ -17,6 +17,7 @@ use Custom\Statistics\Statistics as Statistics;
 use Custom\Statistics\StatsPDF as StatsPDF;
 use Custom\Statistics\StatsExcel as StatsExcel;
 use Custom\Statistics\StatisticsFactory as StatisticsFactory;
+use Tanweb\Config\Template as Template;
 use Tanweb\Container as Container;
 /**
  * Description of StatsService
@@ -49,21 +50,7 @@ class StatsService {
     }
     
     public function getAllFormStatistics() : Container {
-        $stats = $this->statistics->getActiveForm();
-        $results = new Container();
-        foreach ($stats->toArray() as $item) {
-            $stat = new Container($item);
-            $parsed = array(
-                'id' => $stat->get('id'),
-                'name' => $stat->get('name'),
-                'type' => $stat->get('type')
-            );
-            $jsonArray = json_decode(json_encode($stat->get('json')), true);
-            $json = new Container($jsonArray);
-            $parsed['form'] = $json->get('resultForm');
-            $results->add($parsed);
-        }
-        return $results;
+        return $this->statistics->getActiveForm();
     }
     
     public function getActiveStats() : Container {
@@ -78,10 +65,23 @@ class StatsService {
             );
             $jsonArray = json_decode(json_encode($stat->get('json')), true);
             $json = new Container($jsonArray);
-            $parsed['form'] = $json->get('resultForm');
+            if($json->isValueSet('resultForm')){
+                $parsed['form'] = $json->get('resultForm');
+            }
+            else{
+                $parsed['form'] = 'XLSX';
+            }
             $results->add($parsed);
         }
         return $results;
+    }
+    
+    public function getTemplatesList() : Container {
+        return Template::listTemplates('stats');
+    }
+    
+    public function uploadTemplate(Container $file) : void {
+        Template::uploadFile($file, 'stats');
     }
     
     public function getStatsSettingsStageOne() : Container {
@@ -123,12 +123,10 @@ class StatsService {
         $cases = Input::cases();
         $result = new Container();
         foreach ($cases as $item) {
-            if(Input::from($item->value) != Input::YearsRange && Input::from($item->value) != Input::MonthsRange){
-                $result->add(array(
-                    'title' => $item->value,
-                    'value' => $item->value
-                ));
-            }
+            $result->add(array(
+                'title' => $item->value,
+                'value' => $item->value
+            ));
         }
         return $result->toArray();
     }
@@ -152,11 +150,26 @@ class StatsService {
         return $result;
     }
     
-    private function getGroups(Container $data) : array {
-        $json = new Container($data->get('json'));
-        $dataset = DataSet::from($json->get('dataset'));
-        $groups = Group::getGroupsForDataSet($dataset);
-        return $groups->toArray();
+    public function getGroups(Container $data = null) : array {
+        if($data !== null){
+            if($data->isValueSet('json')){
+                $json = new Container($data->get('json'));
+                $dataset = DataSet::from($json->get('dataset'));
+            }
+            else{
+                $dataset = DataSet::from($data->get('dataset'));
+            }
+            $groups = Group::getGroupsForDataSet($dataset);
+            return $groups->toArray();
+        }
+        else{
+            return Group::cases();
+        }
+    }
+    
+    public function getGroupOptions(string $gorup) : Container {
+        $grp = Group::from($gorup);
+        return $grp->getOptions();
     }
     
     private function getMethods(Container $data) : array {
@@ -174,6 +187,15 @@ class StatsService {
         $inputs = $json->get('inputs');
         $result = new Container();
         foreach($inputs as $item){
+            $input = Input::from($item);
+            $result->add($input->toJson()->toArray());
+        }
+        return $result;
+    }
+    
+    public function getInputsOptions(Container $inputs) : Container {
+        $result = new Container();
+        foreach($inputs->toArray() as $item){
             $input = Input::from($item);
             $result->add($input->toJson()->toArray());
         }
@@ -208,6 +230,13 @@ class StatsService {
             $json->add($inputs->toArray(), 'inputs', true);
             $data->add($json->toArray(), 'json', true);
         }
+    }
+    
+    public function saveFormStats(Container $data) : int {
+        $json = json_encode($data->get('json'), JSON_UNESCAPED_UNICODE);
+        $data->add(Type::Form->value, 'type');
+        $data->add($json, 'json', true);
+        return $this->statistics->save($data);
     }
     
     public function removeStats(int $id) : void {

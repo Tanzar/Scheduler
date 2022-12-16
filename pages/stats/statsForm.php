@@ -4,13 +4,12 @@
     require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
     
     use Tanweb\Security\PageAccess as PageAccess;
-    use Services\UserService as UserService;
     use Tanweb\Config\Resources as Resources;
     use Tanweb\Config\Scripts as Scripts;
+    use Tanweb\Config\Template as Template;
     use Tanweb\Config\INI\AppConfig as AppConfig;
     use Tanweb\Container as Container;
     use Tanweb\Config\INI\Languages as Languages;
-    use Custom\Statistics\Options\DataSet as DataSet;
     
     PageAccess::allowFor(['admin', 'stats_admin']);   //locks access if failed to pass redirects to index page
     $languages = Languages::getInstance();
@@ -40,7 +39,7 @@ This code is free to use, just remember to give credit.
             Resources::linkJS('modalBox.js');
             Resources::linkJS('RestApi.js');
             Resources::linkJS('getRestAddress.js');
-            Resources::linkJS('statsSettings.js');
+            Resources::linkJS('statsSettingsForm.js');
             Resources::linkExternal('jquery');
         ?>
     </head>
@@ -50,7 +49,62 @@ This code is free to use, just remember to give credit.
         </header>
         <?php Scripts::run('statsSideMenu.php'); ?>
         <div class="page-contents" id="display">
-            
+            <div class="horizontal-container">
+                <div id="stats"></div>
+                <div class="centered-contents">
+                    <div class="standard-text-title">
+                        <?php echo $interfaceText->get('new_statistic'); ?>
+                    </div>
+                    <div class="horizontal-container">
+                        <input type="text" id="statsName" placeholder="<?php echo $interfaceText->get('name'); ?>" limit="255" class="standard-input" required>
+                        <button id="savePattern" class="standard-button">
+                            <?php echo $interfaceText->get('save'); ?>
+                        </button>
+                    </div>
+                    <div class="horizontal-container">
+                        <div class="standard-text"><?php echo $interfaceText->get('inputs') . ': '; ?></div>
+                        <div class="standard-text" id="inputsDisplay"></div>
+                        <button class="standard-button" id="setInputs"><?php echo $interfaceText->get('edit'); ?></button>
+                    </div>
+                    <div>
+                        <select id="selectPatternFile" class="standard-input" required>
+                            <?php 
+                                $templates = Template::listTemplates('stats');
+                                echo '<option disabled placeholder selected value="">';
+                                echo $interfaceText->get('select_pattern_file') . '</option>';
+                                foreach ($templates->toArray() as $filename) {
+                                    echo '<option value="' . $filename . '">';
+                                    echo $filename . '</option>';
+                                }
+                            ?>
+                        </select>
+                        <input type="file" name="uploadPatternFile" id="uploadPatternFile" accept=".xlsx" class="standard-input" required>
+                        <button id="uploadPattern" class="standard-button">
+                            <?php echo $interfaceText->get('send'); ?>
+                        </button>
+                    </div>
+                    <div class="horizontal-container">
+                        <div class="centered-contents">
+                            <div class="standard-text">
+                                <?php echo $interfaceText->get('columns'); ?>
+                            </div>
+                            <div id="columns"></div>
+                        </div>
+                        <div class="centered-contents">
+                            <div class="standard-text">
+                                <?php echo $interfaceText->get('rows'); ?>
+                            </div>
+                            <div id="rows"></div>
+                        </div>
+                        <div class="centered-contents">
+                            <div class="standard-text">
+                                <?php echo $interfaceText->get('cells'); ?>
+                            </div>
+                            <div id="cells"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <?php
             Scripts::run('createFooter.php');

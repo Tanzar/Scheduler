@@ -116,6 +116,9 @@ function Datatable(div, config){
                 }
             }
         }
+        else{
+            this.loadData(this.data);
+        }
     }
     
     this.createDataRow = function(index, item){
@@ -336,6 +339,13 @@ function Datatable(div, config){
         }
     }
     
+    this.getSelectedIndex = function(){
+        if(this.data === undefined || this.data.length === 0 ){
+            return undefined;
+        }
+        return this.selectedIndex;
+    }
+    
     this.clearTable = function(){
         this.selectedIndex = [];
         while (this.div.firstChild) {
@@ -393,5 +403,10 @@ function Datatable(div, config){
     this.getData = function(){
         var copy = JSON.parse(JSON.stringify(this.data));
         return copy;
+    }
+    
+    this.setData = function(data){
+        this.data = data;
+        this.refresh();
     }
 }

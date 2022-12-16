@@ -47,7 +47,9 @@ class AttendanceList extends PDFMaker{
         $this->setCurrentSize(9);
         $this->setMargin('left', 3);
         $this->setMargin('bottom', 15);
-        $this->SetAuthor('Scheduler web app');
+        $appconfig = AppConfig::getInstance();
+        $cfg = $appconfig->getAppConfig();
+        $this->SetAuthor($cfg->get('name') . ' web app');
         $this->title = 'Lista Obecności ' . $this->months[$month] . ' ' . $year;
         $this->SetTitle($this->title, true);
         $this->loadDaysOff($month, $year);

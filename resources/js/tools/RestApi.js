@@ -114,4 +114,49 @@ class RestApi {
             console.log(response.responseText);
         });
     }
+    
+    static upload(controller, task, fileInput, onSuccess, onError, onComplete){
+        var file = fileInput.files[0];
+        var formData = new FormData();
+        formData.append('file', file);
+        formData.append('task', task);
+        formData.append('controller', controller);
+        var address = RestApi.getAddress();
+        var response = '';
+        $.ajax({
+                url: address,
+                type: 'POST',
+                data: formData,
+                processData: false,  // tell jQuery not to process the data
+                contentType: false,  // tell jQuery not to set contentType
+                success: function (data) {
+                    if(onSuccess === undefined){
+                        try{
+                            response = JSON.parse(data); 
+                            console.log(response);
+                        }
+                        catch(e){
+                            alert(e);
+                        }
+                    }
+                    else{
+                        onSuccess(data);
+                    }
+                },
+                error: function (data) {
+                    if(onError === undefined){
+                        console.log(data);
+                    }
+                    else{
+                        onError(data);
+                    }
+                },
+                complete: function (data) {
+                    if(onComplete !== undefined){
+                        onComplete(data);
+                    }
+                }
+        });
+        return response;
+    }
 }

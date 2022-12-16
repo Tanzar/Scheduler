@@ -13,12 +13,13 @@ namespace Tanweb\File;
  * @author Grzegorz Spakowski, Tanzar
  */
 use PhpOffice\PhpSpreadsheet\Spreadsheet as Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx as Xlsx;
-use \PhpOffice\PhpSpreadsheet\IOFactory as IOFactory;
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx as Reader;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx as Writer;
 use PhpOffice\PhpSpreadsheet\Style\Border as Border;
 use PhpOffice\PhpSpreadsheet\Style\Color as Color;
 use PhpOffice\PhpSpreadsheet\Style\Alignment as Alignment;
 use PhpOffice\PhpSpreadsheet\Style\Fill as Fill;
+use ZipArchive;
 
 class ExcelEditor {
     private $name;
@@ -26,13 +27,16 @@ class ExcelEditor {
     
     public function openFile(string $path) : void {
         $this->name = $path;
-        $this->spreadsheet = IOFactory::load($path);
+        $reader = new Reader();
+        $this->spreadsheet = $reader->load($path);
     }
     
-    public function newFile(string $name, string $sheetName = 'Worksheet') : void {
+    public function newFile(string $name, string $author, string $sheetName = 'Worksheet') : void {
         $this->name = $name;
         $this->spreadsheet = new Spreadsheet();
         $this->spreadsheet->getActiveSheet()->setTitle($sheetName);
+        $this->spreadsheet->getProperties()->setCreator($author);
+        $this->spreadsheet->getProperties()->setLastModifiedBy($author);
     }
     
     public function addSheet(string $name) : void {
@@ -81,10 +85,18 @@ class ExcelEditor {
     }
     
     public function sendToBrowser(string $filename) : void {
-        $writer = new Xlsx($this->spreadsheet);
-        header('Content-Type: application/vnd.ms-excel');
+        $this->spreadsheet->getProperties()->setTitle($filename);
+        $writer = new Writer($this->spreadsheet);
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition: attachment; filename="' . $filename . '.xlsx"');
+        header('Cache-Control: max-age=0');
         $writer->save("php://output");
+    }
+    
+    public function getCurrentSheetName() : string {
+        $names = $this->spreadsheet->getSheetNames();
+        $index = $this->spreadsheet->getActiveSheetIndex();
+        return $names[$index];
     }
     
     public function getAddress(int $row, int $col) : string {

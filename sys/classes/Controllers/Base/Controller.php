@@ -134,6 +134,10 @@ abstract class Controller {
         return $this->request->get();
     }
     
+    protected function getRequestFiles() : Container{
+        return $this->request->getFile();
+    }
+    
     protected function setResponse(Container $container){
         $this->response->overrideData($container);
     }

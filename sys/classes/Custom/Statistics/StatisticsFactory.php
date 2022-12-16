@@ -12,6 +12,7 @@ use Custom\Statistics\Statistics as Statistics;
 use Custom\Statistics\SingleStats as SingleStats;
 use Custom\Statistics\MonthlyStats as MonthlyStats;
 use Custom\Statistics\YearlyStats as YearlyStats;
+use Custom\Statistics\PatternStats as PatternStats;
 use Tanweb\Container as Container;
 use Custom\Statistics\Exceptions\UnsupportedStatisticsTypeException as UnsupportedStatisticsTypeException;
 
@@ -36,7 +37,7 @@ class StatisticsFactory {
             case Type::Yearly:
                 return new YearlyStats($statistic, $data);
             case Type::Form:
-                break;
+                return new PatternStats($statistic, $data);
         }
         throw new UnsupportedStatisticsTypeException($type);
     }

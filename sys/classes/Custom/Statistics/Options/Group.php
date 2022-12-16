@@ -22,6 +22,7 @@ enum Group : string {
     case Days = 'Dni';
     case Months = 'Miesiące';
     case Years = 'Lata';
+    case Quarters = 'Kwartały';
     case Users = 'Użytkownicy';
     case UserTypes = 'Typy Użytkowników';
     case Activities = 'Czynności';
@@ -30,12 +31,14 @@ enum Group : string {
     case LocationGroups = 'Grupy miejsc';
     case LocationTypes = 'Typy miejsc';
     case SuspensionType = 'Typy zatrzymań';
+    case Ground = 'Poziom';
     
-    public function getOptions(Container $inputValues) : Container {
+    public function getOptions(Container $inputValues = new Container()) : Container {
         return match($this) {
             Group::Days => $this->getDayNumbers($inputValues),
             Group::Months => $this->getMonths($inputValues),
             Group::Years => $this->getYears($inputValues),
+            Group::Quarters => $this->getQuarters(),
             Group::Users => $this->getUsers($inputValues),
             Group::UserTypes => $this->getUserTypes(),
             Group::Activities => $this->getActivities(),
@@ -43,7 +46,8 @@ enum Group : string {
             Group::Locations => $this->getInspectionLocations($inputValues),
             Group::LocationGroups => $this->getLocationGroups($inputValues),
             Group::LocationTypes => $this->getInspectionLocationTypes($inputValues),
-            Group::SuspensionType => $this->getSuspensionTypes()
+            Group::SuspensionType => $this->getSuspensionTypes(),
+            Group::Ground => $this->getGrounds()
         };
     }
     
@@ -118,6 +122,27 @@ enum Group : string {
         return $result;
     }
     
+    private function getQuarters() : Container {
+        $result = new Container();
+        $result->add(array(
+            'title' => 'I Kwartał',
+            'value' => 1
+        ));
+        $result->add(array(
+            'title' => 'II Kwartał',
+            'value' => 2
+        ));
+        $result->add(array(
+            'title' => 'III Kwartał',
+            'value' => 3
+        ));
+        $result->add(array(
+            'title' => 'IV Kwartał',
+            'value' => 4
+        ));
+        return $result;
+    }
+    
     private function getUsers(Container $inputValues) : Container {
         $database = Database::getInstance('scheduler');
         $sql = new MysqlBuilder();
@@ -140,7 +165,8 @@ enum Group : string {
                 'title' => $element->get('name') . ' ' . $element->get('surname'),
                 'value' => $element->get('username'),
                 'SUZUG' => $element->get('number'),
-                'year' => $element->get('year')
+                'year' => $element->get('year'),
+                'user_type' => $element->get('user_type')
             ));
         }
         return $result;
@@ -235,9 +261,6 @@ enum Group : string {
         $database = Database::getInstance('scheduler');
         $sql = $this->formLocationGroupSQL($inputValues);
         $data = $database->select($sql);
-        if ($inputValues->isValueSet('id_location_group')) {
-            $sql->and()->where('id', $inputValues->get('id_location_group'));
-        }
         $result = new Container();
         foreach ($data->toArray() as $item) {
             $element = new Container($item);
@@ -251,7 +274,7 @@ enum Group : string {
     
     private function formLocationGroupSQL(Container $inputValues) : MysqlBuilder {
         $sql = new MysqlBuilder();
-        $sql->select('location_groups');
+        $sql->select('location_group')->where('inspection', 1);
         if ($inputValues->isValueSet('id_location_group')) {
             $sql->and()->where('id', $inputValues->get('id_location_group'));
         }
@@ -308,13 +331,26 @@ enum Group : string {
         return $result;
     }
     
+    private function getGrounds() : Container {
+        $result = new Container();
+        $result->add(array(
+            'title' => 'Dół',
+            'value' => 1
+        ));
+        $result->add(array(
+            'title' => 'Góra',
+            'value' => 0
+        ));
+        return $result;
+    }
+    
     public static function getGroupsForDataSet(DataSet $dataset) : Container {
         return match ($dataset){
             DataSet::Articles => self::formContainer(),
             DataSet::CourtApplications => self::formContainer(),
             DataSet::Decisions => self::formContainer(),
-            DataSet::Entries => self::formContainer(Group::Activities, Group::InspectionActivities),
-            DataSet::Inspections => self::formContainer(Group::Activities, Group::InspectionActivities),
+            DataSet::Entries => self::formContainer(Group::Activities, Group::InspectionActivities, Group::Ground),
+            DataSet::Inspections => self::formContainer(Group::Activities, Group::InspectionActivities, Group::Ground),
             DataSet::InstrumentUsages => self::formContainer(),
             DataSet::Suspensions => self::formContainer(Group::SuspensionType),
             Dataset::SuspensionsWithDecisions => self::formContainer(Group::SuspensionType),
@@ -331,6 +367,7 @@ enum Group : string {
         $result->add(Group::Days->value);
         $result->add(Group::Months->value);
         $result->add(Group::Years->value);
+        $result->add(Group::Quarters->value);
         $result->add(Group::Users->value);
         $result->add(Group::UserTypes->value);
         $result->add(Group::Locations->value);
@@ -347,14 +384,16 @@ enum Group : string {
             Group::Days => 'day',
             Group::Months => 'month',
             Group::Years => 'year',
+            Group::Quarters => 'quarter',
             Group::Users => 'username',
             Group::UserTypes => 'user_type',
-            Group::Activities => 'is_activity',
+            Group::Activities => 'id_activity',
             Group::InspectionActivities => 'id_activity',
             Group::Locations => 'id_location',
             Group::LocationGroups => 'id_location_group',
             Group::LocationTypes => 'id_location_type',
-            Group::SuspensionType => 'id_suspension_type'
+            Group::SuspensionType => 'id_suspension_type',
+            Group::Ground => 'underground'
         };
     }
     
@@ -363,6 +402,7 @@ enum Group : string {
             Group::Days => $this->getDay($dataRow),
             Group::Months => $this->getMonth($dataRow),
             Group::Years => $this->getYear($dataRow),
+            Group::Quarters => $this->getQuarter($dataRow),
             Group::Users => $dataRow->get('username'),
             Group::UserTypes => $dataRow->get('user_type'),
             Group::Activities => $dataRow->get('id_activity'),
@@ -370,7 +410,8 @@ enum Group : string {
             Group::Locations => $dataRow->get('id_location'),
             Group::LocationGroups => $dataRow->get('id_location_group'),
             Group::LocationTypes => $dataRow->get('id_location_type'),
-            Group::SuspensionType => $dataRow->get('id_suspension_type')
+            Group::SuspensionType => $dataRow->get('id_suspension_type'),
+            Group::Ground => $dataRow->get('underground')
         };
     }
     
@@ -392,5 +433,16 @@ enum Group : string {
         return $date->format('Y');
     }
     
-    
+    private function getQuarter(Container $dataRow){
+        if($dataRow->isValueSet('date')){
+            $dateString = $dataRow->get('date');
+        }
+        else{
+            $dateString = $dataRow->get('year') . '-' . $dataRow->get('month') .
+                    '-' . $dataRow->get('day');
+        }
+        $date = new DateTime($dateString);
+        $month = (int) $date->format('n');
+        return ceil($month / 3);
+    }
 }

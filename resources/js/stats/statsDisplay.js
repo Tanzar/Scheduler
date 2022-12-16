@@ -55,14 +55,19 @@ function initStatsTable(language) {
             var inputsData = JSON.parse(JSON.stringify(json));
             var selected = datatable.getSelected();
             inputsData.id = selected.id;
-            RestApi.post('StatsDisplay', 'generateStats', inputsData, function(response){
-                var statsData = JSON.parse(response);
-                display.load(statsData, inputs.getTexts());
-                if(statsData.type === 'table' || statsData.type === 'multiple_tables'){
-                    document.getElementById('generatePDF').style.display = 'block';
-                    document.getElementById('generateExcel').style.display = 'block';
-                }
-            });
+            if(selected.type !== 'Ze wzoru'){
+                RestApi.post('StatsDisplay', 'generateStats', inputsData, function(response){
+                    var statsData = JSON.parse(response);
+                    display.load(statsData, inputs.getTexts());
+                    if(statsData.type === 'table' || statsData.type === 'multiple_tables'){
+                        document.getElementById('generatePDF').style.display = 'block';
+                        document.getElementById('generateExcel').style.display = 'block';
+                    }
+                });
+            }
+            else{
+                FileApi.post('StatsDisplay', 'generateStats', inputsData, false);
+            }
         }
     });
     $('#generatePDF').click(function(){
@@ -74,7 +79,7 @@ function initStatsTable(language) {
             var data = JSON.parse(JSON.stringify(json));
             var selected = datatable.getSelected();
             data.id = selected.id;
-            FileApi.post('StatsDisplay', 'generatePDF', data);
+            FileApi.post('StatsDisplay', 'generatePDF', data, true);
         }
     });
     $('#generateExcel').click(function(){
@@ -86,7 +91,7 @@ function initStatsTable(language) {
             var data = JSON.parse(JSON.stringify(json));
             var selected = datatable.getSelected();
             data.id = selected.id;
-            FileApi.post('StatsDisplay', 'generateXlsx', data);
+            FileApi.post('StatsDisplay', 'generateXlsx', data, false);
         }
     });
 }

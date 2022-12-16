@@ -24,7 +24,10 @@ class StatsExcel {
         $xlsx = new ExcelEditor();
         $title = $stats->get('title');
         if($stats->get('type') === 'table'){
-            $xlsx->newFile($title, 'main');
+            $appconfig = AppConfig::getInstance();
+            $cfg = $appconfig->getAppConfig();
+            $author = $cfg->get('name') . ' web app';
+            $xlsx->newFile($title, $author, 'main');
             self::writeSheet($xlsx, $stats, 'main');
         }
         elseif ($stats->get('type') === 'multiple_tables'){
@@ -49,9 +52,12 @@ class StatsExcel {
         $title = $stats->get('title');
         foreach ($data as $index => $table) {
             $tableData = new Container($table);
-            $sheetName = 'Stats_' . ($index + 1);
+            $sheetName = $tableData->get('title');
             if($index === 0) {
-                $xlsx->newFile($title, $sheetName);
+                $appconfig = AppConfig::getInstance();
+                $cfg = $appconfig->getAppConfig();
+                $author = $cfg->get('name') . ' web app';
+                $xlsx->newFile($title, $author, $sheetName);
             }
             else{
                 $xlsx->addSheet($sheetName);

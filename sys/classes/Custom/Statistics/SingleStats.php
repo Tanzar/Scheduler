@@ -7,12 +7,10 @@
 namespace Custom\Statistics;
 
 use Tanweb\Container as Container;
-use Custom\Statistics\Calculation\Calculator as Calculator;
 use Custom\Statistics\Calculation\ResultSet as ResultSet;
 use Custom\Statistics\Options\Group as Group;
 use Custom\Statistics\Options\ResultForm as ResultForm;
 use Custom\Statistics\Options\Method as Method;
-use Custom\Statistics\Options\Shift as Shift;
 
 /**
  * Description of SingleStats
@@ -32,7 +30,7 @@ class SingleStats extends Statistics {
         $groupingColumns = $this->parseGroupingColumns();
         $json = $this->getJson();
         $method = Method::from($json->get('method'));
-        $resultSet = $this->calculate($method, $data, $groupingColumns);
+        $resultSet = $method->calculate($data, $groupingColumns);
         return $this->parseResultSet($resultSet);
     }
 
@@ -48,29 +46,6 @@ class SingleStats extends Statistics {
             $result->add($group);
         }
         return $result;
-    }
-    
-    private function calculate(Method $method, Container $data, Container $groupingColumns) : ResultSet {
-        switch($method) {
-            case Method::Sum:
-                return Calculator::sum($data, $groupingColumns, 'value');
-            case Method::Count:
-                return Calculator::count($data, $groupingColumns);
-            case Method::CountWorkdays:
-                return Calculator::countWorkdays($data, $groupingColumns);
-            case Method::CountNightShifts:
-                return Calculator::countNightShifts($data, $groupingColumns);
-            case Method::CountShiftA:
-                return Calculator::countShift($data, $groupingColumns, Shift::A);
-            case Method::CountShiftB:
-                return Calculator::countShift($data, $groupingColumns, Shift::B);
-            case Method::CountShiftC:
-                return Calculator::countShift($data, $groupingColumns, Shift::C);
-            case Method::CountShiftD:
-                return Calculator::countShift($data, $groupingColumns, Shift::D);
-            default:
-                return new ResultSet();
-        }
     }
     
     private function parseResultSet(ResultSet $resultSet) : Container {
@@ -116,6 +91,9 @@ class SingleStats extends Statistics {
             $row[] = 'SUZUG';
         }
         $row[] = $rowsGroup->value;
+        if($rowsGroup === Group::Users){
+            $row[] = 'Typ';
+        }
         foreach ($columns->toArray() as $column) {
             $row[] = $column['title'];
         }
@@ -132,6 +110,9 @@ class SingleStats extends Statistics {
             $row[] = $rowOptions['SUZUG'];
         }
         $row[] = $rowOptions['title'];
+        if($rowsGroup === Group::Users){
+            $row[] = $rowOptions['user_type'];
+        }
         foreach ($columns->toArray() as $column) {
             $keysValues = array();
             $keysValues[$rowsGroup->getColumn()] = $rowOptions['value'];

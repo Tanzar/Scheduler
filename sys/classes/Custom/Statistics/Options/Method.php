@@ -8,6 +8,9 @@ namespace Custom\Statistics\Options;
 
 use Tanweb\Container as Container;
 use Custom\Statistics\Options\DataSet as DataSet;
+use Custom\Statistics\Calculation\Calculator as Calculator;
+use Custom\Statistics\Calculation\ResultSet as ResultSet;
+use Custom\Statistics\Options\Shift as Shift;
 /**
  *
  * @author Tanzar
@@ -47,5 +50,28 @@ enum Method : string {
             $result->add($group->value);
         }
         return $result;
+    }
+    
+    public function calculate(Container $data, Container $groupingColumns) : ResultSet {
+        switch($this) {
+            case Method::Sum:
+                return Calculator::sum($data, $groupingColumns, 'value');
+            case Method::Count:
+                return Calculator::count($data, $groupingColumns);
+            case Method::CountWorkdays:
+                return Calculator::countWorkdays($data, $groupingColumns);
+            case Method::CountNightShifts:
+                return Calculator::countNightShifts($data, $groupingColumns);
+            case Method::CountShiftA:
+                return Calculator::countShift($data, $groupingColumns, Shift::A);
+            case Method::CountShiftB:
+                return Calculator::countShift($data, $groupingColumns, Shift::B);
+            case Method::CountShiftC:
+                return Calculator::countShift($data, $groupingColumns, Shift::C);
+            case Method::CountShiftD:
+                return Calculator::countShift($data, $groupingColumns, Shift::D);
+            default:
+                return new ResultSet();
+        }
     }
 }

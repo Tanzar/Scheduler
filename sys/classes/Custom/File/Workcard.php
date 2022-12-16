@@ -42,7 +42,6 @@ class Workcard extends PDFMaker{
         $this->bottomMargin = 24;
         $this->setMargin('all', $this->margin);
         $this->setMargin('bottom', $this->bottomMargin);
-        $this->SetAuthor('Scheduler web app');
         $this->month = $month;
         $this->year = $year;
         $this->username = $username;
@@ -50,6 +49,7 @@ class Workcard extends PDFMaker{
         $this->rows = new Rows($month, $year, $username);
         $appconfig = AppConfig::getInstance();
         $this->config = $appconfig->getAppConfig();
+        $this->SetAuthor($this->config->get('name') . ' web app');
         $languages = Languages::getInstance();
         $months = $languages->get('months');
         $this->monthText = $months[$month];
