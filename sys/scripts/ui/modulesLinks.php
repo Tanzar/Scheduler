@@ -44,14 +44,21 @@ try{
     }
     
     //--- INVENTORY ---//
-     if($security->userHaveAnyPrivilage(new Container(['admin', 'inventory_user', 'inventory_admin']))){
+    if($security->userHaveAnyPrivilage(new Container(['admin', 'inventory_user', 'inventory_admin']))){
         echo '<form action="' . Pages::getURL('inventoryMy.php') . '">';
         echo '<input type="submit" class="standard-button" value="' . $modules->get('inventory') . '">';
         echo '</form>';
     }
     
+    //--- QUALIFICATIONS ---//
+    if($security->userHaveAnyPrivilage(new Container(['admin', 'qualification_user']))){
+        echo '<form action="' . Pages::getURL('qualificationMain.php') . '">';
+        echo '<input type="submit" class="standard-button" value="' . $modules->get('qualifications') . '">';
+        echo '</form>';
+    }
+    
     //--- STATS ---//
-     if($security->userHaveAnyPrivilage(new Container(['admin', 'stats_user', 'stats_admin']))){
+    if($security->userHaveAnyPrivilage(new Container(['admin', 'stats_user', 'stats_admin']))){
         echo '<form action="' . Pages::getURL('statsDisplay.php') . '">';
         echo '<input type="submit" class="standard-button" value="' . $modules->get('stats') . '">';
         echo '</form>';

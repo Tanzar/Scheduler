@@ -78,6 +78,15 @@
     <div class="standard-text">
         <?php echo $moduleNames->get('qualifications'); ?>
     </div>
+    <form action="<?php echo Pages::getURL('adminPanelQualification.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('qualification'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('adminPanelQualificationEducation.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('qualification_education'); ?>">
+    </form>
+    <form action="<?php echo Pages::getURL('adminPanelQualificationSettings.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('qualification_settings'); ?>">
+    </form>
     <div class="standard-text">
         <?php echo $moduleNames->get('prints'); ?>
     </div>

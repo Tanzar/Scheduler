@@ -228,6 +228,7 @@ footer {
     padding: 5px;
     margin: 3px;
     outline: none;
+    white-space: nowrap;
 }
 
 .standard-text-title {

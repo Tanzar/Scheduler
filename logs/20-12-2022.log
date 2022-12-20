@@ -1,0 +1,495 @@
+[2022-12-20  06:56:11] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  06:56:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  06:56:18] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  06:56:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  06:56:21] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  06:56:23] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  06:56:24] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-12-20  06:56:24] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-12-20  06:56:24] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-12-20  06:56:24] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-12-20  06:56:24] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-12-20  06:56:24] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-12-20  06:56:27] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  06:56:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  06:56:30] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  06:56:30] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '0'
+[2022-12-20  06:56:30] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  06:56:30] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  06:56:33] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  06:56:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-12-20  06:56:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  06:56:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelSuspension Task: getUserSuspensionsData: {}
+[2022-12-20  06:56:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  username = '' and year(date) = '0'
+[2022-12-20  06:56:36] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  06:56:38] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  06:56:39] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  06:56:39] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  07:30:31] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:30:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:30:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:30:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '0'
+[2022-12-20  07:30:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:30:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '0'
+[2022-12-20  07:30:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:30:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  07:30:45] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:30:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:30:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:30:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '0'
+[2022-12-20  07:30:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:30:48] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  07:30:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:30:48] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '0'
+[2022-12-20  07:30:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:30:51] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person
+[2022-12-20  07:31:49] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:31:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:31:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:31:51] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  07:31:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:31:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '0'
+[2022-12-20  07:31:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:31:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '0'
+[2022-12-20  07:31:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:31:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person
+[2022-12-20  07:31:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:31:57] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '2'
+[2022-12-20  07:31:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:31:57] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '2'
+[2022-12-20  07:32:18] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: saveEducationData: {}
+[2022-12-20  07:32:18] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO education (degree, specialization, year, school) VALUES ('dok', 'word', '1999', 'Office')
+[2022-12-20  07:32:18] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] SQLSTATE[HY000]: General error: 1364 Field 'id_person' doesn't have a default value ;
+ #0 /var/www/html/sys/classes/Tanweb/Database/Database.php(140): PDOStatement->execute()
+#1 /var/www/html/sys/classes/Data/Access/DataAccessObject.php(133): Tanweb\Database\Database->insert(Object(Tanweb\Database\SQL\MysqlBuilder))
+#2 /var/www/html/sys/classes/Data/Access/DataAccessObject.php(110): Data\Access\DataAccessObject->insert(Object(Tanweb\Database\SQL\MysqlBuilder))
+#3 /var/www/html/sys/classes/Data/Access/DataAccessObject.php(64): Data\Access\DataAccessObject->add(Object(Tanweb\Container))
+#4 /var/www/html/sys/classes/Services/QualificationService.php(145): Data\Access\DataAccessObject->save(Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Controllers/AdminPanelQualification.php(105): Services\QualificationService->saveEducation(Object(Tanweb\Container))
+#6 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\AdminPanelQualification->saveEducation()
+#7 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2022-12-20  07:33:29] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:33:31] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:33:31] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:33:31] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  07:33:32] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:33:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '0'
+[2022-12-20  07:33:32] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:33:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '0'
+[2022-12-20  07:33:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:33:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person
+[2022-12-20  07:33:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:33:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '1'
+[2022-12-20  07:33:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:33:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '1'
+[2022-12-20  07:33:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: saveEducationData: {}
+[2022-12-20  07:33:54] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO education (degree, specialization, year, school, id_person) VALUES ('dok', 'word', '1999', 'office', '1')
+[2022-12-20  07:33:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:33:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '1'
+[2022-12-20  07:33:59] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: changeEducationStatusData: {}
+[2022-12-20  07:33:59] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id = '1'
+[2022-12-20  07:33:59] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE education SET active='0' WHERE id = '1'
+[2022-12-20  07:34:00] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:34:00] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '1'
+[2022-12-20  07:34:03] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: changeEducationStatusData: {}
+[2022-12-20  07:34:03] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id = '1'
+[2022-12-20  07:34:03] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE education SET active='1' WHERE id = '1'
+[2022-12-20  07:34:04] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:34:04] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '1'
+[2022-12-20  07:34:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: saveEducationData: {}
+[2022-12-20  07:34:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id = '1'
+[2022-12-20  07:34:14] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE education SET active='1', degree='xlsx', specialization='excel', year='1999', id_person='1' WHERE id = '1'
+[2022-12-20  07:34:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:34:15] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '1'
+[2022-12-20  07:34:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: saveCourseData: {}
+[2022-12-20  07:34:28] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO courses (name, id_person) VALUES ('Human', '1')
+[2022-12-20  07:34:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:34:29] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '1'
+[2022-12-20  07:34:31] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: changeCourseStatusData: {}
+[2022-12-20  07:34:31] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id = '1'
+[2022-12-20  07:34:31] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE courses SET active='0' WHERE id = '1'
+[2022-12-20  07:34:32] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:34:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '1'
+[2022-12-20  07:34:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: changeCourseStatusData: {}
+[2022-12-20  07:34:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id = '1'
+[2022-12-20  07:34:34] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE courses SET active='1' WHERE id = '1'
+[2022-12-20  07:34:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:34:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '1'
+[2022-12-20  07:34:42] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: saveCourseData: {}
+[2022-12-20  07:34:42] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id = '1'
+[2022-12-20  07:34:42] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE courses SET active='1', name='Human v2', id_person='1' WHERE id = '1'
+[2022-12-20  07:34:43] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:34:43] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '1'
+[2022-12-20  07:36:00] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:36:03] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:36:03] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:36:03] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  07:36:04] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:36:04] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '0'
+[2022-12-20  07:36:04] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:36:04] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '0'
+[2022-12-20  07:36:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:36:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person
+[2022-12-20  07:36:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:36:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '1'
+[2022-12-20  07:36:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:36:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '1'
+[2022-12-20  07:36:09] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  07:36:09] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '2'
+[2022-12-20  07:36:09] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  07:36:09] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '2'
+[2022-12-20  07:44:31] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:44:33] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:46:35] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:47:00] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:47:01] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:47:04] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:47:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:47:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  07:47:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '0'
+[2022-12-20  07:47:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:47:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  07:47:09] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:47:09] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person
+[2022-12-20  07:47:37] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:47:39] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:47:39] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  07:47:39] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '0'
+[2022-12-20  07:47:39] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:47:39] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  07:47:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:47:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person
+[2022-12-20  07:47:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  07:47:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '2'
+[2022-12-20  07:47:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  07:47:48] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '1'
+[2022-12-20  07:47:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  07:47:51] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '3'
+[2022-12-20  07:48:07] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:48:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:50:29] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:50:31] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:53:02] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:53:03] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:53:08] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:53:10] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:56:39] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:56:40] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:56:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  07:56:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '0'
+[2022-12-20  07:56:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:56:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  07:56:43] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:56:44] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:56:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  07:56:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '0'
+[2022-12-20  07:56:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  07:56:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  07:57:51] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:57:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:58:48] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:58:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:58:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  07:58:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '0'
+[2022-12-20  07:58:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  07:58:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1' and name like '%---%' and surname like '%---%'
+[2022-12-20  07:58:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  07:58:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1'
+[2022-12-20  07:58:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  07:58:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '2'
+[2022-12-20  07:58:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  07:58:57] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '1'
+[2022-12-20  07:58:59] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getEducationLevelsData: {}
+[2022-12-20  07:59:05] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  07:59:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  07:59:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  07:59:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1' and name like '%---%' and surname like '%---%'
+[2022-12-20  07:59:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  07:59:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '0'
+[2022-12-20  07:59:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  07:59:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:00:39] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:00:40] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:00:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:00:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:00:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:00:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1' and name like '%---%' and surname like '%---%'
+[2022-12-20  08:00:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:00:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:00:45] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:00:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:00:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:00:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:00:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:00:48] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1' and name like '%---%' and surname like '%---%'
+[2022-12-20  08:00:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:00:48] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:02:21] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:02:23] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:02:24] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-12-20  08:02:24] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-12-20  08:02:24] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-12-20  08:02:24] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-12-20  08:02:25] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-12-20  08:02:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-12-20  08:02:27] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:02:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:02:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:02:29] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '0'
+[2022-12-20  08:02:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  08:02:29] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  08:02:33] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:02:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:02:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:02:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '0'
+[2022-12-20  08:02:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  08:02:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  08:04:03] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:04:05] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:04:05] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  08:04:05] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  08:04:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:04:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '0'
+[2022-12-20  08:04:10] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:04:12] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:04:13] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  08:04:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  08:04:13] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  08:04:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '0'
+[2022-12-20  08:04:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  08:04:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '0'
+[2022-12-20  08:04:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  08:04:15] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person
+[2022-12-20  08:04:16] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonEducationsData: {}
+[2022-12-20  08:04:16] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id_person = '1'
+[2022-12-20  08:04:17] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonCoursesData: {}
+[2022-12-20  08:04:17] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id_person = '1'
+[2022-12-20  08:04:26] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:04:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:04:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  08:04:29] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  name like '%---%' and surname like '%---%'
+[2022-12-20  08:04:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:04:29] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '0'
+[2022-12-20  08:04:33] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonsData: {}
+[2022-12-20  08:04:33] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person
+[2022-12-20  08:04:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelQualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:04:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  id_person = '1'
+[2022-12-20  08:04:38] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:04:40] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:04:40] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:04:40] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:04:40] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:04:40] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1' and name like '%---%' and surname like '%---%'
+[2022-12-20  08:04:42] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:04:44] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:04:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-12-20  08:04:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-12-20  08:04:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-12-20  08:04:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-12-20  08:04:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-12-20  08:04:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-12-20  08:04:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-12-20  08:04:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '6'
+[2022-12-20  08:04:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-12-20  08:04:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '6'
+[2022-12-20  08:04:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getPrivilagesListData: {}
+[2022-12-20  08:04:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: savePrivilageData: {}
+[2022-12-20  08:04:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '6'
+[2022-12-20  08:04:56] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO privilages (privilage, id_user) VALUES ('qualification_user', '6')
+[2022-12-20  08:04:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-12-20  08:04:57] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '6'
+[2022-12-20  08:05:00] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:05:06] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:05:07] [type: Access] [user: tester] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:05:08] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:05:09] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:05:09] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:05:09] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:05:09] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1' and name like '%---%' and surname like '%---%'
+[2022-12-20  08:05:10] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:05:10] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1'
+[2022-12-20  08:05:13] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:05:13] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '1'
+[2022-12-20  08:05:17] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getEducationLevelsData: {}
+[2022-12-20  08:06:00] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: savePersonData: {}
+[2022-12-20  08:06:00] [type: insert] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO person (name, surname, birthplace, birthday, education_level, home_town, post_code, street, home_number) VALUES ('Michał', 'Golonko', 'wiocha', '2022-12-20', 'podstawowe', 'wawa', '43-124', 'wiejska', 'sejm')
+[2022-12-20  08:06:01] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:06:01] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:06:02] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:06:02] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1'
+[2022-12-20  08:06:04] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:06:04] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '4'
+[2022-12-20  08:06:07] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getEducationLevelsData: {}
+[2022-12-20  08:06:11] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: savePersonData: {}
+[2022-12-20  08:06:11] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  id = '4'
+[2022-12-20  08:06:11] [type: update] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE person SET active='1', home_number='5' WHERE id = '4'
+[2022-12-20  08:06:12] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:06:12] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:06:12] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:06:12] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1'
+[2022-12-20  08:06:14] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:06:14] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '4'
+[2022-12-20  08:06:15] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getEducationLevelsData: {}
+[2022-12-20  08:06:19] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getQualificationOptionsData: {}
+[2022-12-20  08:06:19] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM oug_offices WHERE  active = '1'
+[2022-12-20  08:06:19] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM facility_type WHERE  active = '1'
+[2022-12-20  08:06:19] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM supervision_level WHERE  active = '1'
+[2022-12-20  08:06:42] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: saveQualificationData: {}
+[2022-12-20  08:06:42] [type: insert] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO qualifications (number, date, position, facility, specialization, id_person, id_oug_offices, id_facility_type, id_supervision_level) VALUES ('1', '2022-12-20', 'premier', 'sejm', 'ja', '4', '1', '1', '1')
+[2022-12-20  08:06:44] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:06:44] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '4'
+[2022-12-20  08:06:46] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getEducationLevelsData: {}
+[2022-12-20  08:06:55] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getEducationLevelsData: {}
+[2022-12-20  08:07:43] [type: Access] [user: tester] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:07:44] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:07:45] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:07:45] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1' and name like '%---%' and surname like '%---%'
+[2022-12-20  08:07:45] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:07:45] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:08:12] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:08:12] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1'
+[2022-12-20  08:08:13] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:08:13] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '4'
+[2022-12-20  08:09:53] [type: Access] [user: tester] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:09:54] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:09:55] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:09:55] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1' and name like '%---%' and surname like '%---%'
+[2022-12-20  08:09:55] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:09:55] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:09:55] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:09:55] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1'
+[2022-12-20  08:09:57] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:09:57] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '4'
+[2022-12-20  08:09:58] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getQualificationOptionsData: {}
+[2022-12-20  08:09:58] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM oug_offices WHERE  active = '1'
+[2022-12-20  08:09:58] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM facility_type WHERE  active = '1'
+[2022-12-20  08:09:58] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM supervision_level WHERE  active = '1'
+[2022-12-20  08:10:41] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: saveQualificationData: {}
+[2022-12-20  08:10:41] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications WHERE  id = '2'
+[2022-12-20  08:10:41] [type: update] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE qualifications SET active='1', specialization='polska', id_person='4', id_oug_offices='1', id_facility_type='1', id_supervision_level='1' WHERE id = '2'
+[2022-12-20  08:10:43] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:10:43] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '4'
+[2022-12-20  08:10:51] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getQualificationOptionsData: {}
+[2022-12-20  08:10:51] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM oug_offices WHERE  active = '1'
+[2022-12-20  08:10:51] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM facility_type WHERE  active = '1'
+[2022-12-20  08:10:51] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM supervision_level WHERE  active = '1'
+[2022-12-20  08:10:55] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: disableQualificationStatusData: {}
+[2022-12-20  08:10:55] [type: update] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE qualifications SET active='0' WHERE id = '2'
+[2022-12-20  08:10:56] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:10:56] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '4'
+[2022-12-20  08:11:04] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: disablePersonStatusData: {}
+[2022-12-20  08:11:04] [type: update] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE person SET active='0' WHERE id = '4'
+[2022-12-20  08:11:05] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:11:05] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1'
+[2022-12-20  08:11:06] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonQualificationsData: {}
+[2022-12-20  08:11:06] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM qualifications_details WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:11:08] [type: Access] [user: tester] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:11:09] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:11:10] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:11:10] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1' and name like '%---%' and surname like '%---%'
+[2022-12-20  08:11:10] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:11:10] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:11:11] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:11:11] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:11:12] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:11:12] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1'
+[2022-12-20  08:11:15] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:11:15] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:11:15] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:11:15] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:11:40] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: saveEducationData: {}
+[2022-12-20  08:11:40] [type: insert] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO education (degree, specialization, year, school, id_person) VALUES ('Prof', 'Herbal', '1990', 'Orgri', '2')
+[2022-12-20  08:11:41] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:11:41] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:11:49] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: saveEducationData: {}
+[2022-12-20  08:11:49] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  id = '2'
+[2022-12-20  08:11:49] [type: update] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE education SET active='1', year='1990', school='SW', id_person='2' WHERE id = '2'
+[2022-12-20  08:11:50] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:11:50] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:12:00] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: saveCourseData: {}
+[2022-12-20  08:12:00] [type: insert] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO courses (name, id_person) VALUES ('Ench', '2')
+[2022-12-20  08:12:01] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:12:01] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:12:11] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: saveCourseData: {}
+[2022-12-20  08:12:11] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  id = '2'
+[2022-12-20  08:12:11] [type: update] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE courses SET active='1', name='Insc', id_person='2' WHERE id = '2'
+[2022-12-20  08:12:12] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:12:12] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:12:14] [type: Error] [user: tester] [ip: undefined] [proxy: undefined] method changeCourseStatus() not defined.
+[2022-12-20  08:12:16] [type: Error] [user: tester] [ip: undefined] [proxy: undefined] method changeCourseStatus() not defined.
+[2022-12-20  08:15:01] [type: Access] [user: tester] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:15:03] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:15:03] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:03] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:15:04] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:15:04] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1' and name like '%---%' and surname like '%---%'
+[2022-12-20  08:15:04] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:04] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:15:06] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:15:06] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1'
+[2022-12-20  08:15:08] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:08] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '3'
+[2022-12-20  08:15:08] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:08] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '3'
+[2022-12-20  08:15:09] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:09] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:15:09] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:09] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:15:11] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: removeCourseData: {}
+[2022-12-20  08:15:11] [type: update] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE courses SET active='0' WHERE id = '2'
+[2022-12-20  08:15:12] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:12] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:15:15] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: removeEducationData: {}
+[2022-12-20  08:15:15] [type: update] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE education SET active='0' WHERE id = '2'
+[2022-12-20  08:15:16] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:16] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:15:18] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:18] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '3'
+[2022-12-20  08:15:18] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:18] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '3'
+[2022-12-20  08:15:20] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: removePersonData: {}
+[2022-12-20  08:15:20] [type: update] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE person SET active='0' WHERE id = '3'
+[2022-12-20  08:15:21] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:21] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:15:22] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:15:22] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1'
+[2022-12-20  08:15:22] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:22] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:15:24] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:24] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '1'
+[2022-12-20  08:15:24] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:24] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '1'
+[2022-12-20  08:15:24] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:24] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:15:25] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:25] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:15:25] [type: Access] [user: tester] [ip: undefined] [proxy: undefined] http://
+[2022-12-20  08:15:27] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:15:27] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:27] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:15:28] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:15:28] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1' and name like '%---%' and surname like '%---%'
+[2022-12-20  08:15:28] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:28] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '0'
+[2022-12-20  08:15:30] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonsData: {}
+[2022-12-20  08:15:30] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM person WHERE  active = '1'
+[2022-12-20  08:15:31] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:31] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:15:31] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:31] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '2'
+[2022-12-20  08:15:32] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:32] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '1'
+[2022-12-20  08:15:33] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:33] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '1'
+[2022-12-20  08:15:35] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: removeCourseData: {}
+[2022-12-20  08:15:35] [type: update] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE courses SET active='0' WHERE id = '1'
+[2022-12-20  08:15:36] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonCoursesData: {}
+[2022-12-20  08:15:36] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM courses WHERE  active = '1' and id_person = '1'
+[2022-12-20  08:15:37] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: removeEducationData: {}
+[2022-12-20  08:15:37] [type: update] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE education SET active='0' WHERE id = '1'
+[2022-12-20  08:15:38] [type: Request] [user: tester] [ip: undefined] [proxy: undefined] Controller: Qualification Task: getPersonEducationsData: {}
+[2022-12-20  08:15:38] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '1'
+[2022-12-20  08:15:46] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  08:15:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
