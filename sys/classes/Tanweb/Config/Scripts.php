@@ -33,6 +33,19 @@ class Scripts{
     }
     
     /**
+     * find link to file
+     * 
+     * @param string $filename name of script file
+     * @return string link to file
+     */
+    public static function getLocal(string $filename) : string{
+        $files = Server::getFilesPaths(self::$dir);
+        $root = Server::getLocalRoot();
+        $path = $root . $files->get($filename);
+        return $path;
+    }
+    
+    /**
      * finds all script files
      * 
      * @return array links to script files

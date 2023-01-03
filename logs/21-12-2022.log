@@ -1,0 +1,549 @@
+[2022-12-21  06:48:27] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  06:48:32] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  06:48:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  06:48:37] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-21  06:53:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  06:53:51] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-21  07:06:11] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  07:06:11] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-21  07:06:21] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  07:37:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  07:37:56] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-21  07:38:21] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  07:39:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  07:39:34] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-21  08:39:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  08:39:57] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-21  08:40:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  08:40:21] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-21  08:40:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  08:40:47] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-21  08:48:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  08:48:57] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-21  08:58:37] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  08:58:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  08:58:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  08:58:51] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-21  09:12:04] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  09:12:04] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-21  09:30:28] [type: Error] [user: ] [ip: undefined] [proxy: undefined] Security: Nieprawidłowa nazwa użytkownika lub hasło.
+[2022-12-21  09:30:57] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  09:31:05] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  09:31:10] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  09:31:11] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  09:36:23] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  09:36:23] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : Could not instantiate mail function.
+[2022-12-21  09:41:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  09:43:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  09:45:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  09:46:04] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  09:52:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-21  09:53:22] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:11:35] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  10:11:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:11:37] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-12-21  10:11:37] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  document_active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-12-21  10:11:40] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  10:11:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  document_active = '1' and username = 'admin' and ( ( month(start) = '12' and year(start) = '2022' ) or ( month(end) = '12' and year(end) = '2022' ))
+[2022-12-21  10:11:42] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:11:43] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InspectorSuspensions Task: getSuspensionsData: {}
+[2022-12-21  10:11:43] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM suspension_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-12-21  10:11:47] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  10:11:49] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  document_active = '1' and username = 'admin' and ( ( month(start) = '12' and year(start) = '2022' ) or ( month(end) = '12' and year(end) = '2022' ))
+[2022-12-21  10:11:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:11:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InspectorDecisions Task: getDecisionsData: {}
+[2022-12-21  10:11:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_details WHERE  active = '1' and username = 'admin' and id_document = '0'
+[2022-12-21  10:11:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InspectorDecisions Task: getDocumentsData: {}
+[2022-12-21  10:11:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  document_active = '1' and username = 'admin' and ( ( month(start) = '10' and year(start) = '2022' ) or ( month(end) = '10' and year(end) = '2022' ))
+[2022-12-21  10:11:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InspectorDecisions Task: getDecisionsData: {}
+[2022-12-21  10:11:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_details WHERE  active = '1' and username = 'admin' and id_document = '5'
+[2022-12-21  10:11:59] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InspectorDecisions Task: getDecisionsData: {}
+[2022-12-21  10:11:59] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_details WHERE  active = '1' and username = 'admin' and id_document = '7'
+[2022-12-21  10:12:01] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InspectorDecisions Task: getDecisionsData: {}
+[2022-12-21  10:12:01] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM decision_details WHERE  active = '1' and username = 'admin' and id_document = '5'
+[2022-12-21  10:12:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:37:00] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:37:00] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:37:00' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:38:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:38:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:38:34' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:38:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:49:51] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:49:51] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:49:51' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:50:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:50:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:50:22' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:50:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:51:29] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:51:29] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:51:29' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:51:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:51:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:51:55' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:51:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:52:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:52:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:52:58' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:52:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:55:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:55:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:55:56' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:55:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:57:24] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:57:24] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:57:24' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:57:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:58:01] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:58:01] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:58:01' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:58:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:59:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:59:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:59:06' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:59:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:59:39] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:59:39] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:59:39' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:59:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  10:59:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  10:59:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 10:59:58' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  10:59:59] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:01:40] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:01:40] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:01:40' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:01:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:10:42] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:10:42] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:10:42' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:10:43] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:13:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:13:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:13:21' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:13:22] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:16:26] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:16:26] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:16:26' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:16:27] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:16:53] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:16:53] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:16:53' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:16:53] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:17:40] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:17:40] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:17:40' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:17:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:19:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:19:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:19:07' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:19:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:20:27] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:20:27] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:20:27' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:20:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:22:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:22:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:22:06' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:22:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:22:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:22:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:22:56' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:22:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:23:49] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:23:49] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:23:49' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:23:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:24:31] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:24:31] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:24:31' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:24:32] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:44:53] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:44:53] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:44:53' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:44:53] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  11:44:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:45:55] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  11:45:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:45:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-12-21  11:45:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  11:45:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-12-21  11:45:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-12-21  11:49:40] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:49:40] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:49:40' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:49:40] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  11:49:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  11:49:46] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:53:11] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:53:11] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:53:11' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:53:11] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  11:53:11] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  11:53:12] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:53:33] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:53:33] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:53:33' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:53:33] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  11:53:33] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  11:53:33] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:53:39] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  11:53:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:53:42] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
+[2022-12-21  11:53:42] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  document_active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
+[2022-12-21  11:53:46] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  11:53:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:53:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-12-21  11:53:48] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  11:53:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-12-21  11:53:48] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-12-21  11:53:49] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  11:53:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:53:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-12-21  11:53:51] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-12-21  11:53:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: getNewEquipmentDetailsData: {}
+[2022-12-21  11:53:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  active = '1'
+[2022-12-21  11:53:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type WHERE  active = '1'
+[2022-12-21  11:54:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: saveNewEquipmentData: {}
+[2022-12-21  11:54:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  11:54:14] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO equipment (name, document, start_date, inventory_number, price, remarks, id_user, id_equipment_type, state, calibration) VALUES ('Miernik', 'kkk', '2022-12-21', 'test', '12', '', '1', '4', 'list', '2022-12-21')
+[2022-12-21  11:54:14] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO inventory_log (operation, id_equipment, id_user_source, id_user_target, remarks, confirmation) VALUES ('new', '2', '1', '1', '', '0')
+[2022-12-21  11:54:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2022-12-21  11:54:15] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2022-12-21  11:54:18] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  11:54:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:54:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2022-12-21  11:54:20] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2022-12-21  11:54:21] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2022-12-21  11:54:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  11:54:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:54:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:54:25' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:54:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  11:54:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  11:54:26] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  11:55:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  11:55:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 11:55:07' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  11:55:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  11:55:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  11:55:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:03:44] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:03:44] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:03:44] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:03:44' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:03:44] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:03:44] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:03:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:07:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:07:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:07:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:07:21' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:07:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:07:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:07:22] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:07:26] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:07:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:07:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-12-21  12:07:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  active = '1'
+[2022-12-21  12:07:35] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:07:37] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:07:37] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsUsingFormData: {}
+[2022-12-21  12:07:37] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  type = 'Ze wzoru'
+[2022-12-21  12:07:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: uploadTemplateData: {}
+[2022-12-21  12:07:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getTemplatesListData: {}
+[2022-12-21  12:08:33] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getAllGroupsData: {}
+[2022-12-21  12:08:37] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getGroupOptionsData: {}
+[2022-12-21  12:08:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getAllGroupsData: {}
+[2022-12-21  12:09:39] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: saveFormStatsData: {}
+[2022-12-21  12:09:39] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO statistics (name, json, type) VALUES ('Represje Inspektorów', '{"file":"represjeInspektorow.xlsx","cols":[{"number":"1","groupset":"Użytkownicy","groupsetKey":"title"}],"rows":[{"start":"5","end":"38","group":"Użytkownicy"}]}', 'Ze wzoru')
+[2022-12-21  12:09:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsUsingFormData: {}
+[2022-12-21  12:09:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  type = 'Ze wzoru'
+[2022-12-21  12:09:47] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:09:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:09:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-12-21  12:09:49] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  active = '1'
+[2022-12-21  12:09:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-12-21  12:09:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:09:52] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Container error: value not defined for key: inputs ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(43): Tanweb\Container->throwException('value not defin...')
+#1 /var/www/html/sys/classes/Services/StatsService.php(187): Tanweb\Container->get('inputs')
+#2 /var/www/html/sys/classes/Controllers/StatsDisplay.php(39): Services\StatsService->getInputSettings(34)
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\StatsDisplay->getInputsSettings()
+#4 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-12-21  12:09:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-12-21  12:09:57] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:09:58] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Container error: value not defined for key: cells ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(43): Tanweb\Container->throwException('value not defin...')
+#1 /var/www/html/sys/classes/Custom/Statistics/PatternStats.php(74): Tanweb\Container->get('cells')
+#2 /var/www/html/sys/classes/Custom/Statistics/PatternStats.php(62): Custom\Statistics\PatternStats->fillFile()
+#3 /var/www/html/sys/classes/Services/StatsService.php(249): Custom\Statistics\PatternStats->generate()
+#4 /var/www/html/sys/classes/Controllers/StatsDisplay.php(45): Services\StatsService->generateStats(Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\StatsDisplay->generateStats()
+#6 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 /var/www/html/sys/scripts/requests/file.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2022-12-21  12:10:03] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:10:04] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:10:05] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-12-21  12:10:05] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  active = '1'
+[2022-12-21  12:10:06] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:10:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:10:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsUsingFormData: {}
+[2022-12-21  12:10:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  type = 'Ze wzoru'
+[2022-12-21  12:10:27] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsStageOneData: {}
+[2022-12-21  12:10:31] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getInputsOptionsData: {}
+[2022-12-21  12:10:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsStageOneData: {}
+[2022-12-21  12:10:46] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getInputsOptionsData: {}
+[2022-12-21  12:10:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsStageOneData: {}
+[2022-12-21  12:10:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getInputsOptionsData: {}
+[2022-12-21  12:11:09] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsStageOneData: {}
+[2022-12-21  12:11:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getInputsOptionsData: {}
+[2022-12-21  12:11:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: saveFormStatsData: {}
+[2022-12-21  12:11:49] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:11:49] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE statistics SET json='{"inputs":["Rok"],"file":"represjeInspektorow.xlsx","cols":[{"number":"1","groupset":"Użytkownicy","groupsetKey":"title"}],"rows":[{"end":"38","group":"Użytkownicy","start":"5"}],"cells":[{"column":"10","row":"1","input":"Rok","operation":"value"}]}' WHERE id = '34'
+[2022-12-21  12:11:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsUsingFormData: {}
+[2022-12-21  12:11:51] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  type = 'Ze wzoru'
+[2022-12-21  12:11:52] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:11:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:11:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-12-21  12:11:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  active = '1'
+[2022-12-21  12:11:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-12-21  12:11:57] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:12:01] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-12-21  12:12:01] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:12:29] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:12:30] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:12:31] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsUsingFormData: {}
+[2022-12-21  12:12:31] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  type = 'Ze wzoru'
+[2022-12-21  12:14:17] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsStageOneData: {}
+[2022-12-21  12:14:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getInputsOptionsData: {}
+[2022-12-21  12:14:45] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:14:46] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:14:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsUsingFormData: {}
+[2022-12-21  12:14:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  type = 'Ze wzoru'
+[2022-12-21  12:15:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsStageOneData: {}
+[2022-12-21  12:15:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: saveFormStatsData: {}
+[2022-12-21  12:15:15] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:15:15] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE statistics SET json='{"file":"represjeInspektorow.xlsx","cols":[{"number":"1","groupset":"Użytkownicy","groupsetKey":"title"}],"rows":[{"end":"38","group":"Użytkownicy","start":"5"}]}' WHERE id = '34'
+[2022-12-21  12:15:16] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsUsingFormData: {}
+[2022-12-21  12:15:16] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  type = 'Ze wzoru'
+[2022-12-21  12:18:13] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:18:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:18:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsUsingFormData: {}
+[2022-12-21  12:18:15] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  type = 'Ze wzoru'
+[2022-12-21  12:18:26] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsStageOneData: {}
+[2022-12-21  12:18:30] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: saveFormStatsData: {}
+[2022-12-21  12:18:30] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:18:30] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE statistics SET json='{"file":"represjeInspektorow.xlsx","cols":[{"number":"1","groupset":"Użytkownicy","groupsetKey":"title"}],"rows":[{"end":"38","group":"Użytkownicy","start":"5"}]}' WHERE id = '34'
+[2022-12-21  12:18:31] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsUsingFormData: {}
+[2022-12-21  12:18:31] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  type = 'Ze wzoru'
+[2022-12-21  12:19:22] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: saveFormStatsData: {}
+[2022-12-21  12:19:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:19:22] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE statistics SET json='{"file":"represjeInspektorow.xlsx","cols":[{"number":"1","groupset":"Użytkownicy","groupsetKey":"title"}],"rows":[{"end":"38","group":"Użytkownicy","start":"5"}]}' WHERE id = '34'
+[2022-12-21  12:19:23] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsSettings Task: getStatsUsingFormData: {}
+[2022-12-21  12:19:23] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  type = 'Ze wzoru'
+[2022-12-21  12:19:25] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:19:27] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:19:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getStatsData: {}
+[2022-12-21  12:19:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  active = '1'
+[2022-12-21  12:19:30] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-12-21  12:19:30] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:19:30] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Container error: value not defined for key: inputs ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(43): Tanweb\Container->throwException('value not defin...')
+#1 /var/www/html/sys/classes/Services/StatsService.php(187): Tanweb\Container->get('inputs')
+#2 /var/www/html/sys/classes/Controllers/StatsDisplay.php(39): Services\StatsService->getInputSettings(34)
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\StatsDisplay->getInputsSettings()
+#4 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2022-12-21  12:21:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-12-21  12:21:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '27'
+[2022-12-21  12:21:13] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-12-21  12:21:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:21:17] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-12-21  12:21:17] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:22:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-12-21  12:22:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '14'
+[2022-12-21  12:22:12] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-12-21  12:22:12] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '2'
+[2022-12-21  12:22:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: generateStatsData: {}
+[2022-12-21  12:22:15] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '2'
+[2022-12-21  12:22:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-12-21  12:22:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '34'
+[2022-12-21  12:22:33] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: StatsDisplay Task: getInputsSettingsData: {}
+[2022-12-21  12:22:33] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM statistics WHERE  id = '2'
+[2022-12-21  12:22:39] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:22:40] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and ( ( start <= '2022-12-1' and end >= '2022-12-1' ) or ( start <= '2022-12-31' and end >= '2022-12-31' )) ORDER BY sort_priority ASC, surname ASC
+[2022-12-21  12:22:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:22:43] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:22:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:22:46] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-12-21  12:22:46] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-12-21  12:22:46] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-12-21  12:22:46] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-12-21  12:22:46] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-12-21  12:22:46] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-12-21  12:22:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:22:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:22:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:22:47' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:22:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:22:48] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:22:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:24:55] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2022-12-21  12:24:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:24:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2022-12-21  12:24:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2022-12-21  12:24:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2022-12-21  12:24:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2022-12-21  12:24:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2022-12-21  12:24:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2022-12-21  12:37:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:37:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:37:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:37:32' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:37:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:37:33] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:40:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:40:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:40:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:40:34' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:40:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:40:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:40:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:41:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:41:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:41:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:41:45' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:41:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:41:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:41:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:42:30] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:42:30] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:42:30] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:42:30' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:42:30] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:42:30] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:42:31] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:45:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:45:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:45:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:45:55' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:45:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:45:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:45:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:46:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:46:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:46:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:46:06' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:46:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:46:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:46:30] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:46:43] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:46:43] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:46:43] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:46:43' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:46:43] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:46:43] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:47:09] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:51:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:51:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:51:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:51:35' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:51:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:51:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:51:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:53:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:53:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:53:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:53:35' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:53:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:53:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:53:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:54:18] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:54:18] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:54:18] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:54:18' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:54:18] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:54:18] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:54:19] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  12:59:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  12:59:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  12:59:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 12:59:52' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  12:59:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  12:59:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  12:59:59] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:04:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:04:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:04:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:04:22' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:04:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:04:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:04:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:07:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:07:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:07:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:07:13' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:07:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:07:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:07:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:08:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:08:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:08:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:08:58' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:08:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:08:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:08:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:10:38] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:10:38] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:10:38] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:10:38' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:10:38] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:10:38] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:10:39] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:12:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:12:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:12:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:12:50' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:12:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:12:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:12:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:15:17] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:15:17] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:15:17] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:15:17' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:15:17] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:15:17] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:15:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:17:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:17:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:17:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:17:56' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:17:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:17:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:17:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:19:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:19:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:19:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:19:36' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:19:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:19:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:19:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:20:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:20:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:20:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:20:22' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:20:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:20:22] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:20:23] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:27:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:27:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:27:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:27:54' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:27:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:27:54] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:27:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:28:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:28:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:28:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:28:06' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:28:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:28:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:28:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:35:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:35:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:35:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:35:21' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:35:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:35:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:35:21] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:37:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:37:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:37:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:37:14' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:37:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:37:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:37:24] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:37:59] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:37:59] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:37:59] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:37:59' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:37:59] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:37:59] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:38:03] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:38:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:38:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:38:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:38:14' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:38:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:38:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:38:17] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:39:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:39:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:39:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:39:28' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:39:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:39:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:39:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:42:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:42:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:42:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:42:25' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:42:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:42:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:43:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:43:19] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:43:19] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:43:19] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:43:19' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:43:19] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:43:19] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:43:23] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-21  13:46:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2022-12-21  13:46:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2022-12-21' and username = 'admin' ORDER BY start ASC
+[2022-12-21  13:46:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2022-12-21 13:46:34' and username = 'admin' and active = '1' ORDER BY start ASC
+[2022-12-21  13:46:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2022-12-21  13:46:35] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2022-12-21  13:46:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}

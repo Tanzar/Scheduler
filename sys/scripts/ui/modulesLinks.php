@@ -24,7 +24,7 @@ try{
     
     //--- ADMIN PANEL ---//
     if($security->userHaveAnyPrivilage(new Container(['admin']))){
-        echo '<form action="' . Pages::getURL('adminPanelUsers.php') . '">';
+        echo '<form action="' . Pages::getURL('adminPanelSystem.php') . '">';
         echo '<input type="submit" class="standard-button" value="' . $modules->get('admin') . '">';
         echo '</form>';
     }

@@ -71,10 +71,12 @@ class PatternStats extends Statistics {
             $column = new Container($col);
             $this->writeColumnByConfig($column, $json);
         }
-        $cells = $json->get('cells');
-        foreach ($cells as $item) {
-            $cell = new Container($item);
-            $this->writeCellByConfig($cell);
+        if($json->isValueSet('cells')){
+            $cells = $json->get('cells');
+            foreach ($cells as $item) {
+                $cell = new Container($item);
+                $this->writeCellByConfig($cell);
+            }
         }
     }
     

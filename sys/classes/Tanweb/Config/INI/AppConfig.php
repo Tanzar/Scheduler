@@ -8,6 +8,7 @@ namespace Tanweb\Config\INI;
 
 use Tanweb\Container as Container;
 use Tanweb\Config\ConfigException as ConfigException;
+use Tanweb\Config\Server as Server;
 
 /**
  * Class to manage config.ini file, allows to read properities
@@ -24,7 +25,7 @@ class AppConfig {
     private Container $externalResources;
     
     protected function __construct() {
-        $path =  $_SERVER['DOCUMENT_ROOT'] . '/';
+        $path =  Server::getLocalRoot() . '/';
         $path = $path . 'config/config.ini';
         $ini = parse_ini_file($path, true);
         if(isset($ini['app'])){

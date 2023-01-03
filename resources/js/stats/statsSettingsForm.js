@@ -471,8 +471,18 @@ function Inputs(language){
     });
     
     this.overrideData = function(stats){
-        inputs = stats.json.inputs;
-        overrides = stats.json.inputsOverride;
+        if(stats.json.inputs !== undefined){
+            inputs = stats.json.inputs;
+        }
+        else{
+            inputs = [];
+        }
+        if(stats.json.inputsOverride !== undefined){
+            overrides = stats.json.inputsOverride;
+        }
+        else{
+            overrides = [];
+        }
         display.textContent = '[]';
     }
     

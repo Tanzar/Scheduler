@@ -184,13 +184,18 @@ class StatsService {
         $jsonText = $stats->get('json');
         $jsonArray = json_decode($jsonText, true);
         $json = new Container($jsonArray);
-        $inputs = $json->get('inputs');
-        $result = new Container();
-        foreach($inputs as $item){
-            $input = Input::from($item);
-            $result->add($input->toJson()->toArray());
+        if($json->isValueSet('inputs')){
+            $inputs = $json->get('inputs');
+            $result = new Container();
+            foreach($inputs as $item){
+                $input = Input::from($item);
+                $result->add($input->toJson()->toArray());
+            }
+            return $result;
         }
-        return $result;
+        else{
+            return new Container();
+        }
     }
     
     public function getInputsOptions(Container $inputs) : Container {

@@ -8,6 +8,7 @@
     use Tanweb\Session as Session;
     use Tanweb\Config\INI\Languages as Languages;
     use Tanweb\Container as Container;
+    use Custom\Crontab\Crontab as Crontab;
     
     $languages = Languages::getInstance();
     $names = $languages->get('interface');

@@ -15,6 +15,9 @@
     <div class="standard-text">
         <?php echo $interface->get('main'); ?>
     </div>
+    <form action="<?php echo Pages::getURL('adminPanelSystem.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('system'); ?>">
+    </form>
     <form action="<?php echo Pages::getURL('adminPanelUsers.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $adminOptions->get('users'); ?>">
     </form>

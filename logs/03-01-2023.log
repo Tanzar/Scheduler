@@ -1,0 +1,206 @@
+[2023-01-03  08:49:28] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  08:49:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2023-01-03  08:49:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2023-01-03' and username = 'admin' ORDER BY start ASC
+[2023-01-03  08:49:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2023-01-03 08:49:32' and username = 'admin' and active = '1' ORDER BY start ASC
+[2023-01-03  08:49:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2023-01-03  08:49:32] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2023-01-03  08:49:33] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  08:49:35] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  08:49:37] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  09:03:19] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelSystem Task: runFixData: {}
+[2023-01-03  09:03:19] [type: Fixer] [user: admin] [ip: undefined] [proxy: undefined] Fixer task started
+[2023-01-03  09:03:19] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2023-01-03  09:03:19] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2023-01-03  09:03:19] [type: Fixer] [user: admin] [ip: undefined] [proxy: undefined] Fixer task finished: Disabled: 0, Enabled: 0, Dates swapped: 0, Removed: 0
+[2023-01-03  09:03:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelSystem Task: runFixData: {}
+[2023-01-03  09:03:34] [type: Fixer] [user: admin] [ip: undefined] [proxy: undefined] Fixer task started
+[2023-01-03  09:03:34] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2023-01-03  09:03:38] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2023-01-03  09:03:44] [type: Fixer] [user: admin] [ip: undefined] [proxy: undefined] Fixer task finished: Disabled: 0, Enabled: 0, Dates swapped: 0, Removed: 0
+[2023-01-03  11:02:28] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:02:31] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:02:31] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:02:31] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '0'
+[2023-01-03  11:02:31] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getDaysOffData: {}
+[2023-01-03  11:02:31] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off
+[2023-01-03  11:02:36] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:02:36] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '1'
+[2023-01-03  11:02:45] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:02:45] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '0'
+[2023-01-03  11:02:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:02:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '1'
+[2023-01-03  11:02:54] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:02:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:02:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:02:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '0'
+[2023-01-03  11:02:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getDaysOffData: {}
+[2023-01-03  11:02:57] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off
+[2023-01-03  11:03:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:03:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '1'
+[2023-01-03  11:03:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: saveDayOffData: {}
+[2023-01-03  11:03:50] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO days_off (date, name, for_all) VALUES ('2023-01-03', 'test 1', '0')
+[2023-01-03  11:03:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getDaysOffData: {}
+[2023-01-03  11:03:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off
+[2023-01-03  11:03:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:03:55] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '2'
+[2023-01-03  11:03:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getMatchingUsersData: {}
+[2023-01-03  11:03:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2023-01-03' and end >= '2023-01-03' ORDER BY sort_priority ASC
+[2023-01-03  11:04:01] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: saveUserForDayData: {}
+[2023-01-03  11:04:02] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'dyrektor'
+[2023-01-03  11:04:02] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user WHERE  id_days_off = '2' and id_user = '5'
+[2023-01-03  11:04:02] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO days_off_user (id_user, id_days_off) VALUES ('5', '2')
+[2023-01-03  11:04:03] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:04:03] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '2'
+[2023-01-03  11:04:04] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getMatchingUsersData: {}
+[2023-01-03  11:04:04] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2023-01-03' and end >= '2023-01-03' ORDER BY sort_priority ASC
+[2023-01-03  11:04:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: saveUserForDayData: {}
+[2023-01-03  11:04:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'dyrektor'
+[2023-01-03  11:04:06] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user WHERE  id_days_off = '2' and id_user = '5'
+[2023-01-03  11:04:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:04:08] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '2'
+[2023-01-03  11:10:04] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:10:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:10:09] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelSystem Task: runFixData: {}
+[2023-01-03  11:10:09] [type: Fixer] [user: admin] [ip: undefined] [proxy: undefined] Fixer task started
+[2023-01-03  11:10:10] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages
+[2023-01-03  11:10:10] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods
+[2023-01-03  11:10:10] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details
+[2023-01-03  11:10:10] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2023-01-03  11:10:10] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2023-01-03  11:10:10] [type: Fixer] [user: admin] [ip: undefined] [proxy: undefined] Fixer task finished: Disabled: 0, Enabled: 0, Dates changed: 0, Removed: 0
+[2023-01-03  11:36:09] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:36:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2023-01-03  11:36:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2023-01-03' and username = 'admin' ORDER BY start ASC
+[2023-01-03  11:36:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2023-01-03 11:36:14' and username = 'admin' and active = '1' ORDER BY start ASC
+[2023-01-03  11:36:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2023-01-03  11:36:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2023-01-03  11:36:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:36:16] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:36:18] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:36:23] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:36:25] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:36:25] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2023-01-03  11:36:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '0'
+[2023-01-03  11:36:26] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getAllUsersData: {}
+[2023-01-03  11:36:26] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords
+[2023-01-03  11:36:26] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2023-01-03  11:36:26] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '0'
+[2023-01-03  11:36:30] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserPrivilagesData: {}
+[2023-01-03  11:36:30] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages WHERE  id_user = '5'
+[2023-01-03  11:36:30] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2023-01-03  11:36:30] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2023-01-03  11:36:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserTypesData: {}
+[2023-01-03  11:36:47] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: saveEmploymentPeriodData: {}
+[2023-01-03  11:36:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2023-01-03  11:36:47] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id = '6'
+[2023-01-03  11:36:47] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE employment SET active='1', end='2022-12-31', sort_priority='1', leadership='1', inspector='1', id_user='5' WHERE id = '6'
+[2023-01-03  11:36:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelUsers Task: getUserEmploymentPeriodsData: {}
+[2023-01-03  11:36:50] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM employment WHERE  id_user = '5'
+[2023-01-03  11:36:54] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:36:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:36:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getDaysOffData: {}
+[2023-01-03  11:36:57] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off
+[2023-01-03  11:36:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:36:57] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '0'
+[2023-01-03  11:36:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:36:58] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '2'
+[2023-01-03  11:37:03] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:37:05] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:37:13] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelSystem Task: runFixData: {}
+[2023-01-03  11:37:13] [type: Fixer] [user: admin] [ip: undefined] [proxy: undefined] Fixer task started
+[2023-01-03  11:37:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages
+[2023-01-03  11:37:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods
+[2023-01-03  11:37:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details
+[2023-01-03  11:37:13] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: DELETE FROM days_off_user WHERE id = '1'
+[2023-01-03  11:37:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2023-01-03  11:37:13] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2023-01-03  11:37:13] [type: Fixer] [user: admin] [ip: undefined] [proxy: undefined] Fixer task finished: Disabled: 0, Enabled: 0, Dates changed: 0, Removed: 1
+[2023-01-03  11:37:17] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:37:19] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:37:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:37:20] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '0'
+[2023-01-03  11:37:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getDaysOffData: {}
+[2023-01-03  11:37:20] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off
+[2023-01-03  11:37:21] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelDaysOff Task: getUsersData: {}
+[2023-01-03  11:37:21] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  id_days_off = '2'
+[2023-01-03  11:37:32] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:37:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:43:53] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:43:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:43:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelInventory Task: getEquipmentTypesData: {}
+[2023-01-03  11:43:56] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_type
+[2023-01-03  11:44:02] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:44:04] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:44:04] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryMy Task: getMyEquipmentData: {}
+[2023-01-03  11:44:04] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1' and username = 'admin'
+[2023-01-03  11:44:05] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryMy Task: getMyUnconfirmedEquipmentData: {}
+[2023-01-03  11:44:05] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2023-01-03  11:44:05] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:44:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:44:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2023-01-03  11:44:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2023-01-03  11:44:25] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: liquidationData: {}
+[2023-01-03  11:44:25] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2023-01-03  11:44:25] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE equipment SET active='0', state='liquidation' WHERE id = '2'
+[2023-01-03  11:44:25] [type: insert] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: INSERT INTO inventory_log (operation, id_equipment, id_user_source, id_user_target, remarks, confirmation) VALUES ('liquidation', '2', '1', '1', '2023-01-03: tak', '1')
+[2023-01-03  11:44:27] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2023-01-03  11:44:27] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2023-01-03  11:44:39] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  11:44:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  11:44:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryLog Task: getTodayLogsData: {}
+[2023-01-03  11:44:41] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  save_time_date = '2023-01-03'
+[2023-01-03  12:04:03] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  12:04:04] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  12:04:05] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2023-01-03  12:04:05] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2023-01-03  12:04:49] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  12:04:51] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  12:04:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2023-01-03  12:04:52] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2023-01-03  12:05:03] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentStatesData: {}
+[2023-01-03  12:05:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: getEquipmentByStateData: {}
+[2023-01-03  12:05:07] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  state = 'liquidation'
+[2023-01-03  12:05:11] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: InventoryAdmin Task: getAllEquipmentData: {}
+[2023-01-03  12:05:11] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment_details WHERE  active = '1'
+[2023-01-03  12:11:52] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  12:11:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  12:12:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: AdminPanelSystem Task: runFixData: {}
+[2023-01-03  12:12:28] [type: Fixer] [user: admin] [ip: undefined] [proxy: undefined] Fixer task started
+[2023-01-03  12:12:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages
+[2023-01-03  12:12:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods
+[2023-01-03  12:12:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details
+[2023-01-03  12:12:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2023-01-03  12:12:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2023-01-03  12:12:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment
+[2023-01-03  12:12:28] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment WHERE  id = '2'
+[2023-01-03  12:12:28] [type: update] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: UPDATE equipment SET active='0' WHERE id = '2'
+[2023-01-03  12:12:28] [type: Fixer] [user: admin] [ip: undefined] [proxy: undefined] Fixer task finished: Disabled: 1, Enabled: 0, Dates changed: 0, Removed: 0
+[2023-01-03  12:12:39] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  12:12:41] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  12:13:46] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  12:13:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  12:16:14] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  12:16:24] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  12:16:26] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  12:38:11] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  12:38:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_without_passwords WHERE  username = 'admin'
+[2023-01-03  12:38:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods WHERE  active = '1' and start <= '2023-01-03' and username = 'admin' ORDER BY start ASC
+[2023-01-03  12:38:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM schedule_entries WHERE  start <= '2023-01-03 12:38:14' and username = 'admin' and active = '1' ORDER BY start ASC
+[2023-01-03  12:38:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details WHERE  username = 'admin' and days_off_active = '1'
+[2023-01-03  12:38:14] [type: Select] [user: admin] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM inventory_log_details WHERE  confirmation = '0' and target_username = 'admin'
+[2023-01-03  12:38:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  12:39:12] [type: Access] [user: admin] [ip: undefined] [proxy: undefined] http://
+[2023-01-03  12:39:14] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  12:43:57] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-03  12:44:00] [type: Request] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  12:45:34] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-03  12:45:48] [type: Request] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2023-01-03  12:46:53] [type: Request] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Controller: AdminPanelSystem Task: runFixData: {}
+[2023-01-03  12:46:53] [type: Fixer] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Fixer task started
+[2023-01-03  12:46:53] [type: Select] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM privilages
+[2023-01-03  12:46:53] [type: Select] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM users_employment_periods
+[2023-01-03  12:46:53] [type: Select] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM days_off_user_details
+[2023-01-03  12:46:53] [type: Select] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location
+[2023-01-03  12:46:53] [type: Select] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM location_group
+[2023-01-03  12:46:53] [type: Select] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM equipment
+[2023-01-03  12:46:53] [type: Fixer] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Fixer task finished: Disabled: 0, Enabled: 0, Dates changed: 0, Removed: 0

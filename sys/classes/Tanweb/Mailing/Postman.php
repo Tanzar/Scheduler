@@ -10,6 +10,7 @@ use Tanweb\Mailing\EmailConfig as EmailConfig;
 use Tanweb\Mailing\Email as Email;
 use Tanweb\Mailing\PostmanException as PostmanException;
 use Tanweb\Config\INI\Languages as Languages;
+use PHPMailer\PHPMailer\PHPMailer as PHPMailer;
 
 /**
  * Adapter of PHPMailer and class that allows easly send emails, configure in config.ini
@@ -31,10 +32,9 @@ class Postman {
         $mailer = new PHPMailer();
         $mailer->IsSMTP();
         $mailer->CharSet= "UTF-8";
-        $mailer->Mailer = "smtp";
         
         $mailer->SMTPAuth   = TRUE;
-        $mailer->SMTPSecure = "tls";
+        $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mailer->Port       = $this->config->getPort();
         $mailer->Host       = $this->config->getHost();
         $mailer->Username   = $this->config->getUser();
@@ -59,7 +59,7 @@ class Postman {
         $this->prepareMailer($mail);
         
         if(!$this->mailer->Send()) {
-            $this->throwException('Error in sending mail to: ' . $mail->getAddress());
+            $this->throwException('Error in sending mail to: ' . $mail->getAddress() . ' : ' . $this->mailer->ErrorInfo);
         } else {
             $language = Languages::getInstance();
             return $language->get('email_sent');

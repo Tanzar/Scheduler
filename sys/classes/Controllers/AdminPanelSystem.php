@@ -8,15 +8,14 @@ namespace Controllers;
 
 use Controllers\Base\Controller as Controller;
 use Tanweb\Container as Container;
-use Tanweb\Mailing\Postman as Postman;
-use Tanweb\Mailing\Email as Email;
+use Custom\DBFixer\DBFixer as DBFixer;
 
 /**
- * Description of Test
+ * Description of AdminPanelSystem
  *
- * @author Grzegorz Spakowski, Tanzar
+ * @author Tanzar
  */
-class Test extends Controller{
+class AdminPanelSystem extends Controller{
     
     public function __construct() {
         $privilages = new Container();
@@ -24,8 +23,10 @@ class Test extends Controller{
         parent::__construct($privilages);
     }
     
-    public function test(){
-        
+    public function runFix(){
+        $text = DBFixer::run();
+        $response = new Container();
+        $response->add($text, 'message');
+        $this->setResponse($response);
     }
-    
 }

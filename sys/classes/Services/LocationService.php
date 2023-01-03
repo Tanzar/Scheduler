@@ -11,6 +11,7 @@ use Data\Access\Tables\LocationTypeDAO as LocationTypeDAO;
 use Data\Access\Tables\LocationGroupDAO as LocationGroupDAO;
 use Data\Access\Views\LocationDetailsView as LocationDetailsView;
 use Tanweb\Container as Container;
+use Services\Exceptions\LocationDatesException as LocationDatesException;
 
 /**
  * Description of LocationService

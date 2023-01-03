@@ -41,6 +41,12 @@ class DaysOffUserDetailsView extends View{
         return $this->select($sql);
     }
     
+    public function getActiveByUsername(string $username) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('days_off_user_details')->where('username', $username)->and()->where('days_off_active', 1);
+        return $this->select($sql);
+    }
+    
     public function getByUsernameMonthYear(string $username, int $month, int $year) : Container {
         $sql = new MysqlBuilder();
         $sql->select('days_off_user_details')->where('username', $username)

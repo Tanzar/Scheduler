@@ -33,7 +33,13 @@ class Server {
      * @return string path to project root in filesystem
      */
     public static function getLocalRoot(): string{
-        return $_SERVER['DOCUMENT_ROOT'];
+        if($_SERVER['DOCUMENT_ROOT'] !== ''){
+            $path = $_SERVER['DOCUMENT_ROOT'];
+        }
+        else{
+            $path = '/var/www/html';
+        }
+        return $path;
     }
     
     /**
@@ -55,7 +61,7 @@ class Server {
         else{
             $url = "http://";
         }
-        $url .= $_SERVER['HTTP_HOST'];
+        $url .= filter_input(INPUT_SERVER, 'HTTP_HOST');
         return $url;
     }
     

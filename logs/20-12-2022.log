@@ -493,3 +493,123 @@
 [2022-12-20  08:15:38] [type: Select] [user: tester] [ip: undefined] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM education WHERE  active = '1' and id_person = '1'
 [2022-12-20  08:15:46] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
 [2022-12-20  08:15:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  09:12:52] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  09:13:11] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  09:13:25] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  09:13:30] [type: Security] [user: admin] [ip: undefined] [proxy: undefined] Access Denied: user don't have required privilages.
+[2022-12-20  09:13:30] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Security: Odmowa dostępu.
+[2022-12-20  09:13:46] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  09:14:05] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Class "Tanweb\Mailing\PHPMailer" not found ;
+ #0 /var/www/html/sys/classes/Tanweb/Mailing/Postman.php(27): Tanweb\Mailing\Postman->initMailer()
+#1 /var/www/html/sys/classes/Controllers/Test.php(28): Tanweb\Mailing\Postman->__construct()
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\Test->test()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2022-12-20  09:14:40] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  09:14:56] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  09:15:26] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  09:16:34] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  09:17:26] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  09:17:32] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  09:27:38] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  09:27:42] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  09:27:42] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  09:40:00] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  09:40:00] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  10:02:15] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  10:02:19] [type: Error] [user: ] [ip: undefined] [proxy: undefined] Security: Nieprawidłowa nazwa użytkownika lub hasło.
+[2022-12-20  10:02:34] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  10:02:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  10:02:40] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  10:03:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  10:03:17] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  10:12:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  10:12:51] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  10:16:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  10:16:49] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  10:40:27] [type: Error] [user: ] [ip: undefined] [proxy: undefined] Security: Nieprawidłowa nazwa użytkownika lub hasło.
+[2022-12-20  10:41:37] [type: Error] [user: ] [ip: undefined] [proxy: undefined] Security: Nieprawidłowa nazwa użytkownika lub hasło.
+[2022-12-20  10:41:55] [type: Error] [user: ] [ip: undefined] [proxy: undefined] Security: Nieprawidłowa nazwa użytkownika lub hasło.
+[2022-12-20  10:44:44] [type: Error] [user: ] [ip: undefined] [proxy: undefined] Security: Nieprawidłowa nazwa użytkownika lub hasło.
+[2022-12-20  10:46:25] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  10:46:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  10:46:35] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  10:46:35] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  10:47:27] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  10:47:39] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  11:23:23] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  11:23:28] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  11:23:32] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:23:52] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  11:26:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:26:31] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowksi19@gmail.com
+[2022-12-20  11:27:12] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:27:12] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com
+[2022-12-20  11:29:56] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:29:56] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com
+[2022-12-20  11:33:20] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:33:20] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : Could not instantiate mail function.
+[2022-12-20  11:35:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:35:49] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : Could not execute: /usr/sbin/sendmail -t -i
+[2022-12-20  11:40:08] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:40:08] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : Could not execute: /usr/sbin/sendmail -t -i
+[2022-12-20  11:40:26] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:40:29] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : Could not execute: /usr/sbin/sendmail -t -i
+[2022-12-20  11:41:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:41:49] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : Could not instantiate mail function.
+[2022-12-20  11:42:57] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:42:57] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : Could not execute: /usr/sbin/sendmail -t -i
+[2022-12-20  11:57:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:57:54] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  11:58:29] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  11:58:29] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  12:05:17] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  12:05:17] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  12:06:21] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  12:06:21] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  12:06:53] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  12:06:53] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  12:11:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  12:11:54] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  12:18:00] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  12:18:00] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  12:40:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  12:40:07] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  12:41:11] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  12:41:11] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  12:43:07] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  12:50:12] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  12:57:54] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  12:57:59] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  12:58:19] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  12:58:19] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : Could not instantiate mail function.
+[2022-12-20  13:12:40] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:12:40] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : Could not instantiate mail function.
+[2022-12-20  13:12:55] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:12:56] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  13:16:09] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:16:19] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  13:20:48] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:20:48] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  13:33:05] [type: Error] [user: ] [ip: undefined] [proxy: undefined] Security: Nieprawidłowa nazwa użytkownika lub hasło.
+[2022-12-20  13:33:11] [type: Request] [user: ] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  13:33:15] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
+[2022-12-20  13:33:16] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:33:17] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  13:35:44] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:35:44] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  13:35:58] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:36:34] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  13:36:50] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:37:48] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  13:50:06] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:50:06] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  13:51:19] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:51:20] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  13:53:01] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:53:02] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  13:55:37] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:55:37] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+[2022-12-20  13:56:49] [type: Request] [user: admin] [ip: undefined] [proxy: undefined] Controller: Test Task: testData: {}
+[2022-12-20  13:56:50] [type: Error] [user: admin] [ip: undefined] [proxy: undefined] Postman error: Error in sending mail to: spakowski19@gmail.com : SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
