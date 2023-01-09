@@ -9,6 +9,7 @@ namespace Services;
 use Data\Access\Views\ScheduleEntriesView as ScheduleEntriesView;
 use Data\Access\Views\UsersEmploymentPeriodsView as UsersEmploymentPeriodsView;
 use Data\Access\Views\DaysOffUserDetailsView as DaysOffUserDetailsView;
+use Data\Access\Tables\DaysOffDAO as DaysOffDAO;
 use Data\Access\Views\InventoryLogDetailsView as InventoryLogDetailsView;
 use Custom\File\Tools\Timesheets\TimesCalculator as TimesCalculator;
 use Tanweb\Session as Session;
@@ -55,6 +56,21 @@ class IndexService {
     }
     
     private static function getDaysOff(DateTime $start, DateTime $end) : Container {
+        $result = self::getUserDaysOffDates();
+        $current = new DateTime($start->format('Y-m-d'));
+        while($current <= $end){
+            $weekday = (int) $current->format('N');
+            if($weekday === 6 || $weekday === 7 || HolidayChecker::isHoliday($current)){
+                if(!$result->contains($current->format('Y-m-d'))){
+                    $result->add($current->format('Y-m-d'));
+                }
+            }
+            $current->modify('+1 days');
+        }
+        return $result;
+    }
+    
+    private static function getUserDaysOffDates() : Container {
         $username = Session::getUsername();
         $view = new DaysOffUserDetailsView();
         $userSpecificDays = $view->getActiveByUsername($username);
@@ -65,15 +81,13 @@ class IndexService {
                 $result->add($day->get('days_off_date'));
             }
         }
-        $current = new DateTime($start->format('Y-m-d'));
-        while($current <= $end){
-            $weekday = (int) $current->format('N');
-            if($weekday === 6 || $weekday === 7 || HolidayChecker::isHoliday($current)){
-                if(!$result->contains($current->format('Y-m-d'))){
-                    $result->add($current->format('Y-m-d'));
-                }
+        $dao = new DaysOffDAO();
+        $daysOffForAll = $dao->getActiveForAll();
+        foreach ($daysOffForAll->toArray() as $item) {
+            $day = new Container($item);
+            if(!$result->contains($day->get('date'))){
+                $result->add($day->get('date'));
             }
-            $current->modify('+1 days');
         }
         return $result;
     }

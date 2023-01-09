@@ -42,6 +42,13 @@ class DaysOffDAO extends DAO{
         return $this->select($sql);
     }
     
+    public function getActiveForAll() : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('days_off')->where('active', 1)
+                ->and()->where('for_all', 1);
+        return $this->select($sql);
+    }
+    
     public function getActiveForAllByMonthAndYear(int $month, int $year) : Container {
         $sql = new MysqlBuilder();
         $sql->select('days_off')->where('active', 1)

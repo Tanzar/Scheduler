@@ -19,7 +19,7 @@
 <div class="top-menu">
     <div class="top-menu-left">
         <?php
-            Resources::linkIMG('logo-alt.jpg', 'logo_img');
+            Resources::linkIMG('logo.jpg', 'logo_img');
             Scripts::run('modulesLinks.php');
         ?>
     </div>

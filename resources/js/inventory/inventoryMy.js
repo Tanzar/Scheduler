@@ -24,7 +24,7 @@ function initAssignedTable(language) {
     var config = {
         columns: [
             {title: language.inventory_number, variable: 'inventory_number', width: 70, minWidth: 70},
-            {title: language.name, variable: 'name', width: 100, minWidth: 100},
+            {title: language.name, variable: 'name', width: 250, minWidth: 250},
             {title: language.equipment_type, variable: 'equipment_type', width: 100, minWidth: 100}
         ],
         dataSource: datasource
@@ -86,7 +86,7 @@ function initUnconfirmedTable(language, myEquipmentTable) {
     var config = {
         columns: [
             {title: language.inventory_number, variable: 'inventory_number', width: 70, minWidth: 70},
-            {title: language.name, variable: 'equipment_name', width: 100, minWidth: 100},
+            {title: language.name, variable: 'equipment_name', width: 250, minWidth: 250},
             {title: language.equipment_type, variable: 'equipment_type', width: 100, minWidth: 100}
         ],
         dataSource: datasource

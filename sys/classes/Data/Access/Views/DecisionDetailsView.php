@@ -51,6 +51,12 @@ class DecisionDetailsView extends View{
         return $this->select($sql);
     }
     
+    public function getAllRequiringSuspension() : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('decision_details')->where('requires_suspension', 1);
+        return $this->select($sql);
+    }
+    
     public function getActiveByUsernameAndYear(string $username, int $year) : Container {
         $sql = new MysqlBuilder();
         $sql->select('decision_details')->where('active', 1)

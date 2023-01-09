@@ -124,15 +124,20 @@ class InstrumentUsageCard extends PDFMaker{
     
     private function printMultiTextCell(int $width, string $topText, string $bottomText) : void {
         $x = $this->getX();
-        $this->writeCell($width, 14, '', 1);
+        $y = $this->getY();
+        $height = 7;
         $this->setCurrentSize(8);
         $this->SetX($x);
         $this->writeCell($width, 7, $topText);
         $this->Ln(7);
         $this->SetX($x);
         $this->setCurrentSize(12);
-        $this->writeCell($width, 7, $bottomText);
-        $this->Ln(7);
+        $nblines = $this->NbLines($width, $bottomText);
+        $this->writeMulticell($width, 7, $bottomText);
+        $this->SetXY($x, $y);
+        $height += $nblines * 7;
+        $this->writeCell($width, $height, '', 1);
+        $this->Ln($height);
         $this->setCurrentSize($this->font);
     }
     
