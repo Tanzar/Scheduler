@@ -17,6 +17,7 @@ use Data\Access\Views\UsersWithoutPasswordsView as UsersWithoutPasswordsView;
 use Data\Access\Views\UsersPrivilagesView as UsersPrivilagesView;
 use Services\Exceptions\OverlapingPeriodsException as OverlapingPeriodsException;
 use Services\Exceptions\LastAdminException as LastAdminException;
+use Services\Exceptions\SystemUserException as SystemUserException;
 
 /**
  * Description of UserService
@@ -126,7 +127,10 @@ class UserService{
     }
     
     public function savePrivilage(Container $privilage) : int {
-        $idUser = $privilage->get('id_user');
+        $idUser = (int) $privilage->get('id_user');
+        if($idUser === 1){
+            throw new SystemUserException();
+        }
         $privilageName = $privilage->get('privilage');
         $privilages = $this->privilages->getPrivilagesByUserID($idUser);
         foreach ($privilages->toArray() as $data){
@@ -151,13 +155,18 @@ class UserService{
     }
     
     public function saveEmploymentPeriod(Container $data) : int {
-        $idUser = $data->get('id_user');
-        $periods = $this->employment->getByUserId($idUser);
-        foreach ($periods->toArray() as $item){
-            $period = new Container($item);
-            $this->periodsOverlapingCheck($data, $period);
+        $idUser = (int) $data->get('id_user');
+        if($idUser === 1){
+            throw new SystemUserException();
         }
-        return $this->employment->save($data);
+        else{
+            $periods = $this->employment->getByUserId($idUser);
+            foreach ($periods->toArray() as $item){
+                $period = new Container($item);
+                $this->periodsOverlapingCheck($data, $period);
+            }
+            return $this->employment->save($data);
+        }
     }
     
     private function periodsOverlapingCheck(Container $first, Container $second) : bool{
@@ -194,6 +203,9 @@ class UserService{
             if($this->usersPrivilages->isLastAdmin($user->get('username'))){
                 throw new LastAdminException();
             }
+            if((int) $user->get('id') === 1){
+                throw new SystemUserException();
+            }
             $this->users->disable($user->get('id'));
             
         }
@@ -204,10 +216,14 @@ class UserService{
     
     public function changePrivilageStatus(int $id){
         $privilage = $this->privilages->getByID($id);
+        $user = $this->users->getById((int) $privilage->get('id_user'));
         $active = $privilage->get('active');
         if($active){
-            if($privilage->get('privilage') === 'admin' && $this->usersPrivilages->isLastAdmin()){
+            if($privilage->get('privilage') === 'admin' && $this->usersPrivilages->isLastAdmin($user->get('username'))){
                 throw new LastAdminException();
+            }
+            if((int) $privilage->get('id_user') === 1){
+                throw new SystemUserException();
             }
             $this->privilages->disable($privilage->get('id'));
             
@@ -232,7 +248,6 @@ class UserService{
         if($data->isValueSet('id')){
             $id = $data->get('id');
             $user = $this->users->getById($id);
-            
         }
         elseif($data->isValueSet('username')) {
             $username = $data->get('username');

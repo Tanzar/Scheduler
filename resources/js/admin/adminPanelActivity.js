@@ -37,7 +37,8 @@ function ActivityTable(language, div){
             { title: language.workcard_display, variable: 'workcard_display', width: 30},
             { title: language.allow_location_input, variable: 'allow_location_input', width: 30},
             { title: language.require_document, variable: 'require_document', width: 30},
-            { title: language.overtime_action, variable: 'overtime_action', width: 30}
+            { title: language.overtime_action, variable: 'overtime_action', width: 30},
+            { title: language.assign_system, variable: 'assign_system', width: 30}
         ],
         dataSource : { method: 'post', address: getRestAddress(), data: { controller: 'AdminPanelActivity', task: 'getActivities' } }
     };
@@ -73,7 +74,8 @@ function ActivityTable(language, div){
                 {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
                 {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
                 {type: 'checkbox', title: language.require_document, variable: 'require_document'},
-                {type: 'select', title: language.select_overtime_action, variable: 'overtime_action', options: overtimeActions, required: true}
+                {type: 'select', title: language.select_overtime_action, variable: 'overtime_action', options: overtimeActions, required: true},
+                {type: 'checkbox', title: language.assign_system, variable: 'assign_system'}
             ];
             openModalBox(language.new_activity, fields, language.save, function(data){
                 RestApi.post('AdminPanelActivity', 'saveActivity', data,
@@ -123,7 +125,8 @@ function ActivityTable(language, div){
                         {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
                         {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
                         {type: 'checkbox', title: language.require_document, variable: 'require_document'},
-                        {type: 'select', title: language.select_overtime_action, variable: 'overtime_action', options: overtimeActions, required: true}
+                        {type: 'select', title: language.select_overtime_action, variable: 'overtime_action', options: overtimeActions, required: true},
+                        {type: 'checkbox', title: language.assign_system, variable: 'assign_system'}
                     ];
                     openModalBox(language.edit_activity, fields, language.save, function(data){
                         RestApi.post('AdminPanelActivity', 'saveActivity', data,

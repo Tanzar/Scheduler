@@ -11,6 +11,8 @@ use Data\Access\Views\UsersEmploymentPeriodsView as UsersEmploymentPeriodsView;
 use Data\Access\Views\DaysOffUserDetailsView as DaysOffUserDetailsView;
 use Data\Access\Tables\DaysOffDAO as DaysOffDAO;
 use Data\Access\Views\InventoryLogDetailsView as InventoryLogDetailsView;
+use Data\Access\Views\DecisionDetailsView as DecisionDetailsView;
+use Data\Access\Views\SuspensionDecisionDetailsView as SuspensionDecisionDetailsView;
 use Custom\File\Tools\Timesheets\TimesCalculator as TimesCalculator;
 use Tanweb\Session as Session;
 use Tanweb\Container as Container;
@@ -137,5 +139,27 @@ class IndexService {
         $view = new InventoryLogDetailsView();
         $username = Session::getUsername();
         return $view->getUnconfirmedForUser($username);
+    }
+    
+    public static function getUnassignedDecisions() : Container {
+        $view = new DecisionDetailsView();
+        $username = Session::getUsername();
+        $decisions = $view->getActiveRequiringSuspensionByUsername($username);
+        $connectionsView = new SuspensionDecisionDetailsView();
+        $connections = $connectionsView->getActiveByUsername($username);
+        $result = new Container();
+        foreach ($decisions->toArray() as $item) {
+            $decision = new Container($item);
+            $notFound = true;
+            foreach ($connections->toArray() as $connection) {
+                if($connection['id'] === $decision->get('id')){
+                    $notFound = false;
+                }
+            }
+            if($notFound){
+                $result->add($decision->get('date') . ' : ' . $decision->get('document_number'));
+            }
+        }
+        return $result;
     }
 }

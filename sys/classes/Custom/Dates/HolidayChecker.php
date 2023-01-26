@@ -43,7 +43,7 @@ class HolidayChecker {
     
     private static function getEasterMondayDate(int $year) : string {
         $date = new DateTime(date("Y-m-d", easter_date($year)));
-        $date->modify('+2 days');
+        $date->modify('+1 days');
         return $date->format('Y-m-d');
     }
     

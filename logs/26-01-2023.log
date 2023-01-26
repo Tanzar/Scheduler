@@ -1,0 +1,10 @@
+[2023-01-26  07:26:58] [type: Access] [user: admin] [ip: 172.31.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryMy.php?
+[2023-01-26  07:27:01] [type: Access] [user: admin] [ip: 172.31.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryAdmin.php?
+[2023-01-26  07:44:59] [type: Access] [user: admin] [ip: 172.31.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryAdmin.php?
+[2023-01-26  07:45:03] [type: Access] [user: admin] [ip: 172.31.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryAdmin.php?
+[2023-01-26  07:53:15] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryMy.php?
+[2023-01-26  07:53:19] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryAdmin.php?
+[2023-01-26  07:56:36] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryAdmin.php?
+[2023-01-26  08:00:41] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryMy.php?
+[2023-01-26  08:00:44] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryAdmin.php?
+[2023-01-26  08:05:00] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?

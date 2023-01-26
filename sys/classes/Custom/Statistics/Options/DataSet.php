@@ -103,7 +103,7 @@ enum DataSet : string {
         if($inputValues->isValueSet('monthStart') && $inputValues->isValueSet('monthEnd')){
             $this->addMonthsRange($sql, $inputValues);
         }
-        if($inputValues->isValueSet('YearStart') && $inputValues->isValueSet('yearEnd')){
+        if($inputValues->isValueSet('yearStart') && $inputValues->isValueSet('yearEnd')){
             $this->addYearsRange($sql, $inputValues);
         }
     }

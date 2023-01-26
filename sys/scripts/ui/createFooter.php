@@ -7,7 +7,7 @@
 ?>
 <footer>
     <div>
-    Scheduler v0.1 alpha <br>
+    Scheduler v0.5 beta <br>
     Autor Grzegorz Spakowski
     </div>
 </footer>

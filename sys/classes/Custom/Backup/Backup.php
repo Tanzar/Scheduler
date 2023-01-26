@@ -69,7 +69,7 @@ class Backup {
         $sqlScript .= "\nSET SQL_MODE=@OLD_SQL_MODE;\n" .
             "SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;\n" .
             "SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-";
+            ";
         self::saveFiles($sqlScript, $path);
     }
     
@@ -129,7 +129,7 @@ class Backup {
         $mysql_file = fopen($backup, 'w+');
         fwrite($mysql_file ,$sqlScript );
         fclose($mysql_file );
-        $build = '/db_build_sql/2_backed_data.sql';
+        $build = '/db_build_sql/3_backed_data.sql';
         $buildFile = fopen($build, 'w+');
         fwrite($buildFile, $sqlScript);
         fclose($buildFile);

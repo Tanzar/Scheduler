@@ -103,6 +103,12 @@ class InventoryAdmin extends Controller{
         $this->setSuccesResponse($id);
     }
     
+    public function saveNewBorrowedEquipment(){
+        $data = $this->getRequestData();
+        $id = $this->inventory->saveNewBorrowedEquipment($data);
+        $this->setSuccesResponse($id);
+    }
+    
     public function editEquipment(){
         $data = $this->getRequestData();
         $this->inventory->editEquipment($data);

@@ -51,6 +51,28 @@ class InventoryLogDAO extends DAO{
         return $this->insert($sql);
     }
     
+    public function borrowed(int $equipmentId, int $userSourceId, int $userTargetId) : int {
+        $sql = new MysqlBuilder();
+        $sql->insert('inventory_log')->into('operation', 'borrowed')
+                ->into('id_equipment', $equipmentId)
+                ->into('id_user_source', $userSourceId)
+                ->into('id_user_target', $userTargetId)
+                ->into('remarks', '')
+                ->into('confirmation', 1);
+        return $this->insert($sql);
+    }
+    
+    public function returned(int $equipmentId, int $userSourceId, int $userTargetId) : int {
+        $sql = new MysqlBuilder();
+        $sql->insert('inventory_log')->into('operation', 'returned')
+                ->into('id_equipment', $equipmentId)
+                ->into('id_user_source', $userSourceId)
+                ->into('id_user_target', $userTargetId)
+                ->into('remarks', '')
+                ->into('confirmation', 1);
+        return $this->insert($sql);
+    }
+    
     public function confirm(int $id) : void {
         $sql = new MysqlBuilder();
         $sql->update('inventory_log', 'id', $id)->set('confirmation', 1);

@@ -929,7 +929,7 @@ class DocumentRaport extends PDFMaker{
     
     private function calcuateRemarksHeight(Container $item) : float {
         if($item->get('remarks') !== '') {
-            $widths = array(35, $this->w - $this->margin - $this->currentLeftMargin - 35);
+            $widths = array(35, $this->w - $this->margin - $this->currentLeftMargin - 7 - 35);
             $texts = array('Uwagi ', $item->get('remarks'));
             return 2 + max($this->calculateHeights($widths, $texts));
         }
@@ -946,7 +946,7 @@ class DocumentRaport extends PDFMaker{
     
     private function calculateDescriptionHeight(Container $item) : float {
         if($item->get('description') !== '') {
-            $widths = array(35, $this->w - $this->margin - $this->currentLeftMargin - 35);
+            $widths = array(35, $this->w - $this->margin - $this->currentLeftMargin - 7 - 35);
             $texts = array('Opis ', $item->get('description'));
             return 2 + max($this->calculateHeights($widths, $texts));
         }

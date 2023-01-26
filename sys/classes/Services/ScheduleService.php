@@ -149,9 +149,15 @@ class ScheduleService {
     }
     
     public function saveEntryForUser(Container $data) : int {
-        $username = $data->get('username');
-        $user = $this->user->getByUsername($username);
-        $data->add($user->get('id'), 'id_user');
+        $activity = $this->activity->getById($data->get('id_activity'));
+        if($activity->get('assign_system')){
+            $data->add(1, 'id_user');
+        }
+        else{
+            $username = $data->get('username');
+            $user = $this->user->getByUsername($username);
+            $data->add($user->get('id'), 'id_user');
+        }
         $parser = new Entry();
         $entry = $parser->parse($data);
         $this->checkBlocker($entry);
@@ -172,9 +178,15 @@ class ScheduleService {
     }
     
     public function saveEntryForCurrentUser(Container $data) : int {
-        $username = Session::getUsername();
-        $user = $this->user->getByUsername($username);
-        $data->add($user->get('id'), 'id_user');
+        $activity = $this->activity->getById($data->get('id_activity'));
+        if($activity->get('assign_system')){
+            $data->add(1, 'id_user');
+        }
+        else{
+            $username = $data->get('username');
+            $user = $this->user->getByUsername($username);
+            $data->add($user->get('id'), 'id_user');
+        }
         $parser = new Entry();
         $entry = $parser->parse($data);
         $this->checkBlocker($entry);

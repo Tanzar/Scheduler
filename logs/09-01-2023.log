@@ -93,3 +93,59 @@
 [2023-01-09  11:16:45] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
 [2023-01-09  11:17:18] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
 [2023-01-09  11:19:33] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/index/indexMyData.php?
+[2023-01-09  11:39:46] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-09  11:40:24] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsNoForm.php?
+[2023-01-09  11:41:11] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-09  11:41:35] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-09  11:41:38] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsNoForm.php?
+[2023-01-09  11:42:18] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsNoForm.php?
+[2023-01-09  11:42:19] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-09  13:13:17] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-01-09  13:13:22] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorDocuments.php?
+[2023-01-09  13:13:55] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorSuspensions.php?
+[2023-01-09  13:14:41] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorDecisions.php?
+[2023-01-09  13:15:16] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-01-09  13:15:20] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorSuspensions.php?
+[2023-01-09  13:15:51] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-01-09  13:15:55] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorDecisions.php?
+[2023-01-09  13:26:18] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-09  13:26:20] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-01-09  13:26:25] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorSuspensions.php?
+[2023-01-09  13:28:19] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-09  13:28:25] [type: Backup] [user: admin] [ip: 172.18.0.1] [proxy: undefined] Backup started
+[2023-01-09  13:28:25] [type: Backup] [user: admin] [ip: 172.18.0.1] [proxy: undefined] Backup finished
+[2023-01-09  13:32:19] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-09  13:32:26] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryMy.php?
+[2023-01-09  13:32:28] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-09  13:33:35] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-01-09  13:49:43] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/qualification/qualificationMain.php?
+[2023-01-09  13:50:00] [type: Fixer] [user: ] [ip: undefined] [proxy: undefined] Fixer task started
+[2023-01-09  13:50:00] [type: Fixer] [user: ] [ip: undefined] [proxy: undefined] Fixer task finished: Disabled: 0, Enabled: 0, Dates changed: 0, Removed: 0
+[2023-01-09  13:50:41] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/qualification/qualificationMain.php?
+[2023-01-09  13:50:45] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Config.ini error: message education_level not defined in languages.ini file.
+[2023-01-09  13:54:09] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/qualification/qualificationEducation.php?
+[2023-01-09  13:55:00] [type: Clean] [user: ] [ip: undefined] [proxy: undefined] Clean started
+[2023-01-09  13:55:00] [type: Clean] [user: ] [ip: undefined] [proxy: undefined] Clean finished, removed: 1
+[2023-01-09  13:55:14] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/qualification/qualificationEducation.php?
+[2023-01-09  13:55:23] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/qualification/qualificationEducation.php?
+[2023-01-09  13:55:59] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/qualification/qualificationEducation.php?
+[2023-01-09  13:56:23] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/qualification/qualificationEducation.php?
+[2023-01-09  13:56:32] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/qualification/qualificationEducation.php?
+[2023-01-09  13:56:34] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/qualification/qualificationMain.php?
+[2023-01-09  13:56:37] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/qualification/qualificationMain.php?
+[2023-01-09  13:56:45] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-09  13:56:49] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/stats/statsNoForm.php?
+[2023-01-09  13:56:51] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/stats/statsForm.php?
+[2023-01-09  13:57:01] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/stats/statsForm.php?
+[2023-01-09  13:57:09] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-09  13:57:12] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-09  13:57:16] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-09  13:57:20] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAdmin.php?
+[2023-01-09  14:00:00] [type: Backup] [user: ] [ip: undefined] [proxy: undefined] Backup started
+[2023-01-09  14:00:00] [type: Backup] [user: ] [ip: undefined] [proxy: undefined] Backup finished
+[2023-01-09  14:00:50] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/index/help.php?
+[2023-01-09  14:00:55] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-09  14:03:31] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-09  14:28:45] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/index/help.php?
+[2023-01-09  14:30:32] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-09  14:40:18] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?

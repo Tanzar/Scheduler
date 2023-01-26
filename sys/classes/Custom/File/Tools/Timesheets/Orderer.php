@@ -79,12 +79,15 @@ class Orderer {
         return $this->items;
     }
     
-    public function countTimes() : Container {
+    public function countTimes(int $currentWorktime) : Container {
         $result = new Container();
         $result->add(0, 'overtime');
-        $result->add(0, 'worktime');
+        $result->add($currentWorktime, 'worktime');
         $result->add(0, 'nightShift');
         $this->countAll($result);
+        $worktime = $result->get('worktime');
+        $newWorktime = $worktime - $currentWorktime;
+        $result->add($newWorktime, 'worktime', true);
         return $result;
     }
     

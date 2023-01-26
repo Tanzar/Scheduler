@@ -198,7 +198,7 @@ class Calculator {
                 $value = $group->getValue($entry);
             }
             elseif($group !== Group::Days && $group !== Group::Months && $group !== Group::Years){
-                $value = (int) $group->getValue($entry);
+                $value = $group->getValue($entry);
             }
             elseif($group === Group::Days){
                 $value = (int) $dateTime->format('j');

@@ -69,9 +69,9 @@ class Rows {
     private function getPreviousMonthsEntries() : Container {
         $view = new ScheduleEntriesView();
         $lastDay = (int) date('t', strtotime($this->year . '-' . $this->month . '-1'));
-        $date = new DateTime($this->year . '-' . $this->month . '-' . $lastDay . ' 23:59:59');
-        $date->modify('-1 months');
-        return $view->getActiveByUsernameToDate($this->username, $date);
+        $date = new DateTime($this->year . '-' . $this->month . '-01' . ' 23:59:59');
+        $date->modify('-1 days');
+        return $view->getActiveByUsernameToDateOredrDescOvertimeAction($this->username, $date);
     }
     
     private function getMonthEntries() : Container {
@@ -79,7 +79,7 @@ class Rows {
         $lastDay = (int) date('t', strtotime($this->year . '-' . $this->month . '-1'));
         $start = new DateTime($this->year . '-' . $this->month . '-01' . ' 00:00:00');
         $end = new DateTime($this->year . '-' . $this->month . '-' . $lastDay . ' 23:59:59');
-        return $view->getActiveByUsernameAndDates($this->username, $start, $end);
+        return $view->getActiveByUsernameAndDatesOredrDescOvertimeAction($this->username, $start, $end);
     }
     
     private function calculatePreviousMonths(Container $periods, Container $previousMonthsEntries) : void {
@@ -342,7 +342,7 @@ class Rows {
         $appconfig = AppConfig::getInstance();
         $cfg = $appconfig->getAppConfig();
         $nightShiftRow = $cfg->get('timesheets_night_shift_row_index');
-        $ignoreRows = new Container(array($nightShiftRow));
+        $ignoreRows = new Container(array($nightShiftRow, 3));
         $count = 0;
         foreach ($this->currentMonthTimes->toArray() as $item) {
             for($row = 0 ; $row < count($item); $row++){

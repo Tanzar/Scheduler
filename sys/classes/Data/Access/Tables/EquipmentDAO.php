@@ -71,6 +71,14 @@ class EquipmentDAO extends DAO{
         $this->update($sql);
     }
     
+    public function setAsReturned(int $id) : void {
+        $sql = new MysqlBuilder();
+        $sql->update('equipment', 'id', $id)
+                ->set('active', 0)
+                ->set('state', 'returned');
+        $this->update($sql);
+    }
+    
     public function disable(int $id){
         $sql = new MysqlBuilder();
         $sql->update('equipment', 'id', $id)

@@ -11,7 +11,6 @@ use Custom\DBFixer\FixerEntry as FixerEntry;
 use Custom\DBFixer\FixerReport as FixerReport;
 use Custom\DBFixer\Fixers\InventoryFixer as InventoryFixer;
 use Custom\DBFixer\Fixers\SystemFixer as SystemFixer;
-use Custom\DBFixer\Fixers\DecisionsFixer as DecisionsFixer;
 use Tanweb\Logger\Logger as Logger;
 
 /**
@@ -45,7 +44,6 @@ class DBFixer {
         $report = new FixerReport();
         SystemFixer::run($report);
         InventoryFixer::run($report);
-        DecisionsFixer::run($report);
         return $report;
     }
     

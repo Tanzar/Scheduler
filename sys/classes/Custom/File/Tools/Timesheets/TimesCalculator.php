@@ -59,21 +59,22 @@ class TimesCalculator {
             $entryEnd = new DateTime($entry->get('end'));
             if(($entryStart >= $dateStart && $entryStart <= $dateEnd) ||
                     ($entryEnd >= $dateStart && $entryEnd <= $dateEnd)){
-                $partialResult = self::calculateEntry($periods, $entry, $date);
+                $partialResult = self::calculateEntry($periods, $entry, $date, $result);
                 self::addPartialResult($result, $partialResult, $entry);
             }
         }
         return $result;
     }
     
-    private static function calculateEntry(Container $periods, Container $entry, DateTime $date) : Container {
+    private static function calculateEntry(Container $periods, Container $entry, DateTime $date, Container $result) : Container {
         $period = self::selectEmploymentPeriod($periods, $date);
         $orderer = new Orderer();
         self::addDayBreaks($orderer, $date, $period);
         self::addStandardDayTimes($orderer, $date, $period);
         $orderer->addEntry($entry);
         self::addNightShiftTimes($orderer, $date);
-        $partialResult = $orderer->countTimes();
+        $currentWorktime = $result->get(0) + $result->get(1);
+        $partialResult = $orderer->countTimes($currentWorktime);
         return $partialResult;
     }
     

@@ -61,7 +61,11 @@ This code is free to use, just remember to give credit.
                         foreach ($instruments->toArray() as $item) {
                             $instrument = new Container($item);
                             echo '<option value="' . $instrument->get('id') . '">';
-                            echo $instrument->get('name');
+                            $text = $instrument->get('inventory_number') . ' - ' . $instrument->get('name');
+                            if(strlen($text) > 70){
+                                $text = substr($text, 0, 67) . '...';
+                            }
+                            echo $text;
                             echo '</option>';
                         }
                     ?>

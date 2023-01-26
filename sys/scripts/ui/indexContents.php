@@ -61,4 +61,21 @@ if($security->userHaveAnyPrivilage($inventoryPrivilages)){
     }
     echo '</div>';
 }
+
+$inspectorPrivilages = new Container(['admin', 'schedule_user_inspector']);
+if($security->userHaveAnyPrivilage($inspectorPrivilages)){
+    echo '<div class="standard-text-title">';
+    echo $modules->get('inspector');
+    echo '</div>';
+    echo '<div class="standard-text">';
+    $unassigned = IndexService::getUnassignedDecisions();
+    echo $interface->get('you_have') . ' ' . $unassigned->length() . ' ' . $interface->get('unassigned_decision') . '<br>';
+    $count = 1;
+    for($i = 0; $i < $unassigned->length() && $i < 10; $i++) {
+        $text = $unassigned->get($i);
+        echo $count . ': ' . $text . '<br>';
+        $count++;
+    }
+    echo '</div>';
+}
 ?>

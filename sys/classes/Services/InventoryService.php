@@ -131,6 +131,21 @@ class InventoryService {
         return $id;
     }
     
+    public function saveNewBorrowedEquipment(Container $data) : int {
+        $data->add('list', 'state');
+        $data->add(date('Y-m-d'), 'calibration');
+        $parser = new Equipment();
+        $parsed = $parser->parse($data);
+        $username = Session::getUsername();
+        $user = $this->users->getByUsername($username);
+        $userSourceId = (int) $user->get('id');
+        $userTargetId = (int) $parsed->get('id_user');
+        $parsed->add($userSourceId, 'id_user', true);
+        $id = $this->equipment->save($parsed);
+        $this->inventoryLog->borrowed($id, $userSourceId, $userTargetId);
+        return $id;
+    }
+    
     public function editEquipment(Container $data) : void {
         $parser = new Equipment();
         $parsed = $parser->parse($data);
@@ -143,7 +158,10 @@ class InventoryService {
         if($logs->length() === 0){
             $targetUserId = $this->getUserId($equipment->get('username'));
             $sourceUserId = $this->getUserId(Session::getUsername());
-            $this->inventoryLog->assign($equipmentId, $sourceUserId, $targetUserId);
+            $id = $this->inventoryLog->assign($equipmentId, $sourceUserId, $targetUserId);
+            if($targetUserId === 1){
+                $this->inventoryLog->confirm($id);
+            }
         }
         else{
             throw new UnconfirmedEquipmentException();
@@ -184,8 +202,15 @@ class InventoryService {
     public function liquidate(string $date, string $document, int $equipmentId) : void {
         $username = Session::getUsername();
         $userId = $this->getUserId($username);
-        $this->equipment->setAsLiquidation($equipmentId);
-        $this->inventoryLog->liquidation($date, $document, $equipmentId, $userId);
+        $equipment = $this->equipment->getById($equipmentId);
+        if($equipment->get('state') === 'borrowed'){
+            $this->equipment->setAsReturned($equipmentId);
+            $this->inventoryLog->returned($date, $equipmentId, $userId);
+        }
+        elseif($equipment->get('state') === 'list'){
+            $this->equipment->setAsLiquidation($equipmentId);
+            $this->inventoryLog->liquidation($date, $document, $equipmentId, $userId);
+        }
     }
     
     public function returnFromLiquidation(int $equipmentId) : void {

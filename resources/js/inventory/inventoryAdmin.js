@@ -63,20 +63,38 @@ function initEquipmentTable(language) {
                 {type: 'date', title: language.start_date, variable: 'start_date'},
                 {type: 'select', title: language.select_equipment_type, variable: 'id_equipment_type', options: types, required: true},
                 {type: 'number', title: language.price, variable: 'price', min: 0, step: 0.01, required: true},
-                {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5}
+                {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 5},
+                {type: 'checkbox', title: language.borrowed + ' ?', variable: 'borrowed'}
             ];
             openModalBox(language.new_equipment, fields, language.save, function(data){
-                RestApi.post('InventoryAdmin', 'saveNewEquipment', data,
-                    function(response){
-                        var data = JSON.parse(response);
-                        console.log(data);
-                        alert(data.message);
-                        datatable.refresh();
-                    },
-                    function(response){
-                        console.log(response.responseText);
-                        alert(response.responseText);
-                });
+                if(data.borrowed){
+                    delete data.borrowed;
+                    RestApi.post('InventoryAdmin', 'saveNewBorrowedEquipment', data,
+                        function(response){
+                            var data = JSON.parse(response);
+                            console.log(data);
+                            alert(data.message);
+                            datatable.refresh();
+                        },
+                        function(response){
+                            console.log(response.responseText);
+                            alert(response.responseText);
+                    });
+                }
+                else{
+                    delete data.borrowed;
+                    RestApi.post('InventoryAdmin', 'saveNewEquipment', data,
+                        function(response){
+                            var data = JSON.parse(response);
+                            console.log(data);
+                            alert(data.message);
+                            datatable.refresh();
+                        },
+                        function(response){
+                            console.log(response.responseText);
+                            alert(response.responseText);
+                    });
+                }
             });
         });
     });
@@ -251,9 +269,9 @@ function initEquipmentTable(language) {
             alert(language.select_equipment);
         }
     });
-    datatable.addActionButton(language.liquidation, function(selected){
+    datatable.addActionButton(language.return_liquidation, function(selected){
         if(selected !== undefined){
-            if(selected.state === 'list'){
+            if(selected.state === 'list' || selected.state === 'borrowed'){
                 var fields = [
                     {type: 'date', title: language.date, variable: 'date'},
                     {type: 'text', title: language.document, variable: 'document', limit: 30, required: true}
@@ -261,7 +279,7 @@ function initEquipmentTable(language) {
                 var dataToSend = {
                     id_equipment: selected.id
                 }
-                openModalBox(language.liquidation, fields, language.save, function(data){
+                openModalBox(language.return_liquidation, fields, language.save, function(data){
                     RestApi.post('InventoryAdmin', 'liquidation', data,
                         function(response){
                             var data = JSON.parse(response);
@@ -276,29 +294,7 @@ function initEquipmentTable(language) {
                 }, dataToSend);
             }
             else{
-                if(selected.state === 'liquidation'){
-                    var fields = [
-                        {type: 'text', title: language.confirm, variable: 'confirm', limit: 30, required: true}
-                    ];
-                    openModalBox(language.liquidation, fields, language.save, function(data){
-                        if(data.confirm === 'tak'){
-                            RestApi.post('InventoryAdmin', 'returnFromRepair', {id_equipment: selected.id},
-                                function(response){
-                                    var data = JSON.parse(response);
-                                    console.log(data);
-                                    alert(data.message);
-                                    datatable.refresh();
-                                },
-                                function(response){
-                                    console.log(response.responseText);
-                                    alert(response.responseText);
-                            });
-                        }
-                    });
-                }
-                else{
-                    alert(language.select_equipment);
-                }
+                alert(language.select_equipment);
             }
         }
         else{
@@ -435,7 +431,9 @@ function searchByState(language, datatable){
             {value: 'list', title: data.list},
             {value: 'repair', title: data.repair},
             {value: 'calibration', title: data.calibration},
-            {value: 'liquidation', title: data.liquidation}
+            {value: 'liquidation', title: data.liquidation},
+            {value: 'borrowed', title: data.borrowed},
+            {value: 'returned', title: data.returned}
         ];
         var fields = [
             {type: 'select', title: language.select_equipment_state, variable: 'id_equipment_state', options: options, required: true}

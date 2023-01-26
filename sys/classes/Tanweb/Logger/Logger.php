@@ -266,7 +266,7 @@ class Logger {
     }
     
     private function logToFile(LogEntry $entry){
-        if($this->saveLocal){
+        if($this->saveLocal && (!file_exists($this->targetFile) || is_writable($this->targetFile))){
             $file = fopen($this->targetFile, 'a');
             $line = '[' . $entry->getTimestamp() . '] ';
             $line .= '[type: ' . $entry->getType() . '] ';

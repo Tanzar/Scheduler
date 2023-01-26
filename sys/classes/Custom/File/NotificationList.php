@@ -30,7 +30,7 @@ class NotificationList extends PDFMaker{
     private int $defaultMargins = 5;
     private int $defaultColWidth = 20;
     private int $dayRowHeight = 16;
-    private int $usersPerPageLimit;
+    private int $usersPerPageLimit = 0;
     private int $firstColWidth = 6;
     private int $daysPerPageLimit;
     private Container $usersSets;
@@ -91,6 +91,12 @@ class NotificationList extends PDFMaker{
             $set = $this->usersSets->get($i);
             $this->printPagesPerSet($set);
         }
+        if($this->usersSets->length() === 0){
+            $this->printPagesPerSet(new Container([[
+                'name' => '',
+                'surname' => ''
+            ]]));
+        }
     }
     
     private function getUsers() : void {
@@ -124,7 +130,7 @@ class NotificationList extends PDFMaker{
         $monthStart = date($this->year . '-' . $this->month . '-1');
         $daysCount = (int) date("t", strtotime($monthStart));
         $pagesPerUserSet = ceil($daysCount / $this->daysPerPageLimit);
-        $lastPageNumber = $this->usersSets->length() * $pagesPerUserSet;
+        $lastPageNumber = max($this->usersSets->length() * $pagesPerUserSet, 2);
         for($daysSet = 0 ; $daysSet < $pagesPerUserSet ; $daysSet++){
             $this->printPagePerDaysSet($set, $daysSet, $daysCount);
             if( (int) $this->PageNo() !== (int) $lastPageNumber){

@@ -37,6 +37,14 @@ class SuspensionDecisionDetailsView extends View{
         return $this->select($sql);
     }
     
+    public function getActiveByUsername(string $username) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('suspension_decision_details')->where('active', 1)
+                ->and()->where('suspension_active', 1)
+                ->and()->where('username', $username);
+        return $this->select($sql);
+    }
+    
     public function getActiveByDocumentId(int $documentId) : Container{
         $sql = new MysqlBuilder();
         $sql->select('suspension_decision_details')->where('active', 1)

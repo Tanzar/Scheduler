@@ -8,8 +8,9 @@
     use Tanweb\Session as Session;
     use Tanweb\Config\INI\Languages as Languages;
     use Tanweb\Container as Container;
-    use Custom\Crontab\Crontab as Crontab;
+    use Tanweb\Security\PageAccess as PageAccess;
     
+    PageAccess::blockInternetExplorer();
     $languages = Languages::getInstance();
     $names = $languages->get('interface');
     $interface = new Container($names);
