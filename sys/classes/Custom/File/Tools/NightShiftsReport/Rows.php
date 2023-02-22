@@ -7,7 +7,6 @@ namespace Custom\File\Tools\NightShiftsReport;
 
 use Data\Access\Views\UsersEmploymentPeriodsView as UsersEmploymentPeriodsView;
 use Data\Access\Views\ScheduleEntriesView as ScheduleEntriesView;
-use Custom\File\Tools\Timesheets\TimesCalculator as TimesCalculator;
 use Tanweb\Config\INI\AppConfig as AppConfig;
 use Tanweb\Container as Container;
 use Custom\Converters\Time as Time;
@@ -69,14 +68,10 @@ class Rows {
     }
     
     private function analizeEntry(int $day, Container $entry) : void {
-        $username = $entry->get('username');
-        $periods = $this->findUserPeriods($username);
         $date = new DateTime($this->year . '-' . $this->month . '-' . $day);
         $entries = new Container();
         $entries->add($entry->toArray());
-        $times = TimesCalculator::calculate($periods, $entries, $date, $date);
-        $timesForDate = new Container($times->get($date->format('Y-m-d')));
-        $nightShiftTime = $timesForDate->get($this->nightShiftRow);
+        $nightShiftTime = $this->calculateNightShift($entry, $date);
         $row = array(
             'user' => $entry->get('name') . ' ' . $entry->get('surname'),
             'date' => $date->format('j-n-Y'),
@@ -89,15 +84,19 @@ class Rows {
         }
     }
     
-    private function findUserPeriods(string $username) : Container {
-        $periods = new Container();
-        foreach ($this->periods->toArray() as $item){
-            $period = new Container($item);
-            if($period->get('username') === $username){
-                $periods->add($item);
-            }
+    private function calculateNightShift(Container $entry, DateTime $dayStart) : int {
+        $start = new DateTime($entry->get('start'));
+        $end = new DateTime($entry->get('end'));
+        $appconfig = AppConfig::getInstance();
+        $cfg = $appconfig->getAppConfig();
+        $countStart = new DateTime($dayStart->format('Y-m-d') . ' ' . $cfg->get('night_shift_start'));
+        $countEnd = new DateTime($dayStart->format('Y-m-d') . ' ' . $cfg->get('night_shift_end'));
+        if($countEnd < $countStart){
+            $countEnd->modify('+1 days');
         }
-        return $periods;
+        $timeStart = max($start, $countStart);
+        $timeEnd = max($start, $countStart, min($end, $countEnd));
+        return (int) $timeEnd->format('Uv') - (int) $timeStart->format('Uv');
     }
     
     public function getRows() : Container {

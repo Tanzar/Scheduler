@@ -8,6 +8,7 @@ namespace Services;
 
 use Data\Access\Tables\DaysOffDAO as DaysOffDAO;
 use Data\Access\Tables\DaysOffUserDAO as DaysOffUserDAO;
+use Data\Access\Tables\SpecialWorkdaysDAO as SpecialWorkdaysDAO;
 use Data\Access\Views\DaysOffUserDetailsView as DaysOffUserDetailsView;
 use Data\Access\Views\UsersWithoutPasswordsView as UsersWithoutPasswordsView;
 use Tanweb\Container as Container;
@@ -21,12 +22,14 @@ use Tanweb\Session as Session;
 class DaysOffService {
     private DaysOffDAO $daysOff;
     private DaysOffUserDAO $daysOffUser;
+    private SpecialWorkdaysDAO $specialWorkdays;
     private DaysOffUserDetailsView $daysOffUserDetails;
     private UsersWithoutPasswordsView $users;
     
     public function __construct() {
         $this->daysOff = new DaysOffDAO();
         $this->daysOffUser = new DaysOffUserDAO();
+        $this->specialWorkdays = new SpecialWorkdaysDAO();
         $this->daysOffUserDetails = new DaysOffUserDetailsView();
         $this->users = new UsersWithoutPasswordsView();
     }
@@ -52,6 +55,10 @@ class DaysOffService {
         return $this->daysOffUserDetails->getByUsername($username);
     }
     
+    public function getSpecialWorkdays() : Container {
+        return $this->specialWorkdays->getAll();
+    }
+    
     public function saveDayOff(Container $data) : int {
         return $this->daysOff->save($data);
     }
@@ -66,6 +73,10 @@ class DaysOffService {
             $item->add($dayOffId, 'id_days_off');
             $this->daysOffUser->save($item);
         }
+    }
+    
+    public function saveSpecialWorkday(Container $data) : int {
+        return $this->specialWorkdays->save($data);
     }
     
     public function removeDayForUser(string $username, int $dayOffId) : void {
@@ -84,6 +95,17 @@ class DaysOffService {
         }
         else{
             $this->daysOff->enable($id);
+        }
+    }
+    
+    public function changeSpecialWorkdayStatus(int $id) : void {
+        $day = $this->specialWorkdays->getById($id);
+        $active = $day->get('active');
+        if($active){
+            $this->specialWorkdays->disable($id);
+        }
+        else{
+            $this->specialWorkdays->enable($id);
         }
     }
 }

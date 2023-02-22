@@ -103,7 +103,12 @@ enum Group : string {
         $appconfig = AppConfig::getInstance();
         $cfg = $appconfig->getAppConfig();
         $startYear = $cfg->get('yearStart');
+        $endYear = (int) date('Y');
         $result = new Container();
+        if ($inputValues->isValueSet('yearStart') && $inputValues->isValueSet('yearEnd')){
+            $startYear = $inputValues->get('yearStart');
+            $endYear = $inputValues->get('yearEnd');
+        }
         if ($inputValues->isValueSet('year')) {
             $year = $inputValues->get('year');
             $result->add(array(
@@ -112,7 +117,7 @@ enum Group : string {
             ));
         }
         else{
-            for($year = $startYear; $year <= (int) date('Y'); $year++){
+            for($year = $startYear; $year <= $endYear; $year++){
                 $result->add(array(
                     'title' => $year,
                     'value' => $year
@@ -147,27 +152,33 @@ enum Group : string {
         $database = Database::getInstance('scheduler');
         $sql = new MysqlBuilder();
         $sql->select('suzug_user_details')->where('active', 1)
-                ->orderBy('year')->orderBy('number');
+                ->orderBy('number');
         if ($inputValues->isValueSet('year')) {
             $sql->and()->where('year', $inputValues->get('year'));
         }
-        else{
-            $sql->and()->where('year', date('Y'));
+        if ($inputValues->isValueSet('yearStart') && $inputValues->isValueSet('yearEnd')){
+            $sql->and()->openBracket()
+                    ->where('year', $inputValues->get('yearStart'), '>=')->and()
+                    ->where('year', $inputValues->get('yearEnd'), '<=')->closeBracket();
         }
         if ($inputValues->isValueSet('username')) {
             $sql->and()->where('username', $inputValues->get('username'));
         }
         $data = $database->select($sql);
         $result = new Container();
+        $addedUsers = new Container();
         foreach ($data->toArray() as $item) {
             $element = new Container($item);
-            $result->add(array(
-                'title' => $element->get('name') . ' ' . $element->get('surname'),
-                'value' => $element->get('username'),
-                'SUZUG' => $element->get('number'),
-                'year' => $element->get('year'),
-                'user_type' => $element->get('user_type')
-            ));
+            if(!$addedUsers->contains($element->get('username'))){
+                $result->add(array(
+                    'title' => $element->get('name') . ' ' . $element->get('surname'),
+                    'value' => $element->get('username'),
+                    'SUZUG' => $element->get('number'),
+                    'year' => $element->get('year'),
+                    'user_type' => $element->get('user_type')
+                ));
+                $addedUsers->add($element->get('username'));
+            }
         }
         return $result;
     }
@@ -254,6 +265,15 @@ enum Group : string {
             $sql->and()->where('year(active_from)', $inputValues->get('year'), '<=')
                     ->and()->where('year(active_to)', $inputValues->get('year'), '>=');
         }
+        if ($inputValues->isValueSet('yearStart') && $inputValues->isValueSet('yearEnd')){
+            $sql->and()->openBracket()->openBracket()
+                    ->where('year(active_from)', $inputValues->get('yearStart'), '<=')
+                    ->and()->where('year(active_to)', $inputValues->get('yearStart'), '>=')
+                    ->closeBracket()->or()->openBracket()
+                    ->where('year(active_from)', $inputValues->get('yearEnd'), '<=')
+                    ->and()->where('year(active_to)', $inputValues->get('yearEnd'), '>=')
+                    ->closeBracket()->closeBracket();
+        }
         return $sql;
     }
     
@@ -292,6 +312,15 @@ enum Group : string {
         elseif ($inputValues->isValueSet('year')) {
             $sql->and()->where('year(active_from)', $inputValues->get('year'), '<=')
                     ->and()->where('year(active_to)', $inputValues->get('year'), '>=');
+        }
+        if ($inputValues->isValueSet('yearStart') && $inputValues->isValueSet('yearEnd')){
+            $sql->and()->openBracket()->openBracket()
+                    ->where('year(active_from)', $inputValues->get('yearStart'), '<=')
+                    ->and()->where('year(active_to)', $inputValues->get('yearStart'), '>=')
+                    ->closeBracket()->or()->openBracket()
+                    ->where('year(active_from)', $inputValues->get('yearEnd'), '<=')
+                    ->and()->where('year(active_to)', $inputValues->get('yearEnd'), '>=')
+                    ->closeBracket()->closeBracket();
         }
         return $sql;
     }

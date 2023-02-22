@@ -64,13 +64,20 @@ function ActivityTable(language, div){
                 }
                 overtimeActions.push(option);
             });
+            var worktimeRecordRows = [
+                {title: 'Urząd', value: 22},
+                {title: 'Delegacja', value: 23},
+                {title: 'WZN', value: 25},
+                {title: 'Nieobecności usprawiedliwione', value: 28},
+                {title: 'Zwolnienia od pracy', value: 30}
+            ];
             var fields = [
                 {type: 'text', title: language.name, variable: 'name', limit: 100, required: true},
                 {type: 'text', title: language.short, variable: 'short', limit: 50, required: true},
                 {type: 'text', title: language.symbol, variable: 'symbol', limit: 10, required: true},
                 {type: 'color', title: language.color, variable: 'color'},
                 {type: 'select', title: language.activity_group, variable: 'activity_group', options: groups, required: true},
-                {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1, required: true},
+                {type: 'select', title: language.worktime_record_row, variable: 'worktime_record_row', options: worktimeRecordRows, required: true},
                 {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
                 {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
                 {type: 'checkbox', title: language.require_document, variable: 'require_document'},
@@ -115,13 +122,20 @@ function ActivityTable(language, div){
                         }
                         overtimeActions.push(option);
                     });
+                    var worktimeRecordRows = [
+                        {title: 'Urząd', value: 22},
+                        {title: 'Delegacja', value: 23},
+                        {title: 'WZN', value: 25},
+                        {title: 'Nieobecności usprawiedliwione', value: 28},
+                        {title: 'Zwolnienia od pracy', value: 30}
+                    ];
                     var fields = [
                         {type: 'text', title: language.name, variable: 'name', limit: 100, required: true},
                         {type: 'text', title: language.short, variable: 'short', limit: 50, required: true},
                         {type: 'text', title: language.symbol, variable: 'symbol', limit: 10, required: true},
                         {type: 'color', title: language.color, variable: 'color'},
                         {type: 'select', title: language.activity_group, variable: 'activity_group', options: groups, required: true},
-                        {type: 'number', title: language.worktime_record_row, variable: 'worktime_record_row', min: -1, max: 14, value: -1, required: true},
+                        {type: 'select', title: language.worktime_record_row, variable: 'worktime_record_row', options: worktimeRecordRows, required: true},
                         {type: 'checkbox', title: language.workcard_display, variable: 'workcard_display'},
                         {type: 'checkbox', title: language.allow_location_input, variable: 'allow_location_input'},
                         {type: 'checkbox', title: language.require_document, variable: 'require_document'},

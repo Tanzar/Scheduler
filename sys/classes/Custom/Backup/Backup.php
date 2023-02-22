@@ -113,7 +113,8 @@ class Backup {
         $sqlScript = "INSERT INTO $table VALUES(";
         for ($j = 0; $j < $columnCount; $j ++) {
             $row[$j] = $row[$j];
-            $sqlScript .= (isset($row[$j])) ? "'" . $row[$j] . "'" : "''";
+            $text = str_replace("\0", "", $row[$j]);
+            $sqlScript .= (isset($row[$j])) ? "'" . $text . "'" : "''";
             if ($j < ($columnCount - 1)) {
                 $sqlScript .= ',';
             }
@@ -127,11 +128,7 @@ class Backup {
         $name = $timestamp->format('Y-m-d_[H_i_s]');
         $backup = $path . '/' . $name . '.sql';
         $mysql_file = fopen($backup, 'w+');
-        fwrite($mysql_file ,$sqlScript );
-        fclose($mysql_file );
-        $build = '/db_build_sql/3_backed_data.sql';
-        $buildFile = fopen($build, 'w+');
-        fwrite($buildFile, $sqlScript);
-        fclose($buildFile);
+        fwrite($mysql_file ,$sqlScript);
+        fclose($mysql_file);
     }
 }

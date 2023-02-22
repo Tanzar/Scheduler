@@ -147,7 +147,9 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 var placeholder = document.createElement('option');
                 placeholder.setAttribute('value', '');
                 placeholder.disabled = true;
-                placeholder.selected = true;
+                if(field.options.length !== 1){
+                    placeholder.selected = true;
+                }
                 placeholder.textContent = field.title;
                 select.appendChild(placeholder);
                 for(var k = 0; k < field.options.length; k++){
@@ -155,6 +157,9 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                     var option = document.createElement('option');
                     option.setAttribute('value', optionItem.value);
                     option.textContent = optionItem.title;
+                    if(field.options.length === 1){
+                        option.selected = true;
+                    }
                     select.appendChild(option);
                 }
                 container.appendChild(select);
@@ -172,7 +177,9 @@ function openModalBox(title, fields, buttonText, onAccept, item){
             case 'checkbox':
                 var check = document.createElement('input');
                 check.setAttribute('type', 'checkbox');
+                check.setAttribute('class', 'modal-box-checkbox');
                 var label = document.createElement('label');
+                label.setAttribute('class', 'modal-box-label');
                 label.textContent = field.title;
                 container.appendChild(check);
                 container.appendChild(label);
@@ -198,8 +205,12 @@ function openModalBox(title, fields, buttonText, onAccept, item){
                 }
                 break;
             case 'display':
-                var text = document.createTextNode(field.title);
-                container.appendChild(text);
+                var str = field.title.split(/\r?\n/);
+                str.forEach(txt => {
+                    var text = document.createTextNode(txt);
+                    container.appendChild(text);
+                    container.appendChild(document.createElement('br'));
+                });
                 break;
             case 'color':
                 var input = document.createElement('input');
@@ -222,7 +233,7 @@ function openModalBox(title, fields, buttonText, onAccept, item){
             case 'date':
                 var input = document.createElement('input');
                 input.setAttribute('type', 'date');
-                input.setAttribute('class', 'modal-box-input');
+                input.setAttribute('class', 'modal-box-input-date');
                 var label = document.createElement('label');
                 label.textContent = field.title + ' ';
                 container.appendChild(label);
@@ -255,7 +266,7 @@ function openModalBox(title, fields, buttonText, onAccept, item){
             case 'dateTime':
                 var input = document.createElement('input');
                 input.setAttribute('type', 'datetime-local');
-                input.setAttribute('class', 'modal-box-input');
+                input.setAttribute('class', 'modal-box-input-date');
                 var label = document.createElement('label');
                 label.textContent = field.title + ' ';
                 container.appendChild(label);
@@ -282,7 +293,7 @@ function openModalBox(title, fields, buttonText, onAccept, item){
             case 'time':
                 var input = document.createElement('input');
                 input.setAttribute('type', 'time');
-                input.setAttribute('class', 'modal-box-input');
+                input.setAttribute('class', 'modal-box-input-date');
                 var label = document.createElement('label');
                 label.textContent = field.title + ' ';
                 container.appendChild(label);

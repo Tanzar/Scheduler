@@ -6,6 +6,7 @@
 
 namespace Services;
 
+use Custom\Parsers\Database\Document as Document;
 use Data\Access\Tables\DocumentDAO as DocumentDAO;
 use Data\Access\Tables\DocumentUserDAO as DocumentUserDAO;
 use Data\Access\Tables\DocumentScheduleDAO as DocumentScheduleDAO;
@@ -50,7 +51,7 @@ class DocumentService {
     }
     
     public function getAllDocumentsByMonthYear(int $month, int $year) : Container{
-        return $this->document->getAllByMonthAndYear($month, $year);
+        return $this->documentDetails->getAllByMonthAndYear($month, $year);
     }
     
     public function getDocumentsByMonthYearUsername(int $month, int $year, string $username) : Container {
@@ -106,7 +107,9 @@ class DocumentService {
     }
     
     public function saveDocument(Container $data) : int {
-        return $this->document->save($data);
+        $parser = new Document();
+        $parsed = $parser->parse($data);
+        return $this->document->save($parsed);
     }
     
     public function editDocument(Container $data) : string {
@@ -119,7 +122,9 @@ class DocumentService {
                 return $language->get('edit_document_entries_exist_period');
             }
         }
-        $this->document->save($data);
+        $parser = new Document();
+        $parsed = $parser->parse($data);
+        $this->document->save($parsed);
         return $language->get('changes_saved');
     }
     
@@ -144,10 +149,17 @@ class DocumentService {
     public function assignUserToDocument(string $username, int $documentId) : int {
         $user = $this->user->getByUsername($username);
         $userId = (int) $user->get('id');
-        $item = new Container();
-        $item->add($documentId, 'id_document');
-        $item->add($userId, 'id_user');
-        return $this->documentUser->save($item);
+        $assigns = $this->documentUser->getAllByUserAndDocument($userId, $documentId);
+        if($assigns->length() === 0){
+            $item = new Container();
+            $item->add($documentId, 'id_document');
+            $item->add($userId, 'id_user');
+            return $this->documentUser->save($item);
+        }
+        else{
+            $item =  $assigns->get(0);
+            return $item['id'];
+        }
     }
     
     public function changeDocumentStatus(int $id){

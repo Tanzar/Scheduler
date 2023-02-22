@@ -267,6 +267,8 @@ function Display() {
     
     function loadPlot(config){
         var plotDiv = document.createElement('div');
+        plotDiv.style.width = '100%';
+        plotDiv.style.height = '100%';
         var layout = {
             title: config.title,
             xaxis: {
@@ -275,7 +277,18 @@ function Display() {
             yaxis: {
                 rangemode: 'nonnegative',
                 autorange: true
-            }
+            },
+            autosize: false,
+            height: 600,
+            width: 1000,
+            margin: {
+                l: 50,
+                r: 50,
+                b: 150,
+                t: 100,
+                pad: 4
+            },
+            plot_bgcolor: '#f9f9f9'
         }
         if(Array.isArray(config.data)){
             if(config.data[0].type === 'pie'){
@@ -293,13 +306,7 @@ function Display() {
                     item.domain = {
                         row: row,
                         column: col
-                    }/*
-                    layout.annotations.push({
-                        text: item.name,
-                        x: (col - 1) * 0.5,
-                        y: (row + 2) / config.data.length,
-                        showarrow: false
-                    });*/
+                    }
                     counter++;
                 })
             }

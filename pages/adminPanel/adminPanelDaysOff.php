@@ -64,6 +64,12 @@ This code is free to use, just remember to give credit.
                     </div>
                     <div id="users"></div>
                 </div>
+                <div style="padding-right: 5px">
+                    <div class="standard-text-title">
+                        <?php echo $interfaceText->get('special_work_day'); ?>
+                    </div>
+                    <div id="workdays"></div>
+                </div>
             </div>
             
         </div>

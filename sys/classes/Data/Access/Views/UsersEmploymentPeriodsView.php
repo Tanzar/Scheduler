@@ -60,6 +60,16 @@ class UsersEmploymentPeriodsView extends View{
         return $this->select($sql);
     }
     
+    public function getActiveByUserMonthYear(string $username, int $month, int $year) : Container{
+        $monthStart = date($year . '-' . $month . '-1');
+        $monthEnd = date('Y-m-t', strtotime($monthStart));
+        $sql = new MysqlBuilder();
+        $sql->select('users_employment_periods')->where('active', 1)
+                ->and()->where('username', $username)
+                ->and()->where('start', $monthEnd, '<=')->and()->where('end', $monthStart, '>=');
+        return $this->select($sql);
+    }
+    
     public function getOrderedActiveByDate(string $date) : Container{
         $sql = new MysqlBuilder();
         $sql->select('users_employment_periods')->where('active', 1)

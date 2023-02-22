@@ -135,4 +135,26 @@ function SuzugTable(language) {
             alert(language.select_user);
         }
     });
+    document.getElementById('selectYear').onchange = function(){
+        datatable.setDatasource({
+            method: 'get',
+            address: getRestAddress(),
+            data: {
+                controller: 'StatsSuzug',
+                task: 'getSuzugUsers',
+                year: document.getElementById('selectYear').value
+            }
+        });
+    }
+    $('#selectDate').click(function(){
+        datatable.setDatasource({
+            method: 'get',
+            address: getRestAddress(),
+            data: {
+                controller: 'StatsSuzug',
+                task: 'getSuzugUsers',
+                year: document.getElementById('selectYear').value
+            }
+        });
+    });
 }

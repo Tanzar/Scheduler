@@ -188,7 +188,6 @@ class SingleStats extends Statistics {
             if(!$inputValues->isValueSet('year')){
                 $result .= $option->get('year') . ': ';
             }
-            $result .= $option->get('SUZUG') . ' - ';
         }
         $result .= $option->get('title');
         return $result;

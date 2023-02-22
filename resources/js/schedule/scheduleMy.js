@@ -182,7 +182,7 @@ function ScheduleMy(){
                                     options.push(option);
                                 });
                                 var fields = [
-                                    {type: 'select', title: language.select_document, variable: 'id_document', options: options},
+                                    {type: 'select', title: language.select_document, variable: 'id_document', options: options, required: true},
                                     {type: 'checkbox', title: (language.underground + '?'), variable: 'underground'}
                                 ];
                                 openModalBox(language.select_document, fields, language.save, function(data){

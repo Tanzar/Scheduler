@@ -44,7 +44,6 @@ if($security->userHaveAnyPrivilage($schedulePrivilages)){
     echo '</div>';
 }
 
-
 $inventoryPrivilages = new Container(['admin', 'inventory_user', 'inventory_admin']);
 if($security->userHaveAnyPrivilage($inventoryPrivilages)){
     echo '<div class="standard-text-title">';

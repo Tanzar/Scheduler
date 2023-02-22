@@ -32,7 +32,7 @@ class YearlyStats extends Statistics {
         $end = (int) $inputsValues->get('yearEnd');
         $result = new Container();
         $results = array();
-        for($year = $start; $year <= $end; $year++){
+        for($year = $end; $year >= $start; $year--){
             $partial = $this->formStatsForYear($year);
             $results[] = $partial->toArray();
         }

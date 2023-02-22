@@ -6,6 +6,7 @@ function init(){
     RestApi.getInterfaceNamesPackage(function(language){
         var daysTable = initDaysTable(language);
         initUsersTable(language, daysTable);
+        initWorkDaysTable(language);
     });
 }
 
@@ -195,4 +196,88 @@ function initUsersTable(language, daysTable){
             alert(language.select_user)
         }
     });
+}
+
+function initWorkDaysTable(language){
+    var div = document.getElementById('workdays');
+    
+    var config = {
+        columns : [
+            { title: 'ID', variable: 'id', width: 30},
+            { title: language.active, variable: 'active', width: 50},
+            { title: language.date, variable: 'date', width: 150, minWidth: 150},
+            { title: language.description, variable: 'description', width: 150, minWidth: 150}
+        ],
+        dataSource : { 
+            method: 'post', 
+            address: getRestAddress(), 
+            data: { 
+                controller: 'AdminPanelDaysOff', 
+                task: 'getSpecialWorkdays' 
+            } 
+        }
+    };
+    var datatable = new Datatable(div, config);
+    datatable.addActionButton(language.add, function(){
+        var fields = [
+            {type: 'date', title: language.date, variable: 'date'},
+            {type: 'text', title: language.description, variable: 'description', limit: 100, required: true}
+        ];
+        openModalBox(language.new_special_work_day, fields, language.save, function(data){
+            RestApi.post('AdminPanelDaysOff', 'saveSpecialWorkday', data,
+                function(response){
+                    var data = JSON.parse(response);
+                    console.log(data);
+                    alert(data.message);
+                    datatable.refresh();
+                },
+                function(response){
+                    console.log(response.responseText);
+                    alert(response.responseText);
+            });
+        });
+    });
+    datatable.addActionButton(language.edit, function(selected){
+        if(selected !== undefined){
+            var fields = [
+                {type: 'date', title: language.date, variable: 'date'},
+                {type: 'text', title: language.description, variable: 'description', limit: 100, required: true}
+            ];
+            openModalBox(language.edit_special_work_day, fields, language.save, function(data){
+                RestApi.post('AdminPanelDaysOff', 'saveSpecialWorkday', data,
+                    function(response){
+                        var data = JSON.parse(response);
+                        console.log(data);
+                        alert(data.message);
+                        datatable.refresh();
+                    },
+                    function(response){
+                        console.log(response.responseText);
+                        alert(response.responseText);
+                    });
+            }, selected);
+        }
+        else{
+            alert(language.select_special_work_day);
+        }
+    });
+    datatable.addActionButton(language.change_status, function(selected){
+        if(selected !== undefined){
+            RestApi.post('AdminPanelDaysOff', 'changeSpecialWorkdayStatus', {id: selected.id},
+                function(response){
+                    var data = JSON.parse(response);
+                    console.log(data);
+                    alert(data.message);
+                    datatable.refresh();
+                },
+                function(response){
+                    console.log(response.responseText);
+                    alert(response.responseText);
+            });
+        }
+        else{
+            alert(language.select_special_work_day)
+        }
+    });
+    return datatable;
 }

@@ -56,7 +56,7 @@ This code is free to use, just remember to give credit.
                 <div class="centered-contents" style="width: 100%">
                     <div id="inputs"></div>
                     <button id="generateStats" class="standard-button" style="display: none"><?php echo $interfaceText->get('generate'); ?></button>
-                    <div id="statsDisplay" class="standard-display"></div>
+                    <div id="statsDisplay" class="standard-display" style="min-height: 600px; min-width: 700px"></div>
                     <div class="horizontal-container">
                         <button id="generatePDF" class="standard-button" style="display: none">PDF</button>
                         <button id="generateExcel" class="standard-button" style="display: none">Excel</button>

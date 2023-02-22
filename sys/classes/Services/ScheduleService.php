@@ -54,8 +54,8 @@ class ScheduleService {
     }
     
     public function getEntries(string $start, string $end) : Container{
-        $startDate = new DateTime($start);
-        $endDate = new DateTime($end);
+        $startDate = new DateTime($start . ' 00:00:00');
+        $endDate = new DateTime($end . '23:59:59');
         return $this->scheduleEntries->getActive($startDate, $endDate);
     }
     
@@ -162,6 +162,7 @@ class ScheduleService {
         $entry = $parser->parse($data);
         $this->checkBlocker($entry);
         $this->checkEntryDuration($entry);
+        $this->checkEntryDates($entry);
         $idSchedule = $this->schedule->save($entry);
         if($data->isValueSet('id_document')){
             $idDocument = (int) $data->get('id_document');
@@ -183,7 +184,7 @@ class ScheduleService {
             $data->add(1, 'id_user');
         }
         else{
-            $username = $data->get('username');
+            $username = Session::getUsername();
             $user = $this->user->getByUsername($username);
             $data->add($user->get('id'), 'id_user');
         }
@@ -191,6 +192,7 @@ class ScheduleService {
         $entry = $parser->parse($data);
         $this->checkBlocker($entry);
         $this->checkEntryDuration($entry);
+        $this->checkEntryDates($entry);
         $idSchedule = $this->schedule->save($entry);
         if($data->isValueSet('id_document')){
             $idDocument = (int) $data->get('id_document');
@@ -358,9 +360,12 @@ class ScheduleService {
         $start = new DateTime($entry->get('start'));
         $end = new DateTime($entry->get('end'));
         $duration = (int) $end->format('Uv') - (int) $start->format('Uv');
-        if($duration > 86400000){   //24 hours
             $languages = Languages::getInstance();
+        if($duration > 86400000){   //24 hours
             throw new ScheduleEntryException($languages->get('entry_duration_over_limit'));
+        }
+        elseif($duration <= 0){
+            throw new ScheduleEntryException($languages->get('start_earlier_than_end'));
         }
     }
     

@@ -634,7 +634,7 @@ class DocumentRaport extends PDFMaker{
             $height += 7;
             foreach ($decisions->toArray() as $item){
                 $decision = new Container($item);
-                $widths = array(35, $this->w - $this->margin - $this->currentLeftMargin - 35);
+                $widths = array(35, $this->w - $this->margin - $this->currentLeftMargin - 7 - 35);
                 $texts = array(
                     'Data: ' . $decision->get('decision_date'),
                     $decision->get('decision_description')

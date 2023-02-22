@@ -1,0 +1,62 @@
+[2023-02-22  08:37:07] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-22  08:37:14] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Istnieje wpis o dacie poza okresem zatrudnienia pracownika.: user_SPY, start = 2019-01-02 07:30:00
+[2023-02-22  08:37:28] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-22  08:37:34] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-22  08:37:37] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelUsers.php?
+[2023-02-22  08:38:38] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Istnieje wpis o dacie poza okresem zatrudnienia pracownika.: user_SPY, start = 2019-01-02 07:30:00
+[2023-02-22  08:39:25] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Istnieje wpis o dacie poza okresem zatrudnienia pracownika.: user_SPY, start = 2019-01-02 07:30:00
+[2023-02-22  08:40:43] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-22  09:29:08] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] easter_date(): Argument #1 ($year) must be between 1970 and 2037 (inclusive) ;
+ #0 /var/www/html/sys/classes/Custom/Dates/HolidayChecker.php(45): easter_date(2038)
+#1 /var/www/html/sys/classes/Custom/Dates/HolidayChecker.php(37): Custom\Dates\HolidayChecker::getEasterMondayDate(2038)
+#2 /var/www/html/sys/classes/Custom/Dates/HolidayChecker.php(21): Custom\Dates\HolidayChecker::getHolidaysList(2038)
+#3 /var/www/html/sys/classes/Custom/Dates/DayOffChecker.php(85): Custom\Dates\HolidayChecker::isHoliday(Object(DateTime))
+#4 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(113): Custom\Dates\DayOffChecker->isHoliday(Object(DateTime))
+#5 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(164): Custom\File\Tools\Timesheets\DaysDetails->setDateDetails(Object(Custom\File\Tools\Timesheets\DayDetails), Object(DateTime))
+#6 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(153): Custom\File\Tools\Timesheets\DaysDetails->fillEmptyDatesForPeriod(Object(Tanweb\Container))
+#7 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(51): Custom\File\Tools\Timesheets\DaysDetails->fillEmptyDates()
+#8 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(43): Custom\File\Tools\Timesheets\DaysDetails->init()
+#9 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(63): Custom\File\Tools\Timesheets\DaysDetails->__construct('user_SPY', Object(Tanweb\Container), Object(Tanweb\Container))
+#10 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(46): Custom\File\Tools\Timesheets\TimesheetsData->initDaysDetails(2, 2023)
+#11 /var/www/html/sys/classes/Custom/File/Timesheets.php(34): Custom\File\Tools\Timesheets\TimesheetsData->__construct(2, 2023, 'user_SPY')
+#12 /var/www/html/sys/classes/Custom/File/Timesheets.php(43): Custom\File\Timesheets->__construct(2, 2023, 'user_SPY')
+#13 /var/www/html/sys/classes/Services/PrintsService.php(34): Custom\File\Timesheets::generate(2, 2023, 'user_SPY')
+#14 /var/www/html/sys/classes/Controllers/PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('user_SPY', 2, 2023)
+#15 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#16 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#17 /var/www/html/sys/scripts/requests/file.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#18 {main}
+[2023-02-22  09:36:07] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Call to a member function assignEntryTimes() on null ;
+ #0 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(85): Custom\File\Tools\Timesheets\DaysDetails->calculateEntryForDate(Object(Tanweb\Container), Object(DateTime), Object(Tanweb\Container))
+#1 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(58): Custom\File\Tools\Timesheets\DaysDetails->calculateEntry(Object(Tanweb\Container), Object(Tanweb\Container), '07:00:00')
+#2 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(49): Custom\File\Tools\Timesheets\DaysDetails->analyzeEntry(Object(Tanweb\Container))
+#3 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(43): Custom\File\Tools\Timesheets\DaysDetails->init()
+#4 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(63): Custom\File\Tools\Timesheets\DaysDetails->__construct('user_SPY', Object(Tanweb\Container), Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(46): Custom\File\Tools\Timesheets\TimesheetsData->initDaysDetails(2, 2023)
+#6 /var/www/html/sys/classes/Custom/File/Timesheets.php(34): Custom\File\Tools\Timesheets\TimesheetsData->__construct(2, 2023, 'user_SPY')
+#7 /var/www/html/sys/classes/Custom/File/Timesheets.php(43): Custom\File\Timesheets->__construct(2, 2023, 'user_SPY')
+#8 /var/www/html/sys/classes/Services/PrintsService.php(34): Custom\File\Timesheets::generate(2, 2023, 'user_SPY')
+#9 /var/www/html/sys/classes/Controllers/PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('user_SPY', 2, 2023)
+#10 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#11 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#12 /var/www/html/sys/scripts/requests/file.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#13 {main}
+[2023-02-22  10:01:43] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Call to a member function format() on null ;
+ #0 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(85): Custom\File\Tools\Timesheets\DaysDetails->calculateEntryForDate(Object(Tanweb\Container), Object(DateTime), Object(Tanweb\Container))
+#1 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(58): Custom\File\Tools\Timesheets\DaysDetails->calculateEntry(Object(Tanweb\Container), Object(Tanweb\Container), '07:00:00')
+#2 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(49): Custom\File\Tools\Timesheets\DaysDetails->analyzeEntry(Object(Tanweb\Container))
+#3 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(43): Custom\File\Tools\Timesheets\DaysDetails->init()
+#4 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(63): Custom\File\Tools\Timesheets\DaysDetails->__construct('user_SPY', Object(Tanweb\Container), Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(46): Custom\File\Tools\Timesheets\TimesheetsData->initDaysDetails(2, 2023)
+#6 /var/www/html/sys/classes/Custom/File/Timesheets.php(34): Custom\File\Tools\Timesheets\TimesheetsData->__construct(2, 2023, 'user_SPY')
+#7 /var/www/html/sys/classes/Custom/File/Timesheets.php(43): Custom\File\Timesheets->__construct(2, 2023, 'user_SPY')
+#8 /var/www/html/sys/classes/Services/PrintsService.php(34): Custom\File\Timesheets::generate(2, 2023, 'user_SPY')
+#9 /var/www/html/sys/classes/Controllers/PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('user_SPY', 2, 2023)
+#10 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#11 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#12 /var/www/html/sys/scripts/requests/file.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#13 {main}
+[2023-02-22  10:12:17] [type: Access] [user: user_SPY] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-22  10:15:14] [type: Access] [user: user_SPY] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-22  10:23:02] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-22  10:30:18] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?

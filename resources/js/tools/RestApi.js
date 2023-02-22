@@ -9,6 +9,8 @@ class RestApi {
         var response = '';
         data.controller = controller;
         data.task = task;
+        var body = document.body;
+        var div = RestApi.blockPage(body);
         $.ajax({
                 url: address,
                 type: 'GET',
@@ -36,6 +38,7 @@ class RestApi {
                     }
                 },
                 complete: function (data) {
+                    RestApi.unblockPage(body, div);
                     if(onComplete !== undefined){
                         onComplete(data);
                     }
@@ -49,6 +52,8 @@ class RestApi {
         var response = '';
         data.controller = controller;
         data.task = task;
+        var body = document.body;
+        var div = RestApi.blockPage(body);
         $.ajax({
                 url: address,
                 type: 'POST',
@@ -76,6 +81,7 @@ class RestApi {
                     }
                 },
                 complete: function (data) {
+                    RestApi.unblockPage(body, div);
                     if(onComplete !== undefined){
                         onComplete(data);
                     }
@@ -123,6 +129,8 @@ class RestApi {
         formData.append('controller', controller);
         var address = RestApi.getAddress();
         var response = '';
+        var body = document.body;
+        var div = RestApi.blockPage(body);
         $.ajax({
                 url: address,
                 type: 'POST',
@@ -152,11 +160,29 @@ class RestApi {
                     }
                 },
                 complete: function (data) {
+                    RestApi.unblockPage(body, div);
                     if(onComplete !== undefined){
                         onComplete(data);
                     }
                 }
         });
         return response;
+    }
+    
+    static blockPage(body){
+        var div = document.createElement('div');
+        div.setAttribute('class', 'page-blocker');
+        var modal = document.createElement('div');
+        modal.setAttribute('class', 'page-blocker-modal');
+        modal.textContent = 'Processing please wait....';
+        div.appendChild(modal);
+        body.appendChild(div);
+        return div;
+    }
+    
+    static unblockPage(body, div){
+        if(body.contains(div)){
+            body.removeChild(div);
+        }
     }
 }

@@ -8,3 +8,111 @@
 [2023-01-26  08:00:41] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryMy.php?
 [2023-01-26  08:00:44] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryAdmin.php?
 [2023-01-26  08:05:00] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-26  08:55:46] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  08:57:10] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  08:57:34] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/stats/statsNoForm.php?
+[2023-01-26  08:58:08] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  08:59:29] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  09:11:18] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  09:23:45] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-26  09:23:49] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelUsers.php?
+[2023-01-26  09:23:59] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  09:24:04] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/stats/statsNoForm.php?
+[2023-01-26  09:24:30] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  09:35:57] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/stats/statsNoForm.php?
+[2023-01-26  09:37:09] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  09:54:58] [type: Access] [user: ] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  09:55:11] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  09:55:32] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  10:35:05] [type: Error] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Container error: value user_PER not found ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(97): Tanweb\Container->throwException('value user_PER ...')
+#1 /var/www/html/sys/classes/Custom/Statistics/Options/Group.php(189): Tanweb\Container->getKeyByValue('user_PER', 'username')
+#2 /var/www/html/sys/classes/Custom/Statistics/Options/Group.php(168): Custom\Statistics\Options\Group->formUsersOptions(Object(Tanweb\Container))
+#3 /var/www/html/sys/classes/Custom/Statistics/Options/Group.php(42): Custom\Statistics\Options\Group->getUsers(Object(Tanweb\Container))
+#4 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(172): Custom\Statistics\Options\Group->getOptions(Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(149): Custom\Statistics\SingleStats->formStandardPlotValues(Object(Tanweb\Container), Object(Custom\Statistics\Calculation\ResultSet), Object(Custom\Statistics\Options\Group))
+#6 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(62): Custom\Statistics\SingleStats->addPlotData(Object(Custom\Statistics\Options\ResultForm), Object(Tanweb\Container), Object(Custom\Statistics\Calculation\ResultSet))
+#7 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(34): Custom\Statistics\SingleStats->parseResultSet(Object(Custom\Statistics\Calculation\ResultSet))
+#8 /var/www/html/sys/classes/Custom/Statistics/YearlyStats.php(57): Custom\Statistics\SingleStats->generate()
+#9 /var/www/html/sys/classes/Custom/Statistics/YearlyStats.php(36): Custom\Statistics\YearlyStats->formStatsForYear(2021)
+#10 /var/www/html/sys/classes/Services/StatsService.php(254): Custom\Statistics\YearlyStats->generate()
+#11 /var/www/html/sys/classes/Controllers/StatsDisplay.php(45): Services\StatsService->generateStats(Object(Tanweb\Container))
+#12 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\StatsDisplay->generateStats()
+#13 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#14 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#15 {main}
+[2023-01-26  10:36:41] [type: Error] [user: admin] [ip: 172.20.0.1] [proxy: undefined] Container error: value user_PER not found ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(97): Tanweb\Container->throwException('value user_PER ...')
+#1 /var/www/html/sys/classes/Custom/Statistics/Options/Group.php(189): Tanweb\Container->getKeyByValue('user_PER', 'username')
+#2 /var/www/html/sys/classes/Custom/Statistics/Options/Group.php(168): Custom\Statistics\Options\Group->formUsersOptions(Object(Tanweb\Container))
+#3 /var/www/html/sys/classes/Custom/Statistics/Options/Group.php(42): Custom\Statistics\Options\Group->getUsers(Object(Tanweb\Container))
+#4 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(172): Custom\Statistics\Options\Group->getOptions(Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(149): Custom\Statistics\SingleStats->formStandardPlotValues(Object(Tanweb\Container), Object(Custom\Statistics\Calculation\ResultSet), Object(Custom\Statistics\Options\Group))
+#6 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(62): Custom\Statistics\SingleStats->addPlotData(Object(Custom\Statistics\Options\ResultForm), Object(Tanweb\Container), Object(Custom\Statistics\Calculation\ResultSet))
+#7 /var/www/html/sys/classes/Custom/Statistics/SingleStats.php(34): Custom\Statistics\SingleStats->parseResultSet(Object(Custom\Statistics\Calculation\ResultSet))
+#8 /var/www/html/sys/classes/Custom/Statistics/YearlyStats.php(57): Custom\Statistics\SingleStats->generate()
+#9 /var/www/html/sys/classes/Custom/Statistics/YearlyStats.php(36): Custom\Statistics\YearlyStats->formStatsForYear(2021)
+#10 /var/www/html/sys/classes/Services/StatsService.php(254): Custom\Statistics\YearlyStats->generate()
+#11 /var/www/html/sys/classes/Controllers/StatsDisplay.php(45): Services\StatsService->generateStats(Object(Tanweb\Container))
+#12 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\StatsDisplay->generateStats()
+#13 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#14 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#15 {main}
+[2023-01-26  10:42:14] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  10:43:15] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/stats/statsNoForm.php?
+[2023-01-26  10:43:48] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-01-26  10:45:50] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-26  10:47:09] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  10:47:13] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-01-26  10:47:41] [type: Access] [user: user_SPA] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  10:47:44] [type: Access] [user: user_SPA] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-01-26  10:48:07] [type: Access] [user: ] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-26  10:48:16] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-01-26  10:48:23] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelLocationSettings.php?
+[2023-01-26  10:48:28] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-01-26  10:51:03] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  11:01:17] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  11:03:51] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  11:05:37] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  11:07:31] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  11:22:38] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  11:26:41] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  12:26:23] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  12:26:40] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  12:27:25] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  12:28:33] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  12:37:20] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  12:38:53] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  12:40:27] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  12:42:17] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  12:47:04] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  12:47:44] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  13:19:21] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  13:20:31] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  13:21:02] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  13:21:43] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  13:23:29] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  13:24:06] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  13:24:43] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  13:42:34] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  13:44:07] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  13:50:09] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  13:59:44] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:00:26] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:01:09] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:01:13] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:03:45] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:09:16] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:15:07] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:27:54] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:28:53] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:31:19] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:34:33] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:35:11] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:36:40] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:50:18] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:52:36] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:53:50] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:55:34] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:55:39] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-01-26  14:57:17] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?

@@ -42,7 +42,7 @@ class ScheduleEntriesView extends View{
         $sql->select('schedule_entries')->where('start', $end->format("Y-m-d H:i:s"), '<')
                 ->and()->where('end', $start->format("Y-m-d H:i:s"), '>')
                 ->and()->where('active', 1)
-                ->orderBy('start');
+                ->orderBy('sort_priority')->orderBy('surname');
         $data = $this->select($sql);
         return $data;
     }

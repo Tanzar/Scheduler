@@ -38,7 +38,7 @@ class DocumentDAO extends DAO{
                 ->or()->openBracket()
                 ->where('month(end)', $month)->and()->where('year(end)', $year)
                 ->closeBracket()->closeBracket()
-                ->orderBy('start');
+                ->orderBy('start', false);
         return $this->select($sql);
     }
     
@@ -50,7 +50,7 @@ class DocumentDAO extends DAO{
                 ->or()->openBracket()
                 ->where('month(end)', $month)->and()->where('year(end)', $year)
                 ->closeBracket()->closeBracket()
-                ->orderBy('start');
+                ->orderBy('start', false);
         return $this->select($sql);
     }
     

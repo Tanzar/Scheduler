@@ -2,13 +2,14 @@
  * This code is free to use, just remember to give credit.
  */
 
-function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, cellOnClick){
+function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, groupTitle, cellOnClick){
     
     dayStart.setHours(0,0,0,0);
     dayEnd.setHours(23,59,59,0);
     
-    this.minutesPerPixel = 5;
-    this.separation = 3;
+    var minutesPerPixel = 5;
+    var cellHeight = 40;
+    var separation = 20;
     this.rangeStart = dayStart;
     this.rangeEnd = dayEnd;
     this.data = data;
@@ -16,106 +17,259 @@ function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, cellOnCli
     this.div = div;
     this.weekdayNames = weekdayNames;
     
-    this.groupData = function(data){
-        var rows = {};
-        data.forEach(item => {
-            if(rows[item[groupBy]] === undefined){
-                rows[item[groupBy]] = [item];
-            }
-            else{
-                rows[item[groupBy]].push(item);
-            }
-        });
-        return rows;
-    }
-    
     this.countDays = function(dayStart, dayEnd){
         var difference = dayEnd.getTime() - dayStart.getTime();
         var totalDays = Math.ceil(difference / (1000 * 3600 * 24));
         return totalDays;
     }
     
-    this.countDayWidth = function(){
-        return (24 * 60) / this.minutesPerPixel;
+    function countDayWidth(){
+        return (24 * 60) / minutesPerPixel;
+    }
+    
+    function calculateTimetableElementLeft(dateTime){
+        var start = new Date(dayStart);
+        if(dateTime < start){
+            return 0;
+        }
+        else{
+            var diff = Math.abs(dateTime - start);
+            var mins = Math.floor((diff/1000)/60);
+            return mins / minutesPerPixel;
+        }
     }
     
     this.countTotalWidth = function(){
         var days = this.countDays(this.rangeStart, this.rangeEnd);
-        var width = days * this.countDayWidth();
+        var width = days * countDayWidth();
         return width;
     }
     
-    this.createHeaders = function(){
-        var headers = [];
-        var totalDays = this.countDays(this.rangeStart, this.rangeEnd);
-        var dayWidth = this.countDayWidth();
+    function formDatesArray(start, end) {
+        var date = new Date(start.getTime());
+        var difference = end.getTime() - start.getTime();
+        var totalDays = Math.ceil(difference / (1000 * 3600 * 24));
+        var dates = [];
         for(var i = 0; i < totalDays; i++){
-            var date = new Date(this.rangeStart);
-            date.setDate(date.getDate() + i);
+            var newDate = new Date(date.getTime());
+            newDate.setDate(newDate.getDate() + i);
+            dates.push(newDate);
+        }
+        return dates;
+    }
+    
+    function calculateCellWidth(entry){
+        var start = new Date(entry.start);
+        if(start < new Date(dayStart)){
+            start = new Date(dayStart);
+        }
+        var end = new Date(entry.end);
+        if(new Date(dayEnd) < end){
+            end = new Date(dayEnd);
+        }
+        var diff = Math.abs(end - start);
+        return  (Math.floor((diff/1000)/60) / minutesPerPixel) - 2;
+    }
+    
+    function groupData(data) {
+        var grouped = [];
+        data.forEach(entry => {
+            var groupIndex = -1;
+            grouped.forEach((item, i) => {
+                if(item.name === entry[groupBy]){
+                    groupIndex = i;
+                }
+            });
+            if(groupIndex === -1){
+                grouped.push({
+                    name: entry[groupBy],
+                    title: entry[groupTitle],
+                    rows: [[entry]],
+                    height: cellHeight + 2 * separation
+                });
+            }
+            else{
+                var rowNumber = -1;
+                for(var i = 0; i < grouped[groupIndex].rows.length; i++){
+                    var canBeAdded = true;
+                    grouped[groupIndex].rows[i].forEach(item => {
+                        if(rowNumber === -1){
+                            var startEntry = new Date(entry.start);
+                            var endEntry = new Date(entry.end);
+                            var startItem = new Date(item.start);
+                            var endItem = new Date(item.end);
+                            if((startEntry < endItem && endEntry > startItem)){
+                                canBeAdded = false;
+                            }
+                        }
+                    });
+                    if(canBeAdded){
+                        rowNumber = i;
+                    }
+                }
+                if(rowNumber === -1){
+                    rowNumber = grouped[groupIndex].rows.length;
+                    grouped[groupIndex].rows.push([]);
+                    grouped[groupIndex].height += cellHeight + 2 * separation;
+                }
+                grouped[groupIndex].rows[rowNumber].push(entry);
+            }
+        });
+        return grouped;
+    }
+    
+    function createGroupsLabel(grouped) {
+        var label = document.createElement('div');
+        label.setAttribute('class', 'timetable-groups-label');
+        var corner = document.createElement('div');
+        corner.setAttribute('class', 'timetable-group');
+        corner.style.width = '50px';
+        corner.style.height = '50px';
+        label.appendChild(corner);
+        var keys = Object.keys(grouped);
+        var height = 52;
+        keys.forEach(key => {
+            var group = document.createElement('div');
+            group.setAttribute('class', 'timetable-group');
+            group.style.height = grouped[key].height + 'px';
+            group.textContent = grouped[key].title;
+            height += grouped[key].height + 2;
+            label.appendChild(group);
+        });
+        label.style.height = height + 'px';
+        return label;
+    }
+    
+    function createDispalyBoard(height, dates, data, timetable) {
+        var board = document.createElement('div');
+        board.setAttribute('class', 'timetable-data');
+        board.style.height = height;
+        var width = createHeaders(dates, timetable, board);
+        
+        board.style.width = width + 'px';
+        var top = 50;
+        data.forEach(group => {
+            var frame = document.createElement('div');
+            frame.setAttribute('class', 'timetable-group-frame');
+            frame.style.left = '0px';
+            var groupTop = top + 2;
+            frame.style.top = groupTop + 'px';
+            frame.style.height = group.height + 'px';
+            frame.style.width = width + 'px';
+            top += group.height+ 2;
+            board.append(frame);
+            var rowTop = 0;
+            group.rows.forEach(row => {
+                row.forEach(entry => {
+                    createCell(entry, rowTop, frame);
+                });
+                rowTop += cellHeight + 2 * separation;
+            })
+        });
+        
+        
+        return board;
+    }
+    
+    function createHeaders(dates, timetable, board) {
+        var headers = document.createElement('div');
+        headers.setAttribute('class', 'timetable-headers');
+        var width = 0;
+        var dayWidth = countDayWidth();
+        dates.forEach(date => {
             var head = document.createElement('div');
             head.setAttribute('class', 'timetable-head');
             var weekday = '';
             if(date.getDay() === 0){
-                weekday = this.weekdayNames[7];
+                weekday = timetable.weekdayNames[7];
             }
             else{
-                weekday = this.weekdayNames[date.getDay()];
+                weekday = timetable.weekdayNames[date.getDay()];
             }
-            head.textContent = weekday + '  -  ' + date.getDate() + '.' + 
-                    (date.getMonth() + 1) + '.' + date.getFullYear();
-            head.style.width = dayWidth + 'px';
-            head.style.left = i * dayWidth + 'px';
-            headers.push(head);
-        }
-        return headers;
+            if(date.getDay() === 0 || date.getDay() === 6){
+                var time = new Date(date);
+                time.setHours(0);
+                var dayOffLeft = calculateTimetableElementLeft(time);
+                var dayOffBackground = document.createElement('div');
+                dayOffBackground.setAttribute('class', 'timetable-day-off');
+                dayOffBackground.style.width = countDayWidth() + 'px';
+                dayOffBackground.style.left = dayOffLeft + 'px';
+                board.appendChild(dayOffBackground);
+            }
+            var textDiv = document.createElement('div');
+            textDiv.textContent = date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() + ' ' + weekday;
+            textDiv.style.height = '40px';
+            head.appendChild(textDiv);
+            head.style.width = dayWidth - 2 + 'px';
+            width += dayWidth;
+            headers.appendChild(head);
+            var hours = document.createElement('div');
+            hours.setAttribute('class', 'timetable-head-hours');
+            createHoursBars(date, board, hours);
+            head.appendChild(hours);
+        });
+        board.appendChild(headers);
+        return width;
     }
     
-    this.countDayPush = function(date){
-        var dayWidth = this.countDayWidth();
-        var daysCount = this.countDays(this.rangeStart, date);
-        if(daysCount <= 0){
-            return 0;
-        }
-        else{
-            return (daysCount - 1)* dayWidth;
+    function createHoursBars(date, board, hours) {
+        for(var hour = 0; hour < 24; hour++){
+            var bar = document.createElement('div');
+            if(hour === 0){
+                bar.setAttribute('class', 'timetable-line-day');
+            }
+            else{
+                bar.setAttribute('class', 'timetable-line');
+            }
+            var time = new Date(date);
+            time.setHours(hour);
+            var barLeft = calculateTimetableElementLeft(time);
+            bar.style.left = barLeft + 'px';
+            board.appendChild(bar);
+            var hourText = document.createElement('div');
+            hourText.setAttribute('class', 'timetable-head-hour-text');
+            hourText.textContent = hour;
+            var hourTextWidth = 60 / minutesPerPixel;
+            hourText.style.width = (hourTextWidth - 1) + 'px';
+            hours.appendChild(hourText);
         }
     }
     
-    this.countX = function(day){
-        var dayPush = this.countDayPush(day);
-        var x = day.getMinutes() + (60 * day.getHours());
-        if (day.getTime() <= this.rangeStart.getTime()){
-            return 0;
-        }
-        if (day.getTime() >= this.rangeEnd.getTime()){
-            return this.countTotalWidth();
-        }
-        x = x / this.minutesPerPixel;
-        return x + dayPush;
-    }
-    
-    this.createEntryCell = function(item, y){
-        var timetable = this;
-        var startX = this.countX(new Date(item.start));
-        var endX = this.countX(new Date(item.end));
-        var width = endX - startX;
-        
+    function createCell(entry, rowTop, frame) {
         var cell = document.createElement('div');
-        cell.setAttribute('class', 'timetable-data');
-        cell.textContent = item.title;
-        cell.style.top = y + 'px';
-        cell.style.left = startX + 'px';
-        cell.style.width = width + 'px';
-        if(item.color !== undefined){
-            cell.style.backgroundColor = item.color;
+        cell.setAttribute('class', 'timetable-entry-cell');
+        cell.style.left = calculateTimetableElementLeft(new Date(entry.start)) + 'px';
+        cell.style.top = (separation + rowTop) + 'px';
+        cell.style.height = cellHeight + 'px';
+        cell.style.width = calculateCellWidth(entry) + 'px';
+        cell.style.backgroundColor = entry.color;
+        cell.textContent = entry.title;
+        var overflow = document.createElement('div');
+        overflow.setAttribute('class', 'timetable-entry-cell-overflow');
+        overflow.style.left = calculateTimetableElementLeft(new Date(entry.start)) + 'px';
+        overflow.style.top = rowTop + 'px';
+        overflow.style.height = cellHeight + 2 * separation + 'px';
+        overflow.style.width = Math.max(cellHeight + 2 * separation, calculateCellWidth(entry)) + 'px';
+        overflow.style.backgroundColor = entry.color;
+        overflow.textContent = entry.title;
+        overflow.style.display = 'none';
+        overflow.onclick = function(){
+        openModalBox(entry.group, [
+                {type: 'display', title: entry.desc}
+            ]);
         }
-        cell.onclick = function(){
-            timetable.cellOnClick(item);
+        overflow.onmouseout = function(){
+            overflow.style.display = 'none';
         }
-        return cell;
+        cell.onmouseenter = function(){
+            overflow.style.display = 'flex';
+        }
+        frame.appendChild(cell);
+        frame.appendChild(overflow);
     }
     
-    this.construct = function(){
+    this.load = function(){
+        var grouped = groupData(data);
         this.div.setAttribute('class', 'timetable');
 
         while(this.div.firstChild){
@@ -123,83 +277,12 @@ function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, cellOnCli
         }
 
         this.div.style.maxWidth = this.countTotalWidth() + 'px';
-    }
-    
-    this.createLines = function(Y, height){
-        var lines = [];
-        var totalWidth = this.countTotalWidth();
-        var dayWidth = this.countDayWidth();
-        for(var i = 0; i < totalWidth; i = i + (60 / this.minutesPerPixel)){
-            var line = document.createElement('div');
-            if(i % dayWidth === 0 && i !== 0){
-                line.setAttribute('class', 'timetable-line-day');
-            }
-            else{
-                line.setAttribute('class', 'timetable-line');
-            }
-            line.style.top = Y + 'px';
-            line.style.left = i + 'px';
-            line.style.height = height + 'px';
-            lines.push(line);
-        }
-        return lines;
-    }
-    
-    this.isInRange = function(date){
-        var time = date.getTime();
-        var start = this.rangeStart.getTime();
-        var end = this.rangeEnd.getTime();
-        return (time <= end && time >= start);
-    }
-    
-    this.load = function(){
-        this.construct();
-        
-        var headers = this.createHeaders();
-        
-        headers.forEach(header => {
-            this.div.appendChild(header);
-        });
-        
-        var groupedData = this.groupData(this.data);
-        
-        var groups = Object.keys(groupedData);
-        
-        var Y = headers[0].offsetHeight + this.separation;
-        
-        var timetable = this;
-        
-        groups.forEach(index => {
-            var cells = [];
-            var height = 0;
-            var group = groupedData[index];
-            group.forEach(item => {
-                var start = new Date(item.start);
-                var end = new Date(item.end);
-                if(timetable.isInRange(start) || timetable.isInRange(end)){
-                    var cell = timetable.createEntryCell(item, Y);
-                    this.div.appendChild(cell);
-                    if(cell.offsetHeight > height){
-                        height = cell.offsetHeight;
-                    }
-                    cells.push(cell);
-                }
-                
-            });
-            Y += height + timetable.separation;
-            cells.forEach(cell => {
-                cell.style.height = height;
-            });
-        });
-        
-        var startY = headers[0].offsetHeight;
-        var lines = this.createLines(startY, Y);
-        
-        lines.forEach(line => {
-            this.div.insertBefore(line, this.div.firstChild);
-        });
-        
-        this.div.style.height = startY + Y + 'px';
+        var label = createGroupsLabel(grouped);
+        var height = label.style.height;
+        var dates = formDatesArray(this.rangeStart, this.rangeEnd);
+        var board = createDispalyBoard(height, dates, grouped, this);
+        this.div.appendChild(board);
+        this.div.appendChild(label);
     }
     
     this.load();

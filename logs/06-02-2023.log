@@ -1,0 +1,3 @@
+[2023-02-06  10:58:17] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-06  10:58:43] [type: Backup] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Backup started
+[2023-02-06  10:58:43] [type: Backup] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Backup finished

@@ -53,7 +53,7 @@ class DocumentDetailsView extends View{
                 ->or()->openBracket()
                 ->where('month(end)', $month)->and()->where('year(end)', $year)
                 ->closeBracket()->closeBracket()
-                ->orderBy('start');
+                ->orderBy('start', false);
         return $this->select($sql);
     }
     
@@ -64,7 +64,7 @@ class DocumentDetailsView extends View{
                 ->openBracket()->where('year(start)', $year)
                 ->or()
                 ->where('year(end)', $year)->closeBracket()
-                ->orderBy('start');
+                ->orderBy('start', false);
         return $this->select($sql);
     }
     
@@ -76,7 +76,7 @@ class DocumentDetailsView extends View{
                 ->or()->openBracket()
                 ->where('month(end)', $month)->and()->where('year(end)', $year)
                 ->closeBracket()->closeBracket()
-                ->orderBy('start');
+                ->orderBy('start', false);
         return $this->select($sql);
     }
     

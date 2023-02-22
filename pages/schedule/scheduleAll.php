@@ -38,6 +38,8 @@ This code is free to use, just remember to give credit.
         <?php
             Resources::linkCSS('main.css');
             Resources::linkCSS('timetable.css');
+            Resources::linkCSS('modal-box.css');
+            Resources::linkJS('modalBox.js');
             Resources::linkJS('RestApi.js');
             Resources::linkJS('Timetable.js');
             Resources::linkJS('getRestAddress.js');
@@ -56,8 +58,10 @@ This code is free to use, just remember to give credit.
                     <label class="standard-text">
                         <?php echo $interface->get('select_date'); ?>
                     </label>
+                    <button id="previousDay" class="standard-button"><--</button>
                     <input id="displayDate" type="date" class="standard-input"
                            value="<?php echo date('Y-m-d'); ?>">
+                    <button id="nextDay" class="standard-button">--></button>
                     <button id="goTo" class="standard-button">
                         <?php echo $interface->get('go_to'); ?>
                     </button>

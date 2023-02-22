@@ -81,6 +81,22 @@ class Container {
         return in_array($value, $this->data);
     }
     
+    public function getKeyByValue($value, $variable = null){
+        foreach ($this->data as $key => $item){
+            if($variable === null){
+                if($item === $value){
+                    return $key;
+                }
+            }
+            else{
+                if($item[$variable] === $value){
+                    return $key;
+                }
+            }
+        }
+        $this->throwException('value ' . $value . ' not found');
+    }
+    
     public function filter(Condition $condition) : Container {
         $result = new Container();
         foreach ($this->data as $item) {

@@ -12,10 +12,9 @@ function scheduleAll(){
                 {startDate: range.getStart(), endDate: range.getEnd()}, 
                 function(response){
                     var data = JSON.parse(response);
-                    console.log(data);
                     var parsed = [];
                     data.forEach(entry => {
-                        var title = entry.short + ' - ' + entry.location;
+                        var title = entry.location;
                         var desc = entry.name + ' ' + entry.surname + '\n';
                         desc += entry.activity_name + '\n';
                         desc += entry.location + '\n';
@@ -26,6 +25,7 @@ function scheduleAll(){
                             start: entry.start, 
                             end: entry.end, 
                             username: entry.username,
+                            group: entry.short,
                             color: entry.color,
                             desc: desc
                         }
@@ -39,11 +39,55 @@ function scheduleAll(){
                             new Date(range.getStart()), 
                             new Date(range.getEnd()), 
                             'username', 
+                            'group',
                             function(item){
                                 alert(item.desc);
                         });
                     });
             });
+        }
+        var nextDay = document.getElementById('nextDay');
+        nextDay.onclick = function(){
+            var date = document.getElementById('displayDate');
+            var nextDate = new Date(date.value);
+            nextDate.setDate(nextDate.getDate() + 7);
+            var nextValue = nextDate.getFullYear() + '-';
+            if(nextDate.getMonth() + 1 < 10){
+                nextValue += '0' + (nextDate.getMonth() + 1) + '-';
+            }
+            else{
+                nextValue += (nextDate.getMonth() + 1) + '-';
+            }
+            if(nextDate.getDate() < 10){
+                nextValue += '0' + nextDate.getDate();
+            }
+            else{
+                nextValue += nextDate.getDate();
+            }
+            date.value = nextValue;
+            goto.onclick();
+        }
+        
+        var previousDay = document.getElementById('previousDay');
+        previousDay.onclick = function(){
+            var date = document.getElementById('displayDate');
+            var previousDate = new Date(date.value);
+            previousDate.setDate(previousDate.getDate() - 7);
+            var nextValue = previousDate.getFullYear() + '-';
+            if(previousDate.getMonth() + 1 < 10){
+                nextValue += '0' + (previousDate.getMonth() + 1) + '-';
+            }
+            else{
+                nextValue += (previousDate.getMonth() + 1) + '-';
+            }
+            if(previousDate.getDate() < 10){
+                nextValue += '0' + previousDate.getDate();
+            }
+            else{
+                nextValue += previousDate.getDate();
+            }
+            date.value = nextValue;
+            goto.onclick();
         }
         
         var date = document.getElementById('displayDate');
@@ -53,10 +97,9 @@ function scheduleAll(){
             {startDate: range.getStart(), endDate: range.getEnd()}, 
             function(response){
                 var data = JSON.parse(response);
-                console.log(data);
                 var parsed = [];
                 data.forEach(entry => {
-                    var title = entry.short + ' - ' + entry.location;
+                    var title = entry.location;
                     var desc = entry.name + ' ' + entry.surname + '\n';
                     desc += entry.activity_name + '\n';
                     desc += entry.location + '\n';
@@ -67,6 +110,7 @@ function scheduleAll(){
                         start: entry.start, 
                         end: entry.end, 
                         username: entry.username,
+                        group: entry.short,
                         color: entry.color,
                         desc: desc
                     }
@@ -80,6 +124,7 @@ function scheduleAll(){
                         new Date(range.getStart()), 
                         new Date(range.getEnd()), 
                         'username', 
+                        'group',
                         function(item){
                             alert(item.desc);
                     });
@@ -92,8 +137,13 @@ function scheduleAll(){
 function DaysRange(date){
     var start = new Date(date);
     start.setDate(date.getDate() - 3);
+    
+    var d = new Date(date);
+    var day = d.getDay(),
+            diff = d.getDate() - day + (day == 0 ? -6:1); // adjust when day is sunday
+    var start = new Date(d.setDate(diff));
     var end = new Date(date);
-    end.setDate(date.getDate() + 3);
+    end.setDate(date.getDate() + 6);
     
     this.getStart = function(){
         return start.toISOString().split('T')[0];

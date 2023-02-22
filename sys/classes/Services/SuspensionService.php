@@ -32,7 +32,7 @@ use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
 use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 use Custom\Parsers\Database\Suspension as Suspension;
-
+use DateTime;
 
 /**
  * Description of SuspensionService
@@ -191,9 +191,10 @@ class SuspensionService {
         $documentId = $data->get('id_document');
         $username = Session::getUsername();
         $userDocumentId = (int) $this->getUserDocumentId($documentId, $username);
-        $data->add($userDocumentId, 'id_document_user');
+        $data->add($userDocumentId, 'id_document_user', true);
         $parser = new Suspension();
         $suspension = $parser->parse($data);
+        $this->checkSuspensionShifts($suspension);
         return $this->suspension->save($suspension);
     }
     
@@ -209,6 +210,7 @@ class SuspensionService {
         $this->checkBlocker($data);
         $parser = new Suspension();
         $suspension = $parser->parse($data);
+        $this->checkSuspensionShifts($suspension);
         return $this->suspension->save($suspension);
     }
     
@@ -378,7 +380,7 @@ class SuspensionService {
         $this->suspension->disable($id);
     }
     
-    private function checkBlocker(Container $data) {
+    private function checkBlocker(Container $data) : void {
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
             $languages = Languages::getInstance();
@@ -386,7 +388,7 @@ class SuspensionService {
         }
     }
     
-    private function checkArticleBlocker(int $articleId) {
+    private function checkArticleBlocker(int $articleId) : void {
         $data = $this->articleDetails->getById($articleId);
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
@@ -395,7 +397,7 @@ class SuspensionService {
         }
     }
     
-    private function checkDecisionBlocker(int $decisionId) {
+    private function checkDecisionBlocker(int $decisionId) : void {
         $data = $this->decisionDetails->getById($decisionId);
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
@@ -404,12 +406,21 @@ class SuspensionService {
         }
     }
     
-    private function checkTicketBlocker(int $ticketId) {
+    private function checkTicketBlocker(int $ticketId) : void {
         $data = $this->ticketDetails->getById($ticketId);
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
             $languages = Languages::getInstance();
             $this->throwException($languages->get('cannot_change_selected_month'));
+        }
+    }
+    
+    private function checkSuspensionShifts(Container $suspension) : void {
+        $date = new DateTime($suspension->get('date'));
+        $correctionDate = new DateTime($suspension->get('correction_date'));
+        if($date < $correctionDate){
+            $languages = Languages::getInstance();
+            $this->throwException($languages->get('suspension_correction_date_shift'));
         }
     }
 }

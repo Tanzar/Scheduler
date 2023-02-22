@@ -1,0 +1,126 @@
+[2023-02-21  07:25:53] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  07:27:42] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-21  07:27:51] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSchedule.php?
+[2023-02-21  07:27:56] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-02-21  07:29:49] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  08:03:10] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-21  08:03:17] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelUsers.php?
+[2023-02-21  08:03:51] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  08:08:37] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-21  08:08:41] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-02-21  08:09:46] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  08:13:32] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-21  08:14:23] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  08:19:07] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-21  08:26:03] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  08:30:14] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-21  08:30:19] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-02-21  08:34:23] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelDaysOff.php?
+[2023-02-21  09:46:23] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  09:46:33] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Class "Data\Access\Tables\DAO" not found ;
+ #0 /var/www/html/vendor/composer/ClassLoader.php(571): include()
+#1 /var/www/html/vendor/composer/ClassLoader.php(428): Composer\Autoload\includeFile('/var/www/html/v...')
+#2 /var/www/html/sys/classes/Custom/Dates/DayOffChecker.php(60): Composer\Autoload\ClassLoader->loadClass('Data\\Access\\Tab...')
+#3 /var/www/html/sys/classes/Custom/Dates/DayOffChecker.php(30): Custom\Dates\DayOffChecker->initSpecialWorkdays()
+#4 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(36): Custom\Dates\DayOffChecker->__construct()
+#5 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(63): Custom\File\Tools\Timesheets\DaysDetails->__construct('user_SPY', Object(Tanweb\Container), Object(Tanweb\Container))
+#6 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(46): Custom\File\Tools\Timesheets\TimesheetsData->initDaysDetails(5, 2019)
+#7 /var/www/html/sys/classes/Custom/File/Timesheets.php(34): Custom\File\Tools\Timesheets\TimesheetsData->__construct(5, 2019, 'user_SPY')
+#8 /var/www/html/sys/classes/Custom/File/Timesheets.php(43): Custom\File\Timesheets->__construct(5, 2019, 'user_SPY')
+#9 /var/www/html/sys/classes/Services/PrintsService.php(34): Custom\File\Timesheets::generate(5, 2019, 'user_SPY')
+#10 /var/www/html/sys/classes/Controllers/PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('user_SPY', 5, 2019)
+#11 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#12 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#13 /var/www/html/sys/scripts/requests/file.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#14 {main}
+[2023-02-21  11:17:19] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-21  11:17:25] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelUsers.php?
+[2023-02-21  11:17:58] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  11:33:23] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-21  11:33:28] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-02-21  11:34:19] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  11:37:00] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-21  11:37:35] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-21  11:37:38] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  12:06:53] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-21  12:06:58] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelDaysOff.php?
+[2023-02-21  12:07:24] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelDaysOff.php?
+[2023-02-21  12:07:54] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] method changeSpecialWorkdayStatus() not defined.
+[2023-02-21  12:08:11] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Container error: value not defined for key: id ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(43): Tanweb\Container->throwException('value not defin...')
+#1 /var/www/html/sys/classes/Controllers/AdminPanelDaysOff.php(113): Tanweb\Container->get('id')
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\AdminPanelDaysOff->changeSpecialWorkdayStatus()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-02-21  12:08:29] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelDaysOff.php?
+[2023-02-21  12:46:17] [type: Access] [user: user_KOS] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  12:46:26] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  12:46:44] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Container error: value not defined for key: 2023-02-22 ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(43): Tanweb\Container->throwException('value not defin...')
+#1 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(160): Tanweb\Container->get('2023-02-22')
+#2 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(70): Custom\File\Tools\Timesheets\DaysDetails->sumWorkdays(2023, 2)
+#3 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(46): Custom\File\Tools\Timesheets\TimesheetsData->initDaysDetails(2, 2023)
+#4 /var/www/html/sys/classes/Custom/File/Timesheets.php(34): Custom\File\Tools\Timesheets\TimesheetsData->__construct(2, 2023, 'user_SPY')
+#5 /var/www/html/sys/classes/Custom/File/Timesheets.php(43): Custom\File\Timesheets->__construct(2, 2023, 'user_SPY')
+#6 /var/www/html/sys/classes/Services/PrintsService.php(34): Custom\File\Timesheets::generate(2, 2023, 'user_SPY')
+#7 /var/www/html/sys/classes/Controllers/PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('user_SPY', 2, 2023)
+#8 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#9 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 /var/www/html/sys/scripts/requests/file.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2023-02-21  13:19:45] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Container error: value not defined for key: 2023-02-22 ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(43): Tanweb\Container->throwException('value not defin...')
+#1 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(160): Tanweb\Container->get('2023-02-22')
+#2 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(70): Custom\File\Tools\Timesheets\DaysDetails->sumWorkdays(2023, 2)
+#3 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(46): Custom\File\Tools\Timesheets\TimesheetsData->initDaysDetails(2, 2023)
+#4 /var/www/html/sys/classes/Custom/File/Timesheets.php(34): Custom\File\Tools\Timesheets\TimesheetsData->__construct(2, 2023, 'user_SPY')
+#5 /var/www/html/sys/classes/Custom/File/Timesheets.php(43): Custom\File\Timesheets->__construct(2, 2023, 'user_SPY')
+#6 /var/www/html/sys/classes/Services/PrintsService.php(34): Custom\File\Timesheets::generate(2, 2023, 'user_SPY')
+#7 /var/www/html/sys/classes/Controllers/PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('user_SPY', 2, 2023)
+#8 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#9 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#10 /var/www/html/sys/scripts/requests/file.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#11 {main}
+[2023-02-21  13:22:59] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Custom\File\Tools\Timesheets\DaysDetails::getDetails(): Argument #1 ($date) must be of type DateTime, string given, called in /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php on line 156 ;
+ #0 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/DaysDetails.php(156): Custom\File\Tools\Timesheets\DaysDetails->getDetails('2023-02-01')
+#1 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(70): Custom\File\Tools\Timesheets\DaysDetails->sumWorkdays(2023, 2)
+#2 /var/www/html/sys/classes/Custom/File/Tools/Timesheets/TimesheetsData.php(46): Custom\File\Tools\Timesheets\TimesheetsData->initDaysDetails(2, 2023)
+#3 /var/www/html/sys/classes/Custom/File/Timesheets.php(34): Custom\File\Tools\Timesheets\TimesheetsData->__construct(2, 2023, 'user_SPY')
+#4 /var/www/html/sys/classes/Custom/File/Timesheets.php(43): Custom\File\Timesheets->__construct(2, 2023, 'user_SPY')
+#5 /var/www/html/sys/classes/Services/PrintsService.php(34): Custom\File\Timesheets::generate(2, 2023, 'user_SPY')
+#6 /var/www/html/sys/classes/Controllers/PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('user_SPY', 2, 2023)
+#7 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#8 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#9 /var/www/html/sys/scripts/requests/file.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#10 {main}
+[2023-02-21  13:23:43] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Call to undefined method Custom\File\Tools\Timesheets\DaysDetails::get() ;
+ #0 /var/www/html/sys/classes/Custom/File/Timesheets.php(80): Custom\File\Tools\Timesheets\TimesheetsData->getDayDetails(Object(DateTime))
+#1 /var/www/html/sys/classes/Custom/File/Timesheets.php(75): Custom\File\Timesheets->writeDataCol(Object(DateTime), 'RCP 1m')
+#2 /var/www/html/sys/classes/Custom/File/Timesheets.php(55): Custom\File\Timesheets->writeData()
+#3 /var/www/html/sys/classes/Custom/File/Timesheets.php(44): Custom\File\Timesheets->print()
+#4 /var/www/html/sys/classes/Services/PrintsService.php(34): Custom\File\Timesheets::generate(2, 2023, 'user_SPY')
+#5 /var/www/html/sys/classes/Controllers/PrintsSchedule.php(61): Services\PrintsService->generateTimesheetsForUser('user_SPY', 2, 2023)
+#6 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\PrintsSchedule->generateTimesheets()
+#7 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 /var/www/html/sys/scripts/requests/file.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2023-02-21  13:37:37] [type: Access] [user: user_SPA] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-21  13:43:59] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  13:53:48] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  13:57:01] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-21  14:00:06] [type: Access] [user: admin] [ip: 172.19.0.1] [proxy: undefined] http://localhost/pages/prints/printsSchedule.php?
+[2023-02-21  14:22:39] [type: Error] [user: admin] [ip: 172.19.0.1] [proxy: undefined] Container error: value not defined for key: 26 ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(43): Tanweb\Container->throwException('value not defin...')
+#1 /var/www/html/sys/classes/Custom/File/Tools/NightShiftsReport/Rows.php(80): Tanweb\Container->get('26')
+#2 /var/www/html/sys/classes/Custom/File/Tools/NightShiftsReport/Rows.php(67): Custom\File\Tools\NightShiftsReport\Rows->analizeEntry(1, Object(Tanweb\Container))
+#3 /var/www/html/sys/classes/Custom/File/Tools/NightShiftsReport/Rows.php(60): Custom\File\Tools\NightShiftsReport\Rows->analizeEntries(1)
+#4 /var/www/html/sys/classes/Custom/File/Tools/NightShiftsReport/Rows.php(38): Custom\File\Tools\NightShiftsReport\Rows->initRows()
+#5 /var/www/html/sys/classes/Custom/File/NightShiftsReport.php(49): Custom\File\Tools\NightShiftsReport\Rows->__construct(4, 2022)
+#6 /var/www/html/sys/classes/Custom/File/NightShiftsReport.php(62): Custom\File\NightShiftsReport->__construct(4, 2022)
+#7 /var/www/html/sys/classes/Services/PrintsService.php(52): Custom\File\NightShiftsReport::generate(4, 2022)
+#8 /var/www/html/sys/classes/Controllers/PrintsSchedule.php(85): Services\PrintsService->generateNightShiftReport(4, 2022)
+#9 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\PrintsSchedule->generateNightShiftReport()
+#10 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#11 /var/www/html/sys/scripts/requests/file.php(28): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#12 {main}

@@ -41,6 +41,11 @@ class AdminPanelDaysOff extends Controller{
         $this->setResponse($response);
     }
     
+    public function getSpecialWorkdays() {
+        $response = $this->daysOffService->getSpecialWorkdays();
+        $this->setResponse($response);
+    }
+    
     public function getMatchingUsers() {
         $data = $this->getRequestData();
         $date = $data->get('date');
@@ -70,6 +75,18 @@ class AdminPanelDaysOff extends Controller{
         $this->setResponse($response);
     }
     
+    
+    public function saveSpecialWorkday() {
+        $data = $this->getRequestData();
+        $id = $this->daysOffService->saveSpecialWorkday($data);
+        $languages = Languages::getInstance();
+        $response = new Container();
+        $response->add($id, 'id');
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
+    
     public function removeUserFromDay() {
         $data = $this->getRequestData();
         $username = $data->get('username');
@@ -85,6 +102,16 @@ class AdminPanelDaysOff extends Controller{
         $data = $this->getRequestData();
         $dayOffId = (int) $data->get('id_days_off');
         $this->daysOffService->changeDayOffStatus($dayOffId);
+        $languages = Languages::getInstance();
+        $response = new Container();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
+    public function changeSpecialWorkdayStatus() {
+        $data = $this->getRequestData();
+        $id = (int) $data->get('id');
+        $this->daysOffService->changeSpecialWorkdayStatus($id);
         $languages = Languages::getInstance();
         $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');

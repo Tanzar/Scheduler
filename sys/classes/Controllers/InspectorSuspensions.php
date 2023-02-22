@@ -106,6 +106,7 @@ class InspectorSuspensions extends Controller{
         $idSuspension = (int) $data->get('id_suspension');
         $idArticle = (int) $data->get('id_art_41');
         $id = $this->suspensionService->assignArticle($idSuspension, $idArticle);
+        $languages = Languages::getInstance();
         $response = new Container();
         $response->add($id, 'id');
         $response->add($languages->get('changes_saved'), 'message');
@@ -117,6 +118,7 @@ class InspectorSuspensions extends Controller{
         $idSuspension = (int) $data->get('id_suspension');
         $idArticle = (int) $data->get('id_art_41');
         $this->suspensionService->unassignArticle($idSuspension, $idArticle);
+        $languages = Languages::getInstance();
         $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
