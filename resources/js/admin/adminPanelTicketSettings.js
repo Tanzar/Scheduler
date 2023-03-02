@@ -24,7 +24,7 @@ function initTicketLawTable(language){
         columns: [
             {title: 'ID', variable: 'id', width: 30, minWidth: 30},
             {title: language.active, variable: 'active', width: 50, minWidth: 50},
-            {title: language.name, variable: 'name', width: 150, minWidth: 150},
+            {title: language.name, variable: 'name', width: 250, minWidth: 250},
             {title: language.short, variable: 'short', width: 100, minWidth: 100}
         ],
         dataSource: datasource
@@ -110,7 +110,7 @@ function initPositionGroupTable(language){
             {title: 'ID', variable: 'id', width: 30, minWidth: 30},
             {title: language.active, variable: 'active', width: 50, minWidth: 50},
             {title: language.name, variable: 'name', width: 150, minWidth: 150},
-            {title: language.short, variable: 'short', width: 100, minWidth: 100}
+            {title: language.short, variable: 'short', width: 70, minWidth: 70}
         ],
         dataSource: datasource
     }

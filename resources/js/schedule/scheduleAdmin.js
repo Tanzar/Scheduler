@@ -118,7 +118,7 @@ function ScheduleAdmin(){
         var selectActivity = new Select('selectActivity', language.select_activity);
         var selectLocationType = new Select('selectLocationType', language.select_location_type);
         var selectLocation = new Select('selectLocation', language.select_location);
-        var addLocationButton = new AddLocationButton(language);
+        var addLocationButton = new AddLocationButton(language, selectLocation);
         
         selectActivityGroup.setOnChange(function(group){
             addLocationButton.hide();
@@ -252,6 +252,9 @@ function DaysRange(date){
 function Select(id, placeholder){
     var select = document.getElementById(id);
     var hiddenValues = {};
+    var controllerName = '';
+    var taskName = '';
+    var dataToSend = {};
     
     this.clear = function(){
         while(select.firstChild){
@@ -286,15 +289,25 @@ function Select(id, placeholder){
     var me = this;
     this.loadOptions = function(controller, task, inputData){
         RestApi.get(controller, task, inputData, function(response){
+            controllerName = controller;
+            taskName = task;
+            dataToSend = inputData;
             var data = JSON.parse(response);
             data.forEach(item => {
                 me.addOption(item.id, item.name);
             });
         });
     }
+    
+    this.refresh = function(){
+        if(controllerName !== '', taskName !== '', dataToSend !== {}){
+            this.clear();
+            this.loadOptions(controllerName, taskName, dataToSend);
+        }
+    }
 }
 
-function AddLocationButton(language){
+function AddLocationButton(language, selectLocation){
     var addLocationButton = document.getElementById('addLocation');
     addLocationButton.onclick = function(){
         var item = {id_location_type: $('#selectLocationType').val()};
@@ -303,11 +316,20 @@ function AddLocationButton(language){
                 {type: 'text', title: language.location, variable: 'name', limit: 100}
             ];
             openModalBox(language.new_location, fields, language.save, function(data){
-                console.log(data);
+                RestApi.post('ScheduleAdmin', 'saveLocation', data, 
+                    function(response){
+                        var data = JSON.parse(response);
+                        console.log(data);
+                        alert(data.message);
+                        selectLocation.refresh();
+                    }, 
+                    function(response){
+                        alert(response.responseText);
+                });
             }, item);
         }
         else{
-            alert(language.select_location_group);
+            alert(language.select_location_type);
         }
     }
     

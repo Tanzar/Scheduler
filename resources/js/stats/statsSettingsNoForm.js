@@ -56,6 +56,7 @@ function openNewStatsWindow(language, datatable) {
         console.log(data);
         var fields = [
             {type: 'textarea', title: language.name, variable: 'name', limit: 255, width: 30, height: 5, required: true},
+            {type: 'number', title: language.sort_priority, variable: 'sort_priority', min: 1, required: true},
             {type: 'select', title: language.select_stats_type, variable: 'type', options: data.types, required: true},
             {type: 'select', title: language.select_dataset, variable: 'dataset', options: data.datasets, required: true},
             {type: 'select', title: language.select_result_form, variable: 'resultForm', options: data.resultForms, required: true}
@@ -69,6 +70,7 @@ function openNewStatsWindow(language, datatable) {
             var dataToSend = {
                 name: data.name,
                 type: data.type,
+                sort_priority: data.sort_priority,
                 json: {
                     dataset: data.dataset,
                     resultForm: data.resultForm,

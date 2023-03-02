@@ -15,9 +15,9 @@ use Data\Access\Views\ArticleDetailsView as ArticleDetailsView;
 use Data\Access\Views\UsersWithoutPasswordsView as UsersWithoutPasswordsView;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
-use Tanweb\Config\INI\Languages as Languages;
 use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 use Custom\Parsers\Database\Article as Article;
+use Services\Exceptions\SystemBlockedException as SystemBlockedException;
 
 /**
  * Description of ArticleService (art. 41)
@@ -138,8 +138,7 @@ class ArticleService {
     private function checkBlocker(Container $data) {
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
-            $languages = Languages::getInstance();
-            $this->throwException($languages->get('cannot_change_selected_month'));
+            throw new SystemBlockedException();
         }
     }
 }

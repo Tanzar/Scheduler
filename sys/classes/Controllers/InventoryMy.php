@@ -44,7 +44,7 @@ class InventoryMy  extends Controller{
     
     public function getUsers() {
         $username = Session::getUsername();
-        $response = $this->user->getActiveUsersExcept($username);
+        $response = $this->user->getActiveUsersWithoutSystemAndExcept($username);
         $this->setResponse($response);
     }
     
@@ -65,4 +65,14 @@ class InventoryMy  extends Controller{
         $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
+    
+    public function cancelAssign() {
+        $data = $this->getRequestData();
+        $this->inventory->cancelEquipmentAssign($data);
+        $languages = Languages::getInstance();
+        $response = new Container();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
+    
 }

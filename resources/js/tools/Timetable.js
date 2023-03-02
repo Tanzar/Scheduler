@@ -16,6 +16,8 @@ function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, groupTitl
     this.cellOnClick = cellOnClick;
     this.div = div;
     this.weekdayNames = weekdayNames;
+    var ele = div;
+    
     
     this.countDays = function(dayStart, dayEnd){
         var difference = dayEnd.getTime() - dayStart.getTime();
@@ -249,14 +251,15 @@ function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, groupTitl
         overflow.style.left = calculateTimetableElementLeft(new Date(entry.start)) + 'px';
         overflow.style.top = rowTop + 'px';
         overflow.style.height = cellHeight + 2 * separation + 'px';
-        overflow.style.width = Math.max(cellHeight + 2 * separation, calculateCellWidth(entry)) + 'px';
+        overflow.style.minWidth = Math.max(cellHeight + 2 * separation, calculateCellWidth(entry)) + 'px';
+        overflow.style.maxWidth = (1.4 * Math.max(cellHeight + 2 * separation, calculateCellWidth(entry))) + 'px';
         overflow.style.backgroundColor = entry.color;
         overflow.textContent = entry.title;
         overflow.style.display = 'none';
         overflow.onclick = function(){
-        openModalBox(entry.group, [
-                {type: 'display', title: entry.desc}
-            ]);
+            openModalBox(entry.group, [
+                    {type: 'display', title: entry.desc}
+                ]);
         }
         overflow.onmouseout = function(){
             overflow.style.display = 'none';
@@ -267,6 +270,44 @@ function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, groupTitl
         frame.appendChild(cell);
         frame.appendChild(overflow);
     }
+    
+    let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+    const mouseUpHandler = function () {
+        document.removeEventListener('mousemove', mouseMoveHandler);
+        document.removeEventListener('mouseup', mouseUpHandler);
+
+        ele.style.cursor = 'grab';
+        ele.style.removeProperty('user-select');
+    };
+
+    const mouseMoveHandler = function (e) {
+        // How far the mouse has been moved
+        const dx = e.clientX - pos.x;
+        const dy = e.clientY - pos.y;
+
+        // Scroll the element
+        ele.scrollTop = pos.top - dy;
+        ele.scrollLeft = pos.left - dx;
+    };
+
+    const mouseDownHandler = function (e) {
+        pos = {
+            // The current scroll
+            left: ele.scrollLeft,
+            top: ele.scrollTop,
+            // Get the current mouse position
+            x: e.clientX,
+            y: e.clientY,
+        };
+        ele.style.cursor = 'grabbing';
+        ele.style.userSelect = 'none';
+        document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
+    };
+    
+    ele.addEventListener('mousedown', mouseDownHandler);
+    
     
     this.load = function(){
         var grouped = groupData(data);

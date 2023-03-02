@@ -15,9 +15,9 @@ use Data\Access\Views\TicketDetailsView as TicketDetailsView;
 use Data\Access\Views\UsersWithoutPasswordsView as UsersWithoutPasswordsView;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
-use Tanweb\Config\INI\Languages as Languages;
 use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 use Custom\Parsers\Database\Ticket as Ticket;
+use Services\Exceptions\SystemBlockedException as SystemBlockedException;
 
 /**
  * Description of TicketService
@@ -139,8 +139,7 @@ class TicketService {
     private function checkBlocker(Container $data) {
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
-            $languages = Languages::getInstance();
-            $this->throwException($languages->get('cannot_change_selected_month'));
+            throw new SystemBlockedException();
         }
     }
 }

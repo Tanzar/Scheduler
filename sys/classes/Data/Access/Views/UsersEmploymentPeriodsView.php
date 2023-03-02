@@ -32,14 +32,16 @@ class UsersEmploymentPeriodsView extends View{
     
     public function getActive() : Container {
         $sql = new MysqlBuilder();
-        $sql->select('users_employment_periods')->where('active', 1);
+        $sql->select('users_employment_periods')->where('active', 1)
+                ->orderBy('sort_priority')->orderBy('surname');
         return $this->select($sql);
     }
     
     public function getActiveInspectors() : Container {
         $sql = new MysqlBuilder();
         $sql->select('users_employment_periods')->where('active', 1)
-                ->and()->where('inspector', 1);
+                ->and()->where('inspector', 1)
+                ->orderBy('sort_priority')->orderBy('surname');
         return $this->select($sql);
     }
     
@@ -47,7 +49,8 @@ class UsersEmploymentPeriodsView extends View{
         $sql = new MysqlBuilder();
         $sql->select('users_employment_periods')->where('username', $username)
                 ->and()->where('start', $date, '<')
-                ->and()->where('end', $date, '>');
+                ->and()->where('end', $date, '>')
+                ->orderBy('sort_priority')->orderBy('surname');
         return $this->select($sql);
     }
     
@@ -56,7 +59,15 @@ class UsersEmploymentPeriodsView extends View{
         $monthEnd = date('Y-m-t', strtotime($monthStart));
         $sql = new MysqlBuilder();
         $sql->select('users_employment_periods')->where('username', $username)
-                ->and()->where('start', $monthEnd, '<=')->and()->where('end', $monthStart, '>=');
+                ->and()->where('start', $monthEnd, '<=')->and()->where('end', $monthStart, '>=')
+                ->orderBy('sort_priority')->orderBy('surname');
+        return $this->select($sql);
+    }
+    
+    public function getActiveByUser(string $username) : Container{
+        $sql = new MysqlBuilder();
+        $sql->select('users_employment_periods')->where('active', 1)
+                ->and()->where('username', $username);
         return $this->select($sql);
     }
     
@@ -66,7 +77,8 @@ class UsersEmploymentPeriodsView extends View{
         $sql = new MysqlBuilder();
         $sql->select('users_employment_periods')->where('active', 1)
                 ->and()->where('username', $username)
-                ->and()->where('start', $monthEnd, '<=')->and()->where('end', $monthStart, '>=');
+                ->and()->where('start', $monthEnd, '<=')->and()->where('end', $monthStart, '>=')
+                ->orderBy('sort_priority')->orderBy('surname');
         return $this->select($sql);
     }
     
@@ -75,7 +87,7 @@ class UsersEmploymentPeriodsView extends View{
         $sql->select('users_employment_periods')->where('active', 1)
                 ->and()->where('start', $date, '<=')
                 ->and()->where('end', $date, '>=')
-                ->orderBy('sort_priority', true);
+                ->orderBy('sort_priority')->orderBy('surname');
         return $this->select($sql);
     }
     

@@ -16,11 +16,11 @@ function AdminPanelLocationsSettings(){
 function LocationTypesTable(language, div){
     var config = {
         columns : [
-            { title: 'ID', variable: 'id', width: 30},
-            { title: language.active, variable: 'active', width: 50},
+            { title: 'ID', variable: 'id', width: 30, minWidth: 30},
+            { title: language.active, variable: 'active', width: 50, minWidth: 50},
             { title: language.name, variable: 'name', width: 150, minWidth: 150},
-            { title: language.short, variable: 'short', width: 50},
-            { title: language.inspection, variable: 'inspection', width: 50}
+            { title: language.short, variable: 'short', width: 50, minWidth: 50},
+            { title: language.inspection, variable: 'inspection', width: 50, minWidth: 50}
         ],
         dataSource : { 
             method: 'post', 
@@ -100,12 +100,12 @@ function LocationTypesTable(language, div){
 function LocationGroupsTable(language, div){
     var config = {
         columns : [
-            { title: 'ID', variable: 'id', width: 30},
-            { title: language.active, variable: 'active', width: 50},
-            { title: language.name, variable: 'name', width: 150, minWidth: 150},
-            { title: language.start, variable: 'active_from', width: 150, minWidth: 150},
-            { title: language.end, variable: 'active_to', width: 150, minWidth: 150},
-            { title: language.inspection, variable: 'inspection', width: 50}
+            { title: 'ID', variable: 'id', width: 30, minWidth: 30},
+            { title: language.active, variable: 'active', width: 50, minWidth: 50},
+            { title: language.name, variable: 'name', width: 250, minWidth: 250},
+            { title: language.start, variable: 'active_from', width: 70, minWidth: 70},
+            { title: language.end, variable: 'active_to', width: 70, minWidth: 70},
+            { title: language.inspection, variable: 'inspection', width: 50, minWidth: 50}
         ],
         dataSource : { 
             method: 'post', 

@@ -6,19 +6,20 @@
 
 namespace Services;
 
+use Data\Access\Views\LocationDetailsView as LocationDetailsView;
 use Data\Access\Views\ScheduleEntriesView as ScheduleEntriesView;
 use Data\Access\Views\UsersEmploymentPeriodsView as UsersEmploymentPeriodsView;
-use Data\Access\Views\DaysOffUserDetailsView as DaysOffUserDetailsView;
-use Data\Access\Tables\DaysOffDAO as DaysOffDAO;
 use Data\Access\Views\InventoryLogDetailsView as InventoryLogDetailsView;
 use Data\Access\Views\DecisionDetailsView as DecisionDetailsView;
 use Data\Access\Views\SuspensionDecisionDetailsView as SuspensionDecisionDetailsView;
 use Custom\File\Tools\Timesheets\DaysDetails as DaysDetails;
-use Custom\File\Tools\Timesheets\DayDetails as DayDetails;
+use Custom\Reports\ScheduleReport as ScheduleReport;
+use Custom\Reports\InspectorReport as InspectorReport;
+use Custom\Blockers\ScheduleBlocker as ScheduleBlocker;
+use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
+use Tanweb\Security\Security as Security;
 use Tanweb\Session as Session;
 use Tanweb\Container as Container;
-use Tanweb\Config\INI\AppConfig as AppConfig;
-use Custom\Dates\HolidayChecker as HolidayChecker;
 use Custom\Converters\Time as Time;
 use DateTime;
 
@@ -28,6 +29,29 @@ use DateTime;
  * @author Tanzar
  */
 class IndexService {
+    
+    public static function getScheduleBlockerDate() : DateTime {
+        $blocker = new ScheduleBlocker();
+        $date = $blocker->getNextBLockerDate();
+        return $date;
+    }
+    
+    public static function getInspectorBlockerDate() : DateTime {
+        $blocker = new InspectorDateBlocker();
+        $date = $blocker->getNextBLockerDate();
+        return $date;
+    }
+    
+    public static function getLocationsInTemporatyGroups() : Container {
+        $view = new LocationDetailsView();
+        $locations = $view->getInTemporaryGroup();
+        $result = new Container();
+        foreach ($locations->toArray() as $item) {
+            $location = new Container($item);
+            $result->add($location->get('name'));
+        }
+        return $result;
+    }
     
     public static function getDaysWithoutEntries() : Container {
         $entriesView = new ScheduleEntriesView();
@@ -80,6 +104,20 @@ class IndexService {
             if($notFound){
                 $result->add($decision->get('date') . ' : ' . $decision->get('document_number'));
             }
+        }
+        return $result;
+    }
+    
+    public static function getUserData(int $year, string $username) : Container {
+        $result = new Container();
+        $security = Security::getInstance();
+        $schedulePrivilages = new Container(['admin', 'schedule_user', 'schedule_user_inspector', 'schedule_admin']);;
+        if($security->userHaveAnyPrivilage($schedulePrivilages)){
+            $result->add(ScheduleReport::generate($year, $username)->toArray(), 'schedule');
+        }
+        $inspectorPrivilages = new Container(['admin', 'schedule_user_inspector']);
+        if($security->userHaveAnyPrivilage($inspectorPrivilages)){
+            $result->add(InspectorReport::generate($year, $username)->toArray(), 'inspector');
         }
         return $result;
     }

@@ -60,16 +60,16 @@ class Resources {
      * @param string $innerHtml htmlelement to whitch link will be added, can be simple text, can be image
      * @param bool $download changes behavior of link if true it will instantly download file, if false it will just link to file (in most cases redirect), by default is true
      */
-    public static function linkDownload(string $filename, string $innerHtml, bool $download = true){
+    public static function linkDownload(string $filename, string $innerHtml, bool $download = true, bool $newTab = false){
         $link = self::getDownload($filename);
         $html = '<a href="' . $link . '"';
         if($download) {
-            $html .= 'download>';
+            $html .= 'download ';
         }
-        else{
-            $html .= '>';
+        if($newTab){
+            $html .= 'target="_blank" rel="noopener noreferrer" ';
         }
-        $html .= $innerHtml . '</a>';
+        $html .= '>' . $innerHtml . '</a>';
         echo $html;
     }
     

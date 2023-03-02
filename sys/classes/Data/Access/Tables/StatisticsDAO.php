@@ -30,9 +30,9 @@ class StatisticsDAO extends DAO{
         return 'statistics';
     }
     
-    public function geTActiveWithoutForm() : Container {
+    public function getActiveWithoutForm() : Container {
         $sql = new MysqlBuilder();
-        $sql->select('statistics')->where('type', Type::Form->value, '!=');
+        $sql->select('statistics')->where('type', Type::Form->value, '!=')->orderBy('sort_priority');
         $stats = $this->select($sql);
         $this->parseJsons($stats);
         return $stats;
@@ -40,7 +40,7 @@ class StatisticsDAO extends DAO{
     
     public function getActiveForm() : Container {
         $sql = new MysqlBuilder();
-        $sql->select('statistics')->where('type', Type::Form->value);
+        $sql->select('statistics')->where('type', Type::Form->value)->orderBy('sort_priority');
         $stats = $this->select($sql);
         $this->parseJsons($stats);
         return $stats;
@@ -48,7 +48,7 @@ class StatisticsDAO extends DAO{
     
     public function getActive() : Container {
         $sql = new MysqlBuilder();
-        $sql->select('statistics')->where('active', 1);
+        $sql->select('statistics')->where('active', 1)->orderBy('sort_priority');
         $stats = $this->select($sql);
         $this->parseJsons($stats);
         return $stats;

@@ -80,6 +80,18 @@ class ScheduleAdmin extends Controller{
         $this->setResponse($response);
     }
     
+    public function saveLocation(){
+        $languages = Languages::getInstance();
+        $data = $this->getRequestData();
+        $name = $data->get('name');
+        $locationTypeId = (int) $data->get('id_location_type');
+        $id = $this->schedule->saveLocation($name, $locationTypeId);
+        $response = new Container();
+        $response->add($languages->get('changes_saved'), 'message');
+        $response->add($id, 'id');
+        $this->setResponse($response);
+    }
+    
     public function removeEntry(){
         $languages = Languages::getInstance();
         $data = $this->getRequestData();

@@ -21,7 +21,7 @@ This code is free to use, just remember to give credit.
 -->
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta http-equiv="content-type" content="text/html; charset=UTF8">
         <title>
             <?php
                 $appconfig = AppConfig::getInstance();
@@ -32,6 +32,7 @@ This code is free to use, just remember to give credit.
         <?php
             Resources::linkCSS('main.css');
             Resources::linkJS('RestApi.js');
+            Resources::linkJS('index.js');
             Resources::linkExternal('jquery');
         ?>
     </head>
@@ -58,9 +59,6 @@ This code is free to use, just remember to give credit.
         ?>
     </body>
     <script>
-        RestApi.getInterfaceNamesPackage(function(package){
-            console.log(package);
-        });
-        
+        init();
     </script>
 </html>

@@ -314,7 +314,7 @@ function AddLocationButton(language, selectLocation){
             }, item);
         }
         else{
-            alert(language.select_location_group);
+            alert(language.select_location_type);
         }
     }
     

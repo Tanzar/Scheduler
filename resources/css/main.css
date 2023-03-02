@@ -22,6 +22,7 @@ This code is free to use, just remember to give credit.
     --border-color:  #0066ff;
     --page-background: #a0dfff;
     --menu-background: #ffffff;
+    --invalid-color: #ff0000;
 }
 
 body {
@@ -129,6 +130,7 @@ footer {
 }
 
 .side-menu-button {
+    cursor: pointer;
     width: 100%;
     max-width: 110px;
     background-color: transparent;
@@ -191,7 +193,20 @@ footer {
     align-items: center;
 }
 
+.centered-contents-bordered {
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 350px;
+    width: fit-content;
+}
+
 .standard-button {
+    cursor: pointer;
     background-color: transparent;
     border: 2px solid var(--border-color);
     border-radius: 5px;
@@ -213,10 +228,11 @@ footer {
     padding: 3px;
     margin: 3px;
     outline: none;
+    cursor: pointer;
 }
 
 .standard-input:invalid {
-    border-color: #ff0000;
+    border-color: var(--invalid-color);
 }
 
 .standard-input:hover {

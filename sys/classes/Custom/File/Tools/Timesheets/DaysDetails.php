@@ -65,7 +65,7 @@ class DaysDetails {
         foreach ($this->periods->toArray() as $item) {
             $period = new Container($item);
             $periodStart = new DateTime($period->get('start'));
-            $periodEnd = new DateTime($period->get('end'));
+            $periodEnd = new DateTime($period->get('end') . ' 23:59:59');
             if(($start >= $periodStart && $start <= $periodEnd) ||
                 ($end >= $periodStart && $end <= $periodEnd)){
                 return $period;
@@ -97,8 +97,10 @@ class DaysDetails {
         $worktime = $this->calculateWorktime($entry, $dayStart);
         $nightShift = $this->calculateNightShift($entry, $dayStart);
         $details->assignEntryTimes($entry, $worktime, $nightShift);
-        $this->details->add($details, $dayStart->format('Y-m-d'), true);
-        
+        $start = new DateTime($entry->get('start'));
+        $end = new DateTime($entry->get('end'));
+        $details->setWorkdayStart($start->format('H:i'));
+        $details->setWorkdayEnd($end->format('H:i'));
     }
     
     private function calculateWorktime(Container $entry, DateTime $dayStart) : int {

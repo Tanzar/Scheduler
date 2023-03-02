@@ -65,17 +65,10 @@ try{
     }
     
     //--- FILES ---//
-    if($security->userHaveAnyPrivilage(new Container(['admin', 'prints_schedule', 'prints_schedule_reports']))){
+    if($security->userHaveAnyPrivilage(new Container(['admin', 'prints_schedule', 'prints_inspector', 'prints_inspector_all_documents', 'prints_schedule_reports']))){
         echo '<form action="' . Pages::getURL('printsSchedule.php') . '">';
         echo '<input type="submit" class="standard-button" value="' . $modules->get('prints') . '">';
         echo '</form>';
-    }
-    else{
-        if($security->userHaveAnyPrivilage(new Container(['admin', 'prints_inspector']))){
-            echo '<form action="' . Pages::getURL('printsInspector.php') . '">';
-            echo '<input type="submit" class="standard-button" value="' . $modules->get('prints') . '">';
-            echo '</form>';
-        }
     }
     
 }

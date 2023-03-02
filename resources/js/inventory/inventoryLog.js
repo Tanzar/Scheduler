@@ -26,9 +26,9 @@ function initTable(language){
             {title: language.date, variable: 'save_time', width: 150, minWidth: 150},
             {title: language.operation, variable: 'operation', width: 100, minWidth: 100},
             {title: language.inventory_number, variable: 'inventory_number', width: 150, minWidth: 150},
-            {title: language.name, variable: 'equipment_name', width: 150, minWidth: 150},
-            {title: language.source_user, variable: 'source_user_name_full', width: 100, minWidth: 100},
-            {title: language.target_user, variable: 'target_user_name_full', width: 100, minWidth: 100},
+            {title: language.name, variable: 'equipment_name', width: 300, minWidth: 300},
+            {title: language.source_user, variable: 'source_user_name_full', width: 120, minWidth: 120},
+            {title: language.target_user, variable: 'target_user_name_full', width: 120, minWidth: 120},
             {title: language.confirmation, variable: 'confirmation_text', width: 100, minWidth: 100}
         ],
         dataSource: datasource
@@ -194,7 +194,8 @@ function addOperationFilter(language, datafilter){
         { title: language.assign, value: 'assign' },
         { title: language.repair, value: 'repair' },
         { title: language.calibration, value: 'calibration' },
-        { title: language.liquidation, value: 'liquidation' }
+        { title: language.liquidation, value: 'liquidation' },
+        { title: language.rejection, value: 'cancel_assign' }
     ];
     var fields = [
         {type: 'select', title: language.select_operation, variable: 'operation', options: options, required: true}

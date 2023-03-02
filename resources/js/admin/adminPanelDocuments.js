@@ -128,8 +128,8 @@ function documentsTable(language) {
             {title: 'ID', variable: 'id', width: 30, minWidth: 30},
             {title: language.active, variable: 'active', width: 50, minWidth: 50},
             {title: language.document_number, variable: 'number', width: 150, minWidth: 150},
-            {title: language.start, variable: 'start', width: 150, minWidth: 150},
-            {title: language.end, variable: 'end', width: 150, minWidth: 150}
+            {title: language.start, variable: 'start', width: 70, minWidth: 70},
+            {title: language.end, variable: 'end', width: 70, minWidth: 70}
         ],
         dataSource: datasource
     }

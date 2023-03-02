@@ -563,8 +563,10 @@ function initCellsTable(language, inputsObject) {
 
 function saveStatsWindow(language, statsTable, select, colsTable, rowsTable, inputs, cellsTable){
     var name = document.getElementById('statsName').value;
+    var sort = document.getElementById('statsSort').value;
     var stats = {
         name: name,
+        sort_priority: parseInt(sort),
         json: {
             inputs: inputs.getInputs(),
             inputsOverride: inputs.getOverides(),

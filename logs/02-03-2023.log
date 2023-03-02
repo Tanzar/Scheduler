@@ -1,0 +1,82 @@
+[2023-03-02  07:22:03] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-03-02  07:22:36] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorSuspensions.php?
+[2023-03-02  07:32:30] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-03-02  07:32:35] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSuspensions.php?
+[2023-03-02  07:35:58] [type: Access] [user: user_KOC] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-03-02  07:36:01] [type: Access] [user: user_KOC] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorSuspensions.php?
+[2023-03-02  07:43:47] [type: Access] [user: user_KOC] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorSuspensions.php?
+[2023-03-02  07:44:42] [type: Access] [user: user_KOC] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorSuspensions.php?
+[2023-03-02  08:09:41] [type: Access] [user: user_KOC] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-03-02  08:12:37] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-03-02  08:12:42] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-03-02  08:13:50] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelLocation.php?
+[2023-03-02  08:14:11] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelLocationSettings.php?
+[2023-03-02  08:14:45] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-03-02  08:15:01] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-02  08:15:05] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-02  08:16:37] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-02  08:16:50] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-02  08:17:07] [type: Error] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] Container error: cannot add item, key active_from already exists. ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(66): Tanweb\Container->throwException('cannot add item...')
+#1 /var/www/html/sys/classes/Tanweb/Container.php(53): Tanweb\Container->addAsKey('2123-03-01', 'active_from', false)
+#2 /var/www/html/sys/classes/Services/ScheduleService.php(227): Tanweb\Container->add('2123-03-01', 'active_from')
+#3 /var/www/html/sys/classes/Services/ScheduleService.php(209): Services\ScheduleService->getTemporaryGroupId()
+#4 /var/www/html/sys/classes/Controllers/ScheduleUser.php(97): Services\ScheduleService->saveLocation('Kopalnia', 16)
+#5 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->saveLocation()
+#6 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2023-03-02  08:20:41] [type: Error] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] Container error: cannot add item, key active_from already exists. ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(66): Tanweb\Container->throwException('cannot add item...')
+#1 /var/www/html/sys/classes/Tanweb/Container.php(53): Tanweb\Container->addAsKey('2123-03-01', 'active_from', false)
+#2 /var/www/html/sys/classes/Services/ScheduleService.php(227): Tanweb\Container->add('2123-03-01', 'active_from')
+#3 /var/www/html/sys/classes/Services/ScheduleService.php(209): Services\ScheduleService->getTemporaryGroupId()
+#4 /var/www/html/sys/classes/Controllers/ScheduleUser.php(97): Services\ScheduleService->saveLocation('Kopalnia', 16)
+#5 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->saveLocation()
+#6 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2023-03-02  08:21:29] [type: Error] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] Container error: cannot add item, key active_from already exists. ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(66): Tanweb\Container->throwException('cannot add item...')
+#1 /var/www/html/sys/classes/Tanweb/Container.php(53): Tanweb\Container->addAsKey('2123-03-01', 'active_from', false)
+#2 /var/www/html/sys/classes/Services/ScheduleService.php(227): Tanweb\Container->add('2123-03-01', 'active_from')
+#3 /var/www/html/sys/classes/Services/ScheduleService.php(209): Services\ScheduleService->getTemporaryGroupId()
+#4 /var/www/html/sys/classes/Controllers/ScheduleUser.php(97): Services\ScheduleService->saveLocation('Kopalnio', 16)
+#5 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->saveLocation()
+#6 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2023-03-02  08:21:58] [type: Error] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] Container error: cannot add item, key active_from already exists. ;
+ #0 /var/www/html/sys/classes/Tanweb/Container.php(66): Tanweb\Container->throwException('cannot add item...')
+#1 /var/www/html/sys/classes/Tanweb/Container.php(53): Tanweb\Container->addAsKey('2123-03-01', 'active_from', false)
+#2 /var/www/html/sys/classes/Services/ScheduleService.php(227): Tanweb\Container->add('2123-03-01', 'active_from')
+#3 /var/www/html/sys/classes/Services/ScheduleService.php(209): Services\ScheduleService->getTemporaryGroupId()
+#4 /var/www/html/sys/classes/Controllers/ScheduleUser.php(97): Services\ScheduleService->saveLocation('kop', 16)
+#5 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->saveLocation()
+#6 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2023-03-02  08:23:24] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-03-02  08:23:29] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelLocation.php?
+[2023-03-02  08:24:07] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelLocationSettings.php?
+[2023-03-02  08:24:36] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelLocation.php?
+[2023-03-02  08:25:37] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-02  08:25:41] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAdmin.php?
+[2023-03-02  08:25:47] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-02  08:25:49] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-02  08:26:03] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAdmin.php?
+[2023-03-02  08:28:32] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAdmin.php?
+[2023-03-02  08:47:06] [type: Error] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] Użytkownik nie jest zatrudniony w danym okresie.
+[2023-03-02  08:59:50] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-03-02  09:03:17] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorSuspensions.php?
+[2023-03-02  09:04:47] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorDecisions.php?
+[2023-03-02  09:05:03] [type: Access] [user: user_SPA] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-03-02  09:05:07] [type: Access] [user: user_SPA] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorDecisions.php?
+[2023-03-02  09:12:52] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-03-02  09:12:56] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelTicket.php?
+[2023-03-02  09:16:37] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-03-02  09:17:33] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/index/help.php?
+[2023-03-02  09:18:11] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/index/help.php?
+[2023-03-02  09:28:07] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-02  09:28:11] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAdmin.php?
+[2023-03-02  09:30:34] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAdmin.php?

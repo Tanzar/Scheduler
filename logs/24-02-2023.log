@@ -1,0 +1,124 @@
+[2023-02-24  07:44:08] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-24  07:44:13] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/index/indexMyData.php?
+[2023-02-24  08:30:12] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-24  08:30:16] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelUsers.php?
+[2023-02-24  08:36:56] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-02-24  08:37:04] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsNoForm.php?
+[2023-02-24  08:38:08] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-02-24  08:38:53] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsNoForm.php?
+[2023-02-24  08:39:46] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-02-24  09:01:40] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-02-24  10:48:29] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Class "Custom\Reports\InspectorReport" not found ;
+ #0 /var/www/html/sys/classes/Controllers/Index.php(30): Services\IndexService::getUserData(2023, 'user_SPA')
+#1 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\Index->getReport()
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#3 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#4 {main}
+[2023-02-24  10:48:54] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] SQL Error: cannot add condition, call and() or or() first.
+[2023-02-24  10:49:16] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] SQL Error: cannot add condition, call and() or or() first.
+[2023-02-24  11:04:58] [type: Access] [user: user_KOC] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-24  11:06:41] [type: Access] [user: user_KOC] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-24  11:09:46] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-24  11:09:50] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelUsers.php?
+[2023-02-24  11:10:42] [type: Access] [user: user_BB] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-24  11:36:14] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-02-24  11:36:19] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorTickets.php?
+[2023-02-24  11:36:46] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Class "Custom\Blockers\DayOffChecker" not found ;
+ #0 /var/www/html/sys/classes/Custom/Blockers/InspectorDateBlocker.php(45): Custom\Blockers\InspectorDateBlocker->findBlockerDay(5)
+#1 /var/www/html/sys/classes/Custom/Blockers/InspectorDateBlocker.php(34): Custom\Blockers\InspectorDateBlocker->getEarliestAllowedDate(5)
+#2 /var/www/html/sys/classes/Custom/Blockers/Abstracts/OperationBlocker.php(34): Custom\Blockers\InspectorDateBlocker->shouldBeBlocked(Object(Tanweb\Container), 5)
+#3 /var/www/html/sys/classes/Services/TicketService.php(141): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#4 /var/www/html/sys/classes/Services/TicketService.php(78): Services\TicketService->checkBlocker(Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Controllers/InspectorTickets.php(56): Services\TicketService->saveTicketForCurrentUser(Object(Tanweb\Container))
+#6 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\InspectorTickets->saveNewTicket()
+#7 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#8 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#9 {main}
+[2023-02-24  11:37:16] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Call to undefined method Services\TicketService::throwException() ;
+ #0 /var/www/html/sys/classes/Services/TicketService.php(78): Services\TicketService->checkBlocker(Object(Tanweb\Container))
+#1 /var/www/html/sys/classes/Controllers/InspectorTickets.php(56): Services\TicketService->saveTicketForCurrentUser(Object(Tanweb\Container))
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\InspectorTickets->saveNewTicket()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-02-24  11:38:37] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Call to undefined method Services\TicketService::throwException() ;
+ #0 /var/www/html/sys/classes/Services/TicketService.php(78): Services\TicketService->checkBlocker(Object(Tanweb\Container))
+#1 /var/www/html/sys/classes/Controllers/InspectorTickets.php(56): Services\TicketService->saveTicketForCurrentUser(Object(Tanweb\Container))
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\InspectorTickets->saveNewTicket()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-02-24  11:40:07] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Call to undefined method Services\TicketService::throwException() ;
+ #0 /var/www/html/sys/classes/Services/TicketService.php(78): Services\TicketService->checkBlocker(Object(Tanweb\Container))
+#1 /var/www/html/sys/classes/Controllers/InspectorTickets.php(56): Services\TicketService->saveTicketForCurrentUser(Object(Tanweb\Container))
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\InspectorTickets->saveNewTicket()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-02-24  11:41:07] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Call to undefined method Services\TicketService::throwException() ;
+ #0 /var/www/html/sys/classes/Services/TicketService.php(78): Services\TicketService->checkBlocker(Object(Tanweb\Container))
+#1 /var/www/html/sys/classes/Controllers/InspectorTickets.php(56): Services\TicketService->saveTicketForCurrentUser(Object(Tanweb\Container))
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\InspectorTickets->saveNewTicket()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-02-24  11:49:46] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Class "Services\Exceptions\SystemBlockedException" not found ;
+ #0 /var/www/html/sys/classes/Services/TicketService.php(78): Services\TicketService->checkBlocker(Object(Tanweb\Container))
+#1 /var/www/html/sys/classes/Controllers/InspectorTickets.php(56): Services\TicketService->saveTicketForCurrentUser(Object(Tanweb\Container))
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\InspectorTickets->saveNewTicket()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-02-24  11:51:41] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Nie możesz danych za wybrany miesiąc
+[2023-02-24  11:52:39] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-02-24  11:53:54] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorArticle41.php?
+[2023-02-24  11:54:06] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-02-24  11:54:10] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorDecisions.php?
+[2023-02-24  11:54:23] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-02-24  11:54:31] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorSuspensions.php?
+[2023-02-24  11:54:54] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-02-24  11:55:04] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorInstruments.php?
+[2023-02-24  11:55:15] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-02-24  11:55:19] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorCourtApplications.php?
+[2023-02-24  11:55:33] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-02-24  11:55:40] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-24  11:55:51] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-24  11:55:55] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-02-24  11:56:19] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-24  11:56:24] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-02-24  11:56:59] [type: Error] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-02-24  11:58:06] [type: Access] [user: user_SPA] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-24  12:42:03] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-24  12:56:05] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-02-24  12:56:12] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/stats/statsForm.php?
+[2023-02-24  13:13:40] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-24  13:13:45] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelLocation.php?
+[2023-02-24  13:14:04] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelDocuments.php?
+[2023-02-24  13:14:17] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelDaysOff.php?
+[2023-02-24  13:14:53] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSchedule.php?
+[2023-02-24  13:14:58] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelLocationSettings.php?
+[2023-02-24  13:15:07] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelTicketSettings.php?
+[2023-02-24  13:15:20] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelLocation.php?
+[2023-02-24  13:15:31] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-24  13:15:34] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-02-24  13:15:46] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-24  13:15:58] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelDaysOff.php?
+[2023-02-24  13:16:38] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-02-24  13:17:00] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-02-24  13:17:06] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelLocationSettings.php?
+[2023-02-24  13:17:21] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-02-24  13:17:28] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/qualification/qualificationMain.php?
+[2023-02-24  13:17:41] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-24  13:17:47] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelUsers.php?
+[2023-02-24  13:18:09] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelOvertime.php?
+[2023-02-24  13:18:14] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelDaysOff.php?
+[2023-02-24  13:19:24] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelArticle.php?
+[2023-02-24  13:19:33] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelTicket.php?
+[2023-02-24  13:19:41] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelInventory.php?
+[2023-02-24  13:29:08] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-02-24  13:29:14] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorDocuments.php?
+[2023-02-24  13:30:45] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-02-24  13:30:50] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelUsers.php?
+[2023-02-24  13:32:58] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-02-24  14:07:37] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/index/help.php?
+[2023-02-24  14:16:25] [type: Access] [user: admin] [ip: 172.18.0.1] [proxy: undefined] http://localhost/pages/index/help.php?

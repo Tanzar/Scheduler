@@ -95,6 +95,10 @@ class UserService{
         return $this->usersWithoutPasswords->getActiveExcept($username);
     }
     
+    public function getActiveUsersWithoutSystemAndExcept(string $username) : Container {
+        return $this->usersWithoutPasswords->getActiveWithoutSystemAndExcept($username);
+    }
+    
     public function getActiveUsers() : Container {
         return $this->usersWithoutPasswords->getActive();
     }

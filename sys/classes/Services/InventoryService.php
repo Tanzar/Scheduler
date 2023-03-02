@@ -132,7 +132,7 @@ class InventoryService {
     }
     
     public function saveNewBorrowedEquipment(Container $data) : int {
-        $data->add('list', 'state');
+        $data->add('borrowed', 'state');
         $data->add(date('Y-m-d'), 'calibration');
         $parser = new Equipment();
         $parsed = $parser->parse($data);
@@ -152,16 +152,16 @@ class InventoryService {
         $this->equipment->save($parsed);
     }
     
-    public function assignEquipment(Container $equipment) : void {
+    public function assignEquipment(Container $equipment, bool $admin = false) : void {
         $equipmentId = (int) $equipment->get('id');
+        if($admin){
+            $this->inventoryLog->confirmAssigns($equipmentId);
+        }
         $logs = $this->inventoryLogDetails->getUnconfirmedForEquipment($equipmentId);
         if($logs->length() === 0){
             $targetUserId = $this->getUserId($equipment->get('username'));
             $sourceUserId = $this->getUserId(Session::getUsername());
             $id = $this->inventoryLog->assign($equipmentId, $sourceUserId, $targetUserId);
-            if($targetUserId === 1){
-                $this->inventoryLog->confirm($id);
-            }
         }
         else{
             throw new UnconfirmedEquipmentException();
@@ -177,11 +177,22 @@ class InventoryService {
         $this->equipment->changeUser($equipmentId, $targetUserId);
     }
     
+    public function cancelEquipmentAssign(Container $log) : void {
+        $logId = (int) $log->get('id');
+        $this->inventoryLog->confirm($logId);
+        $equipmentId = (int) $log->get('id_equipment');
+        $userSourceId = (int) $log->get('id_source_user');
+        $userTargetId = (int) $log->get('id_target_user');
+        $this->inventoryLog->cancelAssign($equipmentId, $userSourceId, $userTargetId);
+    }
+    
     public function sendToRepair(string $date, string $document, int $equipmentId) : void {
-        $username = Session::getUsername();
-        $userId = $this->getUserId($username);
-        $this->equipment->setAsRepair($equipmentId);
-        $this->inventoryLog->repair($date, $document, $equipmentId, $userId);
+        if(!$this->isBorrowed($equipmentId)){
+            $username = Session::getUsername();
+            $userId = $this->getUserId($username);
+            $this->equipment->setAsRepair($equipmentId);
+            $this->inventoryLog->repair($date, $document, $equipmentId, $userId);
+        }
     }
     
     public function returnFromRepair(int $equipmentId) : void {
@@ -189,10 +200,12 @@ class InventoryService {
     }
     
     public function sendToCalibration(string $date, string $document, int $equipmentId) : void {
-        $username = Session::getUsername();
-        $userId = $this->getUserId($username);
-        $this->equipment->setAsCalibration($equipmentId, $date);
-        $this->inventoryLog->calibration($date, $document, $equipmentId, $userId);
+        if(!$this->isBorrowed($equipmentId)){
+            $username = Session::getUsername();
+            $userId = $this->getUserId($username);
+            $this->equipment->setAsCalibration($equipmentId, $date);
+            $this->inventoryLog->calibration($date, $document, $equipmentId, $userId);
+        }
     }
     
     public function returnFromCalibration(int $equipmentId) : void {
@@ -232,5 +245,10 @@ class InventoryService {
     private function getUserId(string $username) : int {
         $user = $this->users->getByUsername($username);
         return (int) $user->get('id');
+    }
+    
+    private function isBorrowed(int $equipmentId) : bool {
+        $equipment = $this->equipment->getById($equipmentId);
+        return $equipment->get('state') === 'borrowed';
     }
 }

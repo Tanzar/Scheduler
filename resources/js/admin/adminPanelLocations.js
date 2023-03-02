@@ -17,13 +17,13 @@ function LocationsTable(language, div){
     var idLocationType = selectLocationType.value;
     var config = {
         columns : [
-            { title: 'ID', variable: 'id', width: 30},
-            { title: language.active, variable: 'active', width: 50},
-            { title: language.name, variable: 'name', width: 150, minWidth: 150},
-            { title: language.start, variable: 'active_from', width: 150, minWidth: 150},
-            { title: language.end, variable: 'active_to', width: 150, minWidth: 150},
-            { title: language.location_group, variable: 'location_group', width: 150, minWidth: 150},
-            { title: language.location_type, variable: 'location_type', width: 150, minWidth: 150}
+            { title: 'ID', variable: 'id', width: 30, minWidth: 30},
+            { title: language.active, variable: 'active', width: 50, minWidth: 50},
+            { title: language.name, variable: 'name', width: 250, minWidth: 250},
+            { title: language.start, variable: 'active_from', width: 70, minWidth: 70},
+            { title: language.end, variable: 'active_to', width: 70, minWidth: 70},
+            { title: language.location_group, variable: 'location_group', width: 250, minWidth: 250},
+            { title: language.location_type, variable: 'location_type', width: 200, minWidth: 200}
         ],
         dataSource : { 
             method: 'post', 

@@ -23,14 +23,16 @@ function initStatsTable(language) {
     };
     var config = {
         columns: [
-            {title: language.name, variable: 'name', width: 150, minWidth: 150},
+            {title: language.name, variable: 'name', width: 250, minWidth: 250},
             {title: language.stats_type, variable: 'type', width: 100, minWidth: 100},
-            {title: language.result_form, variable: 'form', width: 150, minWidth: 150}
+            {title: language.result_form, variable: 'form', width: 200, minWidth: 200}
         ],
         dataSource: datasource
     }
     var datatable = new Datatable(div, config);
     datatable.setOnSelect(function(selected){
+        var options = document.getElementById('tableOptions');
+        options.style.display = 'none';
         if(selected != undefined){
             display.clear();
             inputs.load(selected.id);
@@ -40,6 +42,8 @@ function initStatsTable(language) {
         }
     });
     datatable.setOnUnselect(function(){
+        var options = document.getElementById('tableOptions');
+        options.style.display = 'none';
         inputs.clear();
         display.clear();
         document.getElementById('generateStats').style.display = 'none';
@@ -240,6 +244,8 @@ function Display() {
     }
     
     function loadTable(config){
+        var options = document.getElementById('tableOptions');
+        options.style.display = 'block';
         var table = document.createElement('table');
         table.setAttribute('class', 'standard-table');
         var cells = config.cells;
@@ -263,6 +269,58 @@ function Display() {
             table.appendChild(tr);
         });
         div.appendChild(table);
+        
+        document.getElementById('hideRows').onchange = function(){
+            for (var i = 1; i < table.children.length; i++) {
+                var tr = table.children[i];
+                if(this.checked){
+                    var empty = true;
+                    for (var j = 1; j < tr.children.length; j++) {
+                        var td = tr.children[j];
+                        if(td.textContent !== ''){
+                            empty = false;
+                        }
+                    }
+                    if(empty){
+                        tr.style.display = 'none';
+                    }
+                }
+                else{
+                    tr.style.display = '';
+                }
+            }
+        }
+        
+        document.getElementById('hideColumns').onchange = function(){
+            if(table.children[2] !== undefined){
+                var cols = table.children[2].children.length;
+                var rows = table.children.length - 2;
+            }
+            for(var col = 0; col < cols; col++){
+                if(this.checked){
+                    var empty = true;
+                    for(var row = 2; row < rows; row++){
+                        var cell = table.children[row].children[col];
+                        if(cell.textContent !== ''){
+                            empty = false;
+                        }
+                    }
+                    if(empty){
+                        for(var row = 1; row < rows; row++){
+                            var cell = table.children[row].children[col];
+                            cell.style.display = 'none';
+                        }
+                        
+                    }
+                }
+                else{
+                    for(var row = 1; row < rows; row++){
+                        var cell = table.children[row].children[col];
+                        cell.style.display = '';
+                    }
+                }
+            }
+        }
     }
     
     function loadPlot(config){
@@ -280,7 +338,7 @@ function Display() {
             },
             autosize: false,
             height: 600,
-            width: 1000,
+            width: 800,
             margin: {
                 l: 50,
                 r: 50,
@@ -292,22 +350,37 @@ function Display() {
         }
         if(Array.isArray(config.data)){
             if(config.data[0].type === 'pie'){
-                var rows = Math.ceil(config.data.length / 2);
-                var cols = config.data.length > 1 ? 2 : 1;
-                layout.grid = {
-                    rows: rows,
-                    columns: cols
-                }
+                var font = 15;
+                var cols = 3;
+                var xPerTrace = 1 / Math.min(config.data.length, cols);
+                var startX = 0;
+                var yPerTrace = 1 / Math.ceil(config.data.length / cols);
+                var startY = 1;
                 layout.annotations = [];
-                var counter = 1;
                 config.data.forEach(item => {
-                    var row = Math.floor(counter / 2);
-                    var col = counter % 2 + 1;
                     item.domain = {
-                        row: row,
-                        column: col
+                        x:[startX + (xPerTrace * 0.1), startX + (xPerTrace * 0.9)],
+                        y:[startY - (yPerTrace * 0.8), startY - (yPerTrace * 0.1)]
                     }
-                    counter++;
+                    layout.annotations.push({
+                        font: {
+                            family: 'Arial',
+                            size: font
+                        },
+                        xanchor: 'left',
+                        yanchor: 'bottom',
+                        xref: 'paper',
+                        showarrow: false,
+                        text: item.name,
+                        width: 0.8 * xPerTrace * layout.width,
+                        x: startX,
+                        y: startY - (yPerTrace * 0.1)
+                    })
+                    startX += xPerTrace;
+                    if(startX >= 1){
+                        startX = 0;
+                        startY -= yPerTrace;
+                    }
                 })
             }
             

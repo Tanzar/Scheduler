@@ -41,7 +41,7 @@ class UsersPrivilagesView extends View{
         $sql = new MysqlBuilder();
         $sql->select('users_privilages')->where('privilage', 'schedule_user_inspector')
                 ->and()->where('user_active', 1)
-                ->and()->where('privilage_active', 1);
+                ->and()->where('privilage_active', 1)->orderBy('surname');
         return $this->select($sql);
         
     }

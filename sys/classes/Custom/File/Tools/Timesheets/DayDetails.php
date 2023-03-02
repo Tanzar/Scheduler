@@ -62,10 +62,10 @@ class DayDetails {
         $officeTime = $this->officeTime + $office;
         $total = $officeTime + $this->delegationTime + $delegation;
         $overtime = max($total - $this->standardWorkdayTime, 0);
-        $this->officeTime = min($officeTime, $this->standardWorkdayTime);
-        $this->delegationTime = max($total - $overtime - $this->officeTime, 0);
+        $this->officeTime += min($officeTime, $this->standardWorkdayTime);
+        $this->delegationTime += max($total - $overtime - $this->officeTime, 0);
         if($generateOvertime){
-            $this->overtime = $overtime;
+            $this->overtime += $overtime;
         }
     }
     

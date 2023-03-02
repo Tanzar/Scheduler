@@ -17,7 +17,7 @@ function initSupervisionsTable(language){
         columns : [
             { title: 'ID', variable: 'id', width: 30},
             { title: language.active, variable: 'active', width: 50},
-            { title: language.name, variable: 'name', width: 50, minWidth: 50}
+            { title: language.name, variable: 'name', width: 150, minWidth: 150}
         ],
         dataSource : { 
             method: 'post', 
@@ -98,7 +98,7 @@ function initOugTable(language){
         columns : [
             { title: 'ID', variable: 'id', width: 30},
             { title: language.active, variable: 'active', width: 50},
-            { title: language.name, variable: 'location', width: 50, minWidth: 50}
+            { title: language.name, variable: 'location', width: 150, minWidth: 150}
         ],
         dataSource : { 
             method: 'post', 
@@ -179,7 +179,7 @@ function initFacilityTypesTable(language){
         columns : [
             { title: 'ID', variable: 'id', width: 30},
             { title: language.active, variable: 'active', width: 50},
-            { title: language.name, variable: 'name', width: 50, minWidth: 50}
+            { title: language.name, variable: 'name', width: 150, minWidth: 150}
         ],
         dataSource : { 
             method: 'post', 

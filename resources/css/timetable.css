@@ -138,11 +138,13 @@ This code is free to use, just remember to give credit.
 }
 
 .timetable-entry-cell-overflow {
+    cursor: pointer;
     border: 1px solid var(--border-color);
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: fit-content;
 }
 
 .timetable-entry-cell:hover{

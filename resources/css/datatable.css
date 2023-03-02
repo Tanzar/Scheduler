@@ -49,6 +49,7 @@
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
+    cursor: pointer;
 }
 
 .datatable tr:nth-child(odd){
@@ -76,6 +77,7 @@
     color: #000000 !important;
     border-radius: 5px !important;
     margin: 5px !important;
+    cursor: pointer;
 }
 
 .datatable-button:hover {

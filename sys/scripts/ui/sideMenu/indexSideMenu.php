@@ -18,10 +18,6 @@
     </form>
     <?php
         if(Session::getUsername() !== ''){
-            echo '<form action="' . Pages::getURL('indexMyData.php') . '">';
-            echo '<input type="submit" class="side-menu-button" value="' . $options->get('my_data') . '">';
-            echo '</form>';
-            
             echo '<form action="' . Pages::getURL('help.php') . '">';
             echo '<input type="submit" class="side-menu-button" value="' . $options->get('help') . '">';
             echo '</form>';

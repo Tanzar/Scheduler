@@ -7,8 +7,8 @@ function init() {
     RestApi.getInterfaceNamesPackage(function(language){
         
         var selectDocument = new Select('documents', language.select_document);
-        initDateSelection(selectDocument);
-        SuspensionsTable(language, selectDocument);
+        var suspensionsTable = SuspensionsTable(language, selectDocument);
+        initDateSelection(selectDocument, suspensionsTable);
     });
 }
 
@@ -65,7 +65,7 @@ function Select(id, placeholder){
     }
 }
 
-function initDateSelection(selectDocument) {
+function initDateSelection(selectDocument, suspensionsTable) {
     var selectMonth = document.getElementById('selectMonth');
     var selectYear = document.getElementById('selectYear');
     var selectDate = document.getElementById('selectDate');
@@ -75,6 +75,16 @@ function initDateSelection(selectDocument) {
             year: selectYear.value
         }
         selectDocument.loadOptions('InspectorSuspensions', 'getDocuments', data);
+        suspensionsTable.setDatasource({
+            method: 'get',
+            address: getRestAddress(),
+            data: {
+                controller: 'InspectorSuspensions',
+                task: 'getSuspensions',
+                id_document: 0
+            }
+        });
+        clearLists();
     }
 }
 
@@ -92,13 +102,13 @@ function SuspensionsTable(language, selectDocument){
     };
     var config = {
         columns: [
-            {title: language.date, variable: 'date', width: 100, minWidth: 100},
+            {title: language.date, variable: 'date', width: 70, minWidth: 70},
             {title: language.shift, variable: 'shift', width: 50, minWidth: 50},
             {title: language.region, variable: 'region', width: 150, minWidth: 150},
-            {title: language.description, variable: 'description', width: 300, minWidth: 300},
+            {title: language.description, variable: 'description', width: 400, minWidth: 400},
             {title: language.correction_date, variable: 'correction_date', width: 100, minWidth: 100},
             {title: language.correction_shift, variable: 'correction_shift', width: 50, minWidth: 50},
-            {title: language.remarks, variable: 'remarks', width: 200, minWidth: 200}
+            {title: language.remarks, variable: 'remarks', width: 250, minWidth: 250}
         ],
         dataSource: datasource
     }
@@ -117,6 +127,7 @@ function SuspensionsTable(language, selectDocument){
                 id_document: id
             }
         });
+        clearLists();
     });
     datatable.addActionButton(language.add, function(){
         var idDocument = selectDocument.value();
@@ -381,6 +392,7 @@ function SuspensionsTable(language, selectDocument){
         refreshAssignedTicketsList(0);
         refreshAssignedDecisionsList(0);
     });
+    return datatable;
 }
 
 function openAddSanctionModal(language, suspension, documentId){
@@ -667,4 +679,21 @@ function refreshAssignedDecisionsList(idSuspension){
             list.appendChild(li);
         })
     });
+}
+
+function clearLists() {
+    var articles = document.getElementById('articlesList');
+    while(articles.firstChild){
+        articles.removeChild(articles.firstChild);
+    }
+    
+    var tickets = document.getElementById('ticketsList');
+    while(tickets.firstChild){
+        tickets.removeChild(tickets.firstChild);
+    }
+    
+    var decisions = document.getElementById('decisionsList');
+    while(decisions.firstChild){
+        decisions.removeChild(decisions.firstChild);
+    }
 }

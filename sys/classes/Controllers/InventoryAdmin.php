@@ -117,7 +117,7 @@ class InventoryAdmin extends Controller{
     
     public function assignToUser() {
         $data = $this->getRequestData();
-        $this->inventory->assignEquipment($data);
+        $this->inventory->assignEquipment($data, true);
         $this->setSuccesResponse();
     }
     

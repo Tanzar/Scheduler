@@ -57,9 +57,9 @@ function initEducationsTable(language, personTable){
     var config = {
         columns : [
             { title: language.degree, variable: 'degree', width: 100, minWidth: 100},
-            { title: language.specialization, variable: 'specialization', width: 100, minWidth: 100},
+            { title: language.specialization, variable: 'specialization', width: 150, minWidth: 150},
             { title: language.year, variable: 'year', width: 50, minWidth: 50},
-            { title: language.school, variable: 'school', width: 150, minWidth: 150}
+            { title: language.school, variable: 'school', width: 200, minWidth: 200}
         ],
         dataSource : { 
             method: 'post', 
@@ -153,7 +153,7 @@ function initCoursesTable(language, personTable){
     
     var config = {
         columns : [
-            { title: language.name, variable: 'name', width: 150, minWidth: 150}
+            { title: language.name, variable: 'name', width: 200, minWidth: 200}
         ],
         dataSource : { 
             method: 'post', 

@@ -189,12 +189,13 @@ function initQualificatinsTable(language) {
     
     var config = {
         columns : [
-            { title: language.number, variable: 'number', width: 50, minWidth: 50},
-            { title: language.date, variable: 'date', width: 50, minWidth: 50},
-            { title: language.position, variable: 'position', width: 75, minWidth: 75},
+            { title: 'ID', variable: 'id', width: 30},
+            { title: language.number, variable: 'number', width: 100, minWidth: 100},
+            { title: language.date, variable: 'date', width: 80, minWidth: 80},
+            { title: language.position, variable: 'position', width: 150, minWidth: 150},
             { title: language.facility, variable: 'facility', width: 150, minWidth: 150},
-            { title: language.facility_type, variable: 'facility_type', width: 75, minWidth: 75},
-            { title: language.supervision_level, variable: 'supervision_level', width: 75, minWidth: 75},
+            { title: language.facility_type, variable: 'facility_type', width: 100, minWidth: 100},
+            { title: language.supervision_level, variable: 'supervision_level', width: 120, minWidth: 120},
             { title: language.oug, variable: 'oug', width: 75, minWidth: 75}
         ],
         dataSource : { 

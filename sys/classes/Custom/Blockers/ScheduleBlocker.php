@@ -8,6 +8,7 @@ namespace Custom\Blockers;
 
 use Custom\Blockers\Abstracts\Blockers as Blockers;
 use Custom\Blockers\Abstracts\OperationBlocker as OperationBlocker;
+use Custom\Dates\DayOffChecker as DayOffChecker;
 use Tanweb\Container as Container;
 use DateTime;
 
@@ -32,8 +33,8 @@ class ScheduleBlocker extends OperationBlocker {
     protected function shouldBeBlocked(Container $input, int $blockerValue): bool {
         $start = $input->get('start');
         $startDate = new DateTime($start);
-        $earliestAllowedDate = $this->getEarliestAllowedDate($blockerValue);
-        if($earliestAllowedDate <= $startDate){
+        $blockerDate = $this->getBlockerDate($blockerValue);
+        if($blockerDate > $startDate){
             return false;
         }
         else{
@@ -41,39 +42,52 @@ class ScheduleBlocker extends OperationBlocker {
         }
     }
 
-    private function getEarliestAllowedDate(int $blockerValue) : DateTime {
-        $current = new DateTime();
-        $blockerDate = $this->findBlockerDay($blockerValue);
-        if($current <= $blockerDate){
-            return $this->getFirstDayOfPreviousMonth();
+    private function getBlockerDate(int $blockerValue) : DateTime {
+        $current = $this->getBlockerDateInCurrentMonth($blockerValue);
+        $next = $this->getBlockerDateInNextMonth($blockerValue);
+        $today = new DateTime();
+        if($today < $current){
+            return $current;
         }
         else{
-            return $this->getFirstDayOfCurrentMonth();
+            return $next;
         }
     }
     
-    private function findBlockerDay(int $blockerValue) : DateTime {
+    private function getBlockerDateInCurrentMonth(int $blockerValue) : DateTime {
         $current = new DateTime();
-        $blockerDate = new DateTime($current->format('Y-m-') . $blockerValue . ' 23:59:59');
-        if((int) $blockerDate->format('N') === 6){  //saturday
-            $blockerDate->modify('+1 day');
-        }
-        if((int) $blockerDate->format('N') === 7){  //sunday
-            $blockerDate->modify('+1 day');
+        $year = (int) $current->format('Y');
+        $month = (int) $current->format('m');
+        return $this->findBlockerDateInMonnth($year, $month, $blockerValue);
+    }
+    
+    private function getBlockerDateInNextMonth(int $blockerValue) : DateTime {
+        $current = new DateTime();
+        $current->modify('+1 months');
+        $year = (int) $current->format('Y');
+        $month = (int) $current->format('m');
+        return $this->findBlockerDateInMonnth($year, $month, $blockerValue);
+    }
+    
+    private function findBlockerDateInMonnth(int $year, int $month, int $blockerValue) : DateTime {
+        $blockerDate = new DateTime($year . '-' . $month . '-' . $blockerValue);
+        $monthEnd = new DateTime($year . '-' . $month . '-01');
+        $monthEnd->modify('+1 months');
+        $checker = new DayOffChecker();
+        $blocked = true;
+        while($blocked && $blockerDate < $monthEnd){
+            if(!$checker->isDayOff($blockerDate)){
+                $blocked = false;
+            }
+            $blockerDate->modify('+1 days');
         }
         return $blockerDate;
     }
     
-    private function getFirstDayOfPreviousMonth() : DateTime {
-        $date = new DateTime();
-        $day = ((int) $date->format('j')) + 1;
-        $date->modify('-' . $day . ' day');
-        return new DateTime($date->format('Y-m-') . '1 00:00:00');
-    }
-    
-    private function getFirstDayOfCurrentMonth() : DateTime {
-        $date = new DateTime();
-        $day = (int) $date->format('j');
-        return new DateTime($date->format('Y-m-') . '1 00:00:00');
+    public function getNextBLockerDate() : DateTime {
+        $blockers = Blockers::SCHEDULE();
+        $blockerValue = $blockers->getConfigValue();
+        $date = $this->getBlockerDate($blockerValue);
+        return $date;
     }
 }

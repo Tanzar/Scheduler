@@ -142,8 +142,8 @@ function DaysRange(date){
     var day = d.getDay(),
             diff = d.getDate() - day + (day == 0 ? -6:1); // adjust when day is sunday
     var start = new Date(d.setDate(diff));
-    var end = new Date(date);
-    end.setDate(date.getDate() + 6);
+    var end = new Date(start);
+    end.setDate(start.getDate() + 6);
     
     this.getStart = function(){
         return start.toISOString().split('T')[0];

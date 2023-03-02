@@ -74,6 +74,7 @@ This code is free to use, just remember to give credit.
     border-radius: 5px;
     padding: 3px;
     float: right;
+    cursor: pointer;
 }
 
 .modal-box-button:hover {
@@ -95,6 +96,7 @@ This code is free to use, just remember to give credit.
     border: 2px solid transparent;
     border-radius: 5px;
     border-bottom-color: #0066ff;
+    cursor: pointer;
 }
 
 .modal-box-input-date {
@@ -104,6 +106,7 @@ This code is free to use, just remember to give credit.
     border: 2px solid transparent;
     border-radius: 5px;
     border-bottom-color: #0066ff;
+    cursor: pointer;
 }
 
 .modal-box-input:invalid {
@@ -127,6 +130,7 @@ This code is free to use, just remember to give credit.
     resize: none;
     border-radius: 5px;
     padding: 4px;
+    cursor: pointer;
 }
 
 .modal-box-textarea:invalid {
@@ -138,4 +142,5 @@ This code is free to use, just remember to give credit.
 }
 
 .modal-box-checkbox {
+    cursor: pointer;
 }

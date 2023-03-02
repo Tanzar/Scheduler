@@ -59,6 +59,14 @@ class CourtApplicationDetailsView extends View{
         return $this->select($sql);
     }
     
+    public function getActiveByUsernameAndYear(string $username, int $year) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('court_application_details')->where('active', 1)
+                ->and()->where('username', $username)
+                ->and()->where('year(date)', $year);
+        return $this->select($sql);
+    }
+    
     public function getActiveByDocumentId(int $documentId) : Container{
         $sql = new MysqlBuilder();
         $sql->select('court_application_details')->where('active', 1)

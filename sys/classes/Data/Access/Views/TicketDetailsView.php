@@ -58,6 +58,14 @@ class TicketDetailsView extends View{
         return $this->select($sql);
     }
     
+    public function getActiveUserTicketsByYear(string $username, int $year) : Container{
+        $sql = new MysqlBuilder();
+        $sql->select('ticket_details')->where('active', 1)->and()
+                ->where('year(date)', $year)->and()
+                ->where('username', $username)->orderBy('date', false);
+        return $this->select($sql);
+    }
+    
     public function getUserActiveTicketsByDocumentId(string $username, int $documentId) : Container{
         $sql = new MysqlBuilder();
         $sql->select('ticket_details')->where('active', 1)

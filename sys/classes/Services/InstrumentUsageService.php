@@ -15,6 +15,7 @@ use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Custom\Parsers\Database\InstrumentUsage as InstrumentUsage;
+use Services\Exceptions\SystemBlockedException as SystemBlockedException;
 
 /**
  * Description of InstrumentUsageService
@@ -95,8 +96,7 @@ class InstrumentUsageService {
     private function checkBlocker(Container $data) {
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
-            $languages = Languages::getInstance();
-            $this->throwException($languages->get('cannot_change_selected_month'));
+            throw new SystemBlockedException();
         }
     }
 }

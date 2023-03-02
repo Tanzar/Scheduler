@@ -22,10 +22,10 @@ function AdminPanelSchedule(){
         };
         var config = {
             columns: [
-                {title: language.active, variable: 'active', width: 50},
-                {title: language.start_date, variable: 'start', width: 150},
-                {title: language.end_date, variable: 'end', width: 150},
-                {title: language.location, variable: 'location', width: 200}
+                {title: language.active, variable: 'active', width: 50, minWidth: 50},
+                {title: language.start_date, variable: 'start', width: 150, minWidth: 150},
+                {title: language.end_date, variable: 'end', width: 150, minWidth: 150},
+                {title: language.location, variable: 'location', width: 250, minWidth: 150}
             ],
             dataSource: datasource
         }

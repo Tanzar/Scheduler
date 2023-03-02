@@ -11,6 +11,7 @@ use Data\Access\Tables\ActivityTableDAO as ActivityDAO;
 use Data\Access\Tables\ActivityLocationTypeDAO as ActivityLocationTypeDAO;
 use Data\Access\Tables\UserTableDAO as UserDAO;
 use Data\Access\Tables\DocumentScheduleDAO as DocumentScheduleDAO;
+use Data\Access\Views\UsersEmploymentPeriodsView as UsersEmploymentPeriodsView;
 use Data\Access\Views\ActivityLocationTypeDetailsView as ActivityLocationTypeDetailsView;
 use Data\Access\Views\ScheduleEntriesView as ScheduleEntriesView;
 use Data\Access\Tables\LocationDAO as LocationDAO;
@@ -18,6 +19,7 @@ use Data\Access\Tables\LocationGroupDAO as LocationGroupDAO;
 use Tanweb\Config\INI\AppConfig as AppConfig;
 use Data\Exceptions\NotFoundException as NotFoundException;
 use Services\Exceptions\ScheduleEntryException as ScheduleEntryException;
+use Services\Exceptions\SystemBlockedException as SystemBlockedException;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
@@ -38,6 +40,7 @@ class ScheduleService {
     private ActivityLocationTypeDetailsView $activityLocationDetails;
     private ScheduleEntriesView $scheduleEntries;
     private DocumentScheduleDAO $documentSchedule;
+    private UsersEmploymentPeriodsView $usersEmploymentPeriods;
     private LocationDAO $location;
     private LocationGroupDAO $locationGroup;
     
@@ -49,6 +52,7 @@ class ScheduleService {
         $this->activityLocationDetails = new ActivityLocationTypeDetailsView();
         $this->scheduleEntries = new ScheduleEntriesView();
         $this->documentSchedule = new DocumentScheduleDAO();
+        $this->usersEmploymentPeriods = new UsersEmploymentPeriodsView();
         $this->location = new LocationDAO();
         $this->locationGroup = new LocationGroupDAO();
     }
@@ -152,6 +156,8 @@ class ScheduleService {
         $activity = $this->activity->getById($data->get('id_activity'));
         if($activity->get('assign_system')){
             $data->add(1, 'id_user');
+            $user = $this->user->getById(1);
+            $username = $user->get('username');
         }
         else{
             $username = $data->get('username');
@@ -162,7 +168,7 @@ class ScheduleService {
         $entry = $parser->parse($data);
         $this->checkBlocker($entry);
         $this->checkEntryDuration($entry);
-        $this->checkEntryDates($entry);
+        $this->checkEntryDates($entry, $username);
         $idSchedule = $this->schedule->save($entry);
         if($data->isValueSet('id_document')){
             $idDocument = (int) $data->get('id_document');
@@ -182,6 +188,8 @@ class ScheduleService {
         $activity = $this->activity->getById($data->get('id_activity'));
         if($activity->get('assign_system')){
             $data->add(1, 'id_user');
+            $user = $this->user->getById(1);
+            $username = $user->get('username');
         }
         else{
             $username = Session::getUsername();
@@ -192,7 +200,7 @@ class ScheduleService {
         $entry = $parser->parse($data);
         $this->checkBlocker($entry);
         $this->checkEntryDuration($entry);
-        $this->checkEntryDates($entry);
+        $this->checkEntryDates($entry, $username);
         $idSchedule = $this->schedule->save($entry);
         if($data->isValueSet('id_document')){
             $idDocument = (int) $data->get('id_document');
@@ -209,7 +217,7 @@ class ScheduleService {
         $date = new DateTime(date(('Y-m') . '-1'));
         $item->add($date->format('Y-m-d'), 'active_from');
         $date->modify('+100 years');
-        $item->add($date->format('Y-m-d'), 'active_from');
+        $item->add($date->format('Y-m-d'), 'active_to');
         $item->add($groupId, 'id_location_group');
         return $this->location->save($item);
     }
@@ -223,7 +231,7 @@ class ScheduleService {
             $date = new DateTime(date(('Y-m') . '-1'));
             $item->add($date->format('Y-m-d'), 'active_from');
             $date->modify('+100 years');
-            $item->add($date->format('Y-m-d'), 'active_from');
+            $item->add($date->format('Y-m-d'), 'active_to');
             return $this->locationGroup->save($item);
         }
         else{
@@ -305,13 +313,13 @@ class ScheduleService {
     }
     
     public function changeEntryStatus(int $id){
-        $entry = $this->schedule->getByID($id);
+        $entry = $this->scheduleEntries->getById($id);
         $active = $entry->get('active');
         if($active){
             $this->schedule->disable($id);
         }
         else{
-            $this->checkEntryDates($entry);
+            $this->checkEntryDates($entry, $entry->get('username'));
             $this->schedule->enable($id);
         }
     }
@@ -327,11 +335,13 @@ class ScheduleService {
         }
     }
     
-    private function checkEntryDates(Container $data) {
+    private function checkEntryDates(Container $data, string $username) {
         $start = $data->get('start');
         $end = $data->get('end');
         $languages = Languages::getInstance();
-        
+        if($this->outOfEmploymentPeriods($data, $username)){
+            throw new ScheduleEntryException($languages->get('entry_user_not_employed'));
+        }
         if(strtotime($start) > strtotime($end)){
             throw new ScheduleEntryException($languages->get('start_earlier_than_end'));
         }
@@ -348,11 +358,28 @@ class ScheduleService {
         }
     }
     
+    private function outOfEmploymentPeriods(Container $entry, string $username) : bool {
+        $start = new DateTime($entry->get('start'));
+        $end = new DateTime($entry->get('end'));
+        $periods = $this->usersEmploymentPeriods->getActiveByUser($username);
+        $isOut = true;
+        foreach ($periods->toArray() as $item){
+            if($isOut){
+                $period = new Container($item);
+                $periodStart = new DateTime($period->get('start') . ' 00:00:00');
+                $periodEnd = new DateTime($period->get('end') . ' 23:59:59');
+                if($start >= $periodStart && $start <= $periodEnd && $end >= $periodStart && $end <= $periodEnd){
+                    $isOut = false;
+                }
+            }
+        }
+        return $isOut;
+    }
+    
     private function checkBlocker(Container $entry) {
         $blocker = new ScheduleBlocker();
         if($blocker->isBLocked($entry)){
-            $languages = Languages::getInstance();
-            $this->throwException($languages->get('cannot_change_selected_month'));
+            throw new SystemBlockedException();
         }
     }
     

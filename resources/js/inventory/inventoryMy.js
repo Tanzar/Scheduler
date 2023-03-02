@@ -24,13 +24,14 @@ function initAssignedTable(language) {
     var config = {
         columns: [
             {title: language.inventory_number, variable: 'inventory_number', width: 70, minWidth: 70},
-            {title: language.name, variable: 'name', width: 250, minWidth: 250},
+            {title: language.name, variable: 'name', width: 300, minWidth: 300},
             {title: language.equipment_type, variable: 'equipment_type', width: 100, minWidth: 100}
         ],
         dataSource: datasource
     }
     
     var datatable = new Datatable(div, config);
+    /* disabled for now, uncomment to enable
     datatable.addActionButton(language.assign, function(selected){
         if(selected !== undefined){
             RestApi.get('InventoryMy', 'getUsers', {}, function(response){
@@ -68,7 +69,7 @@ function initAssignedTable(language) {
             alert(language.select_equipment);
         }
     });
-    
+    */
     return datatable;
 }
 
@@ -86,7 +87,7 @@ function initUnconfirmedTable(language, myEquipmentTable) {
     var config = {
         columns: [
             {title: language.inventory_number, variable: 'inventory_number', width: 70, minWidth: 70},
-            {title: language.name, variable: 'equipment_name', width: 250, minWidth: 250},
+            {title: language.name, variable: 'equipment_name', width: 300, minWidth: 300},
             {title: language.equipment_type, variable: 'equipment_type', width: 100, minWidth: 100}
         ],
         dataSource: datasource
@@ -96,6 +97,25 @@ function initUnconfirmedTable(language, myEquipmentTable) {
     datatable.addActionButton(language.confirm, function(selected){
         if(selected !== undefined){
             RestApi.post('InventoryMy', 'confirmAssign', {id: selected.id},
+                function(response){
+                    var data = JSON.parse(response);
+                    console.log(data);
+                    alert(data.message);
+                    datatable.refresh();
+                    myEquipmentTable.refresh();
+                },
+                function(response){
+                    console.log(response.responseText);
+                    alert(response.responseText);
+            });
+        }
+        else{
+            alert(language.select_equipment);
+        }
+    });
+    datatable.addActionButton(language.reject, function(selected){
+        if(selected !== undefined){
+            RestApi.post('InventoryMy', 'cancelAssign', selected,
                 function(response){
                     var data = JSON.parse(response);
                     console.log(data);

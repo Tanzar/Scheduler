@@ -15,12 +15,12 @@
 ?>
 <div class="side-menu">
     <?php
-        if($security->userHaveAnyPrivilage(new Container(array('admin', 'prints_schedule', 'prints_schedule_reports')))){
+        if($security->userHaveAnyPrivilage(new Container(array('admin', 'prints_schedule', 'prints_inspector', 'prints_inspector_all_documents', 'prints_schedule_reports')))){
             echo '<form action="' . Pages::getURL('printsSchedule.php') . '">';
             echo '<input type="submit" class="side-menu-button" value="' . $options->get('schedule') . '">';
             echo '</form>';
         }
-        if($security->userHaveAnyPrivilage(new Container(array('admin', 'prints_inspector')))){
+        if($security->userHaveAnyPrivilage(new Container(array('admin', 'prints_inspector', 'prints_inspector_all_documents')))){
             echo '<form action="' . Pages::getURL('printsInspector.php') . '">';
             echo '<input type="submit" class="side-menu-button" value="' . $options->get('inspector') . '">';
             echo '</form>';

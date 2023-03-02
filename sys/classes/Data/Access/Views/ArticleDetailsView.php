@@ -58,6 +58,14 @@ class ArticleDetailsView extends View{
         return $this->select($sql);
     }
     
+    public function getActiveArticlesByUserAndYear(string $username, int $year) : Container{
+        $sql = new MysqlBuilder();
+        $sql->select('article_details')->where('active', 1)->and()
+                ->where('year(date)', $year)->and()->where('username', $username)
+                ->orderBy('date', false);
+        return $this->select($sql);
+    }
+    
     public function getUserActiveArticlesByDocumentId(string $username, int $documentId) : Container{
         $sql = new MysqlBuilder();
         $sql->select('article_details')->where('active', 1)

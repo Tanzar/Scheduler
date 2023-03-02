@@ -27,6 +27,7 @@ class PrintsInspector extends Controller{
         $privilages = new Container();
         $privilages->add('admin');
         $privilages->add('prints_inspector');
+        $privilages->add('prints_inspector_all_documents');
         parent::__construct($privilages);
     }
     

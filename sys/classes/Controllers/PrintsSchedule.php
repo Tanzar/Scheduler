@@ -27,6 +27,8 @@ class PrintsSchedule extends Controller{
         $privilages->add('admin');
         $privilages->add('prints_schedule');
         $privilages->add('prints_schedule_reports');
+        $privilages->add('prints_inspector');
+        $privilages->add('prints_inspector_all_documents');
         parent::__construct($privilages);
     }
     

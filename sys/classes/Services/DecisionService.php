@@ -16,6 +16,7 @@ use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
 use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 use Custom\Parsers\Database\Decision as Decision;
+use Services\Exceptions\SystemBlockedException as SystemBlockedException;
 
 /**
  * Description of DecisionService
@@ -148,8 +149,7 @@ class DecisionService {
     private function checkBlocker(Container $data) {
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
-            $languages = Languages::getInstance();
-            $this->throwException($languages->get('cannot_change_selected_month'));
+            throw new SystemBlockedException();
         }
     }
 }

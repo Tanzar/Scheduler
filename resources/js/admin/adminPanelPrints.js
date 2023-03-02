@@ -18,7 +18,7 @@ function initTable(language){
             { title: 'ID', variable: 'id', width: 30},
             { title: language.active, variable: 'active', width: 50},
             { title: language.year, variable: 'year', width: 50, minWidth: 50},
-            { title: language.document_number, variable: 'number', width: 150, minWidth: 150}
+            { title: language.document_number, variable: 'number', width: 200, minWidth: 200}
         ],
         dataSource : { 
             method: 'post', 

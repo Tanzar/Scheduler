@@ -33,7 +33,7 @@ function ApplicationsTable(language) {
             {title: language.active, variable: 'active', width: 50, minWidth: 50},
             {title: language.document_number, variable: 'document_number', width: 150, minWidth: 150},
             {title: language.date, variable: 'date', width: 100, minWidth: 100},
-            {title: language.accusation, variable: 'accusation', width: 100, minWidth: 100},
+            {title: language.accusation, variable: 'accusation', width: 500, minWidth: 500},
             {title: language.position, variable: 'position', width: 150, minWidth: 150},
             {title: language.position_groups, variable: 'position_group', width: 100, minWidth: 100},
             {title: language.external_company, variable: 'external_company_text', width: 100, minWidth: 100},

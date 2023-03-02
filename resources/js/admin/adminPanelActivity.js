@@ -26,19 +26,19 @@ function AdminPanelActivity(){
 function ActivityTable(language, div){
     var config = {
         columns : [
-            { title: 'ID', variable: 'id', width: 30},
-            { title: language.active, variable: 'active', width: 50},
-            { title: language.name, variable: 'name', width: 150},
-            { title: language.short, variable: 'short', width: 50},
-            { title: language.symbol, variable: 'symbol', width: 50},
-            { title: language.color, variable: 'color', width: 50},
-            { title: language.activity_group, variable: 'activity_group', width: 30},
-            { title: language.worktime_record_row, variable: 'worktime_record_row', width: 30},
-            { title: language.workcard_display, variable: 'workcard_display', width: 30},
-            { title: language.allow_location_input, variable: 'allow_location_input', width: 30},
-            { title: language.require_document, variable: 'require_document', width: 30},
-            { title: language.overtime_action, variable: 'overtime_action', width: 30},
-            { title: language.assign_system, variable: 'assign_system', width: 30}
+            { title: 'ID', variable: 'id', width: 30, minWidth: 30},
+            { title: language.active, variable: 'active', width: 50, minWidth: 50},
+            { title: language.name, variable: 'name', width: 150, minWidth: 150},
+            { title: language.short, variable: 'short', width: 50, minWidth: 50},
+            { title: language.symbol, variable: 'symbol', width: 50, minWidth: 50},
+            { title: language.color, variable: 'color', width: 50, minWidth: 50},
+            { title: language.activity_group, variable: 'activity_group', width: 30, minWidth: 30},
+            { title: language.worktime_record_row, variable: 'worktime_record_row', width: 30, minWidth: 30},
+            { title: language.workcard_display, variable: 'workcard_display', width: 30, minWidth: 30},
+            { title: language.allow_location_input, variable: 'allow_location_input', width: 30, minWidth: 30},
+            { title: language.require_document, variable: 'require_document', width: 30, minWidth: 30},
+            { title: language.overtime_action, variable: 'overtime_action', width: 30, minWidth: 30},
+            { title: language.assign_system, variable: 'assign_system', width: 30, minWidth: 30}
         ],
         dataSource : { method: 'post', address: getRestAddress(), data: { controller: 'AdminPanelActivity', task: 'getActivities' } }
     };
@@ -194,7 +194,7 @@ function LocationsTable(language, div){
     
     var config = {
         columns : [
-            { title: language.active, variable: 'active', width: 50},
+            { title: language.active, variable: 'active', width: 50, minWidth: 50},
             { title: language.name, variable: 'name', width: 150, minWidth: 150}
         ],
         dataSource : { method: 'post', address: getRestAddress(), data: { controller: 'AdminPanelActivity', task: 'getLocationTypes' } }

@@ -44,15 +44,58 @@ This code is free to use, just remember to give credit.
             Scripts::run('indexSideMenu.php');
         ?>
         <div class="page-contents">
-            <div class="standard-text">
-                <?php 
-                    Resources::linkDownload('user_manual.pdf', $interface->get('user_manual'), false);
-                ?>
-            </div>
             <?php 
+                echo '<div class="standard-text">';
+                Resources::linkDownload('user_manual.pdf', $interface->get('user_manual'), false, true);
+                echo '</div>';
+                
                 if($security->userHaveAnyPrivilage(new Container(['admin']))){
                     echo '<div class="standard-text">';
-                    Resources::linkDownload('admin_manual.pdf', $interface->get('admin_manual'), false);
+                    Resources::linkDownload('admin_manual.pdf', $interface->get('admin_manual'), false, true);
+                    echo '</div>';
+                }
+                
+                $schedulePrivilages = new Container(['admin', 'schedule_user', 'schedule_user_inspector', 'schedule_admin']);
+                if($security->userHaveAnyPrivilage($schedulePrivilages)){
+                    echo '<div class="standard-text">';
+                    Resources::linkDownload('user_manual_schedule.pdf', $interface->get('schedule_manual'), false, true);
+                    echo '</div>';
+                }
+                
+                $inspectorPrivilages = new Container(['admin', 'schedule_user_inspector']);
+                if($security->userHaveAnyPrivilage($inspectorPrivilages)){
+                    echo '<div class="standard-text">';
+                    Resources::linkDownload('user_manual_inspector.pdf', $interface->get('inspector_manual'), false, true);
+                    echo '</div>';
+                }
+                
+                $inventoryPrivilages = new Container(['admin', 'inventory_user', 'inventory_admin']);
+                if($security->userHaveAnyPrivilage($inventoryPrivilages)){
+                    echo '<div class="standard-text">';
+                    Resources::linkDownload('user_manual_inventory.pdf', $interface->get('inventory_manual'), false, true);
+                    echo '</div>';
+                }
+                
+                $quaificationsPrivilages = new Container(['admin', 'qualification_user']);
+                if($security->userHaveAnyPrivilage($quaificationsPrivilages)){
+                    echo '<div class="standard-text">';
+                    Resources::linkDownload('user_manual_qualifications.pdf', $interface->get('qualifications_manual'), false, true);
+                    echo '</div>';
+                }
+                
+                $statsPrivilages = new Container(['admin', 'stats_user', 'stats_admin']);
+                if($security->userHaveAnyPrivilage($statsPrivilages)){
+                    echo '<div class="standard-text">';
+                    //Resources::linkDownload('user_manual_stats.pdf', $interface->get('stats_manual'), false, true);
+                    echo '[PH]' . $interface->get('stats_manual');
+                    echo '</div>';
+                }
+                
+                $printsPrivilages = new Container(['admin', 'prints_schedule', 'prints_inspector', 'prints_inspector_all_documents', 'prints_schedule_reports']);
+                if($security->userHaveAnyPrivilage($statsPrivilages)){
+                    echo '<div class="standard-text">';
+                    //Resources::linkDownload('user_manual_stats.pdf', $interface->get('stats_manual'), false, true);
+                    echo '[PH]' . $interface->get('prints_manual');
                     echo '</div>';
                 }
             ?>
@@ -61,10 +104,4 @@ This code is free to use, just remember to give credit.
             Scripts::run('createFooter.php');
         ?>
     </body>
-    <script>
-        RestApi.getInterfaceNamesPackage(function(package){
-            console.log(package);
-        });
-        
-    </script>
 </html>

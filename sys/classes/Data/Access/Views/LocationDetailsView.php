@@ -40,4 +40,10 @@ class LocationDetailsView extends View{
         $sql->select('location_details')->where('inspection', 1);
         return $this->select($sql);
     }
+    
+    public function getInTemporaryGroup() : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('location_details')->where('location_group', 'tmp');
+        return $this->select($sql);
+    }
 }

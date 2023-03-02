@@ -27,6 +27,7 @@ use Data\Access\Views\ArticleDetailsView as ArticleDetailsView;
 use Data\Access\Views\DecisionDetailsView as DecisionDetailsView;
 use Data\Access\Views\TicketDetailsView as TicketDetailsView;
 use Data\Exceptions\NotFoundException as NotFoundException;
+use Services\Exceptions\SystemBlockedException as SystemBlockedException;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
@@ -383,8 +384,7 @@ class SuspensionService {
     private function checkBlocker(Container $data) : void {
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
-            $languages = Languages::getInstance();
-            $this->throwException($languages->get('cannot_change_selected_month'));
+            throw new SystemBlockedException();
         }
     }
     
@@ -392,8 +392,7 @@ class SuspensionService {
         $data = $this->articleDetails->getById($articleId);
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
-            $languages = Languages::getInstance();
-            $this->throwException($languages->get('cannot_change_selected_month'));
+            throw new SystemBlockedException();
         }
     }
     
@@ -401,8 +400,7 @@ class SuspensionService {
         $data = $this->decisionDetails->getById($decisionId);
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
-            $languages = Languages::getInstance();
-            $this->throwException($languages->get('cannot_change_selected_month'));
+            throw new SystemBlockedException();
         }
     }
     
@@ -410,8 +408,7 @@ class SuspensionService {
         $data = $this->ticketDetails->getById($ticketId);
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
-            $languages = Languages::getInstance();
-            $this->throwException($languages->get('cannot_change_selected_month'));
+            throw new SystemBlockedException();
         }
     }
     

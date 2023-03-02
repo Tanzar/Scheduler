@@ -31,7 +31,7 @@ class UsersWithoutPasswordsView extends View{
     
     public function getActive() : Container{
         $sql = new MysqlBuilder();
-        $sql->select('users_without_passwords')->where('active', 1);
+        $sql->select('users_without_passwords')->where('active', 1)->orderBy('surname');
         return $this->select($sql);
     }
     
@@ -53,9 +53,18 @@ class UsersWithoutPasswordsView extends View{
     public function getActiveExcept(string $username) : Container {
         $sql = new MysqlBuilder();
         $sql->select('users_without_passwords')->where('active', 1)
-                ->and()->where('username', $username, '!=');
+                ->and()->where('username', $username, '!=')->orderBy('surname');
         return $this->select($sql);
     }
+    
+    public function getActiveWithoutSystemAndExcept(string $username) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('users_without_passwords')->where('active', 1)
+                ->and()->where('username', $username, '!=')
+                ->and()->where('id', 1, '!=')->orderBy('surname');
+        return $this->select($sql);
+    }
+    
     
     public function findUsers(Container $conditions) : Container{
         $sql = new MysqlBuilder();
@@ -65,7 +74,7 @@ class UsersWithoutPasswordsView extends View{
         foreach ($conditions->toArray() as $column => $value){
             $first = !$this->addCondition($sql, $first, $column, $value);
         }
-        
+        $sql->orderBy('surname');
         $data = $this->select($sql);
         return $data;
     }

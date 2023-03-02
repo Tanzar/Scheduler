@@ -83,15 +83,15 @@ This code is free to use, just remember to give credit.
                         </td>
                     </tr>
                     <tr class="report-tr">
-                        <td class="report-td">
+                        <td class="report-td" style="width: 85px">
                             <div class="standard-text">
                                 <?php echo $interface->get('start'); ?>
                             </div>
                         </td>
-                        <td class="report-td">
+                        <td class="report-td" style="width: 90px">
                             <div class="standard-text" id="documentStart"></div>
                         </td>
-                        <td class="report-td">
+                        <td class="report-td" style="width: 85px">
                             <div class="standard-text">
                                 <?php echo $interface->get('end'); ?>
                             </div>
@@ -101,12 +101,12 @@ This code is free to use, just remember to give credit.
                         </td>
                     </tr>
                     <tr class="report-tr">
-                        <td colspan="2" class="report-td">
+                        <td colspan="1" class="report-td">
                             <div class="standard-text">
                                 <?php echo $interface->get('location'); ?>
                             </div>
                         </td>
-                        <td colspan="2" class="report-td">
+                        <td colspan="3" class="report-td">
                             <div class="standard-text" id="location"></div>
                         </td>
                     </tr>

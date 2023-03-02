@@ -25,12 +25,12 @@ function initEquipmentTable(language) {
     var config = {
         columns: [
             {title: language.inventory_number, variable: 'inventory_number', width: 70, minWidth: 70},
-            {title: language.name, variable: 'name', width: 250, minWidth: 250},
+            {title: language.name, variable: 'name', width: 300, minWidth: 300},
             {title: language.equipment_type, variable: 'equipment_type', width: 100, minWidth: 100},
             {title: language.equipment_state, variable: 'state', width: 100, minWidth: 100},
-            {title: language.responsible, variable: 'full_user_name', width: 70, minWidth: 70},
-            {title: language.price, variable: 'price', width: 100, minWidth: 100},
-            {title: language.remarks, variable: 'remarks', width: 100, minWidth: 100}
+            {title: language.responsible, variable: 'full_user_name', width: 120, minWidth: 120},
+            {title: language.price, variable: 'price', width: 70, minWidth: 70},
+            {title: language.remarks, variable: 'remarks', width: 200, minWidth: 200}
         ],
         dataSource: datasource
     }
@@ -59,7 +59,7 @@ function initEquipmentTable(language) {
                 {type: 'select', title: language.select_user, variable: 'id_user', options: users, required: true},
                 {type: 'text', title: language.inventory_number, variable: 'inventory_number', limit: 12, required: true},
                 {type: 'textarea', title: language.name, variable: 'name', limit: 255, width: 30, height: 5, required: true},
-                {type: 'text', title: language.document, variable: 'document', limit: 20, required: true},
+                {type: 'text', title: language.document, variable: 'document', limit: 100, required: true},
                 {type: 'date', title: language.start_date, variable: 'start_date'},
                 {type: 'select', title: language.select_equipment_type, variable: 'id_equipment_type', options: types, required: true},
                 {type: 'number', title: language.price, variable: 'price', min: 0, step: 0.01, required: true},
@@ -113,7 +113,7 @@ function initEquipmentTable(language) {
                 var fields = [
                     {type: 'text', title: language.inventory_number, variable: 'inventory_number', limit: 12, required: true},
                     {type: 'textarea', title: language.name, variable: 'name', limit: 255, width: 30, height: 5, required: true},
-                    {type: 'text', title: language.document, variable: 'document', limit: 20, required: true},
+                    {type: 'text', title: language.document, variable: 'document', limit: 100, required: true},
                     {type: 'date', title: language.start_date, variable: 'start_date'},
                     {type: 'select', title: language.select_equipment_type, variable: 'id_equipment_type', options: types, required: true},
                     {type: 'number', title: language.price, variable: 'price', min: 0, step: 0.01, required: true},
@@ -311,9 +311,10 @@ function initEquipmentTable(language) {
             summary.totalCount++;
             summary.totalValue += Number.parseFloat(item.price);
         });
+        summary.totalValue = Math.round(summary.totalValue * 100) / 100;
         var fields = [
             {type: 'display', title: language.total_count + ': ' + summary.totalCount},
-            {type: 'display', title: language.total_value + ': ' + summary.totalValue}
+            {type: 'display', title: language.total_value + ': ' + summary.totalValue + ' PLN'}
         ];
         openModalBox(language.count, fields);
     });

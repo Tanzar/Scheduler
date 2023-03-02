@@ -55,18 +55,12 @@ This code is free to use, just remember to give credit.
                     <div class="standard-text-title">
                         <?php echo $interfaceText->get('new_statistic'); ?>
                     </div>
+                    <button id="savePattern" class="standard-button">
+                        <?php echo $interfaceText->get('save'); ?>
+                    </button>
                     <div class="horizontal-container">
                         <input type="text" id="statsName" placeholder="<?php echo $interfaceText->get('name'); ?>" limit="255" class="standard-input" required>
-                        <button id="savePattern" class="standard-button">
-                            <?php echo $interfaceText->get('save'); ?>
-                        </button>
-                    </div>
-                    <div class="horizontal-container">
-                        <div class="standard-text"><?php echo $interfaceText->get('inputs') . ': '; ?></div>
-                        <div class="standard-text" id="inputsDisplay"></div>
-                        <button class="standard-button" id="setInputs"><?php echo $interfaceText->get('edit'); ?></button>
-                    </div>
-                    <div>
+                        <input type="number" id="statsSort" placeholder="<?php echo $interfaceText->get('sort_priority'); ?>" min="1" class="standard-input" required>
                         <select id="selectPatternFile" class="standard-input" required>
                             <?php 
                                 $templates = Template::listTemplates('stats');
@@ -82,6 +76,11 @@ This code is free to use, just remember to give credit.
                         <button id="uploadPattern" class="standard-button">
                             <?php echo $interfaceText->get('send'); ?>
                         </button>
+                    </div>
+                    <div class="horizontal-container">
+                        <div class="standard-text"><?php echo $interfaceText->get('inputs') . ': '; ?></div>
+                        <div class="standard-text" id="inputsDisplay"></div>
+                        <button class="standard-button" id="setInputs"><?php echo $interfaceText->get('edit'); ?></button>
                     </div>
                     <div class="horizontal-container">
                         <div class="centered-contents">

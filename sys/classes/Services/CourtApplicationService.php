@@ -15,6 +15,7 @@ use Custom\Parsers\Database\CourtApplication as CourtApplication;
 use Custom\Blockers\InspectorDateBlocker as InspectorDateBlocker;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
+use Services\Exceptions\SystemBlockedException as SystemBlockedException;
 
 
 /**
@@ -96,8 +97,7 @@ class CourtApplicationService {
     private function checkBlocker(Container $data) {
         $blocker = new InspectorDateBlocker();
         if($blocker->isBLocked($data)){
-            $languages = Languages::getInstance();
-            $this->throwException($languages->get('cannot_change_selected_month'));
+            throw new SystemBlockedException();
         }
     }
 }

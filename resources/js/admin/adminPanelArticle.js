@@ -36,7 +36,7 @@ function ArticlesTable(language){
             {title: language.date, variable: 'date', width: 70, minWidth: 70},
             {title: language.art_41_form, variable: 'art_41_form_short', width: 100, minWidth: 100},
             {title: language.position_groups, variable: 'position_group', width: 100, minWidth: 100},
-            {title: language.position, variable: 'position', width: 100, minWidth: 100},
+            {title: language.position, variable: 'position', width: 150, minWidth: 150},
             {title: language.external_company, variable: 'external_company_text', width: 70, minWidth: 70},
             {title: language.company_name, variable: 'company_name', width: 100, minWidth: 100}
         ],
