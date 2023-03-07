@@ -43,4 +43,11 @@ class DocumentEntriesDetailsView extends View{
                 ->and()->where('id_document', $documentId);
         return $this->select($sql);
     }
+    
+    public function getActiveByEntryId(int $entryId) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('document_entries_details')->where('active', 1)
+                ->and()->where('id', $entryId);
+        return $this->select($sql);
+    }
 }

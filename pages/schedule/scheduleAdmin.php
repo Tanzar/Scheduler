@@ -109,19 +109,19 @@ This code is free to use, just remember to give credit.
                         ?>
                     </select>
                     <br>
-                    <select id="selectActivity" class="standard-input">
+                    <select id="selectActivity" class="standard-input" style="margin-top: 15px">
                         <option value="" selected disabled placeholder>
                             <?php echo $interface->get('select_activity'); ?>
                         </option>
                     </select>
                     <br>
-                    <select id="selectLocationType" class="standard-input">
+                    <select id="selectLocationType" class="standard-input" style="margin-top: 15px">
                         <option value="" selected disabled placeholder>
                             <?php echo $interface->get('select_location_type'); ?>
                         </option>
                     </select>
                     <br>
-                    <select id="selectLocation" class="standard-input">
+                    <select id="selectLocation" class="standard-input" style="margin-top: 15px; margin-bottom: 10px">
                         <option value="" selected disabled placeholder>
                             <?php echo $interface->get('select_location'); ?>
                         </option>
@@ -154,6 +154,11 @@ This code is free to use, just remember to give credit.
                                 echo $tim;
                             }
                         ?>">
+                    <br>
+                    <textarea id="description" class="standard-input-text-area" style="margin-top: 15px" rows="4" cols="50"
+                        <?php
+                            echo 'placeholder="' . $interface->get('description') . '" ';
+                        ?>></textarea>
                     <br>
                     <button id="newEntry" class="standard-button">
                         <?php echo $interface->get('save'); ?>

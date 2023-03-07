@@ -16,7 +16,7 @@ use Custom\Parsers\Parser as Parser;
 class Entry extends Parser{
     
     protected function defineOptionalVariables(): array {
-        return array('id', 'active', 'underground');
+        return array('id', 'active', 'underground', 'description');
     }
 
     protected function defineRequiredVariables(): array {

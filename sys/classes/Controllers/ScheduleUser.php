@@ -32,6 +32,7 @@ class ScheduleUser extends Controller{
         $privilages->add('admin');
         $privilages->add('schedule_user');
         $privilages->add('schedule_user_inspector');
+        $privilages->add('schedule_user_director');
         $privilages->add('schedule_admin');
         parent::__construct($privilages);
     }
@@ -62,6 +63,14 @@ class ScheduleUser extends Controller{
         $start = $data->get('startDate');
         $end = $data->get('endDate');
         $result = $this->schedule->getEntries($start, $end);
+        $this->setResponse($result);
+    }
+    
+    public function getTimestableData(){
+        $data = $this->getRequestData();
+        $start = $data->get('startDate');
+        $end = $data->get('endDate');
+        $result = $this->schedule->getTimetableData($start, $end);
         $this->setResponse($result);
     }
     

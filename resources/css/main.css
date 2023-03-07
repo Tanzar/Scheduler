@@ -240,6 +240,18 @@ footer {
     border-radius: 5px;
 }
 
+.standard-input-text-area {
+    width: 250px;
+    max-width: 250px;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    resize: none;
+    border-radius: 5px;
+    padding: 4px;
+    cursor: pointer;
+}
+
 .standard-text {
     background-color: transparent;
     color: inherit;

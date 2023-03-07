@@ -91,6 +91,15 @@ class UsersEmploymentPeriodsView extends View{
         return $this->select($sql);
     }
     
+    public function getOrderedActiveByDatesRange(string $start, string $end) : Container{
+        $sql = new MysqlBuilder();
+        $sql->select('users_employment_periods')->where('active', 1)
+                ->and()->where('start', $end, '<=')
+                ->and()->where('end', $start, '>=')
+                ->orderBy('sort_priority')->orderBy('surname');
+        return $this->select($sql);
+    }
+    
     public function getOrderedActiveByMonthAndYear(int $month, int $year) : Container{
         $monthStart = date($year . '-' . $month . '-1');
         $monthEnd = date("Y-m-t", strtotime($monthStart));

@@ -345,11 +345,11 @@ class MysqlBuilder extends SqlBuilder{
         if(Utility::isNotString($item)){
             if($item['operator'] === 'like'){
                 return ' ' . $item['column'] . ' ' . 
-                        $item['operator'] . " '%" . $item['value'] . "%'";
+                        $item['operator'] . " '%" . $this->filter($item['value']) . "%'";
             }
             else{
                 return ' ' . $item['column'] . ' ' . 
-                        $item['operator'] . " '" . $item['value'] . "'";
+                        $item['operator'] . " '" . $this->filter($item['value']) . "'";
             }
         }
         else{
@@ -361,11 +361,11 @@ class MysqlBuilder extends SqlBuilder{
         if(Utility::isNotString($item)){
             if($item['operator'] === 'like'){
                 return ' ' . $item['column'] . ' ' . 
-                        $item['operator'] . " '%" . $item['value'] . "%'";
+                        $item['operator'] . " '%" . $this->filter($item['value']) . "%'";
             }
             else{
                 return ' ' . $item['column'] . ' ' . 
-                        $item['operator'] . " '" . $item['value'] . "'";
+                        $item['operator'] . " '" . $this->filter($item['value']) . "'";
             }
         }
         else{
@@ -406,11 +406,11 @@ class MysqlBuilder extends SqlBuilder{
         foreach ($this->insertColumns as $i => $item){
             if($i === 0){
                 $columns .= $item['column'];
-                $values .= "'" . $item['value'] . "'";
+                $values .= "'" . $this->filter($item['value']) . "'";
             }
             else{
                 $columns .= ', ' . $item['column'];
-                $values .= ", '" . $item['value'] . "'";
+                $values .= ", '" . $this->filter($item['value']) . "'";
             }
         }
         $sql .= '(' . $columns . ') VALUES (' . $values . ')';
@@ -424,10 +424,10 @@ class MysqlBuilder extends SqlBuilder{
         $sql = 'UPDATE ' . $this->table . ' SET ';
         foreach ($this->updateColumns as $i => $item){
             if($i === 0){
-                $sql .= $item['column'] . "='" . $item['value'] . "'";
+                $sql .= $item['column'] . "='" . $this->filter($item['value']) . "'";
             }
             else{
-                $sql .= ', ' . $item['column'] . "='" . $item['value'] . "'";
+                $sql .= ', ' . $item['column'] . "='" . $this->filter($item['value']) . "'";
             }
         }
         $sql .= ' WHERE ' . $this->updateCondition;
@@ -438,5 +438,14 @@ class MysqlBuilder extends SqlBuilder{
         $sql = 'DELETE FROM ' . $this->table . 
                 ' WHERE ' . $this->deleteCondition;
         return $sql;
+    }
+    
+    private function filter($value) {
+        if(is_string($value)){
+            return str_replace("'", "", $value);
+        }
+        else{
+            return $value;
+        }
     }
 }

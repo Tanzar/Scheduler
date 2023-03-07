@@ -38,7 +38,8 @@ function ScheduleAdmin(){
             if(selected !== undefined){
                 var fields = [
                     {type: 'dateTime', title: language.start, variable: 'start'},
-                    {type: 'dateTime', title: language.end, variable: 'end'}
+                    {type: 'dateTime', title: language.end, variable: 'end'},
+                    {type: 'textarea', title: language.description, variable: 'description', limit: 255, width: 30, height: 5}
                 ];
                 if(selected.can_be_inspection === 1){
                     fields.push({type: 'checkbox', title: (language.underground + '?'), variable: 'underground'});
@@ -49,6 +50,7 @@ function ScheduleAdmin(){
                         username: selected.username,
                         start: data.start,
                         end: data.end,
+                        description: data.description,
                         underground: selected.underground,
                         id_activity: selected.id_activity,
                         id_location: selected.id_location,
@@ -177,7 +179,8 @@ function ScheduleAdmin(){
                             id_activity: $('#selectActivity').val(),
                             start: $('#startDate').val().replace('T', ' '),
                             end: $('#endDate').val().replace('T', ' '),
-                            username: $('#selectUser').val()
+                            username: $('#selectUser').val(),
+                            description: $('#description').val()
                         };
                         if(requireDocument === 1){
                             var item = {

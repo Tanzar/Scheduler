@@ -1,0 +1,156 @@
+[2023-03-03  09:26:07] [type: Access] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  09:26:31] [type: Access] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  09:26:56] [type: Access] [user: admin] [ip: 172.30.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-03-03  09:27:06] [type: Access] [user: admin] [ip: 172.30.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-03-03  09:27:36] [type: Access] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  09:27:41] [type: Access] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  09:28:58] [type: Error] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-03-03  09:33:13] [type: Error] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] Użytkownik nie jest zatrudniony w danym okresie.
+[2023-03-03  09:34:45] [type: Error] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] Użytkownik nie jest zatrudniony w danym okresie.
+[2023-03-03  09:46:24] [type: Error] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] Call to a member function get() on null ;
+ #0 /var/www/html/sys/classes/Services/ScheduleService.php(203): Services\ScheduleService->checkEntryDates(Object(Tanweb\Container), 'admin')
+#1 /var/www/html/sys/classes/Controllers/ScheduleUser.php(85): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-03-03  09:46:50] [type: Access] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  09:47:09] [type: Error] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] Call to a member function get() on null ;
+ #0 /var/www/html/sys/classes/Services/ScheduleService.php(203): Services\ScheduleService->checkEntryDates(Object(Tanweb\Container), 'admin')
+#1 /var/www/html/sys/classes/Controllers/ScheduleUser.php(85): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-03-03  09:47:34] [type: Access] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  09:48:07] [type: Error] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] Call to a member function get() on null ;
+ #0 /var/www/html/sys/classes/Services/ScheduleService.php(203): Services\ScheduleService->checkEntryDates(Object(Tanweb\Container), 'admin')
+#1 /var/www/html/sys/classes/Controllers/ScheduleUser.php(85): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-03-03  09:48:21] [type: Access] [user: user_SPA] [ip: 172.30.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  11:23:01] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  11:23:06] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  11:25:09] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  11:27:37] [type: Access] [user: admin] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  11:28:10] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  11:28:14] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  11:29:13] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  11:29:54] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  11:30:42] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAdmin.php?
+[2023-03-03  11:33:49] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAdmin.php?
+[2023-03-03  11:33:52] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-03-03  11:33:55] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelActivity.php?
+[2023-03-03  11:34:18] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  11:34:23] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAdmin.php?
+[2023-03-03  11:37:23] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAdmin.php?
+[2023-03-03  11:42:47] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  11:43:55] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  11:57:19] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  11:57:47] [type: Error] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] Call to undefined method Tanweb\Container::getLength() ;
+ #0 /var/www/html/sys/classes/Services/ScheduleService.php(65): Data\Access\Tables\UserTableDAO->getUserByID(1)
+#1 /var/www/html/sys/classes/Controllers/ScheduleUser.php(72): Services\ScheduleService->getTimetableData('2023-02-27', '2023-03-05')
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->getTimestableData()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-03-03  11:58:48] [type: Error] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] Call to undefined method Tanweb\Container::getLength() ;
+ #0 /var/www/html/sys/classes/Services/ScheduleService.php(65): Data\Access\Tables\UserTableDAO->getUserByID(1)
+#1 /var/www/html/sys/classes/Controllers/ScheduleUser.php(72): Services\ScheduleService->getTimetableData('2023-02-27', '2023-03-05')
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->getTimestableData()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-03-03  11:59:20] [type: Error] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] Call to undefined method Tanweb\Container::getValue() ;
+ #0 /var/www/html/sys/classes/Services/ScheduleService.php(65): Data\Access\Tables\UserTableDAO->getUserByID(1)
+#1 /var/www/html/sys/classes/Controllers/ScheduleUser.php(72): Services\ScheduleService->getTimetableData('2023-02-27', '2023-03-05')
+#2 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->getTimestableData()
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#4 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#5 {main}
+[2023-03-03  12:06:13] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:12:07] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:14:18] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:19:26] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:23:49] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:24:04] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:24:36] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:27:58] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:33:11] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:34:37] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:37:44] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:38:54] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:39:35] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:40:17] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:43:18] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:51:41] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:57:14] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:57:42] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  12:58:50] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  13:02:59] [type: Access] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-03-03  13:03:04] [type: Backup] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] Backup started
+[2023-03-03  13:03:05] [type: Backup] [user: user_GSP] [ip: 172.20.0.1] [proxy: undefined] Backup finished
+[2023-03-03  13:15:47] [type: Access] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  13:15:52] [type: Access] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  13:16:05] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-03-03  13:16:35] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-03-03  13:17:33] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-03-03  13:50:07] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] Object of class Custom\Blockers\ScheduleBlocker could not be converted to string ;
+ #0 /var/www/html/sys/classes/Services/ScheduleService.php(409): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#1 /var/www/html/sys/classes/Services/ScheduleService.php(224): Services\ScheduleService->checkBlocker(Object(Tanweb\Container))
+#2 /var/www/html/sys/classes/Controllers/ScheduleUser.php(93): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#3 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#4 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#5 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#6 {main}
+[2023-03-03  13:50:41] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] DateTime::__construct(): Argument #1 ($datetime) must be of type string, DateTime given ;
+ #0 /var/www/html/sys/classes/Custom/Blockers/Abstracts/OperationBlocker.php(42): DateTime->__construct(Object(DateTime))
+#1 /var/www/html/sys/classes/Custom/Blockers/Abstracts/OperationBlocker.php(36): Custom\Blockers\Abstracts\OperationBlocker->shouldBeBlocked(Object(Tanweb\Container), 5)
+#2 /var/www/html/sys/classes/Services/ScheduleService.php(409): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#3 /var/www/html/sys/classes/Services/ScheduleService.php(224): Services\ScheduleService->checkBlocker(Object(Tanweb\Container))
+#4 /var/www/html/sys/classes/Controllers/ScheduleUser.php(93): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#6 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2023-03-03  13:51:15] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] DateTime::__construct(): Argument #1 ($datetime) must be of type string, DateTime given ;
+ #0 /var/www/html/sys/classes/Custom/Blockers/Abstracts/OperationBlocker.php(42): DateTime->__construct(Object(DateTime))
+#1 /var/www/html/sys/classes/Custom/Blockers/Abstracts/OperationBlocker.php(36): Custom\Blockers\Abstracts\OperationBlocker->shouldBeBlocked(Object(Tanweb\Container), 5)
+#2 /var/www/html/sys/classes/Services/ScheduleService.php(409): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#3 /var/www/html/sys/classes/Services/ScheduleService.php(224): Services\ScheduleService->checkBlocker(Object(Tanweb\Container))
+#4 /var/www/html/sys/classes/Controllers/ScheduleUser.php(93): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#6 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#7 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#8 {main}
+[2023-03-03  13:51:40] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] Class "Custom\Blockers\Abstracts\DayOffChecker" not found ;
+ #0 /var/www/html/sys/classes/Custom/Blockers/Abstracts/OperationBlocker.php(68): Custom\Blockers\Abstracts\OperationBlocker->findBlockerDateInMonnth(2023, 3, 5)
+#1 /var/www/html/sys/classes/Custom/Blockers/Abstracts/OperationBlocker.php(53): Custom\Blockers\Abstracts\OperationBlocker->getBlockerDateInCurrentMonth(5)
+#2 /var/www/html/sys/classes/Custom/Blockers/Abstracts/OperationBlocker.php(42): Custom\Blockers\Abstracts\OperationBlocker->getBlockerDate(5)
+#3 /var/www/html/sys/classes/Custom/Blockers/Abstracts/OperationBlocker.php(36): Custom\Blockers\Abstracts\OperationBlocker->shouldBeBlocked(Object(Tanweb\Container), 5)
+#4 /var/www/html/sys/classes/Services/ScheduleService.php(409): Custom\Blockers\Abstracts\OperationBlocker->isBLocked(Object(Tanweb\Container))
+#5 /var/www/html/sys/classes/Services/ScheduleService.php(224): Services\ScheduleService->checkBlocker(Object(Tanweb\Container))
+#6 /var/www/html/sys/classes/Controllers/ScheduleUser.php(93): Services\ScheduleService->saveEntryForCurrentUser(Object(Tanweb\Container))
+#7 /var/www/html/sys/classes/Controllers/Base/Controller.php(112): Controllers\ScheduleUser->saveEntry()
+#8 /var/www/html/sys/classes/Controllers/Base/Controller.php(89): Controllers\Base\Controller->runTask(Object(Tanweb\Request\Request))
+#9 /var/www/html/sys/scripts/requests/rest.php(26): Controllers\Base\Controller->run(Object(Tanweb\Request\Request))
+#10 {main}
+[2023-03-03  13:52:39] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-03-03  14:09:00] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-03-03  14:10:02] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-03-03  14:10:57] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-03-03  14:11:24] [type: Error] [user: user_GZU] [ip: 172.20.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-03-03  14:12:54] [type: Access] [user: user_SPA] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inventory/inventoryMy.php?
+[2023-03-03  14:12:56] [type: Access] [user: user_SPA] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorReports.php?
+[2023-03-03  14:13:00] [type: Access] [user: user_SPA] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/inspector/inspectorTickets.php?
+[2023-03-03  14:14:02] [type: Error] [user: user_SPA] [ip: 172.20.0.1] [proxy: undefined] Nie możesz zmieniać danych za wybrany miesiąc
+[2023-03-03  14:14:12] [type: Access] [user: user_SPA] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleAll.php?
+[2023-03-03  14:14:17] [type: Access] [user: user_SPA] [ip: 172.20.0.1] [proxy: undefined] http://localhost/pages/schedule/scheduleMy.php?
+[2023-03-03  14:28:16] [type: Access] [user: user_GSP] [ip: 172.22.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-03-03  14:28:23] [type: Access] [user: user_GSP] [ip: 172.22.0.1] [proxy: undefined] http://localhost/pages/stats/statsNoForm.php?
+[2023-03-03  14:39:42] [type: Access] [user: user_GSP] [ip: 172.22.0.1] [proxy: undefined] http://localhost/pages/stats/statsDisplay.php?
+[2023-03-03  14:40:35] [type: Access] [user: user_GSP] [ip: 172.22.0.1] [proxy: undefined] http://localhost/pages/adminPanel/adminPanelSystem.php?
+[2023-03-03  14:40:41] [type: Backup] [user: user_GSP] [ip: 172.22.0.1] [proxy: undefined] Backup started
+[2023-03-03  14:40:41] [type: Backup] [user: user_GSP] [ip: 172.22.0.1] [proxy: undefined] Backup finished

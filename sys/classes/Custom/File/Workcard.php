@@ -143,7 +143,7 @@ class Workcard extends PDFMaker{
         $columns->add($day);
         $location = new Column(50, 'location');
         $columns->add($location);
-        $activitiy = new Column(40, 'activitiy');
+        $activitiy = new Column(40, 'activity');
         $columns->add($activitiy);
         $document = new Column(70, 'document');
         $columns->add($document);

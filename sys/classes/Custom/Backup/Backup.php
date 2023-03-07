@@ -6,6 +6,8 @@
 namespace Custom\Backup;
 
 use Tanweb\Config\INI\AppConfig as AppConfig;
+use Tanweb\Database\Database as Database;
+use Tanweb\Database\SQL\MysqlBuilder as MysqlBuilder;
 use Tanweb\Container as Container;
 use Tanweb\Logger\Logger as Logger;
 use Custom\Backup\BackupEntry as BackupEntry;
@@ -53,27 +55,16 @@ class Backup {
     }
     
     private static function makeFile(AppConfig $appconfig, string $path) : void {
-        $conn = self::connect($appconfig);
-        $tables = self::getTables($conn);
-        $sqlScript = "SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;\n" .
-            "SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;\n" .
-            "SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';\n";
+        $tables = self::getTables($appconfig);
+        $sqlScript = "";
         foreach ($tables as $table) {
-            $query = "SHOW CREATE TABLE $table";
-            $result = mysqli_query($conn, $query);
-            $row = mysqli_fetch_row($result);
-
             $sqlScript .= "\n\n";
-            $sqlScript .= self::formTable($table, $conn);
+            $sqlScript .= self::formTable($table);
         }
-        $sqlScript .= "\nSET SQL_MODE=@OLD_SQL_MODE;\n" .
-            "SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;\n" .
-            "SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-            ";
         self::saveFiles($sqlScript, $path);
     }
     
-    private static function connect(AppConfig $appconfig) : mysqli {
+    private static function getTables(AppConfig $appconfig) : array {
         $cfg = $appconfig->getDatabase('scheduler');
         $user = $cfg->get('user');
         $pass = $cfg->get('pass');
@@ -81,10 +72,6 @@ class Backup {
         $charset = $cfg->get('charset');
         $conn = new mysqli($host, $user, $pass, 'scheduler');
         $conn->set_charset($charset);
-        return $conn;
-    }
-    
-    private static function getTables(mysqli $conn) : array {
         $result = mysqli_query($conn, "SHOW FULL TABLES WHERE Table_Type != 'VIEW'");
         $tables = array();
 
@@ -95,32 +82,61 @@ class Backup {
         return $tables;
     }
     
-    private static function formTable(string $table, mysqli $conn) : string {
-        $sqlScript = '';
-        $query = "SELECT * FROM $table";
-        $result = mysqli_query($conn, $query);
-        $columnCount = mysqli_num_fields($result);
-        for ($i = 0; $i < $columnCount; $i ++) {
-            while ($row = mysqli_fetch_row($result)) {
-                $sqlScript .= self::formInsert('scheduler.' . $table, $row, $columnCount) . "\n";
+    private static function formTable(string $table) : string {
+        $db = Database::getInstance('scheduler');
+        $sql = new MysqlBuilder();
+        $sql->select($table);
+        $sqlScript = "INSERT INTO `$table` ";
+        $result = $db->select($sql);
+        $count = $result->length();
+        if($count > 0){
+            $cols = self::formColumns($result->get(0));
+            $sqlScript .= $cols . " VALUES \n";
+            foreach ($result->toArray() as $index => $row) {
+                $values = self::formVals($table, $row);
+                $sqlScript .= $values;
+                if((int) $index < ($count - 1)){
+                    $sqlScript .= ",\n";
+                }
+                else{
+                    $sqlScript .= ";\n";
+                }
             }
+            $sqlScript .= "\n"; 
+            return $sqlScript;
         }
-        $sqlScript .= "\n"; 
-        return $sqlScript;
+        else{
+            return "\n";
+        }
     }
     
-    private static function formInsert(string $table, array $row, int $columnCount) : string {
-        $sqlScript = "INSERT INTO $table VALUES(";
-        for ($j = 0; $j < $columnCount; $j ++) {
-            $row[$j] = $row[$j];
-            $text = str_replace("\0", "", $row[$j]);
-            $sqlScript .= (isset($row[$j])) ? "'" . $text . "'" : "''";
+    private static function formColumns(array $row) : string {
+        $cols = "(";
+        $columnCount = count($row);
+        $j = 0;
+        foreach ($row as $key => $value) {
+            $cols .= '`' . $key . '`';
             if ($j < ($columnCount - 1)) {
-                $sqlScript .= ',';
+                $cols .= ',';
             }
+            $j++;
         }
-        $sqlScript .= ");";
-        return $sqlScript;
+        return $cols . ")";
+    }
+    
+    private static function formVals(string $table, array $row) : string {
+        $vals = '';
+        $columnCount = count($row);
+        $j = 0;
+        foreach ($row as $key => $value) {
+            $text = str_replace("\0", "", $value);
+            $vals .= (isset($value)) ? "'" . $text . "'" : "''";
+            if ($j < ($columnCount - 1)) {
+                $vals .= ',';
+            }
+            $j++;
+        }
+        return "(" . $vals  . ")";
     }
     
     private static function saveFiles(string $sqlScript, string $path) : void {

@@ -59,7 +59,7 @@ class PatternStats extends Statistics {
         $filename = $json->get('file');
         $filepath = Template::getLocalPathInnerDir($filename);
         $this->xlsx->openFile($filepath);
-        $this->fillFile();
+        //$this->fillFile();
         $this->xlsx->sendToBrowser($this->title);
         return new Container(['disabled' => true]);
     }

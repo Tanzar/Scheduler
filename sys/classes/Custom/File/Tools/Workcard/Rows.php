@@ -8,6 +8,7 @@ namespace Custom\File\Tools\Workcard;
 use Custom\File\Tools\DaysOffTable as DaysOffTable;
 use Data\Access\Views\ScheduleEntriesView as ScheduleEntriesView;
 use Data\Access\Views\UsersEmploymentPeriodsView as UsersEmploymentPeriodsView;
+use Data\Access\Views\DocumentEntriesDetailsView as DocumentEntriesDetailsView;
 use Tanweb\Container as Container;
 use Tanweb\Config\INI\AppConfig as AppConfig;
 use DateTime;
@@ -26,6 +27,7 @@ class Rows {
     private Container $periods;
     private Container $entries;
     private DaysOffTable $daysOff;
+    private DocumentEntriesDetailsView $documentEntriesView;
     
     public function __construct(int $month, int $year, string $username) {
         $this->month = $month;
@@ -35,6 +37,7 @@ class Rows {
     }
     
     private function init() : void {
+        $this->documentEntriesView = new DocumentEntriesDetailsView();
         $this->periods = $this->getEmploymentPeriods();
         $this->daysOff = new DaysOffTable($this->username, $this->month, $this->year);
         $this->entries = $this->geEntries();
@@ -118,7 +121,9 @@ class Rows {
         $row = array(
             'day' => $day, 
             'location' => $entry->get('location'),
-            'hours' => $entryStart->format('H:i') . '-' . $entryEnd->format('H:i')
+            'hours' => $entryStart->format('H:i') . '-' . $entryEnd->format('H:i'),
+            'activity' => $entry->get('activity_name'),
+            'document' => $this->getDocumentNumber($entry)
         );
         $date = new DateTime($this->year . '-' . $this->month . '-' . $day);
         if($this->daysOff->includes($date)){
@@ -128,6 +133,18 @@ class Rows {
             $row['fill'] = false;
         }
         $this->rows->add($row);
+    }
+    
+    private function getDocumentNumber(Container $entry) : string {
+        $entryId = (int) $entry->get('id');
+        $data = $this->documentEntriesView->getActiveByEntryId($entryId);
+        if($data->length() > 0){
+            $item = $data->get(0);
+            return $item['document_number'];
+        }
+        else{
+            return '';
+        }
     }
     
     private function addEmptyRow(int $day){

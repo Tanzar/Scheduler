@@ -20,6 +20,7 @@ use Tanweb\Config\INI\AppConfig as AppConfig;
 use Data\Exceptions\NotFoundException as NotFoundException;
 use Services\Exceptions\ScheduleEntryException as ScheduleEntryException;
 use Services\Exceptions\SystemBlockedException as SystemBlockedException;
+use Tanweb\Security\Security as Security;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
@@ -43,6 +44,7 @@ class ScheduleService {
     private UsersEmploymentPeriodsView $usersEmploymentPeriods;
     private LocationDAO $location;
     private LocationGroupDAO $locationGroup;
+    private Security $secutiry;
     
     public function __construct() {
         $this->schedule = new ScheduleDAO();
@@ -55,9 +57,76 @@ class ScheduleService {
         $this->usersEmploymentPeriods = new UsersEmploymentPeriodsView();
         $this->location = new LocationDAO();
         $this->locationGroup = new LocationGroupDAO();
+        $this->secutiry = Security::getInstance();
     }
     
-    public function getEntries(string $start, string $end) : Container{
+    public function getTimetableData(string $start, string $end) : Container {
+        $startDate = new DateTime($start . ' 00:00:00');
+        $endDate = new DateTime($end . '23:59:59');
+        $entries = $this->scheduleEntries->getActive($startDate, $endDate);
+        $systemUser = $this->user->getUserByID(1);
+        $groups = array();
+        $groups[] = array(
+                'title' => $systemUser->get('short'),
+                'username' => $systemUser->get('username')
+            );
+        $employedUsers = $this->getVisibleUsers($start, $end);
+        foreach ($employedUsers->toArray() as $item) {
+            $groups[] = array(
+                'title' => $item['short'],
+                'username' => $item['username']
+            );
+        }
+        $filteredEntries = $this->filterEntries($entries, $groups);
+        $result = new Container();
+        $result->add($filteredEntries->toArray(), 'entries');
+        $result->add($groups, 'groups');
+        return $result;
+    }
+    
+    private function getVisibleUsers(string $start, string $end) : Container {
+        $employedUsers =  $this->usersEmploymentPeriods->getOrderedActiveByDatesRange($start, $end);
+        $showAllPrivilages = new Container(['admin', 'schedule_admin', 'schedule_show_all']);
+        if($this->secutiry->userHaveAnyPrivilage($showAllPrivilages)){
+            return $employedUsers;
+        }
+        else{
+            return $this->getVisibleUsersForCurrentUser($employedUsers);
+        }
+    }
+    
+    private function getVisibleUsersForCurrentUser(Container $employedUsers) : Container {
+        $username = Session::getUsername();
+        foreach ($employedUsers->toArray() as $item) {
+            $employment = new Container($item);
+            if($employment->get('username') === $username){
+                $user = $employment;
+            }
+        }
+        $result = new Container();
+        if(isset($user)){
+            $result->add($user->toArray());
+        }
+        return $result;
+    }
+    
+    public function filterEntries(Container $entries, array $groups) : Container {
+        $result = new Container();
+        foreach ($entries->toArray() as $entry) {
+            $add = false;
+            foreach ($groups as $group) {
+                if($entry['username'] === $group['username']){
+                    $add = true;
+                }
+            }
+            if($add){
+                $result->add($entry);
+            }
+        }
+        return $result;
+    }
+    
+    public function getEntries(string $start, string $end) : Container {
         $startDate = new DateTime($start . ' 00:00:00');
         $endDate = new DateTime($end . '23:59:59');
         return $this->scheduleEntries->getActive($startDate, $endDate);
@@ -336,29 +405,34 @@ class ScheduleService {
     }
     
     private function checkEntryDates(Container $data, string $username) {
-        $start = $data->get('start');
-        $end = $data->get('end');
-        $languages = Languages::getInstance();
-        if($this->outOfEmploymentPeriods($data, $username)){
-            throw new ScheduleEntryException($languages->get('entry_user_not_employed'));
-        }
-        if(strtotime($start) > strtotime($end)){
-            throw new ScheduleEntryException($languages->get('start_earlier_than_end'));
-        }
-        $userId = (int) $data->get('id_user');
-        $userEntries = $this->scheduleEntries->getByUserId($userId, new DateTime($start), new DateTime($end));
-        if($userEntries->length() > 1){
-            throw new ScheduleEntryException($languages->get('entry_for_period_exists'));
-        }
-        if($userEntries->length() === 1){
-            $entry = new Container($userEntries->get(0));
-            if(!$data->isValueSet('id') || ((int) $data->get('id')) !== $entry->get('id')){
+        if((int) $data->get('id_user') !== 1){
+            $start = $data->get('start');
+            $end = $data->get('end');
+            $languages = Languages::getInstance();
+            if($this->outOfEmploymentPeriods($data, $username)){
+                throw new ScheduleEntryException($languages->get('entry_user_not_employed'));
+            }
+            if(strtotime($start) > strtotime($end)){
+                throw new ScheduleEntryException($languages->get('start_earlier_than_end'));
+            }
+            $userId = (int) $data->get('id_user');
+            $userEntries = $this->scheduleEntries->getByUserId($userId, new DateTime($start), new DateTime($end));
+            if($userEntries->length() > 1){
                 throw new ScheduleEntryException($languages->get('entry_for_period_exists'));
+            }
+            if($userEntries->length() === 1){
+                $entry = new Container($userEntries->get(0));
+                if(!$data->isValueSet('id') || ((int) $data->get('id')) !== $entry->get('id')){
+                    throw new ScheduleEntryException($languages->get('entry_for_period_exists'));
+                }
             }
         }
     }
     
     private function outOfEmploymentPeriods(Container $entry, string $username) : bool {
+        if((int) $entry->get('id_user') === 1){
+            return false;
+        }
         $start = new DateTime($entry->get('start'));
         $end = new DateTime($entry->get('end'));
         $periods = $this->usersEmploymentPeriods->getActiveByUser($username);

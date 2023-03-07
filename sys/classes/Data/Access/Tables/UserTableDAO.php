@@ -79,15 +79,15 @@ class UserTableDAO extends DAO{
         $sql = new MysqlBuilder();
         $sql->select('user')->where('id', $id);
         $data = $this->select($sql);
-        if($data->getLength() > 1){
+        if($data->length() > 1){
             throw new UserDataException("id column don't hold unique values, "
                     . 'multiple ids found.');
         }
-        if($data->getLength() === 0){
+        if($data->length() === 0){
             $languages = Languages::getInstance();
             throw new UserDataException($languages->get('not_found'));
         }
-        $user = $data->getValue(0);
+        $user = $data->get(0);
         return new Container($user);
     }
     

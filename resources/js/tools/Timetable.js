@@ -2,7 +2,7 @@
  * This code is free to use, just remember to give credit.
  */
 
-function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, groupTitle, cellOnClick){
+function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, groupTitle, cellOnClick, groups){
     
     dayStart.setHours(0,0,0,0);
     dayEnd.setHours(23,59,59,0);
@@ -74,7 +74,20 @@ function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, groupTitl
     }
     
     function groupData(data) {
-        var grouped = [];
+        if(groups === undefined){
+            var grouped = [];
+        }
+        else{
+            var grouped = [];
+            groups.forEach(item => {
+                grouped.push({
+                    name: item[groupBy],
+                    title: item.title,
+                    rows: [[]],
+                    height: cellHeight + 2 * separation
+                });
+            })
+        }
         data.forEach(entry => {
             var groupIndex = -1;
             grouped.forEach((item, i) => {
@@ -92,6 +105,9 @@ function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, groupTitl
             }
             else{
                 var rowNumber = -1;
+                        if(entry.group === 'KOS'){
+                            var k =0;
+                        }
                 for(var i = 0; i < grouped[groupIndex].rows.length; i++){
                     var canBeAdded = true;
                     grouped[groupIndex].rows[i].forEach(item => {
@@ -105,7 +121,7 @@ function Timetable(weekdayNames, div, data, dayStart, dayEnd, groupBy, groupTitl
                             }
                         }
                     });
-                    if(canBeAdded){
+                    if(canBeAdded && rowNumber === -1){
                         rowNumber = i;
                     }
                 }

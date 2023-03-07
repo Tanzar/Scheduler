@@ -8,18 +8,19 @@ function scheduleAll(){
         goto.onclick = function(){
             var date = document.getElementById('displayDate');
             var range = new DaysRange(new Date(date.value));
-            RestApi.post('ScheduleUser', 'getAllEntries', 
+            RestApi.post('ScheduleUser', 'getTimestableData', 
                 {startDate: range.getStart(), endDate: range.getEnd()}, 
                 function(response){
                     var data = JSON.parse(response);
                     var parsed = [];
-                    data.forEach(entry => {
+                    data.entries.forEach(entry => {
                         var title = entry.location;
                         var desc = entry.name + ' ' + entry.surname + '\n';
                         desc += entry.activity_name + '\n';
                         desc += entry.location + '\n';
                         desc += language.start + ': ' + entry.start + '\n';
                         desc += language.end + ': ' + entry.end + '\n';
+                        desc += language.description + ': ' + entry.description + '\n';
                         var item = {
                             title: title, 
                             start: entry.start, 
@@ -42,7 +43,8 @@ function scheduleAll(){
                             'group',
                             function(item){
                                 alert(item.desc);
-                        });
+                            },
+                            data.groups);
                     });
             });
         }
@@ -93,43 +95,45 @@ function scheduleAll(){
         var date = document.getElementById('displayDate');
         var range = new DaysRange(new Date(date.value));
         
-        RestApi.post('ScheduleUser', 'getAllEntries', 
-            {startDate: range.getStart(), endDate: range.getEnd()}, 
-            function(response){
-                var data = JSON.parse(response);
-                var parsed = [];
-                data.forEach(entry => {
-                    var title = entry.location;
-                    var desc = entry.name + ' ' + entry.surname + '\n';
-                    desc += entry.activity_name + '\n';
-                    desc += entry.location + '\n';
-                    desc += language.start + ': ' + entry.start + '\n';
-                    desc += language.end + ': ' + entry.end + '\n';
-                    var item = {
-                        title: title, 
-                        start: entry.start, 
-                        end: entry.end, 
-                        username: entry.username,
-                        group: entry.short,
-                        color: entry.color,
-                        desc: desc
-                    }
-                    parsed.push(item);
-                });
-                RestApi.getLanguagePackage(function(package){
-                    var timetable = new Timetable(
-                        package.weekdays,
-                        document.getElementById('timetable'), 
-                        parsed, 
-                        new Date(range.getStart()), 
-                        new Date(range.getEnd()), 
-                        'username', 
-                        'group',
-                        function(item){
-                            alert(item.desc);
+        RestApi.post('ScheduleUser', 'getTimestableData', 
+                {startDate: range.getStart(), endDate: range.getEnd()}, 
+                function(response){
+                    var data = JSON.parse(response);
+                    var parsed = [];
+                    data.entries.forEach(entry => {
+                        var title = entry.location;
+                        var desc = entry.name + ' ' + entry.surname + '\n';
+                        desc += entry.activity_name + '\n';
+                        desc += entry.location + '\n';
+                        desc += language.start + ': ' + entry.start + '\n';
+                        desc += language.end + ': ' + entry.end + '\n';
+                        desc += language.description + ': ' + entry.description + '\n';
+                        var item = {
+                            title: title, 
+                            start: entry.start, 
+                            end: entry.end, 
+                            username: entry.username,
+                            group: entry.short,
+                            color: entry.color,
+                            desc: desc
+                        }
+                        parsed.push(item);
                     });
-                });
-        });
+                    RestApi.getLanguagePackage(function(package){
+                        var timetable = new Timetable(
+                            package.weekdays,
+                            document.getElementById('timetable'), 
+                            parsed, 
+                            new Date(range.getStart()), 
+                            new Date(range.getEnd()), 
+                            'username', 
+                            'group',
+                            function(item){
+                                alert(item.desc);
+                            },
+                            data.groups);
+                    });
+            });
     });
 }
 
