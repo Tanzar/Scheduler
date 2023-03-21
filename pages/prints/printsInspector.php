@@ -13,7 +13,7 @@
     use Services\UserService as UserService;
     use Tanweb\Session as Session;
     
-    PageAccess::allowFor(['admin', 'prints_inspector']);   //locks access if failed to pass redirects to index page
+    PageAccess::allowFor(['admin', 'prints_inspector', 'prints_inspector_all_documents']);   //locks access if failed to pass redirects to index page
     $languages = Languages::getInstance();
     $names = $languages->get('interface');
     $interface = new Container($names);
@@ -104,6 +104,20 @@ This code is free to use, just remember to give credit.
                             }
                             echo '>';
                             echo $year;
+                            echo '</option>';
+                        }
+                    ?>
+                </select>
+                <select class="standard-input" id="selectDocumentMonth">
+                    <?php
+                        $months = $languages->get('months');
+                        foreach($months as $key => $month){
+                            echo '<option value="' . $key . '"';
+                            if($key === (int) date('m')){
+                                echo ' selected';
+                            }
+                            echo '>';
+                            echo $month;
                             echo '</option>';
                         }
                     ?>

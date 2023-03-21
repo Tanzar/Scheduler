@@ -12,7 +12,7 @@
     use Services\UserService as UserService;
     use Tanweb\Session as Session;
     
-    PageAccess::allowFor(['admin', 'prints_schedule', 'prints_schedule_reports']);   //locks access if failed to pass redirects to index page
+    PageAccess::allowFor(['admin', 'prints_schedule', 'prints_schedule_reports', 'prints_inspector', 'prints_inspector_all_documents']);   //locks access if failed to pass redirects to index page
     $languages = Languages::getInstance();
     $names = $languages->get('interface');
     $interface = new Container($names);

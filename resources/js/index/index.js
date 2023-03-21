@@ -21,17 +21,15 @@ function init(){
 }
 
 function makeTables(div, data) {
-    console.log(data);
-    while(div.lastChild){
-        div.removeChild(div.lastChild);
-    }
     
     if(data.schedule !== undefined){
-        makeTable(div, data.schedule.title, data.schedule.cells, false);
+        var html = data.schedule;
+        div.innerHTML = html;
     }
     if(data.inspector !== undefined){
         makeTable(div, data.inspector.title, data.inspector.cells, true);
     }
+    
 }
 
 function makeTable(div, title, rows, showEmpty) {

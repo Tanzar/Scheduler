@@ -5,7 +5,7 @@
  */
 namespace Custom\Reports;
 
-use Custom\Statistics\SingleStats as SingleStats;
+use Custom\Statistics\Engine\Stats as Stats;
 use Tanweb\Container;
 use Tanweb\Config\INI\Languages as Languages;
 /**
@@ -15,19 +15,33 @@ use Tanweb\Config\INI\Languages as Languages;
  */
 class ScheduleReport {
     
-    public static function generate(int $year, string $username) : Container {
+    public static function generate(int $year, string $username) : string {
         $languages = Languages::getInstance();
         $modules = new Container($languages->get('modules'));
-        $settings = array(
-            "name" => $modules->get('schedule'),
-            "type" => "Pojedyncze",
-            "json" => '{"x": "Miesiące", "y": "Czynności", "inputs": ["Rok", "Użytkownik"], "method": "Zliczanie roboczodniówek", "dataset": "Wpisy harmonogramu", "resultForm": "Tabela"}'
+        $name = $modules->get('schedule');
+        $config = array(
+            'title' => $name,
+            'inputs' => array(
+                array('type' => 'Rok', 'value' => '' . $year),
+                array('type' => 'Użytkownik', 'value' => $username)
+            ), 
+            'datasets' => array(
+                array(
+                    'index' => 'Wpisy',
+                    'groups' => array('Miesiące', 'Rodzaj Czynności'),
+                    'dataset' => 'Wpisy na harmonogramie',
+                    'operation' => 'Zliczanie roboczodniówek'
+                )
+            ), 
+            'output_form' => 'Tabela',
+            'output_config' => array(
+                'cols' => 'Miesiące',
+                'rows' => 'Rodzaj Czynności',
+                'dataset' => 'Wpisy'
+            )
         );
-        $data = new Container($settings);
-        $inputsValues = new Container();
-        $inputsValues->add($year, 'year');
-        $inputsValues->add($username, 'user');
-        $stats = new SingleStats($data, $inputsValues);
-        return $stats->generate();
+        $inputs = new Container();
+        $stats = Stats::generateOutput(new Container($config), $inputs);
+        return $stats->get('HTML');
     }
 }

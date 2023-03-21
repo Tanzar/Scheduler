@@ -30,39 +30,10 @@ class StatisticsDAO extends DAO{
         return 'statistics';
     }
     
-    public function getActiveWithoutForm() : Container {
-        $sql = new MysqlBuilder();
-        $sql->select('statistics')->where('type', Type::Form->value, '!=')->orderBy('sort_priority');
-        $stats = $this->select($sql);
-        $this->parseJsons($stats);
-        return $stats;
-    }
-    
-    public function getActiveForm() : Container {
-        $sql = new MysqlBuilder();
-        $sql->select('statistics')->where('type', Type::Form->value)->orderBy('sort_priority');
-        $stats = $this->select($sql);
-        $this->parseJsons($stats);
-        return $stats;
-    }
-    
     public function getActive() : Container {
         $sql = new MysqlBuilder();
         $sql->select('statistics')->where('active', 1)->orderBy('sort_priority');
-        $stats = $this->select($sql);
-        $this->parseJsons($stats);
-        return $stats;
+        return $this->select($sql);
     }
     
-    
-    private function parseJsons(Container $stats) : void {
-        foreach ($stats->toArray() as $key => $item){
-            $stat = new Container($item);
-            if($stat->isValueSet('json')){
-                $json = json_decode($stat->get('json'));
-                $stat->add($json, 'json', true);
-                $stats->add($stat->toArray(), $key, true);
-            }
-        }
-    }
 }

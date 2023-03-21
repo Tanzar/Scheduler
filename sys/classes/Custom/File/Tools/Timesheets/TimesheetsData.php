@@ -49,7 +49,7 @@ class TimesheetsData {
     
     private function loadUserData(int $month, int $year, string $username) : void {
         $employmentsView = new UsersEmploymentPeriodsView();
-        $this->employmentPeriods = $employmentsView->getActiveByUserMonthYear($username, $month, $year);
+        $this->employmentPeriods = $employmentsView->getActiveByUser($username);
         $entriesView = new ScheduleEntriesView();
         $date = new DateTime($year . '-' . $month . '-1 23:59:59');
         $lastDate = new DateTime($date->format('Y-m-t H:i:s'));

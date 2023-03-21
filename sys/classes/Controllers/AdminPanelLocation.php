@@ -32,10 +32,10 @@ class AdminPanelLocation extends Controller{
         $this->setResponse($data);
     }
     
-    public function getLocationsByGroupId() {
+    public function getLocationsByTypeId() {
         $data = $this->getRequestData();
-        $id = (int) $data->get('id_location_group');
-        $response = $this->location->getLocationsByGroupId($id);
+        $id = (int) $data->get('id_location_type');
+        $response = $this->location->getLocationsByTypeID($id);
         $this->setResponse($response);
     }
     

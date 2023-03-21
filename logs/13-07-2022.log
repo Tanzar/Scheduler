@@ -1,9 +1,0 @@
-[2022-07-13  08:40:55] [type: Request] [user: ] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
-[2022-07-13  08:41:07] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
-[2022-07-13  08:41:29] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorReports.php?
-[2022-07-13  08:41:29] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}
-[2022-07-13  08:41:30] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: InspectorReport Task: getMyDocumentsData: {}
-[2022-07-13  08:41:30] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active_document = '1' and active = '1' and username = 'admin' and ( year(start) = '2022' or year(end) = '2022')
-[2022-07-13  08:41:32] [type: Access] [user: admin] [ip: 192.168.1.170] [proxy: undefined] http://192.168.1.170/Scheduler/pages/inspector/inspectorTickets.php?
-[2022-07-13  08:41:32] [type: Select] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Database: scheduler; SQL: SELECT * FROM document_user_details WHERE  active = '1' and username = 'admin' and ( ( month(start) = '7' and year(start) = '2022' ) or ( month(end) = '7' and year(end) = '2022' ))
-[2022-07-13  08:41:32] [type: Request] [user: admin] [ip: 192.168.1.170] [proxy: undefined] Controller: LanguageSelection Task: getInterfaceNamesData: {}

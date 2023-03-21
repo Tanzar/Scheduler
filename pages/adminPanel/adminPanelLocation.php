@@ -59,12 +59,12 @@ This code is free to use, just remember to give credit.
                     </div>
                     <div class="horizontal-container">
                         <div class="standard-text">
-                            <?php echo $interfaceText->get('select_location_group') ?>
+                            <?php echo $interfaceText->get('select_location_type') ?>
                         </div>
                         <select class="standard-input" id="selectLocationType">
                             <?php
                                 $service = new LocationService();
-                                $types = $service->getAllLocationGroups();
+                                $types = $service->getAllLocationTypes();
                                 foreach ($types->toArray() as $item){
                                     $type = new Container($item);
                                     echo '<option value="' . $type->get('id') . '">';

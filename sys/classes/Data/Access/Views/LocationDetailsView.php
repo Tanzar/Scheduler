@@ -35,6 +35,12 @@ class LocationDetailsView extends View{
         return $this->select($sql);
     }
     
+    public function getByIdLocationType(int $id) : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('location_details')->where('id_location_type', $id);
+        return $this->select($sql);
+    }
+    
     public function getInspectable() : Container {
         $sql = new MysqlBuilder();
         $sql->select('location_details')->where('inspection', 1);

@@ -32,10 +32,9 @@ class Response {
     }
     
     public function overrideData(Container $newData){
-        if($this->isDisabled){
-            $this->throwException('cannot override, Response is disabled.');
+        if(!$this->isDisabled){
+            $this->data = $newData;
         }
-        $this->data = $newData;
     }
     
     public function getData() {
@@ -52,9 +51,5 @@ class Response {
     
     public function isEnabled(){
         return !$this->isDisabled;
-    }
-    
-    private function throwException($msg){
-        throw new Exception('Response error: ' . $msg);
     }
 }

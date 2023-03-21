@@ -29,6 +29,12 @@ class SuzugUserDetailsView extends View{
         return 'suzug_user_details';
     }
     
+    public function getActiveOrderedByNumber() : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('suzug_user_details')->where('active', 1)->orderBy('number')->orderBy('year');
+        return $this->select($sql);
+    }
+    
     public function getById(int $id) : Container {
         $sql = new MysqlBuilder();
         $sql->select('suzug_user_details')->where('id', $id);

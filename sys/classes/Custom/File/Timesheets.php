@@ -70,7 +70,9 @@ class Timesheets{
     
     private function writeData() : void {
         $sheet = $this->editor->getCurrentSheetName();
-        for($day = 1; $day <= 31; $day++){
+        $firstDay = new DateTime($this->year . '-' . $this->month . '-01');
+        $daysCount = (int) $firstDay->format('t');
+        for($day = 1; $day <= $daysCount; $day++){
             $date = new DateTime($this->year . '-' . $this->month . '-' . $day);
             $this->writeDataCol($date, $sheet);
         }
@@ -93,7 +95,7 @@ class Timesheets{
             $dayWorktime = $this->toExcelTimeInMs($details->getStandardWorkdayTime());
             $this->editor->writeToCell($sheet, $worktimeCell, $dayWorktime);
         }
-        if($details->getWorkdayStart() !== '' && $details->getWorkdayEnd() !== '' && $details->getDayLetter() === 'P'){
+        if($details->getWorkdayStart() !== '' && $details->getWorkdayEnd() !== ''){
             $startCell = $this->editor->getAddress(17, $day + 2);
             $this->editor->writeToCell($sheet, $startCell, $details->getWorkdayStart());
             $endCell = $this->editor->getAddress(18, $day + 2);

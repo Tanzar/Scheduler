@@ -7,18 +7,17 @@
 namespace Services;
 
 use Data\Access\Tables\StatisticsDAO as StatisticsDAO;
-use Custom\Statistics\Options\Type as Type;
-use Custom\Statistics\Options\DataSet as DataSet;
-use Custom\Statistics\Options\Input as Input;
-use Custom\Statistics\Options\ResultForm as ResultForm;
-use Custom\Statistics\Options\Group as Group;
-use Custom\Statistics\Options\Method as Method;
-use Custom\Statistics\Statistics as Statistics;
-use Custom\Statistics\StatsPDF as StatsPDF;
-use Custom\Statistics\StatsExcel as StatsExcel;
-use Custom\Statistics\StatisticsFactory as StatisticsFactory;
+use Custom\Statistics\Engine\Configs\Elements\Datasets\DataSources as DataSources;
+use Custom\Statistics\Engine\Configs\Elements\Operations\Abstracts\Operations as Operations;
+use Custom\Statistics\Engine\Configs\Elements\Groups\Abstracts\Groups as Groups;
+use Custom\Statistics\Engine\Configs\Elements\Groups\Factory\GroupsFactory as GroupsFactory;
+use Custom\Statistics\Engine\Configs\Elements\Inputs\Abstracts\Input as Input;
+use Custom\Statistics\Engine\Configs\Elements\Inputs\Container\InputsContainer as InputsContainer;
+use Custom\Statistics\Engine\Stats as Stats;
 use Tanweb\Config\Template as Template;
 use Tanweb\Container as Container;
+use Services\Exceptions\StatsDatasetNotSetException as StatsDatasetNotSetException;
+use Services\Exceptions\StatsOutputNotSetException as StatsOutputNotSetException;
 /**
  * Description of StatsService
  *
@@ -31,49 +30,102 @@ class StatsService {
         $this->statistics = new StatisticsDAO();
     }
     
-    public function getAllStatsWithoutForm() : Container {
-        $stats = $this->statistics->getActiveWithoutForm();
-        $results = new Container();
-        foreach ($stats->toArray() as $item) {
-            $stat = new Container($item);
-            $parsed = array(
-                'id' => $stat->get('id'),
-                'name' => $stat->get('name'),
-                'type' => $stat->get('type')
-            );
-            $jsonArray = json_decode(json_encode($stat->get('json')), true);
-            $json = new Container($jsonArray);
-            $parsed['form'] = $json->get('resultForm');
-            $results->add($parsed);
+    public function getActive() : Container {
+        $data = $this->statistics->getActive();
+        $result = new Container();
+        foreach ($data->toArray() as $item) {
+            $resultItem = $this->parseStatistic($item);
+            $result->add($resultItem);
         }
-        return $results;
+        return $result;
     }
     
-    public function getAllFormStatistics() : Container {
-        return $this->statistics->getActiveForm();
+    public function getAll() : Container {
+        $data = $this->statistics->getAll();
+        $result = new Container();
+        foreach ($data->toArray() as $item) {
+            $resultItem = $this->parseStatistic($item);
+            $result->add($resultItem);
+        }
+        return $result;
     }
     
-    public function getActiveStats() : Container {
-        $stats = $this->statistics->getActive();
-        $results = new Container();
-        foreach ($stats->toArray() as $item) {
-            $stat = new Container($item);
-            $parsed = array(
-                'id' => $stat->get('id'),
-                'name' => $stat->get('name'),
-                'type' => $stat->get('type')
-            );
-            $jsonArray = json_decode(json_encode($stat->get('json')), true);
-            $json = new Container($jsonArray);
-            if($json->isValueSet('resultForm')){
-                $parsed['form'] = $json->get('resultForm');
+    public function getDatasets() : Container {
+        $sources = DataSources::cases();
+        return new Container($sources);
+    }
+    
+    public function getOperations(DataSources $datasource) : Container {
+        $operations = $datasource->getOpeartions();
+        $result = array();
+        foreach ($operations as $item){
+            $result[] = $item->value;
+        }
+        return new Container($result);
+    }
+    
+    public function getGroups(DataSources $datasource) : Container {
+        $groups = Groups::cases();
+        $result = new Container();
+        foreach ($groups as $group){
+            if($group === Groups::Activity || $group === Groups::ActivityType){
+                if($datasource === DataSources::Inspections || $datasource === DataSources::Entries){
+                    $result->add($group->value);
+                }
+            }
+            elseif($group === Groups::Level){
+                if($datasource === DataSources::Inspections){
+                    $result->add($group->value);
+                }
+            }
+            elseif($group === Groups::Instrument){
+                if($datasource === DataSources::InstrumentUsages){
+                    $result->add($group->value);
+                }
             }
             else{
-                $parsed['form'] = 'XLSX';
+                $result->add($group->value);
             }
-            $results->add($parsed);
         }
-        return $results;
+        return $result;
+    }
+    
+    public function getGroupsValues(Container $inputs, Container $groups) : Container {
+        $result = new Container();
+        $inputsContainer = new InputsContainer($inputs);
+        foreach ($groups->toArray() as $item) {
+            $type = Groups::from($item);
+            $group = GroupsFactory::create($type);
+            $values = $group->getOptions($inputsContainer);
+            $result->add($values->toArray(), $item);
+        }
+        return $result;
+    }
+    
+    public function getInputSettings(int $id) : Container {
+        $data = $this->statistics->getById($id);
+        $parsed = $this->parseStatistic($data->toArray());
+        $preFiltered = $parsed['inputs'];
+        $inputs = new Container();
+        foreach ($preFiltered as $item) {
+            if($item['value'] === ''){
+                $inputs->add($item);
+            }
+        }
+        $inputsContainer = new InputsContainer($inputs);
+        $result = new Container();
+        foreach ($inputsContainer->toArray() as $input) {
+            $values = $this->getInputValues($input);
+            $type = $input->getType();
+            $key = $type->value;
+            $result->add($values, $key);
+        }
+        return $result;
+    }
+    
+    private function getInputValues(Input $input) : array {
+        $values = $input->getOptions();
+        return $values->toArray();
     }
     
     public function getTemplatesList() : Container {
@@ -84,187 +136,69 @@ class StatsService {
         Template::uploadFile($file, 'stats');
     }
     
-    public function getStatsSettingsStageOne() : Container {
-        $result = new Container();
-        $result->add($this->getStatsTypes(), 'types');
-        $result->add($this->getDatasets(), 'datasets');
-        $result->add($this->getInputs(), 'inputs');
-        $result->add($this->getResultForms(), 'resultForms');
-        return $result;
+    public function generate(int $id, Container $inputs) : Container {
+        $item = $this->statistics->getById($id);
+        $parsed = $this->parseStatistic($item->toArray());
+        $config = new Container($parsed);
+        return Stats::generateOutput($config, $inputs);
     }
     
-    private function getStatsTypes() : array {
-        $cases = Type::cases();
-        $result = new Container();
-        foreach ($cases as $item) {
-            if(Type::from($item->value) != Type::Form){
-                $result->add(array(
-                    'title' => $item->value,
-                    'value' => $item->value
-                ));
-            }
-        }
-        return $result->toArray();
+    public function generatePDF(int $id, Container $inputs) : void {
+        $item = $this->statistics->getById($id);
+        $parsed = $this->parseStatistic($item->toArray());
+        $config = new Container($parsed);
+        Stats::generateTablePDF($config, $inputs);
     }
     
-    private function getDatasets() : array {
-        $cases = DataSet::cases();
-        $result = new Container();
-        foreach ($cases as $item) {
-            $result->add(array(
-                'title' => $item->value,
-                'value' => $item->value
-            ));
-        }
-        return $result->toArray();
+    public function generateXLSX(int $id, Container $inputs) : void {
+        $item = $this->statistics->getById($id);
+        $parsed = $this->parseStatistic($item->toArray());
+        $config = new Container($parsed);
+        Stats::generateTableXLSX($config, $inputs);
     }
     
-    private function getInputs() : array {
-        $cases = Input::cases();
-        $result = new Container();
-        foreach ($cases as $item) {
-            $result->add(array(
-                'title' => $item->value,
-                'value' => $item->value
-            ));
-        }
-        return $result->toArray();
-    }
-    
-    private function getResultForms() : array {
-        $cases = ResultForm::cases();
-        $result = new Container();
-        foreach ($cases as $item) {
-            $result->add(array(
-                'title' => $item->value,
-                'value' => $item->value
-            ));
-        }
-        return $result->toArray();
-    }
-    
-    public function getStatsSettingsStageTwo(Container $data) : Container {
-        $result = new Container();
-        $result->add($this->getGroups($data), 'groups');
-        $result->add($this->getMethods($data), 'methods');
-        return $result;
-    }
-    
-    public function getGroups(Container $data = null) : array {
-        if($data !== null){
-            if($data->isValueSet('json')){
-                $json = new Container($data->get('json'));
-                $dataset = DataSet::from($json->get('dataset'));
-            }
-            else{
-                $dataset = DataSet::from($data->get('dataset'));
-            }
-            $groups = Group::getGroupsForDataSet($dataset);
-            return $groups->toArray();
+    public function saveStats(Container $stats) : int {
+        if(!$stats->isValueSet('inputs')){
+            $stats->add('[]', 'inputs');
         }
         else{
-            return Group::cases();
+            $this->jsonToString('inputs', $stats);
         }
-    }
-    
-    public function getGroupOptions(string $gorup) : Container {
-        $grp = Group::from($gorup);
-        return $grp->getOptions();
-    }
-    
-    private function getMethods(Container $data) : array {
-        $json = new Container($data->get('json'));
-        $dataset = DataSet::from($json->get('dataset'));
-        $methods = Method::getMethodsForDataSet($dataset);
-        return $methods->toArray();
-    }
-    
-    public function getInputSettings(int $id) : Container {
-        $stats = $this->statistics->getById($id);
-        $jsonText = $stats->get('json');
-        $jsonArray = json_decode($jsonText, true);
-        $json = new Container($jsonArray);
-        if($json->isValueSet('inputs')){
-            $inputs = $json->get('inputs');
-            $result = new Container();
-            foreach($inputs as $item){
-                $input = Input::from($item);
-                $result->add($input->toJson()->toArray());
-            }
-            return $result;
+        if(!$stats->isValueSet('datasets')){
+            throw new StatsDatasetNotSetException();
         }
         else{
-            return new Container();
+            $this->jsonToString('datasets', $stats);
         }
+        if(!$stats->isValueSet('output_config')){
+            throw new StatsOutputNotSetException();
+        }
+        else{
+            $this->jsonToString('output_config', $stats);
+        }
+        return $this->statistics->save($stats);
     }
     
-    public function getInputsOptions(Container $inputs) : Container {
-        $result = new Container();
-        foreach($inputs->toArray() as $item){
-            $input = Input::from($item);
-            $result->add($input->toJson()->toArray());
-        }
-        return $result;
-    }
-    
-    public function saveStats(Container $data) : int {
-        $this->checkInputs($data);
-        $json = json_encode($data->get('json'), JSON_UNESCAPED_UNICODE);
-        $data->add($json, 'json', true);
-        return $this->statistics->save($data);
-    }
-    
-    private function checkInputs(Container $data) : void {
-        $type = Type::from($data->get('type'));
-        if($type === Type::Monthly){
-            $this->addInput($data, Input::MonthsRange);
-        }
-        if($type === Type::Yearly){
-            $this->addInput($data, Input::YearsRange);
-        }
-    }
-    
-    private function addInput(Container $data, Input $input) : void {
-        $json = new Container($data->get('json'));
-        if(!$json->isValueSet('inputs')){
-            $json->add(array(), 'inputs');
-        }
-        $inputs = new Container($json->get('inputs'));
-        if(!$inputs->contains($input->value)){
-            $inputs->add($input->value);
-            $json->add($inputs->toArray(), 'inputs', true);
-            $data->add($json->toArray(), 'json', true);
-        }
-    }
-    
-    public function saveFormStats(Container $data) : int {
-        $json = json_encode($data->get('json'), JSON_UNESCAPED_UNICODE);
-        $data->add(Type::Form->value, 'type');
-        $data->add($json, 'json', true);
-        return $this->statistics->save($data);
+    private function jsonToString(string $key, Container $item) : void {
+        $json = $item->get($key);
+        $text = json_encode( $json, JSON_UNESCAPED_UNICODE );
+        $item->add($text, $key, true);
     }
     
     public function removeStats(int $id) : void {
         $this->statistics->remove($id);
     }
     
-    public function generateStats(Container $data) : Container {
-        $stats = StatisticsFactory::build($data);
-        
-        $result = $stats->generate();
-        
-        return $result;
-    }
-    
-    public function generatePDF(Container $data) : void {
-        $stats = StatisticsFactory::build($data);
-        $result = $stats->generate();
-        StatsPDF::formFile($result);
-    }
-    
-    public function generateXlsx(Container $data) : void {
-        $stats = StatisticsFactory::build($data);
-        $result = $stats->generate();
-        StatsExcel::formFile($result);
+    private function parseStatistic(array $item) : array {
+        return array(
+            'id' => (int) $item['id'],
+            'active' => (int) $item['active'],
+            'title' => $item['title'],
+            'sort_priority' => (int) $item['sort_priority'],
+            'inputs' => json_decode($item['inputs'], true, 512, JSON_UNESCAPED_UNICODE),
+            'datasets' => json_decode($item['datasets'], true, 512, JSON_UNESCAPED_UNICODE),
+            'output_form' => $item['output_form'],
+            'output_config' => json_decode($item['output_config'], true, 512, JSON_UNESCAPED_UNICODE),
+        );
     }
 }

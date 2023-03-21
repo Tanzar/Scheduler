@@ -57,6 +57,12 @@ class EquipmentDetailsView extends View{
         return $this->select($sql);
     }
     
+    public function getAllMeasurementInstruments() : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('equipment_details')->where('measurement_instrument', 1);
+        return $this->select($sql);
+    }
+    
     public function getActiveByState(string $state) : Container {
         $sql = new MysqlBuilder();
         $sql->select('equipment_details')->where('active', 1)

@@ -53,30 +53,18 @@ This code is free to use, just remember to give credit.
         <div class="page-contents" id="display">
             <div class="horizontal-container">
                 <div id="stats"></div>
-                <div id="tableOptions" style="display: none">
-                    <div class="centered-contents-bordered" style="min-width: 200px">
-                        <div class="standard-text">
-                            <?php echo $interfaceText->get('table_options'); ?>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="hideRows">
-                            <label for="hideColumns"><?php echo $interfaceText->get('hide_empty_rows'); ?></label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="hideColumns">
-                            <label for="hideColumns"><?php echo $interfaceText->get('hide_empty_columns'); ?></label>
-                        </div>
+                <div class="centered-contents-bordered" style="width: fit-content; min-width: 200px; height: fit-content">
+                    <div class="standard-text">
+                        <?php echo $interfaceText->get('inputs'); ?>
                     </div>
-                </div>
-                <div class="centered-contents" style="width: 100%">
                     <div id="inputs"></div>
                     <button id="generateStats" class="standard-button" style="display: none"><?php echo $interfaceText->get('generate'); ?></button>
-                    <div id="statsDisplay" class="standard-display" style="min-height: 600px; min-width: 1000px"></div>
                     <div class="horizontal-container">
-                        <button id="generatePDF" class="standard-button" style="display: none">PDF</button>
-                        <button id="generateExcel" class="standard-button" style="display: none">Excel</button>
+                        <button id="generatePDF" class="standard-button" style="display: none"><?php echo $interfaceText->get('generate_pdf_file'); ?></button>
+                        <button id="generateXLSX" class="standard-button" style="display: none"><?php echo $interfaceText->get('generate_excel_file'); ?></button>
                     </div>
                 </div>
+                <div id="statsDisplay" class="standard-display" style="min-width: 600px"></div>
             </div>
         </div>
         <?php

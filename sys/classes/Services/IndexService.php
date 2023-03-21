@@ -113,7 +113,7 @@ class IndexService {
         $security = Security::getInstance();
         $schedulePrivilages = new Container(['admin', 'schedule_user', 'schedule_user_inspector', 'schedule_admin']);;
         if($security->userHaveAnyPrivilage($schedulePrivilages)){
-            $result->add(ScheduleReport::generate($year, $username)->toArray(), 'schedule');
+            $result->add(ScheduleReport::generate($year, $username), 'schedule');
         }
         $inspectorPrivilages = new Container(['admin', 'schedule_user_inspector']);
         if($security->userHaveAnyPrivilage($inspectorPrivilages)){

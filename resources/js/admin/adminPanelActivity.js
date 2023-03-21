@@ -50,7 +50,7 @@ function ActivityTable(language, div){
             var keys = Object.keys(data.groups);
             keys.forEach(item => {
                 var option = {
-                    value: data.groups[item],
+                    value: item,
                     title: data.groups[item]
                 }
                 groups.push(option);
@@ -108,7 +108,7 @@ function ActivityTable(language, div){
                     var keys = Object.keys(data.groups);
                     keys.forEach(item => {
                         var option = {
-                            value: data.groups[item],
+                            value: item,
                             title: data.groups[item]
                         }
                         groups.push(option);

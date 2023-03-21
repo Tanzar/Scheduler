@@ -66,6 +66,14 @@ class UsersWithoutPasswordsView extends View{
     }
     
     
+    public function getAllWithoutSystem() : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('users_without_passwords')
+                ->where('id', 1, '!=')->orderBy('surname');
+        return $this->select($sql);
+    }
+    
+    
     public function findUsers(Container $conditions) : Container{
         $sql = new MysqlBuilder();
         $sql->select('users_without_passwords');

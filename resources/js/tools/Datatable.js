@@ -355,11 +355,13 @@ function Datatable(div, config){
     
     this.refresh = function(){
         this.clearTable();
+        this.onUnselect();
         this.construct(this.div, false);
     }
     
     this.refreshWithWait = function(){
         this.clearTable();
+        this.onUnselect();
         this.construct(this.div, true);
         this.waitMode = true;
     }

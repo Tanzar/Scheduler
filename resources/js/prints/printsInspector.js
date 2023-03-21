@@ -6,11 +6,16 @@
 function init(){
     RestApi.getInterfaceNamesPackage(function(language){
         var selectYear = document.getElementById('selectDocumentYear');
+        var selectMonth = document.getElementById('selectDocumentMonth');
         var selectDocument = new Select('selectDocumentIndex', language.select_document);
-        selectDocument.loadOptions('PrintsInspector', 'getDocuments', {year: selectYear.value});
+        selectDocument.loadOptions('PrintsInspector', 'getDocuments', {year: selectYear.value, month: selectMonth.value});
         
         selectYear.onchange = function(){
-            selectDocument.loadOptions('PrintsInspector', 'getDocuments', {year: selectYear.value});
+            selectDocument.loadOptions('PrintsInspector', 'getDocuments', {year: selectYear.value, month: selectMonth.value});
+        }
+        
+        selectMonth.onchange = function(){
+            selectDocument.loadOptions('PrintsInspector', 'getDocuments', {year: selectYear.value, month: selectMonth.value});
         }
         
         $('#instrumentUsageCard').click(function(){
@@ -21,9 +26,11 @@ function init(){
         });
         
         $('#generateDocumentReport').click(function(){
-            FileApi.post('PrintsInspector', 'generateDocumentRaport', {
-                id: document.getElementById('selectDocumentIndex').value
-            });
+            if(document.getElementById('selectDocumentIndex').value !== ''){
+                FileApi.post('PrintsInspector', 'generateDocumentRaport', {
+                    id: document.getElementById('selectDocumentIndex').value
+                });
+            }
         });
     });
 }

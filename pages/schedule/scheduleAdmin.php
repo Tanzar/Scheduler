@@ -59,7 +59,7 @@ This code is free to use, just remember to give credit.
         <?php Scripts::run('scheduleSideMenu.php') ?>
         <div class="page-contents" id="pageContents">
             <div class="centered-contents">
-                <select id="selectUser" class="standard-input">
+                <select id="selectUser" class="standard-input" required>
                     <option value="" disabled selected placeholder>
                         <?php echo $interface->get('select_user'); ?>
                     </option>
@@ -93,9 +93,9 @@ This code is free to use, just remember to give credit.
                     <div class="standard-text-title">
                         <?php echo $interface->get('new_entry'); ?>
                     </div>
-                    <select id="selectActivityGroup" class="standard-input">
+                    <select id="selectActivityGroup" class="standard-input" required>
                         <?php
-                            echo '<option placeholder, disabled selected>' . $interface->get('select_activity_group') . '</option>';
+                            echo '<option value="" placeholder disabled selected>' . $interface->get('select_activity_group') . '</option>';
                             $scheduleService = new ScheduleService();
                             if($security->userHaveAnyPrivilage(new Container(['admin', 'schedule_admin', 'schedule_user_inspector']))){
                                 $groups = $scheduleService->getAllActivityGroups();
@@ -103,25 +103,25 @@ This code is free to use, just remember to give credit.
                             else{
                                 $groups = $scheduleService->getUserActivityGroups();
                             }
-                            foreach ($groups->toArray() as $item){
-                                echo '<option value="' . $item . '">' . $item . '</option>';
+                            foreach ($groups->toArray() as $key => $item){
+                                echo '<option value="' . $key . '">' . $item . '</option>';
                             }
                         ?>
                     </select>
                     <br>
-                    <select id="selectActivity" class="standard-input" style="margin-top: 15px">
+                    <select id="selectActivity" class="standard-input" style="margin-top: 15px" required>
                         <option value="" selected disabled placeholder>
                             <?php echo $interface->get('select_activity'); ?>
                         </option>
                     </select>
                     <br>
-                    <select id="selectLocationType" class="standard-input" style="margin-top: 15px">
+                    <select id="selectLocationType" class="standard-input" style="margin-top: 15px" required>
                         <option value="" selected disabled placeholder>
                             <?php echo $interface->get('select_location_type'); ?>
                         </option>
                     </select>
                     <br>
-                    <select id="selectLocation" class="standard-input" style="margin-top: 15px; margin-bottom: 10px">
+                    <select id="selectLocation" class="standard-input" style="margin-top: 15px; margin-bottom: 10px" required>
                         <option value="" selected disabled placeholder>
                             <?php echo $interface->get('select_location'); ?>
                         </option>

@@ -30,8 +30,8 @@ function LocationsTable(language, div){
             address: getRestAddress(), 
             data: { 
                 controller: 'AdminPanelLocation', 
-                task: 'getLocationsByGroupId', 
-                id_location_group: idLocationType 
+                task: 'getLocationsByTypeId', 
+                id_location_type: idLocationType 
             } 
         }
     };
@@ -154,8 +154,8 @@ function LocationsTable(language, div){
             address: getRestAddress(), 
             data: { 
                 controller: 'AdminPanelLocation', 
-                task: 'getLocationsByGroupId', 
-                id_location_group: selectLocationType.value 
+                task: 'getLocationsByTypeId', 
+                id_location_type: selectLocationType.value 
             } 
         };
         datatable.setDatasource(datasource);

@@ -45,6 +45,7 @@ class Logger {
     
     private bool $saveLocal;
     private string $targetFile;
+    private int $filesCount;
     
     private bool $saveDatabase;
     private Database $database;
@@ -60,9 +61,9 @@ class Logger {
         }
     }
     
-    private function loadConfig(Container $config, AppConfig $appConfig) : void {
+    private function loadConfig(Container $config) : void {
         $this->loadTypes($config);
-        $this->loadLocalConfig($config, $appConfig);
+        $this->loadLocalConfig($config);
         $this->loadDatabaseConfig($config);
     }
     
@@ -76,10 +77,11 @@ class Logger {
         }
     }
     
-    private function loadLocalConfig(Container $config, AppConfig $appConfig) : void {
+    private function loadLocalConfig(Container $config) : void {
+        $this->filesCount = $config->get('files_count');
         $this->saveLocal = $config->get('local');
         if($this->saveLocal === true){
-            $this->checkLogFile($appConfig);
+            $this->checkLogFile();
         }
         else{
             $this->saveLocal = false;
@@ -91,9 +93,26 @@ class Logger {
         if(!file_exists($dir)){
             mkdir($dir);
         }
-        $date = date('d-m-Y');
+        $date = date('Y-m-d');
         $path = $dir . '/' . $date . '.log';
         $this->targetFile = $path;
+        $this->manageFilesLimit($dir);
+    }
+    
+    private function manageFilesLimit(string $dir) : void {
+        $test = scandir($dir);
+        $count = count($test);
+        $ignoredCount = 0;
+        for($i = $count - 1; $i > 1; $i--){
+            if($ignoredCount < $this->filesCount){
+                $ignoredCount++;
+            }
+            elseif($test[$i] !== '.' && $test[$i] !== '..'){
+                $path = $dir . '/' . $test[$i];
+                unlink($path);
+                
+            }
+        }
     }
     
     private function loadDatabaseConfig(Container $config) : void {

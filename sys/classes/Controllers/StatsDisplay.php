@@ -29,7 +29,7 @@ class StatsDisplay extends Controller{
     }
     
     public function getStats() : void {
-        $response = $this->stats->getActiveStats();
+        $response = $this->stats->getActive();
         $this->setResponse($response);
     }
     
@@ -42,19 +42,41 @@ class StatsDisplay extends Controller{
     
     public function generateStats() : void {
         $data = $this->getRequestData();
-        $response = $this->stats->generateStats($data);
-        if(!$response->isValueSet('disabled')){
-            $this->setResponse($response);
+        $id = (int) $data->get('id');
+        if(is_string($data->get('inputs'))){
+            $json = json_decode($data->get('inputs'), true, 512, JSON_UNESCAPED_UNICODE);
+            $inputs = new Container($json);
         }
+        else{
+            $inputs = new Container($data->get('inputs'));
+        }
+        $response = $this->stats->generate($id, $inputs);
+        $this->setResponse($response);
     }
     
     public function generatePDF() : void {
         $data = $this->getRequestData();
-        $this->stats->generatePDF($data);
+        $id = (int) $data->get('id');
+        if(is_string($data->get('inputs'))){
+            $json = json_decode($data->get('inputs'), true, 512, JSON_UNESCAPED_UNICODE);
+            $inputs = new Container($json);
+        }
+        else{
+            $inputs = new Container($data->get('inputs'));
+        }
+        $this->stats->generatePDF($id, $inputs);
     }
     
     public function generateXlsx() : void {
         $data = $this->getRequestData();
-        $this->stats->generateXlsx($data);
+        $id = (int) $data->get('id');
+        if(is_string($data->get('inputs'))){
+            $json = json_decode($data->get('inputs'), true, 512, JSON_UNESCAPED_UNICODE);
+            $inputs = new Container($json);
+        }
+        else{
+            $inputs = new Container($data->get('inputs'));
+        }
+        $this->stats->generateXLSX($id, $inputs);
     }
 }

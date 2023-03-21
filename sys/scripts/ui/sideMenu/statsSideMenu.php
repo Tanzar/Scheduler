@@ -17,12 +17,9 @@
     <?php
         $security = Security::getInstance();
         $privilages = new Container(['admin', 'stats_admin']);
-        if($security->userHaveAnyPrivilage($privilages)){;
-            echo '<form action="' . Pages::getURL('statsNoForm.php') . '">';
-            echo '<input type="submit" class="side-menu-button" value="' . $options->get('settings_no_form') . '">';
-            echo '</form>';
-            echo '<form action="' . Pages::getURL('statsForm.php') . '">';
-            echo '<input type="submit" class="side-menu-button" value="' . $options->get('settings_form') . '">';
+        if($security->userHaveAnyPrivilage($privilages)){
+            echo '<form action="' . Pages::getURL('statsSettings.php') . '">';
+            echo '<input type="submit" class="side-menu-button" value="' . $options->get('settings') . '">';
             echo '</form>';
             echo '<form action="' . Pages::getURL('statsSUZUG.php') . '">';
             echo '<input type="submit" class="side-menu-button" value="' . $options->get('settings_suzug') . '">';

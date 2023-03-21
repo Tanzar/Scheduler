@@ -86,16 +86,7 @@ This code is free to use, just remember to give credit.
                 $statsPrivilages = new Container(['admin', 'stats_user', 'stats_admin']);
                 if($security->userHaveAnyPrivilage($statsPrivilages)){
                     echo '<div class="standard-text">';
-                    //Resources::linkDownload('user_manual_stats.pdf', $interface->get('stats_manual'), false, true);
-                    echo '[PH]' . $interface->get('stats_manual');
-                    echo '</div>';
-                }
-                
-                $printsPrivilages = new Container(['admin', 'prints_schedule', 'prints_inspector', 'prints_inspector_all_documents', 'prints_schedule_reports']);
-                if($security->userHaveAnyPrivilage($statsPrivilages)){
-                    echo '<div class="standard-text">';
-                    //Resources::linkDownload('user_manual_stats.pdf', $interface->get('stats_manual'), false, true);
-                    echo '[PH]' . $interface->get('prints_manual');
+                    Resources::linkDownload('user_manual_stats.pdf', $interface->get('stats_manual'), false, true);
                     echo '</div>';
                 }
             ?>
