@@ -80,6 +80,15 @@ class ExcelEditor {
         $sheet->getColumnDimension($letter)->setAutoSize(true);
     }
     
+    public function setMargins(float $top, float $bottom, float $left, float $right) : void {
+        $sheet = $this->spreadsheet->getActiveSheet();
+        $margins = $sheet->getPageMargins();
+        $margins->setTop($top);
+        $margins->setBottom($bottom);
+        $margins->setLeft($left);
+        $margins->setRight($right);
+    }
+    
     public function saveLocally(string $path) : void {
         $this->spreadsheet->save($path);
     }

@@ -36,6 +36,7 @@ class Timesheets{
         $path = Template::getLocalPath('timesheets.xlsx');
         $this->editor = new ExcelEditor();
         $this->editor->openFile($path);
+        $this->editor->setMargins(0, 0, 0, 0);
         $this->title = $this->data->getFullUsername() . '_' . $this->data->getMonth() . '_' . $this->data->getYear();
     }
     

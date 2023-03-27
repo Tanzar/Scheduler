@@ -31,7 +31,6 @@ function initAssignedTable(language) {
     }
     
     var datatable = new Datatable(div, config);
-    /* disabled for now, uncomment to enable
     datatable.addActionButton(language.assign, function(selected){
         if(selected !== undefined){
             RestApi.get('InventoryMy', 'getUsers', {}, function(response){
@@ -69,7 +68,6 @@ function initAssignedTable(language) {
             alert(language.select_equipment);
         }
     });
-    */
     return datatable;
 }
 

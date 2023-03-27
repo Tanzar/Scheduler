@@ -56,13 +56,20 @@ class TableGenerator extends StatsGenerator {
             $html .= '<td class="standard-table-td">' . $col['title'] . '</td>';
         }
         $html .= '<td class="standard-table-td">Σ</td></tr>';
+        $colsSums = array();
         foreach ($rows->toArray() as $row) {
             $html .= '<tr class="standard-table-tr">';
             $html .= '<td class="standard-table-td">' . $row['title'] . '</td>';
             $sum = 0;
-            foreach ($cols->toArray() as $col) {
+            foreach ($cols->toArray() as $colIndex => $col) {
                 $groups = $this->formGroupsContainer($outputConfig, $col['value'], $row['value']);
                 $value = $resultSet->get($groups);
+                if(isset($colsSums[$colIndex])){
+                    $colsSums[$colIndex] += (int) $value;
+                }
+                else{
+                    $colsSums[$colIndex] = (int) $value;
+                }
                 if($value === 0){
                     $value = '';
                 }
@@ -74,6 +81,15 @@ class TableGenerator extends StatsGenerator {
             $html .= '<td class="standard-table-td">' . $sum . '</td>';
             $html .= '</tr>';
         }
+        $html .= '<tr class="standard-table-tr">';
+        $html .= '<td class="standard-table-td">Σ</td>';
+        $total = 0;
+        foreach ($colsSums as $value) {
+            $html .= '<td class="standard-table-td">' . $value . '</td>';
+            $total += $value;
+        }
+        $html .= '<td class="standard-table-td">' . $total . '</td>';
+        $html .= '</tr>';
         return $html;
     }
     
@@ -90,13 +106,20 @@ class TableGenerator extends StatsGenerator {
         }
         $result['cells'][$x][] = 'Σ';
         $x++;
+        $colsSums = array();
         foreach ($rows->toArray() as $row) {
             $result['cells'][$x] = array();
             $result['cells'][$x][] = $row['title'];
             $sum = 0;
-            foreach ($cols->toArray() as $col) {
+            foreach ($cols->toArray() as $colIndex => $col) {
                 $groups = $this->formGroupsContainer($outputConfig, $col['value'], $row['value']);
                 $value = $resultSet->get($groups);
+                if(isset($colsSums[$colIndex])){
+                    $colsSums[$colIndex] += (int) $value;
+                }
+                else{
+                    $colsSums[$colIndex] = (int) $value;
+                }
                 if($value === 0){
                     $value = '';
                 }
@@ -108,6 +131,13 @@ class TableGenerator extends StatsGenerator {
             $result['cells'][$x][] = $sum;
             $x++;
         }
+        $total = 0;
+        $result['cells'][$x][0] = 'Σ';
+        foreach ($colsSums as $index => $value) {
+            $result['cells'][$x][$index + 1] = $value;
+            $total += $value;
+        }
+        $result['cells'][$x][count($colsSums) + 1] = $total;
         return $result;
     }
     
