@@ -27,6 +27,7 @@ class DaysDetails {
     private DayOffChecker $checker;
     private string $nightShiftStartTime;
     private string $nightShiftEndTime;
+    private string $workdayStartHour;
     private Container $cfg;
     
     public function __construct(string $username, Container $periods, Container $entries) {
@@ -39,6 +40,7 @@ class DaysDetails {
         $cfg = $app->getAppConfig();
         $this->nightShiftStartTime = $cfg->get('night_shift_start');
         $this->nightShiftEndTime = $cfg->get('night_shift_end');
+        $this->workdayStartHour = $cfg->get('workday_start_hour');
         $this->cfg = $cfg;
         $this->init();
     }
@@ -54,7 +56,7 @@ class DaysDetails {
     private function analyzeEntry(Container $entry) : void {
         if((int) $entry->get('id_user') !== 1){
             $period = $this->getMatchingPeriod($entry);
-            $dayBreakHour = $period->get('standard_day_start');
+            $dayBreakHour = $this->workdayStartHour;
             $this->calculateEntry($entry, $period, $dayBreakHour);
         }
     }
@@ -97,11 +99,6 @@ class DaysDetails {
         $worktime = $this->calculateWorktime($entry, $dayStart);
         $nightShift = $this->calculateNightShift($entry, $dayStart);
         $details->assignEntryTimes($entry, $worktime, $nightShift);
-        $start = new DateTime($entry->get('start'));
-        $end = new DateTime($entry->get('end'));
-        if($dayStart->format('Y-m-d') === '2022-04-23'){
-            $k = 0;
-        }
         $this->setWorkdayTimes($entry, $dayStart, $details);
     }
     

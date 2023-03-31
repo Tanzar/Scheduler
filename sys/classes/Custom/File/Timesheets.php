@@ -65,7 +65,6 @@ class Timesheets{
         $dailyJobTime = Time::msToFullHours($this->data->getUserDailyJobTimeInMins() * 60 * 1000);
         $this->editor->writeToCell($sheet, 'K6', $dailyJobTime);
         $previousOvertime = $this->toExcelTime($this->data->getPreviousOvertimeInMins());
-        $this->editor->writeToCell($sheet, 'P6', $previousOvertime);
         $this->editor->writeToCell($sheet, 'Q6', $previousOvertime);
     }
     
