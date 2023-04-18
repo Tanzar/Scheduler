@@ -119,10 +119,10 @@ footer {
 }
 
 .side-menu {
-    min-width: 110px;
-    width: 110px;
+    min-width: 120px;
+    width: 120px;
     min-height: 200px;
-    max-width: 110px;
+    max-width: 120px;
     position: absolute;
     z-index: 10;
     top: 150px;
@@ -141,7 +141,6 @@ footer {
 .side-menu-button {
     cursor: pointer;
     width: 100%;
-    max-width: 110px;
     background-color: transparent;
     border: 2px solid var(--border-color);
     border-radius: 5px;

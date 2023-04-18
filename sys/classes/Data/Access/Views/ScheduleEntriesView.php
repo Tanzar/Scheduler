@@ -34,7 +34,15 @@ class ScheduleEntriesView extends View{
         $sql = new MysqlBuilder();
         $sql->select('schedule_entries')->where('id', $id);
         $data = $this->select($sql);
-        return $data;
+        if($data->length() > 1){
+            $this->throwIdColumnException('document');
+        }
+        if($data->isEmpty()){
+            return new Container();
+        }
+        else{
+            return new Container($data->get(0));
+        }
     }
     
     public function getActive(DateTime $start, DateTime $end) : Container{

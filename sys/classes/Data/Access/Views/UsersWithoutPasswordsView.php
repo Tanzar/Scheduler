@@ -29,6 +29,12 @@ class UsersWithoutPasswordsView extends View{
         return 'users_without_passwords';
     }
     
+    public function getAllOrdered() : Container {
+        $sql = new MysqlBuilder();
+        $sql->select('users_without_passwords')->orderBy('surname');
+        return $this->select($sql);
+    }
+    
     public function getActive() : Container{
         $sql = new MysqlBuilder();
         $sql->select('users_without_passwords')->where('active', 1)->orderBy('surname');

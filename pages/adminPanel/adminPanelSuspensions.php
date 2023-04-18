@@ -60,7 +60,7 @@ This code is free to use, just remember to give credit.
                     <option disabled placeholder selected><?php echo $interfaceText->get('select_user'); ?></option>
                     <?php 
                         $userservice = new UserService();
-                        $users = $userservice->getAllUsers();
+                        $users = $userservice->getAllInspectors();
                         foreach ($users->toArray() as $item){
                             $user = new Container($item);
                             echo '<option value="' . $user->get('username') . '">' .

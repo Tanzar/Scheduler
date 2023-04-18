@@ -57,8 +57,16 @@ class UserService{
         return $this->usersWithoutPasswords->getAll();
     }
     
+    public function getAllUsersOrdered() : Container {
+        return $this->usersWithoutPasswords->getAllOrdered();
+    }
+    
     public function getActiveInspectors() : Container {
         return $this->usersPrivilages->getActiveInspectors();
+    }
+    
+    public function getAllInspectors() : Container {
+        return $this->usersPrivilages->getAllInspectors();
     }
     
     public function getEmployedUsersListOrdered(string $date) : Container {

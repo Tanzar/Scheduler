@@ -68,7 +68,7 @@ This code is free to use, just remember to give credit.
                             <?php echo $interfaceText->get('select_user'); ?>
                         </option>
                         <?php 
-                            $users = $userservice->getAllUsers();
+                            $users = $userservice->getAllUsersOrdered();
                             foreach ($users->toArray() as $item){
                                 $user = new Container($item);
                                 echo '<option value="' . $user->get('username') . '">';

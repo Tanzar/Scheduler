@@ -36,7 +36,7 @@ class InspectorDocuments extends Controller{
     public function getLocationsByTypeId(){
         $data = $this->getRequestData();
         $id = $data->get('id_location_type');
-        $response = $this->locationService->getLocationsByTypeID($id);
+        $response = $this->locationService->getActiveLocationsByTypeID($id);
         $this->setResponse($response);
     }
     

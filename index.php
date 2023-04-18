@@ -59,6 +59,10 @@ This code is free to use, just remember to give credit.
         ?>
     </body>
     <script>
-        init();
+        <?php
+            if($username !== ''){
+                echo 'init();';
+            }
+        ?>
     </script>
 </html>
