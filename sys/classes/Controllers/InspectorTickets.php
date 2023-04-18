@@ -30,9 +30,8 @@ class InspectorTickets extends Controller{
     
     public function getDocuments() {
         $data = $this->getRequestData();
-        $month = (int) $data->get('month');
         $year = (int) $data->get('year');
-        $response = $this->documentService->getCurrentUserDocumentsByMonthYear($month, $year);
+        $response = $this->documentService->getCurrentUserDocumentsByYear($year);
         $this->setResponse($response);
     }
     
@@ -40,6 +39,13 @@ class InspectorTickets extends Controller{
         $data = $this->getRequestData();
         $id = (int) $data->get('id');
         $response = $this->ticketService->getCurrentUserActiveTicketsByDocument($id);
+        $this->setResponse($response);
+    }
+    
+    public function getTicketsByYear() {
+        $data = $this->getRequestData();
+        $year = (int) $data->get('year');
+        $response = $this->ticketService->getCurrentUserActiveTicketsByYear($year);
         $this->setResponse($response);
     }
     

@@ -51,7 +51,7 @@ class ScheduleAdmin extends Controller{
     public function getLocationsForType(){
         $data = $this->getRequestData();
         $idType = $data->get('id_location_type');
-        $result = $this->location->getLocationsByTypeID($idType);
+        $result = $this->location->getActiveLocationsByTypeID($idType);
         $this->setResponse($result);
     }
     
@@ -79,7 +79,14 @@ class ScheduleAdmin extends Controller{
         $response->add($id, 'id');
         $this->setResponse($response);
     }
-    
+    public function saveMultipleEntries(){
+        $languages = Languages::getInstance();
+        $data = $this->getRequestData();
+        $this->schedule->saveMultipleEntriesForUser($data);
+        $response = new Container();
+        $response->add($languages->get('changes_saved'), 'message');
+        $this->setResponse($response);
+    }
     public function saveLocation(){
         $languages = Languages::getInstance();
         $data = $this->getRequestData();

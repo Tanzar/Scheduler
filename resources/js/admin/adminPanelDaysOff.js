@@ -17,7 +17,7 @@ function initDaysTable(language){
         columns : [
             { title: 'ID', variable: 'id', width: 30},
             { title: language.active, variable: 'active', width: 50},
-            { title: language.date, variable: 'date', width: 70, minWidth: 70},
+            { title: language.date, variable: 'date', width: 100, minWidth: 100},
             { title: language.name, variable: 'name', width: 200, minWidth: 200},
             { title: language.for_all, variable: 'for_all', width: 100, minWidth: 100}
         ],

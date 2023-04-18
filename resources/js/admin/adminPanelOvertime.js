@@ -57,7 +57,7 @@ function initTable(language){
                 var year = parseInt(data.year);
                 var fields = [
                     {type: 'select', title: language.select_user, variable: 'id_user', options: users, required: true},
-                    {type: 'number', title: language.time_in_ms, variable: 'time', min: 0, required: true},
+                    {type: 'number', title: language.time_in_ms, variable: 'time', required: true},
                     {type: 'select', title: language.select_month, variable: 'month', options: months, required: true},
                     {type: 'number', title: language.select_year, variable: 'year', min: year, value: year, required: true}
                 ];
@@ -100,7 +100,7 @@ function initTable(language){
                     })
                     var fields = [
                         {type: 'select', title: language.select_user, variable: 'id_user', options: users, required: true},
-                        {type: 'number', title: language.time_in_ms, variable: 'time', min: 0, required: true},
+                        {type: 'number', title: language.time_in_ms, variable: 'time', required: true},
                         {type: 'select', title: language.select_month, variable: 'month', options: months, required: true},
                         {type: 'number', title: language.ticket_year, variable: 'year', min: data.year, required: true}
                     ];

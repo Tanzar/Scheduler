@@ -5,51 +5,62 @@
 
 function init(){
     RestApi.getInterfaceNamesPackage(function(language){
-        
-        var selectDocument = new Select('documents', language.select_document);
-        initDateSelection(selectDocument);
-        
-        var datatable = new UsagesTable(language, selectDocument);
+        var selectDocument = new Select('documents', language.all);
+        var datatable = UsagesTable(language, selectDocument);
+        initDateSelection(selectDocument, datatable);
     });
 }     
 
 function UsagesTable(language, selectDocument){
     var div = document.getElementById('usages');
+    var selectYear = document.getElementById('selectYear');
     
     var datasource = {
         method: 'get',
         address: getRestAddress(),
         data: {
             controller: 'InspectorInstruments',
-            task: 'getUsages',
-            id_document: 0
+            task: 'getUsagesByYear',
+            year: selectYear.value
         }
     };
     var config = {
         columns: [
+            {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
             {title: language.equipment_name, variable: 'equipment_name', width: 300, minWidth: 300},
             {title: language.inventory_number, variable: 'inventory_number', width: 150, minWidth: 150},
-            {title: language.date, variable: 'date', width: 70, minWidth: 70},
+            {title: language.date, variable: 'date', width: 80, minWidth: 80},
             {title: language.recommendation_decision, variable: 'recommendation_decision_text', width: 75, minWidth: 75},
-            {title: language.remarks, variable: 'remarks', width: 200, minWidth: 200}
+            {title: language.remarks, variable: 'remarks', width: 300, minWidth: 300}
         ],
         dataSource: datasource
     }
     
     var datatable = new Datatable(div, config);
     selectDocument.setOnChange(function(id){
-        if(id === undefined){
-            id = 0;
+        if(id === '0'){
+            var selectYear = document.getElementById('selectYear');
+            datatable.setDatasource({
+                method: 'get',
+                address: getRestAddress(),
+                data: {
+                    controller: 'InspectorInstruments',
+                    task: 'getUsagesByYear',
+                    year: selectYear.value
+                }
+            });
         }
-        datatable.setDatasource({
-            method: 'get',
-            address: getRestAddress(),
-            data: {
-                controller: 'InspectorInstruments',
-                task: 'getUsages',
-                id_document: id
-            }
-        });
+        else{
+            datatable.setDatasource({
+                method: 'get',
+                address: getRestAddress(),
+                data: {
+                    controller: 'InspectorInstruments',
+                    task: 'getUsages',
+                    id_document: id
+                }
+            });
+        }
     });
     
     datatable.addActionButton(language.add, function(){
@@ -59,8 +70,9 @@ function UsagesTable(language, selectDocument){
                 var data = JSON.parse(response);
                 var instruments = [];
                 data.instruments.forEach(item => {
+                    item.name = item.inventory_number + ': ' + item.name; 
                     if(item.name.length > 70){
-                        item.name = item.name.substring(0, 68) + '...';
+                        item.name = item.name.substring(0, 50) + '...';
                     }
                     var option = {
                         value: item.id,
@@ -106,13 +118,17 @@ function UsagesTable(language, selectDocument){
         }
     });
     datatable.addActionButton(language.edit, function(selected){
-        var documentId = selectDocument.value();
-        if(documentId !== '0' && selected !== undefined){
+        if(selected !== undefined){
+            var documentId = selected.id_document;
             RestApi.get('InspectorInstruments', 'getNewUsageDetails', {id_document: documentId}, 
                 function(response){
                     var data = JSON.parse(response);
                     var instruments = [];
                     data.instruments.forEach(item => {
+                        item.name = item.inventory_number + ': ' + item.name; 
+                        if(item.name.length > 70){
+                            item.name = item.name.substring(0, 50) + '...';
+                        }
                         var option = {
                             value: item.id,
                             title: item.name
@@ -150,17 +166,11 @@ function UsagesTable(language, selectDocument){
             });
         }
         else{
-            if(documentId === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_equipment_usage);
-            }
+            alert(language.select_equipment_usage);
         }
     });
     datatable.addActionButton(language.remove, function(selected){
-        var documentId = selectDocument.value();
-        if(documentId !== '0' && selected !== undefined){
+        if(selected !== undefined){
             RestApi.post('InspectorInstruments', 'removeUsage', {id: selected.id},
                 function(response){
                     var data = JSON.parse(response);
@@ -174,14 +184,10 @@ function UsagesTable(language, selectDocument){
                 });
         }
         else{
-            if(documentId === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_equipment_usage);
-            }
+            alert(language.select_equipment_usage);
         }
     });
+    return datatable;
 }
 
 function Select(id, placeholder){
@@ -196,8 +202,6 @@ function Select(id, placeholder){
         
         var option = document.createElement('option');
         option.selected = true;
-        option.disabled = true;
-        option.placeholder = true;
         option.value = '0';
         option.textContent = placeholder;
         select.appendChild(option);
@@ -236,15 +240,22 @@ function Select(id, placeholder){
     }
 }
 
-function initDateSelection(selectDocument) {
-    var selectMonth = document.getElementById('selectMonth');
+function initDateSelection(selectDocument, datatable) {
     var selectYear = document.getElementById('selectYear');
     var selectDate = document.getElementById('selectDate');
     selectDate.onclick = function(){
         var data = {
-            month: selectMonth.value,
             year: selectYear.value
         }
         selectDocument.loadOptions('InspectorInstruments', 'getDocuments', data);
+        datatable.setDatasource({
+            method: 'get',
+            address: getRestAddress(),
+            data: {
+                controller: 'InspectorInstruments',
+                task: 'getUsagesByYear',
+                year: selectYear.value
+            }
+        });
     }
 }

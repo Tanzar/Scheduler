@@ -57,6 +57,15 @@ class CourtApplicationService {
         return $this->courtApplicationDetails->getActiveByUsernameAndDocument($username, $documentId);
     }
     
+    public function getCurrentUserActiveApplicationsByYear(int $year) : Container {
+        $username = Session::getUsername();
+        return $this->courtApplicationDetails->getUserActiveByYear($username, $year);
+    }
+    
+    public function getActiveApplicationsByMonthAndYear(int $month, int $year) : Container {
+        return $this->courtApplicationDetails->getActiveByMonthAndYear($month, $year);
+    }
+    
     public function saveNewApplication(Container $data) : int {
         $this->checkBlocker($data);
         $username = Session::getUsername();

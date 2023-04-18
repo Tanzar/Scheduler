@@ -47,6 +47,10 @@ class LocationService {
         return $this->locationDetails->getByIdLocationType($idType);
     }
     
+    public function getActiveLocationsByTypeID(int $idType) : Container {
+        return $this->locationDetails->getActiveByIdLocationType($idType);
+    }
+    
     public function getAllLocationTypes() : Container {
         return $this->locationType->getAll();
     }

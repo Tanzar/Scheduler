@@ -74,6 +74,23 @@ class TicketDetailsView extends View{
         return $this->select($sql);
     }
     
+    public function getUserActiveTicketsByMonthAndYear(string $username, int $month, int $year) : Container{
+        $sql = new MysqlBuilder();
+        $sql->select('ticket_details')->where('active', 1)
+                ->and()->where('username', $username)
+                ->and()->where('month(date)', $month)
+                ->and()->where('year(date)', $year);
+        return $this->select($sql);
+    }
+    
+    public function getActiveByMonthAndYear(int $month, int $year) : Container{
+        $sql = new MysqlBuilder();
+        $sql->select('ticket_details')->where('active', 1)
+                ->and()->where('month(date)', $month)
+                ->and()->where('year(date)', $year);
+        return $this->select($sql);
+    }
+    
     public function getActiveByDocumentId(int $documentId) : Container{
         $sql = new MysqlBuilder();
         $sql->select('ticket_details')->where('active', 1)

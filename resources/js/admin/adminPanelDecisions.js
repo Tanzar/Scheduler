@@ -104,7 +104,7 @@ function initDecisionsTable(language){
             { title: 'ID', variable: 'id', width: 30, minWidth: 30},
             { title: language.active, variable: 'active', width: 50, minWidth: 50},
             { title: language.document_number, variable: 'document_number', width: 150, minWidth: 150},
-            { title: language.date, variable: 'date', width: 70, minWidth: 70},
+            { title: language.date, variable: 'date', width: 100, minWidth: 100},
             { title: language.decision_law, variable: 'law', width: 150, minWidth: 150},
             { title: language.remarks, variable: 'remarks', width: 250, minWidth: 250},
             { title: language.location, variable: 'location', width: 250, minWidth: 250}

@@ -56,6 +56,15 @@ class InstrumentUsageService {
         return $this->instrumentUsageDetails->getActiveByDocumentAndUsername($documentId, $username);
     }
     
+    public function getCurrentUserActiveUsagesByYear(int $year) : Container {
+        $username = Session::getUsername();
+        return $this->instrumentUsageDetails->getUserActiveByYear($username, $year);
+    }
+    
+    public function getActiveInstrumentUsagesByMonthAndYear(int $month, int $year) : Container {
+        return $this->instrumentUsageDetails->getActiveByMonthAndYear($month, $year);
+    }
+    
     public function saveUsageForCurrentUser(Container $data) : int {
         $this->checkBlocker($data);
         $username = Session::getUsername();

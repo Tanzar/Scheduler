@@ -33,7 +33,7 @@ function TicketTable(language) {
             {title: language.active, variable: 'active', width: 50, minWidth: 50},
             {title: language.document_number, variable: 'document_number', width: 150, minWidth: 150},
             {title: language.ticket_number, variable: 'number', width: 150, minWidth: 150},
-            {title: language.ticket_date, variable: 'date', width: 70, minWidth: 70},
+            {title: language.ticket_date, variable: 'date', width: 100, minWidth: 100},
             {title: language.position, variable: 'position', width: 150, minWidth: 150},
             {title: language.violated_rules, variable: 'violated_rules', width: 300, minWidth: 300},
             {title: language.external_company, variable: 'external_company_text', width: 70, minWidth: 70},

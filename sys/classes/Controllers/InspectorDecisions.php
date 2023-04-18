@@ -35,9 +35,8 @@ class InspectorDecisions extends Controller{
     
     public function getDocuments() {
         $data = $this->getRequestData();
-        $month = (int) $data->get('month');
         $year = (int) $data->get('year');
-        $response = $this->documentService->getCurrentUserDocumentsByMonthYear($month, $year);
+        $response = $this->documentService->getCurrentUserDocumentsByYear($year);
         $this->setResponse($response);
     }
     
@@ -45,6 +44,13 @@ class InspectorDecisions extends Controller{
         $data = $this->getRequestData();
         $documentId = (int) $data->get('id_document');
         $response = $this->decisionService->getCurrentUserDecisions($documentId);
+        $this->setResponse($response);
+    }
+    
+    public function getDecisionsByYear() {
+        $data = $this->getRequestData();
+        $year = (int) $data->get('year');
+        $response = $this->decisionService->getCurrentUserActiveDecisionsByYear($year);
         $this->setResponse($response);
     }
     

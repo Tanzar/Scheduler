@@ -55,9 +55,7 @@ class Rows {
         $view = new ScheduleEntriesView();
         $lastDay = (int) date('t', strtotime($this->year . '-' . $this->month . '-1'));
         $start = new DateTime($this->year . '-' . $this->month . '-01' . ' 00:00:00');
-        $start->modify('-1 days');
         $end = new DateTime($this->year . '-' . $this->month . '-' . $lastDay . ' 23:59:59');
-        $end->modify('+1 days');
         return $view->getActiveForWorkcardByUsernameAndDates($this->username, $start, $end);
     }
     
@@ -118,11 +116,18 @@ class Rows {
     private function addRow(int $day, Container $entry) : void {
         $entryStart = new DateTime($entry->get('start'));
         $entryEnd = new DateTime($entry->get('end'));
+        $level = ' ';
+        if($entry->get('can_be_inspection') === 1 && $entry->get('underground') === 0){
+            $level .= 'pow';
+        }
+        elseif($entry->get('can_be_inspection') === 1 && $entry->get('underground') === 1){
+            $level .= 'dół';
+        }
         $row = array(
             'day' => $day, 
             'location' => $entry->get('location'),
             'hours' => $entryStart->format('H:i') . '-' . $entryEnd->format('H:i'),
-            'activity' => $entry->get('activity_name'),
+            'activity' => $entry->get('activity_name') . $level,
             'document' => $this->getDocumentNumber($entry)
         );
         $date = new DateTime($this->year . '-' . $this->month . '-' . $day);

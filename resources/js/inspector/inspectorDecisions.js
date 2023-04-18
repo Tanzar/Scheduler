@@ -5,30 +5,32 @@
 
 function init(){
     RestApi.getInterfaceNamesPackage(function(language){
-        var selectDocument = new Select('documents', language.select_document);
-        initDateSelection(selectDocument);
+        var selectDocument = new Select('documents', language.all);
+        var datatable = initDecisionsTable(language, selectDocument);
+        initDateSelection(selectDocument, datatable);
         
-        initDecisionsTable(language, selectDocument);
     });
 }
 
 function initDecisionsTable(language, selectDocument){
     var div = document.getElementById('decisions');
+    var selectYear = document.getElementById('selectYear');
     
     var datasource = {
         method: 'get',
         address: getRestAddress(),
         data: {
             controller: 'InspectorDecisions',
-            task: 'getDecisions',
-            id_document: 0
+            task: 'getDecisionsByYear',
+            year: selectYear.value
         }
     };
     var config = {
         columns: [
-            {title: language.date, variable: 'date', width: 70, minWidth: 70},
+            {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
+            {title: language.date, variable: 'date', width: 80, minWidth: 80},
             {title: language.decision_law, variable: 'law', width: 150, minWidth: 150},
-            {title: language.description, variable: 'description', width: 600, minWidth: 600},
+            {title: language.description, variable: 'description', width: 700, minWidth: 700},
             {title: language.remarks, variable: 'remarks', width: 250, minWidth: 250}
         ],
         dataSource: datasource
@@ -36,18 +38,29 @@ function initDecisionsTable(language, selectDocument){
     
     var datatable = new Datatable(div, config);
     selectDocument.setOnChange(function(id){
-        if(id === undefined){
-            id = 0;
+        if(id === '0'){
+            var selectYear = document.getElementById('selectYear');
+            datatable.setDatasource({
+                method: 'get',
+                address: getRestAddress(),
+                data: {
+                    controller: 'InspectorDecisions',
+                    task: 'getDecisionsByYear',
+                    year: selectYear.value
+                }
+            });
         }
-        datatable.setDatasource({
-            method: 'get',
-            address: getRestAddress(),
-            data: {
-                controller: 'InspectorDecisions',
-                task: 'getDecisions',
-                id_document: id
-            }
-        });
+        else{
+            datatable.setDatasource({
+                method: 'get',
+                address: getRestAddress(),
+                data: {
+                    controller: 'InspectorDecisions',
+                    task: 'getDecisions',
+                    id_document: id
+                }
+            });
+        }
     });
     
     datatable.addActionButton(language.add, function(){
@@ -66,16 +79,12 @@ function initDecisionsTable(language, selectDocument){
                     });
                     var date = new Date();
                     var start = new Date(details.start);
-                    var end = new Date(details.end);
                     if(date < start){
                         date = start;
                     }
-                    if(date > end){
-                        date = end;
-                    }
                     var fields = [
                         {type: 'select', title: language.select_decision_law, variable: 'id_decision_law', options: laws, required: true},
-                        {type: 'date', title: language.date, variable: 'date', min: details.start, max: details.end, value: date.toISOString().split('T')[0]},
+                        {type: 'date', title: language.date, variable: 'date', min: details.start, value: date.toISOString().split('T')[0]},
                         {type: 'textarea', title: language.description, variable: 'description', width: 40, height: 10},
                         {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 40, height: 5}
                     ];
@@ -150,22 +159,18 @@ function initDecisionsTable(language, selectDocument){
     });
     
     datatable.addActionButton(language.edit, function(selected){
-        var documentId = selectDocument.value();
-        if(documentId !== '0' && selected !== undefined){
+        if(selected !== undefined){
+            var documentId = selected.id_document;
             RestApi.get('InspectorDecisions', 'getNewDecisionDetails', {id_document: documentId}, 
                 function(response){
                     var details = JSON.parse(response);
                     var date = new Date();
                     var start = new Date(details.start);
-                    var end = new Date(details.end);
                     if(date < start){
                         date = start;
                     }
-                    if(date > end){
-                        date = end;
-                    }
                     var fields = [
-                        {type: 'date', title: language.date, variable: 'date', min: details.start, max: details.end, value: date.toISOString().split('T')[0]},
+                        {type: 'date', title: language.date, variable: 'date', min: details.start, value: date.toISOString().split('T')[0]},
                         {type: 'textarea', title: language.description, variable: 'description', width: 40, height: 10},
                         {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 40, height: 5}
                     ];
@@ -185,18 +190,12 @@ function initDecisionsTable(language, selectDocument){
             });
         }
         else{
-            if(documentId === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_decision);
-            }
+            alert(language.select_decision);
         }
     });
     
     datatable.addActionButton(language.remove, function(selected){
-        var documentId = selectDocument.value();
-        if(documentId !== '0' && selected !== undefined){
+        if(selected !== undefined){
             RestApi.post('InspectorDecisions', 'removeDecision', {id: selected.id},
                 function(response){
                     var data = JSON.parse(response);
@@ -210,14 +209,10 @@ function initDecisionsTable(language, selectDocument){
             });
         }
         else{
-            if(documentId === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_decision);
-            }
+            alert(language.select_decision);
         }
     });
+    return datatable;
 }
 
 function Select(id, placeholder){
@@ -232,8 +227,6 @@ function Select(id, placeholder){
         
         var option = document.createElement('option');
         option.selected = true;
-        option.disabled = true;
-        option.placeholder = true;
         option.value = '0';
         option.textContent = placeholder;
         select.appendChild(option);
@@ -272,15 +265,22 @@ function Select(id, placeholder){
     }
 }
 
-function initDateSelection(selectDocument) {
-    var selectMonth = document.getElementById('selectMonth');
+function initDateSelection(selectDocument, datatable) {
     var selectYear = document.getElementById('selectYear');
     var selectDate = document.getElementById('selectDate');
     selectDate.onclick = function(){
         var data = {
-            month: selectMonth.value,
             year: selectYear.value
         }
         selectDocument.loadOptions('InspectorDecisions', 'getDocuments', data);
+        datatable.setDatasource({
+            method: 'get',
+            address: getRestAddress(),
+            data: {
+                controller: 'InspectorDecisions',
+                task: 'getDecisionsByYear',
+                year: selectYear.value
+            }
+        });
     }
 }

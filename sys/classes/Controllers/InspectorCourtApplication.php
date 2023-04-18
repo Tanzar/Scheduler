@@ -32,9 +32,8 @@ class InspectorCourtApplication extends Controller{
     
     public function getDocuments() {
         $data = $this->getRequestData();
-        $month = (int) $data->get('month');
         $year = (int) $data->get('year');
-        $response = $this->documentService->getCurrentUserDocumentsByMonthYear($month, $year);
+        $response = $this->documentService->getCurrentUserDocumentsByYear($year);
         $this->setResponse($response);
     }
     
@@ -42,6 +41,13 @@ class InspectorCourtApplication extends Controller{
         $data = $this->getRequestData();
         $documentId = (int) $data->get('id_document');
         $response = $this->courtApplication->getApplicationsForCurrentUser($documentId);
+        $this->setResponse($response);
+    }
+    
+    public function getCourtApplicationsByYear() {
+        $data = $this->getRequestData();
+        $year = (int) $data->get('year');
+        $response = $this->courtApplication->getCurrentUserActiveApplicationsByYear($year);
         $this->setResponse($response);
     }
     

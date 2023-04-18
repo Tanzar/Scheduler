@@ -28,6 +28,7 @@ use Data\Access\Views\DecisionDetailsView as DecisionDetailsView;
 use Data\Access\Views\TicketDetailsView as TicketDetailsView;
 use Data\Exceptions\NotFoundException as NotFoundException;
 use Services\Exceptions\SystemBlockedException as SystemBlockedException;
+use Services\Exceptions\IncorrectShiftsDatesException as IncorrectShiftsDatesException;
 use Tanweb\Container as Container;
 use Tanweb\Session as Session;
 use Tanweb\Config\INI\Languages as Languages;
@@ -120,6 +121,15 @@ class SuspensionService {
     public function getCurrentUserSuspensions(int $idDocument) : Container {
         $username = Session::getUsername();
         return $this->suspensionDetails->getActiveByUsernameAndIdDocument($username, $idDocument);
+    }
+    
+    public function getCurrentUserActiveSuspensionsByYear(int $year) : Container {
+        $username = Session::getUsername();
+        return $this->suspensionDetails->getActiveByUsernameAndYear($username, $year);
+    }
+    
+    public function getActiveSuspensionsByMonthAndYear(int $month, int $year) : Container {
+        return $this->suspensionDetails->getActiveByMonthAndYear($month, $year);
     }
     
     public function getSuspensionDetails(int $idDocument) : Container {
@@ -376,8 +386,8 @@ class SuspensionService {
     }
     
     public function disableSuspesnion(int $id) : void {
-        $decision = $this->decisionDetails->getById($id);
-        $this->checkBlocker($decision);
+        $suspension = $this->suspension->getById($id);
+        $this->checkBlocker($suspension);
         $this->suspension->disable($id);
     }
     
@@ -415,9 +425,8 @@ class SuspensionService {
     private function checkSuspensionShifts(Container $suspension) : void {
         $date = new DateTime($suspension->get('date'));
         $correctionDate = new DateTime($suspension->get('correction_date'));
-        if($date < $correctionDate){
-            $languages = Languages::getInstance();
-            $this->throwException($languages->get('suspension_correction_date_shift'));
+        if($date > $correctionDate){
+            throw new IncorrectShiftsDatesException();
         }
     }
 }

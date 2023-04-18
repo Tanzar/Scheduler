@@ -131,10 +131,14 @@ function ScheduleAdmin(){
                 function(response){
                     var data = JSON.parse(response);
                     data.forEach(item => {
-                        selectActivity.addOption(item.id, item.name, {
+                        var option = selectActivity.addOption(item.id, item.name, {
                             allowLocationInput: item.allow_location_input,
                             requireDocument: item.require_document
                         });
+                        if(data.length === 1){
+                            option.selected = true;
+                            selectActivity.callOnChange();
+                        }
                     });
             });
         });
@@ -152,7 +156,11 @@ function ScheduleAdmin(){
                 function(response){
                     var data = JSON.parse(response);
                     data.forEach(item => {
-                        selectLocationType.addOption(item.id_location_type, item.location_type_name);
+                        var option = selectLocationType.addOption(item.id_location_type, item.location_type_name);
+                        if(data.length === 1){
+                            option.selected = true;
+                            selectLocationType.callOnChange();
+                        }
                     });
             });
         });
@@ -219,15 +227,27 @@ function ScheduleAdmin(){
                             });
                         }
                         else{
-                            RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, 
-                                function(response){
-                                    var data = JSON.parse(response);
-                                    console.log(data);
-                                    alert(data.message);
-                                    datatable.refresh();
-                                }, 
-                                function(response){
-                                    alert(response.responseText);
+                            var date = new Date(dataToSend.start);
+                            var fields = [];
+                            for(var i = 1; i < 5; i++){
+                                date.setDate(date.getDate() + 1);
+                                fields.push({type: 'checkbox', title: '' + date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate(), variable: '' + i});
+                            }
+                            openModalBox(language.select_additional_dates, fields, language.save, function(data){
+                                var toSend ={
+                                    entry: dataToSend,
+                                    pushes: data
+                                }
+                                RestApi.post('ScheduleAdmin', 'saveMultipleEntries', toSend, 
+                                    function(response){
+                                        var data = JSON.parse(response);
+                                        console.log(data);
+                                        alert(data.message);
+                                        datatable.refresh();
+                                    }, 
+                                    function(response){
+                                        alert(response.responseText);
+                                });
                             });
                         }
                     }
@@ -287,6 +307,7 @@ function Select(id, placeholder){
         option.textContent = text;
         hiddenValues[value] = hidden;
         select.appendChild(option);
+        return option;
     }
     
     var me = this;
@@ -297,9 +318,19 @@ function Select(id, placeholder){
             dataToSend = inputData;
             var data = JSON.parse(response);
             data.forEach(item => {
-                me.addOption(item.id, item.name);
+                var option = me.addOption(item.id, item.name);
+                if(data.length === 1){
+                    option.selected = true;
+                    if(select.onchange instanceof Function){
+                        select.onchange();
+                    }
+                }
             });
         });
+    }
+    
+    this.callOnChange = function(){
+        select.onchange();
     }
     
     this.refresh = function(){

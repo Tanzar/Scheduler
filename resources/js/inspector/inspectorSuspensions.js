@@ -6,7 +6,7 @@
 function init() {
     RestApi.getInterfaceNamesPackage(function(language){
         
-        var selectDocument = new Select('documents', language.select_document);
+        var selectDocument = new Select('documents', language.all);
         var suspensionsTable = SuspensionsTable(language, selectDocument);
         initDateSelection(selectDocument, suspensionsTable);
     });
@@ -25,8 +25,6 @@ function Select(id, placeholder){
         
         var option = document.createElement('option');
         option.selected = true;
-        option.disabled = true;
-        option.placeholder = true;
         option.value = '0';
         option.textContent = placeholder;
         select.appendChild(option);
@@ -66,12 +64,10 @@ function Select(id, placeholder){
 }
 
 function initDateSelection(selectDocument, suspensionsTable) {
-    var selectMonth = document.getElementById('selectMonth');
     var selectYear = document.getElementById('selectYear');
     var selectDate = document.getElementById('selectDate');
     selectDate.onclick = function(){
         var data = {
-            month: selectMonth.value,
             year: selectYear.value
         }
         selectDocument.loadOptions('InspectorSuspensions', 'getDocuments', data);
@@ -80,8 +76,8 @@ function initDateSelection(selectDocument, suspensionsTable) {
             address: getRestAddress(),
             data: {
                 controller: 'InspectorSuspensions',
-                task: 'getSuspensions',
-                id_document: 0
+                task: 'getSuspensionsByYear',
+                year: selectYear.value
             }
         });
         clearLists();
@@ -90,43 +86,60 @@ function initDateSelection(selectDocument, suspensionsTable) {
 
 function SuspensionsTable(language, selectDocument){
     var div = document.getElementById('suspensions');
+    var selectYear = document.getElementById('selectYear');
     
     var datasource = {
         method: 'get',
         address: getRestAddress(),
         data: {
             controller: 'InspectorSuspensions',
-            task: 'getSuspensions',
-            id_document: 0
+            task: 'getSuspensionsByYear',
+            year: selectYear.value
         }
     };
     var config = {
         columns: [
-            {title: language.date, variable: 'date', width: 70, minWidth: 70},
+            {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
+            {title: language.date, variable: 'date', width: 80, minWidth: 80},
+            {title: language.suspension_group, variable: 'group_name', width: 100, minWidth: 100},
+            {title: language.suspension_type, variable: 'type_name', width: 100, minWidth: 100},
+            {title: language.suspension_object, variable: 'object_name', width: 100, minWidth: 100},
+            {title: language.suspension_reason, variable: 'reason', width: 100, minWidth: 100},
             {title: language.shift, variable: 'shift', width: 50, minWidth: 50},
             {title: language.region, variable: 'region', width: 150, minWidth: 150},
             {title: language.description, variable: 'description', width: 400, minWidth: 400},
-            {title: language.correction_date, variable: 'correction_date', width: 100, minWidth: 100},
+            {title: language.correction_date, variable: 'correction_date', width: 80, minWidth: 80},
             {title: language.correction_shift, variable: 'correction_shift', width: 50, minWidth: 50},
-            {title: language.remarks, variable: 'remarks', width: 250, minWidth: 250}
+            {title: language.remarks, variable: 'remarks', width: 300, minWidth: 300}
         ],
         dataSource: datasource
     }
     
     var datatable = new Datatable(div, config);
     selectDocument.setOnChange(function(id){
-        if(id === undefined){
-            id = 0;
+        if(id === '0'){
+            var selectYear = document.getElementById('selectYear');
+            datatable.setDatasource({
+                method: 'get',
+                address: getRestAddress(),
+                data: {
+                    controller: 'InspectorSuspensions',
+                    task: 'getSuspensionsByYear',
+                    year: selectYear.value
+                }
+            });
         }
-        datatable.setDatasource({
-            method: 'get',
-            address: getRestAddress(),
-            data: {
-                controller: 'InspectorSuspensions',
-                task: 'getSuspensions',
-                id_document: id
-            }
-        });
+        else{
+            datatable.setDatasource({
+                method: 'get',
+                address: getRestAddress(),
+                data: {
+                    controller: 'InspectorSuspensions',
+                    task: 'getSuspensions',
+                    id_document: id
+                }
+            });
+        }
         clearLists();
     });
     datatable.addActionButton(language.add, function(){
@@ -196,7 +209,7 @@ function SuspensionsTable(language, selectDocument){
                             {type: 'textarea', title: language.region, variable: 'region', limit: 255, width: 30, height: 3, required: true},
                             {type: 'textarea', title: language.description, variable: 'description', width: 30, height: 3},
                             {type: 'date', title: language.correction_date, variable: 'correction_date', min: details.start, value: date.toDateString()},
-                            {type: 'text', title: language.correction_shift, variable: 'correction_shift', limit: 5, required: true},
+                            {type: 'text', title: language.correction_shift, variable: 'correction_shift', limit: 5},
                             {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 3},
                             {type: 'checkbox', title: language.external_company, variable: 'external_company'},
                             {type: 'text', title: language.company_name, variable: 'company_name', limit: 255}
@@ -223,17 +236,9 @@ function SuspensionsTable(language, selectDocument){
         }
     });
     datatable.addActionButton(language.edit, function(selected){
-        var idDocument = selectDocument.value();
-        if(idDocument === '0' || selected === undefined){
-            if(idDocument === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_suspension);
-            }
-        }
-        else{
-            RestApi.get('InspectorSuspensions', 'getNewSuspensionDetails', {id_document: idDocument}, function(response){
+        if(selected !== undefined){
+            var documentId = selected.id_document;
+            RestApi.get('InspectorSuspensions', 'getNewSuspensionDetails', {id_document: documentId}, function(response){
                 var details = JSON.parse(response);
                 var groups = [];
                 details.groups.forEach(item => {
@@ -247,7 +252,7 @@ function SuspensionsTable(language, selectDocument){
                     {type: 'select', title: language.select_suspension_group, variable: 'id_suspension_group', options: groups, required: true}
                 ];
                 openModalBox(language.new_suspension, fields, language.next, function(data){
-                    data.id_document = idDocument;
+                    data.id_document = documentId;
                     var date = new Date();
                     var start = new Date(details.start);
                     var end = new Date(details.end);
@@ -271,7 +276,7 @@ function SuspensionsTable(language, selectDocument){
                         {type: 'select', title: language.select_suspension_type, variable: 'id_suspension_type', options: types, required: true}
                     ];
                     openModalBox(language.new_suspension, fields, language.next, function(data){
-                        data.id_document = idDocument;
+                        data.id_document = documentId;
                         var date = new Date();
                         var start = new Date(details.start);
                         var end = new Date(details.end);
@@ -307,7 +312,7 @@ function SuspensionsTable(language, selectDocument){
                             {type: 'textarea', title: language.region, variable: 'region', limit: 255, width: 30, height: 3, required: true},
                             {type: 'textarea', title: language.description, variable: 'description', width: 30, height: 3},
                             {type: 'date', title: language.correction_date, variable: 'correction_date', min: details.start, value: date.toDateString()},
-                            {type: 'text', title: language.correction_shift, variable: 'correction_shift', limit: 5, required: true},
+                            {type: 'text', title: language.correction_shift, variable: 'correction_shift', limit: 5},
                             {type: 'textarea', title: language.remarks, variable: 'remarks', limit: 255, width: 30, height: 3},
                             {type: 'checkbox', title: language.external_company, variable: 'external_company'},
                             {type: 'text', title: language.company_name, variable: 'company_name', limit: 255}
@@ -329,10 +334,12 @@ function SuspensionsTable(language, selectDocument){
                 }, selected);
             });
         }
+        else{
+            alert(language.select_suspension);
+        }
     });
     datatable.addActionButton(language.remove, function(selected){
-        var documentId = selectDocument.value();
-        if(documentId !== '0' && selected !== undefined){
+        if(selected !== undefined){
             RestApi.post('InspectorSuspensions', 'removeSuspension', {id: selected.id},
                 function(response){
                     var data = JSON.parse(response);
@@ -346,40 +353,23 @@ function SuspensionsTable(language, selectDocument){
                 });
         }
         else{
-            if(documentId === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_suspension);
-            }
+            alert(language.select_suspension);
         }
     });
     datatable.addActionButton(language.add_sanction, function(selected){
-        var idDocument = selectDocument.value();
-        if(idDocument === '0' || selected === undefined){
-            if(idDocument === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_suspension);
-            }
+        if(selected !== undefined){
+            openAddSanctionModal(language, selected, selected.id_document);
         }
         else{
-            openAddSanctionModal(language, selected, idDocument);
+            alert(language.select_suspension);
         }
     });
     datatable.addActionButton(language.remove_sanction, function(selected){
-        var idDocument = selectDocument.value();
-        if(idDocument === '0' || selected === undefined){
-            if(idDocument === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_suspension);
-            }
+        if(selected !== undefined){
+            openRemoveSanctionModal(language, selected, selected.id_document);
         }
         else{
-            openRemoveSanctionModal(language, selected, idDocument);
+            alert(language.select_suspension);
         }
     });
     datatable.setOnSelect(function(selected){
@@ -388,9 +378,7 @@ function SuspensionsTable(language, selectDocument){
         refreshAssignedDecisionsList(selected.id);
     });
     datatable.setOnUnselect(function(){
-        refreshAssignedArticlesList(0);
-        refreshAssignedTicketsList(0);
-        refreshAssignedDecisionsList(0);
+        clearLists();
     });
     return datatable;
 }

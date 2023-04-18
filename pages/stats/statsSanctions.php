@@ -27,7 +27,7 @@ This code is free to use, just remember to give credit.
                 $cfg = $appconfig->getAppConfig();
                 echo $cfg->get('name') . ': ';
                 $modules = new Container($languages->get('modules'));
-                echo ' : ' . $modules->get('stats');
+                echo ' : ' . $modules->get('admin');
             ?>
         </title>
         <?php
@@ -37,11 +37,9 @@ This code is free to use, just remember to give credit.
             Resources::linkJS('Datatable.js');
             Resources::linkJS('modalBox.js');
             Resources::linkJS('RestApi.js');
-            Resources::linkJS('FileApi.js');
             Resources::linkJS('getRestAddress.js');
-            Resources::linkJS('statsDisplay.js');
+            Resources::linkJS('statsSanctions.js');
             Resources::linkExternal('jquery');
-            Resources::linkExternal('plotly');
         ?>
     </head>
     <body>
@@ -49,22 +47,24 @@ This code is free to use, just remember to give credit.
             <?php Scripts::run('topMenu.php'); ?>
         </header>
         <?php Scripts::run('statsSideMenu.php'); ?>
-        <div class="page-contents" id="display">
+        <div class="page-contents-centered" id="display">
             <div class="horizontal-container">
-                <div id="stats"></div>
-                <div class="centered-contents-bordered" style="width: fit-content; min-width: 200px; height: fit-content">
-                    <div class="standard-text">
-                        <?php echo $interfaceText->get('inputs'); ?>
-                    </div>
-                    <div id="inputs"></div>
-                    <button id="generateStats" class="standard-button" style="display: none"><?php echo $interfaceText->get('generate'); ?></button>
-                    <div class="horizontal-container">
-                        <button id="generatePDF" class="standard-button" style="display: none"><?php echo $interfaceText->get('generate_pdf_file'); ?></button>
-                        <button id="generateXLSX" class="standard-button" style="display: none"><?php echo $interfaceText->get('generate_excel_file'); ?></button>
-                    </div>
-                </div>
-                <div id="statsDisplay" class="standard-display" style="min-width: 600px"></div>
+                <div class="standard-text"><?php echo $interfaceText->get('select_sanction_type') . ':'; ?></div>
+                <select id="sanctionType" class="standard-input">
+                    <option value="tickets"><?php echo $interfaceText->get('tickets'); ?></option>
+                    <option value="articles"><?php echo $interfaceText->get('art_41'); ?></option>
+                    <option value="decisions"><?php echo $interfaceText->get('decisions'); ?></option>
+                    <option value="suspensions"><?php echo $interfaceText->get('suspensions'); ?></option>
+                    <option value="usages"><?php echo $interfaceText->get('instrument_usages'); ?></option>
+                    <option value="court"><?php echo $interfaceText->get('court_applications'); ?></option>
+                </select>
             </div>
+            <div>
+                <?php 
+                    Scripts::run('selectMonthYear.php');
+                ?>
+            </div>
+            <div id="datatable"></div>
         </div>
         <?php
             Scripts::run('createFooter.php');

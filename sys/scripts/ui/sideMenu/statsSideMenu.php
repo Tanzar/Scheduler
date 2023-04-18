@@ -14,6 +14,9 @@
     <form action="<?php echo Pages::getURL('statsDisplay.php'); ?>">
         <input type="submit" class="side-menu-button" value="<?php  echo $options->get('display'); ?>">
     </form>
+    <form action="<?php echo Pages::getURL('statsSanctions.php'); ?>">
+        <input type="submit" class="side-menu-button" value="<?php  echo $options->get('sanctions'); ?>">
+    </form>
     <?php
         $security = Security::getInstance();
         $privilages = new Container(['admin', 'stats_admin']);

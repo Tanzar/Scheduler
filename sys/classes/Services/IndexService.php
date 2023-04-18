@@ -57,7 +57,7 @@ class IndexService {
         $entriesView = new ScheduleEntriesView();
         $employmentView = new UsersEmploymentPeriodsView();
         $username = Session::getUsername();
-        $date = new DateTime();
+        $date = new DateTime(date('Y-m-d') . ' 23:59:59');
         $employments = $employmentView->getByUsernameToDate($username, $date);
         $entries = $entriesView->getActiveByUsernameToDate($username, $date);
         return self::formDaysReport($username, $employments, $entries);
@@ -70,7 +70,8 @@ class IndexService {
         foreach ($daysDetails->toArray() as $key => $details) {
             $sum = $details->sumTimes();
             $workdayTime = $details->getStandardWorkdayTime();
-            if($today >= new DateTime($key) && $details->getDayLetter() === 'P' && $sum < $workdayTime){
+            if($today >= new DateTime($key) && $details->getDayLetter() === 'P' && $sum < $workdayTime
+                    && new DateTime($key) >= new DateTime('2023-04-01 00:00:00')){      //specific for OUG Rybnik
                 $text = $key . ' - ';
                 $text .= Time::msToClockNoSeconds($details->sumTimes()) . ' / ';
                 $text .= Time::msToClockNoSeconds($details->getStandardWorkdayTime());
@@ -101,7 +102,8 @@ class IndexService {
                     $notFound = false;
                 }
             }
-            if($notFound){
+            $date = new DateTime($decision->get('date'));
+            if($notFound && $date >= new DateTime('2023-04-01')){   //specific for OUG Rybnik
                 $result->add($decision->get('date') . ' : ' . $decision->get('document_number'));
             }
         }

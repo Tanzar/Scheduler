@@ -40,21 +40,21 @@ class ScheduleUser extends Controller{
     public function getActivitiesForGroup(){
         $data = $this->getRequestData();
         $group = $data->get('activities_group');
-        $result = $this->schedule->getActivitiesByGroup($group);
+        $result = $this->schedule->getActiveActivitiesByGroup($group);
         $this->setResponse($result);
     }
     
     public function getLocationTypesForActivity(){
         $data = $this->getRequestData();
         $idActivity = $data->get('id_activity');
-        $result = $this->schedule->getLocationTypeByIdActivity($idActivity);
+        $result = $this->schedule->getActiveLocationTypeByIdActivity($idActivity);
         $this->setResponse($result);
     }
     
     public function getLocationsForType(){
         $data = $this->getRequestData();
         $idType = $data->get('id_location_type');
-        $result = $this->location->getLocationsByTypeID($idType);
+        $result = $this->location->getActiveLocationsByTypeID($idType);
         $this->setResponse($result);
     }
     
@@ -95,6 +95,15 @@ class ScheduleUser extends Controller{
         $response = new Container();
         $response->add($languages->get('changes_saved'), 'message');
         $response->add($id, 'id');
+        $this->setResponse($response);
+    }
+    
+    public function saveMultipleEntries(){
+        $languages = Languages::getInstance();
+        $data = $this->getRequestData();
+        $this->schedule->saveMultipleEntriesForCurrentUser($data);
+        $response = new Container();
+        $response->add($languages->get('changes_saved'), 'message');
         $this->setResponse($response);
     }
     

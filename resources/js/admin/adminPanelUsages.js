@@ -34,7 +34,7 @@ function UsagesTable(language) {
             {title: language.document_number, variable: 'document_number', width: 150, minWidth: 150},
             {title: language.equipment_name, variable: 'equipment_name', width: 300, minWidth: 300},
             {title: language.inventory_number, variable: 'inventory_number', width: 150, minWidth: 150},
-            {title: language.date, variable: 'date', width: 70, minWidth: 70},
+            {title: language.date, variable: 'date', width: 100, minWidth: 100},
             {title: language.recommendation_decision, variable: 'recommendation_decision_text', width: 75, minWidth: 75},
             {title: language.remarks, variable: 'remarks', width: 200, minWidth: 200}
         ],

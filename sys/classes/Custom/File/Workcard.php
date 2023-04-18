@@ -117,24 +117,8 @@ class Workcard extends PDFMaker{
                 $rowsToFill->add($index);
             }
         }
-        $height = $this->calcRowsHeight();
+        $height = 5;
         $this->makeTable($columns, $data, 0, $height, $rowsToFill);
-    }
-    
-    private function calcRowsHeight() : int {
-        $min = 5;
-        $max = 7;
-        $limit = $max * 31;
-        $rows = $this->rows->getRows();
-        $rowCount = $rows->length();
-        $value = $max;
-        while($value > $min && $value * $rowCount > $limit){
-            $value--;
-        }
-        if($value * $rowCount > $limit){
-            $value = $max;
-        }
-        return $value;
     }
     
     private function generateTableConfig() : Columns {

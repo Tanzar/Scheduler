@@ -64,6 +64,15 @@ class ArticleService {
         return $this->articleDetails->getAllUserArticlesByYear($username, $year);
     }
     
+    public function getCurrentUserActiveArticlesByYear(int $year) : Container {
+        $username = Session::getUsername();
+        return $this->articleDetails->getUserActiveByYear($username, $year);
+    }
+    
+    public function getActiveArticlesByMonthAndYear(int $month, int $year) : Container {
+        return $this->articleDetails->getActiveByMonthAndYear($month, $year);
+    }
+    
     public function saveArticleForm(Container $data) : int {
         return $this->articleForm->save($data);
     }

@@ -101,8 +101,8 @@ class ScheduleEntriesView extends View{
     
     public function getActiveForWorkcardByUsernameAndDates(string $username, DateTime $start, DateTime $end) : Container {
         $sql = new MysqlBuilder();
-        $sql->select('schedule_entries')->where('start', $end->format("Y-m-d H:i:s"), '<')
-                ->and()->where('end', $start->format("Y-m-d H:i:s"), '>')
+        $sql->select('schedule_entries')->where('start', $end->format("Y-m-d H:i:s"), '<=')
+                ->and()->where('end', $start->format("Y-m-d H:i:s"), '>=')
                 ->and()->where('username', $username)
                 ->and()->where('active', 1)
                 ->and()->where('workcard_display', 1)

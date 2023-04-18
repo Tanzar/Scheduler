@@ -103,8 +103,8 @@ function LocationGroupsTable(language, div){
             { title: 'ID', variable: 'id', width: 30, minWidth: 30},
             { title: language.active, variable: 'active', width: 50, minWidth: 50},
             { title: language.name, variable: 'name', width: 250, minWidth: 250},
-            { title: language.start, variable: 'active_from', width: 70, minWidth: 70},
-            { title: language.end, variable: 'active_to', width: 70, minWidth: 70},
+            { title: language.start, variable: 'active_from', width: 100, minWidth: 100},
+            { title: language.end, variable: 'active_to', width: 100, minWidth: 100},
             { title: language.inspection, variable: 'inspection', width: 50, minWidth: 50}
         ],
         dataSource : { 

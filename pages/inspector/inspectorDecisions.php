@@ -53,17 +53,16 @@ This code is free to use, just remember to give credit.
         ?>
         <div class="page-contents-centered">
             <div class="page-contents-element">
-                <?php Scripts::run('selectMonthYear.php'); ?>
+                <?php Scripts::run('selectYear.php'); ?>
             </div>
             <div class="page-contents-element">
                 <select class="standard-input" id="documents">
                     <?php 
-                        echo '<option selected placeholder disabled value="0">'
-                             . $interface->get('select_document') . '</option>';
+                        echo '<option selected value="0">'
+                             . $interface->get('all') . '</option>';
                         $documentService = new DocumentService();
-                        $month = (int) date('m');
                         $year = (int) date('Y');
-                        $documents = $documentService->getCurrentUserDocumentsByMonthYear($month, $year);
+                        $documents = $documentService->getCurrentUserDocumentsByYear($year);
                         foreach ($documents->toArray() as $item){
                             $document = new Container($item);
                             echo '<option value="' . $document->get('id') . '">';

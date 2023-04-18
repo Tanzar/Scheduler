@@ -5,51 +5,64 @@
 
 function init(){
     RestApi.getInterfaceNamesPackage(function(language){
-        var selectDocument = new Select('documents', language.select_document);
-        initDateSelection(selectDocument);
-        var table = new ApplicationsTable(language, selectDocument);
+        var selectDocument = new Select('documents', language.all);
+        var table = ApplicationsTable(language, selectDocument);
+        initDateSelection(selectDocument, table);
     });
 }     
 
 function ApplicationsTable(language, selectDocument){
     var div = document.getElementById('courtApplications');
+    var selectYear = document.getElementById('selectYear');
     
     var datasource = {
         method: 'get',
         address: getRestAddress(),
         data: {
             controller: 'InspectorCourtApplication',
-            task: 'getCourtApplications',
-            id_document: 0
+            task: 'getCourtApplicationsByYear',
+            year: selectYear.value
         }
     };
     var config = {
         columns: [
-            {title: language.date, variable: 'date', width: 70, minWidth: 70},
-            {title: language.accusation, variable: 'accusation', width: 500, minWidth: 500},
+            {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
+            {title: language.date, variable: 'date', width: 80, minWidth: 80},
+            {title: language.accusation, variable: 'accusation', width: 600, minWidth: 600},
             {title: language.position, variable: 'position', width: 150, minWidth: 150},
             {title: language.position_groups, variable: 'position_group', width: 100, minWidth: 100},
             {title: language.external_company, variable: 'external_company_text', width: 100, minWidth: 100},
             {title: language.company_name, variable: 'company_name', width: 100, minWidth: 100},
-            {title: language.remarks, variable: 'remarks', width: 200, minWidth: 200}
+            {title: language.remarks, variable: 'remarks', width: 300, minWidth: 300}
         ],
         dataSource: datasource
     }
     
     var datatable = new Datatable(div, config);
     selectDocument.setOnChange(function(id){
-        if(id === undefined){
-            id = 0;
+        if(id === '0'){
+            var selectYear = document.getElementById('selectYear');
+            datatable.setDatasource({
+                method: 'get',
+                address: getRestAddress(),
+                data: {
+                    controller: 'InspectorCourtApplication',
+                    task: 'getCourtApplicationsByYear',
+                    year: selectYear.value
+                }
+            });
         }
-        datatable.setDatasource({
-            method: 'get',
-            address: getRestAddress(),
-            data: {
-                controller: 'InspectorCourtApplication',
-                task: 'getCourtApplications',
-                id_document: id
-            }
-        });
+        else{
+            datatable.setDatasource({
+                method: 'get',
+                address: getRestAddress(),
+                data: {
+                    controller: 'InspectorCourtApplication',
+                    task: 'getCourtApplications',
+                    id_document: id
+                }
+            });
+        }
     });
     
     datatable.addActionButton(language.add, function(){
@@ -67,15 +80,11 @@ function ApplicationsTable(language, selectDocument){
                 });
                 var date = new Date();
                 var start = new Date(data.start);
-                var end = new Date(data.end);
                 if(date < start){
                     date = start;
                 }
-                if(date > end){
-                    date = end;
-                }
                 var fields = [
-                    {type: 'date', title: language.date, variable: 'date', min: data.start, max: data.end, value: date.toDateString()},
+                    {type: 'date', title: language.date, variable: 'date', min: data.start, value: date.toDateString()},
                     {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions, required: true},
                     {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
                     {type: 'number', title: language.court_application_value, variable: 'value', min: 0, required: true},
@@ -107,8 +116,8 @@ function ApplicationsTable(language, selectDocument){
         }
     });
     datatable.addActionButton(language.edit, function(selected){
-        var documentId = selectDocument.value();
-        if(documentId !== '0' && selected !== undefined){
+        if(selected !== undefined){
+            var documentId = selected.id_document;
             RestApi.get('InspectorCourtApplication', 'getNewApplicationDetails', {id_document: documentId}, 
                 function(response){
                     var data = JSON.parse(response);
@@ -122,15 +131,11 @@ function ApplicationsTable(language, selectDocument){
                     });
                     var date = new Date();
                     var start = new Date(data.start);
-                    var end = new Date(data.end);
                     if(date < start){
                         date = start;
                     }
-                    if(date > end){
-                        date = end;
-                    }
                     var fields = [
-                        {type: 'date', title: language.date, variable: 'date', min: data.start, max: data.end, value: date.toDateString()},
+                        {type: 'date', title: language.date, variable: 'date', min: data.start, value: date.toDateString()},
                         {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions, required: true},
                         {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
                         {type: 'number', title: language.court_application_value, variable: 'value', min: 0, required: true},
@@ -155,17 +160,11 @@ function ApplicationsTable(language, selectDocument){
             });
         }
         else{
-            if(documentId === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_court_application);
-            }
+            alert(language.select_court_application);
         }
     });
     datatable.addActionButton(language.remove, function(selected){
-        var documentId = selectDocument.value();
-        if(documentId !== '0' && selected !== undefined){
+        if(selected !== undefined){
             RestApi.post('InspectorCourtApplication', 'removeApplication', {id: selected.id},
                 function(response){
                     var data = JSON.parse(response);
@@ -179,14 +178,10 @@ function ApplicationsTable(language, selectDocument){
                 });
         }
         else{
-            if(documentId === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_court_aplication);
-            }
+            alert(language.select_court_aplication);
         }
     });
+    return datatable;
 }
 
 function Select(id, placeholder){
@@ -201,8 +196,6 @@ function Select(id, placeholder){
         
         var option = document.createElement('option');
         option.selected = true;
-        option.disabled = true;
-        option.placeholder = true;
         option.value = '0';
         option.textContent = placeholder;
         select.appendChild(option);
@@ -241,15 +234,22 @@ function Select(id, placeholder){
     }
 }
 
-function initDateSelection(selectDocument) {
-    var selectMonth = document.getElementById('selectMonth');
+function initDateSelection(selectDocument, datatable) {
     var selectYear = document.getElementById('selectYear');
     var selectDate = document.getElementById('selectDate');
     selectDate.onclick = function(){
         var data = {
-            month: selectMonth.value,
             year: selectYear.value
         }
         selectDocument.loadOptions('InspectorTickets', 'getDocuments', data);
+        datatable.setDatasource({
+            method: 'get',
+            address: getRestAddress(),
+            data: {
+                controller: 'InspectorCourtApplication',
+                task: 'getCourtApplicationsByYear',
+                year: selectYear.value
+            }
+        });
     }
 }

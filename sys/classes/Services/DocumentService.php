@@ -157,8 +157,7 @@ class DocumentService {
             return $this->documentUser->save($item);
         }
         else{
-            $item =  $assigns->get(0);
-            return $item['id'];
+            return $assigns->get('id');
         }
     }
     

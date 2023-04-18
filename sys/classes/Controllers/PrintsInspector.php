@@ -44,7 +44,7 @@ class PrintsInspector extends Controller{
             $response = $this->document->getDocumentsByMonthYear($month, $year);
         }
         else{
-            $response = $this->document->getCurrentUserDocumentsByMonthYear($year, $year);
+            $response = $this->document->getCurrentUserDocumentsByMonthYear($month, $year);
         }
         $this->setResponse($response);
     }

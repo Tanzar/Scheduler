@@ -30,9 +30,8 @@ class InspectorInstruments extends Controller{
     
     public function getDocuments() {
         $data = $this->getRequestData();
-        $month = (int) $data->get('month');
         $year = (int) $data->get('year');
-        $response = $this->documentService->getCurrentUserDocumentsByMonthYear($month, $year);
+        $response = $this->documentService->getCurrentUserDocumentsByYear($year);
         $this->setResponse($response);
     }
     
@@ -40,6 +39,13 @@ class InspectorInstruments extends Controller{
         $data = $this->getRequestData();
         $documentId = (int) $data->get('id_document');
         $response = $this->instrumentService->getUsagesForCurrentUser($documentId);
+        $this->setResponse($response);
+    }
+    
+    public function getUsagesByYear() {
+        $data = $this->getRequestData();
+        $year = (int) $data->get('year');
+        $response = $this->instrumentService->getCurrentUserActiveUsagesByYear($year);
         $this->setResponse($response);
     }
     

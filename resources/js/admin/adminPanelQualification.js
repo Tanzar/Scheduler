@@ -33,7 +33,7 @@ function initPersonsTable(language, qualificationTable){
             { title: language.name_person, variable: 'name', width: 50, minWidth: 50},
             { title: language.surname, variable: 'surname', width: 50, minWidth: 50},
             { title: language.birthplace, variable: 'birthplace', width: 100, minWidth: 100},
-            { title: language.birthdate, variable: 'birthday', width: 50, minWidth: 50}
+            { title: language.birthdate, variable: 'birthday', width: 100, minWidth: 100}
         ],
         dataSource : { 
             method: 'post', 

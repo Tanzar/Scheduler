@@ -146,6 +146,12 @@ class Container {
         }
     }
     
+    public function copy() : Container {
+        $copyTxt = json_encode($this->data, JSON_UNESCAPED_UNICODE );
+        $copyArr = json_decode($copyTxt, true, 512, JSON_UNESCAPED_UNICODE);
+        return new Container($copyArr);
+    }
+    
     public function toArray(){
         return $this->data;
     }

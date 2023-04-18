@@ -174,6 +174,10 @@ class ScheduleService {
         return $this->activity->getByGroup($group);
     }
     
+    public function getActiveActivitiesByGroup(string $group) : Container {
+        return $this->activity->getActiveByGroup($group);
+    }
+    
     public function getNewActivityDetails() : Container {
         $details = new Container();
         $app = AppConfig::getInstance();
@@ -217,8 +221,24 @@ class ScheduleService {
         return $this->activityLocationDetails->getByActivityId($id);
     }
     
+    public function getActiveLocationTypeByIdActivity(int $id) : Container{
+        return $this->activityLocationDetails->getActiveByActivityId($id);
+    }
+    
     public function saveActivity(Container $data) : int {
         return $this->activity->save($data);
+    }
+    
+    public function saveMultipleEntriesForUser(Container $data) : void {
+        $dates = $data->get('pushes');
+        $entry = new Container($data->get('entry'));
+        $this->saveEntryForUser($entry);
+        foreach ($dates as $push => $save) {
+            if($save){
+                $newEntry = $this->adjustEntryDates($entry, (int) $push);
+                $this->saveEntryForUser($newEntry);
+            }
+        }
     }
     
     public function saveEntryForUser(Container $data) : int {
@@ -231,7 +251,7 @@ class ScheduleService {
         else{
             $username = $data->get('username');
             $user = $this->user->getByUsername($username);
-            $data->add($user->get('id'), 'id_user');
+            $data->add($user->get('id'), 'id_user', true);
         }
         $parser = new Entry();
         $entry = $parser->parse($data);
@@ -253,6 +273,18 @@ class ScheduleService {
         $this->documentSchedule->save($documentSchedule);
     }
     
+    public function saveMultipleEntriesForCurrentUser(Container $data) : void {
+        $dates = $data->get('pushes');
+        $entry = new Container($data->get('entry'));
+        $this->saveEntryForCurrentUser($entry);
+        foreach ($dates as $push => $save) {
+            if($save){
+                $newEntry = $this->adjustEntryDates($entry, (int) $push);
+                $this->saveEntryForCurrentUser($newEntry);
+            }
+        }
+    }
+    
     public function saveEntryForCurrentUser(Container $data) : int {
         $activity = $this->activity->getById($data->get('id_activity'));
         if($activity->get('assign_system')){
@@ -263,7 +295,7 @@ class ScheduleService {
         else{
             $username = Session::getUsername();
             $user = $this->user->getByUsername($username);
-            $data->add($user->get('id'), 'id_user');
+            $data->add($user->get('id'), 'id_user', true);
         }
         $parser = new Entry();
         $entry = $parser->parse($data);
@@ -468,6 +500,17 @@ class ScheduleService {
         elseif($duration <= 0){
             throw new ScheduleEntryException($languages->get('start_earlier_than_end'));
         }
+    }
+    
+    private function adjustEntryDates(Container $entry, int $push) : Container {
+        $start = new DateTime($entry->get('start'));
+        $start->modify('+' . $push . ' days');
+        $end = new DateTime($entry->get('end'));
+        $end->modify('+' . $push . ' days');
+        $copy = $entry->copy();
+        $copy->add($start->format('Y-m-d H:i:s'), 'start', true);
+        $copy->add($end->format('Y-m-d H:i:s'), 'end', true);
+        return $copy;
     }
     
 }

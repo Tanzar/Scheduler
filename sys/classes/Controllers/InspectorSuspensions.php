@@ -39,9 +39,8 @@ class InspectorSuspensions extends Controller{
     
     public function getDocuments() {
         $data = $this->getRequestData();
-        $month = (int) $data->get('month');
         $year = (int) $data->get('year');
-        $response = $this->documentService->getCurrentUserDocumentsByMonthYear($month, $year);
+        $response = $this->documentService->getCurrentUserDocumentsByYear($year);
         $this->setResponse($response);
     }
     
@@ -49,6 +48,13 @@ class InspectorSuspensions extends Controller{
         $data = $this->getRequestData();
         $idDocument = (int) $data->get('id_document');
         $response = $this->suspensionService->getCurrentUserSuspensions($idDocument);
+        $this->setResponse($response);
+    }
+    
+    public function getSuspensionsByYear() {
+        $data = $this->getRequestData();
+        $year = (int) $data->get('year');
+        $response = $this->suspensionService->getCurrentUserActiveSuspensionsByYear($year);
         $this->setResponse($response);
     }
     

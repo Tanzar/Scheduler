@@ -4,52 +4,65 @@
 
 function init(){
     RestApi.getInterfaceNamesPackage(function(language){
+        var selectDocument = new Select('documents', language.all);
+        var datatable = TicketsTable(language, selectDocument);
+        initDateSelection(selectDocument, datatable);
         
-        var selectDocument = new Select('documents', language.select_document);
-        initDateSelection(selectDocument);
-        
-        var datatable = new TicketsTable(language, selectDocument);
     });
 }     
 
 function TicketsTable(language, selectDocument){
     var div = document.getElementById('tickets');
+    var selectYear = document.getElementById('selectYear');
     
     var datasource = {
         method: 'get',
         address: getRestAddress(),
         data: {
             controller: 'InspectorTickets',
-            task: 'getTickets',
-            id: 0
+            task: 'getTicketsByYear',
+            year: selectYear.value
         }
     };
     var config = {
         columns: [
+            {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
             {title: language.ticket_number, variable: 'number', width: 150, minWidth: 150},
-            {title: language.ticket_date, variable: 'date', width: 100, minWidth: 100},
+            {title: language.ticket_date, variable: 'date', width: 80, minWidth: 80},
             {title: language.position, variable: 'position', width: 150, minWidth: 150},
             {title: language.violated_rules, variable: 'violated_rules', width: 300, minWidth: 300},
             {title: language.external_company, variable: 'external_company_text', width: 100, minWidth: 100},
-            {title: language.company_name, variable: 'company_name', width: 100, minWidth: 100}
+            {title: language.company_name, variable: 'company_name', width: 100, minWidth: 100},
+            {title: language.remarks, variable: 'remarks', width: 300, minWidth: 300}
         ],
         dataSource: datasource
     }
     
     var datatable = new Datatable(div, config);
     selectDocument.setOnChange(function(id){
-        if(id === undefined){
-            id = 0;
+        if(id === '0'){
+            var selectYear = document.getElementById('selectYear');
+            datatable.setDatasource({
+                method: 'get',
+                address: getRestAddress(),
+                data: {
+                    controller: 'InspectorTickets',
+                    task: 'getTicketsByYear',
+                    year: selectYear.value
+                }
+            });
         }
-        datatable.setDatasource({
-            method: 'get',
-            address: getRestAddress(),
-            data: {
-                controller: 'InspectorTickets',
-                task: 'getTickets',
-                id: id
-            }
-        });
+        else{
+            datatable.setDatasource({
+                method: 'get',
+                address: getRestAddress(),
+                data: {
+                    controller: 'InspectorTickets',
+                    task: 'getTickets',
+                    id: id
+                }
+            });
+        }
     });
     
     datatable.addActionButton(language.add, function(){
@@ -75,16 +88,12 @@ function TicketsTable(language, selectDocument){
                 });
                 var date = new Date();
                 var start = new Date(data.start);
-                var end = new Date(data.end);
                 if(date < start){
                     date = start;
                 }
-                if(date > end){
-                    date = end;
-                }
                 var fields = [
                     {type: 'text', title: language.ticket_number, variable: 'number', limit: 10, required: true},
-                    {type: 'date', title: language.ticket_date, variable: 'date', min: data.start, max: data.end, value: date.toDateString()},
+                    {type: 'date', title: language.ticket_date, variable: 'date', min: data.start, value: date.toDateString()},
                     {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions, required: true},
                     {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
                     {type: 'number', title: language.ticket_value, variable: 'value', min: 0, required: true},
@@ -117,8 +126,8 @@ function TicketsTable(language, selectDocument){
         }
     });
     datatable.addActionButton(language.edit, function(selected){
-        var documentId = selectDocument.value();
-        if(documentId !== '0' && selected !== undefined){
+        if(selected !== undefined){
+            var documentId = selected.id_document;
             RestApi.get('InspectorTickets', 'getNewTicketDetails', {id: documentId}, 
                 function(response){
                     var data = JSON.parse(response);
@@ -140,16 +149,12 @@ function TicketsTable(language, selectDocument){
                     });
                     var date = new Date();
                     var start = new Date(data.start);
-                    var end = new Date(data.end);
                     if(date < start){
                         date = start;
                     }
-                    if(date > end){
-                        date = end;
-                    }
                     var fields = [
                         {type: 'text', title: language.ticket_number, variable: 'number', limit: 10, required: true},
-                        {type: 'date', title: language.ticket_date, variable: 'date', min: data.start, max: data.end, value: date.toDateString()},
+                        {type: 'date', title: language.ticket_date, variable: 'date', min: data.start, value: date.toDateString()},
                         {type: 'select', title: language.select_position_group, variable: 'id_position_groups', options: positions, required: true},
                         {type: 'text', title: language.position, variable: 'position', limit: 255, required: true},
                         {type: 'number', title: language.ticket_value, variable: 'value', min: 0, required: true},
@@ -175,17 +180,11 @@ function TicketsTable(language, selectDocument){
             });
         }
         else{
-            if(documentId === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_ticket);
-            }
+            alert(language.select_ticket);
         }
     });
     datatable.addActionButton(language.remove, function(selected){
-        var documentId = selectDocument.value();
-        if(documentId !== '0' && selected !== undefined){
+        if(selected !== undefined){
             RestApi.post('InspectorTickets', 'removeTicket', {id: selected.id},
                 function(response){
                     var data = JSON.parse(response);
@@ -199,14 +198,10 @@ function TicketsTable(language, selectDocument){
                 });
         }
         else{
-            if(documentId === '0'){
-                alert(language.select_document);
-            }
-            else{
-                alert(language.select_ticket);
-            }
+            alert(language.select_ticket);
         }
     });
+    return datatable;
 }
 
 function Select(id, placeholder){
@@ -221,8 +216,6 @@ function Select(id, placeholder){
         
         var option = document.createElement('option');
         option.selected = true;
-        option.disabled = true;
-        option.placeholder = true;
         option.value = '0';
         option.textContent = placeholder;
         select.appendChild(option);
@@ -261,15 +254,22 @@ function Select(id, placeholder){
     }
 }
 
-function initDateSelection(selectDocument) {
-    var selectMonth = document.getElementById('selectMonth');
+function initDateSelection(selectDocument, datatable) {
     var selectYear = document.getElementById('selectYear');
     var selectDate = document.getElementById('selectDate');
     selectDate.onclick = function(){
         var data = {
-            month: selectMonth.value,
             year: selectYear.value
         }
         selectDocument.loadOptions('InspectorTickets', 'getDocuments', data);
+        datatable.setDatasource({
+            method: 'get',
+            address: getRestAddress(),
+            data: {
+                controller: 'InspectorTickets',
+                task: 'getTicketsByYear',
+                year: selectYear.value
+            }
+        });
     }
 }

@@ -150,6 +150,8 @@ class Security {
         else{
             $this->logout();
             Session::setUser($username);
+            $logger = Logger::getInstance();
+            $logger->logSecurity("User logged in.");
         }
     }
     
@@ -160,6 +162,8 @@ class Security {
                 $username = $user->get($this->usernameColumn);
                 $this->logout();
                 Session::setUser($username);
+                $logger = Logger::getInstance();
+                $logger->logSecurity("User logged in.");
             }
             else{
                 $languages = Languages::getInstance();
@@ -172,7 +176,11 @@ class Security {
     }
     
     public function logout(){
-        Session::unsetUser();
+        if(Session::getUsername() !== ""){
+            $logger = Logger::getInstance();
+            $logger->logSecurity("User logged out.");
+            Session::unsetUser();
+        }
     }
     
     /**
@@ -212,7 +220,7 @@ class Security {
             $username = Session::getUsername();
         }
         $sql = new MysqlBuilder();
-        $sql->select($this->usersTable)->where($this->usernameColumn, $username);
+        $sql->select($this->usersTable)->where($this->usernameColumn, $username)->and()->where('active', 1);
         $database = Database::getInstance($this->dbIndex);
         $users = $database->select($sql);
         if($users->length() > 1){

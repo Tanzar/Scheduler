@@ -61,6 +61,15 @@ class DecisionService {
                 ->getActiveRequiringSuspensionByUsernameAndDocumentId($username, $documentId);
     }
     
+    public function getCurrentUserActiveDecisionsByYear(int $year) : Container {
+        $username = Session::getUsername();
+        return $this->decisionDetails->getUserActiveByYear($username, $year);
+    }
+    
+    public function getActiveDecisionsByMonthAndYear(int $month, int $year) : Container {
+        return $this->decisionDetails->getActiveByMonthAndYear($month, $year);
+    }
+    
     public function saveDecisionLaw(Container $data) : int {
         return $this->decisionLaw->save($data);
     }

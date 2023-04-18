@@ -30,9 +30,8 @@ class InspectorArticle extends Controller{
     
     public function getDocuments() {
         $data = $this->getRequestData();
-        $month = (int) $data->get('month');
         $year = (int) $data->get('year');
-        $response = $this->documentService->getCurrentUserDocumentsByMonthYear($month, $year);
+        $response = $this->documentService->getCurrentUserDocumentsByYear($year);
         $this->setResponse($response);
     }
     
@@ -40,6 +39,13 @@ class InspectorArticle extends Controller{
         $data = $this->getRequestData();
         $id = (int) $data->get('id');
         $response = $this->articleService->getCurrentUserActiveArticlesByDocument($id);
+        $this->setResponse($response);
+    }
+    
+    public function getArticlesByYear() {
+        $data = $this->getRequestData();
+        $year = (int) $data->get('year');
+        $response = $this->articleService->getCurrentUserActiveArticlesByYear($year);
         $this->setResponse($response);
     }
     

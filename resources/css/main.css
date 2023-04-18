@@ -25,6 +25,14 @@ This code is free to use, just remember to give credit.
     --invalid-color: #ff0000;
 }
 
+html, label {
+    font-size: 17px;
+}
+
+button, input, textArea, select {
+    font-size: 15px;
+}
+
 body {
     background-color: var(--page-background);
     margin: 0px;
@@ -90,6 +98,7 @@ footer {
     padding: 5px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    height: 114px;
 }
 
 .top-menu-left {
@@ -116,7 +125,7 @@ footer {
     max-width: 110px;
     position: absolute;
     z-index: 10;
-    top: 116px;
+    top: 150px;
     left: 0;
     display: flex;
     align-content: flex-start;
@@ -154,7 +163,7 @@ footer {
     border: 3px solid var(--border-color);
     border-radius: 20px;
     background-color: var(--menu-background);
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     margin-right: 10px;
     padding: 10px;
 }
@@ -166,7 +175,7 @@ footer {
     border: 3px solid var(--border-color);
     border-radius: 20px;
     background-color: var(--menu-background);
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     margin-right: 10px;
     padding: 10px;
     display: flex;
@@ -269,7 +278,7 @@ footer {
     padding: 5px;
     margin: 3px;
     outline: none;
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
 }
 

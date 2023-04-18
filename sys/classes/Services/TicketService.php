@@ -52,6 +52,15 @@ class TicketService {
         return $this->ticketDetails->getUserActiveTicketsByDocumentId($username, $documentId);
     }
     
+    public function getCurrentUserActiveTicketsByYear(int $year) : Container {
+        $username = Session::getUsername();
+        return $this->ticketDetails->getActiveUserTicketsByYear($username, $year);
+    }
+    
+    public function getActiveTicketsByMonthAndYear(int $month, int $year) : Container {
+        return $this->ticketDetails->getActiveByMonthAndYear($month, $year);
+    }
+    
     public function getById(int $id) : Container {
         return $this->ticketDetails->getById($id);
     }

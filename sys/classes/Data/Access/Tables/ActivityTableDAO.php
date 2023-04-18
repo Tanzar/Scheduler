@@ -42,6 +42,13 @@ class ActivityTableDAO extends DAO{
         return $this->select($sql);
     }
     
+    public function getActiveByGroup(string $group) : Container{
+        $sql = new MysqlBuilder();
+        $sql->select('activity')->where('active', 1)
+                ->and()->where('activity_group', $group);
+        return $this->select($sql);
+    }
+    
     public function enable(int $id){
         $sql = new MysqlBuilder();
         $sql->update('activity', 'id', $id)
