@@ -244,7 +244,7 @@ class ScheduleService {
     public function saveEntryForUser(Container $data) : int {
         $activity = $this->activity->getById($data->get('id_activity'));
         if($activity->get('assign_system')){
-            $data->add(1, 'id_user');
+            $data->add(1, 'id_user', true);
             $user = $this->user->getById(1);
             $username = $user->get('username');
         }
@@ -288,7 +288,7 @@ class ScheduleService {
     public function saveEntryForCurrentUser(Container $data) : int {
         $activity = $this->activity->getById($data->get('id_activity'));
         if($activity->get('assign_system')){
-            $data->add(1, 'id_user');
+            $data->add(1, 'id_user', true);
             $user = $this->user->getById(1);
             $username = $user->get('username');
         }

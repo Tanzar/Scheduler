@@ -120,7 +120,7 @@ class Request {
     
     public function toJSON() :string {
         $str = 'Controller: ' . $this->controller . ' Task: ' . $this->task
-                . 'Data: ' . json_encode($this->data);
+                . ' Data: ' . json_encode($this->data->toArray(), JSON_UNESCAPED_UNICODE);
         return $str;
     }
     

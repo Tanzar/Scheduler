@@ -185,6 +185,7 @@ function loadSuspensions(language, month, year){
             {title: language.description, variable: 'description', width: 400, minWidth: 400},
             {title: language.correction_date, variable: 'correction_date', width: 80, minWidth: 80},
             {title: language.correction_shift, variable: 'correction_shift', width: 50, minWidth: 50},
+            {title: language.company_name, variable: 'company_name', width: 100, minWidth: 100},
             {title: language.remarks, variable: 'remarks', width: 300, minWidth: 300}
         ],
         dataSource: datasource

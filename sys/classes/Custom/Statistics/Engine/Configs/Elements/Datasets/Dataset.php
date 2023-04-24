@@ -53,7 +53,7 @@ class Dataset {
         $database = Database::getInstance('scheduler');
         $table = $this->dataSource->getViewName();
         $sql = new MysqlBuilder();
-        $sql->select($table);
+        $sql->select($table)->where('active', 1)->and();
         foreach ($inputs->toArray() as $index => $input) {
             $this->alterSQL($sql, $input);
             if($index <= $inputs->length() - 1){

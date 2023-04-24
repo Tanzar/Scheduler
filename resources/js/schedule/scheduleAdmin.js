@@ -231,7 +231,7 @@ function ScheduleAdmin(){
                             var fields = [];
                             for(var i = 1; i < 5; i++){
                                 date.setDate(date.getDate() + 1);
-                                fields.push({type: 'checkbox', title: '' + date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate(), variable: '' + i});
+                                fields.push({type: 'checkbox', title: '' + date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate(), variable: '' + i});
                             }
                             openModalBox(language.select_additional_dates, fields, language.save, function(data){
                                 var toSend ={

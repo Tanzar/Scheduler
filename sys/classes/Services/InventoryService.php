@@ -125,7 +125,9 @@ class InventoryService {
         $user = $this->users->getByUsername($username);
         $userSourceId = (int) $user->get('id');
         $userTargetId = (int) $parsed->get('id_user');
-        $parsed->add($userSourceId, 'id_user', true);
+        if($userTargetId !== 1){
+            $parsed->add($userSourceId, 'id_user', true);
+        }
         $id = $this->equipment->save($parsed);
         $this->inventoryLog->newEquipment($id, $userSourceId, $userTargetId);
         return $id;
@@ -140,7 +142,9 @@ class InventoryService {
         $user = $this->users->getByUsername($username);
         $userSourceId = (int) $user->get('id');
         $userTargetId = (int) $parsed->get('id_user');
-        $parsed->add($userSourceId, 'id_user', true);
+        if($userTargetId !== 1){
+            $parsed->add($userSourceId, 'id_user', true);
+        }
         $id = $this->equipment->save($parsed);
         $this->inventoryLog->borrowed($id, $userSourceId, $userTargetId);
         return $id;
@@ -160,8 +164,13 @@ class InventoryService {
         $logs = $this->inventoryLogDetails->getUnconfirmedForEquipment($equipmentId);
         if($logs->length() === 0){
             $targetUserId = $this->getUserId($equipment->get('username'));
-            $sourceUserId = $this->getUserId(Session::getUsername());
-            $id = $this->inventoryLog->assign($equipmentId, $sourceUserId, $targetUserId);
+            if($targetUserId === 1){
+                $this->equipment->changeUser($equipmentId, $targetUserId);
+            }
+            else{
+                $sourceUserId = $this->getUserId(Session::getUsername());
+                $id = $this->inventoryLog->assign($equipmentId, $sourceUserId, $targetUserId);
+            }
         }
         else{
             throw new UnconfirmedEquipmentException();
