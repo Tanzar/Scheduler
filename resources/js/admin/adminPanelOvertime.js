@@ -54,12 +54,20 @@ function initTable(language){
                     }
                     months.push(option);
                 });
-                var year = parseInt(data.year);
+                var startYear = data.year;
+                var endYear = parseInt(new Date().getFullYear()) + 1;
+                var years = [];
+                for(var year = startYear; year <= endYear; year++){
+                    years.push({
+                        title: year,
+                        value: year
+                    })
+                }
                 var fields = [
                     {type: 'select', title: language.select_user, variable: 'id_user', options: users, required: true},
-                    {type: 'number', title: language.time_in_ms, variable: 'time', required: true},
+                    {type: 'number', title: language.time_in_mins, variable: 'time', required: true},
                     {type: 'select', title: language.select_month, variable: 'month', options: months, required: true},
-                    {type: 'number', title: language.select_year, variable: 'year', min: year, value: year, required: true}
+                    {type: 'select', title: language.select_year, variable: 'year', options: years, required: true}
                 ];
                 openModalBox(language.new_overtime_reduction, fields, language.save, function(data){
                     RestApi.post('AdminPanelOvertime', 'saveOvertimeReduction', data,
@@ -98,11 +106,20 @@ function initTable(language){
                         }
                         months.push(option);
                     })
+                    var startYear = data.year;
+                    var endYear = parseInt(new Date().getFullYear()) + 1;
+                    var years = [];
+                    for(var year = startYear; year <= endYear; year++){
+                        years.push({
+                            title: year,
+                            value: year
+                        })
+                    }
                     var fields = [
                         {type: 'select', title: language.select_user, variable: 'id_user', options: users, required: true},
-                        {type: 'number', title: language.time_in_ms, variable: 'time', required: true},
+                        {type: 'number', title: language.time_in_mins, variable: 'time', required: true},
                         {type: 'select', title: language.select_month, variable: 'month', options: months, required: true},
-                        {type: 'number', title: language.ticket_year, variable: 'year', min: data.year, required: true}
+                        {type: 'select', title: language.select_year, variable: 'year', options: years, required: true}
                     ];
                     openModalBox(language.new_overtime_reduction, fields, language.save, function(data){
                         RestApi.post('AdminPanelOvertime', 'saveOvertimeReduction', data,

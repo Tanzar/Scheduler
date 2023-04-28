@@ -17,6 +17,7 @@ enum Groups : string {
     case UserWithSUZUG = 'Użytkownik z nr. SUZUG';
     case UserType = 'Typ użytkownika';
     case Location = 'Miejsce';
+    case InspectableLocation = 'Miejsce kontroli';
     case LocationGroup = 'Grupa Miejsc';
     case LocationType = 'Typ Miejsca';
     case Level = 'Poziom';

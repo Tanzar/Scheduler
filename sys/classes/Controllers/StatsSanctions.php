@@ -73,7 +73,7 @@ class StatsSanctions extends Controller{
         $data = $this->getRequestData();
         $month = (int) $data->get('month');
         $year = (int) $data->get('year');
-        $response = $this->suspensions->getActiveSuspensionsByMonthAndYear($month, $year);
+        $response = $this->suspensions->getActiveSuspensionsByMonthAndYearWithDecisionInfo($month, $year);
         $this->addRowNumbers($response);
         $this->setResponse($response);
     }

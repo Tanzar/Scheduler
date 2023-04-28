@@ -56,7 +56,7 @@ class DaysDetails {
     private function analyzeEntry(Container $entry) : void {
         if((int) $entry->get('id_user') !== 1){
             $period = $this->getMatchingPeriod($entry);
-            $dayBreakHour = $this->workdayStartHour;
+            $dayBreakHour = $period->get('standard_day_start');
             $this->calculateEntry($entry, $period, $dayBreakHour);
         }
     }
@@ -110,7 +110,8 @@ class DaysDetails {
     private function setStartDayDetails(Container $entry, DateTime $dayStart, DayDetails $details) : void {
         $start = new DateTime($entry->get('start'));
         if($details->getWorkdayStart() === ''){
-            $details->setWorkdayStart($start->format('H:i'));
+            $newStart = max($dayStart, $start);
+            $details->setWorkdayStart($newStart->format('H:i'));
         }
         else{
             $currentStart = new DateTime($dayStart->format('Y-m-d') . ' ' . $details->getWorkdayStart());
@@ -121,12 +122,13 @@ class DaysDetails {
     
     private function setEndDayDetails(Container $entry, DateTime $dayStart, DayDetails $details) : void {
         $end = new DateTime($entry->get('end'));
+        $dayEnd = new DateTime($dayStart->format('Y-m-d H:i:s'));
+        $dayEnd->modify('+1 days');
         if($details->getWorkdayEnd() === ''){
-            $details->setWorkdayEnd($end->format('H:i'));
+            $newEnd = min($dayEnd, $end);
+            $details->setWorkdayEnd($newEnd->format('H:i'));
         }
         else{
-            $dayEnd = new DateTime($dayStart->format('Y-m-d H:i:s'));
-            $dayEnd->modify('+1 days');
             $currentStart = new DateTime($dayStart->format('Y-m-d') . ' ' . $details->getWorkdayStart());
             $currentEnd = new DateTime($dayStart->format('Y-m-d') . ' ' . $details->getWorkdayEnd());
             if($currentStart >= $currentEnd){

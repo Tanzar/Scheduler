@@ -146,7 +146,13 @@ class ArticleService {
     
     private function checkBlocker(Container $data) {
         $blocker = new InspectorDateBlocker();
-        if($blocker->isBLocked($data)){
+        if($data->isValueSet('id')){
+            $dataToCheck = $this->article->getById($data->get('id'));
+        }
+        else{
+            $dataToCheck = $data;
+        }
+        if($blocker->isBLocked($dataToCheck)){
             throw new SystemBlockedException();
         }
     }

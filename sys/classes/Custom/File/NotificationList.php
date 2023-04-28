@@ -109,7 +109,21 @@ class NotificationList extends PDFMaker{
     
     private function loadUsers() : Container {
         $service = new UserService();
-        return $service->getEmployedUsersListByMonthOrdered($this->month, $this->year);
+        $users = $service->getEmployedUsersListByMonthOrdered($this->month, $this->year);
+        $result = [];
+        $holder = [];
+        foreach ($users->toArray() as $item) {
+            if($item['leadership'] === 0 && $item['user_type'] === 'ADM'){
+                $holder[] = $item;
+            }
+            else{
+                $result[] = $item;
+            }
+        }
+        foreach ($holder as $item) {
+            $result[] = $item;
+        }
+        return new Container($result);
     }
     
     private function splitUsersToSets(Container $users, int $limitPerPage) : void {

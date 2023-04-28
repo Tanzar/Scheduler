@@ -64,8 +64,14 @@ class Timesheets{
         $this->editor->writeToCell($sheet, 'G7', $this->data->getWorkdaysCount());
         $dailyJobTime = Time::msToFullHours($this->data->getUserDailyJobTimeInMins() * 60 * 1000);
         $this->editor->writeToCell($sheet, 'K6', $dailyJobTime);
-        $previousOvertime = $this->toExcelTime($this->data->getPreviousOvertimeInMins());
-        $this->editor->writeToCell($sheet, 'Q6', $previousOvertime);
+        if($this->data->getPreviousOvertimeInMins() >= 0){
+            $previousOvertime = $this->toExcelTime($this->data->getPreviousOvertimeInMins());
+            $this->editor->writeToCell($sheet, 'Q6', $previousOvertime);
+        }
+        else{
+            $previousOvertime = $this->toExcelTime(abs($this->data->getPreviousOvertimeInMins()));
+            $this->editor->writeToCell($sheet, 'R6', $previousOvertime);
+        }
     }
     
     private function writeData() : void {

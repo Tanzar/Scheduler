@@ -66,7 +66,7 @@ class TimesheetsData {
         $reduction = $this->getOvetimeReduction($month, $year);
         $overtime = $this->daysDetails->sumOvertime($date);
         $wzn = $this->daysDetails->sumWZN($date);
-        $this->previousOvertimeInMins = floor((($overtime - $wzn - $reduction) / 1000) / 60);
+        $this->previousOvertimeInMins = floor((($overtime - $wzn) / 1000) / 60) - $reduction;
         $this->workdaysCount = $this->daysDetails->sumWorkdays($year, $month);
     }
     
@@ -126,9 +126,6 @@ class TimesheetsData {
     }
 
     public function getPreviousOvertimeInMins(): int {
-        if($this->previousOvertimeInMins < 0){
-            return 0;
-        }
         return $this->previousOvertimeInMins;
     }
 

@@ -3,10 +3,12 @@
  */
 
 
-function openModalBox(title, fields, buttonText, onAccept, item){
+function openModalBox(title, fields, buttonText, onAccept, givenItem){
 //no cleancode here, at least for now
-    if(item === undefined){
-        item = {};
+    var item = {};
+
+    if(givenItem !== undefined){
+        item = JSON.parse(JSON.stringify(givenItem));
     }
     
     var blocker = document.createElement('div');

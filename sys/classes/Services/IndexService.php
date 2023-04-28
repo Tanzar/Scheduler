@@ -70,8 +70,7 @@ class IndexService {
         foreach ($daysDetails->toArray() as $key => $details) {
             $sum = $details->sumTimes();
             $workdayTime = $details->getStandardWorkdayTime();
-            if($today >= new DateTime($key) && $details->getDayLetter() === 'P' && $sum < $workdayTime
-                    && new DateTime($key) >= new DateTime('2023-04-01 00:00:00')){      //specific for OUG Rybnik
+            if($today >= new DateTime($key) && $details->getDayLetter() === 'P' && $sum < $workdayTime){
                 $text = $key . ' - ';
                 $text .= Time::msToClockNoSeconds($details->sumTimes()) . ' / ';
                 $text .= Time::msToClockNoSeconds($details->getStandardWorkdayTime());

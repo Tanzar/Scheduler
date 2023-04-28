@@ -13,6 +13,7 @@ use Data\Access\Tables\SuspensionObjectDAO as SuspensionObjectDAO;
 use Data\Access\Tables\SuspensionDAO as SuspensionDAO;
 use Data\Access\Tables\DocumentDAO as DocumentDAO;
 use Data\Access\Tables\DocumentUserDAO as DocumentUserDAO;
+use Data\Access\Views\DocumentDetailsView as DocumentDetailsView;
 use Data\Access\Tables\SuspensionArticleDAO as SuspensionArticleDAO;
 use Data\Access\Tables\SuspensionDecisionDAO as SuspensionDecisionDAO;
 use Data\Access\Tables\SuspensionTicketDAO as SuspensionTicketDAO;
@@ -130,6 +131,28 @@ class SuspensionService {
     
     public function getActiveSuspensionsByMonthAndYear(int $month, int $year) : Container {
         return $this->suspensionDetails->getActiveByMonthAndYear($month, $year);
+    }
+    
+    public function getActiveSuspensionsByMonthAndYearWithDecisionInfo(int $month, int $year) : Container {
+        $suspensions = $this->suspensionDetails->getActiveByMonthAndYear($month, $year);
+        $this->addDecisionInfo($suspensions);
+        return $suspensions;
+    }
+    
+    private function addDecisionInfo(Container $suspensions) : void {
+        $suspensionsWithDecisions = $this->suspensionDecisionDetails->getAll();
+        foreach ($suspensions->toArray() as $key => $suspension){
+            foreach ($suspensionsWithDecisions->toArray() as $decision){
+                if($suspension['id'] === $decision['id_suspension']){
+                    $suspension['decision_text'] = 'Tak';
+                    break;
+                }
+            }
+            if(!isset($suspension['decision_text'])){
+                $suspension['decision_text'] = 'Nie';
+            }
+            $suspensions->add($suspension, $key, true);
+        }
     }
     
     public function getSuspensionDetails(int $idDocument) : Container {
@@ -393,7 +416,13 @@ class SuspensionService {
     
     private function checkBlocker(Container $data) : void {
         $blocker = new InspectorDateBlocker();
-        if($blocker->isBLocked($data)){
+        if($data->isValueSet('id')){
+            $dataToCheck = $this->suspension->getById($data->get('id'));
+        }
+        else{
+            $dataToCheck = $data;
+        }
+        if($blocker->isBLocked($dataToCheck)){
             throw new SystemBlockedException();
         }
     }

@@ -13,6 +13,7 @@ use Custom\Statistics\Engine\Configs\Elements\Groups\MonthGroup as MonthGroup;
 use Custom\Statistics\Engine\Configs\Elements\Groups\UserGroup as UserGroup;
 use Custom\Statistics\Engine\Configs\Elements\Groups\UserWithSuzugGroup as UserWithSuzugGroup;
 use Custom\Statistics\Engine\Configs\Elements\Groups\UserTypeGroup as UserTypeGroup;
+use Custom\Statistics\Engine\Configs\Elements\Groups\InspectableLocationGroup as InspectableLocationGroup;
 use Custom\Statistics\Engine\Configs\Elements\Groups\LocationsGroup as LocationsGroup;
 use Custom\Statistics\Engine\Configs\Elements\Groups\LocationsGroupsGroup as LocationsGroupsGroup;
 use Custom\Statistics\Engine\Configs\Elements\Groups\LocationTypeGroup as LocationTypeGroup;
@@ -52,6 +53,8 @@ class GroupsFactory {
                 return new UserWithSuzugGroup('');
             case Groups::UserType:
                 return new UserTypeGroup('');
+            case Groups::InspectableLocation:
+                return new InspectableLocationGroup(0);
             case Groups::Location:
                 return new LocationsGroup(0);
             case Groups::LocationGroup:
@@ -87,6 +90,8 @@ class GroupsFactory {
                 return new UserWithSuzugGroup($value);
             case Groups::UserType:
                 return new UserTypeGroup($value);
+            case Groups::InspectableLocation:
+                return new InspectableLocationGroup((int) $value);
             case Groups::Location:
                 return new LocationsGroup((int) $value);
             case Groups::LocationGroup:

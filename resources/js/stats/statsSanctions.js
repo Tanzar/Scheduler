@@ -64,6 +64,7 @@ function loadTickets(language, month, year){
             {title: language.name_person, variable: 'name', width: 100, minWidth: 100},
             {title: language.surname, variable: 'surname', width: 100, minWidth: 100},
             {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
+            {title: language.location, variable: 'location', width: 250, minWidth: 250},
             {title: language.ticket_number, variable: 'number', width: 150, minWidth: 150},
             {title: language.ticket_date, variable: 'date', width: 80, minWidth: 80},
             {title: language.position, variable: 'position', width: 150, minWidth: 150},
@@ -102,6 +103,7 @@ function loadArticles(language, month, year){
             {title: language.name_person, variable: 'name', width: 100, minWidth: 100},
             {title: language.surname, variable: 'surname', width: 100, minWidth: 100},
             {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
+            {title: language.location, variable: 'location', width: 250, minWidth: 250},
             {title: language.date, variable: 'date', width: 80, minWidth: 80},
             {title: language.art_41_form, variable: 'art_41_form_short', width: 150, minWidth: 150},
             {title: language.position_groups, variable: 'position_group', width: 100, minWidth: 100},
@@ -140,6 +142,7 @@ function loadDecisions(language, month, year){
             {title: language.name_person, variable: 'name', width: 100, minWidth: 100},
             {title: language.surname, variable: 'surname', width: 100, minWidth: 100},
             {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
+            {title: language.location, variable: 'location', width: 250, minWidth: 250},
             {title: language.date, variable: 'date', width: 80, minWidth: 80},
             {title: language.decision_law, variable: 'law', width: 150, minWidth: 150},
             {title: language.description, variable: 'description', width: 700, minWidth: 700},
@@ -175,6 +178,7 @@ function loadSuspensions(language, month, year){
             {title: language.name_person, variable: 'name', width: 100, minWidth: 100},
             {title: language.surname, variable: 'surname', width: 100, minWidth: 100},
             {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
+            {title: language.location, variable: 'location', width: 250, minWidth: 250},
             {title: language.date, variable: 'date', width: 80, minWidth: 80},
             {title: language.suspension_group, variable: 'group_name', width: 100, minWidth: 100},
             {title: language.suspension_type, variable: 'type_name', width: 100, minWidth: 100},
@@ -186,7 +190,9 @@ function loadSuspensions(language, month, year){
             {title: language.correction_date, variable: 'correction_date', width: 80, minWidth: 80},
             {title: language.correction_shift, variable: 'correction_shift', width: 50, minWidth: 50},
             {title: language.company_name, variable: 'company_name', width: 100, minWidth: 100},
-            {title: language.remarks, variable: 'remarks', width: 300, minWidth: 300}
+            {title: language.remarks, variable: 'remarks', width: 300, minWidth: 300},
+            {title: language.decision, variable: 'decision_text', width: 50, minWidth: 50}
+            
         ],
         dataSource: datasource
     }
@@ -218,6 +224,7 @@ function loadUsages(language, month, year){
             {title: language.name_person, variable: 'document_assigned_name', width: 100, minWidth: 100},
             {title: language.surname, variable: 'document_assigned_surname', width: 100, minWidth: 100},
             {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
+            {title: language.location, variable: 'location', width: 250, minWidth: 250},
             {title: language.equipment_name, variable: 'equipment_name', width: 300, minWidth: 300},
             {title: language.inventory_number, variable: 'inventory_number', width: 150, minWidth: 150},
             {title: language.date, variable: 'date', width: 80, minWidth: 80},
@@ -254,6 +261,7 @@ function loadCourtApplications(language, month, year){
             {title: language.name_person, variable: 'name', width: 100, minWidth: 100},
             {title: language.surname, variable: 'surname', width: 100, minWidth: 100},
             {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
+            {title: language.location, variable: 'location', width: 250, minWidth: 250},
             {title: language.date, variable: 'date', width: 80, minWidth: 80},
             {title: language.accusation, variable: 'accusation', width: 600, minWidth: 600},
             {title: language.position, variable: 'position', width: 150, minWidth: 150},
