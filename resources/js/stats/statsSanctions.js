@@ -179,6 +179,7 @@ function loadSuspensions(language, month, year){
             {title: language.surname, variable: 'surname', width: 100, minWidth: 100},
             {title: language.document_number, variable: 'document_number', width: 250, minWidth: 250},
             {title: language.location, variable: 'location', width: 250, minWidth: 250},
+            {title: language.decision, variable: 'decision_text', width: 50, minWidth: 50},
             {title: language.date, variable: 'date', width: 80, minWidth: 80},
             {title: language.suspension_group, variable: 'group_name', width: 100, minWidth: 100},
             {title: language.suspension_type, variable: 'type_name', width: 100, minWidth: 100},
@@ -190,8 +191,7 @@ function loadSuspensions(language, month, year){
             {title: language.correction_date, variable: 'correction_date', width: 80, minWidth: 80},
             {title: language.correction_shift, variable: 'correction_shift', width: 50, minWidth: 50},
             {title: language.company_name, variable: 'company_name', width: 100, minWidth: 100},
-            {title: language.remarks, variable: 'remarks', width: 300, minWidth: 300},
-            {title: language.decision, variable: 'decision_text', width: 50, minWidth: 50}
+            {title: language.remarks, variable: 'remarks', width: 300, minWidth: 300}
             
         ],
         dataSource: datasource

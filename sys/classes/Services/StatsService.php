@@ -14,6 +14,7 @@ use Custom\Statistics\Engine\Configs\Elements\Groups\Factory\GroupsFactory as Gr
 use Custom\Statistics\Engine\Configs\Elements\Inputs\Abstracts\Input as Input;
 use Custom\Statistics\Engine\Configs\Elements\Inputs\Container\InputsContainer as InputsContainer;
 use Custom\Statistics\Engine\Stats as Stats;
+use Custom\Statistics\Engine\Generators\OverlordInspectionsGenerator as OverlordInspectionsGenerator;
 use Tanweb\Config\Template as Template;
 use Tanweb\Container as Container;
 use Services\Exceptions\StatsDatasetNotSetException as StatsDatasetNotSetException;
@@ -187,6 +188,32 @@ class StatsService {
     
     public function removeStats(int $id) : void {
         $this->statistics->remove($id);
+    }
+    
+    public function formInspectionStats(int $month, int $year) : Container {
+        $config = array(
+            'title' => 'Kontrole',
+            'inputs' => array(
+                array('type' => 'Rok', 'value' => '' . $year),
+                array('type' => 'Miesiąc', 'value' => $month)
+            ), 
+            'datasets' => array(
+                array(
+                    'index' => 'Wpisy',
+                    'groups' => array('Czynność', 'Miejsce kontroli', 'Poziom', 'Użytkownik z nr. SUZUG'),
+                    'dataset' => 'Wpisy na kontrolach',
+                    'operation' => 'Zliczanie roboczodniówek'
+                )
+            ), 
+            'output_form' => 'Tabela',
+            'output_config' => array(
+                'groups' => array('Czynność', 'Miejsce kontroli', 'Poziom', 'Użytkownik z nr. SUZUG'),
+                'dataset' => 'Wpisy'
+            )
+        );
+        $inputs = new Container();
+        $generator = new OverlordInspectionsGenerator(new Container($config), $inputs);
+        return $generator->generate();
     }
     
     private function parseStatistic(array $item) : array {

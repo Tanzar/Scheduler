@@ -21,6 +21,9 @@
         $security = Security::getInstance();
         $privilages = new Container(['admin', 'stats_admin']);
         if($security->userHaveAnyPrivilage($privilages)){
+            echo '<form action="' . Pages::getURL('statsOverlord.php') . '">';
+            echo '<input type="submit" class="side-menu-button" value="' . $options->get('overlord') . '">';
+            echo '</form>';
             echo '<form action="' . Pages::getURL('statsSettings.php') . '">';
             echo '<input type="submit" class="side-menu-button" value="' . $options->get('settings') . '">';
             echo '</form>';

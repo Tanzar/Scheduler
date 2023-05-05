@@ -109,4 +109,28 @@ class ResultSet {
     public function toArray() : array {
         return $this->data->toArray();
     }
+    
+    public function getValuesHigherThan(int $value) : Container {
+        $result = new Container();
+        foreach ($this->data->toArray() as $index => $itemVal) {
+            if($itemVal > $value){
+                $item = $this->indexToArray($index);
+                $item['value'] = $itemVal;
+                $result->add($item);
+            }
+        }
+        return $result;
+    }
+    
+    private function indexToArray(string $index) : array {
+        $result = array();
+        $elements = explode(';', $index);
+        foreach ($elements as $item){
+            if($item !== ''){
+                $parts = explode('=', $item);
+                $result[$parts[0]] = $parts[1];
+            }
+        }
+        return $result;
+    }
 }

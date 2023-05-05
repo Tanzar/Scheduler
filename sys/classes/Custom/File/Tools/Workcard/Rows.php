@@ -172,7 +172,9 @@ class Rows {
         $count = 0; 
         foreach ($this->entries->toArray() as $item) {
             $entry = new Container($item);
-            if($entry->get('can_be_inspection') === 1){
+            if($entry->get('activity_group') === 'inspection' || 
+                    $entry->get('activity_group') === 'accidents' || 
+                    $entry->get('activity_group') === 'illegal'){
                 $count++;
             }
         }
@@ -183,7 +185,10 @@ class Rows {
         $count = 0; 
         foreach ($this->entries->toArray() as $item) {
             $entry = new Container($item);
-            if($entry->get('can_be_inspection') === 1 && $entry->get('underground') === 1){
+            if(($entry->get('activity_group') === 'inspection' || 
+                    $entry->get('activity_group') === 'accidents' || 
+                    $entry->get('activity_group') === 'illegal') && 
+                    $entry->get('underground') === 1){
                 $count++;
             }
         }
@@ -194,7 +199,10 @@ class Rows {
         $count = 0; 
         foreach ($this->entries->toArray() as $item) {
             $entry = new Container($item);
-            if($entry->get('can_be_inspection') === 1 && $entry->get('underground') === 0){
+            if(($entry->get('activity_group') === 'inspection' || 
+                    $entry->get('activity_group') === 'accidents' || 
+                    $entry->get('activity_group') === 'illegal') && 
+                    $entry->get('underground') === 0){
                 $count++;
             }
         }

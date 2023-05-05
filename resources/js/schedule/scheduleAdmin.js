@@ -51,7 +51,7 @@ function ScheduleAdmin(){
                         start: data.start,
                         end: data.end,
                         description: data.description,
-                        underground: selected.underground,
+                        underground: data.underground,
                         id_activity: selected.id_activity,
                         id_location: selected.id_location,
                     }
@@ -213,7 +213,7 @@ function ScheduleAdmin(){
                                         {type: 'checkbox', title: (language.underground + '?'), variable: 'underground'}
                                     ];
                                     openModalBox(language.select_document, fields, language.save, function(data){
-                                        RestApi.post('ScheduleAdmin', 'saveEntry', dataToSend, 
+                                        RestApi.post('ScheduleAdmin', 'saveEntry', data, 
                                             function(response){
                                                 var data = JSON.parse(response);
                                                 console.log(data);
