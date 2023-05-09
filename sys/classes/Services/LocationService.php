@@ -12,6 +12,7 @@ use Data\Access\Tables\LocationGroupDAO as LocationGroupDAO;
 use Data\Access\Views\LocationDetailsView as LocationDetailsView;
 use Tanweb\Container as Container;
 use Services\Exceptions\LocationDatesException as LocationDatesException;
+use DateTime;
 
 /**
  * Description of LocationService
@@ -91,6 +92,58 @@ class LocationService {
             throw new LocationDatesException();
         }
         return $this->locationGroup->save($data);
+    }
+    
+    public function saveLocationAsIllegal(string $name) : int {
+        $item = new Container();
+        $item->add($name, 'name');
+        $locationTypeId = $this->getIllegalLocationTypeId();
+        $item->add($locationTypeId, 'id_location_type');
+        $groupId = $this->getTemporaryGroupId();
+        $date = new DateTime(date(('Y-m') . '-1'));
+        $item->add($date->format('Y-m-d'), 'active_from');
+        $date->modify('+100 years');
+        $item->add($date->format('Y-m-d'), 'active_to');
+        $item->add($groupId, 'id_location_group');
+        return $this->location->save($item);
+    }
+    
+    private function getIllegalLocationTypeId() : int {
+        $groups = $this->locationType->getByName('Illegal Mining');
+        if($groups->isEmpty()){
+            $item = new Container();
+            $item->add('Illegal Mining', 'name');
+            $item->add(0, 'active');
+            $item->add('IM', 'short');
+            $item->add(1, 'inspection');
+            return $this->locationType->save($item);
+        }
+        else{
+            $item = $groups->get(0);
+            $group = new Container($item);
+            $id = (int) $group->get('id');
+            return $id;
+        }
+    }
+    
+    private function getTemporaryGroupId() : int {
+        $groups = $this->locationGroup->getByName('tmp');
+        if($groups->isEmpty()){
+            $item = new Container();
+            $item->add('tmp', 'name');
+            $item->add(0, 'active');
+            $date = new DateTime(date(('Y-m') . '-1'));
+            $item->add($date->format('Y-m-d'), 'active_from');
+            $date->modify('+100 years');
+            $item->add($date->format('Y-m-d'), 'active_to');
+            return $this->locationGroup->save($item);
+        }
+        else{
+            $item = $groups->get(0);
+            $group = new Container($item);
+            $id = (int) $group->get('id');
+            return $id;
+        }
     }
     
     public function changeLocationStatus(int $id) : void {

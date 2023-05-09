@@ -347,7 +347,7 @@ function AddLocationButton(language, selectLocation){
         var item = {id_location_type: $('#selectLocationType').val()};
         if(item.id_location_type !==''){
             var fields = [
-                {type: 'text', title: language.location, variable: 'name', limit: 100}
+                {type: 'text', title: language.location, variable: 'name', limit: 100, required: true}
             ];
             openModalBox(language.new_location, fields, language.save, function(data){
                 RestApi.post('ScheduleAdmin', 'saveLocation', data, 

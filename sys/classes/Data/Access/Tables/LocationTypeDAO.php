@@ -43,6 +43,12 @@ class LocationTypeDAO extends DAO{
         return $this->select($sql);
     }
     
+    public function getByName(string $name) : Container {
+        $sql = new  MysqlBuilder();
+        $sql->select('location_type')->where('name', $name);
+        return $this->select($sql);
+    }
+    
     public function disable(int $id){
         $sql = new MysqlBuilder();
         $sql->update('location_type', 'id', $id)

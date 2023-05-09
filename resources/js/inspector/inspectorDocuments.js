@@ -102,7 +102,22 @@ function init(){
                 alert(language.select_document);
             }
         });
-        
+        datatable.addActionButton(language.save_illegal_location, function(selected){
+            var fields = [
+                {type: 'text', title: language.location, variable: 'name', limit: 100, required: true}
+            ];
+            openModalBox(language.new_location, fields, language.save, function(data){
+                RestApi.post('InspectorDocuments', 'saveLocationAsIllegal', data, 
+                    function(response){
+                        var data = JSON.parse(response);
+                        console.log(data);
+                        alert(data.message);
+                    }, 
+                    function(response){
+                        alert(response.responseText);
+                });
+            });
+        });
         
         datatable.setOnSelect(function(item){
             RestApi.post('InspectorDocuments', 'getDocumentUsers', {id: item.id}, 

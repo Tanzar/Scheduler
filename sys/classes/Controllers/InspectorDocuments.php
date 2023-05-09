@@ -65,6 +65,17 @@ class InspectorDocuments extends Controller{
         $this->setResponse($response);
     }
     
+    public function saveLocationAsIllegal() {
+        $data = $this->getRequestData();
+        $name = $data->get('name');
+        $id = $this->locationService->saveLocationAsIllegal($name);
+        $response = new Container();
+        $languages = Languages::getInstance();
+        $response->add($languages->get('changes_saved'), 'message');
+        $response->add($id, 'id');
+        $this->setResponse($response);
+    }
+    
     public function assignUser(){
         $data = $this->getRequestData();
         $id = $data->get('id');
