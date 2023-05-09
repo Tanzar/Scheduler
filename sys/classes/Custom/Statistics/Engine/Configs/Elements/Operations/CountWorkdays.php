@@ -159,7 +159,7 @@ class CountWorkdays implements CalculationStrategy {
             if($start < $daybreak){
                 $start->modify('-1 days');
             }
-            return array($start->format('Y-m-d'));
+            return $this->determineSingleDate($entry, $daybreak);
         }
     }
     
@@ -182,6 +182,18 @@ class CountWorkdays implements CalculationStrategy {
         else{
             return array($start->format('Y-m-d'));
         }
+    }
+    
+    private function determineSingleDate(Container $entry, DateTime $daybreak) : array {
+        $start = new DateTime($entry->get('start'));
+        $end = new DateTime($entry->get('end'));
+        $beforeBreak = max(0, ((int) $daybreak->format('Uv') - (int) $start->format('Uv')));
+        $afterBreak = max(0, ((int) $end->format('Uv') - (int) $daybreak->format('Uv')));
+        $date = new DateTime($daybreak->format('Y-m-d'));
+        if($beforeBreak >= $afterBreak){
+            $date->modify('-1 days');
+        }
+        return array($date->format('Y-m-d'));
     }
     
     private function addProcessed(DateTime $date, string $username, Container $entry) : void {
