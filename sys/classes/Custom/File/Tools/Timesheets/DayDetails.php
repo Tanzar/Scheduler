@@ -39,11 +39,21 @@ class DayDetails {
     }
     
     public function setWorkdayStart(string $time) : void {
-        $this->workdayStart = $time;
+        if($this->workdayStart === ''){
+            $this->workdayStart = $time;
+        }
+        else{
+            $this->workdayStart .= '/' . $time;
+        }
     }
     
     public function setWorkdayEnd(string $time) : void {
-        $this->workdayEnd = $time;
+        if($this->workdayEnd === ''){
+            $this->workdayEnd = $time;
+        }
+        else{
+            $this->workdayEnd .= '/' . $time;
+        }
     }
     
     public function addWorkTime(int $office, int $delegation, bool $generateOvertime = false) : void {

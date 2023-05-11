@@ -109,34 +109,16 @@ class DaysDetails {
     
     private function setStartDayDetails(Container $entry, DateTime $dayStart, DayDetails $details) : void {
         $start = new DateTime($entry->get('start'));
-        if($details->getWorkdayStart() === ''){
-            $newStart = max($dayStart, $start);
-            $details->setWorkdayStart($newStart->format('H:i'));
-        }
-        else{
-            $currentStart = new DateTime($dayStart->format('Y-m-d') . ' ' . $details->getWorkdayStart());
-            $newStart = max($dayStart, min($currentStart, $start));
-            $details->setWorkdayStart($newStart->format('H:i'));
-        }
+        $newStart = max($dayStart, $start);
+        $details->setWorkdayStart($newStart->format('H:i'));
     }
     
     private function setEndDayDetails(Container $entry, DateTime $dayStart, DayDetails $details) : void {
         $end = new DateTime($entry->get('end'));
         $dayEnd = new DateTime($dayStart->format('Y-m-d H:i:s'));
         $dayEnd->modify('+1 days');
-        if($details->getWorkdayEnd() === ''){
-            $newEnd = min($dayEnd, $end);
-            $details->setWorkdayEnd($newEnd->format('H:i'));
-        }
-        else{
-            $currentStart = new DateTime($dayStart->format('Y-m-d') . ' ' . $details->getWorkdayStart());
-            $currentEnd = new DateTime($dayStart->format('Y-m-d') . ' ' . $details->getWorkdayEnd());
-            if($currentStart >= $currentEnd){
-                $currentEnd->modify('+1 days');
-            }
-            $newEnd = min($dayEnd, max($currentEnd, $end));
-            $details->setWorkdayEnd($newEnd->format('H:i'));
-        }
+        $newEnd = min($dayEnd, $end);
+        $details->setWorkdayEnd($newEnd->format('H:i'));
     }
     
     private function calculateWorktime(Container $entry, DateTime $dayStart) : int {

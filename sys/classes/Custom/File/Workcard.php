@@ -117,8 +117,11 @@ class Workcard extends PDFMaker{
                 $rowsToFill->add($index);
             }
         }
-        $height = 5;
+        
+        $height = ($data->length() > 35) ? 4 : 5;
+        $this->setCurrentSize(9);
         $this->makeTable($columns, $data, 0, $height, $rowsToFill);
+        $this->setCurrentSize($this->font);
     }
     
     private function generateTableConfig() : Columns {

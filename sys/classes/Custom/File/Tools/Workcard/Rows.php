@@ -63,25 +63,12 @@ class Rows {
         $this->rows = new Container();
         $lastDay = (int) date('t', strtotime($this->year . '-' . $this->month . '-1'));
         for($day = 1; $day <= $lastDay; $day++){
-            $date = new DateTime($this->year . '-' . $this->month . '-' . $day);
-            $period = $this->selectEmploymentPeriod($date);
-            $breakHour = $period->get('standard_day_start');
+            $breakHour = '00:00';
             $start = new DateTime($this->year . '-' . $this->month . '-' . $day . ' ' . $breakHour);
             $end = new DateTime($this->year . '-' . $this->month . '-' . $day . ' ' . $breakHour);
             $end->modify('+1 days');
             $this->makeRowsForDay($day, $start, $end);
         }
-    }
-    
-    private function selectEmploymentPeriod(DateTime $date) : Container {
-        $start = $date->format('Y-m-d');
-        foreach ($this->periods->toArray() as $item) {
-            $period = new Container($item);
-            if($start >= $period->get('start') && $start <= $period->get('end')){
-                return $period;
-            }
-        }
-        return new Container();
     }
     
     private function makeRowsForDay(int $day, DateTime $start, DateTime $end) : void {
